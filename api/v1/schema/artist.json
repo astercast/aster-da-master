@@ -68,6 +68,10 @@
           "type": {
             "type": "string"
           },
+          "plays": {
+            "type": "integer",
+            "description": "SoundCloud play-count snapshot (SoundCloud-only entries); null when not applicable"
+          },
           "tracks": {
             "type": "integer"
           },
@@ -203,6 +207,22 @@
         "status": {
           "type": "string"
         },
+        "profile_url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "display_name": {
+          "type": "string"
+        },
+        "followers": {
+          "type": "integer"
+        },
+        "location": {
+          "type": "string"
+        },
+        "bio": {
+          "type": "string"
+        },
         "tracks_on_record": {
           "type": "integer"
         },
@@ -221,6 +241,28 @@
         "tracks_on_record",
         "research_date"
       ]
+    },
+    "upcoming": {
+      "type": "array",
+      "description": "Teased/unconfirmed upcoming work; never presented as confirmed releases",
+      "items": {
+        "type": "object",
+        "required": [
+          "title",
+          "status"
+        ],
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          },
+          "source": {
+            "type": "string"
+          }
+        }
+      }
     }
   }
 }

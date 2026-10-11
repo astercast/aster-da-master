@@ -82,21 +82,22 @@ def credits_from_title(title: str):
 
 def build():
     releases = DATA["discography"]
-    slugs = {}
+    used_slugs = set()
+    slug_list = []
     for r in releases:
         s = slugify(r["title"])
-        n = 1
-        base = s
-        while s in slugs:
+        base, n = s, 1
+        while s in used_slugs:
             n += 1
             s = f"{base}-{n}"
-        slugs[r["title"]] = s
-    assert len(set(slugs.values())) == len(releases), "slug collision"
+        used_slugs.add(s)
+        slug_list.append(s)
+    assert len(set(slug_list)) == len(releases), "slug collision"
 
     OUT.mkdir(exist_ok=True)
 
     for i, r in enumerate(releases):
-        slug = slugs[r["title"]]
+        slug = slug_list[i]
         art = ""
         if r.get("artwork"):
             art = (
@@ -125,10 +126,10 @@ def build():
         prev_link = next_link = ""
         if i > 0:
             p = releases[i - 1]
-            prev_link = f'<a class="btn" href="{slugs[p["title"]]}.html">&larr; {escape(p["title"])}</a>'
+            prev_link = f'<a class="btn" href="{slug_list[i - 1]}.html">&larr; {escape(p["title"])}</a>'
         if i < len(releases) - 1:
             n = releases[i + 1]
-            next_link = f'<a class="btn" href="{slugs[n["title"]]}.html">{escape(n["title"])} &rarr;</a>'
+            next_link = f'<a class="btn" href="{slug_list[i + 1]}.html">{escape(n["title"])} &rarr;</a>'
 
         prov = f"""
         <section class="provenance" aria-labelledby="prov-h">
@@ -150,9 +151,10 @@ def build():
           <h1 id="rel-title">{escape(r["title"])}</h1>
           <dl class="release-meta">
             <dt>Type</dt><dd>{escape(r["type"])}</dd>
-            <dt>Released</dt><dd>{escape(r["date"]) if r.get("date") else "Unknown"}</dd>
+            <dt>{'Uploaded' if r['type'] == 'SoundCloud-only' else 'Released'}</dt><dd>{escape(r["date"]) if r.get("date") else "Unknown"}</dd>
             {f'<dt>Label</dt><dd>{escape(r["label"])}</dd>' if r.get("label") else ""}
             {f'<dt>Tracks</dt><dd>{r["tracks"]}</dd>' if r.get("tracks") else ""}
+            {f'<dt>Plays</dt><dd>{r["plays"]:,} <span class="chart-sub">(snapshot 2026-10-11)</span></dd>' if r.get("plays") is not None else ""}
             {credit_html}
           </dl>
           <div class="btn-row">{links or '<p class="chart-sub">No distributor platform links on record for this entry.</p>'}</div>
@@ -170,15 +172,18 @@ def build():
 
     # Index page with filters (year / type / label)
     index_items = []
-    for r in releases:
+    n_vault = sum(1 for r in releases if r["type"] == "SoundCloud-only")
+    n_dist = len(releases) - n_vault
+    for i, r in enumerate(releases):
         index_items.append(
             {
                 "title": r["title"],
-                "slug": slugs[r["title"]],
+                "slug": slug_list[i],
                 "date": r.get("date"),
                 "year": (r["date"] or "")[:4] if r.get("date") else "Unknown",
                 "type": r["type"],
                 "label": r.get("label") or "—",
+                "plays": r.get("plays"),
             }
         )
     years = sorted({i["year"] for i in index_items}, reverse=True)
@@ -192,7 +197,7 @@ def build():
       <section class="section" aria-labelledby="idx-h">
         <p class="kicker"><span class="numeral">&#10022;</span>The full archive</p>
         <h1 id="idx-h">Every release</h1>
-        <p>{len(releases)} transmissions on record &mdash; 34 distributor releases and 9 from the SoundCloud vault.</p>
+        <p>{len(releases)} transmissions on record &mdash; {n_dist} distributor releases and {n_vault} from the SoundCloud vault.</p>
         <div class="filter-row" role="group" aria-label="Filter releases">
           <label>Year <select id="f-year"><option value="">All years</option>{opts(years)}</select></label>
           <label>Type <select id="f-type"><option value="">All types</option>{opts(types)}</select></label>
@@ -213,8 +218,11 @@ def build():
             return (!y || i.year === y) && (!t || i.type === t) && (!l || i.label === l);
           }});
           list.innerHTML = rows.map(function (i) {{
+            var plays = (i.plays != null)
+              ? ' <span class="rl-plays">' + Number(i.plays).toLocaleString("en-US") + " plays</span>"
+              : "";
             return '<li><span><a href="' + esc(i.slug) + '.html">' + esc(i.title) + "</a>" +
-              '<span class="rl-type">' + esc(i.type) + "</span></span>" +
+              '<span class="rl-type">' + esc(i.type) + "</span>" + plays + "</span>" +
               '<span class="rl-date">' + esc(i.date || "date unknown") + "</span></li>";
           }}).join("") || "<li>No releases match those filters.</li>";
         }}

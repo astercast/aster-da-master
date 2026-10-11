@@ -1,7 +1,7 @@
 {
-  "version": "0.4.0",
+  "version": "0.5.0",
   "observed": "2026-10-11",
-  "research_status": "VERIFIED-2026-10-11 - identity resolved per research report; Spotify profile unverified; SoundCloud profile URL unresolved - 9 vault tracks single-sourced from third-party upload indexes",
+  "research_status": "VERIFIED-2026-10-11 — identity resolved per research report; Spotify artist-linked via official SoundCloud bio; SoundCloud full catalog (185 tracks) verified via read-only live-browser pass 2026-10-11",
   "artist": {
     "name": "Aster da Master",
     "tagline": "He transcends music.",
@@ -471,95 +471,2779 @@
       "source": "Apple Music profile 1466301103 (“Aster Da Master”) · iTunes Search API primary metadata · verified 2026-10-11"
     },
     {
-      "title": "All Kinds of Trips",
-      "date": null,
+      "title": "turn up w me (prod_timmy)",
+      "date": "2026-10-02",
       "type": "SoundCloud-only",
-      "links": [],
-      "source": "SonicHits video index of his SoundCloud uploads · verified 2026-10-11",
-      "confidence": "single-source",
-      "note": "SoundCloud-vault track: surfaced from third-party indexes of his SoundCloud uploads, not from distributor metadata. Upload date and play counts unknown (require in-platform access). Profile URL not found via public web research as of 2026-10-11."
-    },
-    {
-      "title": "Best Friend",
-      "date": null,
-      "type": "SoundCloud-only",
-      "links": [],
-      "source": "SonicHits video index of his SoundCloud uploads · verified 2026-10-11",
-      "confidence": "single-source",
-      "note": "SoundCloud-vault track: surfaced from third-party indexes of his SoundCloud uploads, not from distributor metadata. Upload date and play counts unknown (require in-platform access). Profile URL not found via public web research as of 2026-10-11."
-    },
-    {
-      "title": "Playin' by the Book",
-      "date": null,
-      "type": "SoundCloud-only",
-      "links": [],
-      "source": "SonicHits video index of his SoundCloud uploads · verified 2026-10-11",
-      "confidence": "single-source",
-      "note": "SoundCloud-vault track: surfaced from third-party indexes of his SoundCloud uploads, not from distributor metadata. Upload date and play counts unknown (require in-platform access). Profile URL not found via public web research as of 2026-10-11."
-    },
-    {
-      "title": "White Noise",
-      "date": null,
-      "type": "SoundCloud-only",
-      "links": [],
-      "source": "SonicHits video index of his SoundCloud uploads · verified 2026-10-11",
-      "confidence": "single-source",
-      "note": "SoundCloud-vault track: surfaced from third-party indexes of his SoundCloud uploads, not from distributor metadata. Upload date and play counts unknown (require in-platform access). Profile URL not found via public web research as of 2026-10-11."
-    },
-    {
-      "title": "candy w/ capoxxo (prod. razorwrist)",
-      "date": null,
-      "type": "SoundCloud-only",
-      "links": [],
-      "source": "SonicHits video index of his SoundCloud uploads; producer credit also in main research report · verified 2026-10-11",
-      "confidence": "single-source",
-      "note": "SoundCloud-vault track: surfaced from third-party indexes of his SoundCloud uploads, not from distributor metadata. Upload date and play counts unknown (require in-platform access). Profile URL not found via public web research as of 2026-10-11."
-    },
-    {
-      "title": "fly like me w/ pvscale (prod. pvscale)",
-      "date": null,
-      "type": "SoundCloud-only",
-      "links": [],
-      "source": "SonicHits video index of his SoundCloud uploads (distributor catalog has \"Fly Like Me (feat. Pvscale)\" - the w/-style upload is the SoundCloud version) · verified 2026-10-11",
-      "confidence": "single-source",
-      "note": "SoundCloud-vault track: surfaced from third-party indexes of his SoundCloud uploads, not from distributor metadata. Upload date and play counts unknown (require in-platform access). Profile URL not found via public web research as of 2026-10-11."
-    },
-    {
-      "title": "take me",
-      "date": null,
-      "type": "SoundCloud-only",
-      "links": [],
-      "source": "letras.top / azlyrics.biz sitemaps and lirik.web.id title page (titles only - lyrics not reproduced) · verified 2026-10-11",
-      "confidence": "single-source",
-      "note": "SoundCloud-vault track: surfaced from third-party indexes of his SoundCloud uploads, not from distributor metadata. Upload date and play counts unknown (require in-platform access). Profile URL not found via public web research as of 2026-10-11."
-    },
-    {
-      "title": "(Memory Loaded October 600 & Aster Da Master)",
-      "date": null,
-      "type": "SoundCloud-only",
-      "links": [],
-      "source": "Shazam \"Top Songs By Aster Da Master\" listing - SoundCloud collab upload · verified 2026-10-11",
-      "confidence": "single-source",
-      "note": "SoundCloud-vault track: surfaced from third-party indexes of his SoundCloud uploads, not from distributor metadata. Upload date and play counts unknown (require in-platform access). Profile URL not found via public web research as of 2026-10-11."
-    },
-    {
-      "title": "InternetWouldBlush (ft. Offline HP, Aster Da Master, & DirtyDoves) [prod. Lil' Flower]",
-      "date": null,
-      "type": "SoundCloud-only",
-      "links": [],
-      "source": "Internet Phantoms Network podcast Ep. 9 song list (feature on Lil' Spursy's upload) · verified 2026-10-11",
-      "confidence": "single-source",
-      "note": "SoundCloud-vault track: surfaced from third-party indexes of his SoundCloud uploads, not from distributor metadata. Upload date and play counts unknown (require in-platform access). Profile URL not found via public web research as of 2026-10-11.",
-      "citations": [
+      "plays": 177,
+      "links": [
         {
-          "label": "Internet Phantoms Network Ep. 9 song list",
-          "url": "https://audioboom.com/posts/7580249"
-        },
-        {
-          "label": "SonicHits artist video index",
-          "url": "https://sonichits.com/artist/Aster_Da_Master"
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
         }
-      ]
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "the peace of the spirit urn (prod +fiftyzeros)",
+      "date": "2026-07-15",
+      "type": "SoundCloud-only",
+      "plays": 178,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "the night ends yeaaa prod wellfed",
+      "date": "2026-03-25",
+      "type": "SoundCloud-only",
+      "plays": 208,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "no power prod wellfed",
+      "date": "2026-03-23",
+      "type": "SoundCloud-only",
+      "plays": 242,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "life's made prod wellfed",
+      "date": "2026-03-20",
+      "type": "SoundCloud-only",
+      "plays": 151,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "games stop prod branwen",
+      "date": "2026-03-17",
+      "type": "SoundCloud-only",
+      "plays": 180,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "all i really need is a text from u 2 (prod astral hp)",
+      "date": "2026-01-16",
+      "type": "SoundCloud-only",
+      "plays": 269,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "bound 2 my ways.wav",
+      "date": "2025-12-19",
+      "type": "SoundCloud-only",
+      "plays": 638,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "big litemode (prod runawway, ilyagargod & k3nik)",
+      "date": "2025-11-23",
+      "type": "SoundCloud-only",
+      "plays": 455,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "go and did (prod runawway + hidy)",
+      "date": "2025-11-23",
+      "type": "SoundCloud-only",
+      "plays": 205,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "Cut tha 1ights prod. ohmygon!",
+      "date": "2025-11-11",
+      "type": "SoundCloud-only",
+      "plays": 180,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "1otso prod. branwen",
+      "date": "2025-11-11",
+      "type": "SoundCloud-only",
+      "plays": 190,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "Sti11 waiting/tunnel freestyle w/ Max Ferrari prod. suli",
+      "date": "2025-11-11",
+      "type": "SoundCloud-only",
+      "plays": 300,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "ARCSNOWWW w/ Max Ferrari prod. sustain",
+      "date": "2025-11-11",
+      "type": "SoundCloud-only",
+      "plays": 184,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "Phantom Moshpit w/ Griimxo (remastered) prod. scared716",
+      "date": "2025-11-11",
+      "type": "SoundCloud-only",
+      "plays": 178,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "No Puppets A11owed prod. xtasane",
+      "date": "2025-11-10",
+      "type": "SoundCloud-only",
+      "plays": 24,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "Fa11 LeaVes prod. Gehx",
+      "date": "2025-11-10",
+      "type": "SoundCloud-only",
+      "plays": 222,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "Dreamed of U (Hubb1e) prod. Yukio",
+      "date": "2025-11-10",
+      "type": "SoundCloud-only",
+      "plays": 175,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "Get Away prod. Gehx",
+      "date": "2025-11-10",
+      "type": "SoundCloud-only",
+      "plays": 217,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "Green Wa11s prod. Ocurie",
+      "date": "2025-11-10",
+      "type": "SoundCloud-only",
+      "plays": 186,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "my kin (prod xannnn)",
+      "date": "2025-11-04",
+      "type": "SoundCloud-only",
+      "plays": 173,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "switch (prod fiftyzeros)",
+      "date": "2025-09-14",
+      "type": "SoundCloud-only",
+      "plays": 206,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "water + sun (prod paris pas rigolo)",
+      "date": "2025-09-13",
+      "type": "SoundCloud-only",
+      "plays": 178,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "oh We11 (prod Vuksai)",
+      "date": "2025-01-09",
+      "type": "SoundCloud-only",
+      "plays": 222,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "nitemode2019 w/ Max+Vetty prod. NaXi.wav",
+      "date": "2024-11-05",
+      "type": "SoundCloud-only",
+      "plays": 17,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "ViiXX (prod skrrtur)",
+      "date": "2024-10-04",
+      "type": "SoundCloud-only",
+      "plays": 177,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "like my dogs!!! (prod waynn)",
+      "date": "2024-09-18",
+      "type": "SoundCloud-only",
+      "plays": 175,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "every nite, blessings (prod meutry)",
+      "date": "2024-08-30",
+      "type": "SoundCloud-only",
+      "plays": 206,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "Sipping 1ightning prod. lunarlad",
+      "date": "2024-07-09",
+      "type": "SoundCloud-only",
+      "plays": 275,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "SSSolid (prod Kuva) *MUSIC VIDEO IN DESC*",
+      "date": "2024-06-27",
+      "type": "SoundCloud-only",
+      "plays": 286,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "Tri:ed (prod ysosexy)",
+      "date": "2024-06-16",
+      "type": "SoundCloud-only",
+      "plays": 185,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "End Times Gate Code (prod @1ohmygon)",
+      "date": "2024-05-31",
+      "type": "SoundCloud-only",
+      "plays": 308,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "FittedUP/fadedUP prod. xtasane",
+      "date": "2024-05-29",
+      "type": "SoundCloud-only",
+      "plays": 358,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "3 Points Pre Game prod. doublemulti x pinkcat #NITEMODE",
+      "date": "2024-05-28",
+      "type": "SoundCloud-only",
+      "plays": 170,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "Just so U know prod. Buggy",
+      "date": "2024-05-24",
+      "type": "SoundCloud-only",
+      "plays": 347,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "In Trance prod. deadtalks!",
+      "date": "2024-05-22",
+      "type": "SoundCloud-only",
+      "plays": 237,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "i Was in Attics prod. Ochoo",
+      "date": "2024-05-03",
+      "type": "SoundCloud-only",
+      "plays": 177,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "P1aced a Ward (prodbygus)",
+      "date": "2024-05-02",
+      "type": "SoundCloud-only",
+      "plays": 275,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "u Not at the Table (Sunsetzer0) #litemode",
+      "date": "2024-04-18",
+      "type": "SoundCloud-only",
+      "plays": 139,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "Im tha Bouncerrr prod. sustain",
+      "date": "2024-04-16",
+      "type": "SoundCloud-only",
+      "plays": 28,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "Reachhh (Prawjex x Jordaan)",
+      "date": "2024-04-07",
+      "type": "SoundCloud-only",
+      "plays": 189,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "MRari inna Beanstalk w/ Max Ferrari (@mvvi468)",
+      "date": "2024-04-05",
+      "type": "SoundCloud-only",
+      "plays": 515,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "Early Morning (Yukiidaruma X Fumiko)",
+      "date": "2024-04-04",
+      "type": "SoundCloud-only",
+      "plays": 331,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "Dark City Destiny @dxcember13 @rudey0on10",
+      "date": "2024-03-27",
+      "type": "SoundCloud-only",
+      "plays": 408,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "On Our Way (Baseline)",
+      "date": "2023-11-12",
+      "type": "SoundCloud-only",
+      "plays": 696,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "Cast OUT!!!",
+      "date": "2023-11-12",
+      "type": "SoundCloud-only",
+      "plays": 481,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "One Piece X Sketchers",
+      "date": "2023-11-12",
+      "type": "SoundCloud-only",
+      "plays": 437,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "Good Turns Bad Freestyle",
+      "date": "2023-11-12",
+      "type": "SoundCloud-only",
+      "plays": 482,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "Playing Pretend :)",
+      "date": "2023-11-12",
+      "type": "SoundCloud-only",
+      "plays": 565,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "Attack!!! intro",
+      "date": "2023-11-12",
+      "type": "SoundCloud-only",
+      "plays": 501,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "Attack!!! 2",
+      "date": "2023-11-12",
+      "type": "SoundCloud-only",
+      "plays": 150,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "12 ÷ 4 (Eckhart's Plea)",
+      "date": "2023-11-12",
+      "type": "SoundCloud-only",
+      "plays": 342,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "Fleeting n' Geekinggg",
+      "date": "2023-11-12",
+      "type": "SoundCloud-only",
+      "plays": 682,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "i been in tha AIR",
+      "date": "2023-11-12",
+      "type": "SoundCloud-only",
+      "plays": 432,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "Day Comes Freestyle",
+      "date": "2023-11-12",
+      "type": "SoundCloud-only",
+      "plays": 210,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "I Just Got Lost In The City xD",
+      "date": "2023-11-12",
+      "type": "SoundCloud-only",
+      "plays": 206,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "This Is Why I Hate Mirrors",
+      "date": "2023-11-12",
+      "type": "SoundCloud-only",
+      "plays": 242,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "6 AM In Da Bay Interlude",
+      "date": "2023-11-12",
+      "type": "SoundCloud-only",
+      "plays": 488,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "Do It Againnn",
+      "date": "2023-11-12",
+      "type": "SoundCloud-only",
+      "plays": 269,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "No Lullaby :/",
+      "date": "2023-11-12",
+      "type": "SoundCloud-only",
+      "plays": 475,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "For Brian (Neck Deep) outro [produced by AWFL]",
+      "date": "2023-11-12",
+      "type": "SoundCloud-only",
+      "plays": 43,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "Long Day (End Task) outro [@Staaaas.ily]",
+      "date": "2023-11-10",
+      "type": "SoundCloud-only",
+      "plays": 519,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "Hidden Lakes Backpack [@Yurkswag]",
+      "date": "2023-11-03",
+      "type": "SoundCloud-only",
+      "plays": 381,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "Warrior Returning Alive [@Melokajj]",
+      "date": "2023-10-21",
+      "type": "SoundCloud-only",
+      "plays": 614,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "no WAY!!??",
+      "date": "2023-10-20",
+      "type": "SoundCloud-only",
+      "plays": 216,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "Crazy Around The World",
+      "date": "2023-10-08",
+      "type": "SoundCloud-only",
+      "plays": 235,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "I Cannot Be Ignored Much Longer U Hurt Me Real Bad",
+      "date": "2023-10-08",
+      "type": "SoundCloud-only",
+      "plays": 233,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "Clock In The Benz w/ Lil Yu prod shinju",
+      "date": "2023-08-29",
+      "type": "SoundCloud-only",
+      "plays": 725,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "9 Trips",
+      "date": "2023-08-29",
+      "type": "SoundCloud-only",
+      "plays": 262,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "Writing Books But I Cant Read Em",
+      "date": "2023-08-29",
+      "type": "SoundCloud-only",
+      "plays": 293,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "1 my fault",
+      "date": "2022-02-22",
+      "type": "SoundCloud-only",
+      "plays": 216,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "2 menace",
+      "date": "2022-02-22",
+      "type": "SoundCloud-only",
+      "plays": 97,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "3 sharpie",
+      "date": "2022-02-22",
+      "type": "SoundCloud-only",
+      "plays": 107,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "4 wrong to be",
+      "date": "2022-02-22",
+      "type": "SoundCloud-only",
+      "plays": 109,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "5 bad cards",
+      "date": "2022-02-22",
+      "type": "SoundCloud-only",
+      "plays": 125,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "6 stop telling myself i'm not",
+      "date": "2022-02-22",
+      "type": "SoundCloud-only",
+      "plays": 46,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "7 don't say u love me",
+      "date": "2022-02-22",
+      "type": "SoundCloud-only",
+      "plays": 69,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "8 i would do mine",
+      "date": "2022-02-22",
+      "type": "SoundCloud-only",
+      "plays": 104,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "9 we grew up",
+      "date": "2022-02-22",
+      "type": "SoundCloud-only",
+      "plays": 126,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "10 stuck in the mix v2",
+      "date": "2022-02-22",
+      "type": "SoundCloud-only",
+      "plays": 58,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "11 dismissed",
+      "date": "2022-02-22",
+      "type": "SoundCloud-only",
+      "plays": 98,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "12 is it working?",
+      "date": "2022-02-22",
+      "type": "SoundCloud-only",
+      "plays": 277,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "Intro (prod. astral_hp)",
+      "date": "2021-07-14",
+      "type": "SoundCloud-only",
+      "plays": 178,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "When the World Gets Colder 3 (prod. phantasie)",
+      "date": "2021-07-14",
+      "type": "SoundCloud-only",
+      "plays": 222,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "Wandavision (prod. cadence)",
+      "date": "2021-07-14",
+      "type": "SoundCloud-only",
+      "plays": 177,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "This Feeling's Newer ft. Max Ferrari (prod. odece)",
+      "date": "2021-07-14",
+      "type": "SoundCloud-only",
+      "plays": 211,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "Got Knots ft. Max Ferrari (prod. lil biscuit)",
+      "date": "2021-07-14",
+      "type": "SoundCloud-only",
+      "plays": 174,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "Only Human Pilot (prod. shinju x forty)",
+      "date": "2021-07-14",
+      "type": "SoundCloud-only",
+      "plays": 184,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "Like the Cup (prod. ice trouble)",
+      "date": "2021-07-14",
+      "type": "SoundCloud-only",
+      "plays": 189,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "Mix Up Substances ft. Max Ferrari",
+      "date": "2021-07-14",
+      "type": "SoundCloud-only",
+      "plays": 151,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "Sunvalley Rally ft. Lilrareboy (prod. phantasie)",
+      "date": "2021-07-14",
+      "type": "SoundCloud-only",
+      "plays": 319,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "I Can't Get Myself to Cast (prod. lil biscuit)",
+      "date": "2021-07-14",
+      "type": "SoundCloud-only",
+      "plays": 212,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "Beacon (prod. johnnyfriend)",
+      "date": "2021-07-14",
+      "type": "SoundCloud-only",
+      "plays": 253,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "Memory Complete (prod. odece)",
+      "date": "2021-07-14",
+      "type": "SoundCloud-only",
+      "plays": 224,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "Asterisms Shine (prod. lil biscuit)",
+      "date": "2021-07-14",
+      "type": "SoundCloud-only",
+      "plays": 210,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "Lunch Break (prod wetgropes)",
+      "date": "2020-12-21",
+      "type": "SoundCloud-only",
+      "plays": 677,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "Decent (prod. venus)",
+      "date": "2020-12-21",
+      "type": "SoundCloud-only",
+      "plays": 355,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "'Til Ur Sad Again (prod. wetgropes)",
+      "date": "2020-12-21",
+      "type": "SoundCloud-only",
+      "plays": 345,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "They Talk (prod. wetgropes)",
+      "date": "2020-12-21",
+      "type": "SoundCloud-only",
+      "plays": 176,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "Elf Anthem Interlude (prod. capsctrl)",
+      "date": "2020-12-21",
+      "type": "SoundCloud-only",
+      "plays": 232,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "Added Up (prod. pink)",
+      "date": "2020-12-21",
+      "type": "SoundCloud-only",
+      "plays": 292,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "I'm Not Looking For Love Anyway",
+      "date": "2020-12-21",
+      "type": "SoundCloud-only",
+      "plays": 349,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "my fault (prod shinju)",
+      "date": "2020-11-11",
+      "type": "SoundCloud-only",
+      "plays": 551,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "white fire (prod. odece)",
+      "date": "2020-10-07",
+      "type": "SoundCloud-only",
+      "plays": 450,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "playin' by the book w/ lil yu (prod. dxsh)",
+      "date": "2020-10-07",
+      "type": "SoundCloud-only",
+      "plays": 861,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "keep w/ phil is lonely (prod. uniquate)",
+      "date": "2020-10-07",
+      "type": "SoundCloud-only",
+      "plays": 244,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "never pick it up (prod. fearbanquo)",
+      "date": "2020-10-07",
+      "type": "SoundCloud-only",
+      "plays": 336,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "fleeting [prod. AURA]",
+      "date": "2020-06-18",
+      "type": "SoundCloud-only",
+      "plays": 706,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "used to be messy prod. DeepHartt",
+      "date": "2020-05-03",
+      "type": "SoundCloud-only",
+      "plays": 5008,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "I HATE IT prod. Taurs",
+      "date": "2020-04-09",
+      "type": "SoundCloud-only",
+      "plays": 1668,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "Best Friend ft. lil soda boi (prod. lil soda boi)",
+      "date": "2019-12-30",
+      "type": "SoundCloud-only",
+      "plays": 3075,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "Costs Of Life (prod. aster)",
+      "date": "2019-12-30",
+      "type": "SoundCloud-only",
+      "plays": 2721,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "Soulless Soldiers (prod. Born Hero)",
+      "date": "2019-12-30",
+      "type": "SoundCloud-only",
+      "plays": 5878,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "All Alone ft. Yung Cortex (prod. Yung Cortex)",
+      "date": "2019-12-30",
+      "type": "SoundCloud-only",
+      "plays": 1115,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "Pavement (prod. Fish Narc)",
+      "date": "2019-12-30",
+      "type": "SoundCloud-only",
+      "plays": 733,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "White Noise ft. Keyblayde808 (prod. Keyblayde808)",
+      "date": "2019-12-30",
+      "type": "SoundCloud-only",
+      "plays": 2650,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "getting colder w/ capoxxo (prod. pvscale x asa41)",
+      "date": "2019-12-22",
+      "type": "SoundCloud-only",
+      "plays": 4587,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "I'd rather be w/ lil yu (prod. razorwrist)",
+      "date": "2019-12-22",
+      "type": "SoundCloud-only",
+      "plays": 1343,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "snow caps w/ LILVICBXI (prod. LILVICBXI x spliff08_)",
+      "date": "2019-12-22",
+      "type": "SoundCloud-only",
+      "plays": 1579,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "my friends (prod. deephartt)",
+      "date": "2019-12-22",
+      "type": "SoundCloud-only",
+      "plays": 1582,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "fly like me w/ pvscale(prod. pvscale)",
+      "date": "2019-12-22",
+      "type": "SoundCloud-only",
+      "plays": 7786,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "same amount w/ LILVICBXI (prod. LILVICBXI)",
+      "date": "2019-12-22",
+      "type": "SoundCloud-only",
+      "plays": 2991,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "attempt to be (prod. uniquate)",
+      "date": "2019-12-22",
+      "type": "SoundCloud-only",
+      "plays": 1909,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "master key ft. Lil Wintr x Marcelo (prod. ginseng)",
+      "date": "2019-12-06",
+      "type": "SoundCloud-only",
+      "plays": 9615,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "candy w/ capoxxo(prod. razorwrist)",
+      "date": "2019-10-04",
+      "type": "SoundCloud-only",
+      "plays": 11587,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "outro ~ I RLLY DID THT(prod. itami リネン)",
+      "date": "2019-07-09",
+      "type": "SoundCloud-only",
+      "plays": 3940,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "I'M WEAKENING ft. AMMI $AGE",
+      "date": "2019-07-09",
+      "type": "SoundCloud-only",
+      "plays": 2490,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "SUN SET FOR U ft. JO$E DRIPP (prod. y axis)",
+      "date": "2019-07-09",
+      "type": "SoundCloud-only",
+      "plays": 1771,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "NECK DEEP (prod. AWFL)",
+      "date": "2019-07-09",
+      "type": "SoundCloud-only",
+      "plays": 5276,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "GARDEN ft. Offline_hp (prod. QB)",
+      "date": "2019-07-09",
+      "type": "SoundCloud-only",
+      "plays": 1311,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "NIGHT MODE ft. MAX FERRARI x YUNG VETTA x JAX",
+      "date": "2019-07-09",
+      "type": "SoundCloud-only",
+      "plays": 10083,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "SIGNS POINT UP! (prod Jayy Praax)",
+      "date": "2019-07-09",
+      "type": "SoundCloud-only",
+      "plays": 3389,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "You Don't Wanna Miss Tonight(prod. Luca Malaspina)",
+      "date": "2019-06-25",
+      "type": "SoundCloud-only",
+      "plays": 347,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "GOLD 💛💔💛 ~ (prod. Antropolita)",
+      "date": "2019-04-28",
+      "type": "SoundCloud-only",
+      "plays": 4362,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "CONTACT! ~(prod Born Hero) [NOW ON ALL PLATFORMS!]",
+      "date": "2019-04-07",
+      "type": "SoundCloud-only",
+      "plays": 10646,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "Face Down Freestyle ~(prod. WeDreaming)",
+      "date": "2019-03-27",
+      "type": "SoundCloud-only",
+      "plays": 1229,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "Gadgets(prod.Trap)",
+      "date": "2019-03-20",
+      "type": "SoundCloud-only",
+      "plays": 1509,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "POWER~! (brb)(prod. Apostle)",
+      "date": "2019-03-20",
+      "type": "SoundCloud-only",
+      "plays": 1815,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "Day Comes Freestyle ~(prod. Discent)",
+      "date": "2019-03-15",
+      "type": "SoundCloud-only",
+      "plays": 579,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "Stay Away Freestyle ~",
+      "date": "2019-03-03",
+      "type": "SoundCloud-only",
+      "plays": 719,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "[outro] Off Beat ft. Yung Vetta (prod. Addy)",
+      "date": "2019-01-28",
+      "type": "SoundCloud-only",
+      "plays": 935,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "STOP IT! ft. Yung Vetta (prod. okthxbb)",
+      "date": "2019-01-28",
+      "type": "SoundCloud-only",
+      "plays": 455,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "Hard To Keep ft. Yung Vetta (prod. Dead Spyro X Scarlet)",
+      "date": "2019-01-28",
+      "type": "SoundCloud-only",
+      "plays": 2415,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "Nothing ft. Yung Vetta(prod Xtravulous)",
+      "date": "2019-01-28",
+      "type": "SoundCloud-only",
+      "plays": 724,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "Ima Be There ft. Yung Vetta(prod. Why Loner)",
+      "date": "2019-01-21",
+      "type": "SoundCloud-only",
+      "plays": 1913,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "Soul Shines ~ [prod Josh the Samurai]",
+      "date": "2019-01-08",
+      "type": "SoundCloud-only",
+      "plays": 1150,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "Understand (prod 5AMTruly)",
+      "date": "2018-12-15",
+      "type": "SoundCloud-only",
+      "plays": 1169,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "Hurts Sometimes 2 (prod. FELD)",
+      "date": "2018-12-15",
+      "type": "SoundCloud-only",
+      "plays": 511,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "Mid (prod. FELD)",
+      "date": "2018-12-15",
+      "type": "SoundCloud-only",
+      "plays": 428,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "All Kinds Of Trips (prod. YungSkah) <ON ALL PLATFORMS NOW!>",
+      "date": "2018-12-15",
+      "type": "SoundCloud-only",
+      "plays": 5805,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "Time to Grow (prod. Ridicholas)",
+      "date": "2018-12-13",
+      "type": "SoundCloud-only",
+      "plays": 801,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "When the World Gets Colder 2 (prod. Yung Skah)",
+      "date": "2018-12-04",
+      "type": "SoundCloud-only",
+      "plays": 854,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "Hip On My Blade (ft. Yung Vetta) ~ [prod. Skel]",
+      "date": "2018-12-02",
+      "type": "SoundCloud-only",
+      "plays": 1368,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "XLR8 (prod. lil sora)",
+      "date": "2018-11-27",
+      "type": "SoundCloud-only",
+      "plays": 677,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "Input (prod. Luca Malaspina)",
+      "date": "2018-11-27",
+      "type": "SoundCloud-only",
+      "plays": 1226,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "Y u Gotta (prod. Yoos)",
+      "date": "2018-11-27",
+      "type": "SoundCloud-only",
+      "plays": 526,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "Throwing Signs (prod. HideousPittius)",
+      "date": "2018-11-27",
+      "type": "SoundCloud-only",
+      "plays": 241,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "Fuck Time 3 (outro) [Prod. DIX2]",
+      "date": "2018-11-08",
+      "type": "SoundCloud-only",
+      "plays": 697,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "I See U 2 (prod. Zed Miller)",
+      "date": "2018-11-08",
+      "type": "SoundCloud-only",
+      "plays": 1838,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "Far From Me (ft. Shola) ~ [prod. HideousPittius]",
+      "date": "2018-11-08",
+      "type": "SoundCloud-only",
+      "plays": 1443,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "Past Life (prod. Charlie Shuffler)",
+      "date": "2018-11-07",
+      "type": "SoundCloud-only",
+      "plays": 4494,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "Taught Me(prod. ℝ꒐꒯꒐꒝Ʉ꒒o̲ʊꍛ)",
+      "date": "2018-10-25",
+      "type": "SoundCloud-only",
+      "plays": 1001,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "Pills By My Lonely(prod. Discent)",
+      "date": "2018-10-17",
+      "type": "SoundCloud-only",
+      "plays": 2760,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "Inside My Dome (prod. Karattt)",
+      "date": "2018-10-06",
+      "type": "SoundCloud-only",
+      "plays": 2149,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "Autumn (prod. Tundra Beats)",
+      "date": "2018-09-06",
+      "type": "SoundCloud-only",
+      "plays": 1485,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "I Don't Rlly (prod. FELD)",
+      "date": "2018-08-27",
+      "type": "SoundCloud-only",
+      "plays": 587,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "Hit This (prod. Tyzen)",
+      "date": "2018-08-27",
+      "type": "SoundCloud-only",
+      "plays": 1167,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "Walk With Me w/ JAX (Prod. Rawman)",
+      "date": "2018-08-27",
+      "type": "SoundCloud-only",
+      "plays": 700,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "Just Wanted U to Shine (prod. Xtravulous x Tundra Beats)",
+      "date": "2018-08-26",
+      "type": "SoundCloud-only",
+      "plays": 3096,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "Share Ur Thoughts (prod. Mont Beats)",
+      "date": "2018-08-22",
+      "type": "SoundCloud-only",
+      "plays": 1728,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "DESTINY (ft. JAX & Max Ferrari) ~ [prod. louky]",
+      "date": "2018-08-20",
+      "type": "SoundCloud-only",
+      "plays": 2000,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "stay out of the dark (prod. Rizi)",
+      "date": "2018-08-13",
+      "type": "SoundCloud-only",
+      "plays": 1293,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "all i really need is a text from u (prod. benizjaminn)",
+      "date": "2018-08-04",
+      "type": "SoundCloud-only",
+      "plays": 1602,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "As Above [So Below] (prod. Xtravulous x Young Taylor)",
+      "date": "2018-07-20",
+      "type": "SoundCloud-only",
+      "plays": 757,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "Talk 2 U (prod. Whiz)",
+      "date": "2018-07-20",
+      "type": "SoundCloud-only",
+      "plays": 1090,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "Hurts Sometimes (prod. 8ROKEBOY)",
+      "date": "2018-07-20",
+      "type": "SoundCloud-only",
+      "plays": 781,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "When the World Gets Colder (prod. Brokn)",
+      "date": "2018-07-18",
+      "type": "SoundCloud-only",
+      "plays": 9535,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "Take Me Back to the City (prod. RainyBaby)",
+      "date": "2018-07-01",
+      "type": "SoundCloud-only",
+      "plays": 1282,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "Place For Me(prod. Born Hero)",
+      "date": "2018-06-14",
+      "type": "SoundCloud-only",
+      "plays": 1508,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "That's a Lie (prod. Xtravulous x WhyLoner)",
+      "date": "2018-06-08",
+      "type": "SoundCloud-only",
+      "plays": 1522,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "Mistakes Ft. JO$E DRIPP (prod. Tec)",
+      "date": "2018-04-28",
+      "type": "SoundCloud-only",
+      "plays": 1400,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "I See U (prod. Haruhi)",
+      "date": "2018-03-16",
+      "type": "SoundCloud-only",
+      "plays": 1008,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "Take Me (prod. Em Klebold)",
+      "date": "2018-02-04",
+      "type": "SoundCloud-only",
+      "plays": 30088,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "Lucid Boi (prod. $ T.N.C $)",
+      "date": "2018-01-08",
+      "type": "SoundCloud-only",
+      "plays": 918,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
+    },
+    {
+      "title": "Soul Shaking (prod. Fish Narc)",
+      "date": "2018-01-03",
+      "type": "SoundCloud-only",
+      "plays": 12944,
+      "links": [
+        {
+          "label": "SoundCloud",
+          "url": "https://soundcloud.com/asterdamaster"
+        }
+      ],
+      "source": "Official SoundCloud profile (asterdamaster) · full-catalog live-browser pass (read-only, no login) · verified 2026-10-11",
+      "confidence": "verified",
+      "note": "SoundCloud-vault track from the official catalog. Upload date and play count are a 2026-10-11 snapshot; play counts drift over time. Per-track URLs are not published by the capture (SoundCloud slugs not resolved); the profile link opens the catalog."
     }
   ],
   "platforms": [
@@ -611,8 +3295,24 @@
     {
       "name": "Spotify — Aster",
       "url": "https://open.spotify.com/artist/7y7xi5nDLdQX2zWpUItMoz",
-      "verified": false,
-      "note": "Possible profile — identity unverified; catalog not merged"
+      "verified": true,
+      "note": "Linked from the artist's own official SoundCloud bio (2026-10-11) — identity artist-linked; track-level catalog match still pending"
+    },
+    {
+      "name": "SoundCloud",
+      "url": "https://soundcloud.com/asterdamaster",
+      "verified": true,
+      "note": "Official profile — 185-track full catalog verified 2026-10-11; bio: “somelowlifes / Litemode Trilogy OTW”"
+    },
+    {
+      "name": "Instagram",
+      "verified": true,
+      "note": "Linked from the official SoundCloud bio (2026-10-11); direct URL not captured in the pass"
+    },
+    {
+      "name": "Official site",
+      "verified": true,
+      "note": "Listed as “astredamaster.com” in the official SoundCloud bio (2026-10-11); direct URL not captured in the pass"
     }
   ],
   "socials": [],
@@ -701,10 +3401,22 @@
     }
   ],
   "vault": {
-    "status": "SoundCloud profile URL not found via public web research (2026-10-11); 9 titles surfaced from third-party indexes of his uploads. Full track count unknown - requires in-platform access or the artist's own handle.",
-    "tracks_on_record": 9,
-    "confidence": "single-source",
-    "full_catalog": "unverified - the 9 titles below are a confirmed-minimum sample, not a complete catalog",
+    "status": "Full catalog verified: 185 tracks on the official SoundCloud profile (https://soundcloud.com/asterdamaster) — captured 2026-10-11 via a read-only live-browser pass. Play counts are a 2026-10-11 snapshot and drift over time.",
+    "profile_url": "https://soundcloud.com/asterdamaster",
+    "display_name": "ASTER DA MASTER",
+    "followers": 1562,
+    "location": "sf, United States",
+    "bio": "somelowlifes / Litemode Trilogy OTW",
+    "tracks_on_record": 185,
+    "confidence": "verified",
+    "full_catalog": "complete as of 2026-10-11 (profile reported 185 tracks; capture matched 185)",
     "research_date": "2026-10-11"
-  }
+  },
+  "upcoming": [
+    {
+      "title": "Litemode Trilogy",
+      "status": "teased in the official SoundCloud bio — not confirmed",
+      "source": "Official SoundCloud profile bio (asterdamaster), observed 2026-10-11"
+    }
+  ]
 }

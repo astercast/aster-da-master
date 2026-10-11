@@ -1,10 +1,10 @@
 {
   "name": "Aster da Master API",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "observed": "2026-10-11",
   "repository": "https://github.com/astercast/aster-da-master",
   "for_agents": "Start at api/v1/index.json. The artist record is the source of truth; data/artist.json feeds the site renderer.",
-  "provenance": "All artist facts verified against public platform pages (Apple Music, iHeart, Anghami, Shazam, Boomplay, SonicHits, album.link). research_status was PENDING; it is VERIFIED-2026-10-11 after the identity-resolution research landed (report 2026-10-11). The Spotify 'Aster' profile remains unverified and is NOT merged. v0.4.0 adds per-release provenance and a 9-track SoundCloud vault (single-sourced from third-party upload indexes; profile URL unresolved).",
+  "provenance": "All artist facts verified against public platform pages (Apple Music, iHeart, Anghami, Shazam, Boomplay, SonicHits, album.link, SoundCloud). v0.5.0: the official SoundCloud profile (asterdamaster) catalog is fully verified — 185 SoundCloud-only tracks (upload dates + play-count snapshot) alongside the 34 distributor releases (219 total). Spotify is artist-linked via the official SoundCloud bio; Instagram + official site likewise bio-linked. 'Litemode Trilogy' is teased in the bio, not confirmed.",
   "endpoints": {
     "index": "api/v1/index.json",
     "artist": "api/v1/artist.json"

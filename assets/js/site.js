@@ -67,11 +67,15 @@
           ? '<p class="src" title="Data provenance">' + esc(r.source) + "</p>"
           : "";
         var dateLine = r.date ? esc(r.date) : "date unknown";
+        var playsLine = (isVault && r.plays != null)
+          ? '<p class="plays">' + Number(r.plays).toLocaleString("en-US") +
+            ' plays <span class="chart-sub">(snapshot 2026-10-11)</span></p>'
+          : "";
         var typeLine = '<span class="type">' + esc(r.type || "Release") + "</span>" + conf;
         return '<article class="disco-card' + (isVault ? " is-vault" : "") + '" data-dtype="' + esc(r.type) + '">' +
           artTile(r) + typeLine +
           "<h3>" + esc(r.title) + "</h3>" +
-          '<p class="date">' + dateLine + "</p>" +
+          '<p class="date">' + dateLine + "</p>" + playsLine +
           '<div class="links">' + linkList(r.links) + "</div>" +
           srcLine +
           "</article>";
@@ -114,6 +118,16 @@
         }
       }
 
+      /* On the horizon (teased, unconfirmed) */
+      var horizon = document.getElementById("horizon");
+      var horizonList = document.getElementById("horizon-list");
+      if (horizon && horizonList && Array.isArray(d.upcoming) && d.upcoming.length) {
+        horizon.hidden = false;
+        horizonList.innerHTML = d.upcoming.map(function (u) {
+          return "<li><strong>" + esc(u.title) + "</strong> &mdash; " + esc(u.status) + "</li>";
+        }).join("");
+      }
+
       /* Eras */
       var erasEl = document.getElementById("eras-list");
       if (erasEl && Array.isArray(d.eras) && d.eras.length) {
@@ -139,11 +153,14 @@
         plats.innerHTML = d.platforms.map(function (p) {
           var label = esc(p.name);
           var note = "";
-          if (p.verified === false) {
+          if (p.verified === false || !p.url) {
             note = '<br><small class="plat-note">' + esc(p.note || "unverified") + "</small>";
           }
-          return '<a class="platform" href="' + esc(p.url) + '" target="_blank" rel="noopener">' +
-            "<span>" + label + note + '</span><span class="arrow" aria-hidden="true">→</span></a>';
+          var inner = "<span>" + label + note + "</span>" +
+            (p.url ? '<span class="arrow" aria-hidden="true">→</span>' : "");
+          return p.url
+            ? '<a class="platform" href="' + esc(p.url) + '" target="_blank" rel="noopener">' + inner + "</a>"
+            : '<span class="platform is-static" title="' + esc(p.note || "") + '">' + inner + "</span>";
         }).join("");
       }
 

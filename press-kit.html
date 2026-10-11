@@ -103,7 +103,7 @@
 
         document.getElementById("pk-stats").innerHTML = [
           li("<strong>" + dist.length + "</strong> distributor releases (" + albums + " albums/projects, " + singles + " singles)"),
-          li("<strong>" + vault.length + "</strong> SoundCloud-vault tracks (single-sourced from third-party upload indexes)"),
+          li("<strong>" + vault.length + "</strong> SoundCloud-vault tracks (official profile, upload dates + play-count snapshot)"),
           li("Active <strong>" + esc(span) + "</strong>"),
           li("Labels on record: <strong>WoT</strong> (2019), <strong>somelowlifes</strong> (2023\u20132024)")
         ].join("");
@@ -128,12 +128,12 @@
         }).join("") || li("None on record.");
 
         document.getElementById("pk-unknowns").innerHTML = [
-          li("<strong>Verified:</strong> 34-release distributor catalog from Apple Music profile 1466301103 (iTunes Search API primary metadata), platform URLs (live-checked 2026-10-11), collaborator credits."),
+          li("<strong>Verified:</strong> 34-release distributor catalog from Apple Music profile 1466301103 (iTunes Search API primary metadata), platform URLs (live-checked 2026-10-11), collaborator credits, and the full 185-track official SoundCloud catalog (live-browser pass 2026-10-11)."),
+          li("<strong>Artist-linked:</strong> Spotify profile \u2014 linked from the artist's own official SoundCloud bio (track-level catalog match still pending)."),
+          li("<strong>Teased, unconfirmed:</strong> \u201cLitemode Trilogy\u201d \u2014 named in the official SoundCloud bio; no release confirmed."),
           li("<strong>Unknown:</strong> real name, age, hometown \u2014 never invented here."),
           li("<strong>Unknown:</strong> no interviews, official bios, or press features found."),
-          li("<strong>Unknown:</strong> no verified social-media handles found."),
-          li("<strong>Unverified:</strong> Spotify artist profile \u2014 possible match, identity not confirmed; catalog not merged."),
-          li("<strong>Unresolved:</strong> SoundCloud profile URL \u2014 9 vault tracks on record from third-party indexes; full catalog size unknown."),
+          li("<strong>Unknown:</strong> no verified social-media handles found (Instagram + official site are bio-linked from SoundCloud; direct URLs not captured)."),
           li("<strong>None listed:</strong> booking or management contact.")
         ].join("");
 

@@ -34,13 +34,20 @@ line on every discography card and in each release page's Provenance block.
 
 ## SoundCloud vault
 
-`type: "SoundCloud-only"` marks tracks surfaced from third-party indexes of
-his SoundCloud uploads, not distributor metadata. The profile URL itself was
-not found via public web research (2026-10-11); every vault entry is
-`confidence: "single-source"`, `date: null` (unknown), with upload dates and
-play counts explicitly unknown. The top-level `vault` object states this
-status and research date. Vault entries never carry lyrics — titles only.
-Research notes: `~/workspace/research_notes/aster-soundcloud-20261011/report.md`.
+`type: "SoundCloud-only"` marks tracks from the official SoundCloud profile
+(https://soundcloud.com/asterdamaster), not distributor metadata. The full
+catalog was verified 2026-10-11 via a read-only live-browser pass: **185
+tracks** (2018:39 / 2019:36 / 2020:15 / 2021:13 / 2022:12 / 2023:26 /
+2024:20 / 2025:17 / 2026:7), each with title, upload date, and a play-count
+snapshot (play counts drift over time; the capture date is stated on every
+page). Per-track SoundCloud URLs are not published (slugs not resolved by the
+capture); every vault entry links the official profile. The top-level
+`vault` object carries the profile facts (display name, followers, location,
+bio) and capture date. The bio line "somelowlifes / Litemode Trilogy OTW" is
+recorded under top-level `upcoming` as teased-not-confirmed. Vault entries
+never carry lyrics — titles only.
+Research notes: `~/workspace/research_notes/aster-soundcloud-20261011/report.md`
+and `tracks.json` (the captured catalog).
 
 ## Release pages & press kit
 

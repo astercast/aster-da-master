@@ -148,6 +148,10 @@
 }
 .disco-card h3 { font-size: 1.25rem; margin: var(--space-2) 0; letter-spacing: 0.03em; }
 .disco-card .date { color: var(--muted); font-size: 0.85rem; font-family: var(--font-mono); letter-spacing: 0.06em; }
+.disco-card .plays { color: var(--gold); font-size: 0.8rem; font-family: var(--font-mono); letter-spacing: 0.06em; margin: var(--space-1) 0 0; }
+.disco-card .plays .chart-sub { color: var(--muted); font-size: 0.7rem; }
+.release-list .rl-plays { font-family: var(--font-mono); font-size: 0.72rem; color: var(--gold); margin-left: var(--space-3); white-space: nowrap; }
+.chart-sub { color: var(--muted); font-size: 0.85em; }
 .disco-card .links { display: flex; gap: var(--space-3); margin-top: var(--space-4); }
 .disco-card .links a { font-family: var(--font-mono); font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; }
 .disco-art {
@@ -255,7 +259,14 @@
   transition: border-color 0.2s var(--ease), box-shadow 0.2s var(--ease), transform 0.2s var(--ease);
 }
 .platform:hover { text-decoration: none; border-color: var(--neon); box-shadow: var(--glow-neon); transform: translateY(-2px); }
+.platform.is-static { cursor: default; border-style: dashed; }
+.platform.is-static:hover { transform: none; box-shadow: none; }
 .platform .arrow { color: var(--neon); }
+.platform .plat-note { text-transform: none; letter-spacing: 0.02em; color: var(--muted); font-size: 0.72rem; }
+.horizon { margin-top: var(--space-6); border-top: 1px solid var(--line-soft); padding-top: var(--space-5); }
+.horizon ul { list-style: none; padding: 0; margin: var(--space-3) 0 0; }
+.horizon li { font-family: var(--font-mono); font-size: 0.85rem; color: var(--ink-dim); padding: var(--space-2) 0; }
+.horizon li strong { color: var(--gold); letter-spacing: 0.08em; }
 .platform .plat-note { color: var(--gold); font-size: 0.65rem; letter-spacing: 0.1em; }
 
 /* The circle — collaborators */
