@@ -1,5 +1,5 @@
 {
-  "version": "0.10.0",
+  "version": "0.12.0",
   "generated": "2026-10-11",
   "plays_snapshot": "2026-10-11",
   "method": "Vault uploads clustered by date: a new session starts when the gap between uploads exceeds 7 days. Computed from data/artist.json; every session is a data fact.",

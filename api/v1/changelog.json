@@ -1,8 +1,14 @@
 {
   "generated": "2026-10-11",
   "method": "Parsed from `git log main`: every commit becomes an entry. The site documenting its own becoming.",
-  "entry_count": 17,
+  "entry_count": 18,
   "entries": [
+    {
+      "hash": "446e13b",
+      "date": "2026-10-11",
+      "message": "Design wave: UNDERGROUND TRANSMISSION — full visual system rebuild",
+      "files_changed": 307
+    },
     {
       "hash": "74ed6ee",
       "date": "2026-10-11",

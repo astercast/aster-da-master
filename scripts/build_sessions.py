@@ -34,7 +34,7 @@ API_ARTIST = ROOT / "api" / "v1" / "artist.json"
 SCHEMA_OUT = ROOT / "api" / "v1" / "schema" / "sessions.json"
 PAGE_OUT = ROOT / "sessions.html"
 
-NEW_VERSION = "0.10.0"
+NEW_VERSION = "0.12.0"
 SNAPSHOT = "2026-10-11"
 GAP_DAYS = 7
 

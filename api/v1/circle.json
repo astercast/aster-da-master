@@ -180,7 +180,25 @@
     "plays": 4587,
     "type": "SoundCloud-only"
    }
-  ]
+  ],
+  "verified_notes": {
+   "research_pass": "2026-10-11",
+   "facts": [
+    "Named by Pitchfork's Kieran Press-Reynolds in \"A Deeply Incomplete Canon of Hyperpop-Digicore\" - an independent digicore/hyperpop internet artist.",
+    "Released the collab tape 'Persona' with mayh3mp on Cult Love Sound Tapes (2022): 5 tracks, limited cassette run of 100.",
+    "The two Aster Da Master tracks carrying a capoxxo title credit are 'candy' (2019-10-04, prod. razorwrist) and 'getting colder' (2019-12-22, prod. pvscale x asa41)."
+   ],
+   "sources": [
+    {
+     "label": "The Pitchfork digicore canon (via Wikipedia: Digicore)",
+     "url": "https://en.wikipedia.org/wiki/Digicore"
+    },
+    {
+     "label": "'Persona' - Cult Love Sound Tapes (Bandcamp)",
+     "url": "https://cultlovesoundtapes.bandcamp.com/album/persona"
+    }
+   ]
+  }
  },
  "griimxo": {
   "name": "Griimxo",
@@ -405,7 +423,24 @@
     "plays": 7786,
     "type": "SoundCloud-only"
    }
-  ]
+  ],
+  "verified_notes": {
+   "research_pass": "2026-10-11",
+   "facts": [
+    "Produced 'fly like me' (2019-12-22) and co-produced 'getting colder' with asa41 (2019-12-22), per title credits.",
+    "Also produces for capoxxo ('angels watch me'; 'Summer Days [prod. pvscale]' for spiff x capoxxo), lil koi, lil yu ('i miss you (feat. pvscale)'), and kevinhilfiger/kidtrashpop ('buy It !') - per public tracklistings."
+   ],
+   "sources": [
+    {
+     "label": "pvscale catalog mirror (mp3.pm)",
+     "url": "https://s-pvscale.mp3.pm/"
+    },
+    {
+     "label": "Aster Da Master - title credits (sonichits)",
+     "url": "https://sonichits.com/artist/Aster_Da_Master"
+    }
+   ]
+  }
  },
  "shola": {
   "name": "Shola",

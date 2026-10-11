@@ -1,0 +1,60 @@
+# ASTER DA MASTER — artist archive (llms-full.txt)
+
+Private research archive for the underground artist **Aster da Master** (digicore/hyperpop orbit, scene tag "somelowlifes"). Static HTML + JSON API, all generated from `data/artist.json` by `scripts/build_*.py`. Data version: 0.12.0.
+
+## The catalog (219 transmissions)
+
+- **34 distributor releases** — 9 albums, 25 singles; verified via iTunes Search API primary metadata (Apple's own records), pulled 2026-10-11. Notable: *Master Key* (2019-12-23, label WoT), *Cast It:, Pt. 1* (2021), *Cast It:, Pt. 2* (2022), single "Reachhh" (2024-04-08, label "somelowlifes"), 2026 singles "The Night Ends Yeaaa" (Mar 25), "Writing Books" (May 2), "9 Trips" (May 3), "Living With The Big Shots" (May 5).
+- **185 SoundCloud-only tracks** — read-only capture of soundcloud.com/asterdamaster (profile ID 259877060, 1,562 followers), 2026-10-11. Play counts are a snapshot and drift daily; every surface says so.
+- Track-level research notes: earliest indexed track "Protections" (Dec 23, 2019, label "WoT", album *Master Key*, genre Hip-Hop/Rap); feature "ThtUDied (feat. Falinee & Aster Da Master)" on Jezzyman's *Internet Plug*.
+
+## The circle (21 collaborators) + scene figures
+
+21 title-credited collaborators, one page each in `circle/`: shared tracks (dates/plays, linked to release pages), shared-plays totals, years active, era breakdown. Credits parsed from w//ft./feat. fragments — as credited, verbatim; **producers excluded by rule**.
+
+Wave 12 research enrichment (2026-10-11, public sources only, no lyrics, no invented biography):
+- **capoxxo** (`circle/capoxxo.html`): named in Pitchfork's "A Deeply Incomplete Canon of Hyperpop-Digicore" (Kieran Press-Reynolds); collab tape *Persona* w/ mayh3mp (Cult Love Sound Tapes, 2022; 5 tracks, cassette run of 100); Aster Da Master tracks "candy" (2019-10-04, prod. razorwrist) and "getting colder" (2019-12-22, prod. pvscale x asa41).
+- **pvscale** (`circle/pvscale.html`): produced "fly like me"; co-produced "getting colder" w/ asa41; also produces for capoxxo, lil koi, lil yu ("i miss you (feat. pvscale)"), kevinhilfiger/kidtrashpop ("buy It !").
+- **Fish Narc** (`circle/fish-narc.html`, "Beyond the circle" scene figure — outside the 21-collaborator count): b. 1992, Seattle/Olympia; Thraxxhouse and GothBoiClique member; produced Lil Peep's *Goth Angel Sinner* LP; worked with Wicca Phase Springs Eternal, Lil Tracy, Horse Head, Cold Hart (live guitar instead of samples); solo LPs *WiLDFiRE* (2020), *Camouflage* (2022), *fruiting body* [KLP295] (2023), *frog song* (2025, K Records). Producer credit on "Pavement" (2019-12-30) and "Soul Shaking" (2018-01-03).
+
+## Scene context + unknowns (method.html)
+
+- "somelowlifes" is the artist's own bio tag and the Shazam-listed label on "Reachhh" (2024) — the imprint's most solid public anchor.
+- Best SomeLowLifes network evidence: May 15, 2020 Internet Phantoms Network podcast episode billed as "joined by 2 members of SomeLowLifes" (members unnamed in metadata); playlist links Lil' Spursy, DirtyDoves/DoveShxt, Offline HP, Aster Da Master, producer Lil' Flower ("InternetWouldBlush"). **Evidence, not a roster.**
+- Digicore background: heavy autotune, layered melodies, nightcore influence, pandemic-era Discord/bedroom culture; Bladee as central reference; Jane Remover "the face of digicore" (The Fader); 2024–25 evolution toward rage music.
+- **The unknowns register (flagged, not filled):** SomeLowLifes member roster; "litemode / nitemode" meaning (words appear in titles — see codex "The Modes" — no source defines them); public profiles for Max Ferrari, Yung Vetta, Lil Yu, JAX, YungSkah, AWFL, shinju, odece, lil biscuit, wetgropes, Born Hero; razorwrist and Lil' Flower verified only at title-credit level; no press/interviews/features found.
+- Do-not-confuse: "The Lowlifes" (unrelated Last.fm disambiguation collective), LOWLIFE (Essex trio, Hellcat Records), Low Life (Australian punk, Goner Records).
+
+## Pages
+
+Home `index.html` (discography) · `releases/` (219 pages + index) · `years/` (2018–2026 + index) · `circle/` (21 + 1 scene figure) · `codex/` (16 vocabulary families) · `timeline.html` · `network.html` · `decoder.html` (transmission decoder) · `api-playground.html` · `method.html` (methodology, scene context, unknowns) · `trilogy.html` (Litemode Trilogy watch) · `sessions.html` + `sessions/` (61 upload sessions, 10 deep-dives) · `changelog.html` · `glance.html` · `press-kit.html`.
+
+Design: "UNDERGROUND TRANSMISSION" — semantic HTML, ARIA landmarks, keyboard-accessible, `prefers-reduced-motion` respected, mobile-first.
+
+## API (api/v1/)
+
+| endpoint | file |
+|---|---|
+| artist | api/v1/artist.json |
+| changelog | api/v1/changelog.json |
+| circle | api/v1/circle.json |
+| codex | api/v1/codex.json |
+| first-last | api/v1/first-last.json |
+| index (registry + version) | api/v1/index.json |
+| milestone-watch | api/v1/milestone-watch.json |
+| milestones | api/v1/milestones.json |
+| on-this-day | api/v1/on-this-day.json |
+| release-slugs | api/v1/release-slugs.json |
+| scene-figures | api/v1/scene-figures.json |
+| sessions | api/v1/sessions.json |
+| years | api/v1/years.json |
+
+`data/artist.json` sections: version, observed, research_status, artist, collaborators, featured_release, discography, platforms, socials, booking, eras, vault, upcoming. Enriched circle entries carry `verified_notes` (research_pass, facts, sources). Scene figures carry `kind`, `standing`, tracks, facts, sources.
+
+## Generators
+
+`scripts/build_*.py` — dependency order: releases → years → circle → codex → search_index → milestones → milestone_watch → sessions → session_deepdives → glance → firstlast → changelog. Each reads `data/artist.json`; version-writing scripts set `version` (0.12.0) and mirror to `api/v1/artist.json` / `api/v1/index.json`. Never hand-edit generated pages; edit the script or data and re-run.
+
+## Ops
+
+Repo: private GitHub-only (`astercast/aster-da-master`), **no Vercel**. Live ops documented in `GO_LIVE.md`: weekly SoundCloud play-count refresh (`scripts/refresh/refresh.sh`, 4-tier pipeline — client_id extraction from public web-app JS, snapshot overlay, human-reviewed merge). Push via `python3 ~/workspace/skills/github/bin/gh-push.py ~/workspace/aster-da-master`; the connector credential lacks the `workflow` scope — `.github/workflows/*` files must be added via the GitHub web UI.

@@ -1,0 +1,22 @@
+# ASTER DA MASTER — artist archive (llms.txt)
+
+Private research archive for the underground artist **Aster da Master** (digicore/hyperpop orbit, scene tag "somelowlifes"). Static site + JSON API.
+
+**Catalog:** 219 transmissions total — 34 distributor releases (9 albums, 25 singles, verified via Apple Music/iTunes Search API) + 185 SoundCloud-only tracks (read-only capture 2026-10-11, play counts are a snapshot).
+**Collaborators:** 21 title-credited collaborators, each with a `circle/` page. Producers are excluded by the circle's title-credit rule; documented producer/scene figures live under `circle/` "Beyond the circle" (e.g. `circle/fish-narc.html`).
+**Codex:** 16 vocabulary families counted across titles (`codex/`).
+**Method:** titles and metadata only — no lyrics ever, no invented biography. Unknowns are listed as unknowns (`method.html` → "The unknowns register").
+
+**API:** all data at `api/v1/*.json` — `artist.json`, `circle.json`, `scene-figures.json`, `codex.json`, `milestones.json`, `milestone-watch.json`, `index.json` (endpoint registry, `version` field). Data version: 0.12.0.
+
+**Key research facts (2026-10-11 pass, sources cited on-site):**
+- Earliest indexed track "Protections" (Dec 23, 2019, label "WoT", on album *Master Key*); albums *Cast It:, Pt. 1* (2021), *Cast It:, Pt. 2* (2022); single "Reachhh" (Apr 8, 2024, label "somelowlifes"); 2026 singles "The Night Ends Yeaaa" (Mar), "Writing Books" / "9 Trips" / "Living With The Big Shots" (May).
+- capoxxo: named in Pitchfork's "A Deeply Incomplete Canon of Hyperpop-Digicore"; collab tape *Persona* w/ mayh3mp (Cult Love Sound Tapes, 2022); tracks "candy", "getting colder".
+- pvscale: produced "fly like me"; co-produced "getting colder" w/ asa41; also produces for capoxxo, lil koi, lil yu.
+- Fish Narc (b. 1992, Seattle/Olympia; GothBoiClique; produced Lil Peep's *Goth Angel Sinner*; *frog song* LP 2025, K Records) — producer credit on "Pavement" and "Soul Shaking".
+- Best SomeLowLifes network evidence: May 15, 2020 Internet Phantoms podcast episode (2 unnamed members; playlist links Lil' Spursy, DirtyDoves, Offline HP, Aster Da Master, producer Lil' Flower) — evidence, not roster.
+- Could not be verified: SomeLowLifes member roster; "litemode / nitemode" meaning; public profiles for Max Ferrari, Yung Vetta, Lil Yu, JAX, YungSkah, AWFL, shinju, odece, lil biscuit, wetgropes, Born Hero.
+
+**Generators:** `scripts/build_*.py` rebuild all derived pages from `data/artist.json`; dependency order: releases → years → circle → codex → search_index → milestones → milestone_watch → sessions → session_deepdives → glance → firstlast → changelog. Re-running sets data version in all JSON.
+
+Repo: private GitHub-only (astercast/aster-da-master), no Vercel. Deploy: any static host serving the repo root; weekly SoundCloud play-count refresh pipeline documented in GO_LIVE.md.

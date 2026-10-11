@@ -13,8 +13,12 @@ parsed from w//ft./feat. fragments in titles - as credited, verbatim,
 nothing inferred. Producers are excluded (same rule as network.html).
 
 Titles only - no lyrics anywhere. Idempotent: regenerates cleanly.
-Re-run after any discography change. Also bumps data version to 0.8.0
+Re-run after any discography change. Also bumps data version to 0.12.0
 and mirrors data/artist.json to api/v1/artist.json.
+
+Wave 12 adds verified research notes to capoxxo/pvscale pages and a
+"scene figures" section (Fish Narc) - public sources only, no lyrics,
+no invented biography.
 """
 import json
 import re
@@ -31,7 +35,7 @@ from build_years import parse_collabs, era_for_year  # noqa: E402  (same parser 
 DATA = json.loads((ROOT / "data" / "artist.json").read_text())
 OUT = ROOT / "circle"
 API = ROOT / "api" / "v1"
-NEW_VERSION = "0.8.0"
+NEW_VERSION = "0.12.0"
 
 NAV = """<nav class="site-nav" aria-label="Primary">
         <a href="../#discography">Discography</a>
@@ -132,6 +136,108 @@ def fmt(n):
     return f"{n:,}"
 
 
+# --- Wave 12 (2026-10-11) research enrichment ---------------------------------
+# Verified public findings ONLY. Every fact below is backed by a public source;
+# nothing is invented (no real names, ages beyond what's public, personal
+# history), and no lyrics appear anywhere. Keyed by collaborator key
+# (lowercased display name as stored in `collabs`).
+ENRICH = {
+    "capoxxo": {
+        "facts": [
+            "Named by Pitchfork's Kieran Press-Reynolds in "
+            '"A Deeply Incomplete Canon of Hyperpop-Digicore" - '
+            "an independent digicore/hyperpop internet artist.",
+            "Released the collab tape 'Persona' with mayh3mp on "
+            "Cult Love Sound Tapes (2022): 5 tracks, limited cassette run of 100.",
+            "The two Aster Da Master tracks carrying a capoxxo title credit are "
+            "'candy' (2019-10-04, prod. razorwrist) and 'getting colder' "
+            "(2019-12-22, prod. pvscale x asa41).",
+        ],
+        "sources": [
+            ("The Pitchfork digicore canon (via Wikipedia: Digicore)",
+             "https://en.wikipedia.org/wiki/Digicore"),
+            ("'Persona' - Cult Love Sound Tapes (Bandcamp)",
+             "https://cultlovesoundtapes.bandcamp.com/album/persona"),
+        ],
+    },
+    "pvscale": {
+        "facts": [
+            "Produced 'fly like me' (2019-12-22) and co-produced "
+            "'getting colder' with asa41 (2019-12-22), per title credits.",
+            "Also produces for capoxxo ('angels watch me'; "
+            "'Summer Days [prod. pvscale]' for spiff x capoxxo), lil koi, "
+            "lil yu ('i miss you (feat. pvscale)'), and "
+            "kevinhilfiger/kidtrashpop ('buy It !') - per public tracklistings.",
+        ],
+        "sources": [
+            ("pvscale catalog mirror (mp3.pm)",
+             "https://s-pvscale.mp3.pm/"),
+            ("Aster Da Master - title credits (sonichits)",
+             "https://sonichits.com/artist/Aster_Da_Master"),
+        ],
+    },
+}
+
+# Producers and scene figures are excluded from the 21-collaborator circle by
+# the title-credit rule ("producers excluded"), but wave 12 keeps the most
+# documented one visible with the same evidence standard, clearly labeled.
+SCENE_FIGURES = {
+    "fish-narc": {
+        "name": "Fish Narc",
+        "kind": "scene figure \u2014 producer credit",
+        "standing": (
+            "Fish Narc enters this archive through producer credits on two "
+            "SoundCloud tracks, not through title features. He is not one of "
+            "the 21 title-credited collaborators and stands outside the "
+            "circle count. The circle's title-credit rule is unchanged."
+        ),
+        "tracks": [
+            {"title": "Pavement (prod. Fish Narc)", "date": "2019-12-30",
+             "plays": 733, "type": "SoundCloud-only",
+             "page": "pavement-prod-fish-narc.html"},
+            {"title": "Soul Shaking (prod. Fish Narc)", "date": "2018-01-03",
+             "plays": 12944, "type": "SoundCloud-only",
+             "page": "soul-shaking-prod-fish-narc.html"},
+        ],
+        "facts": [
+            "Born 1992; Seattle/Olympia, Washington.",
+            "Member of Thraxxhouse and GothBoiClique.",
+            "Produced Lil Peep's 'Goth Angel Sinner' LP.",
+            "Worked with Wicca Phase Springs Eternal, Lil Tracy, Horse Head, "
+            "and Cold Hart; production noted for live guitar instead of samples.",
+            "Solo LPs: 'WiLDFiRE' (2020), 'Camouflage' (2022), "
+            "'fruiting body' [KLP295] (2023), 'frog song' (2025, K Records).",
+        ],
+        "sources": [
+            ("Fish Narc - Wikipedia", "https://en.wikipedia.org/wiki/Fish_Narc"),
+            ("'frog song' - Darkside Records",
+             "https://shop.darksiderecords.com/en-jp/products/fish-narc-frog-song"),
+        ],
+    },
+}
+
+
+def render_sources(sources):
+    links = " &middot; ".join(
+        f'<a href="{escape(u)}" target="_blank" rel="noopener">{escape(label)}</a>'
+        for label, u in sources
+    )
+    return f'<p class="chart-sub">Sources: {links}</p>'
+
+
+def render_verified_section(info):
+    facts = "".join(f"<li>{escape(f)}</li>" for f in info["facts"])
+    return f"""
+      <section class="section" aria-labelledby="cv-h">
+        <span class="kicker"><span class="numeral">&#10022;</span>The scene record</span>
+        <h3 id="cv-h">Verified beyond the titles</h3>
+        <p class="chart-sub">Research pass 2026-10-11 &mdash; public sources only, no biographical invention, no lyrics.</p>
+        <ul class="fact-list">{facts}</ul>
+        {render_sources(info["sources"])}
+      </section>
+"""
+
+
 def years_active(tracks):
     yrs = sorted({t["date"][:4] for t in tracks if t.get("date")})
     if not yrs:
@@ -139,8 +245,9 @@ def years_active(tracks):
     return yrs[0] if len(yrs) == 1 else f"{yrs[0]}–{yrs[-1]}"
 
 
-def collab_page(name, slug, tracks, slug_of, eras, prev_s, next_s):
+def collab_page(name, slug, tracks, slug_of, eras, prev_s, next_s, ckey=None):
     total_plays = sum(t.get("plays") or 0 for t in tracks)
+    enrich_html = render_verified_section(ENRICH[ckey]) if ckey in ENRICH else ""
     era_counts = {}
     for t in tracks:
         y = (t.get("date") or "")[:4]
@@ -197,7 +304,7 @@ def collab_page(name, slug, tracks, slug_of, eras, prev_s, next_s):
         <h3 id="ct-h">Every shared transmission, in order</h3>
         <ol class="year-list">{rows}</ol>
       </section>
-
+{enrich_html}
       <nav class="year-pager" aria-label="Collaborator navigation">
         {prev_link}
         <a class="btn btn-sm" href="./">The full circle</a>
@@ -219,6 +326,15 @@ def index_page(entries):
         f"</a>"
         for e in entries
     )
+    sf_cards = "".join(
+        f'<a class="year-card" href="{s}.html">'
+        f'<span class="year-card-y">{escape(info["name"])}</span>'
+        f'<span class="year-card-n">{len(info["tracks"])} producer credits'
+        f" &middot; {fmt(sum(t.get('plays') or 0 for t in info['tracks']))} plays</span>"
+        f'<span class="year-card-e">{escape(info["kind"])}</span>'
+        f"</a>"
+        for s, info in SCENE_FIGURES.items()
+    )
     body = f"""
       <nav class="crumbs" aria-label="Breadcrumb">
         <a href="../">Home</a> / <span aria-current="page">Circle</span>
@@ -226,13 +342,73 @@ def index_page(entries):
       <section class="section" aria-labelledby="ci-h">
         <span class="kicker"><span class="numeral">&#10022;</span>The circle</span>
         <h2 id="ci-h">Everyone he summoned, one page each</h2>
-        <p>Every collaborator credited in a title across 219 transmissions. Counts and plays are data, not editorial.</p>
+        <p>Every collaborator credited in a title across 219 transmissions. Counts and plays are data, not editorial. Producers are excluded by rule &mdash; the documented scene figures below are kept separately.</p>
         <div class="year-grid">{cards}</div>
+      </section>
+
+      <section class="section" aria-labelledby="ci-beyond">
+        <span class="kicker"><span class="numeral">&#10022;</span>Beyond the circle</span>
+        <h2 id="ci-beyond">Scene figures, not collaborators</h2>
+        <p>Producer and scene credits the title-credit rule excludes &mdash; kept visible with the same evidence standard, and outside the collaborator count.</p>
+        <div class="year-grid">{sf_cards}</div>
       </section>
 """
     return HEAD.format(
         title="The circle — collaborator archive",
         desc="Every Aster da Master collaborator: shared tracks, plays, years active.",
+    ) + body + FOOT
+
+
+def scene_figure_page(slug, info):
+    tracks = info["tracks"]
+    total_plays = sum(t.get("plays") or 0 for t in tracks)
+    yrs = sorted({t["date"][:4] for t in tracks if t.get("date")})
+    span = yrs[0] if len(yrs) == 1 else f"{yrs[0]}\u2013{yrs[-1]}"
+    rows = "".join(
+        f'<li><a href="../releases/{t["page"]}">{escape(t["title"])}</a>'
+        f' <span class="dim">{escape(t["date"])} &middot; {fmt(t["plays"])} plays'
+        f" &middot; {escape(t['type'])}</span></li>"
+        for t in sorted(tracks, key=lambda t: t["date"])
+    )
+    facts = "".join(f"<li>{escape(f)}</li>" for f in info["facts"])
+    body = f"""
+      <nav class="crumbs" aria-label="Breadcrumb">
+        <a href="../">Home</a> / <a href="../network.html">Network</a>
+        <a href="../decoder.html">Decoder</a>
+        <a href="../api-playground.html">API</a> / <a href="./">Circle</a> / <span aria-current="page">{escape(info["name"])}</span>
+      </nav>
+      <section class="section" aria-labelledby="cc-h">
+        <span class="kicker"><span class="numeral">&#10022;</span>{escape(info["kind"])}</span>
+        <h2 id="cc-h">{escape(info["name"])}</h2>
+        <div class="stat-grid">
+          <div class="stat"><div class="stat-value">{len(tracks)}</div><div class="stat-label">Producer-credited tracks</div></div>
+          <div class="stat"><div class="stat-value">{fmt(total_plays)}</div><div class="stat-label">Shared plays</div></div>
+          <div class="stat"><div class="stat-value">{escape(span)}</div><div class="stat-label">Years active</div></div>
+        </div>
+        <p class="chart-sub">{escape(info["standing"])}</p>
+      </section>
+
+      <section class="section" aria-labelledby="ct-h">
+        <span class="kicker"><span class="numeral">&#10022;</span>The shared record</span>
+        <h3 id="ct-h">Producer credits in the archive, in order</h3>
+        <ol class="year-list">{rows}</ol>
+      </section>
+
+      <section class="section" aria-labelledby="cv-h">
+        <span class="kicker"><span class="numeral">&#10022;</span>The scene record</span>
+        <h3 id="cv-h">Verified beyond the titles</h3>
+        <p class="chart-sub">Research pass 2026-10-11 &mdash; public sources only, no biographical invention, no lyrics.</p>
+        <ul class="fact-list">{facts}</ul>
+        {render_sources(info["sources"])}
+      </section>
+
+      <nav class="year-pager" aria-label="Scene figure navigation">
+        <a class="btn btn-sm" href="./">The full circle</a>
+      </nav>
+"""
+    return HEAD.format(
+        title=f"{info['name']} \u2014 {info['kind']}",
+        desc=f"{info['name']} in the Aster da Master archive: {len(tracks)} producer credits, {fmt(total_plays)} plays.",
     ) + body + FOOT
 
 
@@ -292,9 +468,13 @@ def main():
         prev_s = entries[i - 1]["slug"] if i > 0 else None
         next_s = entries[i + 1]["slug"] if i < len(entries) - 1 else None
         (OUT / f'{e["slug"]}.html').write_text(
-            collab_page(e["name"], e["slug"], e["tracks"], slug_of, eras, prev_s, next_s),
+            collab_page(e["name"], e["slug"], e["tracks"], slug_of, eras, prev_s, next_s,
+                        ckey=e["key"]),
             encoding="utf-8",
         )
+
+    for s, info in SCENE_FIGURES.items():
+        (OUT / f"{s}.html").write_text(scene_figure_page(s, info), encoding="utf-8")
 
     (OUT / "index.html").write_text(index_page(entries), encoding="utf-8")
 
@@ -307,11 +487,34 @@ def main():
                 {"title": t["title"], "date": t.get("date"), "plays": t.get("plays"), "type": t["type"]}
                 for t in sorted(e["tracks"], key=lambda t: t.get("date") or "")
             ],
+            **({"verified_notes": {
+                "research_pass": "2026-10-11",
+                "facts": ENRICH[e["key"]]["facts"],
+                "sources": [
+                    {"label": label, "url": url}
+                    for label, url in ENRICH[e["key"]]["sources"]
+                ],
+            }} if e["key"] in ENRICH else {}),
         }
         for e in entries
     }
     (API / "circle.json").write_text(
         json.dumps(api_circle, indent=1, ensure_ascii=False) + "\n", encoding="utf-8"
+    )
+
+    api_figures = {
+        s: {
+            "name": info["name"], "kind": info["kind"], "page": f"circle/{s}.html",
+            "standing": info["standing"],
+            "research_pass": "2026-10-11",
+            "tracks": info["tracks"],
+            "facts": info["facts"],
+            "sources": [{"label": label, "url": url} for label, url in info["sources"]],
+        }
+        for s, info in SCENE_FIGURES.items()
+    }
+    (API / "scene-figures.json").write_text(
+        json.dumps(api_figures, indent=1, ensure_ascii=False) + "\n", encoding="utf-8"
     )
 
     # Version bump + mirror (same convention as build_codex.py).
@@ -325,10 +528,11 @@ def main():
     eps = idx.setdefault("endpoints", {})
     if isinstance(eps, dict):
         eps["circle"] = "api/v1/circle.json"
+        eps["scene-figures"] = "api/v1/scene-figures.json"
     (API / "index.json").write_text(
         json.dumps(idx, indent=1, ensure_ascii=False) + "\n", encoding="utf-8"
     )
-    print(f"circle: {len(entries)} pages + index + api/v1/circle.json; version -> {NEW_VERSION}")
+    print(f"circle: {len(entries)} pages + {len(SCENE_FIGURES)} scene figures + index + api/v1/circle.json + api/v1/scene-figures.json; version -> {NEW_VERSION}")
 
 
 if __name__ == "__main__":

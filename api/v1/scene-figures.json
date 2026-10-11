@@ -1,0 +1,42 @@
+{
+ "fish-narc": {
+  "name": "Fish Narc",
+  "kind": "scene figure — producer credit",
+  "page": "circle/fish-narc.html",
+  "standing": "Fish Narc enters this archive through producer credits on two SoundCloud tracks, not through title features. He is not one of the 21 title-credited collaborators and stands outside the circle count. The circle's title-credit rule is unchanged.",
+  "research_pass": "2026-10-11",
+  "tracks": [
+   {
+    "title": "Pavement (prod. Fish Narc)",
+    "date": "2019-12-30",
+    "plays": 733,
+    "type": "SoundCloud-only",
+    "page": "pavement-prod-fish-narc.html"
+   },
+   {
+    "title": "Soul Shaking (prod. Fish Narc)",
+    "date": "2018-01-03",
+    "plays": 12944,
+    "type": "SoundCloud-only",
+    "page": "soul-shaking-prod-fish-narc.html"
+   }
+  ],
+  "facts": [
+   "Born 1992; Seattle/Olympia, Washington.",
+   "Member of Thraxxhouse and GothBoiClique.",
+   "Produced Lil Peep's 'Goth Angel Sinner' LP.",
+   "Worked with Wicca Phase Springs Eternal, Lil Tracy, Horse Head, and Cold Hart; production noted for live guitar instead of samples.",
+   "Solo LPs: 'WiLDFiRE' (2020), 'Camouflage' (2022), 'fruiting body' [KLP295] (2023), 'frog song' (2025, K Records)."
+  ],
+  "sources": [
+   {
+    "label": "Fish Narc - Wikipedia",
+    "url": "https://en.wikipedia.org/wiki/Fish_Narc"
+   },
+   {
+    "label": "'frog song' - Darkside Records",
+    "url": "https://shop.darksiderecords.com/en-jp/products/fish-narc-frog-song"
+   }
+  ]
+ }
+}

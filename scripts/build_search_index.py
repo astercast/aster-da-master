@@ -70,7 +70,7 @@ def main():
     )
 
     index = json.loads((API / "index.json").read_text())
-    index["version"] = "0.7.0"
+    index["version"] = "0.12.0"
     index["endpoints"]["release-slugs"] = "api/v1/release-slugs.json"
     index["endpoints"]["on-this-day"] = "api/v1/on-this-day.json"
     (API / "index.json").write_text(

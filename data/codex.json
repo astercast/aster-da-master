@@ -1,5 +1,5 @@
 {
-  "version": "0.8.0",
+  "version": "0.12.0",
   "generated": "2026-10-11",
   "method": "Word-boundary matching over lowercased, leet-normalized titles (1->l, 0->o, 3->e, 4->a, 5->s, 7->t); multi-word phrases matched as phrases. Counts are of titles containing the word. No meanings invented.",
   "families": [
