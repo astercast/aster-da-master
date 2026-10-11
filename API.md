@@ -150,6 +150,26 @@ and `tracks.json` (the captured catalog).
   plays, plus the codex family claiming the word (linked). Supports `?w=word`
   deep links. Titles only — no lyrics live here.
 
+## Upload sessions, changelog, first & last (v0.10.0)
+
+- **Upload sessions** (`sessions.html` + `api/v1/sessions.json`): the 185
+  vault uploads clustered into 61 studio sessions — a new session begins
+  whenever the gap between uploads exceeds 7 days (`scripts/build_sessions.py`,
+  re-run after data changes; bumps version to 0.10.0). Each session: name
+  ("The November 3rd–12th Session", 19 tracks), date span, track list with
+  plays, totals. Newest first. Schema: `api/v1/schema/sessions.json`.
+- **Changelog** (`changelog.html` + `api/v1/changelog.json`): the site
+  documenting its own becoming — every commit on main, generated from
+  `git log` by `scripts/build_changelog.py` (re-run after every push).
+  Schema: `api/v1/schema/changelog.json`.
+- **First & last** (homepage XIV + `api/v1/first-last.json`): per year
+  2018–2026, the chronologically first and last transmissions
+  (`scripts/build_firstlast.py`). "The year opened with X and closed with Y."
+  Schema: `api/v1/schema/first-last.json`.
+- Nav now links Sessions + Changelog on all pages (scripted insertion +
+  generator NAV constants updated in `build_releases.py`, `build_years.py`,
+  `build_circle.py`, `build_codex.py`).
+
 ## Skills
 
 Task procedures in `skills/`:

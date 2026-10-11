@@ -1,0 +1,85 @@
+{
+  "generated": "2026-10-11",
+  "method": "Parsed from `git log main`: every commit becomes an entry. The site documenting its own becoming.",
+  "entry_count": 13,
+  "entries": [
+    {
+      "hash": "e2fd1e3",
+      "date": "2026-10-11",
+      "message": "Wave 9: milestones (XIII) + API playground + transmission decoder",
+      "files_changed": 294
+    },
+    {
+      "hash": "dcb3a95",
+      "date": "2026-10-11",
+      "message": "Wave 8: 21 collaborator pages + play velocity + 16 codex family pages",
+      "files_changed": 51
+    },
+    {
+      "hash": "48e3780",
+      "date": "2026-10-11",
+      "message": "Chore: drop committed pycache artifact, ignore pycache going forward",
+      "files_changed": 2
+    },
+    {
+      "hash": "1b05aca",
+      "date": "2026-10-11",
+      "message": "Wave 7: year-in-review archive (2018-2026), methodology page, Litemode Trilogy watch",
+      "files_changed": 246
+    },
+    {
+      "hash": "482c763",
+      "date": "2026-10-11",
+      "message": "Wave 6: global search, on-this-day API + section, era intelligence deep-dives, cast lots",
+      "files_changed": 15
+    },
+    {
+      "hash": "56584e6",
+      "date": "2026-10-11",
+      "message": "v0.6.0 wave 5: interactive career timeline, collaboration network, deep cuts",
+      "files_changed": 11
+    },
+    {
+      "hash": "34c8bff",
+      "date": "2026-10-11",
+      "message": "v0.6.0: Numbers stats dashboard + Vocabulary Codex (16 families)",
+      "files_changed": 12
+    },
+    {
+      "hash": "27e944b",
+      "date": "2026-10-11",
+      "message": "v0.5.0: full 185-track SoundCloud vault verified via live-browser pass",
+      "files_changed": 239
+    },
+    {
+      "hash": "702edba",
+      "date": "2026-10-11",
+      "message": "Release pages (43) + press kit + per-release provenance + SoundCloud vault (9 tracks)",
+      "files_changed": 56
+    },
+    {
+      "hash": "cd04aee",
+      "date": "2026-10-11",
+      "message": "Cover art per release (34/34 verified) + Eras narrative section (VII)",
+      "files_changed": 7
+    },
+    {
+      "hash": "a73750f",
+      "date": "2026-10-11",
+      "message": "Populate from verified research: 34-release discography, platforms, bio",
+      "files_changed": 7
+    },
+    {
+      "hash": "366d7ea",
+      "date": "2026-10-11",
+      "message": "API layer + agent skills: versioned artist record, schema, API.md, 3 skills",
+      "files_changed": 8
+    },
+    {
+      "hash": "ffd9312",
+      "date": "2026-10-11",
+      "message": "Scaffold: minimal-cyberpunk x ancient design system + data-driven single page",
+      "files_changed": 0
+    }
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Upload sessions",
+  "description": "SoundCloud vault uploads clustered into studio sessions (7-day gap rule), from data/artist.json.",
+  "type": "object",
+  "required": [
+    "sessions"
+  ],
+  "properties": {
+    "sessions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "start",
+          "end",
+          "track_count",
+          "tracks"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "start": {
+            "type": "string"
+          },
+          "end": {
+            "type": "string"
+          },
+          "track_count": {
+            "type": "integer"
+          },
+          "total_plays": {
+            "type": "integer"
+          },
+          "tracks": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "title",
+                "date",
+                "page"
+              ],
+              "properties": {
+                "title": {
+                  "type": "string"
+                },
+                "date": {
+                  "type": "string"
+                },
+                "plays": {
+                  "type": [
+                    "integer",
+                    "null"
+                  ]
+                },
+                "page": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

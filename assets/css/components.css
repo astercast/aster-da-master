@@ -850,3 +850,38 @@
 @media (prefers-reduced-motion: reduce) {
   .search-item, .era-deep summary, .lots-card { transition: none; }
 }
+
+/* ---- Wave 10: sessions, changelog, first & last ---- */
+.session-card {
+  background: var(--panel); border: 1px solid var(--line);
+  border-radius: var(--radius-l); padding: var(--space-5); margin-bottom: var(--space-5);
+}
+.session-card h3 { font-size: 1.25rem; margin: 0.4rem 0 0.3rem; color: var(--gold-bright); }
+.session-tracks { list-style: none; padding: 0; margin: var(--space-4) 0 0; display: grid; gap: 0.45rem; }
+.session-tracks li { font-size: 0.95rem; }
+.session-tracks a { color: var(--ink); text-decoration: none; border-bottom: 1px dotted var(--gold-dim); }
+.session-tracks a:hover, .session-tracks a:focus-visible { color: var(--gold-bright); border-bottom-style: solid; }
+.cl-list { list-style: none; padding: 0; margin: 0; display: grid; gap: var(--space-3); }
+.cl-entry {
+  display: grid; grid-template-columns: auto 1fr; gap: var(--space-4); align-items: start;
+  background: var(--panel); border: 1px solid var(--line);
+  border-radius: var(--radius-m); padding: var(--space-4);
+}
+.cl-entry h3 { font-size: 1rem; margin: 0 0 0.3rem; }
+.cl-hash {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.85rem;
+  color: var(--neon); border: 1px solid var(--line); border-radius: var(--radius-s);
+  padding: 0.2rem 0.5rem; white-space: nowrap;
+}
+.fl-grid { list-style: none; padding: 0; margin: 0; display: grid; gap: var(--space-3); grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); }
+.fl-card {
+  background: var(--panel); border: 1px solid var(--line);
+  border-radius: var(--radius-m); padding: var(--space-4);
+}
+.fl-card h3 { font-size: 1.3rem; margin: 0 0 var(--space-3); color: var(--gold-bright); }
+.fl-bookend { margin-bottom: var(--space-3); }
+.fl-bookend:last-child { margin-bottom: 0; }
+.fl-bookend .kicker { font-size: 0.72rem; margin-bottom: 0.2rem; }
+.fl-title { margin: 0 0 0.2rem; font-size: 0.98rem; }
+.fl-title a { color: var(--ink); text-decoration: none; border-bottom: 1px dotted var(--gold-dim); }
+.fl-title a:hover, .fl-title a:focus-visible { color: var(--gold-bright); border-bottom-style: solid; }

@@ -120,6 +120,8 @@ NAV = """<nav class="site-nav" aria-label="Primary">
         <a href="../api-playground.html">API</a>
         <a href="../method.html">Method</a>
         <a href="../trilogy.html">Trilogy</a>
+        <a href="../sessions.html">Sessions</a>
+        <a href="../changelog.html">Changelog</a>
         <a href="../press-kit.html">Press kit</a>
       </nav>"""
 
@@ -166,6 +168,8 @@ FOOT = """    </div>
         <a href="../api-playground.html">API</a>
         <a href="../method.html">Method</a>
         <a href="../trilogy.html">Trilogy</a>
+        <a href="../sessions.html">Sessions</a>
+        <a href="../changelog.html">Changelog</a>
         <a href="../press-kit.html">Press kit</a>
       </nav>
     </div>

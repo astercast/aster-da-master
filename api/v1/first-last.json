@@ -1,0 +1,168 @@
+{
+  "generated": "2026-10-11",
+  "method": "Per year 2018-2026: the chronologically first and last archive entries by verified date. Computed from data/artist.json; every pairing is a data fact.",
+  "years": [
+    {
+      "year": 2018,
+      "count": 39,
+      "opened_with": {
+        "title": "Soul Shaking (prod. Fish Narc)",
+        "date": "2018-01-03",
+        "type": "SoundCloud-only",
+        "plays": 12944,
+        "page": "releases/soul-shaking-prod-fish-narc.html"
+      },
+      "closed_with": {
+        "title": "All Kinds Of Trips (prod. YungSkah) <ON ALL PLATFORMS NOW!>",
+        "date": "2018-12-15",
+        "type": "SoundCloud-only",
+        "plays": 5805,
+        "page": "releases/all-kinds-of-trips-prod-yungskah-on-all-platforms-now.html"
+      }
+    },
+    {
+      "year": 2019,
+      "count": 40,
+      "opened_with": {
+        "title": "Soul Shines ~ [prod Josh the Samurai]",
+        "date": "2019-01-08",
+        "type": "SoundCloud-only",
+        "plays": 1150,
+        "page": "releases/soul-shines-prod-josh-the-samurai.html"
+      },
+      "closed_with": {
+        "title": "White Noise ft. Keyblayde808 (prod. Keyblayde808)",
+        "date": "2019-12-30",
+        "type": "SoundCloud-only",
+        "plays": 2650,
+        "page": "releases/white-noise-ft-keyblayde808-prod-keyblayde808.html"
+      }
+    },
+    {
+      "year": 2020,
+      "count": 23,
+      "opened_with": {
+        "title": "I Hate It",
+        "date": "2020-04-09",
+        "type": "Single",
+        "plays": null,
+        "page": "releases/i-hate-it.html"
+      },
+      "closed_with": {
+        "title": "I'm Not Looking For Love Anyway",
+        "date": "2020-12-21",
+        "type": "SoundCloud-only",
+        "plays": 349,
+        "page": "releases/i-m-not-looking-for-love-anyway.html"
+      }
+    },
+    {
+      "year": 2021,
+      "count": 15,
+      "opened_with": {
+        "title": "My Fault 2",
+        "date": "2021-04-13",
+        "type": "Single",
+        "plays": null,
+        "page": "releases/my-fault-2.html"
+      },
+      "closed_with": {
+        "title": "Asterisms Shine (prod. lil biscuit)",
+        "date": "2021-07-14",
+        "type": "SoundCloud-only",
+        "plays": 210,
+        "page": "releases/asterisms-shine-prod-lil-biscuit.html"
+      }
+    },
+    {
+      "year": 2022,
+      "count": 13,
+      "opened_with": {
+        "title": "Cast It:, Pt. 2",
+        "date": "2022-02-22",
+        "type": "Album",
+        "plays": null,
+        "page": "releases/cast-it-pt-2.html"
+      },
+      "closed_with": {
+        "title": "12 is it working?",
+        "date": "2022-02-22",
+        "type": "SoundCloud-only",
+        "plays": 277,
+        "page": "releases/12-is-it-working.html"
+      }
+    },
+    {
+      "year": 2023,
+      "count": 31,
+      "opened_with": {
+        "title": "Clock In The Benz w/ Lil Yu prod shinju",
+        "date": "2023-08-29",
+        "type": "SoundCloud-only",
+        "plays": 725,
+        "page": "releases/clock-in-the-benz-w-lil-yu-prod-shinju.html"
+      },
+      "closed_with": {
+        "title": "For Brian (Neck Deep) outro [produced by AWFL]",
+        "date": "2023-11-12",
+        "type": "SoundCloud-only",
+        "plays": 43,
+        "page": "releases/for-brian-neck-deep-outro-produced-by-awfl.html"
+      }
+    },
+    {
+      "year": 2024,
+      "count": 27,
+      "opened_with": {
+        "title": "Dark City Destiny @dxcember13 @rudey0on10",
+        "date": "2024-03-27",
+        "type": "SoundCloud-only",
+        "plays": 408,
+        "page": "releases/dark-city-destiny-dxcember13-rudey0on10.html"
+      },
+      "closed_with": {
+        "title": "nitemode2019 w/ Max+Vetty prod. NaXi.wav",
+        "date": "2024-11-05",
+        "type": "SoundCloud-only",
+        "plays": 17,
+        "page": "releases/nitemode2019-w-max-vetty-prod-naxi-wav.html"
+      }
+    },
+    {
+      "year": 2025,
+      "count": 17,
+      "opened_with": {
+        "title": "oh We11 (prod Vuksai)",
+        "date": "2025-01-09",
+        "type": "SoundCloud-only",
+        "plays": 222,
+        "page": "releases/oh-we11-prod-vuksai.html"
+      },
+      "closed_with": {
+        "title": "bound 2 my ways.wav",
+        "date": "2025-12-19",
+        "type": "SoundCloud-only",
+        "plays": 638,
+        "page": "releases/bound-2-my-ways-wav.html"
+      }
+    },
+    {
+      "year": 2026,
+      "count": 13,
+      "opened_with": {
+        "title": "all i really need is a text from u 2 (prod astral hp)",
+        "date": "2026-01-16",
+        "type": "SoundCloud-only",
+        "plays": 269,
+        "page": "releases/all-i-really-need-is-a-text-from-u-2-prod-astral-hp.html"
+      },
+      "closed_with": {
+        "title": "turn up w me (prod_timmy)",
+        "date": "2026-10-02",
+        "type": "SoundCloud-only",
+        "plays": 177,
+        "page": "releases/turn-up-w-me-prod-timmy.html"
+      }
+    }
+  ]
+}

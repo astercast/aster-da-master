@@ -19,7 +19,13 @@
     { id: "on-this-day", path: "api/v1/on-this-day.json",
       blurb: "Calendar index: transmissions keyed by MM-DD upload date." },
     { id: "release-slugs", path: "api/v1/release-slugs.json",
-      blurb: "Slug index for the 219+ generated release pages." }
+      blurb: "Slug index for the 219+ generated release pages." },
+    { id: "sessions", path: "api/v1/sessions.json",
+      blurb: "Upload sessions: 61 studio sessions clustered from vault upload dates (7-day gap rule)." },
+    { id: "changelog", path: "api/v1/changelog.json",
+      blurb: "Site construction history, generated from the git log." },
+    { id: "first-last", path: "api/v1/first-last.json",
+      blurb: "Per year 2018–2026: the opening and closing transmissions." }
   ];
 
   function esc(s) {

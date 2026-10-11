@@ -1,0 +1,69 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "First & last transmissions",
+  "description": "Per year, the chronologically first and last archive entries by verified date.",
+  "type": "object",
+  "required": [
+    "years"
+  ],
+  "properties": {
+    "years": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "year",
+          "opened_with",
+          "closed_with"
+        ],
+        "properties": {
+          "year": {
+            "type": "integer"
+          },
+          "count": {
+            "type": "integer"
+          },
+          "opened_with": {
+            "$ref": "#/definitions/entry"
+          },
+          "closed_with": {
+            "$ref": "#/definitions/entry"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "entry": {
+      "type": "object",
+      "required": [
+        "title",
+        "date",
+        "page"
+      ],
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "date": {
+          "type": "string"
+        },
+        "type": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "plays": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "page": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

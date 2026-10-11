@@ -45,6 +45,8 @@ HEAD = """<!DOCTYPE html>
         <a href="../api-playground.html">API</a>
         <a href="../method.html">Method</a>
         <a href="../trilogy.html">Trilogy</a>
+        <a href="../sessions.html">Sessions</a>
+        <a href="../changelog.html">Changelog</a>
         <a href="../press-kit.html">Press kit</a>
       </nav>
     </div>
@@ -64,6 +66,8 @@ FOOT = """    </div>
         <a href="../years/">Years</a>
         <a href="../method.html">Method</a>
         <a href="../trilogy.html">Trilogy</a>
+        <a href="../sessions.html">Sessions</a>
+        <a href="../changelog.html">Changelog</a>
         <a href="../press-kit.html">Press kit</a>
       </nav>
     </div>

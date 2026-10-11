@@ -439,6 +439,27 @@
           .catch(function () { /* section keeps its static fallback */ });
       }
 
+      /* First & last — the year opened with X and closed with Y */
+      var flGrid = document.getElementById("firstlast-grid");
+      if (flGrid) {
+        fetch("data/first-last.json")
+          .then(function (r) { if (!r.ok) throw new Error("first-last failed"); return r.json(); })
+          .then(function (m) {
+            var bookend = function (e, label) {
+              return '<div class="fl-bookend"><p class="kicker">' + label + "</p>" +
+                '<p class="fl-title"><a href="' + esc(e.page) + '">' + esc(e.title) + "</a></p>" +
+                '<p class="chart-sub">' + esc(e.date) +
+                (e.type ? " · " + esc(e.type) : "") + "</p></div>";
+            };
+            flGrid.innerHTML = (m.years || []).map(function (y) {
+              return '<li class="fl-card"><h3>' + y.year + "</h3>" +
+                bookend(y.opened_with, "Opened with") +
+                bookend(y.closed_with, "Closed with") + "</li>";
+            }).join("");
+          })
+          .catch(function () { /* section keeps its static fallback */ });
+      }
+
       /* Platforms */
       var plats = document.getElementById("platform-grid");
       if (plats && Array.isArray(d.platforms)) {

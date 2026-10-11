@@ -1,0 +1,37 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Site changelog",
+  "description": "Every commit on main: the site's construction history, from git log.",
+  "type": "object",
+  "required": [
+    "entries"
+  ],
+  "properties": {
+    "entries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "hash",
+          "date",
+          "message",
+          "files_changed"
+        ],
+        "properties": {
+          "hash": {
+            "type": "string"
+          },
+          "date": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "files_changed": {
+            "type": "integer"
+          }
+        }
+      }
+    }
+  }
+}
