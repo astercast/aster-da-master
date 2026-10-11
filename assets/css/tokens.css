@@ -1,0 +1,37 @@
+/* Design tokens — Aster da Master: minimal cyberpunk × ancient */
+:root {
+  /* Ancient: marble night, bone, antique gold */
+  --bg: #08080d;
+  --bg-soft: #0d0d15;
+  --panel: #121219;
+  --panel-2: #17171f;
+  --line: #23232e;
+  --line-soft: #1a1a24;
+
+  --ink: #ece8dd;          /* bone */
+  --ink-dim: #b8b2a4;
+  --muted: #7d7a70;
+
+  --gold: #c9a227;         /* antique gold */
+  --gold-bright: #e8c547;
+  --neon: #00e5cc;         /* jade-cyan — the single cyberpunk accent */
+
+  --radius-s: 4px;
+  --radius-m: 8px;
+  --radius-l: 14px;
+
+  --font-display: "Cinzel", "Trajan Pro", "Optima", Didot, "Bodoni MT", Georgia, serif;
+  --font-body: "Inter", "Helvetica Neue", Arial, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  --space-1: 4px; --space-2: 8px; --space-3: 12px; --space-4: 16px;
+  --space-5: 24px; --space-6: 32px; --space-7: 48px; --space-8: 72px;
+  --space-9: 110px;
+
+  --shadow-1: 0 1px 2px rgba(0, 0, 0, 0.5);
+  --shadow-2: 0 12px 40px rgba(0, 0, 0, 0.6);
+  --glow-neon: 0 0 24px rgba(0, 229, 204, 0.25);
+  --glow-gold: 0 0 32px rgba(201, 162, 39, 0.18);
+
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}

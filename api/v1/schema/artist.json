@@ -1,0 +1,80 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ArtistRecord",
+  "description": "The canonical Aster da Master record. Only verified facts; research_status gates publication.",
+  "type": "object",
+  "required": [
+    "version",
+    "observed",
+    "research_status",
+    "artist"
+  ],
+  "properties": {
+    "version": {
+      "type": "string"
+    },
+    "observed": {
+      "format": "date"
+    },
+    "research_status": {
+      "type": "string"
+    },
+    "artist": {
+      "type": "object",
+      "required": [
+        "name",
+        "tagline"
+      ],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "tagline": {
+          "type": "string"
+        },
+        "bio": {
+          "type": "string"
+        },
+        "genre": {
+          "type": "string"
+        },
+        "facts": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        }
+      }
+    },
+    "discography": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "platforms": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "socials": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "featured_release": {
+      "type": [
+        "object",
+        "null"
+      ]
+    },
+    "booking": {
+      "type": [
+        "object",
+        "null"
+      ]
+    }
+  }
+}

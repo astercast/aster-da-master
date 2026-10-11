@@ -1,0 +1,12 @@
+{
+  "name": "Aster da Master API",
+  "version": "0.1.0",
+  "observed": "2026-10-11",
+  "repository": "https://github.com/astercast/aster-da-master",
+  "for_agents": "Start at api/v1/index.json. The artist record is the source of truth; data/artist.json feeds the site renderer.",
+  "provenance": "All artist facts verified against public platform pages (Spotify, Apple Music, SoundCloud, YouTube). Unverified claims are never published. research_status is PENDING until the identity-resolution research lands.",
+  "endpoints": {
+    "index": "api/v1/index.json",
+    "artist": "api/v1/artist.json"
+  }
+}
