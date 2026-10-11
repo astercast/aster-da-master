@@ -787,6 +787,56 @@
 .otd-card a:focus-visible { outline: 2px solid var(--neon); outline-offset: 2px; }
 .otd-empty { color: var(--muted); font-style: italic; }
 
+/* ---- Wave 9: API playground ---- */
+.pg-layout { display: grid; gap: var(--space-4); }
+@media (min-width: 900px) { .pg-layout { grid-template-columns: 320px 1fr; align-items: start; } }
+.pg-endpoints { display: grid; gap: var(--space-2); }
+.pg-ep {
+  text-align: left; background: var(--panel); border: 1px solid var(--line);
+  border-radius: var(--radius-m); padding: var(--space-3); cursor: pointer; color: var(--ink);
+}
+.pg-ep:hover { border-color: var(--gold); }
+.pg-ep[aria-selected="true"] { border-color: var(--neon); box-shadow: 0 0 0 1px var(--neon); }
+.pg-ep-id { display: block; font-weight: 700; color: var(--gold-bright); }
+.pg-ep-path { display: block; font-family: monospace; font-size: 0.8rem; color: var(--muted); margin: 0.15rem 0; }
+.pg-ep-blurb { display: block; font-size: 0.85rem; color: var(--muted); }
+.pg-response { min-width: 0; }
+.pg-bar { display: flex; align-items: center; gap: var(--space-3); flex-wrap: wrap; margin-bottom: var(--space-2); }
+.pg-url { color: var(--neon); font-size: 0.9rem; }
+.pg-meta { color: var(--muted); font-size: 0.85rem; margin-left: auto; }
+.pg-pre {
+  background: #0a0a0c; border: 1px solid var(--line); border-radius: var(--radius-m);
+  padding: var(--space-4); overflow: auto; max-height: 560px; font-size: 0.82rem; line-height: 1.5;
+}
+.pg-pre code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+.jk { color: var(--gold-bright); }
+.js { color: #9fd8ff; }
+.jn { color: #ffb86b; }
+.jb { color: #c792ea; }
+
+/* ---- Wave 9: decoder ---- */
+.dec-form { display: flex; gap: var(--space-3); max-width: 560px; margin-bottom: var(--space-4); }
+.dec-form input {
+  flex: 1; background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius-m);
+  padding: var(--space-3); color: var(--ink); font-size: 1rem;
+}
+.dec-form input:focus { outline: 2px solid var(--neon); outline-offset: 2px; border-color: var(--neon); }
+.dec-empty { color: var(--muted); font-style: italic; }
+.dec-fams { display: grid; gap: var(--space-3); grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); margin: var(--space-4) 0; }
+.dec-fam { background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius-m); padding: var(--space-4); }
+.dec-fam h3 { margin: 0 0 0.3rem; color: var(--gold-bright); font-size: 1rem; }
+.dec-fam a { color: var(--neon); }
+
+/* ---- Wave 9: milestones ---- */
+.ms-list { list-style: none; padding: 0; margin: 0; display: grid; gap: var(--space-3); grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); }
+.ms-card {
+  background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius-m);
+  padding: var(--space-4);
+}
+.ms-card h3 { font-size: 1.05rem; margin: 0 0 0.4rem; color: var(--gold-bright); }
+.ms-fact { margin: 0 0 0.6rem; color: var(--muted); font-size: 0.92rem; }
+.ms-track { margin: 0; font-size: 0.95rem; }
+
 /* ---- Wave 6: cast lots ---- */
 .lots-wrap { display: grid; gap: var(--space-4); justify-items: start; }
 .lots-card {

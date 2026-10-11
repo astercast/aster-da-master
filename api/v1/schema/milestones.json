@@ -1,0 +1,84 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "description": "Defining firsts of the verified catalog, computed from data/artist.json. Every milestone is a data fact.",
+  "properties": {
+    "version": {
+      "type": "string"
+    },
+    "generated": {
+      "type": "string"
+    },
+    "method": {
+      "type": "string"
+    },
+    "plays_snapshot": {
+      "type": "string"
+    },
+    "milestones": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "fact": {
+            "type": "string"
+          },
+          "title": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "date": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "type": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "plays": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "count": {
+            "type": "integer"
+          },
+          "from": {
+            "type": "string"
+          },
+          "to": {
+            "type": "string"
+          },
+          "days": {
+            "type": "integer"
+          },
+          "cumulative_plays": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "fact"
+        ]
+      }
+    }
+  },
+  "required": [
+    "version",
+    "milestones"
+  ],
+  "type": "object"
+}

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>API Playground — Aster da Master</title>
+  <meta name="description" content="Touch the archive's versioned JSON API: pick an endpoint, read the live response, copy what you need.">
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-bar">
+      <a class="brand" href="./" aria-label="Aster da Master home">
+        <span class="brand-mark" aria-hidden="true">A✦</span>
+        <span>ASTER DA MASTER</span>
+      </a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="./#discography">Discography</a>
+        <a href="releases/">Releases</a>
+        <a href="timeline.html">Timeline</a>
+        <a href="network.html">Network</a>
+        <a href="decoder.html">Decoder</a>
+        <a href="api-playground.html" aria-current="page">API</a>
+        <a href="years/">Years</a>
+        <a href="method.html">Method</a>
+        <a href="trilogy.html">Trilogy</a>
+        <a href="press-kit.html">Press kit</a>
+      </nav>
+      <button class="search-btn" id="search-open" type="button" aria-label="Search the archive (keyboard shortcut: slash)">
+        <span aria-hidden="true">&#8981;</span><kbd aria-hidden="true">/</kbd>
+      </button>
+    </div>
+  </header>
+
+  <div class="search-overlay" id="search-overlay" hidden>
+    <div class="search-box" role="dialog" aria-modal="true" aria-labelledby="search-title">
+      <p class="kicker" id="search-title"><span class="numeral">✦</span>Search the archive</p>
+      <input id="search-input" type="search" placeholder="Tracks, collaborators, eras, the codex&hellip;" aria-label="Search the archive" role="combobox" aria-expanded="true" aria-controls="search-results" autocomplete="off" spellcheck="false">
+      <div id="search-results" role="listbox" aria-label="Search results"></div>
+      <p class="search-hint"><kbd>/</kbd> to open &middot; <kbd>&uarr;</kbd><kbd>&darr;</kbd> to move &middot; <kbd>Enter</kbd> to go &middot; <kbd>Esc</kbd> to close</p>
+    </div>
+  </div>
+
+  <main id="main">
+    <section class="section" aria-labelledby="pg-h">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="kicker"><span class="numeral">✦</span>The API playground</span>
+          <h2 id="pg-h">Touch the archive</h2>
+          <p>Every record on this site is a versioned JSON document. Pick an endpoint, read the live response, copy what you need. Agents start at <code>api/v1/index.json</code>.</p>
+        </div>
+
+        <div class="pg-layout reveal">
+          <div class="pg-endpoints" role="listbox" aria-label="API endpoints" id="pg-list"></div>
+          <div class="pg-response">
+            <div class="pg-bar">
+              <code class="pg-url" id="pg-url">—</code>
+              <span class="pg-meta" id="pg-meta"></span>
+              <button class="btn btn-sm" id="pg-copy" type="button" disabled>Copy JSON</button>
+            </div>
+            <pre class="pg-pre" id="pg-pre" aria-live="polite"><code>Select an endpoint to read its response.</code></pre>
+            <p class="chart-sub" id="pg-note">Responses are the live files served with this page. If you opened this file directly from disk, fetching may be blocked — serve the site over HTTP instead.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <p>© 2026 ASTER DA MASTER — ALL SIGNALS RESERVED</p>
+      <nav aria-label="Footer">
+        <a href="./">Home</a>
+        <a href="./#discography">Discography</a>
+        <a href="releases/">Releases</a>
+        <a href="timeline.html">Timeline</a>
+        <a href="network.html">Network</a>
+        <a href="decoder.html">Decoder</a>
+        <a href="api-playground.html" aria-current="page">API</a>
+        <a href="years/">Years</a>
+        <a href="method.html">Method</a>
+        <a href="trilogy.html">Trilogy</a>
+        <a href="press-kit.html">Press kit</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="assets/js/common.js"></script>
+  <script src="assets/js/playground.js"></script>
+  <script src="assets/js/search.js"></script>
+</body>
+</html>

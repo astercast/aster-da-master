@@ -128,6 +128,28 @@ and `tracks.json` (the captured catalog).
   vault track (title, upload date, plays) with a SoundCloud link and re-summon;
   `aria-live` result region.
 
+## Milestones, API playground, decoder (v0.9.0)
+
+- **Milestones** (homepage XIII + `api/v1/milestones.json`): the career told in
+  firsts, computed by `scripts/build_milestones.py` from `data/artist.json`
+  (re-run after data changes; bumps version to 0.9.0): first distributor
+  transmission (2017-04-20, as featured artist), first vault upload (2018-01-03,
+  "Soul Shaking", 12,944 plays — the first day already brought a 10k track),
+  first collaboration (2018-04-28), 100th catalog entry, 100th vault upload,
+  most prolific day (2023-11-12, 17 uploads), longest silence (553 days,
+  2022-02-22 → 2023-08-29), 250k cumulative plays crossed (2024-05-28),
+  latest transmission. Every milestone is a data fact; play counts are the
+  2026-10-11 snapshot. Schema: `api/v1/schema/milestones.json`.
+- **API playground** (`api-playground.html` + `assets/js/playground.js`): touch
+  the versioned API — endpoint picker for all 8 `api/v1/` endpoints, live
+  fetch, syntax-highlighted pretty-print, byte size + key count, copy button.
+  Graceful error if opened from `file://` (browsers block fetch there).
+- **Decoder** (`decoder.html` + `assets/js/decoder.js`): speak a word; the
+  archive answers. Leet-normalized, word-boundary title search across all 219
+  transmissions (same matcher as `scripts/build_codex.py`), results sorted by
+  plays, plus the codex family claiming the word (linked). Supports `?w=word`
+  deep links. Titles only — no lyrics live here.
+
 ## Skills
 
 Task procedures in `skills/`:

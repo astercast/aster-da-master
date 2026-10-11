@@ -37,6 +37,8 @@ NAV = """<nav class="site-nav" aria-label="Primary">
         <a href="./">Years</a>
         <a href="../timeline.html">Timeline</a>
         <a href="../network.html">Network</a>
+        <a href="../decoder.html">Decoder</a>
+        <a href="../api-playground.html">API</a>
         <a href="../method.html">Method</a>
         <a href="../trilogy.html">Trilogy</a>
         <a href="../press-kit.html">Press kit</a>
@@ -80,6 +82,8 @@ FOOT = """    </div>
         <a href="./">Years</a>
         <a href="../timeline.html">Timeline</a>
         <a href="../network.html">Network</a>
+        <a href="../decoder.html">Decoder</a>
+        <a href="../api-playground.html">API</a>
         <a href="../method.html">Method</a>
         <a href="../trilogy.html">Trilogy</a>
         <a href="../press-kit.html">Press kit</a>

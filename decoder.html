@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Decoder — Aster da Master</title>
+  <meta name="description" content="Speak a word; the archive answers. Codex-powered search across all 219 transmissions.">
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-bar">
+      <a class="brand" href="./" aria-label="Aster da Master home">
+        <span class="brand-mark" aria-hidden="true">A✦</span>
+        <span>ASTER DA MASTER</span>
+      </a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="./#discography">Discography</a>
+        <a href="releases/">Releases</a>
+        <a href="timeline.html">Timeline</a>
+        <a href="network.html">Network</a>
+        <a href="decoder.html" aria-current="page">Decoder</a>
+        <a href="api-playground.html">API</a>
+        <a href="years/">Years</a>
+        <a href="method.html">Method</a>
+        <a href="trilogy.html">Trilogy</a>
+        <a href="press-kit.html">Press kit</a>
+      </nav>
+      <button class="search-btn" id="search-open" type="button" aria-label="Search the archive (keyboard shortcut: slash)">
+        <span aria-hidden="true">&#8981;</span><kbd aria-hidden="true">/</kbd>
+      </button>
+    </div>
+  </header>
+
+  <div class="search-overlay" id="search-overlay" hidden>
+    <div class="search-box" role="dialog" aria-modal="true" aria-labelledby="search-title">
+      <p class="kicker" id="search-title"><span class="numeral">✦</span>Search the archive</p>
+      <input id="search-input" type="search" placeholder="Tracks, collaborators, eras, the codex&hellip;" aria-label="Search the archive" role="combobox" aria-expanded="true" aria-controls="search-results" autocomplete="off" spellcheck="false">
+      <div id="search-results" role="listbox" aria-label="Search results"></div>
+      <p class="search-hint"><kbd>/</kbd> to open &middot; <kbd>&uarr;</kbd><kbd>&darr;</kbd> to move &middot; <kbd>Enter</kbd> to go &middot; <kbd>Esc</kbd> to close</p>
+    </div>
+  </div>
+
+  <main id="main">
+    <section class="section" aria-labelledby="dec-h">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="kicker"><span class="numeral">✦</span>The decoder</span>
+          <h2 id="dec-h">Decode the transmissions</h2>
+          <p>Speak a word; the archive answers. Every title is searched with the codex's own ear — leet-normalized, word-boundary, exact. Try <em>litemode</em>, <em>cold</em>, <em>ward</em>, <em>freestyle</em>.</p>
+        </div>
+
+        <form class="dec-form reveal" id="dec-form" role="search" aria-label="Decode a word">
+          <input id="dec-input" type="search" placeholder="a word, e.g. solstice&hellip;" aria-label="Word to decode" autocomplete="off" spellcheck="false" maxlength="40">
+          <button class="btn btn-neon" type="submit">Decode</button>
+        </form>
+
+        <div class="reveal" id="dec-out" aria-live="polite"></div>
+
+        <p class="chart-sub reveal">Matching mirrors <code>scripts/build_codex.py</code>: lowercase, leet-normalized (1&rarr;l, 0&rarr;o, 3&rarr;e, 4&rarr;a, 5&rarr;s, 7&rarr;t), word boundaries. Titles only — no lyrics live here.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <p>© 2026 ASTER DA MASTER — ALL SIGNALS RESERVED</p>
+      <nav aria-label="Footer">
+        <a href="./">Home</a>
+        <a href="./#discography">Discography</a>
+        <a href="releases/">Releases</a>
+        <a href="timeline.html">Timeline</a>
+        <a href="network.html">Network</a>
+        <a href="decoder.html" aria-current="page">Decoder</a>
+        <a href="api-playground.html">API</a>
+        <a href="years/">Years</a>
+        <a href="method.html">Method</a>
+        <a href="trilogy.html">Trilogy</a>
+        <a href="press-kit.html">Press kit</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="assets/js/common.js"></script>
+  <script src="assets/js/decoder.js"></script>
+  <script src="assets/js/search.js"></script>
+</body>
+</html>

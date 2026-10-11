@@ -413,6 +413,32 @@
         });
       }
 
+      /* Milestones — the career told in firsts, computed at build time */
+      var msList = document.getElementById("milestones-list");
+      if (msList) {
+        fetch("data/milestones.json")
+          .then(function (r) { if (!r.ok) throw new Error("milestones failed"); return r.json(); })
+          .then(function (m) {
+            var fmt = function (n) { return Number(n).toLocaleString("en-US"); };
+            msList.innerHTML = (m.milestones || []).map(function (ms) {
+              var detail = "";
+              if (ms.title) {
+                var plays = (ms.plays != null) ? " · " + fmt(ms.plays) + " plays" : "";
+                var cum = (ms.cumulative_plays != null) ? " · cumulative " + fmt(ms.cumulative_plays) : "";
+                detail = "<p class=\"ms-track\">&#10022; " + esc(ms.title) + "</p>" +
+                  '<p class=\"chart-sub\">' + esc(ms.date || "date unknown") + " · " + esc(ms.type || "") + esc(plays) + esc(cum) + "</p>";
+              } else if (ms.id === "prolific-day") {
+                detail = "<p class=\"ms-track\">&#10022; " + esc(ms.date) + " — " + ms.count + " uploads</p>";
+              } else if (ms.id === "longest-silence") {
+                detail = "<p class=\"ms-track\">&#10022; " + esc(ms.from) + " &rarr; " + esc(ms.to) + " — " + ms.days + " days</p>";
+              }
+              return '<li class="ms-card"><h3>' + esc(ms.name) + "</h3>" +
+                '<p class="ms-fact">' + esc(ms.fact) + "</p>" + detail + "</li>";
+            }).join("");
+          })
+          .catch(function () { /* section keeps its static fallback */ });
+      }
+
       /* Platforms */
       var plats = document.getElementById("platform-grid");
       if (plats && Array.isArray(d.platforms)) {

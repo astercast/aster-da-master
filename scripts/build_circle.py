@@ -40,6 +40,8 @@ NAV = """<nav class="site-nav" aria-label="Primary">
         <a href="./">Circle</a>
         <a href="../timeline.html">Timeline</a>
         <a href="../network.html">Network</a>
+        <a href="../decoder.html">Decoder</a>
+        <a href="../api-playground.html">API</a>
         <a href="../method.html">Method</a>
         <a href="../trilogy.html">Trilogy</a>
         <a href="../press-kit.html">Press kit</a>
@@ -84,6 +86,8 @@ FOOT = """    </div>
         <a href="./">Circle</a>
         <a href="../timeline.html">Timeline</a>
         <a href="../network.html">Network</a>
+        <a href="../decoder.html">Decoder</a>
+        <a href="../api-playground.html">API</a>
         <a href="../method.html">Method</a>
         <a href="../trilogy.html">Trilogy</a>
         <a href="../press-kit.html">Press kit</a>
@@ -138,7 +142,9 @@ def collab_page(name, slug, tracks, slug_of, eras, prev_s, next_s):
 
     body = f"""
       <nav class="crumbs" aria-label="Breadcrumb">
-        <a href="../">Home</a> / <a href="../network.html">Network</a> / <a href="./">Circle</a> / <span aria-current="page">{escape(name)}</span>
+        <a href="../">Home</a> / <a href="../network.html">Network</a>
+        <a href="../decoder.html">Decoder</a>
+        <a href="../api-playground.html">API</a> / <a href="./">Circle</a> / <span aria-current="page">{escape(name)}</span>
       </nav>
       <section class="section" aria-labelledby="cc-h">
         <span class="kicker"><span class="numeral">&#10022;</span>The circle</span>
