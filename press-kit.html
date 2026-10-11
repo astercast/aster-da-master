@@ -25,8 +25,20 @@
         <a href="network.html">Network</a>
         <a href="./">Home</a>
       </nav>
+      <button class="search-btn" id="search-open" type="button" aria-label="Search the archive (keyboard shortcut: slash)">
+        <span aria-hidden="true">&#8981;</span><kbd aria-hidden="true">/</kbd>
+      </button>
     </div>
   </header>
+
+  <div class="search-overlay" id="search-overlay" hidden>
+    <div class="search-box" role="dialog" aria-modal="true" aria-labelledby="search-title">
+      <p class="kicker" id="search-title"><span class="numeral">&#10022;</span>Search the archive</p>
+      <input id="search-input" type="search" placeholder="Tracks, collaborators, eras, the codex&hellip;" aria-label="Search the archive" role="combobox" aria-expanded="true" aria-controls="search-results" autocomplete="off" spellcheck="false">
+      <div id="search-results" role="listbox" aria-label="Search results"></div>
+      <p class="search-hint"><kbd>/</kbd> to open &middot; <kbd>&uarr;</kbd><kbd>&darr;</kbd> to move &middot; <kbd>Enter</kbd> to go &middot; <kbd>Esc</kbd> to close</p>
+    </div>
+  </div>
 
   <main id="main">
     <div class="container press-kit">
@@ -147,5 +159,6 @@
       });
   })();
   </script>
+  <script src="assets/js/search.js"></script>
 </body>
 </html>

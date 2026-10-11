@@ -31,12 +31,26 @@
         <a href="#numbers">Numbers</a>
         <a href="#codex">Codex</a>
         <a href="#deepcuts">Deep cuts</a>
+        <a href="#onthisday">On this day</a>
+        <a href="#lots">Cast lots</a>
         <a href="timeline.html">Timeline</a>
         <a href="network.html">Network</a>
         <a href="press-kit.html">Press kit</a>
       </nav>
+      <button class="search-btn" id="search-open" type="button" aria-label="Search the archive (keyboard shortcut: slash)">
+        <span aria-hidden="true">&#8981;</span><kbd aria-hidden="true">/</kbd>
+      </button>
     </div>
   </header>
+
+  <div class="search-overlay" id="search-overlay" hidden>
+    <div class="search-box" role="dialog" aria-modal="true" aria-labelledby="search-title">
+      <p class="kicker" id="search-title"><span class="numeral">&#10022;</span>Search the archive</p>
+      <input id="search-input" type="search" placeholder="Tracks, collaborators, eras, the codex&hellip;" aria-label="Search the archive" role="combobox" aria-expanded="true" aria-controls="search-results" autocomplete="off" spellcheck="false">
+      <div id="search-results" role="listbox" aria-label="Search results"></div>
+      <p class="search-hint"><kbd>/</kbd> to open &middot; <kbd>&uarr;</kbd><kbd>&darr;</kbd> to move &middot; <kbd>Enter</kbd> to go &middot; <kbd>Esc</kbd> to close</p>
+    </div>
+  </div>
 
   <main id="main">
     <section class="hero" id="top" aria-labelledby="hero-title">
@@ -219,6 +233,31 @@
         <p class="chart-sub reveal" id="deepcuts-note" hidden>Ranked by play count, ascending · snapshot 2026-10-11 · all streaming on the <a href="https://soundcloud.com/asterdamaster" target="_blank" rel="noopener">official SoundCloud</a>.</p>
       </div>
     </section>
+
+    <section class="section" id="onthisday" aria-labelledby="onthisday-h">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="kicker"><span class="numeral">XI</span>On this day</span>
+          <h2 id="onthisday-h">The calendar remembers</h2>
+          <p id="onthisday-sub">Transmissions that landed on today's date, across all nine years.</p>
+        </div>
+        <ol class="otd-list reveal" id="onthisday-list"></ol>
+      </div>
+    </section>
+
+    <section class="section" id="lots" aria-labelledby="lots-h">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="kicker"><span class="numeral">XII</span>Cast lots</span>
+          <h2 id="lots-h">Summon a random transmission</h2>
+          <p>Leave it to chance. One vault track, drawn blind from the archive.</p>
+        </div>
+        <div class="lots-wrap reveal">
+          <button class="btn btn-neon" id="summon-btn" type="button">&#10022; Summon a transmission</button>
+          <div id="lots-result" aria-live="polite"></div>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer class="site-footer">
@@ -235,6 +274,8 @@
         <a href="#numbers">Numbers</a>
         <a href="#codex">Codex</a>
         <a href="#deepcuts">Deep cuts</a>
+        <a href="#onthisday">On this day</a>
+        <a href="#lots">Cast lots</a>
         <a href="timeline.html">Timeline</a>
         <a href="network.html">Network</a>
         <a href="press-kit.html">Press kit</a>
@@ -243,5 +284,6 @@
   </footer>
 
   <script src="assets/js/site.js"></script>
+  <script src="assets/js/search.js"></script>
 </body>
 </html>

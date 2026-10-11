@@ -704,3 +704,99 @@
   .nw-circle { transition: none; }
   .cut-card, .nw-panel { transition: none; }
 }
+
+/* ---- Wave 6: global search overlay ---- */
+.search-btn {
+  display: inline-flex; align-items: center; gap: 0.45rem;
+  background: transparent; border: 1px solid var(--line); color: var(--ink-dim);
+  border-radius: var(--radius-s); padding: 0.4rem 0.6rem; cursor: pointer;
+  font-size: 0.85rem; line-height: 1;
+}
+.search-btn:hover { color: var(--gold-bright); border-color: var(--gold); }
+.search-btn:focus-visible { outline: 2px solid var(--neon); outline-offset: 2px; }
+.search-btn kbd {
+  font-family: inherit; font-size: 0.7rem; border: 1px solid var(--line);
+  border-radius: 3px; padding: 0.05rem 0.3rem; color: var(--muted);
+}
+.search-overlay {
+  position: fixed; inset: 0; z-index: 90;
+  background: rgba(4, 4, 8, 0.82);
+  display: flex; align-items: flex-start; justify-content: center;
+  padding: 12vh 1rem 1rem;
+}
+.search-overlay[hidden] { display: none; }
+.search-box {
+  width: min(640px, 100%); background: var(--panel); border: 1px solid var(--line);
+  border-radius: var(--radius-l); padding: var(--space-5);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.6);
+}
+.search-box .kicker { margin-bottom: var(--space-3); }
+#search-input {
+  width: 100%; background: var(--bg-soft); border: 1px solid var(--line);
+  border-radius: var(--radius-s); color: var(--ink);
+  font-size: 1.05rem; padding: 0.7rem 0.9rem;
+}
+#search-input:focus { outline: none; border-color: var(--neon); }
+#search-results { margin-top: var(--space-3); max-height: 46vh; overflow: auto; }
+.search-item {
+  display: grid; grid-template-columns: auto 1fr; gap: 0.1rem 0.7rem;
+  padding: 0.6rem 0.7rem; border-radius: var(--radius-s);
+  text-decoration: none; color: var(--ink); align-items: baseline;
+}
+.search-item:hover, .search-item.is-active { background: var(--panel-2); }
+.search-item.is-active { outline: 1px solid var(--neon); }
+.search-kind {
+  grid-row: span 2; font-size: 0.62rem; letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--neon); border: 1px solid var(--line); border-radius: 3px;
+  padding: 0.15rem 0.4rem; white-space: nowrap; align-self: center;
+}
+.search-label { font-weight: 600; }
+.search-sub { color: var(--muted); font-size: 0.8rem; grid-column: 2; }
+.search-empty { color: var(--muted); padding: 1rem 0.4rem; }
+.search-hint { color: var(--muted); font-size: 0.75rem; margin-top: var(--space-4); }
+.search-hint kbd {
+  font-family: inherit; border: 1px solid var(--line); border-radius: 3px;
+  padding: 0.05rem 0.35rem; margin: 0 0.1rem;
+}
+
+/* ---- Wave 6: era intelligence deep-dives ---- */
+.era-deep { margin-top: var(--space-4); border-top: 1px solid var(--line-soft); padding-top: var(--space-3); }
+.era-deep summary {
+  cursor: pointer; list-style: none; color: var(--gold-bright);
+  font-size: 0.85rem; display: flex; justify-content: space-between; align-items: baseline; gap: 0.5rem;
+}
+.era-deep summary::-webkit-details-marker { display: none; }
+.era-deep summary::after { content: "+"; color: var(--neon); font-size: 1.1rem; }
+.era-deep[open] summary::after { content: "–"; }
+.era-deep summary:hover { color: var(--gold); }
+.era-deep summary:focus-visible { outline: 2px solid var(--neon); outline-offset: 2px; }
+.era-deep-body { padding-top: var(--space-3); }
+.era-deep-body h4 { font-size: 0.8rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); margin: var(--space-4) 0 var(--space-2); }
+.era-collabs { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 0.4rem 1rem; }
+.era-collabs li { font-size: 0.9rem; }
+
+/* ---- Wave 6: on this day ---- */
+.otd-list { list-style: none; padding: 0; margin: 0; display: grid; gap: var(--space-3); grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
+.otd-card {
+  background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius-m);
+  padding: var(--space-4);
+}
+.otd-card h3 { font-size: 1rem; margin: 0 0 0.3rem; }
+.otd-card a { color: var(--ink); text-decoration: none; }
+.otd-card a:hover h3 { color: var(--gold-bright); }
+.otd-card a:focus-visible { outline: 2px solid var(--neon); outline-offset: 2px; }
+.otd-empty { color: var(--muted); font-style: italic; }
+
+/* ---- Wave 6: cast lots ---- */
+.lots-wrap { display: grid; gap: var(--space-4); justify-items: start; }
+.lots-card {
+  width: min(560px, 100%); background: var(--panel); border: 1px solid var(--gold);
+  border-radius: var(--radius-l); padding: var(--space-5);
+  box-shadow: var(--glow-gold, 0 0 32px rgba(201, 162, 39, 0.12));
+}
+.lots-card h3 { font-size: 1.4rem; margin: 0.4rem 0 0.5rem; }
+.lots-card .btn-row { display: flex; gap: var(--space-3); flex-wrap: wrap; margin-top: var(--space-4); }
+
+@media (prefers-reduced-motion: reduce) {
+  .search-item, .era-deep summary, .lots-card { transition: none; }
+}

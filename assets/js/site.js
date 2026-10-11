@@ -128,9 +128,15 @@
         }).join("");
       }
 
-      /* Eras */
+      /* Eras — cards plus data-computed "era intelligence" deep-dives */
+      function spanYears(span) {
+        var m = /(\d{4})(?:\s*[–—-]\s*(\d{4}))?/.exec(String(span || ""));
+        if (!m) return null;
+        return { start: parseInt(m[1], 10), end: parseInt(m[2] || m[1], 10) };
+      }
       var erasEl = document.getElementById("eras-list");
       if (erasEl && Array.isArray(d.eras) && d.eras.length) {
+        var discAll = Array.isArray(d.discography) ? d.discography : [];
         erasEl.innerHTML = d.eras.map(function (e) {
           var rels = (e.releases || []).map(function (t) {
             return "<li>" + esc(t) + "</li>";
@@ -138,11 +144,57 @@
           var body = rels
             ? '<ul class="era-releases">' + rels + "</ul>"
             : '<p class="era-silence">No releases on record.</p>';
+
+          /* Era intelligence — computed from the archive, not written by hand */
+          var deep = "";
+          var yr = spanYears(e.span);
+          if (yr) {
+            var inEra = discAll.filter(function (r) {
+              var y = parseInt((r.date || "").slice(0, 4), 10);
+              return y >= yr.start && y <= yr.end;
+            });
+            var eraPlays = inEra.reduce(function (s, r) { return s + (r.plays || 0); }, 0);
+            var eraTop = inEra
+              .filter(function (r) { return (r.plays || 0) > 0; })
+              .sort(function (a, b) { return (b.plays || 0) - (a.plays || 0); })
+              .slice(0, 5);
+            var eraCollabs = {};
+            var eraDisplay = {};
+            inEra.forEach(function (r) {
+              parseCollabs(r.title).forEach(function (n) {
+                var k = n.toLowerCase();
+                eraCollabs[k] = (eraCollabs[k] || 0) + 1;
+                if (!eraDisplay[k] || n.length >= eraDisplay[k].length) eraDisplay[k] = n;
+              });
+            });
+            var eraKeys = Object.keys(eraCollabs).sort(function (a, b) { return eraCollabs[b] - eraCollabs[a]; }).slice(0, 5);
+            var topHtml = eraTop.length
+              ? '<ol class="top-list">' + eraTop.map(function (r) {
+                  return "<li><span>" + esc(r.title) + "</span>" +
+                    '<span class="top-n">' + Number(r.plays).toLocaleString("en-US") + "</span></li>";
+                }).join("") + "</ol>"
+              : '<p class="chart-sub">No play-counted tracks in this span.</p>';
+            var colHtml = eraKeys.length
+              ? '<ul class="era-collabs">' + eraKeys.map(function (k) {
+                  return "<li>" + esc(eraDisplay[k]) + ' <span class="top-n">&times;' + eraCollabs[k] + "</span></li>";
+                }).join("") + "</ul>"
+              : '<p class="chart-sub">Solo transmissions — no credited collaborators in this span.</p>';
+            deep = '<details class="era-deep"><summary>Era intelligence &mdash; ' +
+              inEra.length + " transmissions &middot; " +
+              Number(eraPlays).toLocaleString("en-US") + " plays</summary>" +
+              '<div class="era-deep-body">' +
+              '<p class="chart-sub">Counted from the archive for ' + yr.start + "&ndash;" + yr.end +
+              ". Play counts: SoundCloud vault only, snapshot 2026-10-11.</p>" +
+              "<h4>Most played of the era</h4>" + topHtml +
+              "<h4>Key collaborators</h4>" + colHtml +
+              "</div></details>";
+          }
+
           return '<article class="era-card">' +
             '<p class="era-span">' + esc(e.span) + "</p>" +
             "<h3>" + esc(e.name) + "</h3>" +
             '<p class="era-scene">' + esc(e.scene) + "</p>" +
-            body +
+            body + deep +
             "</article>";
         }).join("");
       }
@@ -277,6 +329,62 @@
         }).join("");
         var cutsNote = document.getElementById("deepcuts-note");
         if (cutsNote) cutsNote.hidden = false;
+      }
+
+      /* On this day — transmissions that landed on today's month/day,
+         across all years. Powered by api/v1/on-this-day.json. */
+      var otdList = document.getElementById("onthisday-list");
+      var otdSub = document.getElementById("onthisday-sub");
+      if (otdList) {
+        var now = new Date();
+        var mmdd = ("0" + (now.getMonth() + 1)).slice(-2) + "-" + ("0" + now.getDate()).slice(-2);
+        var pretty = now.toLocaleDateString("en-US", { month: "long", day: "numeric" });
+        if (otdSub) otdSub.textContent = "Transmissions that landed on " + pretty + " — across all nine years.";
+        fetch("api/v1/on-this-day.json")
+          .then(function (r) { if (!r.ok) throw new Error("on-this-day failed"); return r.json(); })
+          .then(function (otd) {
+            var todays = otd[mmdd] || [];
+            if (!todays.length) {
+              otdList.innerHTML = '<li class="otd-empty"><p>No transmissions landed on ' + esc(pretty) +
+                " &mdash; the silence keeps its own counsel.</p></li>";
+              return;
+            }
+            otdList.innerHTML = todays.map(function (t) {
+              var year = (t.date || "").slice(0, 4);
+              var plays = (t.plays != null)
+                ? ' <span class="top-n">' + Number(t.plays).toLocaleString("en-US") + " plays</span>"
+                : "";
+              var meta = [year, t.type].filter(Boolean).join(" · ");
+              return '<li class="otd-card"><a href="' + esc(t.page) + '"><h3>' + esc(t.title) + "</h3></a>" +
+                '<p class="cut-meta">' + esc(meta) + "</p>" + plays + "</li>";
+            }).join("");
+          })
+          .catch(function () {
+            otdList.innerHTML = '<li class="otd-empty"><p>The calendar could not be read today.</p></li>';
+          });
+      }
+
+      /* Cast lots — summon one random vault transmission, drawn blind */
+      var summonBtn = document.getElementById("summon-btn");
+      var lotsResult = document.getElementById("lots-result");
+      if (summonBtn && lotsResult && Array.isArray(d.discography)) {
+        var lotsPool = d.discography.filter(function (r) { return r.type === "SoundCloud-only"; });
+        summonBtn.addEventListener("click", function () {
+          if (!lotsPool.length) return;
+          var r = lotsPool[Math.floor(Math.random() * lotsPool.length)];
+          var plays = (r.plays != null) ? Number(r.plays).toLocaleString("en-US") + " plays" : "plays uncounted";
+          lotsResult.innerHTML =
+            '<article class="lots-card" aria-label="Summoned transmission">' +
+            '<p class="kicker"><span class="numeral">&#10022;</span>The lots have spoken</p>' +
+            "<h3>" + esc(r.title) + "</h3>" +
+            '<p class="cut-meta">Uploaded ' + esc(r.date || "date unknown") + " · " + esc(plays) +
+            " <span class=\"chart-sub\">(snapshot 2026-10-11)</span></p>" +
+            '<div class="btn-row"><a class="btn btn-neon" href="https://soundcloud.com/asterdamaster" target="_blank" rel="noopener">Hear it on SoundCloud</a>' +
+            '<button class="btn" id="summon-again" type="button">Summon another</button></div>' +
+            "</article>";
+          var again = document.getElementById("summon-again");
+          if (again) again.addEventListener("click", function () { summonBtn.click(); });
+        });
       }
 
       /* Platforms */

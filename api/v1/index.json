@@ -1,13 +1,15 @@
 {
-  "name": "Aster da Master API",
-  "version": "0.6.0",
-  "observed": "2026-10-11",
-  "repository": "https://github.com/astercast/aster-da-master",
-  "for_agents": "Start at api/v1/index.json. The artist record is the source of truth; data/artist.json feeds the site renderer.",
-  "provenance": "All artist facts verified against public platform pages (Apple Music, iHeart, Anghami, Shazam, Boomplay, SonicHits, album.link, SoundCloud). v0.5.0: the official SoundCloud profile (asterdamaster) catalog is fully verified — 185 SoundCloud-only tracks (upload dates + play-count snapshot) alongside the 34 distributor releases (219 total). Spotify is artist-linked via the official SoundCloud bio; Instagram + official site likewise bio-linked. 'Litemode Trilogy' is teased in the bio, not confirmed.",
-  "endpoints": {
-    "index": "api/v1/index.json",
-    "artist": "api/v1/artist.json",
-    "codex": "api/v1/codex.json"
-  }
+ "name": "Aster da Master API",
+ "version": "0.7.0",
+ "observed": "2026-10-11",
+ "repository": "https://github.com/astercast/aster-da-master",
+ "for_agents": "Start at api/v1/index.json. The artist record is the source of truth; data/artist.json feeds the site renderer.",
+ "provenance": "All artist facts verified against public platform pages (Apple Music, iHeart, Anghami, Shazam, Boomplay, SonicHits, album.link, SoundCloud). v0.5.0: the official SoundCloud profile (asterdamaster) catalog is fully verified — 185 SoundCloud-only tracks (upload dates + play-count snapshot) alongside the 34 distributor releases (219 total). Spotify is artist-linked via the official SoundCloud bio; Instagram + official site likewise bio-linked. 'Litemode Trilogy' is teased in the bio, not confirmed. v0.7.0: global-search slug index + on-this-day (MM-DD) API; homepage gains search overlay, on-this-day section, era intelligence deep-dives, and cast-lots.",
+ "endpoints": {
+  "index": "api/v1/index.json",
+  "artist": "api/v1/artist.json",
+  "codex": "api/v1/codex.json",
+  "release-slugs": "api/v1/release-slugs.json",
+  "on-this-day": "api/v1/on-this-day.json"
+ }
 }

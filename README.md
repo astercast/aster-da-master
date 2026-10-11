@@ -18,7 +18,9 @@ A single-page, insanely designed, professionally composed artist site: minimal c
 - `assets/css/` — `tokens.css`, `base.css`, `layout.css`, `components.css` (modular, no frameworks)
 - `assets/js/site.js` — renders discography/platforms/socials/bio from `data/artist.json`; reveal-on-scroll
 - `assets/js/common.js` — shared helpers (`esc`, `parseCollabs`, `loadData`, era-span parsing) for standalone pages
-- `data/artist.json` — the single source of truth (populated by research, v0.6.0)
+- `data/artist.json` — the single source of truth (populated by research, v0.7.0)
+- `api/v1/release-slugs.json` — discography index → release-page slug (for search deep-links; built by `scripts/build_search_index.py`)
+- `api/v1/on-this-day.json` — "MM-DD" → tracks on that month-day across years (powers the homepage "On this day" section)
 - `data/codex.json` — vocabulary codex, computed by `scripts/build_codex.py`
 - `api/v1/` — machine-readable artist record + schema (`API.md`)
 - `skills/` — agent task procedures (announce-release, verify-platform-links, build-press-kit)
