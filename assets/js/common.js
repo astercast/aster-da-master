@@ -44,6 +44,16 @@
 
   function fmt(n) { return Number(n).toLocaleString("en-US"); }
 
+  /* Slugify, identical to scripts/build_releases.py slugify: lowercase,
+     "&" -> " and ", every run of non [a-z0-9] -> "-", trim dashes.
+     Single source of truth for JS deep links to generated pages. */
+  function slugify(s) {
+    return String(s == null ? "" : s).toLowerCase()
+      .replace(/&/g, " and ")
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/^-+|-+$/g, "") || "page";
+  }
+
   /* Reveal on scroll (same pattern as site.js) */
   function reveal() {
     var els = document.querySelectorAll(".reveal");
@@ -59,5 +69,5 @@
     }
   }
 
-  window.ADM = { esc: esc, parseCollabs: parseCollabs, loadData: loadData, spanYears: spanYears, fmt: fmt, reveal: reveal };
+  window.ADM = { esc: esc, parseCollabs: parseCollabs, loadData: loadData, spanYears: spanYears, fmt: fmt, reveal: reveal, slugify: slugify };
 })();

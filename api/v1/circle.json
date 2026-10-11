@@ -1,0 +1,455 @@
+{
+ "max-ferrari": {
+  "name": "Max Ferrari",
+  "page": "circle/max-ferrari.html",
+  "shared_transmissions": 8,
+  "shared_plays": 13618,
+  "years_active": "2018–2025",
+  "tracks": [
+   {
+    "title": "DESTINY (ft. JAX & Max Ferrari) ~ [prod. louky]",
+    "date": "2018-08-20",
+    "plays": 2000,
+    "type": "SoundCloud-only"
+   },
+   {
+    "title": "NIGHT MODE ft. MAX FERRARI x YUNG VETTA x JAX",
+    "date": "2019-07-09",
+    "plays": 10083,
+    "type": "SoundCloud-only"
+   },
+   {
+    "title": "This Feeling's Newer ft. Max Ferrari (prod. odece)",
+    "date": "2021-07-14",
+    "plays": 211,
+    "type": "SoundCloud-only"
+   },
+   {
+    "title": "Got Knots ft. Max Ferrari (prod. lil biscuit)",
+    "date": "2021-07-14",
+    "plays": 174,
+    "type": "SoundCloud-only"
+   },
+   {
+    "title": "Mix Up Substances ft. Max Ferrari",
+    "date": "2021-07-14",
+    "plays": 151,
+    "type": "SoundCloud-only"
+   },
+   {
+    "title": "MRari inna Beanstalk w/ Max Ferrari (@mvvi468)",
+    "date": "2024-04-05",
+    "plays": 515,
+    "type": "SoundCloud-only"
+   },
+   {
+    "title": "Sti11 waiting/tunnel freestyle w/ Max Ferrari prod. suli",
+    "date": "2025-11-11",
+    "plays": 300,
+    "type": "SoundCloud-only"
+   },
+   {
+    "title": "ARCSNOWWW w/ Max Ferrari prod. sustain",
+    "date": "2025-11-11",
+    "plays": 184,
+    "type": "SoundCloud-only"
+   }
+  ]
+ },
+ "yung-vetta": {
+  "name": "Yung Vetta",
+  "page": "circle/yung-vetta.html",
+  "shared_transmissions": 7,
+  "shared_plays": 17893,
+  "years_active": "2018–2019",
+  "tracks": [
+   {
+    "title": "Hip On My Blade (ft. Yung Vetta) ~ [prod. Skel]",
+    "date": "2018-12-02",
+    "plays": 1368,
+    "type": "SoundCloud-only"
+   },
+   {
+    "title": "Ima Be There ft. Yung Vetta(prod. Why Loner)",
+    "date": "2019-01-21",
+    "plays": 1913,
+    "type": "SoundCloud-only"
+   },
+   {
+    "title": "[outro] Off Beat ft. Yung Vetta (prod. Addy)",
+    "date": "2019-01-28",
+    "plays": 935,
+    "type": "SoundCloud-only"
+   },
+   {
+    "title": "STOP IT! ft. Yung Vetta (prod. okthxbb)",
+    "date": "2019-01-28",
+    "plays": 455,
+    "type": "SoundCloud-only"
+   },
+   {
+    "title": "Hard To Keep ft. Yung Vetta (prod. Dead Spyro X Scarlet)",
+    "date": "2019-01-28",
+    "plays": 2415,
+    "type": "SoundCloud-only"
+   },
+   {
+    "title": "Nothing ft. Yung Vetta(prod Xtravulous)",
+    "date": "2019-01-28",
+    "plays": 724,
+    "type": "SoundCloud-only"
+   },
+   {
+    "title": "NIGHT MODE ft. MAX FERRARI x YUNG VETTA x JAX",
+    "date": "2019-07-09",
+    "plays": 10083,
+    "type": "SoundCloud-only"
+   }
+  ]
+ },
+ "jax": {
+  "name": "JAX",
+  "page": "circle/jax.html",
+  "shared_transmissions": 3,
+  "shared_plays": 12783,
+  "years_active": "2018–2019",
+  "tracks": [
+   {
+    "title": "DESTINY (ft. JAX & Max Ferrari) ~ [prod. louky]",
+    "date": "2018-08-20",
+    "plays": 2000,
+    "type": "SoundCloud-only"
+   },
+   {
+    "title": "Walk With Me w/ JAX (Prod. Rawman)",
+    "date": "2018-08-27",
+    "plays": 700,
+    "type": "SoundCloud-only"
+   },
+   {
+    "title": "NIGHT MODE ft. MAX FERRARI x YUNG VETTA x JAX",
+    "date": "2019-07-09",
+    "plays": 10083,
+    "type": "SoundCloud-only"
+   }
+  ]
+ },
+ "lil-yu": {
+  "name": "lil yu",
+  "page": "circle/lil-yu.html",
+  "shared_transmissions": 3,
+  "shared_plays": 2929,
+  "years_active": "2019–2023",
+  "tracks": [
+   {
+    "title": "I'd rather be w/ lil yu (prod. razorwrist)",
+    "date": "2019-12-22",
+    "plays": 1343,
+    "type": "SoundCloud-only"
+   },
+   {
+    "title": "playin' by the book w/ lil yu (prod. dxsh)",
+    "date": "2020-10-07",
+    "plays": 861,
+    "type": "SoundCloud-only"
+   },
+   {
+    "title": "Clock In The Benz w/ Lil Yu prod shinju",
+    "date": "2023-08-29",
+    "plays": 725,
+    "type": "SoundCloud-only"
+   }
+  ]
+ },
+ "capoxxo": {
+  "name": "capoxxo",
+  "page": "circle/capoxxo.html",
+  "shared_transmissions": 2,
+  "shared_plays": 16174,
+  "years_active": "2019",
+  "tracks": [
+   {
+    "title": "candy w/ capoxxo(prod. razorwrist)",
+    "date": "2019-10-04",
+    "plays": 11587,
+    "type": "SoundCloud-only"
+   },
+   {
+    "title": "getting colder w/ capoxxo (prod. pvscale x asa41)",
+    "date": "2019-12-22",
+    "plays": 4587,
+    "type": "SoundCloud-only"
+   }
+  ]
+ },
+ "griimxo": {
+  "name": "Griimxo",
+  "page": "circle/griimxo.html",
+  "shared_transmissions": 2,
+  "shared_plays": 178,
+  "years_active": "2024–2025",
+  "tracks": [
+   {
+    "title": "Phantom Moshpit (feat. GRiiMXO)",
+    "date": "2024-08-24",
+    "plays": null,
+    "type": "Single"
+   },
+   {
+    "title": "Phantom Moshpit w/ Griimxo (remastered) prod. scared716",
+    "date": "2025-11-11",
+    "plays": 178,
+    "type": "SoundCloud-only"
+   }
+  ]
+ },
+ "jo-e-dripp": {
+  "name": "JO$E DRIPP",
+  "page": "circle/jo-e-dripp.html",
+  "shared_transmissions": 2,
+  "shared_plays": 3171,
+  "years_active": "2018–2019",
+  "tracks": [
+   {
+    "title": "Mistakes Ft. JO$E DRIPP (prod. Tec)",
+    "date": "2018-04-28",
+    "plays": 1400,
+    "type": "SoundCloud-only"
+   },
+   {
+    "title": "SUN SET FOR U ft. JO$E DRIPP (prod. y axis)",
+    "date": "2019-07-09",
+    "plays": 1771,
+    "type": "SoundCloud-only"
+   }
+  ]
+ },
+ "lil-wintr": {
+  "name": "Lil Wintr",
+  "page": "circle/lil-wintr.html",
+  "shared_transmissions": 2,
+  "shared_plays": 9615,
+  "years_active": "2019",
+  "tracks": [
+   {
+    "title": "Master Key (feat. Lil Wintr & Marcelo)",
+    "date": "2019-12-06",
+    "plays": null,
+    "type": "Single"
+   },
+   {
+    "title": "master key ft. Lil Wintr x Marcelo (prod. ginseng)",
+    "date": "2019-12-06",
+    "plays": 9615,
+    "type": "SoundCloud-only"
+   }
+  ]
+ },
+ "lilvicbxi": {
+  "name": "LILVICBXI",
+  "page": "circle/lilvicbxi.html",
+  "shared_transmissions": 2,
+  "shared_plays": 4570,
+  "years_active": "2019",
+  "tracks": [
+   {
+    "title": "snow caps w/ LILVICBXI (prod. LILVICBXI x spliff08_)",
+    "date": "2019-12-22",
+    "plays": 1579,
+    "type": "SoundCloud-only"
+   },
+   {
+    "title": "same amount w/ LILVICBXI (prod. LILVICBXI)",
+    "date": "2019-12-22",
+    "plays": 2991,
+    "type": "SoundCloud-only"
+   }
+  ]
+ },
+ "marcelo": {
+  "name": "Marcelo",
+  "page": "circle/marcelo.html",
+  "shared_transmissions": 2,
+  "shared_plays": 9615,
+  "years_active": "2019",
+  "tracks": [
+   {
+    "title": "Master Key (feat. Lil Wintr & Marcelo)",
+    "date": "2019-12-06",
+    "plays": null,
+    "type": "Single"
+   },
+   {
+    "title": "master key ft. Lil Wintr x Marcelo (prod. ginseng)",
+    "date": "2019-12-06",
+    "plays": 9615,
+    "type": "SoundCloud-only"
+   }
+  ]
+ },
+ "ammi-age": {
+  "name": "AMMI $AGE",
+  "page": "circle/ammi-age.html",
+  "shared_transmissions": 1,
+  "shared_plays": 2490,
+  "years_active": "2019",
+  "tracks": [
+   {
+    "title": "I'M WEAKENING ft. AMMI $AGE",
+    "date": "2019-07-09",
+    "plays": 2490,
+    "type": "SoundCloud-only"
+   }
+  ]
+ },
+ "keyblayde808": {
+  "name": "Keyblayde808",
+  "page": "circle/keyblayde808.html",
+  "shared_transmissions": 1,
+  "shared_plays": 2650,
+  "years_active": "2019",
+  "tracks": [
+   {
+    "title": "White Noise ft. Keyblayde808 (prod. Keyblayde808)",
+    "date": "2019-12-30",
+    "plays": 2650,
+    "type": "SoundCloud-only"
+   }
+  ]
+ },
+ "lil-soda-boi": {
+  "name": "lil soda boi",
+  "page": "circle/lil-soda-boi.html",
+  "shared_transmissions": 1,
+  "shared_plays": 3075,
+  "years_active": "2019",
+  "tracks": [
+   {
+    "title": "Best Friend ft. lil soda boi (prod. lil soda boi)",
+    "date": "2019-12-30",
+    "plays": 3075,
+    "type": "SoundCloud-only"
+   }
+  ]
+ },
+ "lilrareboy": {
+  "name": "Lilrareboy",
+  "page": "circle/lilrareboy.html",
+  "shared_transmissions": 1,
+  "shared_plays": 319,
+  "years_active": "2021",
+  "tracks": [
+   {
+    "title": "Sunvalley Rally ft. Lilrareboy (prod. phantasie)",
+    "date": "2021-07-14",
+    "plays": 319,
+    "type": "SoundCloud-only"
+   }
+  ]
+ },
+ "max": {
+  "name": "Max",
+  "page": "circle/max.html",
+  "shared_transmissions": 1,
+  "shared_plays": 17,
+  "years_active": "2024",
+  "tracks": [
+   {
+    "title": "nitemode2019 w/ Max+Vetty prod. NaXi.wav",
+    "date": "2024-11-05",
+    "plays": 17,
+    "type": "SoundCloud-only"
+   }
+  ]
+ },
+ "offline-hp": {
+  "name": "Offline_hp",
+  "page": "circle/offline-hp.html",
+  "shared_transmissions": 1,
+  "shared_plays": 1311,
+  "years_active": "2019",
+  "tracks": [
+   {
+    "title": "GARDEN ft. Offline_hp (prod. QB)",
+    "date": "2019-07-09",
+    "plays": 1311,
+    "type": "SoundCloud-only"
+   }
+  ]
+ },
+ "phil-is-lonely": {
+  "name": "phil is lonely",
+  "page": "circle/phil-is-lonely.html",
+  "shared_transmissions": 1,
+  "shared_plays": 244,
+  "years_active": "2020",
+  "tracks": [
+   {
+    "title": "keep w/ phil is lonely (prod. uniquate)",
+    "date": "2020-10-07",
+    "plays": 244,
+    "type": "SoundCloud-only"
+   }
+  ]
+ },
+ "pvscale": {
+  "name": "pvscale",
+  "page": "circle/pvscale.html",
+  "shared_transmissions": 1,
+  "shared_plays": 7786,
+  "years_active": "2019",
+  "tracks": [
+   {
+    "title": "fly like me w/ pvscale(prod. pvscale)",
+    "date": "2019-12-22",
+    "plays": 7786,
+    "type": "SoundCloud-only"
+   }
+  ]
+ },
+ "shola": {
+  "name": "Shola",
+  "page": "circle/shola.html",
+  "shared_transmissions": 1,
+  "shared_plays": 1443,
+  "years_active": "2018",
+  "tracks": [
+   {
+    "title": "Far From Me (ft. Shola) ~ [prod. HideousPittius]",
+    "date": "2018-11-08",
+    "plays": 1443,
+    "type": "SoundCloud-only"
+   }
+  ]
+ },
+ "vetty": {
+  "name": "Vetty",
+  "page": "circle/vetty.html",
+  "shared_transmissions": 1,
+  "shared_plays": 17,
+  "years_active": "2024",
+  "tracks": [
+   {
+    "title": "nitemode2019 w/ Max+Vetty prod. NaXi.wav",
+    "date": "2024-11-05",
+    "plays": 17,
+    "type": "SoundCloud-only"
+   }
+  ]
+ },
+ "yung-cortex": {
+  "name": "Yung Cortex",
+  "page": "circle/yung-cortex.html",
+  "shared_transmissions": 1,
+  "shared_plays": 1115,
+  "years_active": "2019",
+  "tracks": [
+   {
+    "title": "All Alone ft. Yung Cortex (prod. Yung Cortex)",
+    "date": "2019-12-30",
+    "plays": 1115,
+    "type": "SoundCloud-only"
+   }
+  ]
+ }
+}

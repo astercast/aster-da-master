@@ -3,7 +3,7 @@
    arrow keys move between nodes. Full <details> list fallback for screen readers. */
 (function () {
   "use strict";
-  var esc = ADM.esc, fmt = ADM.fmt, parseCollabs = ADM.parseCollabs;
+  var esc = ADM.esc, fmt = ADM.fmt, parseCollabs = ADM.parseCollabs, slugify = ADM.slugify;
   ADM.reveal();
 
   var svg = document.getElementById("nw-svg");
@@ -35,6 +35,7 @@
     panel.innerHTML =
       "<h3>" + esc(display) + "</h3>" +
       "<p class=\"chart-sub\">" + info.tracks.length + " shared transmission" + (info.tracks.length === 1 ? "" : "s") + "</p>" +
+      "<p><a class=\"btn btn-sm\" href=\"circle/" + slugify(display) + ".html\">Full page &rarr;</a></p>" +
       "<ol class=\"top-list\">" + info.tracks.map(trackLine).join("") + "</ol>";
   }
 
@@ -135,6 +136,7 @@
       var info = collabs[k];
       return "<details><summary>" + esc(info.display) +
         " <span class=\"top-n\">×" + info.tracks.length + "</span></summary>" +
+        "<p><a href=\"circle/" + slugify(info.display) + ".html\">Full page &rarr;</a></p>" +
         "<ol class=\"top-list\">" + info.tracks.map(trackLine).join("") + "</ol></details>";
     }).join("");
   }).catch(function () {

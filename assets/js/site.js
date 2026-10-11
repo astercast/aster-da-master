@@ -37,6 +37,12 @@
   fetch("data/artist.json")
     .then(function (r) { if (!r.ok) throw new Error("data failed"); return r.json(); })
     .then(function (d) {
+      /* Slugify — identical to scripts/build_releases.py. Deep links to
+         generated circle/ and codex/ pages. Prefers the shared helper. */
+      var slugify = (window.ADM && window.ADM.slugify) || function (s) {
+        return String(s == null ? "" : s).toLowerCase().replace(/&/g, " and ")
+          .replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "") || "page";
+      };
       if (d.research_status && d.research_status.indexOf("PENDING") === 0) return; /* don't render placeholders */
       var a = d.artist || {};
 
@@ -243,6 +249,17 @@
         });
         var topCollabs = Object.keys(collabCount).sort(function (a, b) { return collabCount[b] - collabCount[a]; }).slice(0, 10);
         var fmt = function (n) { return Number(n).toLocaleString("en-US"); };
+        /* Play velocity: plays per day since upload, from the 2026-10-11 snapshot.
+           Favors recent uploads by construction — that IS the story (depth vs heat). */
+        var SNAP = Date.UTC(2026, 9, 11);
+        var velocity = vault
+          .filter(function (r) { return r.date && /^\d{4}-\d{2}-\d{2}$/.test(r.date) && (r.plays || 0) > 0; })
+          .map(function (r) {
+            var days = Math.max(1, Math.round((SNAP - Date.parse(r.date + "T00:00:00Z")) / 86400000));
+            return { title: r.title, plays: r.plays, date: r.date, v: r.plays / days };
+          })
+          .sort(function (a, b) { return b.v - a.v; })
+          .slice(0, 15);
 
         statCards.innerHTML = [
           { v: fmt(totalPlays), l: "SoundCloud plays", s: "across " + vault.length + " vault tracks · snapshot 2026-10-11" },
@@ -286,7 +303,16 @@
         var colEl = document.getElementById("top-collabs");
         if (colEl) {
           colEl.innerHTML = topCollabs.map(function (k) {
-            return "<li><span>" + esc(collabDisplay[k]) + "</span><span class=\"top-n\">×" + collabCount[k] + "</span></li>";
+            return "<li><span><a href=\"circle/" + slugify(collabDisplay[k]) + ".html\">" +
+              esc(collabDisplay[k]) + "</a></span><span class=\"top-n\">×" + collabCount[k] + "</span></li>";
+          }).join("");
+        }
+        var velEl = document.getElementById("top-velocity");
+        if (velEl) {
+          velEl.innerHTML = velocity.map(function (r) {
+            var rate = r.v >= 10 ? r.v.toFixed(1) : r.v.toFixed(2);
+            return "<li><span>" + esc(r.title) + '<br><small class="chart-sub">' + esc(r.date) +
+              " · " + fmt(r.plays) + " plays</small></span><span class=\"top-n\">" + rate + "/day</span></li>";
           }).join("");
         }
       }
@@ -304,7 +330,7 @@
                 return "<li><span>" + esc(t.title) + '<br><small class="chart-sub">' + esc(meta) + "</small></span>" + plays + "</li>";
               }).join("");
               return '<article class="codex-card"><p class="codex-count">' + f.track_count + '</p>' +
-                "<h3>" + esc(f.name) + "</h3>" +
+                '<h3><a href="codex/' + slugify(f.name) + '.html">' + esc(f.name) + "</a></h3>" +
                 '<p class="codex-epithet">' + esc(f.epithet) + "</p>" +
                 '<p class="codex-words">' + f.words.map(esc).join(" · ") + "</p>" +
                 '<ol class="top-list codex-tracks">' + tracks + "</ol></article>";
