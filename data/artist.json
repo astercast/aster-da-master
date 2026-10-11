@@ -1,1 +1,461 @@
-{"artist":{"bio":"TBD by research","facts":[],"genre":"TBD by research (not rap — user correction 2026-10-11)","name":"Aster da Master","tagline":"He transcends music."},"booking":null,"discography":[],"featured_release":null,"observed":"2026-10-11","platforms":[],"research_status":"PENDING — researcher gathering discography, links, bio. Do not publish until verified.","socials":[],"version":"0.1.0"}
+{
+  "version": "0.2.0",
+  "observed": "2026-10-11",
+  "research_status": "VERIFIED-2026-10-11 — identity resolved per research report; Spotify profile unverified",
+  "artist": {
+    "name": "Aster da Master",
+    "tagline": "He transcends music.",
+    "genre": "Filed under Hip-Hop/Rap by distributors; his world is the digicore underground",
+    "bio": "Aster Da Master is an underground, internet-native artist active since 2017.",
+    "bio_paragraphs": [
+      "Aster Da Master is an underground, internet-native artist active since 2017. Distributors file him under Hip-Hop/Rap — and under Alternative and even Pop — but his world is the digicore underground: melodic, internet-raised, and unmistakably his own.",
+      "No interviews, press features, or official bios exist anywhere we have found, so this archive is built strictly from verified distributor and platform records. The catalog tells the story: a WoT label era in 2019 with the album Master Key; a prolific 2020 run of four projects; the Cast It: years of 2021–2022; the SomeLowLifes collective era of 2023–2024; a quiet 2025; and a comeback singles run through spring 2026.",
+      "His titles read like incantations — Cast Out, Master Key, B4 the Ritual, Solstice, Bright — lowercase chaos and emoticons where you would expect gloss. Thirty-four releases across nine years, and he keeps moving. Real name, age, and hometown are not publicly known; this site invents nothing."
+    ],
+    "facts": [
+      {
+        "k": "Active since",
+        "v": "2017"
+      },
+      {
+        "k": "Releases on record",
+        "v": "34 — 9 projects, 25 singles (2017–2026)"
+      },
+      {
+        "k": "Collective",
+        "v": "SomeLowLifes (somelowlifes label, 2023–2024)"
+      },
+      {
+        "k": "Earlier label",
+        "v": "WoT (2019)"
+      },
+      {
+        "k": "Distributor tags",
+        "v": "Hip-Hop/Rap · Alternative · Pop (Shazam) — distributor-applied"
+      },
+      {
+        "k": "Scene",
+        "v": "Underground digicore / melodic internet — a scene reading from collaborator evidence"
+      },
+      {
+        "k": "2025",
+        "v": "A quiet year — no releases found"
+      },
+      {
+        "k": "Geography",
+        "v": "Unknown; one track title hints at the Bay Area (single-source)"
+      },
+      {
+        "k": "Press",
+        "v": "None found — no interviews, bios, or features"
+      },
+      {
+        "k": "Identity",
+        "v": "Real name, age, hometown unknown — not invented here"
+      }
+    ]
+  },
+  "collaborators": [
+    {
+      "name": "Lil Wintr",
+      "role": "Vocal feature"
+    },
+    {
+      "name": "Marcelo",
+      "role": "Vocal feature"
+    },
+    {
+      "name": "Capoxxo",
+      "role": "Vocal feature"
+    },
+    {
+      "name": "Pvscale",
+      "role": "Vocal feature · production"
+    },
+    {
+      "name": "Lilvicbxi",
+      "role": "Vocal feature"
+    },
+    {
+      "name": "Jax",
+      "role": "Vocal feature"
+    },
+    {
+      "name": "Max Ferrari",
+      "role": "Vocal feature"
+    },
+    {
+      "name": "Lil Yu",
+      "role": "Vocal feature"
+    },
+    {
+      "name": "Offline Hp",
+      "role": "Vocal feature"
+    },
+    {
+      "name": "GRiiMXO",
+      "role": "Vocal feature"
+    },
+    {
+      "name": "AWFL",
+      "role": "Vocal feature"
+    },
+    {
+      "name": "DirtyDoves",
+      "role": "Vocal feature"
+    },
+    {
+      "name": "Lil' Spursy",
+      "role": "Vocal feature"
+    },
+    {
+      "name": "lilrareboy",
+      "role": "Vocal feature",
+      "confidence": "single-source"
+    },
+    {
+      "name": "Memory Loaded October 600",
+      "role": "Vocal feature",
+      "confidence": "single-source"
+    },
+    {
+      "name": "Falinee",
+      "role": "Vocal feature",
+      "confidence": "single-source"
+    },
+    {
+      "name": "asa41",
+      "role": "Production",
+      "confidence": "single-source"
+    },
+    {
+      "name": "razorwrist",
+      "role": "Production",
+      "confidence": "single-source"
+    },
+    {
+      "name": "Willie G",
+      "role": "Production",
+      "confidence": "single-source"
+    },
+    {
+      "name": "Lil' Flower",
+      "role": "Production",
+      "confidence": "single-source"
+    },
+    {
+      "name": "SomeLowLifes",
+      "role": "Collective · label (2020–2024)"
+    },
+    {
+      "name": "WoT",
+      "role": "Label (2019)"
+    }
+  ],
+  "featured_release": {
+    "title": "Living With The Big Shots",
+    "date": "2026-05-05",
+    "type": "Single",
+    "blurb": "The latest transmission — six singles across spring 2026 close out his comeback run after a quiet 2025.",
+    "links": [
+      {
+        "label": "Apple Music",
+        "url": "https://music.apple.com/us/artist/aster-da-master/1466301103"
+      },
+      {
+        "label": "iHeart",
+        "url": "https://www.iheart.com/artist/aster-da-master-33038534/"
+      }
+    ]
+  },
+  "discography": [
+    {
+      "title": "Master Key",
+      "date": "2019-12-23",
+      "type": "Album",
+      "tracks": 12,
+      "links": [
+        {
+          "label": "Shazam",
+          "url": "https://www.shazam.com/album/1491400265/master-key"
+        },
+        {
+          "label": "Listen everywhere",
+          "url": "https://album.link/s/1BdcF88a8MLKGgIqr7vvaM"
+        }
+      ],
+      "label": "WoT"
+    },
+    {
+      "title": "Soulless Soldiers",
+      "date": "2019-12-30",
+      "type": "Album",
+      "tracks": 9,
+      "links": []
+    },
+    {
+      "title": "Imagine All of This Without Pain",
+      "date": "2020-06-07",
+      "type": "Album",
+      "tracks": 7,
+      "links": []
+    },
+    {
+      "title": "Bright",
+      "date": "2020-10-07",
+      "type": "Album",
+      "tracks": 11,
+      "links": []
+    },
+    {
+      "title": "Solstice",
+      "date": "2020-12-21",
+      "type": "Album",
+      "tracks": 8,
+      "links": []
+    },
+    {
+      "title": "Cast It:, Pt. 1",
+      "date": "2021-07-14",
+      "type": "Album",
+      "tracks": 16,
+      "links": []
+    },
+    {
+      "title": "Cast It:, Pt. 2",
+      "date": "2022-02-22",
+      "type": "Album",
+      "tracks": 12,
+      "links": []
+    },
+    {
+      "title": "B4 the Ritual (2018)",
+      "date": "2023-11-11",
+      "type": "Album",
+      "tracks": 12,
+      "links": [],
+      "label": "somelowlifes"
+    },
+    {
+      "title": "Cast Out",
+      "date": "2023-11-11",
+      "type": "Album",
+      "tracks": 11,
+      "links": [],
+      "label": "somelowlifes"
+    },
+    {
+      "title": "lost memories (feat. Aster Da Master)",
+      "date": "2017-04-20",
+      "type": "Single",
+      "links": [],
+      "note": "Feature credit on another artist's single; earliest trace found."
+    },
+    {
+      "title": "Contact!",
+      "date": "2019-09-21",
+      "type": "Single",
+      "links": []
+    },
+    {
+      "title": "Master Key (feat. Lil Wintr & Marcelo)",
+      "date": "2019-12-06",
+      "type": "Single",
+      "links": []
+    },
+    {
+      "title": "I Hate It",
+      "date": "2020-04-09",
+      "type": "Single",
+      "links": []
+    },
+    {
+      "title": "Crystals by My Bed",
+      "date": "2020-04-16",
+      "type": "Single",
+      "links": []
+    },
+    {
+      "title": "Born from Stars",
+      "date": "2020-07-21",
+      "type": "Single",
+      "links": []
+    },
+    {
+      "title": "More Than Letters",
+      "date": "2020-08-12",
+      "type": "Single",
+      "links": []
+    },
+    {
+      "title": "My Fault",
+      "date": "2020-11-11",
+      "type": "Single",
+      "links": []
+    },
+    {
+      "title": "My Fault 2",
+      "date": "2021-04-13",
+      "type": "Single",
+      "links": []
+    },
+    {
+      "title": "Warrior Returning Alive",
+      "date": "2023-10-29",
+      "type": "Single",
+      "links": []
+    },
+    {
+      "title": "Hidden Lakes Backpack",
+      "date": "2023-11-03",
+      "type": "Single",
+      "links": []
+    },
+    {
+      "title": "Long Day (End Task)",
+      "date": "2023-11-09",
+      "type": "Single",
+      "links": []
+    },
+    {
+      "title": "Reachhh",
+      "date": "2024-04-08",
+      "type": "Single",
+      "links": [
+        {
+          "label": "Shazam",
+          "url": "https://www.shazam.com/song/1740041531/reachhh"
+        }
+      ],
+      "note": "somelowlifes label; Shazam tags Pop"
+    },
+    {
+      "title": "u Not at the Table",
+      "date": "2024-04-19",
+      "type": "Single",
+      "links": []
+    },
+    {
+      "title": "Tri:Ed",
+      "date": "2024-06-16",
+      "type": "Single",
+      "links": []
+    },
+    {
+      "title": "SSSolid",
+      "date": "2024-06-27",
+      "type": "Single",
+      "links": []
+    },
+    {
+      "title": "Phantom Moshpit (feat. GRiiMXO)",
+      "date": "2024-08-24",
+      "type": "Single",
+      "links": []
+    },
+    {
+      "title": "like my dogs!!!",
+      "date": "2024-09-18",
+      "type": "Single",
+      "links": []
+    },
+    {
+      "title": "ViiXX",
+      "date": "2024-10-04",
+      "type": "Single",
+      "links": []
+    },
+    {
+      "title": "Life's Made",
+      "date": "2026-03-21",
+      "type": "Single",
+      "links": []
+    },
+    {
+      "title": "No Power",
+      "date": "2026-03-23",
+      "type": "Single",
+      "links": []
+    },
+    {
+      "title": "The Night Ends Yeaaa",
+      "date": "2026-03-25",
+      "type": "Single",
+      "links": []
+    },
+    {
+      "title": "Writing Books",
+      "date": "2026-05-02",
+      "type": "Single",
+      "links": []
+    },
+    {
+      "title": "9 Trips",
+      "date": "2026-05-03",
+      "type": "Single",
+      "links": []
+    },
+    {
+      "title": "Living With The Big Shots",
+      "date": "2026-05-05",
+      "type": "Single",
+      "links": [],
+      "note": "Latest verified release; all 2026 singles marked explicit on iHeart"
+    }
+  ],
+  "platforms": [
+    {
+      "name": "Apple Music",
+      "url": "https://music.apple.com/us/artist/aster-da-master/1466301103",
+      "verified": true,
+      "note": "Main catalog — 34 releases"
+    },
+    {
+      "name": "Apple Music — alt spelling",
+      "url": "https://music.apple.com/us/artist/asterdamaster/1369059395",
+      "verified": true,
+      "note": "Distributor-split duplicate profile (Alternative tag)"
+    },
+    {
+      "name": "iHeart",
+      "url": "https://www.iheart.com/artist/aster-da-master-33038534/",
+      "verified": true
+    },
+    {
+      "name": "Anghami",
+      "url": "https://play.anghami.com/artist/4940174?amplitude=0",
+      "verified": true
+    },
+    {
+      "name": "Shazam",
+      "url": "https://www.shazam.com/album/1491400265/master-key",
+      "verified": true,
+      "note": "Via the Master Key album page"
+    },
+    {
+      "name": "album.link — everywhere",
+      "url": "https://album.link/s/1BdcF88a8MLKGgIqr7vvaM",
+      "verified": true,
+      "note": "Master Key all-platform card"
+    },
+    {
+      "name": "Boomplay",
+      "url": "https://www.boomplay.com/songs/65967023",
+      "verified": true,
+      "note": "Track pages; host blocks bots but is live"
+    },
+    {
+      "name": "SonicHits",
+      "url": "https://sonichits.com/artist/Aster_Da_Master",
+      "verified": true
+    },
+    {
+      "name": "Spotify — Aster",
+      "url": "https://open.spotify.com/artist/7y7xi5nDLdQX2zWpUItMoz",
+      "verified": false,
+      "note": "Possible profile — identity unverified; catalog not merged"
+    }
+  ],
+  "socials": [],
+  "booking": null
+}

@@ -6,7 +6,7 @@ A single-page, insanely designed, professionally composed artist site: minimal c
 
 ## Status
 
-🚧 **Research in progress** — discography, platform links, and bio are being gathered across the web (Spotify, Apple Music, SoundCloud, YouTube, and everywhere else). `data/artist.json` carries `research_status: PENDING` until verified. The scaffold is complete; content populates from research, never invented.
+✅ **Research complete (2026-10-11)** — identity resolved: two distributor profiles for one artist (main Apple Music catalog, Hip-Hop/Rap, 34 releases; alt-spelling Alternative duplicate), SomeLowLifes collective, WoT 2019 era, quiet 2025, 2026 comeback. `data/artist.json` is populated from verified facts only (34-release discography, 9 platforms, 22 collaborators, 10 facts). The Spotify "Aster" profile is identity-**unverified** and is not merged — shown only with "possible profile" framing. Real name, age, hometown: unknown, never invented. Source report: `~/workspace/research_notes/aster-da-master-20261011/report.md`.
 
 ## Structure
 

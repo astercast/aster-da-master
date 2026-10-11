@@ -63,8 +63,27 @@
       var plats = document.getElementById("platform-grid");
       if (plats && Array.isArray(d.platforms)) {
         plats.innerHTML = d.platforms.map(function (p) {
+          var label = esc(p.name);
+          var note = "";
+          if (p.verified === false) {
+            note = '<br><small class="plat-note">' + esc(p.note || "unverified") + "</small>";
+          }
           return '<a class="platform" href="' + esc(p.url) + '" target="_blank" rel="noopener">' +
-            "<span>" + esc(p.name) + '</span><span class="arrow" aria-hidden="true">→</span></a>';
+            "<span>" + label + note + '</span><span class="arrow" aria-hidden="true">→</span></a>';
+        }).join("");
+      }
+
+      /* Circle (collaborators) */
+      var circ = document.getElementById("circle-grid");
+      if (circ && Array.isArray(d.collaborators)) {
+        circ.innerHTML = d.collaborators.map(function (c) {
+          var flag = c.confidence === "single-source"
+            ? '<span class="src-tag" title="Single-source credit — verified once, awaiting a second confirmation">single-source</span>'
+            : "";
+          return '<article class="circle-card">' +
+            "<h3>" + esc(c.name) + flag + "</h3>" +
+            '<p class="role">' + esc(c.role || "On record") + "</p>" +
+            "</article>";
         }).join("");
       }
 
