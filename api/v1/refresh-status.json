@@ -1,0 +1,9 @@
+{
+  "last_attempt": "2026-10-11T22:11:31Z",
+  "status": "ok",
+  "source": "soundcloud api-v2",
+  "client_id_source": "public-webapp-js",
+  "snapshot_at": "2026-10-11T22:11:31Z",
+  "tracks_captured": 185,
+  "tracks_skipped_no_count": 0
+}
