@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Press kit — Aster da Master</title>
+  <meta name="description" content="One-page press kit for Aster da Master: verified facts, release stats, eras, platforms. Facts only — unknowns are marked as unknowns.">
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container header-bar">
+      <a class="brand" href="./" aria-label="Aster da Master home">
+        <span class="brand-mark" aria-hidden="true">A&#10022;</span>
+        <span>ASTER DA MASTER</span>
+      </a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="./#discography">Discography</a>
+        <a href="releases/">Releases</a>
+        <a href="./">Home</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="container press-kit">
+      <div class="pk-toolbar">
+        <button class="btn btn-neon" type="button" onclick="window.print()">Print / save as PDF</button>
+        <a class="btn" href="./">Back to the site</a>
+      </div>
+
+      <section aria-labelledby="pk-h">
+        <p class="kicker"><span class="numeral">&#10022;</span>Press kit</p>
+        <h1 id="pk-h">Aster da Master</h1>
+        <p class="lede" id="pk-tagline">He transcends music.</p>
+        <p id="pk-genre"></p>
+      </section>
+
+      <div class="pk-grid">
+        <div class="pk-box">
+          <h2>Release stats</h2>
+          <ul class="pk-facts" id="pk-stats"></ul>
+        </div>
+        <div class="pk-box">
+          <h2>Featured release</h2>
+          <div id="pk-feature"></div>
+        </div>
+        <div class="pk-box">
+          <h2>Eras</h2>
+          <ul class="pk-facts" id="pk-eras"></ul>
+        </div>
+        <div class="pk-box">
+          <h2>Platforms</h2>
+          <ul class="pk-facts" id="pk-platforms"></ul>
+        </div>
+        <div class="pk-box">
+          <h2>Collaborators on record</h2>
+          <ul class="pk-facts" id="pk-circle"></ul>
+        </div>
+        <div class="pk-box pk-unknowns">
+          <h2>Verified facts vs. unknowns</h2>
+          <ul class="pk-facts" id="pk-unknowns"></ul>
+        </div>
+      </div>
+      <p class="chart-sub" id="pk-foot"></p>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <p>&copy; 2026 ASTER DA MASTER &mdash; ALL SIGNALS RESERVED</p>
+      <nav aria-label="Footer"><a href="./">Home</a></nav>
+    </div>
+  </footer>
+
+  <script>
+  (function () {
+    "use strict";
+    function esc(s) {
+      return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) {
+        return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
+      });
+    }
+    function li(html) { return "<li>" + html + "</li>"; }
+    fetch("data/artist.json")
+      .then(function (r) { if (!r.ok) throw new Error("data failed"); return r.json(); })
+      .then(function (d) {
+        var a = d.artist || {};
+        var disc = d.discography || [];
+        var dist = disc.filter(function (e) { return e.type !== "SoundCloud-only"; });
+        var vault = disc.filter(function (e) { return e.type === "SoundCloud-only"; });
+        var albums = dist.filter(function (e) { return e.type === "Album"; }).length;
+        var singles = dist.filter(function (e) { return e.type === "Single"; }).length;
+        var years = dist.map(function (e) { return (e.date || "").slice(0, 4); }).filter(Boolean).sort();
+        var span = years.length ? years[0] + "\u2013" + years[years.length - 1] : "";
+
+        document.getElementById("pk-tagline").textContent = a.tagline || "";
+        document.getElementById("pk-genre").textContent = a.genre || "";
+
+        document.getElementById("pk-stats").innerHTML = [
+          li("<strong>" + dist.length + "</strong> distributor releases (" + albums + " albums/projects, " + singles + " singles)"),
+          li("<strong>" + vault.length + "</strong> SoundCloud-vault tracks (single-sourced from third-party upload indexes)"),
+          li("Active <strong>" + esc(span) + "</strong>"),
+          li("Labels on record: <strong>WoT</strong> (2019), <strong>somelowlifes</strong> (2023\u20132024)")
+        ].join("");
+
+        var f = d.featured_release;
+        document.getElementById("pk-feature").innerHTML = f
+          ? "<p><strong>" + esc(f.title) + "</strong> \u00b7 " + esc(f.date || "") + "</p><p>" + esc(f.blurb || "") + "</p>"
+          : "<p>No featured release on record.</p>";
+
+        document.getElementById("pk-eras").innerHTML = (d.eras || []).map(function (e) {
+          return li("<strong>" + esc(e.name) + "</strong> \u00b7 " + esc(e.span));
+        }).join("");
+
+        document.getElementById("pk-platforms").innerHTML = (d.platforms || []).map(function (p) {
+          var v = p.verified === false ? " (unverified)" : "";
+          return li(esc(p.name) + v);
+        }).join("");
+
+        document.getElementById("pk-circle").innerHTML = (d.collaborators || []).map(function (c) {
+          var s = c.confidence === "single-source" ? " (single-source)" : "";
+          return li(esc(c.name) + " \u2014 " + esc(c.role || "on record") + s);
+        }).join("") || li("None on record.");
+
+        document.getElementById("pk-unknowns").innerHTML = [
+          li("<strong>Verified:</strong> 34-release distributor catalog from Apple Music profile 1466301103 (iTunes Search API primary metadata), platform URLs (live-checked 2026-10-11), collaborator credits."),
+          li("<strong>Unknown:</strong> real name, age, hometown \u2014 never invented here."),
+          li("<strong>Unknown:</strong> no interviews, official bios, or press features found."),
+          li("<strong>Unknown:</strong> no verified social-media handles found."),
+          li("<strong>Unverified:</strong> Spotify artist profile \u2014 possible match, identity not confirmed; catalog not merged."),
+          li("<strong>Unresolved:</strong> SoundCloud profile URL \u2014 9 vault tracks on record from third-party indexes; full catalog size unknown."),
+          li("<strong>None listed:</strong> booking or management contact.")
+        ].join("");
+
+        document.getElementById("pk-foot").textContent =
+          "Compiled " + (d.observed || "") + " from verified distributor and platform records \u00b7 data version " + (d.version || "") + " \u00b7 " + (d.research_status || "");
+      })
+      .catch(function () {
+        document.getElementById("pk-stats").innerHTML = li("Data failed to load.");
+      });
+  })();
+  </script>
+</body>
+</html>

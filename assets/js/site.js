@@ -54,18 +54,64 @@
           "</div>";
       }
 
-      /* Discography */
+      /* Discography — with provenance lines and a vault filter */
       var grid = document.getElementById("disco-grid");
+      var discoMeta = document.getElementById("disco-meta");
+      var vaultNote = document.getElementById("vault-note");
+      function discoCard(r) {
+        var isVault = r.type === "SoundCloud-only";
+        var conf = (r.confidence === "single-source")
+          ? '<span class="src-tag" title="Single-source record \u2014 verified once, awaiting a second confirmation">single-source</span>'
+          : "";
+        var srcLine = r.source
+          ? '<p class="src" title="Data provenance">' + esc(r.source) + "</p>"
+          : "";
+        var dateLine = r.date ? esc(r.date) : "date unknown";
+        var typeLine = '<span class="type">' + esc(r.type || "Release") + "</span>" + conf;
+        return '<article class="disco-card' + (isVault ? " is-vault" : "") + '" data-dtype="' + esc(r.type) + '">' +
+          artTile(r) + typeLine +
+          "<h3>" + esc(r.title) + "</h3>" +
+          '<p class="date">' + dateLine + "</p>" +
+          '<div class="links">' + linkList(r.links) + "</div>" +
+          srcLine +
+          "</article>";
+      }
+      function discoFilterFn(filter) {
+        return function (r) {
+          if (filter === "all") return true;
+          if (filter === "vault") return r.type === "SoundCloud-only";
+          return r.type === filter;
+        };
+      }
+      function renderDisco(filter) {
+        var items = (d.discography || []).filter(discoFilterFn(filter));
+        grid.innerHTML = items.map(discoCard).join("");
+        var nAll = (d.discography || []).length;
+        var nVault = (d.discography || []).filter(function (r) { return r.type === "SoundCloud-only"; }).length;
+        var nDist = nAll - nVault;
+        if (discoMeta) {
+          discoMeta.textContent = nAll + " transmissions on record: " + nDist +
+            " distributor releases + " + nVault + " from the SoundCloud vault.";
+        }
+        if (vaultNote) {
+          vaultNote.hidden = filter !== "vault";
+        }
+      }
       if (grid && Array.isArray(d.discography)) {
-        grid.innerHTML = d.discography.map(function (r) {
-          return '<article class="disco-card">' +
-            artTile(r) +
-            '<span class="type">' + esc(r.type || "Release") + "</span>" +
-            "<h3>" + esc(r.title) + "</h3>" +
-            '<p class="date">' + esc(r.date || "") + "</p>" +
-            '<div class="links">' + linkList(r.links) + "</div>" +
-            "</article>";
-        }).join("");
+        renderDisco("all");
+        document.querySelectorAll("[data-disco-filter]").forEach(function (btn) {
+          btn.addEventListener("click", function () {
+            document.querySelectorAll("[data-disco-filter]").forEach(function (b) {
+              var on = b === btn;
+              b.classList.toggle("is-on", on);
+              b.setAttribute("aria-pressed", on ? "true" : "false");
+            });
+            renderDisco(btn.getAttribute("data-disco-filter"));
+          });
+        });
+        if (vaultNote && d.vault && d.vault.status) {
+          vaultNote.querySelector("p").textContent = d.vault.status;
+        }
       }
 
       /* Eras */

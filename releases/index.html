@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Every release — Aster da Master</title>
+  <meta name="description" content="The complete Aster da Master release archive">
+  <link rel="stylesheet" href="../assets/css/tokens.css">
+  <link rel="stylesheet" href="../assets/css/base.css">
+  <link rel="stylesheet" href="../assets/css/layout.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container header-bar">
+      <a class="brand" href="../" aria-label="Aster da Master home">
+        <span class="brand-mark" aria-hidden="true">A&#10022;</span>
+        <span>ASTER DA MASTER</span>
+      </a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="../#discography">Discography</a>
+        <a href="./">All releases</a>
+        <a href="../press-kit.html">Press kit</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <div class="container">
+
+      <section class="section" aria-labelledby="idx-h">
+        <p class="kicker"><span class="numeral">&#10022;</span>The full archive</p>
+        <h1 id="idx-h">Every release</h1>
+        <p>43 transmissions on record &mdash; 34 distributor releases and 9 from the SoundCloud vault.</p>
+        <div class="filter-row" role="group" aria-label="Filter releases">
+          <label>Year <select id="f-year"><option value="">All years</option><option value="Unknown">Unknown</option><option value="2026">2026</option><option value="2024">2024</option><option value="2023">2023</option><option value="2022">2022</option><option value="2021">2021</option><option value="2020">2020</option><option value="2019">2019</option><option value="2017">2017</option></select></label>
+          <label>Type <select id="f-type"><option value="">All types</option><option value="Album">Album</option><option value="Single">Single</option><option value="SoundCloud-only">SoundCloud-only</option></select></label>
+          <label>Label <select id="f-label"><option value="">All labels</option><option value="WoT">WoT</option><option value="somelowlifes">somelowlifes</option></select></label>
+        </div>
+        <ul class="release-list" id="release-list"></ul>
+      </section>
+      <script>
+      (function () {
+        var items = [{"title": "Master Key", "slug": "master-key", "date": "2019-12-23", "year": "2019", "type": "Album", "label": "WoT"}, {"title": "Soulless Soldiers", "slug": "soulless-soldiers", "date": "2019-12-30", "year": "2019", "type": "Album", "label": "—"}, {"title": "Imagine All of This Without Pain", "slug": "imagine-all-of-this-without-pain", "date": "2020-06-07", "year": "2020", "type": "Album", "label": "—"}, {"title": "Bright", "slug": "bright", "date": "2020-10-07", "year": "2020", "type": "Album", "label": "—"}, {"title": "Solstice", "slug": "solstice", "date": "2020-12-21", "year": "2020", "type": "Album", "label": "—"}, {"title": "Cast It:, Pt. 1", "slug": "cast-it-pt-1", "date": "2021-07-14", "year": "2021", "type": "Album", "label": "—"}, {"title": "Cast It:, Pt. 2", "slug": "cast-it-pt-2", "date": "2022-02-22", "year": "2022", "type": "Album", "label": "—"}, {"title": "B4 the Ritual (2018)", "slug": "b4-the-ritual-2018", "date": "2023-11-11", "year": "2023", "type": "Album", "label": "somelowlifes"}, {"title": "Cast Out", "slug": "cast-out", "date": "2023-11-11", "year": "2023", "type": "Album", "label": "somelowlifes"}, {"title": "lost memories (feat. Aster Da Master)", "slug": "lost-memories-feat-aster-da-master", "date": "2017-04-20", "year": "2017", "type": "Single", "label": "—"}, {"title": "Contact!", "slug": "contact", "date": "2019-09-21", "year": "2019", "type": "Single", "label": "—"}, {"title": "Master Key (feat. Lil Wintr & Marcelo)", "slug": "master-key-feat-lil-wintr-and-marcelo", "date": "2019-12-06", "year": "2019", "type": "Single", "label": "—"}, {"title": "I Hate It", "slug": "i-hate-it", "date": "2020-04-09", "year": "2020", "type": "Single", "label": "—"}, {"title": "Crystals by My Bed", "slug": "crystals-by-my-bed", "date": "2020-04-16", "year": "2020", "type": "Single", "label": "—"}, {"title": "Born from Stars", "slug": "born-from-stars", "date": "2020-07-21", "year": "2020", "type": "Single", "label": "—"}, {"title": "More Than Letters", "slug": "more-than-letters", "date": "2020-08-12", "year": "2020", "type": "Single", "label": "—"}, {"title": "My Fault", "slug": "my-fault", "date": "2020-11-11", "year": "2020", "type": "Single", "label": "—"}, {"title": "My Fault 2", "slug": "my-fault-2", "date": "2021-04-13", "year": "2021", "type": "Single", "label": "—"}, {"title": "Warrior Returning Alive", "slug": "warrior-returning-alive", "date": "2023-10-29", "year": "2023", "type": "Single", "label": "—"}, {"title": "Hidden Lakes Backpack", "slug": "hidden-lakes-backpack", "date": "2023-11-03", "year": "2023", "type": "Single", "label": "—"}, {"title": "Long Day (End Task)", "slug": "long-day-end-task", "date": "2023-11-09", "year": "2023", "type": "Single", "label": "—"}, {"title": "Reachhh", "slug": "reachhh", "date": "2024-04-08", "year": "2024", "type": "Single", "label": "—"}, {"title": "u Not at the Table", "slug": "u-not-at-the-table", "date": "2024-04-19", "year": "2024", "type": "Single", "label": "—"}, {"title": "Tri:Ed", "slug": "tri-ed", "date": "2024-06-16", "year": "2024", "type": "Single", "label": "—"}, {"title": "SSSolid", "slug": "sssolid", "date": "2024-06-27", "year": "2024", "type": "Single", "label": "—"}, {"title": "Phantom Moshpit (feat. GRiiMXO)", "slug": "phantom-moshpit-feat-griimxo", "date": "2024-08-24", "year": "2024", "type": "Single", "label": "—"}, {"title": "like my dogs!!!", "slug": "like-my-dogs", "date": "2024-09-18", "year": "2024", "type": "Single", "label": "—"}, {"title": "ViiXX", "slug": "viixx", "date": "2024-10-04", "year": "2024", "type": "Single", "label": "—"}, {"title": "Life's Made", "slug": "life-s-made", "date": "2026-03-21", "year": "2026", "type": "Single", "label": "—"}, {"title": "No Power", "slug": "no-power", "date": "2026-03-23", "year": "2026", "type": "Single", "label": "—"}, {"title": "The Night Ends Yeaaa", "slug": "the-night-ends-yeaaa", "date": "2026-03-25", "year": "2026", "type": "Single", "label": "—"}, {"title": "Writing Books", "slug": "writing-books", "date": "2026-05-02", "year": "2026", "type": "Single", "label": "—"}, {"title": "9 Trips", "slug": "9-trips", "date": "2026-05-03", "year": "2026", "type": "Single", "label": "—"}, {"title": "Living With The Big Shots", "slug": "living-with-the-big-shots", "date": "2026-05-05", "year": "2026", "type": "Single", "label": "—"}, {"title": "All Kinds of Trips", "slug": "all-kinds-of-trips", "date": null, "year": "Unknown", "type": "SoundCloud-only", "label": "—"}, {"title": "Best Friend", "slug": "best-friend", "date": null, "year": "Unknown", "type": "SoundCloud-only", "label": "—"}, {"title": "Playin' by the Book", "slug": "playin-by-the-book", "date": null, "year": "Unknown", "type": "SoundCloud-only", "label": "—"}, {"title": "White Noise", "slug": "white-noise", "date": null, "year": "Unknown", "type": "SoundCloud-only", "label": "—"}, {"title": "candy w/ capoxxo (prod. razorwrist)", "slug": "candy-w-capoxxo-prod-razorwrist", "date": null, "year": "Unknown", "type": "SoundCloud-only", "label": "—"}, {"title": "fly like me w/ pvscale (prod. pvscale)", "slug": "fly-like-me-w-pvscale-prod-pvscale", "date": null, "year": "Unknown", "type": "SoundCloud-only", "label": "—"}, {"title": "take me", "slug": "take-me", "date": null, "year": "Unknown", "type": "SoundCloud-only", "label": "—"}, {"title": "(Memory Loaded October 600 & Aster Da Master)", "slug": "memory-loaded-october-600-and-aster-da-master", "date": null, "year": "Unknown", "type": "SoundCloud-only", "label": "—"}, {"title": "InternetWouldBlush (ft. Offline HP, Aster Da Master, & DirtyDoves) [prod. Lil' Flower]", "slug": "internetwouldblush-ft-offline-hp-aster-da-master-and-dirtydoves-prod-lil-flower", "date": null, "year": "Unknown", "type": "SoundCloud-only", "label": "—"}];
+        var list = document.getElementById("release-list");
+        var fy = document.getElementById("f-year"), ft = document.getElementById("f-type"), fl = document.getElementById("f-label");
+        function esc(s) { return String(s).replace(/[&<>"']/g, function (c) {
+          return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]; }); }
+        function render() {
+          var y = fy.value, t = ft.value, l = fl.value;
+          var rows = items.filter(function (i) {
+            return (!y || i.year === y) && (!t || i.type === t) && (!l || i.label === l);
+          });
+          list.innerHTML = rows.map(function (i) {
+            return '<li><span><a href="' + esc(i.slug) + '.html">' + esc(i.title) + "</a>" +
+              '<span class="rl-type">' + esc(i.type) + "</span></span>" +
+              '<span class="rl-date">' + esc(i.date || "date unknown") + "</span></li>";
+          }).join("") || "<li>No releases match those filters.</li>";
+        }
+        [fy, ft, fl].forEach(function (s) { s.addEventListener("change", render); });
+        render();
+      })();
+      </script>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <p>&copy; 2026 ASTER DA MASTER &mdash; ALL SIGNALS RESERVED</p>
+      <nav aria-label="Footer">
+        <a href="../">Home</a>
+        <a href="./">All releases</a>
+        <a href="../press-kit.html">Press kit</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>

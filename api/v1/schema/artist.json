@@ -52,7 +52,6 @@
         "type": "object",
         "required": [
           "title",
-          "date",
           "type"
         ],
         "properties": {
@@ -60,7 +59,11 @@
             "type": "string"
           },
           "date": {
-            "type": "string"
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "ISO date; null when unknown (e.g. SoundCloud-vault tracks)"
           },
           "type": {
             "type": "string"
@@ -82,6 +85,37 @@
             "type": "array",
             "items": {
               "type": "object"
+            }
+          },
+          "source": {
+            "type": "string",
+            "description": "Provenance: which platform/profile the record came from and when verified"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "verified",
+              "single-source",
+              "uncertain"
+            ]
+          },
+          "citations": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "label": {
+                  "type": "string"
+                },
+                "url": {
+                  "type": "string",
+                  "format": "uri"
+                }
+              },
+              "required": [
+                "label",
+                "url"
+              ]
             }
           }
         }
@@ -162,6 +196,31 @@
           }
         }
       }
+    },
+    "vault": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "tracks_on_record": {
+          "type": "integer"
+        },
+        "confidence": {
+          "type": "string"
+        },
+        "full_catalog": {
+          "type": "string"
+        },
+        "research_date": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "status",
+        "tracks_on_record",
+        "research_date"
+      ]
     }
   }
 }

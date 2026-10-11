@@ -343,3 +343,67 @@
   .feature, .about-grid { grid-template-columns: 1fr; }
   .feature { padding: var(--space-5); }
 }
+
+/* Discography filters + provenance */
+.disco-filters { display: flex; flex-wrap: wrap; gap: var(--space-2); margin: var(--space-5) 0 var(--space-4); }
+.btn-sm { padding: var(--space-2) var(--space-4); font-size: 0.72rem; }
+.btn-sm.is-on { background: var(--gold); color: #111; border-color: var(--gold); }
+.disco-card .src {
+  font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.04em;
+  color: var(--muted); margin-top: var(--space-3); line-height: 1.5;
+}
+.disco-card.is-vault { border-color: var(--neon); }
+.vault-note {
+  border: 1px dashed var(--neon); border-radius: var(--radius-s);
+  padding: var(--space-4) var(--space-5); margin-bottom: var(--space-5);
+  font-family: var(--font-mono); font-size: 0.8rem; color: var(--ink-dim); line-height: 1.6;
+}
+
+/* Release pages */
+.release-hero { display: grid; grid-template-columns: 280px 1fr; gap: var(--space-6); align-items: start; margin: var(--space-6) 0; }
+.release-hero img { width: 100%; border-radius: var(--radius-m); border: 1px solid var(--line); }
+.release-meta { display: grid; grid-template-columns: 140px 1fr; gap: var(--space-2) var(--space-4); margin: var(--space-5) 0; }
+.release-meta dt { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+.release-meta dd { margin: 0; }
+.provenance { border: 1px solid var(--line); border-radius: var(--radius-m); padding: var(--space-5); margin: var(--space-6) 0; }
+.provenance h2 { font-size: 1rem; letter-spacing: 0.1em; text-transform: uppercase; font-family: var(--font-mono); color: var(--gold); }
+.release-nav { display: flex; justify-content: space-between; gap: var(--space-4); margin: var(--space-7) 0; }
+.filter-row { display: flex; flex-wrap: wrap; gap: var(--space-3); margin: var(--space-5) 0; }
+.filter-row label { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); display: flex; align-items: center; gap: var(--space-2); }
+.filter-row select {
+  background: #111; color: var(--ink); border: 1px solid var(--gold); border-radius: var(--radius-s);
+  font-family: var(--font-mono); font-size: 0.8rem; padding: var(--space-2) var(--space-3);
+}
+.release-list { list-style: none; padding: 0; margin: 0; display: grid; gap: var(--space-3); }
+.release-list li { border: 1px solid var(--line); border-radius: var(--radius-s); padding: var(--space-3) var(--space-4); display: flex; justify-content: space-between; gap: var(--space-4); align-items: baseline; }
+.release-list .rl-date { font-family: var(--font-mono); font-size: 0.75rem; color: var(--muted); white-space: nowrap; }
+.release-list .rl-type { font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); margin-left: var(--space-3); white-space: nowrap; }
+
+/* Press kit */
+.press-kit { max-width: 820px; }
+.pk-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-5); margin: var(--space-6) 0; }
+.pk-box { border: 1px solid var(--line); border-radius: var(--radius-m); padding: var(--space-5); }
+.pk-box h2 { font-size: 0.95rem; letter-spacing: 0.12em; text-transform: uppercase; font-family: var(--font-mono); color: var(--gold); margin-top: 0; }
+.pk-facts { list-style: none; padding: 0; margin: 0; }
+.pk-facts li { padding: var(--space-2) 0; border-bottom: 1px solid var(--line); font-size: 0.92rem; }
+.pk-unknowns { border-color: var(--neon); }
+.pk-toolbar { display: flex; gap: var(--space-3); margin: var(--space-5) 0; }
+
+@media (max-width: 860px) {
+  .release-hero { grid-template-columns: 1fr; }
+  .pk-grid { grid-template-columns: 1fr; }
+}
+
+@media print {
+  .site-header, .site-footer, .pk-toolbar, .skip-link, .hero-scroll { display: none !important; }
+  body { background: #fff; color: #111; }
+  .press-kit, .container { max-width: 100%; }
+  .pk-box { border-color: #999; break-inside: avoid; }
+  .pk-box h2 { color: #111; }
+  a { color: #111; text-decoration: none; }
+  .section { padding: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .disco-card, .btn { transition: none; }
+}
