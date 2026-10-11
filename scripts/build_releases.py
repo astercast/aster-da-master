@@ -47,6 +47,7 @@ HEAD = """<!DOCTYPE html>
         <a href="../trilogy.html">Trilogy</a>
         <a href="../sessions.html">Sessions</a>
         <a href="../changelog.html">Changelog</a>
+        <a href="../glance.html">Glance</a>
         <a href="../press-kit.html">Press kit</a>
       </nav>
     </div>
@@ -68,6 +69,7 @@ FOOT = """    </div>
         <a href="../trilogy.html">Trilogy</a>
         <a href="../sessions.html">Sessions</a>
         <a href="../changelog.html">Changelog</a>
+        <a href="../glance.html">Glance</a>
         <a href="../press-kit.html">Press kit</a>
       </nav>
     </div>

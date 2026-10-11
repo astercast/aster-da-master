@@ -439,6 +439,38 @@
           .catch(function () { /* section keeps its static fallback */ });
       }
 
+      /* Milestone watch — tracks near round-number play counts */
+      var watchBands = document.getElementById("watch-bands");
+      var watchSummit = document.getElementById("watch-summit");
+      if (watchBands) {
+        fetch("data/milestone-watch.json")
+          .then(function (r) { if (!r.ok) throw new Error("watch failed"); return r.json(); })
+          .then(function (m) {
+            var fmt = function (n) { return Number(n).toLocaleString("en-US"); };
+            if (watchSummit && m.summit) {
+              watchSummit.innerHTML =
+                '<article class="ms-card reveal"><h3>The summit</h3>' +
+                '<p class="ms-track">&#10022; <a href="' + esc(m.summit.page) + '">' + esc(m.summit.title) + "</a></p>" +
+                '<p class="chart-sub">' + fmt(m.summit.plays) + " plays · " + esc(m.summit.date || "date unknown") + "</p>" +
+                '<p class="ms-fact">' + esc(m.summit.note || "") + "</p></article>";
+            }
+            watchBands.innerHTML = (m.bands || []).map(function (b) {
+              var rows = (b.tracks || []).map(function (t) {
+                return '<li><a href="' + esc(t.page) + '">' + esc(t.title) + "</a>" +
+                  ' <span class="dim">' + fmt(t.plays) + " plays · " + fmt(t.needed) +
+                  " to " + fmt(b.target) + (t.date ? " · " + esc(t.date) : "") + "</span></li>";
+              }).join("");
+              var body = rows
+                ? '<ol class="year-list">' + rows + "</ol>"
+                : '<p class="chart-sub">Nothing in range — the summit stands alone.</p>';
+              return '<section class="watch-band reveal" aria-label="' + esc(b.name) + '">' +
+                "<h3>" + esc(b.name) + "</h3>" +
+                '<p class="chart-sub">' + esc(b.blurb || "") + "</p>" + body + "</section>";
+            }).join("");
+          })
+          .catch(function () { /* section keeps its static fallback */ });
+      }
+
       /* First & last — the year opened with X and closed with Y */
       var flGrid = document.getElementById("firstlast-grid");
       if (flGrid) {

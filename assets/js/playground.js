@@ -25,7 +25,9 @@
     { id: "changelog", path: "api/v1/changelog.json",
       blurb: "Site construction history, generated from the git log." },
     { id: "first-last", path: "api/v1/first-last.json",
-      blurb: "Per year 2018–2026: the opening and closing transmissions." }
+      blurb: "Per year 2018–2026: the opening and closing transmissions." },
+    { id: "milestone-watch", path: "api/v1/milestone-watch.json",
+      blurb: "Milestone watch: vault tracks near round-number play counts (2026-10-11 snapshot)." }
   ];
 
   function esc(s) {

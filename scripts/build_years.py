@@ -43,6 +43,7 @@ NAV = """<nav class="site-nav" aria-label="Primary">
         <a href="../trilogy.html">Trilogy</a>
         <a href="../sessions.html">Sessions</a>
         <a href="../changelog.html">Changelog</a>
+        <a href="../glance.html">Glance</a>
         <a href="../press-kit.html">Press kit</a>
       </nav>"""
 
@@ -90,6 +91,7 @@ FOOT = """    </div>
         <a href="../trilogy.html">Trilogy</a>
         <a href="../sessions.html">Sessions</a>
         <a href="../changelog.html">Changelog</a>
+        <a href="../glance.html">Glance</a>
         <a href="../press-kit.html">Press kit</a>
       </nav>
     </div>

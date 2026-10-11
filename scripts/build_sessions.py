@@ -67,6 +67,15 @@ def session_name(start: date, end: date) -> str:
             f" \u2013 {MON_ABBR[end.month]} {ordinal(end.day)} Session")
 
 
+def session_slug(name: str) -> str:
+    """URL slug for a session deep-dive page.
+
+    Single source of truth shared with scripts/build_session_deepdives.py.
+    Session names are unique, so no dedup suffix is needed (asserted there).
+    """
+    return slugify(name)
+
+
 def main() -> int:
     d = json.loads(DATA.read_text())
     releases = d["discography"]
@@ -173,6 +182,11 @@ def main() -> int:
     def fmt_plays(n):
         return f"{n:,} plays" if n else "plays uncounted"
 
+    # Top-10 sessions by track count get deep-dive pages
+    # (scripts/build_session_deepdives.py). Same sort rule there.
+    deep_ids = {s["id"] for s in
+                sorted(out, key=lambda s: (-s["track_count"], -s["total_plays"]))[:10]}
+
     cards = []
     for s in reversed(out):  # newest first
         span = s["start"] if s["start"] == s["end"] else f'{s["start"]} \u2013 {s["end"]}'
@@ -190,7 +204,10 @@ def main() -> int:
             f'<p>{s["track_count"]} transmission{"s" if s["track_count"] != 1 else ""} '
             f'\u00b7 {escape(fmt_plays(s["total_plays"]))} '
             f'<span class="chart-sub">(snapshot {SNAPSHOT})</span></p></div>'
-            f'<ol class="session-tracks">{tracks_html}</ol></article>'
+            f'<ol class="session-tracks">{tracks_html}</ol>'
+            + (f'<p><a class="btn btn-sm" href="sessions/{session_slug(s["name"])}.html">'
+               f'Deep dive &rarr;</a></p>' if s["id"] in deep_ids else "")
+            + '</article>'
         )
 
     page = f"""<!DOCTYPE html>
@@ -225,6 +242,7 @@ def main() -> int:
         <a href="changelog.html">Changelog</a>
         <a href="method.html">Method</a>
         <a href="trilogy.html">Trilogy</a>
+        <a href="glance.html">Glance</a>
         <a href="press-kit.html">Press kit</a>
       </nav>
       <button class="search-btn" id="search-open" type="button" aria-label="Search the archive (keyboard shortcut: slash)">
@@ -270,6 +288,7 @@ def main() -> int:
         <a href="changelog.html">Changelog</a>
         <a href="method.html">Method</a>
         <a href="trilogy.html">Trilogy</a>
+        <a href="glance.html">Glance</a>
         <a href="press-kit.html">Press kit</a>
       </nav>
     </div>

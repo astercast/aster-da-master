@@ -126,6 +126,7 @@ def main() -> int:
         <a href="changelog.html" aria-current="page">Changelog</a>
         <a href="method.html">Method</a>
         <a href="trilogy.html">Trilogy</a>
+        <a href="glance.html">Glance</a>
         <a href="press-kit.html">Press kit</a>
       </nav>
       <button class="search-btn" id="search-open" type="button" aria-label="Search the archive (keyboard shortcut: slash)">
@@ -171,6 +172,7 @@ def main() -> int:
         <a href="changelog.html" aria-current="page">Changelog</a>
         <a href="method.html">Method</a>
         <a href="trilogy.html">Trilogy</a>
+        <a href="glance.html">Glance</a>
         <a href="press-kit.html">Press kit</a>
       </nav>
     </div>

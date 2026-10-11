@@ -1,0 +1,66 @@
+{
+  "version": "0.11.0",
+  "generated": "2026-10-11",
+  "plays_snapshot": "2026-10-11",
+  "method": "Vault tracks grouped by proximity to round-number play counts, from the 2026-10-11 snapshot. Play counts drift; the watch is a snapshot, not a live leaderboard.",
+  "summit": {
+    "title": "Take Me (prod. Em Klebold)",
+    "plays": 30088,
+    "date": "2018-02-04",
+    "page": "releases/take-me-prod-em-klebold.html",
+    "note": "The highest-play transmission in the vault. Nothing else is within 3,000 plays of 30,000."
+  },
+  "bands": [
+    {
+      "id": "near-1k",
+      "name": "Closing in on 1,000 plays",
+      "target": 1000,
+      "blurb": "Transmissions within 100 plays of the thousand mark.",
+      "tracks": [
+        {
+          "title": "[outro] Off Beat ft. Yung Vetta (prod. Addy)",
+          "plays": 935,
+          "needed": 65,
+          "date": "2019-01-28",
+          "page": "releases/outro-off-beat-ft-yung-vetta-prod-addy.html"
+        },
+        {
+          "title": "Lucid Boi (prod. $ T.N.C $)",
+          "plays": 918,
+          "needed": 82,
+          "date": "2018-01-08",
+          "page": "releases/lucid-boi-prod-t-n-c.html"
+        }
+      ]
+    },
+    {
+      "id": "near-10k",
+      "name": "Closing in on 10,000 plays",
+      "target": 10000,
+      "blurb": "Transmissions within 1,000 plays of five figures.",
+      "tracks": [
+        {
+          "title": "master key ft. Lil Wintr x Marcelo (prod. ginseng)",
+          "plays": 9615,
+          "needed": 385,
+          "date": "2019-12-06",
+          "page": "releases/master-key-ft-lil-wintr-x-marcelo-prod-ginseng.html"
+        },
+        {
+          "title": "When the World Gets Colder (prod. Brokn)",
+          "plays": 9535,
+          "needed": 465,
+          "date": "2018-07-18",
+          "page": "releases/when-the-world-gets-colder-prod-brokn.html"
+        }
+      ]
+    },
+    {
+      "id": "near-30k",
+      "name": "The 30k summit",
+      "target": 30000,
+      "blurb": "Transmissions approaching 30,000 plays — the highest summit in the vault.",
+      "tracks": []
+    }
+  ]
+}

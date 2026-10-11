@@ -170,6 +170,27 @@ and `tracks.json` (the captured catalog).
   generator NAV constants updated in `build_releases.py`, `build_years.py`,
   `build_circle.py`, `build_codex.py`).
 
+## Session deep-dives, milestone watch, glance (v0.11.0)
+
+- **Session deep-dives** (`sessions/<slug>.html`, 10 pages): the top-10
+  sessions by track count get studio-diary detail pages — the story the
+  dates tell ("19 transmissions across 10 days"), key collaborators
+  (title-credit parsing, verbatim), era placement, every track, prev/next
+  navigation (`scripts/build_session_deepdives.py`, run after
+  `build_sessions.py`; sessions.html links the 10 from their cards).
+- **Milestone watch** (homepage XV + `api/v1/milestone-watch.json`): vault
+  tracks near round-number play counts — closing in on 1,000 (900+),
+  closing in on 10,000 (9,000+), the 30k summit (Take Me holds it at
+  30,088) — from the 2026-10-11 snapshot, labeled as such
+  (`scripts/build_milestone_watch.py`; bumps version to 0.11.0).
+  Schema: `api/v1/schema/milestone-watch.json`.
+- **Glance** (`glance.html`): the one-page infographic — 219 transmissions,
+  257,394 plays, 9 years, 61 sessions, 21 collaborators, 16 codex families,
+  top-5 tracks, the eras strip, heaviest sessions, bookends
+  (`scripts/build_glance.py`). Linked from the hero, primary + footer navs
+  on all pages (`scripts/update_nav_wave11.py`; generator NAV constants
+  updated for future regenerations).
+
 ## Skills
 
 Task procedures in `skills/`:

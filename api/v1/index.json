@@ -1,10 +1,10 @@
 {
   "name": "Aster da Master API",
-  "version": "0.10.0",
+  "version": "0.11.0",
   "observed": "2026-10-11",
   "repository": "https://github.com/astercast/aster-da-master",
   "for_agents": "Start at api/v1/index.json. The artist record is the source of truth; data/artist.json feeds the site renderer.",
-  "provenance": "All artist facts verified against public platform pages (Apple Music, iHeart, Anghami, Shazam, Boomplay, SonicHits, album.link, SoundCloud). v0.5.0: the official SoundCloud profile (asterdamaster) catalog is fully verified — 185 SoundCloud-only tracks (upload dates + play-count snapshot) alongside the 34 distributor releases (219 total). Spotify is artist-linked via the official SoundCloud bio; Instagram + official site likewise bio-linked. 'Litemode Trilogy' is teased in the bio, not confirmed. v0.7.0: global-search slug index + on-this-day (MM-DD) API; homepage gains search overlay, on-this-day section, era intelligence deep-dives, and cast-lots. v0.7.1: year-in-review archive (years/2018-2026.html + api/v1/years.json), methodology page, Litemode Trilogy watch page. v0.9.0: milestones endpoint (career firsts computed from the verified discography); API playground + transmission decoder pages. v0.10.0: upload-sessions endpoint (61 sessions clustered from vault upload dates). Changelog endpoint (site construction history from git log). First-and-last endpoint (per-year opening/closing transmissions).",
+  "provenance": "All artist facts verified against public platform pages (Apple Music, iHeart, Anghami, Shazam, Boomplay, SonicHits, album.link, SoundCloud). v0.5.0: the official SoundCloud profile (asterdamaster) catalog is fully verified — 185 SoundCloud-only tracks (upload dates + play-count snapshot) alongside the 34 distributor releases (219 total). Spotify is artist-linked via the official SoundCloud bio; Instagram + official site likewise bio-linked. 'Litemode Trilogy' is teased in the bio, not confirmed. v0.7.0: global-search slug index + on-this-day (MM-DD) API; homepage gains search overlay, on-this-day section, era intelligence deep-dives, and cast-lots. v0.7.1: year-in-review archive (years/2018-2026.html + api/v1/years.json), methodology page, Litemode Trilogy watch page. v0.9.0: milestones endpoint (career firsts computed from the verified discography); API playground + transmission decoder pages. v0.10.0: upload-sessions endpoint (61 sessions clustered from vault upload dates). Changelog endpoint (site construction history from git log). First-and-last endpoint (per-year opening/closing transmissions). v0.10.0: upload-sessions endpoint (61 sessions clustered from vault upload dates). v0.11.0: milestone-watch endpoint (vault tracks near round-number play counts).",
   "endpoints": {
     "index": "api/v1/index.json",
     "artist": "api/v1/artist.json",
@@ -16,6 +16,7 @@
     "milestones": "api/v1/milestones.json",
     "sessions": "api/v1/sessions.json",
     "changelog": "api/v1/changelog.json",
-    "first-last": "api/v1/first-last.json"
+    "first-last": "api/v1/first-last.json",
+    "milestone-watch": "api/v1/milestone-watch.json"
   }
 }
