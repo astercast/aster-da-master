@@ -134,7 +134,7 @@
       byYear[y].plays += (r.plays || 0);
     });
     summary.innerHTML = Object.keys(byYear).sort().map(function (y) {
-      return "<li><span>" + esc(y) + "</span><span>" + byYear[y].n + " transmissions · " + fmt(byYear[y].plays) + " plays</span></li>";
+      return "<li><a href=\"years/" + esc(y) + ".html\">" + esc(y) + " — year in review</a><span>" + byYear[y].n + " transmissions · " + fmt(byYear[y].plays) + " plays</span></li>";
     }).join("");
   }
 

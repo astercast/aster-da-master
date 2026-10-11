@@ -125,7 +125,7 @@
         horizon.hidden = false;
         horizonList.innerHTML = d.upcoming.map(function (u) {
           return "<li><strong>" + esc(u.title) + "</strong> &mdash; " + esc(u.status) + "</li>";
-        }).join("");
+        }).join("") + "<li><a href=\"trilogy.html\">Open the trilogy watch &rarr;</a></li>";
       }
 
       /* Eras — cards plus data-computed "era intelligence" deep-dives */

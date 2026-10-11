@@ -40,6 +40,9 @@ HEAD = """<!DOCTYPE html>
       <nav class="site-nav" aria-label="Primary">
         <a href="../#discography">Discography</a>
         <a href="./">All releases</a>
+        <a href="../years/">Years</a>
+        <a href="../method.html">Method</a>
+        <a href="../trilogy.html">Trilogy</a>
         <a href="../press-kit.html">Press kit</a>
       </nav>
     </div>
@@ -56,6 +59,9 @@ FOOT = """    </div>
       <nav aria-label="Footer">
         <a href="../">Home</a>
         <a href="./">All releases</a>
+        <a href="../years/">Years</a>
+        <a href="../method.html">Method</a>
+        <a href="../trilogy.html">Trilogy</a>
         <a href="../press-kit.html">Press kit</a>
       </nav>
     </div>
