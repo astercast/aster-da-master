@@ -73,6 +73,18 @@ and `tracks.json` (the captured catalog).
   (Modes, Castings, Keys, Vessels, Rites, Light, Dark...) with per-track lists.
   Method: word-boundary matching over leet-normalized titles; every claim is a
   count — no meanings invented.
+- The **Deep cuts** section (X) spotlights the 15 lowest-play vault tracks
+  (plays > 0, uploaded before 2025) — computed client-side, "the buried
+  transmissions."
+- `timeline.html` — interactive career timeline 2018–2026: every transmission
+  plotted client-side from `data/artist.json`; distributor releases ride a gold
+  lane, vault tracks burn neon with height by log play count; era bands from the
+  Eras data; year-zoom buttons; hover/focus/tap tooltips; per-year summary list.
+- `network.html` — collaboration network: vanilla-SVG star graph of
+  collaborators parsed from `w/`/`ft.` title credits (shared parser in
+  `assets/js/common.js`), nodes sized by shared-track count, click/Enter selects
+  a collaborator's transmissions; arrow-key node navigation; full `<details>`
+  list fallback for screen readers.
 
 ## Skills
 

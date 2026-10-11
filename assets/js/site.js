@@ -261,6 +261,24 @@
           .catch(function () { /* codex keeps its static fallback */ });
       }
 
+      /* Deep cuts — the buried transmissions: 15 lowest-play vault tracks
+         with plays > 0, uploaded before 2025 (years to breathe). Pure data query. */
+      var cutsGrid = document.getElementById("deepcuts-grid");
+      if (cutsGrid && Array.isArray(d.discography)) {
+        var cuts = d.discography
+          .filter(function (r) { return r.type === "SoundCloud-only" && r.date && r.date < "2025-01-01" && (r.plays || 0) > 0; })
+          .sort(function (a, b) { return (a.plays || 0) - (b.plays || 0); })
+          .slice(0, 15);
+        cutsGrid.innerHTML = cuts.map(function (r, i) {
+          var plays = Number(r.plays || 0).toLocaleString("en-US");
+          return '<li class="cut-card"><span class="cut-rank" aria-hidden="true">' + (i + 1) + "</span>" +
+            '<div><h3>' + esc(r.title) + "</h3>" +
+            '<p class="cut-meta">' + esc(r.date) + " · " + plays + " plays</p></div></li>";
+        }).join("");
+        var cutsNote = document.getElementById("deepcuts-note");
+        if (cutsNote) cutsNote.hidden = false;
+      }
+
       /* Platforms */
       var plats = document.getElementById("platform-grid");
       if (plats && Array.isArray(d.platforms)) {
