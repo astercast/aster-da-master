@@ -1,37 +1,64 @@
-/* Design tokens — Aster da Master: minimal cyberpunk × ancient */
+/* ============================================================
+   DESIGN TOKENS — Aster da Master: UNDERGROUND TRANSMISSION
+   Night-drive digicore. Near-black, phosphor signal, amber heat.
+   Monospace labels + one heavy display face. Restraint everywhere.
+   ============================================================ */
 :root {
-  /* Ancient: marble night, bone, antique gold */
-  --bg: #08080d;
-  --bg-soft: #0d0d15;
-  --panel: #121219;
-  --panel-2: #17171f;
+  /* Surfaces — the dark between stations */
+  --bg: #060608;
+  --bg-soft: #0a0a0e;
+  --panel: #0e0e14;
+  --panel-2: #14141c;
   --line: #23232e;
-  --line-soft: #1a1a24;
+  --line-soft: #181820;
 
-  --ink: #ece8dd;          /* bone */
-  --ink-dim: #b8b2a4;
-  --muted: #7d7a70;
+  /* Ink */
+  --ink: #edeae1;
+  --ink-dim: #a8a499;
+  --muted: #6d6b62;
 
-  --gold: #c9a227;         /* antique gold */
-  --gold-bright: #e8c547;
-  --neon: #00e5cc;         /* jade-cyan — the single cyberpunk accent */
+  /* Signal — phosphor green is the voice, amber is the heat */
+  --neon: #00f090;
+  --neon-deep: #00a862;
+  --neon-ink: #04120b;          /* text on phosphor fills */
+  --gold: #f5a524;
+  --gold-bright: #ffc95e;
+  --gold-ink: #170e02;          /* text on amber fills */
+  --alert: #ff5468;             /* sparse: errors, stale-data markers */
 
-  --radius-s: 4px;
-  --radius-m: 8px;
-  --radius-l: 14px;
+  /* Shape */
+  --radius-s: 3px;
+  --radius-m: 6px;
+  --radius-l: 10px;
 
-  --font-display: "Cinzel", "Trajan Pro", "Optima", Didot, "Bodoni MT", Georgia, serif;
+  /* Type */
+  --font-display: "Anton", "Arial Narrow", Impact, "Helvetica Neue", sans-serif;
   --font-body: "Inter", "Helvetica Neue", Arial, system-ui, sans-serif;
-  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 
+  /* Fluid type scale */
+  --fs-hero: clamp(3.4rem, 12vw, 9rem);
+  --fs-1: clamp(2.1rem, 5vw, 3.4rem);
+  --fs-2: clamp(1.5rem, 3.2vw, 2.15rem);
+  --fs-3: clamp(1.15rem, 2.2vw, 1.35rem);
+  --fs-body: 1rem;
+  --fs-small: 0.86rem;
+  --fs-micro: 0.72rem;
+
+  /* Space */
   --space-1: 4px; --space-2: 8px; --space-3: 12px; --space-4: 16px;
   --space-5: 24px; --space-6: 32px; --space-7: 48px; --space-8: 72px;
   --space-9: 110px;
 
-  --shadow-1: 0 1px 2px rgba(0, 0, 0, 0.5);
-  --shadow-2: 0 12px 40px rgba(0, 0, 0, 0.6);
-  --glow-neon: 0 0 24px rgba(0, 229, 204, 0.25);
-  --glow-gold: 0 0 32px rgba(201, 162, 39, 0.18);
+  /* Depth */
+  --shadow-1: 0 1px 2px rgba(0, 0, 0, 0.55);
+  --shadow-2: 0 16px 48px rgba(0, 0, 0, 0.65);
+  --glow-neon: 0 0 22px rgba(0, 240, 144, 0.22);
+  --glow-amber: 0 0 28px rgba(245, 165, 36, 0.16);
 
+  /* Motion */
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --dur-1: 0.15s;
+  --dur-2: 0.25s;
+  --dur-3: 0.6s;
 }

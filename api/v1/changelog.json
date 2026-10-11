@@ -1,8 +1,32 @@
 {
   "generated": "2026-10-11",
   "method": "Parsed from `git log main`: every commit becomes an entry. The site documenting its own becoming.",
-  "entry_count": 13,
+  "entry_count": 17,
   "entries": [
+    {
+      "hash": "74ed6ee",
+      "date": "2026-10-11",
+      "message": "Wave: aggressive public-endpoint probing + auto client_id extraction",
+      "files_changed": 4
+    },
+    {
+      "hash": "04c379e",
+      "date": "2026-10-11",
+      "message": "Wave: play-count refresh pipeline + GO_LIVE.md",
+      "files_changed": 4
+    },
+    {
+      "hash": "41ed92d",
+      "date": "2026-10-11",
+      "message": "Wave 11: session deep-dives (10) + milestone watch + glance page",
+      "files_changed": 310
+    },
+    {
+      "hash": "95ecde8",
+      "date": "2026-10-11",
+      "message": "Wave 10: upload sessions (61 studio sessions) + site changelog + first & last per year",
+      "files_changed": 303
+    },
     {
       "hash": "e2fd1e3",
       "date": "2026-10-11",

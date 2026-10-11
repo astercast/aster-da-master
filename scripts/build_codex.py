@@ -124,7 +124,27 @@ NAV = """<nav class="site-nav" aria-label="Primary">
         <a href="../changelog.html">Changelog</a>
         <a href="../glance.html">Glance</a>
         <a href="../press-kit.html">Press kit</a>
-      </nav>"""
+      </nav>
+      <details class="mnav">
+        <summary><span class="bars" aria-hidden="true"><i></i><i></i><i></i></span>Menu</summary>
+        <nav class="mnav-panel" aria-label="Mobile">
+        <a href="../#discography">Discography</a>
+        <a href="../releases/">Releases</a>
+        <a href="../years/">Years</a>
+        <a href="./">Codex</a>
+        <a href="../timeline.html">Timeline</a>
+        <a href="../network.html">Network</a>
+        <a href="../decoder.html">Decoder</a>
+        <a href="../api-playground.html">API</a>
+        <a href="../method.html">Method</a>
+        <a href="../trilogy.html">Trilogy</a>
+        <a href="../sessions.html">Sessions</a>
+        <a href="../changelog.html">Changelog</a>
+        <a href="../glance.html">Glance</a>
+        <a href="../press-kit.html">Press kit</a>
+      
+        </nav>
+      </details>"""
 
 HEAD = """<!DOCTYPE html>
 <html lang="en">
@@ -133,6 +153,9 @@ HEAD = """<!DOCTYPE html>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{title} — Aster da Master</title>
   <meta name="description" content="{desc}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../assets/css/tokens.css">
   <link rel="stylesheet" href="../assets/css/base.css">
   <link rel="stylesheet" href="../assets/css/layout.css">

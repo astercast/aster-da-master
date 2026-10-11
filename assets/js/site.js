@@ -544,6 +544,18 @@
         }).join("");
       }
 
+      /* Transmission wire — latest 8, duplicated for the seamless loop */
+      var wire = document.getElementById("wire-track");
+      if (wire && Array.isArray(d.discography)) {
+        var latest = d.discography.slice().sort(function (x, y) {
+          return String(y.date || "") < String(x.date || "") ? -1 : 1;
+        }).slice(0, 8);
+        var items = latest.map(function (r) {
+          return '<span class="w-item"><b>' + esc(r.title || "") + "</b> · " + esc(r.date || "") + "</span>";
+        }).join('<span class="w-sep">///</span>');
+        wire.innerHTML = items + '<span class="w-sep">///</span>' + items + '<span class="w-sep">///</span>';
+      }
+
       var book = document.getElementById("booking");
       if (book && d.booking && d.booking.email) {
         book.innerHTML = '<p class="chart-sub">Booking &amp; contact</p><a class="btn btn-neon" href="mailto:' +

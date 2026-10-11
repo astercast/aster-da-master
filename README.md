@@ -2,7 +2,7 @@
 
 The all-in-one site for **Aster da Master** — *he transcends music.*
 
-A single-page, insanely designed, professionally composed artist site: minimal cyberpunk meets ancient aesthetic. Bone white on marble black, antique gold, one jade-neon accent. Roman numerals, monumental type, terminal micro-labels.
+A single-page, insanely designed, professionally composed artist site: **UNDERGROUND TRANSMISSION** — night-drive digicore. Near-black, phosphor-signal green, amber heat. Anton display type, Inter body, JetBrains Mono micro-labels. Track listings as vault manifests, tape-trading corner ticks, a live transmission wire, restrained signal/glitch details. It reads like intercepted 2AM broadcasts — and stays readable, navigable, and accessible.
 
 ## Status
 
@@ -33,8 +33,8 @@ A single-page, insanely designed, professionally composed artist site: minimal c
 ## Aesthetic rules
 
 - Minimal: one idea per screen, vast negative space
-- Ancient: Cinzel/Trajan display type, gold rules, Roman-numeral sections
-- Cyberpunk: single neon accent, mono micro-labels, faint grid — restraint, not overload
+- Signal: phosphor green is the voice, amber is the heat; mono labels everywhere — restraint, not overload
+- Texture: faint scanlines + vignette, corner-tick marks on cards, manifest-style track rows
 - Reduced motion respected everywhere; semantic HTML; keyboard navigable
 
 ## Deploy
