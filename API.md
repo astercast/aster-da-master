@@ -5,7 +5,9 @@ of truth; `data/artist.json` feeds the site renderer and mirrors it.
 
 - `api/v1/index.json` — manifest: version, endpoints, observation date, provenance, agent routing
 - `api/v1/artist.json` — the canonical artist record: bio, facts, discography, platforms, socials, featured release, booking
+- `api/v1/codex.json` — the vocabulary codex: recurring title words grouped into 16 named families, with per-track lists (computed at build time by `scripts/build_codex.py` from `data/artist.json`)
 - `api/v1/schema/artist.json` — JSON Schema (draft-07) for the artist record
+- `api/v1/schema/codex.json` — JSON Schema (draft-07) for the codex
 
 ## Publication rule
 
@@ -59,6 +61,18 @@ and `tracks.json` (the captured catalog).
 - `press-kit.html` — one-page press kit rendered from the API data (stats,
   featured release, eras, platforms, collaborators, verified-facts-vs-unknowns
   box) with `@media print` styling for clean printing / PDF export.
+
+## Numbers & Codex
+
+- The homepage's **Numbers** section (VIII) is a live stats dashboard computed
+  client-side from `data/artist.json`: total SoundCloud plays (257,394 as of the
+  2026-10-11 snapshot), plays/tracks by year, top 10 tracks by plays, and
+  collaborator frequency parsed from `w/`/`ft.` title credits.
+- The **Codex** section (IX) renders `data/codex.json`, built by
+  `scripts/build_codex.py` (re-run after data changes): 16 vocabulary families
+  (Modes, Castings, Keys, Vessels, Rites, Light, Dark...) with per-track lists.
+  Method: word-boundary matching over leet-normalized titles; every claim is a
+  count — no meanings invented.
 
 ## Skills
 

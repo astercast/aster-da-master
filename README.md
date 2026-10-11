@@ -15,7 +15,8 @@ A single-page, insanely designed, professionally composed artist site: minimal c
 - `press-kit.html` — one-page press kit rendered from the API data, with `@media print` styling
 - `assets/css/` — `tokens.css`, `base.css`, `layout.css`, `components.css` (modular, no frameworks)
 - `assets/js/site.js` — renders discography/platforms/socials/bio from `data/artist.json`; reveal-on-scroll
-- `data/artist.json` — the single source of truth (populated by research)
+- `data/artist.json` — the single source of truth (populated by research, v0.6.0)
+- `data/codex.json` — vocabulary codex, computed by `scripts/build_codex.py`
 - `api/v1/` — machine-readable artist record + schema (`API.md`)
 - `skills/` — agent task procedures (announce-release, verify-platform-links, build-press-kit)
 

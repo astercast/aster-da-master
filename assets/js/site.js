@@ -147,6 +147,120 @@
         }).join("");
       }
 
+      /* Numbers — stats dashboard, computed live from the verified archive */
+      function parseCollabs(title) {
+        var names = [];
+        var re = /(?:\bw\/\s*|\bft\.?\s+|\bfeat\.?\s+)/gi;
+        var m;
+        while ((m = re.exec(title)) !== null) {
+          var rest = title.slice(m.index + m[0].length);
+          rest = rest.split(/[([]/)[0].split(/prod\.?/i)[0];
+          rest.split(/\s+[xX]\s+|\s*&\s*|\s*\+\s*|,|\s*\/\s*|\s+and\s+/).forEach(function (p) {
+            p = p.replace(/^[ .!~)"']+|[ .!~)"']+$/g, "");
+            if (p && p.length < 30 && !/aster\s*da\s*master/i.test(p) && !/prod/i.test(p)) {
+              names.push(p);
+            }
+          });
+        }
+        return names;
+      }
+      var statCards = document.getElementById("stat-cards");
+      if (statCards && Array.isArray(d.discography)) {
+        var disc = d.discography;
+        var vault = disc.filter(function (r) { return r.type === "SoundCloud-only"; });
+        var dist = disc.filter(function (r) { return r.type !== "SoundCloud-only"; });
+        var totalPlays = vault.reduce(function (s, r) { return s + (r.plays || 0); }, 0);
+        var years = {};
+        disc.forEach(function (r) {
+          if (!r.date) return;
+          var y = r.date.slice(0, 4);
+          years[y] = years[y] || { vault: 0, dist: 0, plays: 0 };
+          if (r.type === "SoundCloud-only") { years[y].vault++; years[y].plays += (r.plays || 0); }
+          else { years[y].dist++; }
+        });
+        var yearKeys = Object.keys(years).sort();
+        var topTracks = vault.slice().sort(function (a, b) { return (b.plays || 0) - (a.plays || 0); }).slice(0, 10);
+        var collabCount = {};
+        var collabDisplay = {};
+        disc.forEach(function (r) {
+          parseCollabs(r.title).forEach(function (n) {
+            var k = n.toLowerCase();
+            collabCount[k] = (collabCount[k] || 0) + 1;
+            if (!collabDisplay[k] || n.length >= collabDisplay[k].length) collabDisplay[k] = n;
+          });
+        });
+        var topCollabs = Object.keys(collabCount).sort(function (a, b) { return collabCount[b] - collabCount[a]; }).slice(0, 10);
+        var fmt = function (n) { return Number(n).toLocaleString("en-US"); };
+
+        statCards.innerHTML = [
+          { v: fmt(totalPlays), l: "SoundCloud plays", s: "across " + vault.length + " vault tracks · snapshot 2026-10-11" },
+          { v: fmt(disc.length), l: "Transmissions on record", s: dist.length + " distributor + " + vault.length + " vault" },
+          { v: yearKeys.length, l: "Years of output", s: yearKeys[0] + " – " + yearKeys[yearKeys.length - 1] },
+          { v: esc(topTracks[0] ? topTracks[0].title : "—"), l: "Most played transmission", s: topTracks[0] ? fmt(topTracks[0].plays) + " plays" : "" }
+        ].map(function (c) {
+          return '<article class="stat-card"><p class="stat-num">' + c.v + '</p>' +
+            '<p class="stat-label">' + esc(c.l) + '</p><p class="chart-sub">' + esc(c.s) + "</p></article>";
+        }).join("");
+
+        var playsBars = document.getElementById("plays-bars");
+        if (playsBars) {
+          var maxP = Math.max.apply(null, yearKeys.map(function (y) { return years[y].plays; }).concat([1]));
+          playsBars.innerHTML = yearKeys.map(function (y) {
+            var w = Math.round((years[y].plays / maxP) * 100);
+            return '<div class="bar-row"><span class="bar-y">' + esc(y) + '</span>' +
+              '<span class="bar-track"><span class="bar-fill" style="width:' + w + '%"></span></span>' +
+              '<span class="bar-v">' + fmt(years[y].plays) + "</span></div>";
+          }).join("");
+        }
+        var tracksBars = document.getElementById("tracks-bars");
+        if (tracksBars) {
+          var maxT = Math.max.apply(null, yearKeys.map(function (y) { return years[y].vault + years[y].dist; }).concat([1]));
+          tracksBars.innerHTML = yearKeys.map(function (y) {
+            var wv = Math.round((years[y].vault / maxT) * 100);
+            var wd = Math.round((years[y].dist / maxT) * 100);
+            return '<div class="bar-row"><span class="bar-y">' + esc(y) + '</span>' +
+              '<span class="bar-track"><span class="bar-fill is-dist" style="width:' + wd + '%"></span>' +
+              '<span class="bar-fill" style="width:' + wv + '%"></span></span>' +
+              '<span class="bar-v">' + (years[y].vault + years[y].dist) + "</span></div>";
+          }).join("") +
+            '<p class="chart-sub"><span class="legend-sw is-dist"></span>distributor <span class="legend-sw"></span>vault</p>';
+        }
+        var topEl = document.getElementById("top-tracks");
+        if (topEl) {
+          topEl.innerHTML = topTracks.map(function (r) {
+            return "<li><span>" + esc(r.title) + "</span><span class=\"top-n\">" + fmt(r.plays) + "</span></li>";
+          }).join("");
+        }
+        var colEl = document.getElementById("top-collabs");
+        if (colEl) {
+          colEl.innerHTML = topCollabs.map(function (k) {
+            return "<li><span>" + esc(collabDisplay[k]) + "</span><span class=\"top-n\">×" + collabCount[k] + "</span></li>";
+          }).join("");
+        }
+      }
+
+      /* Codex — vocabulary families, computed at build time into data/codex.json */
+      var codexGrid = document.getElementById("codex-grid");
+      if (codexGrid) {
+        fetch("data/codex.json")
+          .then(function (r) { if (!r.ok) throw new Error("codex failed"); return r.json(); })
+          .then(function (c) {
+            codexGrid.innerHTML = (c.families || []).map(function (f) {
+              var tracks = (f.tracks || []).map(function (t) {
+                var meta = [t.date || "date unknown", t.type].join(" · ");
+                var plays = (t.plays != null) ? ' <span class="top-n">' + Number(t.plays).toLocaleString("en-US") + "</span>" : "";
+                return "<li><span>" + esc(t.title) + '<br><small class="chart-sub">' + esc(meta) + "</small></span>" + plays + "</li>";
+              }).join("");
+              return '<article class="codex-card"><p class="codex-count">' + f.track_count + '</p>' +
+                "<h3>" + esc(f.name) + "</h3>" +
+                '<p class="codex-epithet">' + esc(f.epithet) + "</p>" +
+                '<p class="codex-words">' + f.words.map(esc).join(" · ") + "</p>" +
+                '<ol class="top-list codex-tracks">' + tracks + "</ol></article>";
+            }).join("");
+          })
+          .catch(function () { /* codex keeps its static fallback */ });
+      }
+
       /* Platforms */
       var plats = document.getElementById("platform-grid");
       if (plats && Array.isArray(d.platforms)) {

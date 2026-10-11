@@ -1,0 +1,600 @@
+{
+  "version": "0.6.0",
+  "generated": "2026-10-11",
+  "method": "Word-boundary matching over lowercased, leet-normalized titles (1->l, 0->o, 3->e, 4->a, 5->s, 7->t); multi-word phrases matched as phrases. Counts are of titles containing the word. No meanings invented.",
+  "families": [
+    {
+      "name": "The Modes",
+      "epithet": "The mode-words. Five transmissions carry them - lite, nite, and night.",
+      "words": [
+        "litemode",
+        "nitemode",
+        "night mode"
+      ],
+      "track_count": 5,
+      "tracks": [
+        {
+          "title": "NIGHT MODE ft. MAX FERRARI x YUNG VETTA x JAX",
+          "date": "2019-07-09",
+          "plays": 10083,
+          "type": "SoundCloud-only"
+        },
+        {
+          "title": "u Not at the Table (Sunsetzer0) #litemode",
+          "date": "2024-04-18",
+          "plays": 139,
+          "type": "SoundCloud-only"
+        },
+        {
+          "title": "3 Points Pre Game prod. doublemulti x pinkcat #NITEMODE",
+          "date": "2024-05-28",
+          "plays": 170,
+          "type": "SoundCloud-only"
+        },
+        {
+          "title": "nitemode2019 w/ Max+Vetty prod. NaXi.wav",
+          "date": "2024-11-05",
+          "plays": 17,
+          "type": "SoundCloud-only"
+        },
+        {
+          "title": "big litemode (prod runawway, ilyagargod & k3nik)",
+          "date": "2025-11-23",
+          "plays": 455,
+          "type": "SoundCloud-only"
+        }
+      ]
+    },
+    {
+      "name": "The Castings",
+      "epithet": "Five transmissions bear the word cast - the central verb of the catalog.",
+      "words": [
+        "cast"
+      ],
+      "track_count": 5,
+      "tracks": [
+        {
+          "title": "Cast It:, Pt. 1",
+          "date": "2021-07-14",
+          "plays": null,
+          "type": "Album"
+        },
+        {
+          "title": "I Can't Get Myself to Cast (prod. lil biscuit)",
+          "date": "2021-07-14",
+          "plays": 212,
+          "type": "SoundCloud-only"
+        },
+        {
+          "title": "Cast It:, Pt. 2",
+          "date": "2022-02-22",
+          "plays": null,
+          "type": "Album"
+        },
+        {
+          "title": "Cast Out",
+          "date": "2023-11-11",
+          "plays": null,
+          "type": "Album"
+        },
+        {
+          "title": "Cast OUT!!!",
+          "date": "2023-11-12",
+          "plays": 481,
+          "type": "SoundCloud-only"
+        }
+      ]
+    },
+    {
+      "name": "Keys",
+      "epithet": "Three transmissions turn on a key.",
+      "words": [
+        "key"
+      ],
+      "track_count": 3,
+      "tracks": [
+        {
+          "title": "Master Key (feat. Lil Wintr & Marcelo)",
+          "date": "2019-12-06",
+          "plays": null,
+          "type": "Single"
+        },
+        {
+          "title": "master key ft. Lil Wintr x Marcelo (prod. ginseng)",
+          "date": "2019-12-06",
+          "plays": 9615,
+          "type": "SoundCloud-only"
+        },
+        {
+          "title": "Master Key",
+          "date": "2019-12-23",
+          "plays": null,
+          "type": "Album"
+        }
+      ]
+    },
+    {
+      "name": "Vessels",
+      "epithet": "Two transmissions name a vessel to drink from - an urn, a cup.",
+      "words": [
+        "urn",
+        "cup"
+      ],
+      "track_count": 2,
+      "tracks": [
+        {
+          "title": "Like the Cup (prod. ice trouble)",
+          "date": "2021-07-14",
+          "plays": 189,
+          "type": "SoundCloud-only"
+        },
+        {
+          "title": "the peace of the spirit urn (prod +fiftyzeros)",
+          "date": "2026-07-15",
+          "plays": 178,
+          "type": "SoundCloud-only"
+        }
+      ]
+    },
+    {
+      "name": "Wards & the Spirit",
+      "epithet": "A ward placed. A spirit at peace. Two transmissions of protection.",
+      "words": [
+        "ward",
+        "spirit"
+      ],
+      "track_count": 2,
+      "tracks": [
+        {
+          "title": "P1aced a Ward (prodbygus)",
+          "date": "2024-05-02",
+          "plays": 275,
+          "type": "SoundCloud-only"
+        },
+        {
+          "title": "the peace of the spirit urn (prod +fiftyzeros)",
+          "date": "2026-07-15",
+          "plays": 178,
+          "type": "SoundCloud-only"
+        }
+      ]
+    },
+    {
+      "name": "The Rites",
+      "epithet": "The ceremonial forms: ritual, solstice, freestyle, anthem, intro, outro, interlude.",
+      "words": [
+        "ritual",
+        "solstice",
+        "freestyle",
+        "anthem",
+        "intro",
+        "outro",
+        "interlude"
+      ],
+      "track_count": 17,
+      "tracks": [
+        {
+          "title": "Fuck Time 3 (outro) [Prod. DIX2]",
+          "date": "2018-11-08",
+          "plays": 697,
+          "type": "SoundCloud-only"
+        },
+        {
+          "title": "[outro] Off Beat ft. Yung Vetta (prod. Addy)",
+          "date": "2019-01-28",
+          "plays": 935,
+          "type": "SoundCloud-only"
+        },
+        {
+          "title": "Stay Away Freestyle ~",
+          "date": "2019-03-03",
+          "plays": 719,
+          "type": "SoundCloud-only"
+        },
+        {
+          "title": "Day Comes Freestyle ~(prod. Discent)",
+          "date": "2019-03-15",
+          "plays": 579,
+          "type": "SoundCloud-only"
+        },
+        {
+          "title": "Face Down Freestyle ~(prod. WeDreaming)",
+          "date": "2019-03-27",
+          "plays": 1229,
+          "type": "SoundCloud-only"
+        },
+        {
+          "title": "outro ~ I RLLY DID THT(prod. itami リネン)",
+          "date": "2019-07-09",
+          "plays": 3940,
+          "type": "SoundCloud-only"
+        },
+        {
+          "title": "Elf Anthem Interlude (prod. capsctrl)",
+          "date": "2020-12-21",
+          "plays": 232,
+          "type": "SoundCloud-only"
+        },
+        {
+          "title": "Solstice",
+          "date": "2020-12-21",
+          "plays": null,
+          "type": "Album"
+        },
+        {
+          "title": "Intro (prod. astral_hp)",
+          "date": "2021-07-14",
+          "plays": 178,
+          "type": "SoundCloud-only"
+        },
+        {
+          "title": "Long Day (End Task) outro [@Staaaas.ily]",
+          "date": "2023-11-10",
+          "plays": 519,
+          "type": "SoundCloud-only"
+        },
+        {
+          "title": "B4 the Ritual (2018)",
+          "date": "2023-11-11",
+          "plays": null,
+          "type": "Album"
+        },
+        {
+          "title": "6 AM In Da Bay Interlude",
+          "date": "2023-11-12",
+          "plays": 488,
+          "type": "SoundCloud-only"
+        },
+        {
+          "title": "Attack!!! intro",
+          "date": "2023-11-12",
+          "plays": 501,
+          "type": "SoundCloud-only"
+        },
+        {
+          "title": "Day Comes Freestyle",
+          "date": "2023-11-12",
+          "plays": 210,
+          "type": "SoundCloud-only"
+        },
+        {
+          "title": "For Brian (Neck Deep) outro [produced by AWFL]",
+          "date": "2023-11-12",
+          "plays": 43,
+          "type": "SoundCloud-only"
+        },
+        {
+          "title": "Good Turns Bad Freestyle",
+          "date": "2023-11-12",
+          "plays": 482,
+          "type": "SoundCloud-only"
+        },
+        {
+          "title": "Sti11 waiting/tunnel freestyle w/ Max Ferrari prod. suli",
+          "date": "2025-11-11",
+          "plays": 300,
+          "type": "SoundCloud-only"
+        }
+      ]
+    },
+    {
+      "name": "Light",
+      "epithet": "Lightning, white fire, sun, gold, and things that shine.",
+      "words": [
+        "lightning",
+        "white",
+        "sun",
+        "gold",
+        "shine",
+        "shines"
+      ],
+      "track_count": 9,
+      "tracks": [
+        {
+          "title": "Just Wanted U to Shine (prod. Xtravulous x Tundra Beats)",
+          "date": "2018-08-26",
+          "plays": 3096,
+          "type": "SoundCloud-only"
+        },
+        {
+          "title": "Soul Shines ~ [prod Josh the Samurai]",
+          "date": "2019-01-08",
+          "plays": 1150,
+          "type": "SoundCloud-only"
+        },
+        {
+          "title": "GOLD 💛💔💛 ~ (prod. Antropolita)",
+          "date": "2019-04-28",
+          "plays": 4362,
+          "type": "SoundCloud-only"
+        },
+        {
+          "title": "SUN SET FOR U ft. JO$E DRIPP (prod. y axis)",
+          "date": "2019-07-09",
+          "plays": 1771,
+          "type": "SoundCloud-only"
+        },
+        {
+          "title": "White Noise ft. Keyblayde808 (prod. Keyblayde808)",
+          "date": "2019-12-30",
+          "plays": 2650,
+          "type": "SoundCloud-only"
+        },
+        {
+          "title": "white fire (prod. odece)",
+          "date": "2020-10-07",
+          "plays": 450,
+          "type": "SoundCloud-only"
+        },
+        {
+          "title": "Asterisms Shine (prod. lil biscuit)",
+          "date": "2021-07-14",
+          "plays": 210,
+          "type": "SoundCloud-only"
+        },
+        {
+          "title": "Sipping 1ightning prod. lunarlad",
+          "date": "2024-07-09",
+          "plays": 275,
+          "type": "SoundCloud-only"
+        },
+        {
+          "title": "water + sun (prod paris pas rigolo)",
+          "date": "2025-09-13",
+          "plays": 178,
+          "type": "SoundCloud-only"
+        }
+      ]
+    },
+    {
+      "name": "Dark",
+      "epithet": "The night and the dark, named twice over.",
+      "words": [
+        "dark",
+        "night"
+      ],
+      "track_count": 5,
+      "tracks": [
+        {
+          "title": "stay out of the dark (prod. Rizi)",
+          "date": "2018-08-13",
+          "plays": 1293,
+          "type": "SoundCloud-only"
+        },
+        {
+          "title": "NIGHT MODE ft. MAX FERRARI x YUNG VETTA x JAX",
+          "date": "2019-07-09",
+          "plays": 10083,
+          "type": "SoundCloud-only"
+        },
+        {
+          "title": "Dark City Destiny @dxcember13 @rudey0on10",
+          "date": "2024-03-27",
+          "plays": 408,
+          "type": "SoundCloud-only"
+        },
+        {
+          "title": "The Night Ends Yeaaa",
+          "date": "2026-03-25",
+          "plays": null,
+          "type": "Single"
+        },
+        {
+          "title": "the night ends yeaaa prod wellfed",
+          "date": "2026-03-25",
+          "plays": 208,
+          "type": "SoundCloud-only"
+        }
+      ]
+    },
+    {
+      "name": "Journeys",
+      "epithet": "Trips taken and a walk offered - the road vocabulary.",
+      "words": [
+        "trips",
+        "walk"
+      ],
+      "track_count": 4,
+      "tracks": [
+        {
+          "title": "Walk With Me w/ JAX (Prod. Rawman)",
+          "date": "2018-08-27",
+          "plays": 700,
+          "type": "SoundCloud-only"
+        },
+        {
+          "title": "All Kinds Of Trips (prod. YungSkah) <ON ALL PLATFORMS NOW!>",
+          "date": "2018-12-15",
+          "plays": 5805,
+          "type": "SoundCloud-only"
+        },
+        {
+          "title": "9 Trips",
+          "date": "2023-08-29",
+          "plays": 262,
+          "type": "SoundCloud-only"
+        },
+        {
+          "title": "9 Trips",
+          "date": "2026-05-03",
+          "plays": null,
+          "type": "Single"
+        }
+      ]
+    },
+    {
+      "name": "The Cold",
+      "epithet": "Four transmissions about the world getting colder - a series unto itself.",
+      "words": [
+        "colder"
+      ],
+      "track_count": 4,
+      "tracks": [
+        {
+          "title": "When the World Gets Colder (prod. Brokn)",
+          "date": "2018-07-18",
+          "plays": 9535,
+          "type": "SoundCloud-only"
+        },
+        {
+          "title": "When the World Gets Colder 2 (prod. Yung Skah)",
+          "date": "2018-12-04",
+          "plays": 854,
+          "type": "SoundCloud-only"
+        },
+        {
+          "title": "getting colder w/ capoxxo (prod. pvscale x asa41)",
+          "date": "2019-12-22",
+          "plays": 4587,
+          "type": "SoundCloud-only"
+        },
+        {
+          "title": "When the World Gets Colder 3 (prod. phantasie)",
+          "date": "2021-07-14",
+          "plays": 222,
+          "type": "SoundCloud-only"
+        }
+      ]
+    },
+    {
+      "name": "Power",
+      "epithet": "Power claimed, power denied, power gone.",
+      "words": [
+        "power"
+      ],
+      "track_count": 3,
+      "tracks": [
+        {
+          "title": "POWER~! (brb)(prod. Apostle)",
+          "date": "2019-03-20",
+          "plays": 1815,
+          "type": "SoundCloud-only"
+        },
+        {
+          "title": "No Power",
+          "date": "2026-03-23",
+          "plays": null,
+          "type": "Single"
+        },
+        {
+          "title": "no power prod wellfed",
+          "date": "2026-03-23",
+          "plays": 242,
+          "type": "SoundCloud-only"
+        }
+      ]
+    },
+    {
+      "name": "The Pack",
+      "epithet": "Two transmissions for the dogs.",
+      "words": [
+        "dogs"
+      ],
+      "track_count": 2,
+      "tracks": [
+        {
+          "title": "like my dogs!!!",
+          "date": "2024-09-18",
+          "plays": null,
+          "type": "Single"
+        },
+        {
+          "title": "like my dogs!!! (prod waynn)",
+          "date": "2024-09-18",
+          "plays": 175,
+          "type": "SoundCloud-only"
+        }
+      ]
+    },
+    {
+      "name": "Lucid States",
+      "epithet": "A lucid boy and a dreamed-of you - the dream vocabulary.",
+      "words": [
+        "lucid",
+        "dreamed"
+      ],
+      "track_count": 2,
+      "tracks": [
+        {
+          "title": "Lucid Boi (prod. $ T.N.C $)",
+          "date": "2018-01-08",
+          "plays": 918,
+          "type": "SoundCloud-only"
+        },
+        {
+          "title": "Dreamed of U (Hubb1e) prod. Yukio",
+          "date": "2025-11-10",
+          "plays": 175,
+          "type": "SoundCloud-only"
+        }
+      ]
+    },
+    {
+      "name": "Time",
+      "epithet": "Time to grow. Time, defied.",
+      "words": [
+        "time"
+      ],
+      "track_count": 2,
+      "tracks": [
+        {
+          "title": "Fuck Time 3 (outro) [Prod. DIX2]",
+          "date": "2018-11-08",
+          "plays": 697,
+          "type": "SoundCloud-only"
+        },
+        {
+          "title": "Time to Grow (prod. Ridicholas)",
+          "date": "2018-12-13",
+          "plays": 801,
+          "type": "SoundCloud-only"
+        }
+      ]
+    },
+    {
+      "name": "Soul",
+      "epithet": "Two transmissions carry the soul - one shaking, one shining.",
+      "words": [
+        "soul"
+      ],
+      "track_count": 2,
+      "tracks": [
+        {
+          "title": "Soul Shaking (prod. Fish Narc)",
+          "date": "2018-01-03",
+          "plays": 12944,
+          "type": "SoundCloud-only"
+        },
+        {
+          "title": "Soul Shines ~ [prod Josh the Samurai]",
+          "date": "2019-01-08",
+          "plays": 1150,
+          "type": "SoundCloud-only"
+        }
+      ]
+    },
+    {
+      "name": "Fire & Water",
+      "epithet": "White fire. Water and sun. The elements, named once each.",
+      "words": [
+        "fire",
+        "water"
+      ],
+      "track_count": 2,
+      "tracks": [
+        {
+          "title": "white fire (prod. odece)",
+          "date": "2020-10-07",
+          "plays": 450,
+          "type": "SoundCloud-only"
+        },
+        {
+          "title": "water + sun (prod paris pas rigolo)",
+          "date": "2025-09-13",
+          "plays": 178,
+          "type": "SoundCloud-only"
+        }
+      ]
+    }
+  ]
+}
