@@ -150,6 +150,89 @@
 .disco-card .date { color: var(--muted); font-size: 0.85rem; font-family: var(--font-mono); letter-spacing: 0.06em; }
 .disco-card .links { display: flex; gap: var(--space-3); margin-top: var(--space-4); }
 .disco-card .links a { font-family: var(--font-mono); font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; }
+.disco-art {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: var(--radius-s);
+  border: 1px solid var(--line-soft);
+  margin-bottom: var(--space-4);
+  background: var(--panel-2);
+}
+.disco-mono {
+  display: grid;
+  place-items: center;
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  color: var(--gold);
+  letter-spacing: 0.06em;
+}
+.disco-art[hidden] { display: none; }
+
+/* Eras */
+.era-list { display: grid; gap: var(--space-4); }
+.era-card {
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius-m);
+  padding: var(--space-6);
+  background: linear-gradient(135deg, var(--panel), var(--bg-soft));
+  position: relative;
+  overflow: clip;
+  transition: border-color 0.2s var(--ease), box-shadow 0.2s var(--ease);
+}
+.era-card:hover { border-color: var(--gold); box-shadow: var(--shadow-2); }
+.era-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(500px 200px at 12% 0%, rgba(201, 162, 39, 0.07), transparent 70%);
+  pointer-events: none;
+}
+.era-span {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--neon);
+  margin-bottom: var(--space-2);
+}
+.era-card h3 {
+  font-size: clamp(1.5rem, 3vw, 2.1rem);
+  letter-spacing: 0.04em;
+  margin-bottom: var(--space-2);
+}
+.era-scene {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  letter-spacing: 0.03em;
+  color: var(--gold);
+  margin-bottom: var(--space-4);
+}
+.era-releases {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+.era-releases li {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  color: var(--ink-dim);
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius-s);
+  padding: var(--space-1) var(--space-3);
+  background: var(--panel-2);
+}
+.era-silence {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  text-transform: uppercase;
+}
 
 /* Platform links */
 .platform-grid {

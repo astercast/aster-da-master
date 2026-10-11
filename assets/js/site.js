@@ -20,6 +20,14 @@
     document.querySelectorAll(".reveal").forEach(function (el) { el.classList.add("in"); });
   }
 
+  function artTile(r) {
+    var initial = esc((r.title || "?").charAt(0));
+    var mono = '<div class="disco-art disco-mono" aria-hidden="true"' + (r.artwork ? " hidden" : "") + ">" + initial + "</div>";
+    if (!r.artwork) return mono;
+    return '<img class="disco-art" src="' + esc(r.artwork) + '" alt="' + esc(r.title) + ' cover art" loading="lazy" ' +
+      'onerror="this.hidden=true;this.nextElementSibling.hidden=false;">' + mono;
+  }
+
   function linkList(links) {
     return (links || []).map(function (l) {
       return '<a href="' + esc(l.url) + '" target="_blank" rel="noopener">' + esc(l.label) + "</a>";
@@ -51,10 +59,30 @@
       if (grid && Array.isArray(d.discography)) {
         grid.innerHTML = d.discography.map(function (r) {
           return '<article class="disco-card">' +
+            artTile(r) +
             '<span class="type">' + esc(r.type || "Release") + "</span>" +
             "<h3>" + esc(r.title) + "</h3>" +
             '<p class="date">' + esc(r.date || "") + "</p>" +
             '<div class="links">' + linkList(r.links) + "</div>" +
+            "</article>";
+        }).join("");
+      }
+
+      /* Eras */
+      var erasEl = document.getElementById("eras-list");
+      if (erasEl && Array.isArray(d.eras) && d.eras.length) {
+        erasEl.innerHTML = d.eras.map(function (e) {
+          var rels = (e.releases || []).map(function (t) {
+            return "<li>" + esc(t) + "</li>";
+          }).join("");
+          var body = rels
+            ? '<ul class="era-releases">' + rels + "</ul>"
+            : '<p class="era-silence">No releases on record.</p>';
+          return '<article class="era-card">' +
+            '<p class="era-span">' + esc(e.span) + "</p>" +
+            "<h3>" + esc(e.name) + "</h3>" +
+            '<p class="era-scene">' + esc(e.scene) + "</p>" +
+            body +
             "</article>";
         }).join("");
       }

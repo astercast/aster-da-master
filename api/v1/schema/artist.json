@@ -49,7 +49,42 @@
     "discography": {
       "type": "array",
       "items": {
-        "type": "object"
+        "type": "object",
+        "required": [
+          "title",
+          "date",
+          "type"
+        ],
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "date": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          },
+          "tracks": {
+            "type": "integer"
+          },
+          "label": {
+            "type": "string"
+          },
+          "note": {
+            "type": "string"
+          },
+          "artwork": {
+            "type": "string",
+            "format": "uri"
+          },
+          "links": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          }
+        }
       }
     },
     "platforms": {
@@ -75,6 +110,58 @@
         "object",
         "null"
       ]
+    },
+    "eras": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "name",
+          "span",
+          "scene",
+          "releases"
+        ],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "span": {
+            "type": "string"
+          },
+          "scene": {
+            "type": "string"
+          },
+          "releases": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "note": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "collaborators": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "name"
+        ],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "role": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string"
+          }
+        }
+      }
     }
   }
 }

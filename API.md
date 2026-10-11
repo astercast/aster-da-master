@@ -15,6 +15,15 @@ Facts enter only from verified public platform pages (Spotify, Apple Music,
 SoundCloud, YouTube, etc.). Unverified claims are never published; identity
 drift (a platform URL pointing at a different artist) escalates to research.
 
+## Cover art
+
+Discography entries carry an `artwork` URL sourced from the iTunes Search API
+(`artworkUrl100`, upgraded to 600×600 via Apple's standard size pattern) and
+hotlinked from Apple's CDN (`*.mzstatic.com`). Verified 2026-10-11: all 34
+release artworks resolve with `image/*` content types. The site renders them
+with `loading="lazy"` and falls back to a monogram tile if a URL ever dies.
+Releases with no artwork simply omit the field — no placeholders.
+
 ## Skills
 
 Task procedures in `skills/`:
