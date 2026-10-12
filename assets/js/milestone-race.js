@@ -153,6 +153,20 @@
     return "#h2h=" + encodeURIComponent(a) + "," + encodeURIComponent(b) + "," + t;
   }
 
+  /* Swap the matchup panel: same-document view transition when the
+     platform offers it AND the user hasn't asked for reduced motion;
+     otherwise an instant swap (the reduced-motion variant). */
+  function swapH2H(html) {
+    var el = $("mr-h2h");
+    var reduce = window.matchMedia &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (!reduce && document.startViewTransition) {
+      document.startViewTransition(function () { el.innerHTML = html; });
+    } else {
+      el.innerHTML = html;
+    }
+  }
+
   function renderH2H() {
     var selA = $("mr-h2h-a"), selB = $("mr-h2h-b"), selT = $("mr-h2h-t");
     var idA = selA.value, idB = selB.value;
@@ -179,7 +193,7 @@
         esc(p.first === a.id ? a.title : b.title) +
         '</strong> crosses first — ' + esc(p.note) + '</p>'
       : '<p class="mr-verdict">' + esc(p.note) + '</p>';
-    $("mr-h2h").innerHTML =
+    swapH2H(
       '<div class="table-wrap"><table class="data-table">' +
       '<caption class="visually-hidden">Head-to-head: ' + esc(a.title) + ' vs ' + esc(b.title) +
       ' at ' + fmt(t) + ' plays</caption>' +
@@ -199,7 +213,7 @@
       '<a href="' + esc(b.page) + '">' + esc(b.title) + '</a> · ' +
       a.producers.concat(b.producers).map(function (pr) {
         return '<a href="' + esc(pr.page) + '">' + esc(pr.name) + '</a>';
-      }).join(" · ") + ' <span class="chart-sub">(producers)</span></p>';
+      }).join(" · ") + ' <span class="chart-sub">(producers)</span></p>');
     var h = pairHash(idA, idB, t);
     if (location.hash !== h) history.replaceState(null, "", h);
   }

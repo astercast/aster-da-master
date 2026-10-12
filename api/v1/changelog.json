@@ -1,8 +1,26 @@
 {
   "generated": "2026-10-11",
   "method": "Parsed from `git log main`: every commit becomes an entry. The site documenting its own becoming.",
-  "entry_count": 63,
+  "entry_count": 66,
   "entries": [
+    {
+      "hash": "d0b5576",
+      "date": "2026-10-12",
+      "message": "Wave 28: changelog sync (3-file convention)",
+      "files_changed": 3
+    },
+    {
+      "hash": "7b561ff",
+      "date": "2026-10-12",
+      "message": "Wave 28: web-craft design findings on the race page — text-wrap:balance headlines, tabular-nums, content-visibility on the climb, scoped view transition for matchup swaps, race-card jump nav",
+      "files_changed": 3
+    },
+    {
+      "hash": "6a6cbc5",
+      "date": "2026-10-12",
+      "message": "Wave 29: Transmission 3.0 — 13-stop journey, era readings, share/resume upgrades, motion craft",
+      "files_changed": 5
+    },
     {
       "hash": "1060beb",
       "date": "2026-10-12",

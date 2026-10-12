@@ -1460,3 +1460,19 @@
 .mr-jumpnav a:hover, .mr-jumpnav a:focus-visible { color: var(--neon); text-decoration: underline; }
 .mr-h2h-form select, .mr-climb-controls input { font-size: 0.95rem; }
 #mr-history-h + .chart-sub, .section h3 { scroll-margin-top: 96px; }
+
+/* ---------- Milestone race: web-craft findings (wave 28) ---------- */
+/* text-wrap: balance on race headlines (Baseline 2024) */
+.page-race #main h1, .page-race #main h2, .mr-race h3, .mr-watch-card h3 { text-wrap: balance; }
+/* tabular numerals for race data (verified table/dashboard practice) */
+.data-table .num, .mr-summit-num, .mr-rank { font-variant-numeric: tabular-nums; }
+/* long-listing perf: the 182-row climb renders off-screen cheaply */
+#mr-climb .table-wrap {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 2400px;
+}
+/* same-document view transition, scoped to the head-to-head panel */
+#mr-h2h { view-transition-name: mr-h2h; }
+@media (prefers-reduced-motion: reduce) {
+  #mr-h2h { view-transition-name: none; }
+}
