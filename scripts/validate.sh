@@ -4,11 +4,11 @@
 # Stages:
 #   1. JS syntax ......... node --check every shipped JS file (assets/js/)
 #   2. JSON parse ........ every JSON file under api/, data/, skills/, scripts/
-#   3. JSON Schema ....... draft-07 validation of all 20 docs under
+#   3. JSON Schema ....... draft-07 validation of all 21 docs under
 #                         api/v1/schema/ (one per endpoint, incl. the index
 #                         manifest, the era deep-dives, session clusters,
 #                         the codex family deep-dives, the milestone races,
-#                         and the session tools)
+#                         the session tools, and the codex network)
 #   4. Relative links .... every href/src in every HTML page resolves on disk;
 #                         JS fetch() string literals resolve too. 0 broken.
 #   5. Lyric-grep gate .. fail on any lyric-like content. Titles/metadata
@@ -108,7 +108,8 @@ pairs = [("index.json", "index.json"), ("artist.json", "artist.json"),
          ("session-clusters.json", "session-clusters.json"),
          ("codex-families.json", "codex-families.json"),
          ("milestone-races.json", "milestone-races.json"),
-         ("session-tools.json", "session-tools.json")]
+         ("session-tools.json", "session-tools.json"),
+         ("codex-network.json", "codex-network.json")]
 for fname, sname in pairs:
     doc = json.loads((ROOT / "api" / "v1" / fname).read_text())
     for e in schema(sname).iter_errors(doc):
@@ -121,7 +122,7 @@ if failures:
     if len(failures) > 20:
         print(f"   ... and {len(failures)-20} more")
     sys.exit(1)
-print("  ok: all 20 endpoints validate against their draft-07 schemas")
+print("  ok: all 21 endpoints validate against their draft-07 schemas")
 EOF
 [ $? -eq 0 ] && pass "schema validation clean" || FAIL=$((FAIL+1))
 
@@ -265,11 +266,13 @@ stage 6 "generator-chain order check (clean re-run -> zero unexpected diffs)"
 # -> session_deepdives -> milestones -> milestone_watch -> firstlast -> glance
 # -> search_index -> changelog -> transmission -> network -> eras
 # -> session_clusters -> codex_pages -> milestone_races -> session_tools
+# -> codex_network
 CHAIN="build_releases build_years build_circle build_codex build_sessions \
 build_session_deepdives build_milestones build_milestone_watch \
 build_firstlast build_glance build_search_index build_changelog \
 build_transmission build_network build_eras build_session_clusters \
-build_codex_pages build_milestone_races build_session_tools"
+build_codex_pages build_milestone_races build_session_tools \
+build_codex_network"
 CHAIN_OK=1
 for s in $CHAIN; do
   if ! python3 "scripts/$s.py" >/tmp/adm_validate_chain.log 2>&1; then
@@ -387,7 +390,7 @@ CHAIN_ORDER = ("releases", "years", "circle", "codex", "sessions",
                "session_deepdives", "milestones", "milestone_watch",
                "firstlast", "glance", "search_index", "changelog", "transmission",
                "network", "eras", "session_clusters", "codex_pages",
-               "milestone_races", "session_tools")
+               "milestone_races", "session_tools", "codex_network")
 chain_str = " \u2192 ".join(CHAIN_ORDER)
 if chain_str not in llms:
     errors.append("llms.txt generator dependency order doesn't match the canonical chain")
@@ -404,7 +407,7 @@ sessions = json.loads((ROOT / "data" / "sessions.json").read_text())
 skills = [f for f in (ROOT / "skills").glob("*.md") if f.name != "index.json"]
 checks = [(str(len(disc)), "219"), (str(len(dist)), "34"), (str(len(vault)), "185"),
           (str(len(codex["families"])), "16"), (str(len(sessions["sessions"])), "61"),
-          (str(len(circle_keys)), "21"), (str(len(skills)), "14")]
+          (str(len(circle_keys)), "21"), (str(len(skills)), "15")]
 for actual, want in checks:
     if actual != want:
         errors.append(f"catalog drift: expected {want}, data says {actual}")
@@ -416,7 +419,7 @@ if errors:
     for e in errors:
         print("   -", e)
     sys.exit(1)
-print(f"  ok: llms.txt matches index.json v{ver}, all {len(endpoints)} endpoints, chain order, catalog counts (219/34/185/16/21/61/14)")
+print(f"  ok: llms.txt matches index.json v{ver}, all {len(endpoints)} endpoints, chain order, catalog counts (219/34/185/16/21/61/15)")
 EOF
 [ $? -eq 0 ] && pass "llms.txt freshness" || FAIL=$((FAIL+1))
 

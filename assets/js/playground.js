@@ -43,7 +43,9 @@
     { id: "milestone-races", path: "api/v1/milestone-races.json",
       blurb: "The milestone race: approaching play-count milestones ranked by gap-closing proximity (current value, target, gap, pace arithmetic — estimates, never predictions), the 30,088-play summit chase, session + era records, the most recently crossed milestones. Drives milestone-race.html." },
     { id: "session-tools", path: "api/v1/session-tools.json",
-      blurb: "Session explorer 2.0 tooling: 61 per-session compare profiles (stats, loudest + deepest-cut tracks, collaborators, play profiles, cross-links), the deepest-sessions editorial ranking (formula stated), and the honest snapshot-history state (one 2026-10-11 snapshot — no play trajectories). Drives sessions-explorer.html's compare / deepest-cuts / scrubber." }
+      blurb: "Session explorer 2.0 tooling: 61 per-session compare profiles (stats, loudest + deepest-cut tracks, collaborators, play profiles, cross-links), the deepest-sessions editorial ranking (formula stated), and the honest snapshot-history state (one 2026-10-11 snapshot — no play trajectories). Drives sessions-explorer.html's compare / deepest-cuts / scrubber." },
+    { id: "codex-network", path: "api/v1/codex-network.json",
+      blurb: "The codex relationship graph: 16 word families as nodes, shared title-credited collaborators and title-parsed producers as edges, BFS degrees of separation from Aster, the family-overlap graph, and connect-the-dots shortest-path data. Drives codex-network.html." }
   ];
 
   function esc(s) {

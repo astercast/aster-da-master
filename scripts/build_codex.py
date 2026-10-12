@@ -245,6 +245,7 @@ def index_page(families):
         <h2 id="cx-h">Sixteen families of ritual words</h2>
         <p>His titles run on ritual vocabulary. Each family is a tally of titles that carry its words — counts, never meanings.</p>
         <div class="year-grid">{cards}</div>
+        <p class="chart-sub" style="margin-top: var(--space-5)">See how the families connect: <a href="../codex-network.html">the codex network</a> &mdash; sixteen families as nodes, the collaborators and producers they share as edges, degrees of separation from Aster, and a connect-the-dots pathfinder.</p>
       </section>
 """
     return HEAD.format(

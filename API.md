@@ -236,6 +236,19 @@ and `tracks.json` (the captured catalog).
   journey stops (`scripts/build_session_tools.py`, last in the chain, with
   pinned-fixture tests in `scripts/test_session_tools.py`). Skill:
   `session-compare`. Schema: `api/v1/schema/session-tools.json`.
+- **Codex network explorer** (`codex-network.html` + `api/v1/codex-network.json`,
+  endpoint #21): the 16 codex families as an interactive SVG network — families
+  as nodes, shared title-credited collaborators and title-parsed producers as
+  edges (as credited, verbatim), BFS degrees of separation from Aster for every
+  figure (families 1 degree, figures 2 via their carrying families — computed,
+  not claimed), family-overlap views, and a "connect the dots" shortest-path
+  finder with shareable `#path=a,b` deep links and an honest no-path state in
+  codex-only mode (the Aster hub is forbidden there, so isolated families like
+  the-cold and keys genuinely report no path). Cross-links to codex family
+  pages, circle pages, `network.html`, the Transmission journey's Codex chapter,
+  and `milestone-race.html` (`scripts/build_codex_network.py`, last in the
+  chain, with pinned-fixture tests in `scripts/test_codex_network.py`). Skill:
+  `codex-pathfinder`. Schema: `api/v1/schema/codex-network.json`.
 - **Glance** (`glance.html`): the one-page infographic — 219 transmissions,
   257,394 plays, 9 years, 61 sessions, 21 collaborators, 16 codex families,
   top-5 tracks, the eras strip, heaviest sessions, bookends

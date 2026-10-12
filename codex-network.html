@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Codex Network — Aster da Master</title>
+  <meta name="description" content="The sixteen codex word families as an interactive network: shared collaborators and producers as edges, degrees of separation from Aster, and a connect-the-dots pathfinder.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <style>
+    .cx-legend { display: flex; flex-wrap: wrap; gap: var(--space-4); align-items: center; }
+    .cx-legend .sw { display: inline-block; width: 0.9em; height: 0.9em; border-radius: 50%; border: 2px solid var(--neon); margin-right: 0.35em; vertical-align: -0.1em; }
+    .cx-legend .sw.sq { border-radius: 2px; border-style: dashed; border-color: var(--violet, #b28dff); }
+    .cx-legend .sw.dm { border-radius: 2px; transform: rotate(45deg) scale(0.85); display: inline-block; }
+    .cx-legend .sw.gold { border-color: var(--gold); }
+    .nw-node.is-family .nw-shape { stroke-width: 2.5; }
+    .nw-edge.is-overlap { stroke: var(--neon); opacity: 0.45; }
+    .nw-edge.is-cocredit { stroke-dasharray: 6 4; opacity: 0.5; }
+    .nw-edge.is-aster { opacity: 0.12; }
+    .nw-node.is-dim { opacity: 0.25; }
+    .nw-edge.is-dim { opacity: 0.06; }
+    .cx-path-steps { list-style: none; padding: 0; margin: var(--space-3) 0; }
+    .cx-path-steps li { padding: var(--space-2) 0; border-bottom: 1px solid var(--line-soft); }
+    .cx-path-steps .step-n { font-family: var(--font-mono); color: var(--neon); margin-right: var(--space-2); }
+    .cx-path-steps .step-why { display: block; color: var(--ink-dim); font-size: 0.85em; margin-top: 2px; }
+    .cx-form { display: grid; gap: var(--space-3); max-width: 42rem; }
+    .cx-form .row { display: flex; flex-wrap: wrap; gap: var(--space-3); }
+    .cx-form label { display: grid; gap: 4px; font-size: 0.9rem; flex: 1 1 12rem; }
+    .cx-form select, .cx-form input[type="search"] { background: var(--panel); color: var(--ink); border: 1px solid var(--line-soft); border-radius: var(--radius-s); padding: 0.5rem 0.6rem; font: inherit; }
+    .cx-mode { display: flex; gap: var(--space-3); flex-wrap: wrap; border: 1px solid var(--line-soft); border-radius: var(--radius-m); padding: var(--space-2) var(--space-3); }
+    .cx-mode legend { padding: 0 var(--space-2); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink-dim); }
+    @media (prefers-reduced-motion: reduce) {
+      .nw-shape, .nw-edge { transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-bar">
+      <a class="brand" href="./#top" aria-label="Aster da Master home">
+        <span class="brand-mark" aria-hidden="true">A✦</span>
+        <span>ASTER DA MASTER</span>
+      </a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="./#latest">Latest</a>
+        <a href="./#discography">Discography</a>
+        <a href="releases/">Releases</a>
+        <a href="./#listen">Listen</a>
+        <a href="./#circle">Circle</a>
+        <a href="./#about">About</a>
+        <a href="./#connect">Connect</a>
+        <a href="./#eras">Eras</a>
+        <a href="./#numbers">Numbers</a>
+        <a href="./#codex">Codex</a>
+        <a href="timeline.html">Timeline</a>
+        <a href="transmission.html">Transmission</a>
+        <a href="network.html">Network</a>
+        <a href="milestone-race.html">Race</a>
+        <a href="decoder.html">Decoder</a>
+        <a href="api-playground.html">API</a>
+        <a href="agents.html">Agents</a>
+        <a href="years/">Years</a>
+        <a href="method.html">Method</a>
+<a href="trilogy.html">Trilogy</a>
+        <a href="sessions.html">Sessions</a>
+        <a href="changelog.html">Changelog</a>
+        <a href="glance.html">Glance</a>
+        <a href="press-kit.html">Press kit</a>
+      </nav>
+      <details class="mnav">
+        <summary><span class="bars" aria-hidden="true"><i></i><i></i><i></i></span>Menu</summary>
+        <nav class="mnav-panel" aria-label="Mobile">
+        <a href="./#latest">Latest</a>
+        <a href="./#discography">Discography</a>
+        <a href="releases/">Releases</a>
+        <a href="./#listen">Listen</a>
+        <a href="./#circle">Circle</a>
+        <a href="./#about">About</a>
+        <a href="./#connect">Connect</a>
+        <a href="./#eras">Eras</a>
+        <a href="./#numbers">Numbers</a>
+        <a href="./#codex">Codex</a>
+        <a href="timeline.html">Timeline</a>
+        <a href="transmission.html">Transmission</a>
+        <a href="network.html">Network</a>
+        <a href="milestone-race.html">Race</a>
+        <a href="decoder.html">Decoder</a>
+        <a href="api-playground.html">API</a>
+        <a href="agents.html">Agents</a>
+        <a href="years/">Years</a>
+        <a href="method.html">Method</a>
+<a href="trilogy.html">Trilogy</a>
+        <a href="sessions.html">Sessions</a>
+        <a href="changelog.html">Changelog</a>
+        <a href="glance.html">Glance</a>
+        <a href="press-kit.html">Press kit</a>
+      
+        </nav>
+      </details>
+      <button class="search-btn" id="search-open" type="button" aria-label="Search the archive (keyboard shortcut: slash)">
+        <span aria-hidden="true">&#8981;</span><kbd aria-hidden="true">/</kbd>
+      </button>
+    </div>
+  </header>
+
+  <div class="search-overlay" id="search-overlay" hidden>
+    <div class="search-box" role="dialog" aria-modal="true" aria-labelledby="search-title">
+      <p class="kicker" id="search-title"><span class="numeral">&#10022;</span>Search the archive</p>
+      <input id="search-input" type="search" placeholder="Tracks, collaborators, eras, the codex&hellip;" aria-label="Search the archive" role="combobox" aria-expanded="true" aria-controls="search-results" autocomplete="off" spellcheck="false">
+      <div id="search-results" role="listbox" aria-label="Search results"></div>
+      <p class="search-hint"><kbd>/</kbd> to open &middot; <kbd>&uarr;</kbd><kbd>&darr;</kbd> to move &middot; <kbd>Enter</kbd> to go &middot; <kbd>Esc</kbd> to close</p>
+    </div>
+  </div>
+
+  <main id="main">
+    <section class="section" aria-labelledby="cx-h">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="kicker"><span class="numeral">✦</span>The codex, mapped</span>
+          <h2 id="cx-h">Sixteen families, one web</h2>
+          <p>Sixteen word families run through the vault like watermarks — and the same voices keep showing up in more than one. This is the codex as a network: families as nodes, the collaborators and producers they share as edges. Select any node to inspect it, or use <a href="#cx-path-h">Connect the dots</a> to trace the shortest path between any two figures. The tables below hold the same data: the graph is the flourish, the tables are the data.</p>
+        </div>
+
+        <dl class="nw-insights reveal" id="cx-insights" aria-label="Codex network insights"></dl>
+
+        <fieldset class="nw-controls reveal">
+          <legend>Graph view</legend>
+          <div class="nw-control" role="radiogroup" aria-label="Graph view">
+            <label class="nw-check"><input type="radio" name="cx-view" value="overlap" checked> Family overlap</label>
+            <label class="nw-check"><input type="radio" name="cx-view" value="voices"> Voices</label>
+          </div>
+          <div class="nw-control">
+            <label for="cx-search">Find a node</label>
+            <input type="search" id="cx-search" placeholder="e.g. the-modes, JAX" autocomplete="off" spellcheck="false">
+          </div>
+        </fieldset>
+        <p class="chart-sub cx-legend reveal" aria-label="Graph legend">
+          <span><span class="sw gold" aria-hidden="true"></span>Aster</span>
+          <span><span class="sw" aria-hidden="true"></span>Family</span>
+          <span><span class="sw" aria-hidden="true"></span>Collaborator</span>
+          <span><span class="sw sq" aria-hidden="true"></span>Producer</span>
+          <span><span class="sw dm" aria-hidden="true"></span>Voice + production</span>
+        </p>
+
+        <div class="nw-layout reveal">
+          <div class="nw-graph-wrap">
+            <svg id="cx-svg" role="img" viewBox="0 0 920 640" preserveAspectRatio="xMidYMid meet"
+                 aria-label="Codex network graph. Sixteen family nodes; shared collaborators and producers link them. Tab to a node, Enter selects, arrow keys move between nodes, Escape resets. The tables below hold the same data."></svg>
+            <p class="chart-sub nw-kb-hint">Tab + Enter to inspect · arrow keys move between nodes · Esc resets</p>
+          </div>
+          <aside class="nw-panel" id="cx-panel" aria-live="polite" aria-label="Selected node">
+            <p class="chart-sub">Select a node to see its connections.</p>
+          </aside>
+        </div>
+
+        <section class="reveal" aria-labelledby="cx-path-h">
+          <h3 class="stat-h" id="cx-path-h">Connect the dots</h3>
+          <p class="chart-sub">Pick any two figures — or a family and a figure — and the archive traces the shortest connection between them through the real graph. <strong>Through the archive</strong> may route via Aster (he speaks every family); <strong>codex only</strong> forbids the Aster shortcut, so voices in families that share nothing honestly report <em>no path found</em>.</p>
+          <form id="cx-path-form" class="cx-form">
+            <div class="row">
+              <label>From
+                <select id="cx-from"></select>
+              </label>
+              <label>To
+                <select id="cx-to"></select>
+              </label>
+            </div>
+            <fieldset class="cx-mode">
+              <legend>Route through</legend>
+              <label class="nw-check"><input type="radio" name="cx-mode" value="archive" checked> The archive (via Aster)</label>
+              <label class="nw-check"><input type="radio" name="cx-mode" value="codex"> Codex only (no Aster shortcut)</label>
+            </fieldset>
+            <div><button class="btn" type="submit">Find the path</button></div>
+          </form>
+          <div id="cx-path-result" aria-live="polite"></div>
+        </section>
+
+        <div class="reveal" id="cx-degrees-wrap">
+          <h3 class="stat-h">Degrees of separation from Aster</h3>
+          <p class="chart-sub">Breadth-first distances on the codex graph, computed — not claimed. Aster speaks every family directly, so every family is 1 degree out; every figure is 2 degrees, via the family or families that carry them. The <em>via</em> column is where the structure lives.</p>
+          <div class="table-scroll">
+          <table class="nw-table">
+            <caption class="visually-hidden">Degrees of separation from Aster da Master for every codex family and figure</caption>
+            <thead>
+              <tr><th scope="col">Name</th><th scope="col">Kind</th><th scope="col">Degrees</th><th scope="col">Via</th></tr>
+            </thead>
+            <tbody id="cx-degrees-body"></tbody>
+          </table>
+          </div>
+        </div>
+
+        <div class="reveal" id="cx-overlap-wrap">
+          <h3 class="stat-h">Family overlap, as a table</h3>
+          <p class="chart-sub">Every pair of families that shares at least one voice, and the voices they share. Four families share nothing with any other family.</p>
+          <div class="table-scroll">
+          <table class="nw-table">
+            <caption class="visually-hidden">Family pairs sharing collaborators or producers</caption>
+            <thead>
+              <tr><th scope="col">Family A</th><th scope="col">Family B</th><th scope="col">Shared</th><th scope="col">Voices</th></tr>
+            </thead>
+            <tbody id="cx-overlap-body"></tbody>
+          </table>
+          </div>
+        </div>
+
+        <p class="chart-sub reveal">Collaborator edges come from <em>w/</em> and <em>ft.</em> credits in family-track titles — as credited, verbatim; producer edges from the titles&rsquo; own <em>prod.</em> fragments. Co-credit edges come from title co-occurrences across the archive. Every node, edge, degree, and insight is computed by <code>scripts/build_codex_network.py</code> into <code>api/v1/codex-network.json</code>; the page renders it and adds nothing. Play counts are the 2026-10-11 snapshot.</p>
+
+        <section class="reveal" aria-labelledby="cx-keep-h">
+          <span class="kicker"><span class="numeral">&#10022;</span>Keep digging</span>
+          <h3 id="cx-keep-h">The journey continues</h3>
+          <ul class="story-list">
+            <li><a href="decoder.html">The decoder</a> &mdash; speak a word; the archive answers.</li>
+            <li><a href="codex/">Codex</a> &mdash; the 16 vocabulary families, deep-dived.</li>
+            <li><a href="network.html">Network</a> &mdash; the full collaboration graph, artist at center.</li>
+            <li><a href="transmission.html#chapter-codex">Transmission: the Codex chapter</a> &mdash; the families inside the guided journey.</li>
+            <li><a href="milestone-race.html">Milestone race</a> &mdash; approaching play-count milestones as races.</li>
+            <li><a href="sessions-explorer.html">Sessions explorer</a> &mdash; the 61 upload sessions on one timeline.</li>
+          </ul>
+        </section>
+
+        <noscript>
+          <div class="reveal">
+            <h3 class="stat-h">The sixteen families</h3>
+            <p class="chart-sub">The interactive graph needs JavaScript; the families are all here:</p>
+            <ul class="story-list">
+              <li><a href="codex/the-modes.html">The Modes</a></li>
+              <li><a href="codex/the-castings.html">The Castings</a></li>
+              <li><a href="codex/keys.html">Keys</a></li>
+              <li><a href="codex/vessels.html">Vessels</a></li>
+              <li><a href="codex/wards-and-the-spirit.html">Wards and the Spirit</a></li>
+              <li><a href="codex/the-rites.html">The Rites</a></li>
+              <li><a href="codex/light.html">Light</a></li>
+              <li><a href="codex/dark.html">Dark</a></li>
+              <li><a href="codex/journeys.html">Journeys</a></li>
+              <li><a href="codex/the-cold.html">The Cold</a></li>
+              <li><a href="codex/power.html">Power</a></li>
+              <li><a href="codex/the-pack.html">The Pack</a></li>
+              <li><a href="codex/lucid-states.html">Lucid States</a></li>
+              <li><a href="codex/time.html">Time</a></li>
+              <li><a href="codex/soul.html">Soul</a></li>
+              <li><a href="codex/fire-and-water.html">Fire and Water</a></li>
+            </ul>
+          </div>
+        </noscript>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <p>© 2026 ASTER DA MASTER — ALL SIGNALS RESERVED</p>
+      <nav aria-label="Footer">
+        <a href="./">Home</a>
+        <a href="./#discography">Discography</a>
+        <a href="releases/">Releases</a>
+        <a href="./#listen">Listen</a>
+        <a href="./#circle">Circle</a>
+        <a href="./#connect">Connect</a>
+        <a href="./#eras">Eras</a>
+        <a href="./#numbers">Numbers</a>
+        <a href="./#codex">Codex</a>
+        <a href="timeline.html">Timeline</a>
+        <a href="transmission.html">Transmission</a>
+        <a href="network.html">Network</a>
+        <a href="milestone-race.html">Race</a>
+        <a href="decoder.html">Decoder</a>
+        <a href="api-playground.html">API</a>
+        <a href="agents.html">Agents</a>
+        <a href="years/">Years</a>
+        <a href="method.html">Method</a>
+<a href="trilogy.html">Trilogy</a>
+        <a href="sessions.html">Sessions</a>
+        <a href="changelog.html">Changelog</a>
+        <a href="glance.html">Glance</a>
+        <a href="press-kit.html">Press kit</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="assets/js/common.js"></script>
+  <script src="assets/js/codex-network.js"></script>
+  <script src="assets/js/search.js"></script>
+</body>
+</html>

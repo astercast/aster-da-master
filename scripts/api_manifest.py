@@ -107,11 +107,15 @@ ENDPOINT_ORDER = [
      "Session explorer 2.0 tooling: per-session compare profiles (stats, loudest + deepest-cut tracks, collaborators, play profiles, family/session/era/journey cross-links), the honest snapshot-history state (one 2026-10-11 snapshot - no play trajectories exist), and the deepest-sessions editorial ranking (lowest average plays per transmission, min 2 transmissions, formula stated). Data source for sessions-explorer.html's compare / deepest-cuts / timeline-scrubber sections.",
      "session-tools.json", "The deepest-cuts ranking is editorial (formula stated in the payload), not an artist fact.",
      lambda api: len(_doc(api, "session-tools.json")["sessions"])),
+    ("codex-network",
+     "The codex network: 16 word families as nodes, shared title-credited collaborators and title-parsed producers as edges, BFS degrees of separation from Aster, the family-overlap graph, and the connect-the-dots shortest-path data. Data source for codex-network.html.",
+     "codex-network.json", "Producer credits are parsed from titles (as credited, verbatim); degrees are BFS distances on this graph, not a social claim.",
+     lambda api: len(_doc(api, "codex-network.json")["nodes"])),
 ]
 
 DOCUMENTS = {
     "AGENT.md": "Agent operator's manual: base URL pattern, key endpoints with example requests, end-to-end workflows, rate/expectation notes.",
-    "agents.html": "Human + agent surface: 20-endpoint table, llms files, skills, search-index usage, rates & expectations, worked workflows.",
+    "agents.html": "Human + agent surface: 21-endpoint table, llms files, skills, search-index usage, rates & expectations, worked workflows.",
     "API.md": "Human-readable API reference incl. the shared cross-site conventions block.",
     "llms.txt": "Short agent brief: catalog shape, method, API map, key verified facts, ops.",
     "llms-full.txt": "Full agent brief: per-era detail, collaborator research notes, unknowns register, page map, generator order.",

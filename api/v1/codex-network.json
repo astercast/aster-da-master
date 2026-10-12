@@ -1,0 +1,3786 @@
+{
+ "version": "0.14.0",
+ "generated": "2026-10-11",
+ "plays_snapshot": "2026-10-11",
+ "method": "The codex relationship graph, computed from real archive data. Nodes: Aster da Master (the speaker of every family), the 16 codex families (api/v1/codex-families.json), and every figure named on family transmissions. Collaborator figures follow the circle's title-credit rule: parsed from w//ft./feat. fragments in titles, as credited verbatim (build_years.parse_collabs). Producer figures are parsed from the titles' own prod./produced-by fragments (as credited, verbatim; multi-producer credits split on x / & / + / comma). Edges: aster-family (Aster speaks every word in the family), family-figure (weight = shared transmissions), figure-figure co-credit from api/v1/network.json title co-occurrences. Degrees of separation are BFS distances from Aster on this graph: every family is 1 degree (Aster speaks every family directly), every figure is 2 degrees (via the family or families that carry them). The pathfinder's codex-only mode excludes the Aster hub, so figures in families that share no voices honestly report no path. Play counts are the single 2026-10-11 snapshot; upload dates are not recording dates. Titles and metadata only -- never lyrics, never invented bio facts.",
+ "artist": {
+  "id": "aster",
+  "name": "Aster da Master",
+  "page": "index.html"
+ },
+ "families": [
+  {
+   "id": "fam-the-modes",
+   "slug": "the-modes",
+   "name": "The Modes",
+   "page": "codex/the-modes.html",
+   "track_count": 5,
+   "total_plays": 10864,
+   "words": [
+    "litemode",
+    "nitemode",
+    "night mode"
+   ],
+   "decoded_status": "unknown"
+  },
+  {
+   "id": "fam-the-castings",
+   "slug": "the-castings",
+   "name": "The Castings",
+   "page": "codex/the-castings.html",
+   "track_count": 5,
+   "total_plays": 693,
+   "words": [
+    "cast"
+   ],
+   "decoded_status": "stated"
+  },
+  {
+   "id": "fam-keys",
+   "slug": "keys",
+   "name": "Keys",
+   "page": "codex/keys.html",
+   "track_count": 3,
+   "total_plays": 9615,
+   "words": [
+    "key"
+   ],
+   "decoded_status": "stated"
+  },
+  {
+   "id": "fam-vessels",
+   "slug": "vessels",
+   "name": "Vessels",
+   "page": "codex/vessels.html",
+   "track_count": 2,
+   "total_plays": 367,
+   "words": [
+    "urn",
+    "cup"
+   ],
+   "decoded_status": "stated"
+  },
+  {
+   "id": "fam-wards-and-the-spirit",
+   "slug": "wards-and-the-spirit",
+   "name": "Wards & the Spirit",
+   "page": "codex/wards-and-the-spirit.html",
+   "track_count": 2,
+   "total_plays": 453,
+   "words": [
+    "ward",
+    "spirit"
+   ],
+   "decoded_status": "stated"
+  },
+  {
+   "id": "fam-the-rites",
+   "slug": "the-rites",
+   "name": "The Rites",
+   "page": "codex/the-rites.html",
+   "track_count": 17,
+   "total_plays": 11052,
+   "words": [
+    "ritual",
+    "solstice",
+    "freestyle",
+    "anthem",
+    "intro",
+    "outro",
+    "interlude"
+   ],
+   "decoded_status": "stated"
+  },
+  {
+   "id": "fam-light",
+   "slug": "light",
+   "name": "Light",
+   "page": "codex/light.html",
+   "track_count": 9,
+   "total_plays": 14142,
+   "words": [
+    "lightning",
+    "white",
+    "sun",
+    "gold",
+    "shine",
+    "shines"
+   ],
+   "decoded_status": "stated"
+  },
+  {
+   "id": "fam-dark",
+   "slug": "dark",
+   "name": "Dark",
+   "page": "codex/dark.html",
+   "track_count": 5,
+   "total_plays": 11992,
+   "words": [
+    "dark",
+    "night"
+   ],
+   "decoded_status": "stated"
+  },
+  {
+   "id": "fam-journeys",
+   "slug": "journeys",
+   "name": "Journeys",
+   "page": "codex/journeys.html",
+   "track_count": 4,
+   "total_plays": 6767,
+   "words": [
+    "trips",
+    "walk"
+   ],
+   "decoded_status": "stated"
+  },
+  {
+   "id": "fam-the-cold",
+   "slug": "the-cold",
+   "name": "The Cold",
+   "page": "codex/the-cold.html",
+   "track_count": 4,
+   "total_plays": 15198,
+   "words": [
+    "colder"
+   ],
+   "decoded_status": "stated"
+  },
+  {
+   "id": "fam-power",
+   "slug": "power",
+   "name": "Power",
+   "page": "codex/power.html",
+   "track_count": 3,
+   "total_plays": 2057,
+   "words": [
+    "power"
+   ],
+   "decoded_status": "stated"
+  },
+  {
+   "id": "fam-the-pack",
+   "slug": "the-pack",
+   "name": "The Pack",
+   "page": "codex/the-pack.html",
+   "track_count": 2,
+   "total_plays": 175,
+   "words": [
+    "dogs"
+   ],
+   "decoded_status": "stated"
+  },
+  {
+   "id": "fam-lucid-states",
+   "slug": "lucid-states",
+   "name": "Lucid States",
+   "page": "codex/lucid-states.html",
+   "track_count": 2,
+   "total_plays": 1093,
+   "words": [
+    "lucid",
+    "dreamed"
+   ],
+   "decoded_status": "stated"
+  },
+  {
+   "id": "fam-time",
+   "slug": "time",
+   "name": "Time",
+   "page": "codex/time.html",
+   "track_count": 2,
+   "total_plays": 1498,
+   "words": [
+    "time"
+   ],
+   "decoded_status": "stated"
+  },
+  {
+   "id": "fam-soul",
+   "slug": "soul",
+   "name": "Soul",
+   "page": "codex/soul.html",
+   "track_count": 2,
+   "total_plays": 14094,
+   "words": [
+    "soul"
+   ],
+   "decoded_status": "stated"
+  },
+  {
+   "id": "fam-fire-and-water",
+   "slug": "fire-and-water",
+   "name": "Fire & Water",
+   "page": "codex/fire-and-water.html",
+   "track_count": 2,
+   "total_plays": 628,
+   "words": [
+    "fire",
+    "water"
+   ],
+   "decoded_status": "stated"
+  }
+ ],
+ "figures": [
+  {
+   "id": "fig-p-addy",
+   "name": "Addy",
+   "kind": "producer",
+   "page": null,
+   "family_count": 1,
+   "families": [
+    {
+     "family_id": "fam-the-rites",
+     "family_slug": "the-rites",
+     "family_name": "The Rites",
+     "family_page": "codex/the-rites.html",
+     "transmissions": 1,
+     "titles": [
+      "[outro] Off Beat ft. Yung Vetta (prod. Addy)"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "fig-p-antropolita",
+   "name": "Antropolita",
+   "kind": "producer",
+   "page": null,
+   "family_count": 1,
+   "families": [
+    {
+     "family_id": "fam-light",
+     "family_slug": "light",
+     "family_name": "Light",
+     "family_page": "codex/light.html",
+     "transmissions": 1,
+     "titles": [
+      "GOLD 💛💔💛 ~ (prod. Antropolita)"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "fig-p-apostle",
+   "name": "Apostle",
+   "kind": "producer",
+   "page": null,
+   "family_count": 1,
+   "families": [
+    {
+     "family_id": "fam-power",
+     "family_slug": "power",
+     "family_name": "Power",
+     "family_page": "codex/power.html",
+     "transmissions": 1,
+     "titles": [
+      "POWER~! (brb)(prod. Apostle)"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "fig-p-asa41",
+   "name": "asa41",
+   "kind": "producer",
+   "page": null,
+   "family_count": 1,
+   "families": [
+    {
+     "family_id": "fam-the-cold",
+     "family_slug": "the-cold",
+     "family_name": "The Cold",
+     "family_page": "codex/the-cold.html",
+     "transmissions": 1,
+     "titles": [
+      "getting colder w/ capoxxo (prod. pvscale x asa41)"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "fig-p-astral-hp",
+   "name": "astral_hp",
+   "kind": "producer",
+   "page": null,
+   "family_count": 1,
+   "families": [
+    {
+     "family_id": "fam-the-rites",
+     "family_slug": "the-rites",
+     "family_name": "The Rites",
+     "family_page": "codex/the-rites.html",
+     "transmissions": 1,
+     "titles": [
+      "Intro (prod. astral_hp)"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "fig-p-awfl",
+   "name": "AWFL",
+   "kind": "producer",
+   "page": null,
+   "family_count": 1,
+   "families": [
+    {
+     "family_id": "fam-the-rites",
+     "family_slug": "the-rites",
+     "family_name": "The Rites",
+     "family_page": "codex/the-rites.html",
+     "transmissions": 1,
+     "titles": [
+      "For Brian (Neck Deep) outro [produced by AWFL]"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "fig-p-brokn",
+   "name": "Brokn",
+   "kind": "producer",
+   "page": null,
+   "family_count": 1,
+   "families": [
+    {
+     "family_id": "fam-the-cold",
+     "family_slug": "the-cold",
+     "family_name": "The Cold",
+     "family_page": "codex/the-cold.html",
+     "transmissions": 1,
+     "titles": [
+      "When the World Gets Colder (prod. Brokn)"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "fig-p-bygus",
+   "name": "bygus",
+   "kind": "producer",
+   "page": null,
+   "family_count": 1,
+   "families": [
+    {
+     "family_id": "fam-wards-and-the-spirit",
+     "family_slug": "wards-and-the-spirit",
+     "family_name": "Wards & the Spirit",
+     "family_page": "codex/wards-and-the-spirit.html",
+     "transmissions": 1,
+     "titles": [
+      "P1aced a Ward (prodbygus)"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "fig-capoxxo",
+   "name": "capoxxo",
+   "kind": "collaborator",
+   "page": "circle/capoxxo.html",
+   "family_count": 1,
+   "families": [
+    {
+     "family_id": "fam-the-cold",
+     "family_slug": "the-cold",
+     "family_name": "The Cold",
+     "family_page": "codex/the-cold.html",
+     "transmissions": 1,
+     "titles": [
+      "getting colder w/ capoxxo (prod. pvscale x asa41)"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "fig-p-capsctrl",
+   "name": "capsctrl",
+   "kind": "producer",
+   "page": null,
+   "family_count": 1,
+   "families": [
+    {
+     "family_id": "fam-the-rites",
+     "family_slug": "the-rites",
+     "family_name": "The Rites",
+     "family_page": "codex/the-rites.html",
+     "transmissions": 1,
+     "titles": [
+      "Elf Anthem Interlude (prod. capsctrl)"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "fig-p-discent",
+   "name": "Discent",
+   "kind": "producer",
+   "page": null,
+   "family_count": 1,
+   "families": [
+    {
+     "family_id": "fam-the-rites",
+     "family_slug": "the-rites",
+     "family_name": "The Rites",
+     "family_page": "codex/the-rites.html",
+     "transmissions": 1,
+     "titles": [
+      "Day Comes Freestyle ~(prod. Discent)"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "fig-p-dix2",
+   "name": "DIX2",
+   "kind": "producer",
+   "page": null,
+   "family_count": 2,
+   "families": [
+    {
+     "family_id": "fam-the-rites",
+     "family_slug": "the-rites",
+     "family_name": "The Rites",
+     "family_page": "codex/the-rites.html",
+     "transmissions": 1,
+     "titles": [
+      "Fuck Time 3 (outro) [Prod. DIX2]"
+     ]
+    },
+    {
+     "family_id": "fam-time",
+     "family_slug": "time",
+     "family_name": "Time",
+     "family_page": "codex/time.html",
+     "transmissions": 1,
+     "titles": [
+      "Fuck Time 3 (outro) [Prod. DIX2]"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "fig-p-doublemulti",
+   "name": "doublemulti",
+   "kind": "producer",
+   "page": null,
+   "family_count": 1,
+   "families": [
+    {
+     "family_id": "fam-the-modes",
+     "family_slug": "the-modes",
+     "family_name": "The Modes",
+     "family_page": "codex/the-modes.html",
+     "transmissions": 1,
+     "titles": [
+      "3 Points Pre Game prod. doublemulti x pinkcat #NITEMODE"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "fig-p-fiftyzeros",
+   "name": "fiftyzeros",
+   "kind": "producer",
+   "page": null,
+   "family_count": 2,
+   "families": [
+    {
+     "family_id": "fam-vessels",
+     "family_slug": "vessels",
+     "family_name": "Vessels",
+     "family_page": "codex/vessels.html",
+     "transmissions": 1,
+     "titles": [
+      "the peace of the spirit urn (prod +fiftyzeros)"
+     ]
+    },
+    {
+     "family_id": "fam-wards-and-the-spirit",
+     "family_slug": "wards-and-the-spirit",
+     "family_name": "Wards & the Spirit",
+     "family_page": "codex/wards-and-the-spirit.html",
+     "transmissions": 1,
+     "titles": [
+      "the peace of the spirit urn (prod +fiftyzeros)"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "fig-fish-narc",
+   "name": "Fish Narc",
+   "kind": "producer",
+   "page": "circle/fish-narc.html",
+   "family_count": 1,
+   "families": [
+    {
+     "family_id": "fam-soul",
+     "family_slug": "soul",
+     "family_name": "Soul",
+     "family_page": "codex/soul.html",
+     "transmissions": 1,
+     "titles": [
+      "Soul Shaking (prod. Fish Narc)"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "fig-p-ginseng",
+   "name": "ginseng",
+   "kind": "producer",
+   "page": null,
+   "family_count": 1,
+   "families": [
+    {
+     "family_id": "fam-keys",
+     "family_slug": "keys",
+     "family_name": "Keys",
+     "family_page": "codex/keys.html",
+     "transmissions": 1,
+     "titles": [
+      "master key ft. Lil Wintr x Marcelo (prod. ginseng)"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "fig-p-ice-trouble",
+   "name": "ice trouble",
+   "kind": "producer",
+   "page": null,
+   "family_count": 1,
+   "families": [
+    {
+     "family_id": "fam-vessels",
+     "family_slug": "vessels",
+     "family_name": "Vessels",
+     "family_page": "codex/vessels.html",
+     "transmissions": 1,
+     "titles": [
+      "Like the Cup (prod. ice trouble)"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "fig-p-ilyagargod",
+   "name": "ilyagargod",
+   "kind": "producer",
+   "page": null,
+   "family_count": 1,
+   "families": [
+    {
+     "family_id": "fam-the-modes",
+     "family_slug": "the-modes",
+     "family_name": "The Modes",
+     "family_page": "codex/the-modes.html",
+     "transmissions": 1,
+     "titles": [
+      "big litemode (prod runawway, ilyagargod & k3nik)"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "fig-p-itami",
+   "name": "itami リネン",
+   "kind": "producer",
+   "page": null,
+   "family_count": 1,
+   "families": [
+    {
+     "family_id": "fam-the-rites",
+     "family_slug": "the-rites",
+     "family_name": "The Rites",
+     "family_page": "codex/the-rites.html",
+     "transmissions": 1,
+     "titles": [
+      "outro ~ I RLLY DID THT(prod. itami リネン)"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "fig-jax",
+   "name": "JAX",
+   "kind": "collaborator",
+   "page": "circle/jax.html",
+   "family_count": 3,
+   "families": [
+    {
+     "family_id": "fam-dark",
+     "family_slug": "dark",
+     "family_name": "Dark",
+     "family_page": "codex/dark.html",
+     "transmissions": 1,
+     "titles": [
+      "NIGHT MODE ft. MAX FERRARI x YUNG VETTA x JAX"
+     ]
+    },
+    {
+     "family_id": "fam-journeys",
+     "family_slug": "journeys",
+     "family_name": "Journeys",
+     "family_page": "codex/journeys.html",
+     "transmissions": 1,
+     "titles": [
+      "Walk With Me w/ JAX (Prod. Rawman)"
+     ]
+    },
+    {
+     "family_id": "fam-the-modes",
+     "family_slug": "the-modes",
+     "family_name": "The Modes",
+     "family_page": "codex/the-modes.html",
+     "transmissions": 1,
+     "titles": [
+      "NIGHT MODE ft. MAX FERRARI x YUNG VETTA x JAX"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "fig-jo-e-dripp",
+   "name": "JO$E DRIPP",
+   "kind": "collaborator",
+   "page": "circle/jo-e-dripp.html",
+   "family_count": 1,
+   "families": [
+    {
+     "family_id": "fam-light",
+     "family_slug": "light",
+     "family_name": "Light",
+     "family_page": "codex/light.html",
+     "transmissions": 1,
+     "titles": [
+      "SUN SET FOR U ft. JO$E DRIPP (prod. y axis)"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "fig-p-josh-the-samurai",
+   "name": "Josh the Samurai",
+   "kind": "producer",
+   "page": null,
+   "family_count": 2,
+   "families": [
+    {
+     "family_id": "fam-light",
+     "family_slug": "light",
+     "family_name": "Light",
+     "family_page": "codex/light.html",
+     "transmissions": 1,
+     "titles": [
+      "Soul Shines ~ [prod Josh the Samurai]"
+     ]
+    },
+    {
+     "family_id": "fam-soul",
+     "family_slug": "soul",
+     "family_name": "Soul",
+     "family_page": "codex/soul.html",
+     "transmissions": 1,
+     "titles": [
+      "Soul Shines ~ [prod Josh the Samurai]"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "fig-p-k3nik",
+   "name": "k3nik",
+   "kind": "producer",
+   "page": null,
+   "family_count": 1,
+   "families": [
+    {
+     "family_id": "fam-the-modes",
+     "family_slug": "the-modes",
+     "family_name": "The Modes",
+     "family_page": "codex/the-modes.html",
+     "transmissions": 1,
+     "titles": [
+      "big litemode (prod runawway, ilyagargod & k3nik)"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "fig-keyblayde808",
+   "name": "Keyblayde808",
+   "kind": "both",
+   "page": "circle/keyblayde808.html",
+   "family_count": 1,
+   "families": [
+    {
+     "family_id": "fam-light",
+     "family_slug": "light",
+     "family_name": "Light",
+     "family_page": "codex/light.html",
+     "transmissions": 1,
+     "titles": [
+      "White Noise ft. Keyblayde808 (prod. Keyblayde808)"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "fig-p-lil-biscuit",
+   "name": "lil biscuit",
+   "kind": "producer",
+   "page": null,
+   "family_count": 2,
+   "families": [
+    {
+     "family_id": "fam-light",
+     "family_slug": "light",
+     "family_name": "Light",
+     "family_page": "codex/light.html",
+     "transmissions": 1,
+     "titles": [
+      "Asterisms Shine (prod. lil biscuit)"
+     ]
+    },
+    {
+     "family_id": "fam-the-castings",
+     "family_slug": "the-castings",
+     "family_name": "The Castings",
+     "family_page": "codex/the-castings.html",
+     "transmissions": 1,
+     "titles": [
+      "I Can't Get Myself to Cast (prod. lil biscuit)"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "fig-lil-wintr",
+   "name": "Lil Wintr",
+   "kind": "collaborator",
+   "page": "circle/lil-wintr.html",
+   "family_count": 1,
+   "families": [
+    {
+     "family_id": "fam-keys",
+     "family_slug": "keys",
+     "family_name": "Keys",
+     "family_page": "codex/keys.html",
+     "transmissions": 2,
+     "titles": [
+      "Master Key (feat. Lil Wintr & Marcelo)",
+      "master key ft. Lil Wintr x Marcelo (prod. ginseng)"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "fig-p-lunarlad",
+   "name": "lunarlad",
+   "kind": "producer",
+   "page": null,
+   "family_count": 1,
+   "families": [
+    {
+     "family_id": "fam-light",
+     "family_slug": "light",
+     "family_name": "Light",
+     "family_page": "codex/light.html",
+     "transmissions": 1,
+     "titles": [
+      "Sipping 1ightning prod. lunarlad"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "fig-marcelo",
+   "name": "Marcelo",
+   "kind": "collaborator",
+   "page": "circle/marcelo.html",
+   "family_count": 1,
+   "families": [
+    {
+     "family_id": "fam-keys",
+     "family_slug": "keys",
+     "family_name": "Keys",
+     "family_page": "codex/keys.html",
+     "transmissions": 2,
+     "titles": [
+      "Master Key (feat. Lil Wintr & Marcelo)",
+      "master key ft. Lil Wintr x Marcelo (prod. ginseng)"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "fig-max",
+   "name": "Max",
+   "kind": "collaborator",
+   "page": "circle/max.html",
+   "family_count": 1,
+   "families": [
+    {
+     "family_id": "fam-the-modes",
+     "family_slug": "the-modes",
+     "family_name": "The Modes",
+     "family_page": "codex/the-modes.html",
+     "transmissions": 1,
+     "titles": [
+      "nitemode2019 w/ Max+Vetty prod. NaXi.wav"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "fig-max-ferrari",
+   "name": "Max Ferrari",
+   "kind": "collaborator",
+   "page": "circle/max-ferrari.html",
+   "family_count": 3,
+   "families": [
+    {
+     "family_id": "fam-dark",
+     "family_slug": "dark",
+     "family_name": "Dark",
+     "family_page": "codex/dark.html",
+     "transmissions": 1,
+     "titles": [
+      "NIGHT MODE ft. MAX FERRARI x YUNG VETTA x JAX"
+     ]
+    },
+    {
+     "family_id": "fam-the-modes",
+     "family_slug": "the-modes",
+     "family_name": "The Modes",
+     "family_page": "codex/the-modes.html",
+     "transmissions": 1,
+     "titles": [
+      "NIGHT MODE ft. MAX FERRARI x YUNG VETTA x JAX"
+     ]
+    },
+    {
+     "family_id": "fam-the-rites",
+     "family_slug": "the-rites",
+     "family_name": "The Rites",
+     "family_page": "codex/the-rites.html",
+     "transmissions": 1,
+     "titles": [
+      "Sti11 waiting/tunnel freestyle w/ Max Ferrari prod. suli"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "fig-p-naxi",
+   "name": "NaXi",
+   "kind": "producer",
+   "page": null,
+   "family_count": 1,
+   "families": [
+    {
+     "family_id": "fam-the-modes",
+     "family_slug": "the-modes",
+     "family_name": "The Modes",
+     "family_page": "codex/the-modes.html",
+     "transmissions": 1,
+     "titles": [
+      "nitemode2019 w/ Max+Vetty prod. NaXi.wav"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "fig-p-odece",
+   "name": "odece",
+   "kind": "producer",
+   "page": null,
+   "family_count": 2,
+   "families": [
+    {
+     "family_id": "fam-fire-and-water",
+     "family_slug": "fire-and-water",
+     "family_name": "Fire & Water",
+     "family_page": "codex/fire-and-water.html",
+     "transmissions": 1,
+     "titles": [
+      "white fire (prod. odece)"
+     ]
+    },
+    {
+     "family_id": "fam-light",
+     "family_slug": "light",
+     "family_name": "Light",
+     "family_page": "codex/light.html",
+     "transmissions": 1,
+     "titles": [
+      "white fire (prod. odece)"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "fig-p-paris-pas-rigolo",
+   "name": "paris pas rigolo",
+   "kind": "producer",
+   "page": null,
+   "family_count": 2,
+   "families": [
+    {
+     "family_id": "fam-fire-and-water",
+     "family_slug": "fire-and-water",
+     "family_name": "Fire & Water",
+     "family_page": "codex/fire-and-water.html",
+     "transmissions": 1,
+     "titles": [
+      "water + sun (prod paris pas rigolo)"
+     ]
+    },
+    {
+     "family_id": "fam-light",
+     "family_slug": "light",
+     "family_name": "Light",
+     "family_page": "codex/light.html",
+     "transmissions": 1,
+     "titles": [
+      "water + sun (prod paris pas rigolo)"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "fig-p-phantasie",
+   "name": "phantasie",
+   "kind": "producer",
+   "page": null,
+   "family_count": 1,
+   "families": [
+    {
+     "family_id": "fam-the-cold",
+     "family_slug": "the-cold",
+     "family_name": "The Cold",
+     "family_page": "codex/the-cold.html",
+     "transmissions": 1,
+     "titles": [
+      "When the World Gets Colder 3 (prod. phantasie)"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "fig-p-pinkcat",
+   "name": "pinkcat",
+   "kind": "producer",
+   "page": null,
+   "family_count": 1,
+   "families": [
+    {
+     "family_id": "fam-the-modes",
+     "family_slug": "the-modes",
+     "family_name": "The Modes",
+     "family_page": "codex/the-modes.html",
+     "transmissions": 1,
+     "titles": [
+      "3 Points Pre Game prod. doublemulti x pinkcat #NITEMODE"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "fig-pvscale",
+   "name": "pvscale",
+   "kind": "producer",
+   "page": "circle/pvscale.html",
+   "family_count": 1,
+   "families": [
+    {
+     "family_id": "fam-the-cold",
+     "family_slug": "the-cold",
+     "family_name": "The Cold",
+     "family_page": "codex/the-cold.html",
+     "transmissions": 1,
+     "titles": [
+      "getting colder w/ capoxxo (prod. pvscale x asa41)"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "fig-p-rawman",
+   "name": "Rawman",
+   "kind": "producer",
+   "page": null,
+   "family_count": 1,
+   "families": [
+    {
+     "family_id": "fam-journeys",
+     "family_slug": "journeys",
+     "family_name": "Journeys",
+     "family_page": "codex/journeys.html",
+     "transmissions": 1,
+     "titles": [
+      "Walk With Me w/ JAX (Prod. Rawman)"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "fig-p-ridicholas",
+   "name": "Ridicholas",
+   "kind": "producer",
+   "page": null,
+   "family_count": 1,
+   "families": [
+    {
+     "family_id": "fam-time",
+     "family_slug": "time",
+     "family_name": "Time",
+     "family_page": "codex/time.html",
+     "transmissions": 1,
+     "titles": [
+      "Time to Grow (prod. Ridicholas)"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "fig-p-rizi",
+   "name": "Rizi",
+   "kind": "producer",
+   "page": null,
+   "family_count": 1,
+   "families": [
+    {
+     "family_id": "fam-dark",
+     "family_slug": "dark",
+     "family_name": "Dark",
+     "family_page": "codex/dark.html",
+     "transmissions": 1,
+     "titles": [
+      "stay out of the dark (prod. Rizi)"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "fig-p-runawway",
+   "name": "runawway",
+   "kind": "producer",
+   "page": null,
+   "family_count": 1,
+   "families": [
+    {
+     "family_id": "fam-the-modes",
+     "family_slug": "the-modes",
+     "family_name": "The Modes",
+     "family_page": "codex/the-modes.html",
+     "transmissions": 1,
+     "titles": [
+      "big litemode (prod runawway, ilyagargod & k3nik)"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "fig-p-suli",
+   "name": "suli",
+   "kind": "producer",
+   "page": null,
+   "family_count": 1,
+   "families": [
+    {
+     "family_id": "fam-the-rites",
+     "family_slug": "the-rites",
+     "family_name": "The Rites",
+     "family_page": "codex/the-rites.html",
+     "transmissions": 1,
+     "titles": [
+      "Sti11 waiting/tunnel freestyle w/ Max Ferrari prod. suli"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "fig-p-t-n-c",
+   "name": "T.N.C",
+   "kind": "producer",
+   "page": null,
+   "family_count": 1,
+   "families": [
+    {
+     "family_id": "fam-lucid-states",
+     "family_slug": "lucid-states",
+     "family_name": "Lucid States",
+     "family_page": "codex/lucid-states.html",
+     "transmissions": 1,
+     "titles": [
+      "Lucid Boi (prod. $ T.N.C $)"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "fig-p-tundra-beats",
+   "name": "Tundra Beats",
+   "kind": "producer",
+   "page": null,
+   "family_count": 1,
+   "families": [
+    {
+     "family_id": "fam-light",
+     "family_slug": "light",
+     "family_name": "Light",
+     "family_page": "codex/light.html",
+     "transmissions": 1,
+     "titles": [
+      "Just Wanted U to Shine (prod. Xtravulous x Tundra Beats)"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "fig-vetty",
+   "name": "Vetty",
+   "kind": "collaborator",
+   "page": "circle/vetty.html",
+   "family_count": 1,
+   "families": [
+    {
+     "family_id": "fam-the-modes",
+     "family_slug": "the-modes",
+     "family_name": "The Modes",
+     "family_page": "codex/the-modes.html",
+     "transmissions": 1,
+     "titles": [
+      "nitemode2019 w/ Max+Vetty prod. NaXi.wav"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "fig-p-waynn",
+   "name": "waynn",
+   "kind": "producer",
+   "page": null,
+   "family_count": 1,
+   "families": [
+    {
+     "family_id": "fam-the-pack",
+     "family_slug": "the-pack",
+     "family_name": "The Pack",
+     "family_page": "codex/the-pack.html",
+     "transmissions": 1,
+     "titles": [
+      "like my dogs!!! (prod waynn)"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "fig-p-wedreaming",
+   "name": "WeDreaming",
+   "kind": "producer",
+   "page": null,
+   "family_count": 1,
+   "families": [
+    {
+     "family_id": "fam-the-rites",
+     "family_slug": "the-rites",
+     "family_name": "The Rites",
+     "family_page": "codex/the-rites.html",
+     "transmissions": 1,
+     "titles": [
+      "Face Down Freestyle ~(prod. WeDreaming)"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "fig-p-wellfed",
+   "name": "wellfed",
+   "kind": "producer",
+   "page": null,
+   "family_count": 2,
+   "families": [
+    {
+     "family_id": "fam-dark",
+     "family_slug": "dark",
+     "family_name": "Dark",
+     "family_page": "codex/dark.html",
+     "transmissions": 1,
+     "titles": [
+      "the night ends yeaaa prod wellfed"
+     ]
+    },
+    {
+     "family_id": "fam-power",
+     "family_slug": "power",
+     "family_name": "Power",
+     "family_page": "codex/power.html",
+     "transmissions": 1,
+     "titles": [
+      "no power prod wellfed"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "fig-p-xtravulous",
+   "name": "Xtravulous",
+   "kind": "producer",
+   "page": null,
+   "family_count": 1,
+   "families": [
+    {
+     "family_id": "fam-light",
+     "family_slug": "light",
+     "family_name": "Light",
+     "family_page": "codex/light.html",
+     "transmissions": 1,
+     "titles": [
+      "Just Wanted U to Shine (prod. Xtravulous x Tundra Beats)"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "fig-p-y-axis",
+   "name": "y axis",
+   "kind": "producer",
+   "page": null,
+   "family_count": 1,
+   "families": [
+    {
+     "family_id": "fam-light",
+     "family_slug": "light",
+     "family_name": "Light",
+     "family_page": "codex/light.html",
+     "transmissions": 1,
+     "titles": [
+      "SUN SET FOR U ft. JO$E DRIPP (prod. y axis)"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "fig-p-yukio",
+   "name": "Yukio",
+   "kind": "producer",
+   "page": null,
+   "family_count": 1,
+   "families": [
+    {
+     "family_id": "fam-lucid-states",
+     "family_slug": "lucid-states",
+     "family_name": "Lucid States",
+     "family_page": "codex/lucid-states.html",
+     "transmissions": 1,
+     "titles": [
+      "Dreamed of U (Hubb1e) prod. Yukio"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "fig-p-yung-skah",
+   "name": "Yung Skah",
+   "kind": "producer",
+   "page": null,
+   "family_count": 1,
+   "families": [
+    {
+     "family_id": "fam-the-cold",
+     "family_slug": "the-cold",
+     "family_name": "The Cold",
+     "family_page": "codex/the-cold.html",
+     "transmissions": 1,
+     "titles": [
+      "When the World Gets Colder 2 (prod. Yung Skah)"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "fig-yung-vetta",
+   "name": "Yung Vetta",
+   "kind": "collaborator",
+   "page": "circle/yung-vetta.html",
+   "family_count": 3,
+   "families": [
+    {
+     "family_id": "fam-dark",
+     "family_slug": "dark",
+     "family_name": "Dark",
+     "family_page": "codex/dark.html",
+     "transmissions": 1,
+     "titles": [
+      "NIGHT MODE ft. MAX FERRARI x YUNG VETTA x JAX"
+     ]
+    },
+    {
+     "family_id": "fam-the-modes",
+     "family_slug": "the-modes",
+     "family_name": "The Modes",
+     "family_page": "codex/the-modes.html",
+     "transmissions": 1,
+     "titles": [
+      "NIGHT MODE ft. MAX FERRARI x YUNG VETTA x JAX"
+     ]
+    },
+    {
+     "family_id": "fam-the-rites",
+     "family_slug": "the-rites",
+     "family_name": "The Rites",
+     "family_page": "codex/the-rites.html",
+     "transmissions": 1,
+     "titles": [
+      "[outro] Off Beat ft. Yung Vetta (prod. Addy)"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "fig-p-yungskah",
+   "name": "YungSkah",
+   "kind": "producer",
+   "page": null,
+   "family_count": 1,
+   "families": [
+    {
+     "family_id": "fam-journeys",
+     "family_slug": "journeys",
+     "family_name": "Journeys",
+     "family_page": "codex/journeys.html",
+     "transmissions": 1,
+     "titles": [
+      "All Kinds Of Trips (prod. YungSkah) <ON ALL PLATFORMS NOW!>"
+     ]
+    }
+   ]
+  }
+ ],
+ "nodes": [
+  {
+   "id": "aster",
+   "kind": "artist",
+   "name": "Aster da Master",
+   "page": "index.html",
+   "x": 460,
+   "y": 320,
+   "r": 34,
+   "blurb": "The speaker of every family"
+  },
+  {
+   "id": "fam-the-modes",
+   "kind": "family",
+   "name": "The Modes",
+   "page": "codex/the-modes.html",
+   "x": 630.0,
+   "y": 320.0,
+   "r": 18.6,
+   "blurb": "5 transmissions, 10,864 plays"
+  },
+  {
+   "id": "fam-the-castings",
+   "kind": "family",
+   "name": "The Castings",
+   "page": "codex/the-castings.html",
+   "x": 617.1,
+   "y": 260.1,
+   "r": 18.6,
+   "blurb": "5 transmissions, 693 plays"
+  },
+  {
+   "id": "fam-keys",
+   "kind": "family",
+   "name": "Keys",
+   "page": "codex/keys.html",
+   "x": 525.1,
+   "y": 464.5,
+   "r": 16.4,
+   "blurb": "3 transmissions, 9,615 plays"
+  },
+  {
+   "id": "fam-vessels",
+   "kind": "family",
+   "name": "Vessels",
+   "page": "codex/vessels.html",
+   "x": 339.8,
+   "y": 209.4,
+   "r": 15.2,
+   "blurb": "2 transmissions, 367 plays"
+  },
+  {
+   "id": "fam-wards-and-the-spirit",
+   "kind": "family",
+   "name": "Wards & the Spirit",
+   "page": "codex/wards-and-the-spirit.html",
+   "x": 394.9,
+   "y": 175.5,
+   "r": 15.2,
+   "blurb": "2 transmissions, 453 plays"
+  },
+  {
+   "id": "fam-the-rites",
+   "kind": "family",
+   "name": "The Rites",
+   "page": "codex/the-rites.html",
+   "x": 460.0,
+   "y": 163.6,
+   "r": 32.0,
+   "blurb": "17 transmissions, 11,052 plays"
+  },
+  {
+   "id": "fam-light",
+   "kind": "family",
+   "name": "Light",
+   "page": "codex/light.html",
+   "x": 525.1,
+   "y": 175.5,
+   "r": 23.1,
+   "blurb": "9 transmissions, 14,142 plays"
+  },
+  {
+   "id": "fam-dark",
+   "kind": "family",
+   "name": "Dark",
+   "page": "codex/dark.html",
+   "x": 580.2,
+   "y": 209.4,
+   "r": 18.6,
+   "blurb": "5 transmissions, 11,992 plays"
+  },
+  {
+   "id": "fam-journeys",
+   "kind": "family",
+   "name": "Journeys",
+   "page": "codex/journeys.html",
+   "x": 617.1,
+   "y": 379.9,
+   "r": 17.5,
+   "blurb": "4 transmissions, 6,767 plays"
+  },
+  {
+   "id": "fam-the-cold",
+   "kind": "family",
+   "name": "The Cold",
+   "page": "codex/the-cold.html",
+   "x": 580.2,
+   "y": 430.6,
+   "r": 17.5,
+   "blurb": "4 transmissions, 15,198 plays"
+  },
+  {
+   "id": "fam-power",
+   "kind": "family",
+   "name": "Power",
+   "page": "codex/power.html",
+   "x": 460.0,
+   "y": 476.4,
+   "r": 16.4,
+   "blurb": "3 transmissions, 2,057 plays"
+  },
+  {
+   "id": "fam-the-pack",
+   "kind": "family",
+   "name": "The Pack",
+   "page": "codex/the-pack.html",
+   "x": 290.0,
+   "y": 320.0,
+   "r": 15.2,
+   "blurb": "2 transmissions, 175 plays"
+  },
+  {
+   "id": "fam-lucid-states",
+   "kind": "family",
+   "name": "Lucid States",
+   "page": "codex/lucid-states.html",
+   "x": 339.8,
+   "y": 430.6,
+   "r": 15.2,
+   "blurb": "2 transmissions, 1,093 plays"
+  },
+  {
+   "id": "fam-time",
+   "kind": "family",
+   "name": "Time",
+   "page": "codex/time.html",
+   "x": 302.9,
+   "y": 260.1,
+   "r": 15.2,
+   "blurb": "2 transmissions, 1,498 plays"
+  },
+  {
+   "id": "fam-soul",
+   "kind": "family",
+   "name": "Soul",
+   "page": "codex/soul.html",
+   "x": 302.9,
+   "y": 379.9,
+   "r": 15.2,
+   "blurb": "2 transmissions, 14,094 plays"
+  },
+  {
+   "id": "fam-fire-and-water",
+   "kind": "family",
+   "name": "Fire & Water",
+   "page": "codex/fire-and-water.html",
+   "x": 394.9,
+   "y": 464.5,
+   "r": 15.2,
+   "blurb": "2 transmissions, 628 plays"
+  },
+  {
+   "id": "fig-p-addy",
+   "kind": "producer",
+   "name": "Addy",
+   "page": null,
+   "x": 460.0,
+   "y": 561.2,
+   "r": 11.0,
+   "blurb": "Production credit in 1 family"
+  },
+  {
+   "id": "fig-p-antropolita",
+   "kind": "producer",
+   "name": "Antropolita",
+   "page": null,
+   "x": 428.3,
+   "y": 559.5,
+   "r": 11.0,
+   "blurb": "Production credit in 1 family"
+  },
+  {
+   "id": "fig-p-apostle",
+   "kind": "producer",
+   "name": "Apostle",
+   "page": null,
+   "x": 397.1,
+   "y": 554.5,
+   "r": 11.0,
+   "blurb": "Production credit in 1 family"
+  },
+  {
+   "id": "fig-p-asa41",
+   "kind": "producer",
+   "name": "asa41",
+   "page": null,
+   "x": 366.7,
+   "y": 546.1,
+   "r": 11.0,
+   "blurb": "Production credit in 1 family"
+  },
+  {
+   "id": "fig-p-astral-hp",
+   "kind": "producer",
+   "name": "astral_hp",
+   "page": null,
+   "x": 337.6,
+   "y": 534.6,
+   "r": 11.0,
+   "blurb": "Production credit in 1 family"
+  },
+  {
+   "id": "fig-p-awfl",
+   "kind": "producer",
+   "name": "AWFL",
+   "page": null,
+   "x": 310.3,
+   "y": 520.1,
+   "r": 11.0,
+   "blurb": "Production credit in 1 family"
+  },
+  {
+   "id": "fig-p-brokn",
+   "kind": "producer",
+   "name": "Brokn",
+   "page": null,
+   "x": 285.0,
+   "y": 502.7,
+   "r": 11.0,
+   "blurb": "Production credit in 1 family"
+  },
+  {
+   "id": "fig-p-bygus",
+   "kind": "producer",
+   "name": "bygus",
+   "page": null,
+   "x": 262.3,
+   "y": 482.8,
+   "r": 11.0,
+   "blurb": "Production credit in 1 family"
+  },
+  {
+   "id": "fig-capoxxo",
+   "kind": "collaborator",
+   "name": "capoxxo",
+   "page": "circle/capoxxo.html",
+   "x": 242.3,
+   "y": 460.6,
+   "r": 11.0,
+   "blurb": "Title-credited in 1 family"
+  },
+  {
+   "id": "fig-p-capsctrl",
+   "kind": "producer",
+   "name": "capsctrl",
+   "page": null,
+   "x": 225.3,
+   "y": 436.4,
+   "r": 11.0,
+   "blurb": "Production credit in 1 family"
+  },
+  {
+   "id": "fig-p-discent",
+   "kind": "producer",
+   "name": "Discent",
+   "page": null,
+   "x": 211.6,
+   "y": 410.6,
+   "r": 11.0,
+   "blurb": "Production credit in 1 family"
+  },
+  {
+   "id": "fig-p-dix2",
+   "kind": "producer",
+   "name": "DIX2",
+   "page": null,
+   "x": 201.5,
+   "y": 383.6,
+   "r": 14.0,
+   "blurb": "Production credit in 2 families"
+  },
+  {
+   "id": "fig-p-doublemulti",
+   "kind": "producer",
+   "name": "doublemulti",
+   "page": null,
+   "x": 194.9,
+   "y": 355.6,
+   "r": 11.0,
+   "blurb": "Production credit in 1 family"
+  },
+  {
+   "id": "fig-p-fiftyzeros",
+   "kind": "producer",
+   "name": "fiftyzeros",
+   "page": null,
+   "x": 192.1,
+   "y": 327.1,
+   "r": 14.0,
+   "blurb": "Production credit in 2 families"
+  },
+  {
+   "id": "fig-fish-narc",
+   "kind": "producer",
+   "name": "Fish Narc",
+   "page": "circle/fish-narc.html",
+   "x": 193.1,
+   "y": 298.6,
+   "r": 11.0,
+   "blurb": "Production credit in 1 family"
+  },
+  {
+   "id": "fig-p-ginseng",
+   "kind": "producer",
+   "name": "ginseng",
+   "page": null,
+   "x": 197.7,
+   "y": 270.3,
+   "r": 11.0,
+   "blurb": "Production credit in 1 family"
+  },
+  {
+   "id": "fig-p-ice-trouble",
+   "kind": "producer",
+   "name": "ice trouble",
+   "page": null,
+   "x": 206.1,
+   "y": 242.8,
+   "r": 11.0,
+   "blurb": "Production credit in 1 family"
+  },
+  {
+   "id": "fig-p-ilyagargod",
+   "kind": "producer",
+   "name": "ilyagargod",
+   "page": null,
+   "x": 218.1,
+   "y": 216.3,
+   "r": 11.0,
+   "blurb": "Production credit in 1 family"
+  },
+  {
+   "id": "fig-p-itami",
+   "kind": "producer",
+   "name": "itami リネン",
+   "page": null,
+   "x": 233.4,
+   "y": 191.2,
+   "r": 11.0,
+   "blurb": "Production credit in 1 family"
+  },
+  {
+   "id": "fig-jax",
+   "kind": "collaborator",
+   "name": "JAX",
+   "page": "circle/jax.html",
+   "x": 251.9,
+   "y": 168.0,
+   "r": 17.0,
+   "blurb": "Title-credited in 3 families"
+  },
+  {
+   "id": "fig-jo-e-dripp",
+   "kind": "collaborator",
+   "name": "JO$E DRIPP",
+   "page": "circle/jo-e-dripp.html",
+   "x": 273.3,
+   "y": 146.9,
+   "r": 11.0,
+   "blurb": "Title-credited in 1 family"
+  },
+  {
+   "id": "fig-p-josh-the-samurai",
+   "kind": "producer",
+   "name": "Josh the Samurai",
+   "page": null,
+   "x": 297.4,
+   "y": 128.3,
+   "r": 14.0,
+   "blurb": "Production credit in 2 families"
+  },
+  {
+   "id": "fig-p-k3nik",
+   "kind": "producer",
+   "name": "k3nik",
+   "page": null,
+   "x": 323.7,
+   "y": 112.3,
+   "r": 11.0,
+   "blurb": "Production credit in 1 family"
+  },
+  {
+   "id": "fig-keyblayde808",
+   "kind": "both",
+   "name": "Keyblayde808",
+   "page": "circle/keyblayde808.html",
+   "x": 352.0,
+   "y": 99.3,
+   "r": 11.0,
+   "blurb": "Voice + production in 1 family"
+  },
+  {
+   "id": "fig-p-lil-biscuit",
+   "kind": "producer",
+   "name": "lil biscuit",
+   "page": null,
+   "x": 381.7,
+   "y": 89.3,
+   "r": 14.0,
+   "blurb": "Production credit in 2 families"
+  },
+  {
+   "id": "fig-lil-wintr",
+   "kind": "collaborator",
+   "name": "Lil Wintr",
+   "page": "circle/lil-wintr.html",
+   "x": 412.6,
+   "y": 82.6,
+   "r": 11.0,
+   "blurb": "Title-credited in 1 family"
+  },
+  {
+   "id": "fig-p-lunarlad",
+   "kind": "producer",
+   "name": "lunarlad",
+   "page": null,
+   "x": 444.1,
+   "y": 79.2,
+   "r": 11.0,
+   "blurb": "Production credit in 1 family"
+  },
+  {
+   "id": "fig-marcelo",
+   "kind": "collaborator",
+   "name": "Marcelo",
+   "page": "circle/marcelo.html",
+   "x": 475.9,
+   "y": 79.2,
+   "r": 11.0,
+   "blurb": "Title-credited in 1 family"
+  },
+  {
+   "id": "fig-max",
+   "kind": "collaborator",
+   "name": "Max",
+   "page": "circle/max.html",
+   "x": 507.4,
+   "y": 82.6,
+   "r": 11.0,
+   "blurb": "Title-credited in 1 family"
+  },
+  {
+   "id": "fig-max-ferrari",
+   "kind": "collaborator",
+   "name": "Max Ferrari",
+   "page": "circle/max-ferrari.html",
+   "x": 538.3,
+   "y": 89.3,
+   "r": 17.0,
+   "blurb": "Title-credited in 3 families"
+  },
+  {
+   "id": "fig-p-naxi",
+   "kind": "producer",
+   "name": "NaXi",
+   "page": null,
+   "x": 568.0,
+   "y": 99.3,
+   "r": 11.0,
+   "blurb": "Production credit in 1 family"
+  },
+  {
+   "id": "fig-p-odece",
+   "kind": "producer",
+   "name": "odece",
+   "page": null,
+   "x": 596.3,
+   "y": 112.3,
+   "r": 14.0,
+   "blurb": "Production credit in 2 families"
+  },
+  {
+   "id": "fig-p-paris-pas-rigolo",
+   "kind": "producer",
+   "name": "paris pas rigolo",
+   "page": null,
+   "x": 622.6,
+   "y": 128.3,
+   "r": 14.0,
+   "blurb": "Production credit in 2 families"
+  },
+  {
+   "id": "fig-p-phantasie",
+   "kind": "producer",
+   "name": "phantasie",
+   "page": null,
+   "x": 646.7,
+   "y": 146.9,
+   "r": 11.0,
+   "blurb": "Production credit in 1 family"
+  },
+  {
+   "id": "fig-p-pinkcat",
+   "kind": "producer",
+   "name": "pinkcat",
+   "page": null,
+   "x": 668.1,
+   "y": 168.0,
+   "r": 11.0,
+   "blurb": "Production credit in 1 family"
+  },
+  {
+   "id": "fig-pvscale",
+   "kind": "producer",
+   "name": "pvscale",
+   "page": "circle/pvscale.html",
+   "x": 686.6,
+   "y": 191.2,
+   "r": 11.0,
+   "blurb": "Production credit in 1 family"
+  },
+  {
+   "id": "fig-p-rawman",
+   "kind": "producer",
+   "name": "Rawman",
+   "page": null,
+   "x": 701.9,
+   "y": 216.3,
+   "r": 11.0,
+   "blurb": "Production credit in 1 family"
+  },
+  {
+   "id": "fig-p-ridicholas",
+   "kind": "producer",
+   "name": "Ridicholas",
+   "page": null,
+   "x": 713.9,
+   "y": 242.8,
+   "r": 11.0,
+   "blurb": "Production credit in 1 family"
+  },
+  {
+   "id": "fig-p-rizi",
+   "kind": "producer",
+   "name": "Rizi",
+   "page": null,
+   "x": 722.3,
+   "y": 270.3,
+   "r": 11.0,
+   "blurb": "Production credit in 1 family"
+  },
+  {
+   "id": "fig-p-runawway",
+   "kind": "producer",
+   "name": "runawway",
+   "page": null,
+   "x": 726.9,
+   "y": 298.6,
+   "r": 11.0,
+   "blurb": "Production credit in 1 family"
+  },
+  {
+   "id": "fig-p-suli",
+   "kind": "producer",
+   "name": "suli",
+   "page": null,
+   "x": 727.9,
+   "y": 327.1,
+   "r": 11.0,
+   "blurb": "Production credit in 1 family"
+  },
+  {
+   "id": "fig-p-t-n-c",
+   "kind": "producer",
+   "name": "T.N.C",
+   "page": null,
+   "x": 725.1,
+   "y": 355.6,
+   "r": 11.0,
+   "blurb": "Production credit in 1 family"
+  },
+  {
+   "id": "fig-p-tundra-beats",
+   "kind": "producer",
+   "name": "Tundra Beats",
+   "page": null,
+   "x": 718.5,
+   "y": 383.6,
+   "r": 11.0,
+   "blurb": "Production credit in 1 family"
+  },
+  {
+   "id": "fig-vetty",
+   "kind": "collaborator",
+   "name": "Vetty",
+   "page": "circle/vetty.html",
+   "x": 708.4,
+   "y": 410.6,
+   "r": 11.0,
+   "blurb": "Title-credited in 1 family"
+  },
+  {
+   "id": "fig-p-waynn",
+   "kind": "producer",
+   "name": "waynn",
+   "page": null,
+   "x": 694.7,
+   "y": 436.4,
+   "r": 11.0,
+   "blurb": "Production credit in 1 family"
+  },
+  {
+   "id": "fig-p-wedreaming",
+   "kind": "producer",
+   "name": "WeDreaming",
+   "page": null,
+   "x": 677.7,
+   "y": 460.6,
+   "r": 11.0,
+   "blurb": "Production credit in 1 family"
+  },
+  {
+   "id": "fig-p-wellfed",
+   "kind": "producer",
+   "name": "wellfed",
+   "page": null,
+   "x": 657.7,
+   "y": 482.8,
+   "r": 14.0,
+   "blurb": "Production credit in 2 families"
+  },
+  {
+   "id": "fig-p-xtravulous",
+   "kind": "producer",
+   "name": "Xtravulous",
+   "page": null,
+   "x": 635.0,
+   "y": 502.7,
+   "r": 11.0,
+   "blurb": "Production credit in 1 family"
+  },
+  {
+   "id": "fig-p-y-axis",
+   "kind": "producer",
+   "name": "y axis",
+   "page": null,
+   "x": 609.7,
+   "y": 520.1,
+   "r": 11.0,
+   "blurb": "Production credit in 1 family"
+  },
+  {
+   "id": "fig-p-yukio",
+   "kind": "producer",
+   "name": "Yukio",
+   "page": null,
+   "x": 582.4,
+   "y": 534.6,
+   "r": 11.0,
+   "blurb": "Production credit in 1 family"
+  },
+  {
+   "id": "fig-p-yung-skah",
+   "kind": "producer",
+   "name": "Yung Skah",
+   "page": null,
+   "x": 553.3,
+   "y": 546.1,
+   "r": 11.0,
+   "blurb": "Production credit in 1 family"
+  },
+  {
+   "id": "fig-yung-vetta",
+   "kind": "collaborator",
+   "name": "Yung Vetta",
+   "page": "circle/yung-vetta.html",
+   "x": 522.9,
+   "y": 554.5,
+   "r": 17.0,
+   "blurb": "Title-credited in 3 families"
+  },
+  {
+   "id": "fig-p-yungskah",
+   "kind": "producer",
+   "name": "YungSkah",
+   "page": null,
+   "x": 491.7,
+   "y": 559.5,
+   "r": 11.0,
+   "blurb": "Production credit in 1 family"
+  }
+ ],
+ "edges": [
+  {
+   "a": "aster",
+   "b": "fam-the-modes",
+   "weight": 5,
+   "kind": "aster-family",
+   "label": "Aster speaks every word in this family (5 transmissions)",
+   "titles": []
+  },
+  {
+   "a": "aster",
+   "b": "fam-the-castings",
+   "weight": 5,
+   "kind": "aster-family",
+   "label": "Aster speaks every word in this family (5 transmissions)",
+   "titles": []
+  },
+  {
+   "a": "aster",
+   "b": "fam-keys",
+   "weight": 3,
+   "kind": "aster-family",
+   "label": "Aster speaks every word in this family (3 transmissions)",
+   "titles": []
+  },
+  {
+   "a": "aster",
+   "b": "fam-vessels",
+   "weight": 2,
+   "kind": "aster-family",
+   "label": "Aster speaks every word in this family (2 transmissions)",
+   "titles": []
+  },
+  {
+   "a": "aster",
+   "b": "fam-wards-and-the-spirit",
+   "weight": 2,
+   "kind": "aster-family",
+   "label": "Aster speaks every word in this family (2 transmissions)",
+   "titles": []
+  },
+  {
+   "a": "aster",
+   "b": "fam-the-rites",
+   "weight": 17,
+   "kind": "aster-family",
+   "label": "Aster speaks every word in this family (17 transmissions)",
+   "titles": []
+  },
+  {
+   "a": "aster",
+   "b": "fam-light",
+   "weight": 9,
+   "kind": "aster-family",
+   "label": "Aster speaks every word in this family (9 transmissions)",
+   "titles": []
+  },
+  {
+   "a": "aster",
+   "b": "fam-dark",
+   "weight": 5,
+   "kind": "aster-family",
+   "label": "Aster speaks every word in this family (5 transmissions)",
+   "titles": []
+  },
+  {
+   "a": "aster",
+   "b": "fam-journeys",
+   "weight": 4,
+   "kind": "aster-family",
+   "label": "Aster speaks every word in this family (4 transmissions)",
+   "titles": []
+  },
+  {
+   "a": "aster",
+   "b": "fam-the-cold",
+   "weight": 4,
+   "kind": "aster-family",
+   "label": "Aster speaks every word in this family (4 transmissions)",
+   "titles": []
+  },
+  {
+   "a": "aster",
+   "b": "fam-power",
+   "weight": 3,
+   "kind": "aster-family",
+   "label": "Aster speaks every word in this family (3 transmissions)",
+   "titles": []
+  },
+  {
+   "a": "aster",
+   "b": "fam-the-pack",
+   "weight": 2,
+   "kind": "aster-family",
+   "label": "Aster speaks every word in this family (2 transmissions)",
+   "titles": []
+  },
+  {
+   "a": "aster",
+   "b": "fam-lucid-states",
+   "weight": 2,
+   "kind": "aster-family",
+   "label": "Aster speaks every word in this family (2 transmissions)",
+   "titles": []
+  },
+  {
+   "a": "aster",
+   "b": "fam-time",
+   "weight": 2,
+   "kind": "aster-family",
+   "label": "Aster speaks every word in this family (2 transmissions)",
+   "titles": []
+  },
+  {
+   "a": "aster",
+   "b": "fam-soul",
+   "weight": 2,
+   "kind": "aster-family",
+   "label": "Aster speaks every word in this family (2 transmissions)",
+   "titles": []
+  },
+  {
+   "a": "aster",
+   "b": "fam-fire-and-water",
+   "weight": 2,
+   "kind": "aster-family",
+   "label": "Aster speaks every word in this family (2 transmissions)",
+   "titles": []
+  },
+  {
+   "a": "fam-the-cold",
+   "b": "fig-capoxxo",
+   "weight": 1,
+   "kind": "family-figure",
+   "label": "capoxxo x 1 in The Cold",
+   "titles": [
+    "getting colder w/ capoxxo (prod. pvscale x asa41)"
+   ]
+  },
+  {
+   "a": "fam-soul",
+   "b": "fig-fish-narc",
+   "weight": 1,
+   "kind": "family-figure",
+   "label": "Fish Narc x 1 in Soul",
+   "titles": [
+    "Soul Shaking (prod. Fish Narc)"
+   ]
+  },
+  {
+   "a": "fam-dark",
+   "b": "fig-jax",
+   "weight": 1,
+   "kind": "family-figure",
+   "label": "JAX x 1 in Dark",
+   "titles": [
+    "NIGHT MODE ft. MAX FERRARI x YUNG VETTA x JAX"
+   ]
+  },
+  {
+   "a": "fam-journeys",
+   "b": "fig-jax",
+   "weight": 1,
+   "kind": "family-figure",
+   "label": "JAX x 1 in Journeys",
+   "titles": [
+    "Walk With Me w/ JAX (Prod. Rawman)"
+   ]
+  },
+  {
+   "a": "fam-the-modes",
+   "b": "fig-jax",
+   "weight": 1,
+   "kind": "family-figure",
+   "label": "JAX x 1 in The Modes",
+   "titles": [
+    "NIGHT MODE ft. MAX FERRARI x YUNG VETTA x JAX"
+   ]
+  },
+  {
+   "a": "fam-light",
+   "b": "fig-jo-e-dripp",
+   "weight": 1,
+   "kind": "family-figure",
+   "label": "JO$E DRIPP x 1 in Light",
+   "titles": [
+    "SUN SET FOR U ft. JO$E DRIPP (prod. y axis)"
+   ]
+  },
+  {
+   "a": "fam-light",
+   "b": "fig-keyblayde808",
+   "weight": 1,
+   "kind": "family-figure",
+   "label": "Keyblayde808 x 1 in Light",
+   "titles": [
+    "White Noise ft. Keyblayde808 (prod. Keyblayde808)"
+   ]
+  },
+  {
+   "a": "fam-keys",
+   "b": "fig-lil-wintr",
+   "weight": 2,
+   "kind": "family-figure",
+   "label": "Lil Wintr x 2 in Keys",
+   "titles": [
+    "Master Key (feat. Lil Wintr & Marcelo)",
+    "master key ft. Lil Wintr x Marcelo (prod. ginseng)"
+   ]
+  },
+  {
+   "a": "fam-keys",
+   "b": "fig-marcelo",
+   "weight": 2,
+   "kind": "family-figure",
+   "label": "Marcelo x 2 in Keys",
+   "titles": [
+    "Master Key (feat. Lil Wintr & Marcelo)",
+    "master key ft. Lil Wintr x Marcelo (prod. ginseng)"
+   ]
+  },
+  {
+   "a": "fam-the-modes",
+   "b": "fig-max",
+   "weight": 1,
+   "kind": "family-figure",
+   "label": "Max x 1 in The Modes",
+   "titles": [
+    "nitemode2019 w/ Max+Vetty prod. NaXi.wav"
+   ]
+  },
+  {
+   "a": "fam-dark",
+   "b": "fig-max-ferrari",
+   "weight": 1,
+   "kind": "family-figure",
+   "label": "Max Ferrari x 1 in Dark",
+   "titles": [
+    "NIGHT MODE ft. MAX FERRARI x YUNG VETTA x JAX"
+   ]
+  },
+  {
+   "a": "fam-the-modes",
+   "b": "fig-max-ferrari",
+   "weight": 1,
+   "kind": "family-figure",
+   "label": "Max Ferrari x 1 in The Modes",
+   "titles": [
+    "NIGHT MODE ft. MAX FERRARI x YUNG VETTA x JAX"
+   ]
+  },
+  {
+   "a": "fam-the-rites",
+   "b": "fig-max-ferrari",
+   "weight": 1,
+   "kind": "family-figure",
+   "label": "Max Ferrari x 1 in The Rites",
+   "titles": [
+    "Sti11 waiting/tunnel freestyle w/ Max Ferrari prod. suli"
+   ]
+  },
+  {
+   "a": "fam-the-rites",
+   "b": "fig-p-addy",
+   "weight": 1,
+   "kind": "family-figure",
+   "label": "Addy x 1 in The Rites",
+   "titles": [
+    "[outro] Off Beat ft. Yung Vetta (prod. Addy)"
+   ]
+  },
+  {
+   "a": "fam-light",
+   "b": "fig-p-antropolita",
+   "weight": 1,
+   "kind": "family-figure",
+   "label": "Antropolita x 1 in Light",
+   "titles": [
+    "GOLD 💛💔💛 ~ (prod. Antropolita)"
+   ]
+  },
+  {
+   "a": "fam-power",
+   "b": "fig-p-apostle",
+   "weight": 1,
+   "kind": "family-figure",
+   "label": "Apostle x 1 in Power",
+   "titles": [
+    "POWER~! (brb)(prod. Apostle)"
+   ]
+  },
+  {
+   "a": "fam-the-cold",
+   "b": "fig-p-asa41",
+   "weight": 1,
+   "kind": "family-figure",
+   "label": "asa41 x 1 in The Cold",
+   "titles": [
+    "getting colder w/ capoxxo (prod. pvscale x asa41)"
+   ]
+  },
+  {
+   "a": "fam-the-rites",
+   "b": "fig-p-astral-hp",
+   "weight": 1,
+   "kind": "family-figure",
+   "label": "astral_hp x 1 in The Rites",
+   "titles": [
+    "Intro (prod. astral_hp)"
+   ]
+  },
+  {
+   "a": "fam-the-rites",
+   "b": "fig-p-awfl",
+   "weight": 1,
+   "kind": "family-figure",
+   "label": "AWFL x 1 in The Rites",
+   "titles": [
+    "For Brian (Neck Deep) outro [produced by AWFL]"
+   ]
+  },
+  {
+   "a": "fam-the-cold",
+   "b": "fig-p-brokn",
+   "weight": 1,
+   "kind": "family-figure",
+   "label": "Brokn x 1 in The Cold",
+   "titles": [
+    "When the World Gets Colder (prod. Brokn)"
+   ]
+  },
+  {
+   "a": "fam-wards-and-the-spirit",
+   "b": "fig-p-bygus",
+   "weight": 1,
+   "kind": "family-figure",
+   "label": "bygus x 1 in Wards & the Spirit",
+   "titles": [
+    "P1aced a Ward (prodbygus)"
+   ]
+  },
+  {
+   "a": "fam-the-rites",
+   "b": "fig-p-capsctrl",
+   "weight": 1,
+   "kind": "family-figure",
+   "label": "capsctrl x 1 in The Rites",
+   "titles": [
+    "Elf Anthem Interlude (prod. capsctrl)"
+   ]
+  },
+  {
+   "a": "fam-the-rites",
+   "b": "fig-p-discent",
+   "weight": 1,
+   "kind": "family-figure",
+   "label": "Discent x 1 in The Rites",
+   "titles": [
+    "Day Comes Freestyle ~(prod. Discent)"
+   ]
+  },
+  {
+   "a": "fam-the-rites",
+   "b": "fig-p-dix2",
+   "weight": 1,
+   "kind": "family-figure",
+   "label": "DIX2 x 1 in The Rites",
+   "titles": [
+    "Fuck Time 3 (outro) [Prod. DIX2]"
+   ]
+  },
+  {
+   "a": "fam-time",
+   "b": "fig-p-dix2",
+   "weight": 1,
+   "kind": "family-figure",
+   "label": "DIX2 x 1 in Time",
+   "titles": [
+    "Fuck Time 3 (outro) [Prod. DIX2]"
+   ]
+  },
+  {
+   "a": "fam-the-modes",
+   "b": "fig-p-doublemulti",
+   "weight": 1,
+   "kind": "family-figure",
+   "label": "doublemulti x 1 in The Modes",
+   "titles": [
+    "3 Points Pre Game prod. doublemulti x pinkcat #NITEMODE"
+   ]
+  },
+  {
+   "a": "fam-vessels",
+   "b": "fig-p-fiftyzeros",
+   "weight": 1,
+   "kind": "family-figure",
+   "label": "fiftyzeros x 1 in Vessels",
+   "titles": [
+    "the peace of the spirit urn (prod +fiftyzeros)"
+   ]
+  },
+  {
+   "a": "fam-wards-and-the-spirit",
+   "b": "fig-p-fiftyzeros",
+   "weight": 1,
+   "kind": "family-figure",
+   "label": "fiftyzeros x 1 in Wards & the Spirit",
+   "titles": [
+    "the peace of the spirit urn (prod +fiftyzeros)"
+   ]
+  },
+  {
+   "a": "fam-keys",
+   "b": "fig-p-ginseng",
+   "weight": 1,
+   "kind": "family-figure",
+   "label": "ginseng x 1 in Keys",
+   "titles": [
+    "master key ft. Lil Wintr x Marcelo (prod. ginseng)"
+   ]
+  },
+  {
+   "a": "fam-vessels",
+   "b": "fig-p-ice-trouble",
+   "weight": 1,
+   "kind": "family-figure",
+   "label": "ice trouble x 1 in Vessels",
+   "titles": [
+    "Like the Cup (prod. ice trouble)"
+   ]
+  },
+  {
+   "a": "fam-the-modes",
+   "b": "fig-p-ilyagargod",
+   "weight": 1,
+   "kind": "family-figure",
+   "label": "ilyagargod x 1 in The Modes",
+   "titles": [
+    "big litemode (prod runawway, ilyagargod & k3nik)"
+   ]
+  },
+  {
+   "a": "fam-the-rites",
+   "b": "fig-p-itami",
+   "weight": 1,
+   "kind": "family-figure",
+   "label": "itami リネン x 1 in The Rites",
+   "titles": [
+    "outro ~ I RLLY DID THT(prod. itami リネン)"
+   ]
+  },
+  {
+   "a": "fam-light",
+   "b": "fig-p-josh-the-samurai",
+   "weight": 1,
+   "kind": "family-figure",
+   "label": "Josh the Samurai x 1 in Light",
+   "titles": [
+    "Soul Shines ~ [prod Josh the Samurai]"
+   ]
+  },
+  {
+   "a": "fam-soul",
+   "b": "fig-p-josh-the-samurai",
+   "weight": 1,
+   "kind": "family-figure",
+   "label": "Josh the Samurai x 1 in Soul",
+   "titles": [
+    "Soul Shines ~ [prod Josh the Samurai]"
+   ]
+  },
+  {
+   "a": "fam-the-modes",
+   "b": "fig-p-k3nik",
+   "weight": 1,
+   "kind": "family-figure",
+   "label": "k3nik x 1 in The Modes",
+   "titles": [
+    "big litemode (prod runawway, ilyagargod & k3nik)"
+   ]
+  },
+  {
+   "a": "fam-light",
+   "b": "fig-p-lil-biscuit",
+   "weight": 1,
+   "kind": "family-figure",
+   "label": "lil biscuit x 1 in Light",
+   "titles": [
+    "Asterisms Shine (prod. lil biscuit)"
+   ]
+  },
+  {
+   "a": "fam-the-castings",
+   "b": "fig-p-lil-biscuit",
+   "weight": 1,
+   "kind": "family-figure",
+   "label": "lil biscuit x 1 in The Castings",
+   "titles": [
+    "I Can't Get Myself to Cast (prod. lil biscuit)"
+   ]
+  },
+  {
+   "a": "fam-light",
+   "b": "fig-p-lunarlad",
+   "weight": 1,
+   "kind": "family-figure",
+   "label": "lunarlad x 1 in Light",
+   "titles": [
+    "Sipping 1ightning prod. lunarlad"
+   ]
+  },
+  {
+   "a": "fam-the-modes",
+   "b": "fig-p-naxi",
+   "weight": 1,
+   "kind": "family-figure",
+   "label": "NaXi x 1 in The Modes",
+   "titles": [
+    "nitemode2019 w/ Max+Vetty prod. NaXi.wav"
+   ]
+  },
+  {
+   "a": "fam-fire-and-water",
+   "b": "fig-p-odece",
+   "weight": 1,
+   "kind": "family-figure",
+   "label": "odece x 1 in Fire & Water",
+   "titles": [
+    "white fire (prod. odece)"
+   ]
+  },
+  {
+   "a": "fam-light",
+   "b": "fig-p-odece",
+   "weight": 1,
+   "kind": "family-figure",
+   "label": "odece x 1 in Light",
+   "titles": [
+    "white fire (prod. odece)"
+   ]
+  },
+  {
+   "a": "fam-fire-and-water",
+   "b": "fig-p-paris-pas-rigolo",
+   "weight": 1,
+   "kind": "family-figure",
+   "label": "paris pas rigolo x 1 in Fire & Water",
+   "titles": [
+    "water + sun (prod paris pas rigolo)"
+   ]
+  },
+  {
+   "a": "fam-light",
+   "b": "fig-p-paris-pas-rigolo",
+   "weight": 1,
+   "kind": "family-figure",
+   "label": "paris pas rigolo x 1 in Light",
+   "titles": [
+    "water + sun (prod paris pas rigolo)"
+   ]
+  },
+  {
+   "a": "fam-the-cold",
+   "b": "fig-p-phantasie",
+   "weight": 1,
+   "kind": "family-figure",
+   "label": "phantasie x 1 in The Cold",
+   "titles": [
+    "When the World Gets Colder 3 (prod. phantasie)"
+   ]
+  },
+  {
+   "a": "fam-the-modes",
+   "b": "fig-p-pinkcat",
+   "weight": 1,
+   "kind": "family-figure",
+   "label": "pinkcat x 1 in The Modes",
+   "titles": [
+    "3 Points Pre Game prod. doublemulti x pinkcat #NITEMODE"
+   ]
+  },
+  {
+   "a": "fam-journeys",
+   "b": "fig-p-rawman",
+   "weight": 1,
+   "kind": "family-figure",
+   "label": "Rawman x 1 in Journeys",
+   "titles": [
+    "Walk With Me w/ JAX (Prod. Rawman)"
+   ]
+  },
+  {
+   "a": "fam-time",
+   "b": "fig-p-ridicholas",
+   "weight": 1,
+   "kind": "family-figure",
+   "label": "Ridicholas x 1 in Time",
+   "titles": [
+    "Time to Grow (prod. Ridicholas)"
+   ]
+  },
+  {
+   "a": "fam-dark",
+   "b": "fig-p-rizi",
+   "weight": 1,
+   "kind": "family-figure",
+   "label": "Rizi x 1 in Dark",
+   "titles": [
+    "stay out of the dark (prod. Rizi)"
+   ]
+  },
+  {
+   "a": "fam-the-modes",
+   "b": "fig-p-runawway",
+   "weight": 1,
+   "kind": "family-figure",
+   "label": "runawway x 1 in The Modes",
+   "titles": [
+    "big litemode (prod runawway, ilyagargod & k3nik)"
+   ]
+  },
+  {
+   "a": "fam-the-rites",
+   "b": "fig-p-suli",
+   "weight": 1,
+   "kind": "family-figure",
+   "label": "suli x 1 in The Rites",
+   "titles": [
+    "Sti11 waiting/tunnel freestyle w/ Max Ferrari prod. suli"
+   ]
+  },
+  {
+   "a": "fam-lucid-states",
+   "b": "fig-p-t-n-c",
+   "weight": 1,
+   "kind": "family-figure",
+   "label": "T.N.C x 1 in Lucid States",
+   "titles": [
+    "Lucid Boi (prod. $ T.N.C $)"
+   ]
+  },
+  {
+   "a": "fam-light",
+   "b": "fig-p-tundra-beats",
+   "weight": 1,
+   "kind": "family-figure",
+   "label": "Tundra Beats x 1 in Light",
+   "titles": [
+    "Just Wanted U to Shine (prod. Xtravulous x Tundra Beats)"
+   ]
+  },
+  {
+   "a": "fam-the-pack",
+   "b": "fig-p-waynn",
+   "weight": 1,
+   "kind": "family-figure",
+   "label": "waynn x 1 in The Pack",
+   "titles": [
+    "like my dogs!!! (prod waynn)"
+   ]
+  },
+  {
+   "a": "fam-the-rites",
+   "b": "fig-p-wedreaming",
+   "weight": 1,
+   "kind": "family-figure",
+   "label": "WeDreaming x 1 in The Rites",
+   "titles": [
+    "Face Down Freestyle ~(prod. WeDreaming)"
+   ]
+  },
+  {
+   "a": "fam-dark",
+   "b": "fig-p-wellfed",
+   "weight": 1,
+   "kind": "family-figure",
+   "label": "wellfed x 1 in Dark",
+   "titles": [
+    "the night ends yeaaa prod wellfed"
+   ]
+  },
+  {
+   "a": "fam-power",
+   "b": "fig-p-wellfed",
+   "weight": 1,
+   "kind": "family-figure",
+   "label": "wellfed x 1 in Power",
+   "titles": [
+    "no power prod wellfed"
+   ]
+  },
+  {
+   "a": "fam-light",
+   "b": "fig-p-xtravulous",
+   "weight": 1,
+   "kind": "family-figure",
+   "label": "Xtravulous x 1 in Light",
+   "titles": [
+    "Just Wanted U to Shine (prod. Xtravulous x Tundra Beats)"
+   ]
+  },
+  {
+   "a": "fam-light",
+   "b": "fig-p-y-axis",
+   "weight": 1,
+   "kind": "family-figure",
+   "label": "y axis x 1 in Light",
+   "titles": [
+    "SUN SET FOR U ft. JO$E DRIPP (prod. y axis)"
+   ]
+  },
+  {
+   "a": "fam-lucid-states",
+   "b": "fig-p-yukio",
+   "weight": 1,
+   "kind": "family-figure",
+   "label": "Yukio x 1 in Lucid States",
+   "titles": [
+    "Dreamed of U (Hubb1e) prod. Yukio"
+   ]
+  },
+  {
+   "a": "fam-the-cold",
+   "b": "fig-p-yung-skah",
+   "weight": 1,
+   "kind": "family-figure",
+   "label": "Yung Skah x 1 in The Cold",
+   "titles": [
+    "When the World Gets Colder 2 (prod. Yung Skah)"
+   ]
+  },
+  {
+   "a": "fam-journeys",
+   "b": "fig-p-yungskah",
+   "weight": 1,
+   "kind": "family-figure",
+   "label": "YungSkah x 1 in Journeys",
+   "titles": [
+    "All Kinds Of Trips (prod. YungSkah) <ON ALL PLATFORMS NOW!>"
+   ]
+  },
+  {
+   "a": "fam-the-cold",
+   "b": "fig-pvscale",
+   "weight": 1,
+   "kind": "family-figure",
+   "label": "pvscale x 1 in The Cold",
+   "titles": [
+    "getting colder w/ capoxxo (prod. pvscale x asa41)"
+   ]
+  },
+  {
+   "a": "fam-the-modes",
+   "b": "fig-vetty",
+   "weight": 1,
+   "kind": "family-figure",
+   "label": "Vetty x 1 in The Modes",
+   "titles": [
+    "nitemode2019 w/ Max+Vetty prod. NaXi.wav"
+   ]
+  },
+  {
+   "a": "fam-dark",
+   "b": "fig-yung-vetta",
+   "weight": 1,
+   "kind": "family-figure",
+   "label": "Yung Vetta x 1 in Dark",
+   "titles": [
+    "NIGHT MODE ft. MAX FERRARI x YUNG VETTA x JAX"
+   ]
+  },
+  {
+   "a": "fam-the-modes",
+   "b": "fig-yung-vetta",
+   "weight": 1,
+   "kind": "family-figure",
+   "label": "Yung Vetta x 1 in The Modes",
+   "titles": [
+    "NIGHT MODE ft. MAX FERRARI x YUNG VETTA x JAX"
+   ]
+  },
+  {
+   "a": "fam-the-rites",
+   "b": "fig-yung-vetta",
+   "weight": 1,
+   "kind": "family-figure",
+   "label": "Yung Vetta x 1 in The Rites",
+   "titles": [
+    "[outro] Off Beat ft. Yung Vetta (prod. Addy)"
+   ]
+  },
+  {
+   "a": "fig-jax",
+   "b": "fig-max-ferrari",
+   "weight": 2,
+   "kind": "co-credit",
+   "label": "JAX and Max Ferrari credited together x 2",
+   "titles": [
+    "DESTINY (ft. JAX & Max Ferrari) ~ [prod. louky]",
+    "NIGHT MODE ft. MAX FERRARI x YUNG VETTA x JAX"
+   ]
+  },
+  {
+   "a": "fig-jax",
+   "b": "fig-yung-vetta",
+   "weight": 1,
+   "kind": "co-credit",
+   "label": "JAX and Yung Vetta credited together x 1",
+   "titles": [
+    "NIGHT MODE ft. MAX FERRARI x YUNG VETTA x JAX"
+   ]
+  },
+  {
+   "a": "fig-lil-wintr",
+   "b": "fig-marcelo",
+   "weight": 2,
+   "kind": "co-credit",
+   "label": "Lil Wintr and Marcelo credited together x 2",
+   "titles": [
+    "Master Key (feat. Lil Wintr & Marcelo)",
+    "master key ft. Lil Wintr x Marcelo (prod. ginseng)"
+   ]
+  },
+  {
+   "a": "fig-max",
+   "b": "fig-vetty",
+   "weight": 1,
+   "kind": "co-credit",
+   "label": "Max and Vetty credited together x 1",
+   "titles": [
+    "nitemode2019 w/ Max+Vetty prod. NaXi.wav"
+   ]
+  },
+  {
+   "a": "fig-max-ferrari",
+   "b": "fig-yung-vetta",
+   "weight": 1,
+   "kind": "co-credit",
+   "label": "Max Ferrari and Yung Vetta credited together x 1",
+   "titles": [
+    "NIGHT MODE ft. MAX FERRARI x YUNG VETTA x JAX"
+   ]
+  }
+ ],
+ "family_overlap": [
+  {
+   "a_id": "fam-the-modes",
+   "b_id": "fam-dark",
+   "a_slug": "the-modes",
+   "b_slug": "dark",
+   "a_name": "The Modes",
+   "b_name": "Dark",
+   "a_page": "codex/the-modes.html",
+   "b_page": "codex/dark.html",
+   "weight": 3,
+   "shared_figures": [
+    {
+     "id": "fig-jax",
+     "name": "JAX",
+     "kind": "collaborator"
+    },
+    {
+     "id": "fig-max-ferrari",
+     "name": "Max Ferrari",
+     "kind": "collaborator"
+    },
+    {
+     "id": "fig-yung-vetta",
+     "name": "Yung Vetta",
+     "kind": "collaborator"
+    }
+   ]
+  },
+  {
+   "a_id": "fam-light",
+   "b_id": "fam-fire-and-water",
+   "a_slug": "light",
+   "b_slug": "fire-and-water",
+   "a_name": "Light",
+   "b_name": "Fire & Water",
+   "a_page": "codex/light.html",
+   "b_page": "codex/fire-and-water.html",
+   "weight": 2,
+   "shared_figures": [
+    {
+     "id": "fig-p-odece",
+     "name": "odece",
+     "kind": "producer"
+    },
+    {
+     "id": "fig-p-paris-pas-rigolo",
+     "name": "paris pas rigolo",
+     "kind": "producer"
+    }
+   ]
+  },
+  {
+   "a_id": "fam-the-modes",
+   "b_id": "fam-the-rites",
+   "a_slug": "the-modes",
+   "b_slug": "the-rites",
+   "a_name": "The Modes",
+   "b_name": "The Rites",
+   "a_page": "codex/the-modes.html",
+   "b_page": "codex/the-rites.html",
+   "weight": 2,
+   "shared_figures": [
+    {
+     "id": "fig-max-ferrari",
+     "name": "Max Ferrari",
+     "kind": "collaborator"
+    },
+    {
+     "id": "fig-yung-vetta",
+     "name": "Yung Vetta",
+     "kind": "collaborator"
+    }
+   ]
+  },
+  {
+   "a_id": "fam-the-rites",
+   "b_id": "fam-dark",
+   "a_slug": "the-rites",
+   "b_slug": "dark",
+   "a_name": "The Rites",
+   "b_name": "Dark",
+   "a_page": "codex/the-rites.html",
+   "b_page": "codex/dark.html",
+   "weight": 2,
+   "shared_figures": [
+    {
+     "id": "fig-max-ferrari",
+     "name": "Max Ferrari",
+     "kind": "collaborator"
+    },
+    {
+     "id": "fig-yung-vetta",
+     "name": "Yung Vetta",
+     "kind": "collaborator"
+    }
+   ]
+  },
+  {
+   "a_id": "fam-dark",
+   "b_id": "fam-journeys",
+   "a_slug": "dark",
+   "b_slug": "journeys",
+   "a_name": "Dark",
+   "b_name": "Journeys",
+   "a_page": "codex/dark.html",
+   "b_page": "codex/journeys.html",
+   "weight": 1,
+   "shared_figures": [
+    {
+     "id": "fig-jax",
+     "name": "JAX",
+     "kind": "collaborator"
+    }
+   ]
+  },
+  {
+   "a_id": "fam-dark",
+   "b_id": "fam-power",
+   "a_slug": "dark",
+   "b_slug": "power",
+   "a_name": "Dark",
+   "b_name": "Power",
+   "a_page": "codex/dark.html",
+   "b_page": "codex/power.html",
+   "weight": 1,
+   "shared_figures": [
+    {
+     "id": "fig-p-wellfed",
+     "name": "wellfed",
+     "kind": "producer"
+    }
+   ]
+  },
+  {
+   "a_id": "fam-light",
+   "b_id": "fam-soul",
+   "a_slug": "light",
+   "b_slug": "soul",
+   "a_name": "Light",
+   "b_name": "Soul",
+   "a_page": "codex/light.html",
+   "b_page": "codex/soul.html",
+   "weight": 1,
+   "shared_figures": [
+    {
+     "id": "fig-p-josh-the-samurai",
+     "name": "Josh the Samurai",
+     "kind": "producer"
+    }
+   ]
+  },
+  {
+   "a_id": "fam-the-castings",
+   "b_id": "fam-light",
+   "a_slug": "the-castings",
+   "b_slug": "light",
+   "a_name": "The Castings",
+   "b_name": "Light",
+   "a_page": "codex/the-castings.html",
+   "b_page": "codex/light.html",
+   "weight": 1,
+   "shared_figures": [
+    {
+     "id": "fig-p-lil-biscuit",
+     "name": "lil biscuit",
+     "kind": "producer"
+    }
+   ]
+  },
+  {
+   "a_id": "fam-the-modes",
+   "b_id": "fam-journeys",
+   "a_slug": "the-modes",
+   "b_slug": "journeys",
+   "a_name": "The Modes",
+   "b_name": "Journeys",
+   "a_page": "codex/the-modes.html",
+   "b_page": "codex/journeys.html",
+   "weight": 1,
+   "shared_figures": [
+    {
+     "id": "fig-jax",
+     "name": "JAX",
+     "kind": "collaborator"
+    }
+   ]
+  },
+  {
+   "a_id": "fam-the-rites",
+   "b_id": "fam-time",
+   "a_slug": "the-rites",
+   "b_slug": "time",
+   "a_name": "The Rites",
+   "b_name": "Time",
+   "a_page": "codex/the-rites.html",
+   "b_page": "codex/time.html",
+   "weight": 1,
+   "shared_figures": [
+    {
+     "id": "fig-p-dix2",
+     "name": "DIX2",
+     "kind": "producer"
+    }
+   ]
+  },
+  {
+   "a_id": "fam-vessels",
+   "b_id": "fam-wards-and-the-spirit",
+   "a_slug": "vessels",
+   "b_slug": "wards-and-the-spirit",
+   "a_name": "Vessels",
+   "b_name": "Wards & the Spirit",
+   "a_page": "codex/vessels.html",
+   "b_page": "codex/wards-and-the-spirit.html",
+   "weight": 1,
+   "shared_figures": [
+    {
+     "id": "fig-p-fiftyzeros",
+     "name": "fiftyzeros",
+     "kind": "producer"
+    }
+   ]
+  }
+ ],
+ "degrees": [
+  {
+   "id": "fam-dark",
+   "name": "Dark",
+   "kind": "family",
+   "degrees": 1,
+   "via": []
+  },
+  {
+   "id": "fam-fire-and-water",
+   "name": "Fire & Water",
+   "kind": "family",
+   "degrees": 1,
+   "via": []
+  },
+  {
+   "id": "fam-journeys",
+   "name": "Journeys",
+   "kind": "family",
+   "degrees": 1,
+   "via": []
+  },
+  {
+   "id": "fam-keys",
+   "name": "Keys",
+   "kind": "family",
+   "degrees": 1,
+   "via": []
+  },
+  {
+   "id": "fam-light",
+   "name": "Light",
+   "kind": "family",
+   "degrees": 1,
+   "via": []
+  },
+  {
+   "id": "fam-lucid-states",
+   "name": "Lucid States",
+   "kind": "family",
+   "degrees": 1,
+   "via": []
+  },
+  {
+   "id": "fam-power",
+   "name": "Power",
+   "kind": "family",
+   "degrees": 1,
+   "via": []
+  },
+  {
+   "id": "fam-soul",
+   "name": "Soul",
+   "kind": "family",
+   "degrees": 1,
+   "via": []
+  },
+  {
+   "id": "fam-the-castings",
+   "name": "The Castings",
+   "kind": "family",
+   "degrees": 1,
+   "via": []
+  },
+  {
+   "id": "fam-the-cold",
+   "name": "The Cold",
+   "kind": "family",
+   "degrees": 1,
+   "via": []
+  },
+  {
+   "id": "fam-the-modes",
+   "name": "The Modes",
+   "kind": "family",
+   "degrees": 1,
+   "via": []
+  },
+  {
+   "id": "fam-the-pack",
+   "name": "The Pack",
+   "kind": "family",
+   "degrees": 1,
+   "via": []
+  },
+  {
+   "id": "fam-the-rites",
+   "name": "The Rites",
+   "kind": "family",
+   "degrees": 1,
+   "via": []
+  },
+  {
+   "id": "fam-time",
+   "name": "Time",
+   "kind": "family",
+   "degrees": 1,
+   "via": []
+  },
+  {
+   "id": "fam-vessels",
+   "name": "Vessels",
+   "kind": "family",
+   "degrees": 1,
+   "via": []
+  },
+  {
+   "id": "fam-wards-and-the-spirit",
+   "name": "Wards & the Spirit",
+   "kind": "family",
+   "degrees": 1,
+   "via": []
+  },
+  {
+   "id": "fig-p-addy",
+   "name": "Addy",
+   "kind": "producer",
+   "degrees": 2,
+   "via": [
+    "fam-the-rites"
+   ]
+  },
+  {
+   "id": "fig-p-antropolita",
+   "name": "Antropolita",
+   "kind": "producer",
+   "degrees": 2,
+   "via": [
+    "fam-light"
+   ]
+  },
+  {
+   "id": "fig-p-apostle",
+   "name": "Apostle",
+   "kind": "producer",
+   "degrees": 2,
+   "via": [
+    "fam-power"
+   ]
+  },
+  {
+   "id": "fig-p-asa41",
+   "name": "asa41",
+   "kind": "producer",
+   "degrees": 2,
+   "via": [
+    "fam-the-cold"
+   ]
+  },
+  {
+   "id": "fig-p-astral-hp",
+   "name": "astral_hp",
+   "kind": "producer",
+   "degrees": 2,
+   "via": [
+    "fam-the-rites"
+   ]
+  },
+  {
+   "id": "fig-p-awfl",
+   "name": "AWFL",
+   "kind": "producer",
+   "degrees": 2,
+   "via": [
+    "fam-the-rites"
+   ]
+  },
+  {
+   "id": "fig-p-brokn",
+   "name": "Brokn",
+   "kind": "producer",
+   "degrees": 2,
+   "via": [
+    "fam-the-cold"
+   ]
+  },
+  {
+   "id": "fig-p-bygus",
+   "name": "bygus",
+   "kind": "producer",
+   "degrees": 2,
+   "via": [
+    "fam-wards-and-the-spirit"
+   ]
+  },
+  {
+   "id": "fig-capoxxo",
+   "name": "capoxxo",
+   "kind": "collaborator",
+   "degrees": 2,
+   "via": [
+    "fam-the-cold"
+   ]
+  },
+  {
+   "id": "fig-p-capsctrl",
+   "name": "capsctrl",
+   "kind": "producer",
+   "degrees": 2,
+   "via": [
+    "fam-the-rites"
+   ]
+  },
+  {
+   "id": "fig-p-discent",
+   "name": "Discent",
+   "kind": "producer",
+   "degrees": 2,
+   "via": [
+    "fam-the-rites"
+   ]
+  },
+  {
+   "id": "fig-p-dix2",
+   "name": "DIX2",
+   "kind": "producer",
+   "degrees": 2,
+   "via": [
+    "fam-the-rites",
+    "fam-time"
+   ]
+  },
+  {
+   "id": "fig-p-doublemulti",
+   "name": "doublemulti",
+   "kind": "producer",
+   "degrees": 2,
+   "via": [
+    "fam-the-modes"
+   ]
+  },
+  {
+   "id": "fig-p-fiftyzeros",
+   "name": "fiftyzeros",
+   "kind": "producer",
+   "degrees": 2,
+   "via": [
+    "fam-vessels",
+    "fam-wards-and-the-spirit"
+   ]
+  },
+  {
+   "id": "fig-fish-narc",
+   "name": "Fish Narc",
+   "kind": "producer",
+   "degrees": 2,
+   "via": [
+    "fam-soul"
+   ]
+  },
+  {
+   "id": "fig-p-ginseng",
+   "name": "ginseng",
+   "kind": "producer",
+   "degrees": 2,
+   "via": [
+    "fam-keys"
+   ]
+  },
+  {
+   "id": "fig-p-ice-trouble",
+   "name": "ice trouble",
+   "kind": "producer",
+   "degrees": 2,
+   "via": [
+    "fam-vessels"
+   ]
+  },
+  {
+   "id": "fig-p-ilyagargod",
+   "name": "ilyagargod",
+   "kind": "producer",
+   "degrees": 2,
+   "via": [
+    "fam-the-modes"
+   ]
+  },
+  {
+   "id": "fig-p-itami",
+   "name": "itami リネン",
+   "kind": "producer",
+   "degrees": 2,
+   "via": [
+    "fam-the-rites"
+   ]
+  },
+  {
+   "id": "fig-jax",
+   "name": "JAX",
+   "kind": "collaborator",
+   "degrees": 2,
+   "via": [
+    "fam-dark",
+    "fam-journeys",
+    "fam-the-modes"
+   ]
+  },
+  {
+   "id": "fig-jo-e-dripp",
+   "name": "JO$E DRIPP",
+   "kind": "collaborator",
+   "degrees": 2,
+   "via": [
+    "fam-light"
+   ]
+  },
+  {
+   "id": "fig-p-josh-the-samurai",
+   "name": "Josh the Samurai",
+   "kind": "producer",
+   "degrees": 2,
+   "via": [
+    "fam-light",
+    "fam-soul"
+   ]
+  },
+  {
+   "id": "fig-p-k3nik",
+   "name": "k3nik",
+   "kind": "producer",
+   "degrees": 2,
+   "via": [
+    "fam-the-modes"
+   ]
+  },
+  {
+   "id": "fig-keyblayde808",
+   "name": "Keyblayde808",
+   "kind": "both",
+   "degrees": 2,
+   "via": [
+    "fam-light"
+   ]
+  },
+  {
+   "id": "fig-p-lil-biscuit",
+   "name": "lil biscuit",
+   "kind": "producer",
+   "degrees": 2,
+   "via": [
+    "fam-light",
+    "fam-the-castings"
+   ]
+  },
+  {
+   "id": "fig-lil-wintr",
+   "name": "Lil Wintr",
+   "kind": "collaborator",
+   "degrees": 2,
+   "via": [
+    "fam-keys"
+   ]
+  },
+  {
+   "id": "fig-p-lunarlad",
+   "name": "lunarlad",
+   "kind": "producer",
+   "degrees": 2,
+   "via": [
+    "fam-light"
+   ]
+  },
+  {
+   "id": "fig-marcelo",
+   "name": "Marcelo",
+   "kind": "collaborator",
+   "degrees": 2,
+   "via": [
+    "fam-keys"
+   ]
+  },
+  {
+   "id": "fig-max",
+   "name": "Max",
+   "kind": "collaborator",
+   "degrees": 2,
+   "via": [
+    "fam-the-modes"
+   ]
+  },
+  {
+   "id": "fig-max-ferrari",
+   "name": "Max Ferrari",
+   "kind": "collaborator",
+   "degrees": 2,
+   "via": [
+    "fam-dark",
+    "fam-the-modes",
+    "fam-the-rites"
+   ]
+  },
+  {
+   "id": "fig-p-naxi",
+   "name": "NaXi",
+   "kind": "producer",
+   "degrees": 2,
+   "via": [
+    "fam-the-modes"
+   ]
+  },
+  {
+   "id": "fig-p-odece",
+   "name": "odece",
+   "kind": "producer",
+   "degrees": 2,
+   "via": [
+    "fam-fire-and-water",
+    "fam-light"
+   ]
+  },
+  {
+   "id": "fig-p-paris-pas-rigolo",
+   "name": "paris pas rigolo",
+   "kind": "producer",
+   "degrees": 2,
+   "via": [
+    "fam-fire-and-water",
+    "fam-light"
+   ]
+  },
+  {
+   "id": "fig-p-phantasie",
+   "name": "phantasie",
+   "kind": "producer",
+   "degrees": 2,
+   "via": [
+    "fam-the-cold"
+   ]
+  },
+  {
+   "id": "fig-p-pinkcat",
+   "name": "pinkcat",
+   "kind": "producer",
+   "degrees": 2,
+   "via": [
+    "fam-the-modes"
+   ]
+  },
+  {
+   "id": "fig-pvscale",
+   "name": "pvscale",
+   "kind": "producer",
+   "degrees": 2,
+   "via": [
+    "fam-the-cold"
+   ]
+  },
+  {
+   "id": "fig-p-rawman",
+   "name": "Rawman",
+   "kind": "producer",
+   "degrees": 2,
+   "via": [
+    "fam-journeys"
+   ]
+  },
+  {
+   "id": "fig-p-ridicholas",
+   "name": "Ridicholas",
+   "kind": "producer",
+   "degrees": 2,
+   "via": [
+    "fam-time"
+   ]
+  },
+  {
+   "id": "fig-p-rizi",
+   "name": "Rizi",
+   "kind": "producer",
+   "degrees": 2,
+   "via": [
+    "fam-dark"
+   ]
+  },
+  {
+   "id": "fig-p-runawway",
+   "name": "runawway",
+   "kind": "producer",
+   "degrees": 2,
+   "via": [
+    "fam-the-modes"
+   ]
+  },
+  {
+   "id": "fig-p-suli",
+   "name": "suli",
+   "kind": "producer",
+   "degrees": 2,
+   "via": [
+    "fam-the-rites"
+   ]
+  },
+  {
+   "id": "fig-p-t-n-c",
+   "name": "T.N.C",
+   "kind": "producer",
+   "degrees": 2,
+   "via": [
+    "fam-lucid-states"
+   ]
+  },
+  {
+   "id": "fig-p-tundra-beats",
+   "name": "Tundra Beats",
+   "kind": "producer",
+   "degrees": 2,
+   "via": [
+    "fam-light"
+   ]
+  },
+  {
+   "id": "fig-vetty",
+   "name": "Vetty",
+   "kind": "collaborator",
+   "degrees": 2,
+   "via": [
+    "fam-the-modes"
+   ]
+  },
+  {
+   "id": "fig-p-waynn",
+   "name": "waynn",
+   "kind": "producer",
+   "degrees": 2,
+   "via": [
+    "fam-the-pack"
+   ]
+  },
+  {
+   "id": "fig-p-wedreaming",
+   "name": "WeDreaming",
+   "kind": "producer",
+   "degrees": 2,
+   "via": [
+    "fam-the-rites"
+   ]
+  },
+  {
+   "id": "fig-p-wellfed",
+   "name": "wellfed",
+   "kind": "producer",
+   "degrees": 2,
+   "via": [
+    "fam-dark",
+    "fam-power"
+   ]
+  },
+  {
+   "id": "fig-p-xtravulous",
+   "name": "Xtravulous",
+   "kind": "producer",
+   "degrees": 2,
+   "via": [
+    "fam-light"
+   ]
+  },
+  {
+   "id": "fig-p-y-axis",
+   "name": "y axis",
+   "kind": "producer",
+   "degrees": 2,
+   "via": [
+    "fam-light"
+   ]
+  },
+  {
+   "id": "fig-p-yukio",
+   "name": "Yukio",
+   "kind": "producer",
+   "degrees": 2,
+   "via": [
+    "fam-lucid-states"
+   ]
+  },
+  {
+   "id": "fig-p-yung-skah",
+   "name": "Yung Skah",
+   "kind": "producer",
+   "degrees": 2,
+   "via": [
+    "fam-the-cold"
+   ]
+  },
+  {
+   "id": "fig-yung-vetta",
+   "name": "Yung Vetta",
+   "kind": "collaborator",
+   "degrees": 2,
+   "via": [
+    "fam-dark",
+    "fam-the-modes",
+    "fam-the-rites"
+   ]
+  },
+  {
+   "id": "fig-p-yungskah",
+   "name": "YungSkah",
+   "kind": "producer",
+   "degrees": 2,
+   "via": [
+    "fam-journeys"
+   ]
+  }
+ ],
+ "insights": {
+  "most_connected_family": {
+   "id": "fam-the-rites",
+   "slug": "the-rites",
+   "name": "The Rites",
+   "page": "codex/the-rites.html",
+   "figure_count": 11
+  },
+  "most_connected_figure": {
+   "id": "fig-yung-vetta",
+   "name": "Yung Vetta",
+   "kind": "collaborator",
+   "page": "circle/yung-vetta.html",
+   "family_count": 3,
+   "families": [
+    "dark",
+    "the-modes",
+    "the-rites"
+   ]
+  },
+  "largest_bridge": {
+   "a_slug": "the-modes",
+   "b_slug": "dark",
+   "a_name": "The Modes",
+   "b_name": "Dark",
+   "weight": 3,
+   "shared_figures": [
+    "JAX",
+    "Max Ferrari",
+    "Yung Vetta"
+   ]
+  },
+  "isolated_families": [
+   "keys",
+   "lucid-states",
+   "the-cold",
+   "the-pack"
+  ],
+  "family_count": 16,
+  "figure_count": 53,
+  "collaborator_figures": 10,
+  "producer_figures": 44,
+  "overlap_pairs": 11,
+  "node_count": 70,
+  "edge_count": 87
+ }
+}

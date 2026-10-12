@@ -403,6 +403,7 @@ def family_page(d, prev_s, next_s):
         </nav>
         <ul class="story-list">
           <li><a href="../decoder.html">The decoder</a> &mdash; speak a word; the archive answers.</li>
+          <li><a href="../codex-network.html#family-{d['slug']}">Codex network</a> &mdash; this family mapped against the other fifteen.</li>
           {era_links}
           <li><a href="../sessions-explorer.html">Sessions explorer</a> &mdash; the 61 upload sessions on one timeline.</li>
           <li><a href="../milestone-race.html">Milestone race</a> &mdash; approaching play-count milestones as races, plus the summit chase.</li>

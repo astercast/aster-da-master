@@ -1,8 +1,14 @@
 {
   "generated": "2026-10-11",
   "method": "Parsed from `git log main`: every commit becomes an entry. The site documenting its own becoming.",
-  "entry_count": 57,
+  "entry_count": 58,
   "entries": [
+    {
+      "hash": "a02fc3f",
+      "date": "2026-10-12",
+      "message": "Wave 26: Codex network explorer — family graph, connect-the-dots pathfinder, degrees of separation (endpoint #21 codex-network)",
+      "files_changed": 43
+    },
     {
       "hash": "b638143",
       "date": "2026-10-12",

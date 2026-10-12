@@ -215,6 +215,16 @@
                 <li>Mirrors the compare / deepest-cuts / scrubber sections of <code>sessions-explorer.html</code>.</li>
               </ol>
             </article>
+            <article class="recipe-card" aria-labelledby="rc-cxnet">
+              <h4 id="rc-cxnet"><a href="skills/codex-pathfinder.md">codex-pathfinder</a></h4>
+              <p>Trace the shortest connection between any two codex figures, or read degrees of separation from Aster.</p>
+              <ol class="recipe-seq">
+                <li><code>GET api/v1/codex-network.json</code> — read <code>method</code> first (collaborators = title-credit rule; producers = title-parsed, as credited verbatim).</li>
+                <li>Path: BFS over <code>edges[]</code> (undirected) between node ids; report each hop with the edge <code>label</code>. The codex-only mode forbids the <code>aster</code> hub — "no path found" is a real answer for isolates.</li>
+                <li>Degrees: read <code>degrees[]</code> — every family is 1 degree, every figure 2 via the listed carrying families; quote the <code>via</code> families.</li>
+                <li>Mirrors the pathfinder / degrees sections of <code>codex-network.html</code>.</li>
+              </ol>
+            </article>
           </div>
           <p class="chart-sub">Full playbooks live in <code>skills/</code> (registry: <code>skills/index.json</code>). Every skill is: Use when / Inputs / Procedure / Worked example / API references / Pitfalls.</p>
         </div>

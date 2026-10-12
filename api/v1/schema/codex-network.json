@@ -1,0 +1,434 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "codex-network",
+  "description": "Codex relationship graph: the 16 word families as nodes, shared collaborators/producers as edges, BFS degrees of separation from Aster, the family-overlap graph, and the connect-the-dots shortest-path data.",
+  "type": "object",
+  "required": [
+    "version",
+    "generated",
+    "plays_snapshot",
+    "method",
+    "artist",
+    "families",
+    "figures",
+    "nodes",
+    "edges",
+    "family_overlap",
+    "degrees",
+    "insights"
+  ],
+  "properties": {
+    "version": {
+      "type": "string"
+    },
+    "generated": {
+      "type": "string"
+    },
+    "plays_snapshot": {
+      "type": "string"
+    },
+    "method": {
+      "type": "string"
+    },
+    "artist": {
+      "type": "object",
+      "required": [
+        "id",
+        "name",
+        "page"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "page": {
+          "type": "string"
+        }
+      }
+    },
+    "families": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "slug",
+          "name",
+          "page",
+          "track_count",
+          "total_plays",
+          "words",
+          "decoded_status"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "slug": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "page": {
+            "type": "string"
+          },
+          "track_count": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "total_plays": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "words": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "decoded_status": {
+            "enum": [
+              "stated",
+              "unknown"
+            ]
+          }
+        }
+      }
+    },
+    "figures": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "kind",
+          "page",
+          "family_count",
+          "families"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "kind": {
+            "enum": [
+              "collaborator",
+              "producer",
+              "both"
+            ]
+          },
+          "page": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "family_count": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "families": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "family_id",
+                "family_slug",
+                "family_name",
+                "family_page",
+                "transmissions",
+                "titles"
+              ],
+              "properties": {
+                "family_id": {
+                  "type": "string"
+                },
+                "family_slug": {
+                  "type": "string"
+                },
+                "family_name": {
+                  "type": "string"
+                },
+                "family_page": {
+                  "type": "string"
+                },
+                "transmissions": {
+                  "type": "integer",
+                  "minimum": 1
+                },
+                "titles": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "nodes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "kind",
+          "name",
+          "page",
+          "x",
+          "y",
+          "r",
+          "blurb"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "kind": {
+            "enum": [
+              "artist",
+              "family",
+              "collaborator",
+              "producer",
+              "both"
+            ]
+          },
+          "name": {
+            "type": "string"
+          },
+          "page": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "x": {
+            "type": "number"
+          },
+          "y": {
+            "type": "number"
+          },
+          "r": {
+            "type": "number"
+          },
+          "blurb": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "edges": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "a",
+          "b",
+          "weight",
+          "kind",
+          "label",
+          "titles"
+        ],
+        "properties": {
+          "a": {
+            "type": "string"
+          },
+          "b": {
+            "type": "string"
+          },
+          "weight": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "kind": {
+            "enum": [
+              "aster-family",
+              "family-figure",
+              "co-credit"
+            ]
+          },
+          "label": {
+            "type": "string"
+          },
+          "titles": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "family_overlap": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "a_id",
+          "b_id",
+          "a_slug",
+          "b_slug",
+          "a_name",
+          "b_name",
+          "a_page",
+          "b_page",
+          "weight",
+          "shared_figures"
+        ],
+        "properties": {
+          "a_id": {
+            "type": "string"
+          },
+          "b_id": {
+            "type": "string"
+          },
+          "a_slug": {
+            "type": "string"
+          },
+          "b_slug": {
+            "type": "string"
+          },
+          "a_name": {
+            "type": "string"
+          },
+          "b_name": {
+            "type": "string"
+          },
+          "a_page": {
+            "type": "string"
+          },
+          "b_page": {
+            "type": "string"
+          },
+          "weight": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "shared_figures": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "id",
+                "name",
+                "kind"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "kind": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "degrees": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "kind",
+          "degrees",
+          "via"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "kind": {
+            "type": "string"
+          },
+          "degrees": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "via": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "insights": {
+      "type": "object",
+      "required": [
+        "most_connected_family",
+        "most_connected_figure",
+        "largest_bridge",
+        "isolated_families",
+        "family_count",
+        "figure_count",
+        "collaborator_figures",
+        "producer_figures",
+        "overlap_pairs",
+        "node_count",
+        "edge_count"
+      ],
+      "properties": {
+        "most_connected_family": {
+          "type": "object"
+        },
+        "most_connected_figure": {
+          "type": "object"
+        },
+        "largest_bridge": {
+          "type": [
+            "object",
+            "null"
+          ]
+        },
+        "isolated_families": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "family_count": {
+          "type": "integer"
+        },
+        "figure_count": {
+          "type": "integer"
+        },
+        "collaborator_figures": {
+          "type": "integer"
+        },
+        "producer_figures": {
+          "type": "integer"
+        },
+        "overlap_pairs": {
+          "type": "integer"
+        },
+        "node_count": {
+          "type": "integer"
+        },
+        "edge_count": {
+          "type": "integer"
+        }
+      }
+    }
+  }
+}

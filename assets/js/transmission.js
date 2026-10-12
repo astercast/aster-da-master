@@ -247,7 +247,9 @@
       '<blockquote class="tx-signal"><span class="sig-lab">The signal</span>' +
       "Sixteen word families run through the vault like watermarks — the mode-words, the rites, the light. " +
       "Tallied, never translated: the archive assigns no meaning the index doesn't state.</blockquote>" +
-      '<div class="tx-block"><h3>Loudest families by transmissions</h3><ul>' + rows + "</ul></div>";
+      '<div class="tx-block"><h3>Loudest families by transmissions</h3><ul>' + rows + "</ul></div>" +
+      '<p class="tx-meta"><a href="codex-network.html">Map the families →</a> ' +
+      "the sixteen families as a network: shared voices as edges, degrees of separation from Aster, and a connect-the-dots pathfinder.</p>";
   }
 
   /* ---------- stop assembly ---------- */
