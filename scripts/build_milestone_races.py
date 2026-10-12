@@ -78,7 +78,7 @@ MILESTONES = json.loads((API / "milestones.json").read_text())["milestones"]
 SC = json.loads((API / "session-clusters.json").read_text())
 ERAS = json.loads((API / "eras.json").read_text())["eras"]
 
-VERSION = "0.18.0"  # wave 35: data version 0.18.0 (verified-data expansion)
+VERSION = "0.19.0"  # wave 35: data version 0.18.0 (verified-data expansion)
 SNAPSHOT = "2026-10-11"
 SNAP = datetime.date(2026, 10, 11)
 

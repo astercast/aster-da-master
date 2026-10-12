@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Signal 2.0 — upload watcher &amp; date board — Aster da Master</title>
+  <meta name="description" content="The Signal 2.0: the SoundCloud upload watcher for the Aster da Master vault — new-upload detection, play-count movers, milestone crossings, and a hand-verified live-date board for the scene (Fish Narc's 'Uncle' week, capoxxo's October support dates).">
+  <link rel="preload" href="assets/fonts/anton-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/css/fonts.css">
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/motifs.css">
+  <style>
+    .watch-chip { display: inline-block; font-family: var(--font-mono); font-size: var(--fs-micro);
+      letter-spacing: .08em; text-transform: uppercase; padding: .15em .6em;
+      border: 1px solid var(--line); border-radius: var(--radius-s); color: var(--ink-dim); white-space: nowrap; }
+    .watch-chip.is-verified { color: var(--neon); border-color: var(--neon-dim); }
+    .watch-chip.is-single { color: var(--gold-bright); border-color: var(--gold); }
+    .watch-chip.is-unconfirmed { color: var(--muted); }
+    .watch-chip.is-when { color: var(--ink); border-color: var(--line); text-transform: none; letter-spacing: 0; }
+    .watch-table { width: 100%; border-collapse: collapse; font-family: var(--font-mono); font-size: var(--fs-small); }
+    .watch-table th, .watch-table td { text-align: left; padding: .45em .6em; border-bottom: 1px solid var(--line-soft); }
+    .watch-table th { color: var(--ink-dim); font-weight: 500; text-transform: uppercase; letter-spacing: .08em; font-size: var(--fs-micro); }
+    .watch-table td.num, .watch-table th.num { text-align: right; font-variant-numeric: tabular-nums; }
+    .watch-delta { color: var(--neon); }
+    .date-card { border: 1px solid var(--line-soft); border-radius: var(--radius-m);
+      padding: 1rem 1.1rem; margin-bottom: .8rem; background: var(--panel); }
+    .date-card h4 { margin: 0 0 .35rem; }
+    .date-meta { font-family: var(--font-mono); font-size: var(--fs-small); color: var(--ink-dim); margin: .2rem 0; }
+    .date-note { margin: .45rem 0 0; }
+    .date-disc { margin: .45rem 0 0; color: var(--gold-bright); }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container header-bar">
+      <a class="brand" href="./" aria-label="Aster da Master home">
+        <span class="brand-mark" aria-hidden="true">A&#10022;</span>
+        <span>ASTER DA MASTER</span>
+      </a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="./#discography">Discography</a>
+        <a href="releases/">Releases</a>
+        <a href="years/">Years</a>
+        <a href="circle/">Circle</a>
+        <a href="timeline.html">Timeline</a>
+        <a href="chronicle.html">Chronicle</a>
+        <a href="transmission.html">Transmission</a>
+        <a href="network.html">Network</a>
+        <a href="milestone-race.html">Race</a>
+        <a href="decoder.html">Decoder</a>
+        <a href="api-playground.html">API</a>
+        <a href="agents.html">Agents</a>
+        <a href="method.html">Method</a>
+        <a href="trilogy.html">Trilogy</a>
+        <a href="sessions.html">Sessions</a>
+        <a href="changelog.html">Changelog</a>
+        <a href="glance.html">Glance</a>
+        <a href="press-kit.html">Press kit</a>
+      </nav>
+      <details class="mnav">
+        <summary><span class="bars" aria-hidden="true"><i></i><i></i><i></i></span>Menu</summary>
+        <nav class="mnav-panel" aria-label="Mobile">
+        <a href="./#discography">Discography</a>
+        <a href="releases/">Releases</a>
+        <a href="years/">Years</a>
+        <a href="circle/">Circle</a>
+        <a href="timeline.html">Timeline</a>
+        <a href="chronicle.html">Chronicle</a>
+        <a href="transmission.html">Transmission</a>
+        <a href="network.html">Network</a>
+        <a href="milestone-race.html">Race</a>
+        <a href="decoder.html">Decoder</a>
+        <a href="api-playground.html">API</a>
+        <a href="agents.html">Agents</a>
+        <a href="method.html">Method</a>
+        <a href="trilogy.html">Trilogy</a>
+        <a href="sessions.html">Sessions</a>
+        <a href="changelog.html">Changelog</a>
+        <a href="glance.html">Glance</a>
+        <a href="press-kit.html">Press kit</a>
+        </nav>
+      </details>
+    </div>
+  </header>
+  <main id="main">
+    <div class="container">
+
+      <nav class="crumbs" aria-label="Breadcrumb">
+        <a href="./">Home</a> / <span aria-current="page">The Signal</span>
+      </nav>
+
+      <section class="section" aria-labelledby="sig-h">
+        <span class="kicker"><span class="numeral">&#10022;</span>the signal 2.0 — upload watcher</span>
+        <h2 id="sig-h">The Signal</h2>
+        <p class="chart-sub">The station keeps a watch on its own frequency. Every capture of the SoundCloud vault is diffed against the one before it: a title that was not there is a new upload, a count that moved is a mover, a round number crossed is a crossing. The same sweep checks the scene's live dates by hand — what is verified, what rests on one source, and what could not be confirmed, each labeled as exactly that.</p>
+        <p class="signal-row"><span class="api-badge" id="watch-badge" data-api-state="waking" role="status" aria-live="polite"></span></p>
+        <p class="chart-sub" id="watch-fresh">Static watch file — the last published captures stand below.</p>
+        <div class="stat-grid">
+          <div class="stat"><div class="stat-value" data-watch="tracks">185</div><div class="stat-label">vault tracks watched</div></div>
+          <div class="stat"><div class="stat-value" data-watch="plays">257,396</div><div class="stat-label">plays at latest capture</div></div>
+          <div class="stat"><div class="stat-value" data-watch="new">0</div><div class="stat-label">new uploads between captures</div></div>
+          <div class="stat"><div class="stat-value" data-watch="newest">2026-10-02</div><div class="stat-label">newest upload on record</div></div>
+        </div>
+        <nav class="year-pager" aria-label="On this page">
+          <a class="btn btn-sm" href="#watch-log">Read the watch log</a>
+          <a class="btn btn-sm" href="#live-dates">The date board</a>
+          <a class="btn btn-sm" href="#method">How the watch works</a>
+        </nav>
+      </section>
+
+      <section class="section" aria-labelledby="wl-h" id="watch-log">
+        <span class="kicker"><span class="numeral">&#10022;</span>the watch log</span>
+        <h3 id="wl-h">Between the last two captures</h3>
+        <p class="chart-sub">Previous capture: the 2026-10-11 research pass behind <code>data/v1/artist.json</code>. Latest capture: the Signal stand-up pull, 2026-10-11 22:11 UTC, via SoundCloud api-v2. Two captures inside one research day — the honest result is a quiet wire and small numbers, stated as they are.</p>
+
+        <h4>New uploads</h4>
+        <div id="watch-new">
+          <p class="chart-sub">None. No title appears in the latest capture that was not in the previous one — and none vanished. The newest upload on record is &#x27;turn up w me (prod_timmy)&#x27;, uploaded 2026-10-02. The next new title the vault produces will surface here on the following capture.</p>
+        </div>
+
+        <h4>Play-count movers</h4>
+        <table class="watch-table" id="watch-movers">
+          <thead><tr><th scope="col">Transmission</th><th scope="col" class="num">Before</th><th scope="col" class="num">After</th><th scope="col" class="num">Change</th><th scope="col" class="num">Per day</th></tr></thead>
+          <tbody>
+            <tr><td>Take Me (prod. Em Klebold)</td><td class="num">30,088</td><td class="num">30,089</td><td class="num watch-delta">+1</td><td class="num">—</td></tr>
+            <tr><td>candy w/ capoxxo(prod. razorwrist)</td><td class="num">11,587</td><td class="num">11,588</td><td class="num watch-delta">+1</td><td class="num">—</td></tr>
+          </tbody>
+        </table>
+        <p class="chart-sub">Per-day rates are only reported when two captures sit at least 24 hours apart. These two do not, so the column stays empty rather than inventing a rate from same-day noise. Every other watched track — 183 of 185 — held its count exactly.</p>
+
+        <h4>Milestone crossings</h4>
+        <p class="chart-sub">None between these captures. The board below is who reaches a round number next, from the standing milestone watch:</p>
+        <table class="watch-table" id="watch-nextup">
+          <thead><tr><th scope="col">Transmission</th><th scope="col" class="num">Plays</th><th scope="col" class="num">Target</th><th scope="col" class="num">Needed</th></tr></thead>
+          <tbody>
+            <tr><td><a href="releases/outro-off-beat-ft-yung-vetta-prod-addy.html">[outro] Off Beat ft. Yung Vetta (prod. Addy)</a></td><td class="num">935</td><td class="num">1,000</td><td class="num">65</td></tr>
+            <tr><td><a href="releases/lucid-boi-prod-t-n-c.html">Lucid Boi (prod. $ T.N.C $)</a></td><td class="num">918</td><td class="num">1,000</td><td class="num">82</td></tr>
+            <tr><td><a href="releases/master-key-ft-lil-wintr-x-marcelo-prod-ginseng.html">master key ft. Lil Wintr x Marcelo (prod. ginseng)</a></td><td class="num">9,615</td><td class="num">10,000</td><td class="num">385</td></tr>
+            <tr><td><a href="releases/when-the-world-gets-colder-prod-brokn.html">When the World Gets Colder (prod. Brokn)</a></td><td class="num">9,535</td><td class="num">10,000</td><td class="num">465</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="section" aria-labelledby="ld-h" id="live-dates">
+        <span class="kicker"><span class="numeral">&#10022;</span>live-date verification — swept 2026-10-12</span>
+        <h3 id="ld-h">The date board</h3>
+        <p class="chart-sub">Release week for Fish Narc&#x27;s <em>Uncle</em> and capoxxo&#x27;s first verifiable live appearances, each checked against the web on 2026-10-12. <strong>Verified</strong> means a primary listing (venue or ticketing) or two independent sources carry the same date, venue and time. <strong>Single-source</strong> means exactly one source carries it. Discrepancies are printed, not smoothed over.</p>
+        <div id="date-board">
+          <article class="date-card">
+            <h4>Fish Narc — &#x27;Uncle&#x27; listening party <span class="watch-chip is-verified">Verified</span> <span class="watch-chip is-when" data-when="2026-10-15"></span></h4>
+            <p class="date-meta">Thursday, Oct 15, 2026 · 7:00 PM PDT · Permanent Records Roadhouse, 1906 Cypress Avenue, Los Angeles, CA · Free, RSVP</p>
+            <p class="date-note">Bandsintown independently corroborates the date, venue and start time first recorded from the venue calendar. The night before the <em>Uncle</em> release.</p>
+            <p class="date-disc">Open conflict: JamBase&#x27;s schedule for the same venue and evening lists Sam Buck (9:00 PM) and does not list Fish Narc. A shared bill or a listing lag would explain it; the sweep records the conflict instead of resolving it. The free/RSVP detail rests on the venue calendar alone.</p>
+            <p class="date-meta">Sources: <a href="https://roadhouse.permanentrecordsla.com/" target="_blank" rel="noopener">venue calendar</a> · <a href="https://www.bandsintown.com/e/1040142530-fish-narc-at-permanent-records-roadhouse?came_from=253&amp;utm_medium=web&amp;utm_source=city_page&amp;utm_campaign=just_announced" target="_blank" rel="noopener">Bandsintown listing</a></p>
+          </article>
+          <article class="date-card">
+            <h4>Fish Narc — &#x27;Uncle&#x27;, fifth solo LP (K Records, KLP313) <span class="watch-chip is-verified">Verified</span> <span class="watch-chip is-when" data-when="2026-10-16"></span></h4>
+            <p class="date-meta">Friday, Oct 16, 2026 · release date</p>
+            <p class="date-note">Five independent listings still carry Oct 16 as upcoming as of the sweep. No early release, no date change, no third single found. The archive&#x27;s watch stays &#x27;announced&#x27; until a post-release pass confirms it is out.</p>
+            <p class="date-meta">Sources: <a href="https://stereogum.com/2508537/fish-narc-announces-new-album-uncle-hear-much-less-me/music" target="_blank" rel="noopener">Stereogum</a> · <a href="https://www.altpress.com/2026-album-releases/" target="_blank" rel="noopener">AltPress</a> · <a href="http://consequence.net/upcoming-releases/" target="_blank" rel="noopener">Consequence</a> · <a href="https://upcomingvinyl.com/artists/fish-narc" target="_blank" rel="noopener">upcomingvinyl</a> · <a href="https://releasewave.com/artists/fish-narc" target="_blank" rel="noopener">Release Wave</a></p>
+          </article>
+          <article class="date-card">
+            <h4>Korpsebunny — Seattle (w/ Capoxxo and mayh3mp) <span class="watch-chip is-verified">Verified</span> <span class="watch-chip is-when" data-when="2026-10-28"></span></h4>
+            <p class="date-meta">Wednesday, Oct 28, 2026 · doors 7:30 PM, show 7:30–11:30 PM · Arch Rivals Studios, 116 S Washington St, Seattle, WA · $25.63 · all ages</p>
+            <p class="date-note">Primary listing opened directly in this sweep. Bill: Korpsebunny, capoxxo, mayh3mp, Scarly — hosted by Heady Presents. capoxxo plays a support slot; he is not the headliner.</p>
+            <p class="date-meta">Source: <a href="https://www.eventbrite.com/e/korpsebunny-seattle-w-capoxxo-and-mayh3mp-tickets-2002391650329" target="_blank" rel="noopener">Eventbrite listing</a></p>
+          </article>
+          <article class="date-card">
+            <h4>Korpsebunny — PDX (w/ Capoxxo, mayh3mp) <span class="watch-chip is-verified">Verified</span> <span class="watch-chip is-when" data-when="2026-10-29"></span></h4>
+            <p class="date-meta">Thursday, Oct 29, 2026 · doors 7:00 PM, show 7:30–11:30 PM · 211 SE Madison St, Portland, OR · $28.52 · all ages</p>
+            <p class="date-note">Primary listing opened directly in this sweep. Bill adds Eunhae, plus DJ sets from B3xtac33, DJ Shortstop and Sora Boyd. The room is listed by street address only — no venue name on the listing.</p>
+            <p class="date-disc">Standing discrepancy: Songkick still reads &#x27;off tour — no upcoming concerts&#x27; for capoxxo. Headliner trackers do not carry support slots; the Eventbrite listing is the primary source and stands.</p>
+            <p class="date-meta">Sources: <a href="https://www.eventbrite.com/e/korpsebunny-pdx-w-capoxxo-mayh3mp-tickets-2002981653043" target="_blank" rel="noopener">Eventbrite listing</a> · <a href="https://www.songkick.com/artists/9749264-capoxxo" target="_blank" rel="noopener">Songkick</a></p>
+          </article>
+          <article class="date-card">
+            <h4>Fish Narc — Los Angeles, Gold Diggers <span class="watch-chip is-verified">Verified</span> <span class="watch-chip is-when" data-when="2026-10-29"></span></h4>
+            <p class="date-meta">Thursday, Oct 29, 2026 · Gold Diggers, Los Angeles, CA · with Sepe</p>
+            <p class="date-note">Two independent editorial sources carry the date and venue. No primary ticket listing was opened in this sweep, so doors time and price stay unrecorded rather than guessed. Same night capoxxo plays Portland — two archive orbits, one evening.</p>
+            <p class="date-meta">Sources: <a href="https://stereogum.com/2508537/fish-narc-announces-new-album-uncle-hear-much-less-me/music" target="_blank" rel="noopener">Stereogum tour list</a> · <a href="https://riffmagazine.com/tuesday-tracks/the-hails-20260922/" target="_blank" rel="noopener">RIFF Magazine</a></p>
+          </article>
+          <article class="date-card">
+            <h4>Fish Narc — Kingston, Tubby&#x27;s <span class="watch-chip is-single">Single-source</span> <span class="watch-chip is-when" data-when="2026-11-06"></span></h4>
+            <p class="date-meta">Friday, Nov 6, 2026 · Tubby&#x27;s, Kingston, NY</p>
+            <p class="date-note">Carried by the Stereogum announcement&#x27;s tour list only, in every pass so far. No venue listing opened yet.</p>
+            <p class="date-meta">Source: <a href="https://stereogum.com/2508537/fish-narc-announces-new-album-uncle-hear-much-less-me/music" target="_blank" rel="noopener">Stereogum tour list</a></p>
+          </article>
+          <article class="date-card">
+            <h4>Fish Narc — Ridgewood, Stone Circle Theatre <span class="watch-chip is-single">Single-source</span> <span class="watch-chip is-when" data-when="2026-11-07"></span></h4>
+            <p class="date-meta">Saturday, Nov 7, 2026 · Stone Circle Theatre, Ridgewood, NY · with Loosey</p>
+            <p class="date-note">Carried by the Stereogum announcement&#x27;s tour list only, in every pass so far. No venue listing opened yet.</p>
+            <p class="date-meta">Source: <a href="https://stereogum.com/2508537/fish-narc-announces-new-album-uncle-hear-much-less-me/music" target="_blank" rel="noopener">Stereogum tour list</a></p>
+          </article>
+        </div>
+        <details>
+          <summary>Not confirmed — leads the sweep could not close</summary>
+          <ul class="fact-list">
+            <li><strong>&#x27;Uncle&#x27; Europe leg</strong> — upcomingvinyl&#x27;s promo copy mentions an autumn US+Europe tour with a full band. No European dates, cities or venues have been published anywhere the sweep can reach. A lead, not a date.</li>
+            <li><strong>A third &#x27;Uncle&#x27; single</strong> — two singles are out (&#x27;Much Less Me&#x27;, &#x27;Big Dumb World&#x27;). No third single, advance review or release-week interview surfaced — normal four days out, and recorded so the next sweep can tell &#x27;still none&#x27; from &#x27;not checked&#x27;.</li>
+          </ul>
+        </details>
+        <p class="chart-sub">Full board as data: <a href="data/v1/live-dates.json"><code>data/v1/live-dates.json</code></a> · the <em>Uncle</em> watch in full: <a href="scene/fish-narc-uncle.html">scene/fish-narc-uncle.html</a> · capoxxo&#x27;s year: <a href="scene/capoxxo-2026.html">scene/capoxxo-2026.html</a>.</p>
+      </section>
+
+      <section class="section" aria-labelledby="wm-h" id="method">
+        <span class="kicker"><span class="numeral">&#10022;</span>method</span>
+        <h3 id="wm-h">How the watch works</h3>
+        <ul class="fact-list">
+          <li><strong>Detection is keyed, not string-matched.</strong> Tracks are keyed by normalized title — case, apostrophe style and whitespace unified — or by permalink once a live refresh captures one. The first build of this watcher keyed on title-plus-date and flagged 121 of 185 tracks as new; upload dates drift between capture methods (the research capture runs a day behind api-v2 for most tracks, months for a few), so dates are display data, never identity.</li>
+          <li><strong>Counts are captures, not a feed.</strong> Play counts move between captures; nothing here is live. The daily cron (<code>GET /api/cron/signal</code>) pulls a fresh capture, diffs it, and rewrites <code>data/v1/signal-watch.json</code> only when something changed. This page reads that file, or <code>GET /api/watch</code> where the functions are deployed.</li>
+          <li><strong>Rates need a real gap.</strong> A per-day figure is plain division over the time between two captures, reported only when that gap is at least 24 hours. Estimates, never predictions.</li>
+          <li><strong>The date board is research, not a scrape.</strong> A person checks each date against primary listings and independent coverage, and the board keeps the disagreements on the record. It is re-swept by hand; <code>checked_at</code> says when.</li>
+          <li><strong>Titles and metadata only.</strong> The watch deals in titles, dates, counts and venues. Nothing else is carried, quoted or inferred.</li>
+        </ul>
+        <p class="chart-sub">Watch data: <a href="data/v1/signal-watch.json"><code>data/v1/signal-watch.json</code></a> · live endpoint: <code>GET /api/watch</code> (kinds: <code>new</code>, <code>movers</code>, <code>crossings</code>, <code>dates</code>) · the numbers dashboard: <a href="glance.html">the 60-second glance</a> · the journey: <a href="transmission.html">the Transmission</a>.</p>
+      </section>
+
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <p>&copy; 2026 ASTER DA MASTER &mdash; ALL SIGNALS RESERVED</p>
+      <nav aria-label="Footer">
+        <a href="./">Home</a>
+        <a href="releases/">Releases</a>
+        <a href="years/">Years</a>
+        <a href="circle/">Circle</a>
+        <a href="timeline.html">Timeline</a>
+        <a href="chronicle.html">Chronicle</a>
+        <a href="transmission.html">Transmission</a>
+        <a href="network.html">Network</a>
+        <a href="milestone-race.html">Race</a>
+        <a href="decoder.html">Decoder</a>
+        <a href="api-playground.html">API</a>
+        <a href="agents.html">Agents</a>
+        <a href="method.html">Method</a>
+        <a href="trilogy.html">Trilogy</a>
+        <a href="sessions.html">Sessions</a>
+        <a href="changelog.html">Changelog</a>
+        <a href="glance.html">Glance</a>
+        <a href="press-kit.html">Press kit</a>
+      </nav>
+    </div>
+  </footer>
+  <script src="assets/js/api-client.js"></script>
+  <script src="assets/js/signal-page.js"></script>
+  <script src="assets/js/identity.js"></script>
+</body>
+</html>

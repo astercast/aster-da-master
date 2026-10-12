@@ -1,5 +1,5 @@
 {
-  "version": "0.18.0",
+  "version": "0.19.0",
   "generated": "2026-10-11",
   "method": "Computed from data/artist.json: chronological ordering of verified upload dates, per-day counts, gap analysis, and cumulative play counts from the 2026-10-11 snapshot. Every milestone is a data fact; no narrative is invented.",
   "plays_snapshot": "2026-10-11",

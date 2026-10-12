@@ -1,9 +1,9 @@
 {
  "name": "Aster da Master API",
- "version": "0.18.0",
+ "version": "0.19.0",
  "observed": "2026-10-11",
  "meta": {
-  "version": "0.18.0",
+  "version": "0.19.0",
   "generated": "2026-10-11T00:00:00Z",
   "base": "data/v1/",
   "auth": "none - static files; no keys, no rate limits"
@@ -22,7 +22,7 @@
    "description": "Manifest: every endpoint with description, schema URL, updated timestamp, record counts, and deprecation notes. Start here.",
    "schema": "data/v1/schema/index.json",
    "updated": "2026-10-11T00:00:00Z",
-   "records": 23,
+   "records": 25,
    "notes": "meta.version mirrors the top-level version field."
   },
   "artist": {
@@ -94,7 +94,7 @@
    "description": "Site construction history, generated from the git log.",
    "schema": "data/v1/schema/changelog.json",
    "updated": "2026-10-11T00:00:00Z",
-   "records": 105,
+   "records": 109,
    "notes": "A changelog built from git log cannot record its own sync commit (wave-15 convention, WAVELOG.md)."
   },
   "first-last": {
@@ -120,6 +120,22 @@
    "updated": "2026-10-11T00:00:00Z",
    "records": 1,
    "notes": ""
+  },
+  "signal-watch": {
+   "path": "data/v1/signal-watch.json",
+   "description": "The Signal 2.0 watch file: the latest SoundCloud capture diffed against the previous one - new uploads, play-count movers, milestone crossings, the next-up board, and the capture history. Written by the daily Signal cron (lib/signal-watch.js) and seeded from the two 2026-10-11 captures by scripts/build_signal_watch.py. Records = tracks watched.",
+   "schema": "data/v1/schema/signal-watch.json",
+   "updated": "2026-10-11T00:00:00Z",
+   "records": 185,
+   "notes": "Captures, not a live feed; per_day is null when two captures sit under 24 hours apart - a rate is never invented."
+  },
+  "live-dates": {
+   "path": "data/v1/live-dates.json",
+   "description": "The live-date verification board: scene events (Fish Narc's 'Uncle' release week, capoxxo's October 2026 support dates) each hand-checked against the web on the stated checked_at date, with a verified / single-source / unconfirmed status, sources, and discrepancies kept on the record. Records = dated events + unconfirmed leads.",
+   "schema": "data/v1/schema/live-dates.json",
+   "updated": "2026-10-11T00:00:00Z",
+   "records": 9,
+   "notes": "Research, not a scrape: re-swept by hand, never auto-updated; statuses are as of checked_at."
   },
   "transmission": {
    "path": "data/v1/transmission.json",

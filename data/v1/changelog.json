@@ -1,8 +1,32 @@
 {
   "generated": "2026-10-11",
   "method": "Parsed from `git log main`: every commit becomes an entry. The site documenting its own becoming.",
-  "entry_count": 105,
+  "entry_count": 109,
   "entries": [
+    {
+      "hash": "9826547",
+      "date": "2026-10-12",
+      "message": "LIVE_CHECKLIST: known-good status refreshed for Signal 2.0 (37/37 api tests, 19,851 links, data 0.19.0)",
+      "files_changed": 4
+    },
+    {
+      "hash": "da9a133",
+      "date": "2026-10-12",
+      "message": "changelog sync (post-validation)",
+      "files_changed": 3
+    },
+    {
+      "hash": "0569194",
+      "date": "2026-10-12",
+      "message": "Signal 2.0: upload watcher (keyed capture diffs, /api/watch, signal.html) + live-date verification sweep (Uncle week + capoxxo Oct 28/29) — data 0.19.0, 25 endpoints",
+      "files_changed": 72
+    },
+    {
+      "hash": "c26f74c",
+      "date": "2026-10-12",
+      "message": "changelog sync (post-validation)",
+      "files_changed": 3
+    },
     {
       "hash": "5d2511e",
       "date": "2026-10-12",

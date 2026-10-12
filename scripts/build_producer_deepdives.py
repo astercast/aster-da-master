@@ -65,7 +65,7 @@ from api_manifest import render_manifest  # noqa: E402
 API = ROOT / "data" / "v1"
 SESSIONS = ROOT / "data" / "sessions.json"
 
-VERSION = "0.18.0"  # wave 35: data version 0.18.0 (verified-data expansion)
+VERSION = "0.19.0"  # wave 35: data version 0.18.0 (verified-data expansion)
 SNAPSHOT = "2026-10-11"
 GENERATED = "2026-10-11T00:00:00Z"
 

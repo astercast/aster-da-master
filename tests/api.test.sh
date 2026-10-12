@@ -30,7 +30,7 @@ import json,sys
 e=json.load(sys.stdin); d=e['data']
 assert d['status'] in ('ok','degraded'), d['status']
 assert d['service']=='aster-signal'
-assert d['functions']==['health','stats','uploads','cron/signal'], d['functions']
+assert d['functions']==['health','stats','uploads','watch','cron/signal'], d['functions']
 assert set(d['checks'])=={'static_fallback_present','cron_secret_configured','github_token_configured'}
 \""
 
@@ -61,6 +61,36 @@ for t in d['top_tracks']:
 print('tracks_captured=%d total_plays=%d' % (d['tracks_captured'], d['total_plays']))
 \""
 
+# watch payload shape (Signal 2.0) ---------------------------------------------
+chk "watch envelope + shape" bash -c \
+  "curl -sf '$BASE/api/watch' | python3 -c \"
+import json,sys
+e=json.load(sys.stdin); d=e['data']
+assert d['kind']=='all'
+s=d['summary']
+assert s['tracks_watched']==185 and s['total_plays']>0
+assert isinstance(d['new_uploads'], list) and isinstance(d['movers'], list)
+assert isinstance(d['crossings'], list) and isinstance(d['next_up'], list)
+for m in d['movers']:
+    assert m['after']-m['before']==m['delta']
+    assert m['per_day'] is None or isinstance(m['per_day'], (int,float))
+assert d['live_dates']['checked_at']=='2026-10-12'
+assert len(d['live_dates']['events'])>=5
+print('watch tracks=%d movers=%d dates=%d' % (s['tracks_watched'], len(d['movers']), len(d['live_dates']['events'])))
+\""
+chk "watch kind filter" bash -c \
+  "curl -sf '$BASE/api/watch?kind=dates' | python3 -c \"
+import json,sys
+d=json.load(sys.stdin)['data']
+assert d['kind']=='dates' and 'live_dates' in d and 'movers' not in d
+\""
+chk "watch bad kind 400" bash -c \
+  "curl -s '$BASE/api/watch?kind=bogus' | python3 -c \"
+import json,sys
+e=json.load(sys.stdin)
+assert e['ok'] is False and e['error']['code']=='BAD_INPUT', e
+\""
+
 # uploads payload shape -------------------------------------------------------
 chk "uploads payload shape" bash -c \
   "curl -sf '$BASE/api/uploads?since=2020-01-01&limit=5' | python3 -c \"
@@ -73,7 +103,7 @@ print('count=%d' % d['count'])
 \""
 
 # 3. envelope schema validation (jsonschema, draft 2020-12) -------------------
-for p in health stats uploads; do
+for p in health stats uploads watch; do
   chk "schema $p" bash -c \
     "curl -sf '$BASE/api/$p' | python3 tests/assert_envelope.py --schema data/v1/schema/envelope.json"
 done
@@ -112,7 +142,7 @@ chk "bad input http 400" bash -c \
   "[ \"\$(curl -s -o /dev/null -w '%{http_code}' '$BASE/api/uploads?since=zzz')\" = 400 ]"
 
 # 7. static fallback present ----------------------------------------------------
-for f in refresh-status.json uploads.json stats-snapshots.json artist.json release-slugs.json changelog.json; do
+for f in refresh-status.json uploads.json stats-snapshots.json artist.json release-slugs.json changelog.json signal-watch.json live-dates.json; do
   chk "static fallback $f" curl -sf "$BASE/data/v1/$f"
 done
 

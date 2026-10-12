@@ -25,7 +25,7 @@ API_OUT = ROOT / "data" / "v1" / "milestones.json"
 API_ARTIST = ROOT / "data" / "v1" / "artist.json"
 API_INDEX = ROOT / "data" / "v1" / "index.json"
 SCHEMA_OUT = ROOT / "data" / "v1" / "schema" / "milestones.json"
-NEW_VERSION = "0.18.0"  # wave 35: data version 0.18.0 (verified-data expansion)
+NEW_VERSION = "0.19.0"  # wave 35: data version 0.18.0 (verified-data expansion)
 SNAPSHOT = "2026-10-11"
 
 

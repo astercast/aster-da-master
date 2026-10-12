@@ -10,9 +10,9 @@ const SERVICE = "aster-signal";
 const VERSION = "1.0.0";
 const SLA_S = 86400; // 24h freshness SLA for Signal data (§7.4)
 
-// function files in this deployment (§7.4 roster); the wave-A test asserts
-// this list matches the spec roster exactly.
-const FUNCTIONS = ["health", "stats", "uploads", "cron/signal"];
+// function files in this deployment (§7.4 roster, Signal 2.0 wave added
+// "watch"); tests/api.test.sh asserts this list matches exactly.
+const FUNCTIONS = ["health", "stats", "uploads", "watch", "cron/signal"];
 
 // static JSON the Signal's functions depend on, with the timestamp field
 // each one carries and the SLA each is judged against.
@@ -20,6 +20,7 @@ const FRESHNESS_FILES = [
   { file: "data/v1/refresh-status.json", tsField: "snapshot_at", sla_s: SLA_S },
   { file: "data/v1/uploads.json", tsField: "generated_at", sla_s: SLA_S },
   { file: "data/v1/stats-snapshots.json", tsField: "generated_at", sla_s: SLA_S },
+  { file: "data/v1/signal-watch.json", tsField: "generated_at", sla_s: SLA_S },
   { file: "data/v1/artist.json", tsField: "observed", sla_s: SLA_S * 7 },
 ];
 

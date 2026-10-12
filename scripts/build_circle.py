@@ -37,7 +37,7 @@ from build_producer_deepdives import (  # noqa: E402  (wave 27 cross-links)
 DATA = json.loads((ROOT / "data" / "artist.json").read_text())
 OUT = ROOT / "circle"
 API = ROOT / "data" / "v1"
-NEW_VERSION = "0.18.0"  # wave 35: verified-data expansion - collaborator deep-enrichment (rounds 15-16)
+NEW_VERSION = "0.19.0"  # wave 35: verified-data expansion - collaborator deep-enrichment (rounds 15-16)
 
 # wave 27: producer slugs with as-credited productions (populated in main);
 # circle members who also produce get a "Producer deep dive" cross-link.

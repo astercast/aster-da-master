@@ -1,5 +1,5 @@
 {
- "version": "0.18.0",
+ "version": "0.19.0",
  "generated": "2026-10-11",
  "plays_snapshot": "2026-10-11",
  "method": "Era deep-dives expanded from data/v1/transmission.json against data/artist.json (discography), data/v1/years.json, data/sessions.json, data/v1/circle.json, and data/v1/codex.json. collaborators[] holds EVERY in-era collaborator (transmission.json keeps only the top 3). summary figures are recomputed and asserted in scripts/build_eras.py. Titles and metadata only - never lyrics, never invented bio facts.",

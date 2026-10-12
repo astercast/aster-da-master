@@ -59,11 +59,42 @@
   "uncle_lp": {
     "artist": "Fish Narc",
     "catalog": "KLP313",
+    "europe_tour": {
+      "confidence": "uncertain",
+      "entry": "upcomingvinyl's promo copy now includes an autumn US+Europe tour line — promo text only, no dates"
+    },
     "expected_release": "2026-10-16",
     "fifth_solo_lp": true,
     "label": "K Records",
+    "listening_party": {
+      "confidence": "verified",
+      "corroboration": "Bandsintown listing (swept 2026-10-12): Fish Narc, Permanent Records Roadhouse, 1906 Cypress Avenue, Thu Oct 15, 7:00 PM PDT",
+      "date": "2026-10-15",
+      "discrepancy": "JamBase's venue schedule for Oct 15 lists Sam Buck (9:00 PM) and does not list Fish Narc — conflict recorded in data/v1/live-dates.json, unresolved",
+      "note": "re-verified live on the venue calendar (direct open, research pass 2026-10-12)",
+      "price": "FREE, RSVP",
+      "source": "https://roadhouse.permanentrecordsla.com/",
+      "time": "7 PM",
+      "venue": "Permanent Records Roadhouse"
+    },
     "preorder": "vinyl LP pre-order open through K Records",
     "preorder_source": "https://www.faygoluvers.net/v5/2026/09/fish-narc-announces-new-album-uncle-on-k-records/",
+    "press_2026": [
+      {
+        "confidence": "single-source",
+        "entry": "RIFF Magazine Sept 22 'Tuesday Tracks' capsule carries 'Big Dumb World' as second single — first press"
+      },
+      {
+        "confidence": "single-source",
+        "entry": "The Reconnoiter's weekly playlist #152 (Oct 9, 2026) includes 'Big Dumb World' — playlist placement, not a review",
+        "source": "https://areconnoiter.wordpress.com/2026/10/09/this-weeks-playlist-152/"
+      },
+      {
+        "confidence": "single-source",
+        "entry": "Sputnikmusic: 'Uncle' listed with no rating yet; 'frog song' at 3.5/5 on 1 vote",
+        "source": "http://www.sputnikmusic.com/bands/Fish-Narc/128081/"
+      }
+    ],
     "previous_lp": "frog song (2025, K Records)",
     "producer": "Alex Farrar",
     "producer_note": "Asheville; clients include Wednesday, MJ Lenderman, Fiddlehead",
@@ -100,36 +131,6 @@
         "video": "video by James Hyson"
       }
     ],
-    "third_single": "none as of 2026-10-12 — no advance reviews or interviews on record (normal 4 days out)",
-    "listening_party": {
-      "date": "2026-10-15",
-      "time": "7 PM",
-      "price": "FREE, RSVP",
-      "venue": "Permanent Records Roadhouse",
-      "confidence": "verified",
-      "note": "re-verified live on the venue calendar (direct open, research pass 2026-10-12)",
-      "source": "https://roadhouse.permanentrecordsla.com/"
-    },
-    "press_2026": [
-      {
-        "confidence": "single-source",
-        "entry": "RIFF Magazine Sept 22 'Tuesday Tracks' capsule carries 'Big Dumb World' as second single — first press"
-      },
-      {
-        "confidence": "single-source",
-        "entry": "The Reconnoiter's weekly playlist #152 (Oct 9, 2026) includes 'Big Dumb World' — playlist placement, not a review",
-        "source": "https://areconnoiter.wordpress.com/2026/10/09/this-weeks-playlist-152/"
-      },
-      {
-        "confidence": "single-source",
-        "entry": "Sputnikmusic: 'Uncle' listed with no rating yet; 'frog song' at 3.5/5 on 1 vote",
-        "source": "http://www.sputnikmusic.com/bands/Fish-Narc/128081/"
-      }
-    ],
-    "europe_tour": {
-      "confidence": "uncertain",
-      "entry": "upcomingvinyl's promo copy now includes an autumn US+Europe tour line — promo text only, no dates"
-    },
     "sources": [
       "https://stereogum.com/2508537/fish-narc-announces-new-album-uncle-hear-much-less-me/music",
       "https://stereogum.com/2511545/fish-narc-big-dumb-world/music/",
@@ -145,6 +146,7 @@
     "status": "announced",
     "status_as_of": "2026-10-12",
     "status_note": "Re-verified 2026-10-12 — still pre-release: no third single, no advance reviews, no interviews (normal 4 days out). A listening party is listed for Thu Oct 15, 7 PM at Permanent Records Roadhouse (free, RSVP — verified on the venue calendar). upcomingvinyl's promo copy now adds an autumn US+Europe tour line (no dates — stays uncertain). Not released early; no date change on record.",
+    "third_single": "none as of 2026-10-12 — no advance reviews or interviews on record (normal 4 days out)",
     "title": "Uncle",
     "title_meaning": "Artist's own framing (Stereogum interview): the title as a tongue-in-cheek nod to giving up — the record reflects on the last ten years, expectations, and aging; mid-30s perspective, giving a project his best shot rather than chasing youth lanes.",
     "tour_fall_2026": [
@@ -203,5 +205,5 @@
     ],
     "note": "Honest empty states. Nothing here meets the archive's bar for a canon page; both are tracked so the next research pass can fill or close them."
   },
-  "version": "0.18.0"
+  "version": "0.19.0"
 }

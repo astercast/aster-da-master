@@ -49,7 +49,11 @@
     { id: "producer-deepdives", path: "data/v1/producer-deepdives.json",
       blurb: "Producer deep-dives: every as-credited producer (113) with credited productions (release/session links, co-producers, voices), codex family ties, a computed production fingerprint, and sourced research where a research pass exists. Drives producers/<slug>.html." },
     { id: "chronicle", path: "data/v1/chronicle.json",
-      blurb: "The Chronicle: one merged chronological stream — 61 upload sessions, 9 dated milestones, 44 title-credited collaboration appearances — with era assignment, release/circle/session cross-links, and collaborator tags. Drives chronicle.html." }
+      blurb: "The Chronicle: one merged chronological stream — 61 upload sessions, 9 dated milestones, 44 title-credited collaboration appearances — with era assignment, release/circle/session cross-links, and collaborator tags. Drives chronicle.html." },
+    { id: "signal-watch", path: "data/v1/signal-watch.json",
+      blurb: "The Signal 2.0 watch file: the latest vault capture diffed against the previous one — new uploads, play-count movers, milestone crossings, the next-up board, capture history. Drives signal.html." },
+    { id: "live-dates", path: "data/v1/live-dates.json",
+      blurb: "The live-date verification board: scene events hand-checked against the web (verified / single-source / unconfirmed), sources and discrepancies on record. Drives the date board on signal.html." }
   ];
 
   function esc(s) {

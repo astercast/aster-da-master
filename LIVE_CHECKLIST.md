@@ -14,16 +14,17 @@
   fonts: Anton + IBM Plex Mono WOFF2 in `assets/fonts/`, zero remote font
   requests), `data/v1/*.json` static endpoints, `data/`, `skills/`,
   `llms.txt` / `llms-full.txt`.
-- **Server functions** (`api/`, zero npm deps, `nodejs22.x`, envelope-only):
+- **Server functions** (`api/`, zero npm deps, Node — `runtime` never pinned, envelope-only):
   | route | file | purpose |
   |---|---|---|
   | `GET /api/health` | `api/health.js` | status/degraded, functions roster, data freshness |
   | `GET /api/stats` | `api/stats.js` | live-computed track/play counts + top-10 |
   | `GET /api/uploads` | `api/uploads.js` | newest-first upload log (`?since=`, `?limit=` ≤200) |
-  | `GET /api/cron/signal` | `api/cron/signal.js` | daily refresh: SoundCloud pull → `data/v1/*.json` commit-back |
+  | `GET /api/watch` | `api/watch.js` | Signal 2.0 watch board: capture diff (new uploads, movers, crossings) + live-date board (`?kind=`) |
+  | `GET /api/cron/signal` | `api/cron/signal.js` | daily refresh: SoundCloud pull → diff → `data/v1/*.json` commit-back (incl. `signal-watch.json`) |
 - **Shared helpers** (never routes): `lib/envelope.js`, `lib/fetchx.js`,
-  `lib/ratelimit.js`, `lib/cronauth.js`, `lib/github.js`.
-- **Function count: 4** (Hobby limit is plenty; ≤12/site rule respected).
+  `lib/ratelimit.js`, `lib/cronauth.js`, `lib/github.js`, `lib/signal-watch.js`.
+- **Function count: 5** (Hobby limit is plenty; ≤12/site rule respected).
 - **`vercel.json`** — adapted from the working repo: functions + cron +
   security headers + `cleanUrls`/`trailingSlash:false` kept; **no
   `buildCommand`** (pre-built snapshot, `scripts/` is not in `-live`);
@@ -54,11 +55,14 @@ badge when `/api/*` is unreachable.
 
 ## Known-good status (2026-10-12, NOT yet deployed)
 
-- `tests/api.test.sh` 31/31 green against the local Vercel-routing emulator.
+- `tests/api.test.sh` 37/37 green against the local Vercel-routing emulator
+  (Signal 2.0 wave added the `/api/watch` checks + 2 static fallbacks).
 - Live cron rehearsal (read-only): 185 tracks fresh from SoundCloud,
   0 new uploads, 7/7 sources ok.
-- Static validation: 19,737 relative links, 0 broken; 23/23 JSON schemas;
-  lyric-grep clean; chain byte-stable; data version 0.18.0.
+- Static validation: 19,851 relative links, 0 broken; 23/23 JSON schemas
+  in validate.sh's stage-3 list (the 2 Signal 2.0 schemas validate against
+  their files separately); lyric-grep clean; chain byte-stable; data
+  version 0.19.0, 25 manifest endpoints.
 - **Not deployed.** Deploy = one-time Vercel CLI from a local clone of
   `-live` (`vercel --prod`), then run the GO_LIVE.md §2 checklist
   (health assert, cron assert, curl roster, functions-disabled pass).
@@ -83,3 +87,9 @@ serverless function regardless of the `functions` map.
 frontend fetch of `api/v1/*.json` 404'd in production — the static JSON was
 moved `api/v1/` → `data/v1/`, all generators/JS/docs rewritten. The ONLY
 things under `api/` are `.js` files with exported handlers.)
+
+**Generator scripts must emit to `data/v1/`** — a generator that writes
+static JSON anywhere under `api/` reintroduces the production 404. Static
+`.js` data files (JSONP twins and the like) never live under `api/` either:
+they go to `static/v1/` with a `vercel.json` `rewrites` entry preserving
+their public URL.

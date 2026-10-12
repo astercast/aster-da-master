@@ -22,6 +22,7 @@ const { ok, err, nowIso } = require("../../lib/envelope");
 const { fetchTimeout } = require("../../lib/fetchx");
 const { assertCron } = require("../../lib/cronauth");
 const { readJson, writeJsonIfChanged, REPO } = require("../../lib/github");
+const { diffCaptures, METHOD } = require("../../lib/signal-watch");
 
 const SERVICE = "aster-signal";
 const VERSION = "1.0.0";
@@ -308,10 +309,11 @@ module.exports = async (req, res) => {
         readState("data/v1/stats-snapshots.json", upstream),
         readState("data/v1/refresh-status.json", upstream),
         readState("data/playcounts.snapshot.json", upstream),
+        readState("data/v1/signal-watch.json", upstream),
       ]),
       pullSoundCloud(upstream),
     ]);
-    const [uploadsR, snapsR, statusR, snapFileR] = reads;
+    const [uploadsR, snapsR, statusR, snapFileR, watchR] = reads;
     const { clientId, userId, via, tracks } = sc;
     upstream.push({
       source: "github-contents-read", ok: uploadsR.ok && snapsR.ok && statusR.ok,
@@ -329,6 +331,7 @@ module.exports = async (req, res) => {
 
     let tracksCaptured = null;
     let newUploads = [];
+    let watchSummary = null;
 
     if (tracks && tracks.length) {
       const valid = tracks.filter((t) => Number.isFinite(t.plays));
@@ -366,6 +369,58 @@ module.exports = async (req, res) => {
         client_id_source: via,
       };
 
+      /* Signal 2.0 watch diff: this capture vs the previous snapshot file
+       * (read in step 1, before anything overwrites it). Keyed, normalized
+       * detection from lib/signal-watch.js; next_up carries over from the
+       * previous watch file — the cron does not recompute the milestone
+       * board (the wave engine's milestone-watch generator owns it). */
+      const prevCapture = snapFileR.ok && Array.isArray(snapFileR.obj.tracks)
+        ? { captured_at: snapFileR.obj.snapshot_at || null, tracks: snapFileR.obj.tracks }
+        : { captured_at: null, tracks: [] };
+      const watchDiff = diffCaptures(prevCapture, { captured_at: now, tracks });
+      watchSummary = {
+        new_uploads: watchDiff.new_uploads.length,
+        movers: watchDiff.movers.length,
+        crossings: watchDiff.crossings.length,
+        total_delta: watchDiff.total_delta,
+      };
+      const newestTrack = tracks.slice().sort((a, b) =>
+        String(b.upload_date || "") < String(a.upload_date || "") ? -1 : 1)[0] || null;
+      const watchDoc = {
+        version: (watchR.ok && watchR.obj.version) || "0.19.0",
+        generated_at: now,
+        service: "aster-signal",
+        watch_version: "2.0.0",
+        method: METHOD,
+        baseline: {
+          previous_capture_at: prevCapture.captured_at,
+          previous_source: "data/playcounts.snapshot.json — previous Signal capture",
+          latest_capture_at: now,
+          latest_source: "SoundCloud api-v2 — this cron run",
+          captures_compared: (watchR.ok && watchR.obj.baseline && Number(watchR.obj.baseline.captures_compared) || 1) + 1,
+        },
+        summary: {
+          tracks_watched: watchDiff.tracks_watched,
+          total_plays: watchDiff.total_plays,
+          total_delta: watchDiff.total_delta,
+          new_uploads: watchDiff.new_uploads.length,
+          removed: watchDiff.removed.length,
+          movers: watchDiff.movers.length,
+          crossings: watchDiff.crossings.length,
+          newest_upload: newestTrack
+            ? { title: newestTrack.title, uploaded_at: newestTrack.upload_date || null }
+            : null,
+        },
+        new_uploads: watchDiff.new_uploads,
+        removed: watchDiff.removed,
+        movers: watchDiff.movers,
+        crossings: watchDiff.crossings,
+        next_up: watchR.ok && Array.isArray(watchR.obj.next_up) ? watchR.obj.next_up : [],
+        history: snaps.map((r) => ({
+          snapshot_at: r.snapshot_at, total_plays: r.total_plays, tracks_captured: r.tracks_captured,
+        })),
+      };
+
       // 4. commit-back (read-only degrade without the PAT — see lib/github.js).
       // knownCurrent skips the pre-write re-read: step 1 already read state.
       const msg = "Signal: play-count refresh " + now.slice(0, 10) +
@@ -375,8 +430,9 @@ module.exports = async (req, res) => {
         writeJsonIfChanged("data/v1/stats-snapshots.json", snapsDoc, msg, UA, snapsR.ok ? snapsR.obj : undefined),
         writeJsonIfChanged("data/v1/refresh-status.json", statusDoc, msg, UA, statusR.ok ? statusR.obj : undefined),
         writeJsonIfChanged("data/playcounts.snapshot.json", snapshotDoc, msg, UA, snapFileR.ok ? snapFileR.obj : undefined),
+        writeJsonIfChanged("data/v1/signal-watch.json", watchDoc, msg, UA, watchR.ok ? watchR.obj : undefined),
       ]);
-      const files = ["uploads.json", "stats-snapshots.json", "refresh-status.json", "playcounts.snapshot.json"];
+      const files = ["uploads.json", "stats-snapshots.json", "refresh-status.json", "playcounts.snapshot.json", "signal-watch.json"];
       writes.forEach((w, i) => {
         if (w.changed) changed = true;
         if (w.committed) commitShas[files[i]] = w.sha;
@@ -412,6 +468,7 @@ module.exports = async (req, res) => {
         commit_shas: commitShas,
         tracks_captured: tracksCaptured,
         new_uploads: newUploads.map((u) => ({ title: u.title, uploaded_at: u.uploaded_at, url: u.url, first_seen_at: u.first_seen_at })),
+        watch: watchSummary,
         read_only: !!readOnlyFlag,
       },
       {

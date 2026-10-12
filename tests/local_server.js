@@ -3,6 +3,7 @@
  *   /api/health      -> api/health.js
  *   /api/stats       -> api/stats.js
  *   /api/uploads     -> api/uploads.js
+ *   /api/watch       -> api/watch.js
  *   /api/cron/signal -> api/cron/signal.js
  *   /data/v1/*.json   -> static file from data/v1/
  * Usage: node tests/local_server.js [port]   (default 3000)
@@ -22,6 +23,7 @@ const ROUTES = {
   "/api/health": "../api/health.js",
   "/api/stats": "../api/stats.js",
   "/api/uploads": "../api/uploads.js",
+  "/api/watch": "../api/watch.js",
   "/api/cron/signal": "../api/cron/signal.js",
 };
 

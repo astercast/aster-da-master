@@ -28,7 +28,7 @@ Static files — **no auth, no keys, no rate limits**. Works on any static host.
 
 | Endpoint | Contents | Records |
 |---|---|---|
-| `data/v1/index.json` | Manifest — start here | 22 endpoints |
+| `data/v1/index.json` | Manifest — start here | 25 endpoints |
 | `data/v1/artist.json` | The source of truth: bio, facts, discography (219 entries), platforms, eras, vault, upcoming | 219 |
 | `data/v1/codex.json` | The vocabulary codex: 16 word families with per-family track lists | 16 |
 | `data/v1/release-slugs.json` | Slug index: ordinal string → release-page slug (the search overlay's corpus) | 219 |
@@ -50,6 +50,8 @@ Static files — **no auth, no keys, no rate limits**. Works on any static host.
 | `data/v1/session-tools.json` | Session explorer 2.0 tooling: 61 per-session compare profiles (stats, loudest + deepest-cut tracks, collaborators, play profiles, family/session/era/journey cross-links), the deepest-sessions editorial ranking (lowest average plays per transmission, min 2 transmissions, formula stated in the payload — editorial, not an artist fact), the track-level deepest-transmissions ranking (quietest 25 of 185, median 450), and the honest snapshot-history state (one 2026-10-11 snapshot: no play trajectories exist). Drives the compare / deepest-cuts / timeline-scrubber sections of `sessions-explorer.html` | 61 profiles |
 | `data/v1/codex-network.json` | The codex relationship graph: 16 word families as nodes, shared title-credited collaborators and title-parsed producers as edges, BFS degrees of separation from Aster, the family-overlap graph, and connect-the-dots shortest-path data. Drives `codex-network.html` | 70 nodes |
 | `data/v1/producer-deepdives.json` | Producer deep-dives: every as-credited producer (title prod./produced-by fragments, verbatim) with credited productions (release/session links, co-producers, title-credited voices), codex family ties, a computed production fingerprint, and sourced research where a research pass exists. Drives `producers/<slug>.html` | 113 producers |
+| `data/v1/signal-watch.json` | The Signal 2.0 watch file: the latest vault capture diffed against the previous one — new uploads, play-count movers, milestone crossings, next-up board, capture history | 185 watched |
+| `data/v1/live-dates.json` | The live-date verification board: scene events hand-checked against the web (statuses: verified / single-source / unconfirmed; discrepancies kept) — Fish Narc 'Uncle' week, capoxxo Oct 28–29 | 7 events + 2 unconfirmed |
 | `data/v1/chronicle.json` | The Chronicle: one merged chronological stream — 61 upload sessions, 9 dated milestones (the 553-day longest silence as a span), 44 title-credited collaboration appearances — with era assignment, release/circle/session cross-links, and collaborator tags. Same-date order is milestone → session → collaboration (stated rule); the 2017 feature credit is honestly pre-era. Drives `chronicle.html` | 114 events |
 
 Example requests (Node; swap `fs` for `fetch` in a browser):
@@ -60,7 +62,7 @@ const J = p => JSON.parse(fs.readFileSync(p, "utf8"));
 
 // manifest first: confirm version before caching anything
 const idx = J("data/v1/index.json");
-console.log(idx.meta.version, idx.endpoints.network.records); // 0.18.0 23
+console.log(idx.meta.version, idx.endpoints.network.records); // 0.19.0 23
 
 // top 5 vault tracks by plays (plays = 2026-10-11 snapshot)
 const artist = J("data/v1/artist.json");
@@ -271,7 +273,7 @@ family: what does it mean, and how did it evolve?"*
 - **Upload dates ≠ recording dates.** Sessions are computed clusters (7-day
   upload-gap rule), not artist-named studio sessions.
 - **Sizes are small.** Largest: `artist.json` (~155 KB). Cache aggressively;
-  check `index.json → meta.version` (currently `0.18.0`) to invalidate.
+  check `index.json → meta.version` (currently `0.19.0`) to invalidate.
 - **The rules of the archive:** titles and metadata only — **never lyrics**;
   never invent biography; unknowns are listed as unknowns (`method.html` →
   "The unknowns register"); the circle is title-credit only (producers live

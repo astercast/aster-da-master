@@ -36,7 +36,7 @@ updated HH:MM" badge when the function is cold or down (see
 no lyrics, no bio facts.
 
 - `GET /api/health` — service status: `ok`/`degraded` (never 5xx), per-instance
-  uptime, the function roster (`health`, `stats`, `uploads`, `cron/signal`),
+  uptime, the function roster (`health`, `stats`, `uploads`, `watch`, `cron/signal`),
   `data_freshness` per static dependency vs the 24h SLA, boolean-only checks
   (`static_fallback_present`, `cron_secret_configured`, `github_token_configured`).
 - `GET /api/stats` — fresh numbers dashboard payload, computed live from the
@@ -54,6 +54,19 @@ no lyrics, no bio facts.
   permalinks only. `newest_upload_at` is the newest upload on record (full
   log, not the `?since` window). Fallback: `data/v1/uploads.json` (185 seeded
   rows).
+- `GET /api/watch?kind=` — The Signal 2.0 watch board (added 2026-10-12):
+  the latest vault capture diffed against the previous one, plus the
+  live-date verification board. `?kind=` is `all` (default), `new`,
+  `movers`, `crossings` or `dates` (anything else → 400 `BAD_INPUT`).
+  Payload: `{kind, freshness, summary, new_uploads, removed, movers,
+  crossings, next_up, live_dates, baseline}` (sections per kind).
+  Detection is keyed by normalized title or permalink — upload dates
+  drift between capture methods and are never identity. `per_day` is
+  null when two captures sit under 24 hours apart (a rate is never
+  invented). Sources: `data/v1/signal-watch.json` (rewritten by the
+  daily cron's diff) and `data/v1/live-dates.json` (hand-swept research;
+  statuses verified / single-source / unconfirmed, discrepancies kept).
+  Fallback: `data/v1/signal-watch.json`.
 - `GET /api/cron/signal` — daily (UTC, `0 16 * * *`) incremental refresh:
   SoundCloud api-v2 pull, play-count snapshot, new-upload detection, commit
   `refresh-status.json` + snapshot row on change only. Requires
@@ -348,4 +361,4 @@ Task procedures in `skills/` (registry: `skills/index.json`; playbook format: Us
 
 - `agents.html` — the agentic surface doc: 19-endpoint table (incl. `codex-families.json`, `milestone-races.json`), llms.txt/llms-full.txt, skills table with endpoint sequences, search-index usage (replicate the `/` overlay via `release-slugs.json` + `circle.json` + `codex.json` + `artist.json` eras), rate/expectation notes (static JSON, no auth; plays are a 2026-10-11 snapshot; upload dates ≠ recording dates; titles/metadata only, never lyrics, never invented bio), 5 worked writeups + the `AGENT.md` milestone-race workflow (7 workflows prove out). Linked from primary nav + footer site-wide.
 - `api-playground.html` — second tab: **Skill recipes**, linking each skill to its endpoint sequence.
-- Agent rules: serve over HTTP (`file://` blocks `fetch()`); check `index.json → version` before caching (0.18.0).
+- Agent rules: serve over HTTP (`file://` blocks `fetch()`); check `index.json → version` before caching (0.19.0).

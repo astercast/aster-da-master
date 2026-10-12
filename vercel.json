@@ -20,6 +20,9 @@
     },
     "api/uploads.js": {
       "maxDuration": 10
+    },
+    "api/watch.js": {
+      "maxDuration": 10
     }
   },
   "headers": [

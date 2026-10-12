@@ -27,13 +27,14 @@ One Vercel project containing two things:
 - **Static frontend** — the whole artist site served from the repo root
   (the existing 22-generator build output; `index.html`, `assets/`, section
   pages, `data/v1/*.json` static files).
-- **Server functions** (zero npm dependencies, `nodejs22.x`, envelope-only):
+- **Server functions** (zero npm dependencies, Node — runtime never pinned in `vercel.json`, envelope-only):
   - `api/health.js` → `GET /api/health`
   - `api/stats.js` → `GET /api/stats`
   - `api/uploads.js` → `GET /api/uploads`
+  - `api/watch.js` → `GET /api/watch` (Signal 2.0: watch diff + live-date board)
   - `api/cron/signal.js` → `GET /api/cron/signal` (the one daily cron job)
 - **Shared helpers** (never routes): `lib/envelope.js`, `lib/fetchx.js`,
-  `lib/ratelimit.js`, `lib/cronauth.js`, `lib/github.js`.
+  `lib/ratelimit.js`, `lib/cronauth.js`, `lib/github.js`, `lib/signal-watch.js` (Signal 2.0 diff logic).
 
 Spec: `~/workspace/server-program/ARCHITECTURE.md` §7.4 ("The Signal",
 service `aster-signal`). Envelope schema: `data/v1/schema/envelope.json`.
@@ -55,7 +56,7 @@ service `aster-signal`). Envelope schema: `data/v1/schema/envelope.json`.
    2026 Turbo build CPU billed **$38.64** (invoice 1ZU1WJJS-0012). These are
    static sites with near-instant builds; Turbo buys nothing.
 5. **Deploy.** Open `/api/health` — assert `"status": "ok"` and
-   `"functions": ["health", "stats", "uploads", "cron/signal"]`.
+   `"functions": ["health", "stats", "uploads", "watch", "cron/signal"]`.
 6. **Dashboard → Cron Jobs** — assert one cron: `/api/cron/signal`,
    schedule `0 16 * * *` (UTC). Trigger it once manually (Functions → ⋯ →
    Test) with the secret; read the Functions → Logs lines: every `[cron]`
@@ -63,6 +64,7 @@ service `aster-signal`). Envelope schema: `data/v1/schema/envelope.json`.
 7. **Curl the roster:**
    `curl https://<site>.vercel.app/api/stats`,
    `curl https://<site>.vercel.app/api/uploads`,
+   `curl https://<site>.vercel.app/api/watch`,
    `curl https://<site>.vercel.app/data/v1/uploads.json` —
    assert the envelope schema on the first two, raw JSON on the third.
 8. **Disable test** (functions-disabled pass): block `/api/*` (or deploy

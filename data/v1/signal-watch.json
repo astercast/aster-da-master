@@ -1,0 +1,85 @@
+{
+ "version": "0.19.0",
+ "generated_at": "2026-10-12T22:08:04Z",
+ "service": "aster-signal",
+ "watch_version": "2.0.0",
+ "method": "Each capture of the SoundCloud vault is diffed against the previous one. Tracks are keyed by normalized title (case, apostrophe style and whitespace unified) or permalink when a live refresh captured one — upload dates drift between capture methods and are never used as identity. A track in the new capture with no key in the old is a new upload. per_day is plain division over the real gap between captures and is only reported when that gap is at least 24 hours; below that it is null rather than invented.",
+ "baseline": {
+  "previous_capture_at": "2026-10-11",
+  "previous_source": "data/v1/artist.json — 2026-10-11 research capture",
+  "latest_capture_at": "2026-10-11T22:11:31Z",
+  "latest_source": "data/playcounts.snapshot.json — Signal stand-up capture, SoundCloud api-v2",
+  "captures_compared": 2
+ },
+ "summary": {
+  "tracks_watched": 185,
+  "total_plays": 257396,
+  "total_delta": 2,
+  "new_uploads": 0,
+  "removed": 0,
+  "movers": 2,
+  "crossings": 0,
+  "newest_upload": {
+   "title": "turn up w me (prod_timmy)",
+   "uploaded_at": "2026-10-02"
+  }
+ },
+ "new_uploads": [],
+ "removed": [],
+ "movers": [
+  {
+   "title": "Take Me (prod. Em Klebold)",
+   "before": 30088,
+   "after": 30089,
+   "delta": 1,
+   "per_day": null,
+   "url": null
+  },
+  {
+   "title": "candy w/ capoxxo(prod. razorwrist)",
+   "before": 11587,
+   "after": 11588,
+   "delta": 1,
+   "per_day": null,
+   "url": null
+  }
+ ],
+ "crossings": [],
+ "next_up": [
+  {
+   "title": "[outro] Off Beat ft. Yung Vetta (prod. Addy)",
+   "plays": 935,
+   "target": 1000,
+   "needed": 65,
+   "page": "releases/outro-off-beat-ft-yung-vetta-prod-addy.html"
+  },
+  {
+   "title": "Lucid Boi (prod. $ T.N.C $)",
+   "plays": 918,
+   "target": 1000,
+   "needed": 82,
+   "page": "releases/lucid-boi-prod-t-n-c.html"
+  },
+  {
+   "title": "master key ft. Lil Wintr x Marcelo (prod. ginseng)",
+   "plays": 9615,
+   "target": 10000,
+   "needed": 385,
+   "page": "releases/master-key-ft-lil-wintr-x-marcelo-prod-ginseng.html"
+  },
+  {
+   "title": "When the World Gets Colder (prod. Brokn)",
+   "plays": 9535,
+   "target": 10000,
+   "needed": 465,
+   "page": "releases/when-the-world-gets-colder-prod-brokn.html"
+  }
+ ],
+ "history": [
+  {
+   "snapshot_at": "2026-10-11T22:11:31Z",
+   "total_plays": 257396,
+   "tracks_captured": 185
+  }
+ ]
+}

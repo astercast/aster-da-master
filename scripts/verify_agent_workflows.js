@@ -5,7 +5,7 @@
 const fs = require("fs");
 const path = require("path");
 
-const API = path.join(__dirname, "..", "api", "v1");
+const API = path.join(__dirname, "..", "data", "v1");
 const J = (p) => JSON.parse(fs.readFileSync(path.join(API, p), "utf8"));
 
 let failures = 0;
