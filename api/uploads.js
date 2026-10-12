@@ -96,7 +96,9 @@ module.exports = (req, res) => {
   }
 
   const sinceMs = Date.parse(sinceP.iso);
-  const uploads = up.obj.uploads
+  /* newest-first over the FULL log first: "newest upload on record" must not
+     depend on the caller's ?since window. */
+  const all = up.obj.uploads
     .filter((u) => u && typeof u.title === "string")
     .map((u) => ({
       title: u.title,
@@ -104,21 +106,37 @@ module.exports = (req, res) => {
       url: u.url || null,
       first_seen_at: u.first_seen_at || null,
     }))
+    .sort((a, b) => {
+      const ta = Date.parse(a.uploaded_at || a.first_seen_at || 0);
+      const tb = Date.parse(b.uploaded_at || b.first_seen_at || 0);
+      return tb - ta || (a.title < b.title ? -1 : 1);
+    });
+  const newestOnRecord = all.length ? all[0].uploaded_at || all[0].first_seen_at : null;
+  const uploads = all
     .filter((u) => {
       const ref = u.uploaded_at || u.first_seen_at;
       const t = ref ? Date.parse(ref) : NaN;
       return Number.isFinite(t) && t >= sinceMs;
     })
-    .sort((a, b) => {
-      const ta = Date.parse(a.uploaded_at || a.first_seen_at || 0);
-      const tb = Date.parse(b.uploaded_at || b.first_seen_at || 0);
-      return tb - ta || (a.title < b.title ? -1 : 1);
-    })
     .slice(0, limit);
 
   ok(
     res, SERVICE, VERSION,
-    { since: sinceP.iso, count: uploads.length, uploads },
+    {
+      since: sinceP.iso,
+      count: uploads.length,
+      uploads,
+      /* Freshness: the dashboard states when it last checked and what the
+         newest upload on record is — both from real data, never "now". */
+      checked_at: checkedAt,
+      newest_upload_at: newestOnRecord,
+      freshness: {
+        checked_at: checkedAt,
+        newest_upload_at: newestOnRecord,
+        status: "ok",
+        source: "repo:data/v1/uploads.json",
+      },
+    },
     { source: "live", degraded: false, upstream }
   );
 };

@@ -1,6 +1,24 @@
-/* TRANSMISSION 4.0 — the full broadcast (wow wave 1).
+/* TRANSMISSION 4.0 — the full broadcast (wow wave 1) + layer 2 (wow wave 2).
    Scroll-driven pirate broadcast: six era segments (2018→2026) + seven data
-   chapters rendered as broadcast segments on one long scroll. Traveling
+   chapters rendered as broadcast segments on one long scroll.
+   LAYER 2 (wow wave 2):
+   - Era-transition choreography: deliberate tunes get the full three-phase
+     treatment — signal loss (dense static + Web Audio burst), the needle
+     gliding while the readout types TUNING …, then signal found (static
+     fades, soft land tone). Passive scroll crossings keep the light
+     170 ms flash, throttled against strobing.
+   - Milestone set piece: The Race chapter stages the "Take Me" summit as
+     the broadcast's centerpiece — 30,088 plays (2026-10-11 snapshot),
+     the gap to the next contender, the share of every archive play.
+   - Collaborator cameos: each era surfaces its loudest summoned voice from
+     the real circle data (circle.json) — shared transmissions, shared plays,
+     loudest shared track, verified research note when one exists. The cameo
+     card rises in (transform/opacity only) when its segment goes on air.
+   - The audio dimension (assets/js/tx-audio.js): Web Audio static, retune
+     zip, and land tone. OFF by default, toggled from the tuner, persisted in
+     localStorage. Reduced-motion users get the full narrative without
+     motion; audio is not motion and stays available to everyone.
+   Traveling
    between segments plays a signal-static flash (pure CSS/SVG, opacity only);
    the station tuner jumps straight to any era. Numbers count up live as each
    segment enters the viewport — every count target from the real data/v1 JSON,
@@ -48,7 +66,7 @@
   var FREQS = ["87.9", "89.1", "91.3", "93.7", "96.2", "98.5"];
 
   var DATA = null, RACES = null, CODEX = null, ERASJ = null, YRS = null,
-      CLUST = null, TOOLS = null, PD = null;
+      CLUST = null, TOOLS = null, PD = null, CIRCLE = null;
   var stops = [];           // [{kind,id,hash,label,name,span,freq,era,deepDive,render,brief}]
   var segEls = [];          // rendered <section> per stop
   var visited = {};         // stop index -> true
@@ -265,6 +283,53 @@
       "</div>";
   }
 
+  /* ---------- collaborator cameos: each era's loudest summoned voice, surfaced from the circle data ----------
+     The cameo is computed, not editorial: the era's top collaborator by
+     plays, enriched with their real circle.json record (shared
+     transmissions, shared plays, loudest shared track, verified research
+     note when one exists). No circle record → no cameo, no invented line. */
+  function circleSlug(page) {
+    var m = /^circle\/([a-z0-9-]+)\.html$/.exec(page || "");
+    return m ? m[1] : null;
+  }
+
+  function renderCameo(e) {
+    if (!CIRCLE || !e.collaborators.length) return "";
+    var sorted = e.collaborators.slice().sort(function (a, b) { return b.plays - a.plays; });
+    var top = sorted[0];
+    var entry = CIRCLE[circleSlug(top.page)];
+    if (!entry || !Array.isArray(entry.tracks) || !entry.tracks.length) return "";
+    var loudest = entry.tracks.slice().sort(function (a, b) { return b.plays - a.plays; })[0];
+    var vn = entry.verified_notes || {};
+    var h = '<aside class="tx-cameo" aria-label="Cameo: ' + esc(entry.name) + '">' +
+      '<p class="cameo-lab">Cameo &mdash; from the circle</p>' +
+      '<p class="cameo-name"><a href="' + esc(top.page) + '">' + esc(entry.name) + "</a></p>" +
+      '<p class="cameo-line">' + entry.shared_transmissions + " transmissions &middot; " +
+      fmt(entry.shared_plays) + " plays together &middot; in the circle " +
+      esc(entry.years_active) + "</p>" +
+      '<p class="cameo-line">Loudest shared track: &ldquo;' + esc(loudest.title) + "&rdquo; &mdash; " +
+      fmt(loudest.plays) + " plays</p>";
+    if (vn.facts && vn.facts.length) {
+      h += '<p class="cameo-fact">' + esc(vn.facts[0]) +
+        (vn.research_pass ? ' <span class="cameo-src">(research pass ' + esc(vn.research_pass) + ")</span>" : "") +
+        "</p>";
+    }
+    /* Surface verified research attached to any other voice on this
+       frequency — the circle's newer findings, where they exist. */
+    for (var i = 1; i < sorted.length; i++) {
+      var oe = CIRCLE[circleSlug(sorted[i].page)];
+      var ovn = oe && oe.verified_notes;
+      if (ovn && ovn.facts && ovn.facts.length) {
+        h += '<p class="cameo-fact">Also on this frequency: <a href="' + esc(sorted[i].page) + '">' +
+          esc(oe.name) + "</a> &mdash; " + esc(ovn.facts[0]) +
+          (ovn.research_pass ? ' <span class="cameo-src">(research pass ' + esc(ovn.research_pass) + ")</span>" : "") +
+          "</p>";
+        break;
+      }
+    }
+    return h + "</aside>";
+  }
+
   /* ---------- era stop rendering ---------- */
   function renderEraPanel(e) {
     var collabs = e.collaborators.length
@@ -281,6 +346,7 @@
       statCell(e.distributor, "Distributor releases", e.distributor) +
       "</div>" +
       '<blockquote class="tx-signal"><span class="sig-lab">The signal</span>' + esc(e.signal) + "</blockquote>" +
+      renderCameo(e) +
       renderReading(e) +
       (e.extras ? renderExtras(e.extras) : "") +
       '<div class="tx-cols">' +
@@ -309,6 +375,40 @@
       " to go &middot; ~" + fmt(Math.round(r.days_at_pace)) + " days at lifetime pace</span></li>";
   }
 
+  /* ---------- the summit set piece: the "Take Me" summit staged as the broadcast's centerpiece ----------
+     All numbers computed from milestone-races.json (holder + contenders) and
+     transmission.json (archive play total for the share of every play). The
+     holder count is the 2026-10-11 snapshot — stated on the card, never
+     refreshed silently. No audio here: the set piece lands visually. */
+  function renderSummit() {
+    var h = RACES.summit_race.holder;
+    var order = RACES.summit_race.contenders.slice().sort(function (a, b) { return b.plays - a.plays; });
+    var near = order[0];
+    var gap = h.plays - near.plays;
+    var nearPct = (near.plays / h.plays * 100).toFixed(1);
+    var nearW = Math.max(1, Math.min(100, near.plays / h.plays * 100)).toFixed(1);
+    var archivePlays = DATA && DATA.archive_totals ? DATA.archive_totals.plays : 0;
+    var shareTxt = archivePlays ? (h.plays / archivePlays * 100).toFixed(1) + "%" : "—";
+    var link = h.page ? '<a href="' + esc(h.page) + '">' + esc(h.title) + "</a>" : esc(h.title);
+    return '<div class="tx-summit" role="img" aria-label="The summit: \u201c' + esc(h.title) + "\u201d at " +
+      fmt(h.plays) + " plays; the nearest contender \u201c" + esc(near.title) + "\u201d at " +
+      fmt(near.plays) + " plays, " + fmt(gap) + ' plays behind">' +
+      '<p class="cameo-lab">The summit</p>' +
+      '<div class="tx-summit-num" data-count="' + h.plays + '">0</div>' +
+      '<p class="tx-summit-title">&ldquo;' + esc(h.title) + "&rdquo; &mdash; the most-played vault transmission on record, uploaded " + esc(h.date) + "</p>" +
+      '<div class="tx-srow"><span class="tx-slab">&ldquo;' + esc(h.title) + "&rdquo;</span>" +
+      '<span class="tx-sbar" aria-hidden="true"><i style="width:100%"></i></span>' +
+      '<span class="tx-snum">' + fmt(h.plays) + "</span></div>" +
+      '<div class="tx-srow"><span class="tx-slab">&ldquo;' + esc(near.title) + "&rdquo; &mdash; nearest contender</span>" +
+      '<span class="tx-sbar" aria-hidden="true"><i style="width:' + nearW + '%"></i></span>' +
+      '<span class="tx-snum">' + fmt(near.plays) + "</span></div>" +
+      '<p class="tx-summit-copy">The next contender trails by ' + fmt(gap) + " plays &mdash; " + nearPct +
+      "% of the summit. And " + shareTxt +
+      " of every play in the entire archive goes to this one track.</p>" +
+      '<p class="tx-note">Play counts are the 2026-10-11 snapshot. ' + link + " &rarr;</p>" +
+      "</div>";
+  }
+
   function renderRace() {
     var races = RACES.closest_races.map(raceById).filter(Boolean).slice(0, 3);
     var h = RACES.summit_race.holder;
@@ -329,12 +429,10 @@
       "Four tracks are closing in on round numbers, ranked by how soon the lifetime pace closes the gap. " +
       "At the top of the mountain, \u201c" + esc(h.title) + "\u201d sits at " + fmt(h.plays) +
       " plays — and nobody is close. Pace arithmetic only: estimates, never predictions.</blockquote>" +
+      renderSummit() +
       '<div class="tx-cols">' +
       '<div class="tx-block"><h3>Closest races</h3><ol class="tx-races">' + races.map(raceCard).join("") + "</ol></div>" +
-      '<div class="tx-block"><h3>The summit</h3>' +
-      '<div class="tx-mile"><span class="m-name"><a href="' + esc(h.page) + '">' + esc(h.title) + "</a></span>" +
-      '<p class="m-fact">' + fmt(h.plays) + " plays &middot; uploaded " + esc(h.date) + ". The most-played vault transmission on record." + "</p></div>" +
-      '<h3 style="margin-top:var(--space-5)">Nearest contenders</h3><ol>' + contenders + "</ol>" +
+      '<div class="tx-block"><h3>Nearest contenders</h3><ol>' + contenders + "</ol>" +
       '<p class="tx-note">' + esc(RACES.summit_race.eligibility) + "</p></div>" +
       "</div>" +
       '<p class="tx-note">Keep racing: <a href="milestone-race.html#watch">race to watch</a> &middot; ' +
@@ -897,6 +995,7 @@
       '<p class="kicker"><span class="numeral">\u2726</span>Signal received</p>' +
       '<h2 id="tx-signoff-h" tabindex="-1">TRANSMISSION ENDS</h2>' +
       '<p class="signal-row"><span class="api-badge" id="tx-signal-badge" data-api-state="waking" role="status" aria-live="polite"></span></p>' +
+      '<p class="chart-sub" data-signal-fresh="stats"></p>' +
       '<p class="tx-lede">You rode six eras and seven data chapters, 2018 to 2026. Here is the whole signal in one frame — and the full vault, if you want to keep digging.</p>' +
       '<div class="stat-grid tx-end-stats">' +
       statCell(fmt(t.transmissions), "Transmissions, 2018\u20132026", t.transmissions) +
@@ -994,14 +1093,35 @@
     moveNeedle();
   }
 
-  /* ---------- signal static: pure CSS/SVG, opacity only ---------- */
-  function flashStatic() {
+  /* ---------- signal static: the era-transition choreography (layer 2) ----------
+     Two intensities, same discipline (opacity only, transform sweeps —
+     60fps-friendly, never a strobe risk):
+     - light: passive scroll crossings — the 170 ms flash, throttled at
+       600 ms, exactly as before.
+     - hard: deliberate tunes — the full three-phase treatment. Signal loss:
+       dense static (.hard, 420 ms) while the needle glides to the new
+       station and the readout types TUNING …. Signal found: the static fades
+       and, if sound is on, the soft land tone plays.
+     Audio rides alongside (tx-audio.js, guarded): a static burst on every
+     flash, a retune zip plus the land tone on the hard tune. It never
+     unmutes by itself — the listener flips the tuner switch. */
+  function flashStatic(hard) {
     if (REDUCED || isMobile() || !staticEl) return;
     var now = Date.now();
-    if (now - lastFlash < 600) return; /* don't strobe on fast scroll */
+    var hold = hard ? 420 : 170;
+    if (now - lastFlash < (hard ? 200 : 600)) return; /* don't strobe */
     lastFlash = now;
+    if (hard) staticEl.classList.add("hard");
     staticEl.classList.add("on");
-    setTimeout(function () { staticEl.classList.remove("on"); }, 170);
+    if (window.TxAudio && !window.TxAudio.isMuted()) {
+      window.TxAudio.static(hold);
+      if (hard) window.TxAudio.tune();
+    }
+    setTimeout(function () {
+      staticEl.classList.remove("on");
+      staticEl.classList.remove("hard");
+      if (hard && window.TxAudio && !window.TxAudio.isMuted()) window.TxAudio.land();
+    }, hold);
   }
 
   /* ---------- count-up: numbers roll live as a segment enters ---------- */
@@ -1062,7 +1182,13 @@
     markVisited(i);
     runCounts(segEls[i]);
     syncTuner(i);
-    if (!first) flashStatic();
+    /* the cameo rises in on the segment that just went on air */
+    for (var k = 0; k < segEls.length; k++) {
+      if (segEls[k].classList) segEls[k].classList.toggle("is-active", k === i);
+    }
+    /* deliberate tunes get the full three-phase choreography; passive
+       scroll crossings keep the light flash */
+    if (!first) flashStatic(origin === "tune");
     if (origin === "tune") {
       setReadoutTyped(stops[i]);
       try { window.history.replaceState(null, "", "#" + stops[i].hash); } catch (e) { /* file:// */ }
@@ -1087,6 +1213,9 @@
   function tune(i, opts) {
     opts = opts || {};
     if (!opts.auto) stopAutoplay();
+    /* prime the audio context inside the user gesture — iOS needs this.
+       Only when sound is on: a muted listener gets no context at all. */
+    if (window.TxAudio && !window.TxAudio.isMuted()) window.TxAudio.prime();
     if (i < 0) i = 0;
     if (i >= stops.length) i = stops.length - 1;
     var sec = segEls[i];
@@ -1173,8 +1302,7 @@
       showBroadcast();
       tune(0, { instant: true });
       if (window.Signal) window.Signal.wireStats("tx-signal-badge");
-    });
-    var resumeBtn = $("tx-resume");
+    });    var resumeBtn = $("tx-resume");
     if (resumeBtn) resumeBtn.addEventListener("click", function () {
       var v = savedStop();
       showBroadcast();
@@ -1190,6 +1318,29 @@
       if (rb) rb.hidden = true;
       announceNow("Progress cleared. The broadcast is back at the start.");
     });
+
+    /* the sound switch: Web Audio static/tune/land. Off by default; the
+       button always shows the real persisted state. Clicking primes the
+       context inside the gesture, then flips. */
+    var sndBtn = $("tx-sound");
+    if (sndBtn) {
+      var paintSnd = function () {
+        var off = !window.TxAudio || window.TxAudio.isMuted();
+        sndBtn.setAttribute("aria-pressed", off ? "false" : "true");
+        sndBtn.textContent = off ? "Sound: off" : "Sound: on";
+      };
+      paintSnd();
+      sndBtn.addEventListener("click", function () {
+        if (window.TxAudio) {
+          window.TxAudio.prime();
+          window.TxAudio.setMuted(!window.TxAudio.isMuted());
+        }
+        paintSnd();
+        announceNow(window.TxAudio && !window.TxAudio.isMuted()
+          ? "Sound on: static and tuning tones will play on era transitions."
+          : "Sound off.");
+      });
+    }
 
     /* tuner dial: click tunes; arrows retune (focus stays on the dial) */
     dialEl.addEventListener("click", function (ev) {
@@ -1338,7 +1489,8 @@
     loadData("data/v1/years.json").then(null, function () { return null; }),
     loadData("data/v1/session-clusters.json").then(null, function () { return null; }),
     loadData("data/v1/session-tools.json").then(null, function () { return null; }),
-    loadData("data/v1/producer-deepdives.json").then(null, function () { return null; })
+    loadData("data/v1/producer-deepdives.json").then(null, function () { return null; }),
+    loadData("data/v1/circle.json").then(null, function () { return null; })
   ]).then(function (res) {
     RACES = res[1];
     CODEX = res[2];
@@ -1347,6 +1499,7 @@
     CLUST = res[5];
     TOOLS = res[6];
     PD = res[7];
+    CIRCLE = res[8];
     boot(res[0]);
   }).catch(function () {
     $("tx-entry").insertAdjacentHTML("beforeend",

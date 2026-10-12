@@ -32,6 +32,46 @@
     return m ? m[1] : "";
   }
 
+  /* "2026-10-11T22:11:31Z" → "4h ago" / "2d ago" / "just now".
+     Computed from the response's own timestamps, never the wall clock. */
+  function relTime(iso) {
+    var t = Date.parse(iso);
+    if (!Number.isFinite(t)) return "";
+    var s = Math.max(0, Math.floor((Date.now() - t) / 1000));
+    if (s < 90) return "just now";
+    var m = Math.floor(s / 60);
+    if (m < 90) return m + "m ago";
+    var h = Math.floor(m / 60);
+    if (h < 48) return h + "h ago";
+    return Math.floor(h / 24) + "d ago";
+  }
+
+  /* Freshness readout for [data-signal-fresh="stats"|"uploads"] hooks: an
+     honest "last checked" line next to the badge. Every timestamp comes from
+     the API response or the static fallback file — never invented. */
+  function paintFreshness(kind, r) {
+    var nodes = document.querySelectorAll('[data-signal-fresh="' + kind + '"]');
+    if (!nodes.length) return;
+    var text;
+    if (!r || r.source === "none") {
+      text = "Signal lost — the archive stands on its static numbers.";
+    } else {
+      var d = r.data || {};
+      var f = d.freshness || {};
+      var checked = relTime(f.checked_at || r.generatedAt);
+      var checkedTxt = checked ? "Checked " + checked : "Checked at an unknown time";
+      if (kind === "stats") {
+        var snap = fmtDay(f.snapshot_at) || fmtDay(r.generatedAt);
+        text = checkedTxt + " · play counts from " + (snap || "the last snapshot") +
+          (f.status === "stale" ? " (stale — latest verified capture)" : "");
+      } else {
+        var newest = fmtDay(d.newest_upload_at);
+        text = checkedTxt + (newest ? " · newest upload on record " + newest : "");
+      }
+    }
+    Array.prototype.forEach.call(nodes, function (el) { el.textContent = text; });
+  }
+
   /* Normalize the two shapes fetchWithFallback can return:
    *  - live:  envelope data {tracks_captured, total_plays, snapshot_at, top_tracks, ...}
    *  - static: data/v1/stats-snapshots.json {snapshots:[{snapshot_at,total_plays,tracks_captured,top}]}
@@ -80,15 +120,24 @@
     }
   }
 
-  /* Wire a stats badge + live number refresh for the numbers surfaces. */
+  /* Wire a stats badge + live number refresh for the numbers surfaces.
+     On total failure (live AND static unreachable) the badge says "signal
+     lost" instead of hiding — the page keeps its pre-rendered numbers and
+     says so, per the honesty contract. */
   function wireStats(badgeId) {
     var badge = badgeId && document.getElementById(badgeId);
     if (!badge || !window.ApiClient) return;
     window.ApiClient.fetchWithFallback("/api/stats", "data/v1/stats-snapshots.json", { badgeEl: badge })
       .then(function (r) {
-        if (!r || r.source !== "live") return; /* cached: static numbers stand */
-        var d = statsPayload(r);
-        if (d) paintStats(d);
+        if (!r) { paintFreshness("stats", null); return; }
+        if (r.source === "none") {
+          badge.textContent = "signal lost";
+          badge.title = "The live server and the static file both failed — the page keeps its pre-rendered numbers.";
+        } else if (r.source === "live") {
+          var d = statsPayload(r);
+          if (d) paintStats(d);
+        }
+        paintFreshness("stats", r);
       });
   }
 
@@ -119,15 +168,23 @@
     window.ApiClient.fetchWithFallback(
       "/api/uploads?since=2025-01-01&limit=5", "data/v1/uploads.json", { badgeEl: badge }
     ).then(function (r) {
-      if (!r || r.source !== "live" || !list) return;
-      var ups = uploadsPayload(r).slice(0, 5);
-      if (!ups.length) return; /* nothing new — featured release stands */
-      list.innerHTML = ups.map(function (u) {
-        var date = u.uploaded_at || fmtDay(u.first_seen_at);
-        var inner = '<span class="dim">' + esc(date) + '</span> ' + esc(u.title);
-        if (u.url) inner = '<a href="' + esc(u.url) + '" target="_blank" rel="noopener">' + inner + "</a>";
-        return "<li>" + inner + "</li>";
-      }).join("");
+      if (!r) { paintFreshness("uploads", null); return; }
+      if (r.source === "none") {
+        badge.textContent = "signal lost";
+        badge.title = "The live server and the static file both failed — the pre-rendered list stands.";
+      } else if (r.source === "live" && list) {
+        var ups = uploadsPayload(r).slice(0, 5);
+        if (ups.length) {
+          list.innerHTML = ups.map(function (u) {
+            var date = u.uploaded_at || fmtDay(u.first_seen_at);
+            var inner = '<span class="dim">' + esc(date) + '</span> ' + esc(u.title);
+            if (u.url) inner = '<a href="' + esc(u.url) + '" target="_blank" rel="noopener">' + inner + "</a>";
+            return "<li>" + inner + "</li>";
+          }).join("");
+        }
+        /* nothing new — the featured release stands */
+      }
+      paintFreshness("uploads", r);
     });
   }
 

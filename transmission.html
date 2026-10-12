@@ -256,6 +256,9 @@
       transition: opacity 0.22s ease-out;
     }
     .tx-static.on { opacity: 0.8; transition-duration: 0.05s; }
+    /* LAYER 2 — the hard tune: dense interference for deliberate station
+       changes (signal loss phase). Opacity only, like the light flash. */
+    .tx-static.hard.on { opacity: 0.95; transition-duration: 0.06s; }
     .tx-static-band {
       position: absolute; left: 0; right: 0; top: 0; height: 3px;
       background: var(--neon); box-shadow: var(--glow-neon); opacity: 0;
@@ -265,6 +268,69 @@
       from { transform: translateY(-10px); }
       to { transform: translateY(100vh); }
     }
+
+    /* LAYER 2 — the summit set piece. Gold on the phosphor field: the one
+       track that owns more than a tenth of every play in the archive. */
+    .tx-summit {
+      border: 1px solid rgba(245, 165, 36, 0.45);
+      border-radius: var(--radius-m);
+      background: rgba(245, 165, 36, 0.04);
+      padding: var(--space-6) var(--space-5);
+      margin-bottom: var(--space-6);
+    }
+    .tx-summit-num {
+      font-family: var(--font-display);
+      font-size: clamp(3rem, 9vw, 5.5rem);
+      line-height: 1;
+      color: var(--gold-bright);
+      text-shadow: 0 0 24px rgba(245, 165, 36, 0.35);
+      font-variant-numeric: tabular-nums;
+    }
+    .tx-summit-title { font-size: 1.05rem; color: var(--ink); margin: var(--space-3) 0 var(--space-5); max-width: 52ch; }
+    .tx-summit-title a { color: var(--neon); }
+    .tx-srow {
+      display: grid; grid-template-columns: minmax(120px, 230px) 1fr auto;
+      gap: var(--space-3); align-items: center; margin-bottom: var(--space-3);
+    }
+    .tx-slab {
+      font-family: var(--font-mono); font-size: var(--fs-micro); color: var(--ink-dim);
+      overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+    }
+    .tx-sbar { height: 10px; border: 1px solid var(--line-soft); border-radius: 999px; background: var(--neon-ink); overflow: hidden; }
+    .tx-sbar i { display: block; height: 100%; background: linear-gradient(90deg, var(--gold), var(--gold-bright)); border-radius: 999px; }
+    .tx-snum { font-family: var(--font-mono); font-size: var(--fs-small); color: var(--gold); font-variant-numeric: tabular-nums; white-space: nowrap; }
+    .tx-summit-copy { font-size: 1.1rem; color: var(--ink); max-width: 58ch; margin: var(--space-5) 0 0; }
+    .tx-summit .tx-note { margin-top: var(--space-3); }
+
+    /* LAYER 2 — collaborator cameos. One voice per era, surfaced from the
+       circle data; rises in when its segment goes on air (transform/opacity
+       only, 60fps-friendly). Reduced motion: the card is simply there. */
+    .tx-cameo {
+      border-left: 4px solid var(--gold);
+      background: rgba(245, 165, 36, 0.05);
+      padding: var(--space-4) var(--space-5);
+      margin: var(--space-6) 0;
+      border-radius: 0 var(--radius-s) var(--radius-s) 0;
+    }
+    @media (prefers-reduced-motion: no-preference) {
+      .tx-cameo {
+        opacity: 0;
+        transform: translateY(16px);
+        transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
+      }
+      .tx-seg.is-active .tx-cameo { opacity: 1; transform: none; }
+    }
+    .cameo-lab {
+      font-family: var(--font-mono); font-size: var(--fs-micro);
+      text-transform: uppercase; letter-spacing: 0.2em; color: var(--gold);
+      margin: 0 0 var(--space-2);
+    }
+    .cameo-name { font-family: var(--font-display); font-size: 1.6rem; letter-spacing: 0.01em; margin: 0 0 var(--space-2); }
+    .cameo-name a { color: var(--ink); text-decoration: none; }
+    .cameo-name a:hover, .cameo-name a:focus-visible { color: var(--neon); }
+    .cameo-line { font-size: var(--fs-small); color: var(--ink-dim); margin: 0 0 var(--space-1); }
+    .cameo-fact { font-size: var(--fs-small); color: var(--ink-dim); font-style: italic; margin: var(--space-3) 0 0; max-width: 62ch; }
+    .cameo-src { font-style: normal; color: var(--muted); }
 
     /* scroll-driven motion (progressive enhancement, CSS-only) */
     @supports (animation-timeline: view()) {
@@ -295,12 +361,15 @@
       .tx-dial { display: none; }
       .tx-tuner-pick { display: block; }
       .tx-bc-controls { margin-left: 0; }
+      .tx-srow { grid-template-columns: 1fr; gap: var(--space-2); }
+      .tx-slab { white-space: normal; }
     }
 
     @media (prefers-reduced-motion: reduce) {
       .tx-stage::after { display: none; }
       .tx-static { display: none; }
       .tx-hero-title { text-shadow: none; }
+      .tx-summit-num { text-shadow: none; }
       .tx-hero-title, .tx-seg-head { animation: none !important; }
       .tx-needle { transition: none; }
       .tx-static.on .tx-static-band { animation: none; }
@@ -429,6 +498,7 @@
               <button class="btn btn-sm btn-ghost" id="tx-prev" type="button">&larr; Prev</button>
               <button class="btn btn-sm btn-ghost tx-autoplay" id="tx-autoplay" type="button" aria-pressed="false">&#9654; Press play</button>
               <button class="btn btn-sm btn-ghost" id="tx-next" type="button">Next &rarr;</button>
+              <button class="btn btn-sm btn-ghost" id="tx-sound" type="button" aria-pressed="false" title="Web Audio static and tuning tones, synthesized live — off by default">Sound: off</button>
             </div>
           </div>
           <div class="tx-dial" id="tx-dial" role="radiogroup" aria-label="Era stations, 2018 to 2026"></div>
@@ -477,6 +547,7 @@
   <script src="assets/js/search.js"></script>
   <script src="assets/js/api-client.js"></script>
   <script src="assets/js/signal.js"></script>
+  <script src="assets/js/tx-audio.js"></script>
   <script src="assets/js/transmission.js"></script>
   <script src="assets/js/identity.js"></script>
 </body>

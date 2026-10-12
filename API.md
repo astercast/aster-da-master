@@ -41,14 +41,19 @@ no lyrics, no bio facts.
   (`static_fallback_present`, `cron_secret_configured`, `github_token_configured`).
 - `GET /api/stats` — fresh numbers dashboard payload, computed live from the
   latest committed snapshot: `{tracks_captured, total_plays, snapshot_at,
-  top_tracks[{title, plays, delta_7d}], source}`. `delta_7d` is null until a
-  week of history exists (honest gap, never interpolated). Fallback:
-  `data/v1/stats-snapshots.json`.
+  top_tracks[{title, plays, delta_7d}], source, delta_baseline_at, freshness}`.
+  `delta_7d` is null until a week of history exists (honest gap, never
+  interpolated). `freshness` = `{checked_at, snapshot_at, age_hours, status,
+  sla_hours}`; a snapshot older than the 24h SLA answers with `degraded: true`
+  and a plain-words note (latest verified capture, never presented as live).
+  Fallback: `data/v1/stats-snapshots.json`.
 - `GET /api/uploads?since=&limit=` — new uploads since an ISO date (default
   30d ago; `?since=` garbage → 400 `BAD_INPUT`; `?limit=` clamped 1–200):
-  `{since, count, uploads:[{title, uploaded_at, url, first_seen_at}]}`,
-  newest-first, titles + dates + permalinks only. Fallback:
-  `data/v1/uploads.json` (185 seeded rows).
+  `{since, count, uploads:[{title, uploaded_at, url, first_seen_at}],
+  checked_at, newest_upload_at, freshness}`, newest-first, titles + dates +
+  permalinks only. `newest_upload_at` is the newest upload on record (full
+  log, not the `?since` window). Fallback: `data/v1/uploads.json` (185 seeded
+  rows).
 - `GET /api/cron/signal` — daily (UTC, `0 16 * * *`) incremental refresh:
   SoundCloud api-v2 pull, play-count snapshot, new-upload detection, commit
   `refresh-status.json` + snapshot row on change only. Requires

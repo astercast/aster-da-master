@@ -1,8 +1,26 @@
 {
   "generated": "2026-10-11",
   "method": "Parsed from `git log main`: every commit becomes an entry. The site documenting its own becoming.",
-  "entry_count": 100,
+  "entry_count": 103,
   "entries": [
+    {
+      "hash": "c064821",
+      "date": "2026-10-12",
+      "message": "changelog sync (post-validation)",
+      "files_changed": 3
+    },
+    {
+      "hash": "a6aad93",
+      "date": "2026-10-12",
+      "message": "Wow wave 2: Transmission layer 2 — choreographed era transitions, summit set piece, circle cameos, Web Audio dimension + Signal freshness hardening",
+      "files_changed": 16
+    },
+    {
+      "hash": "74fa6d1",
+      "date": "2026-10-12",
+      "message": "WAVELOG: wave 36 entry (makeover + data/v1 move + human-made bar)",
+      "files_changed": 4
+    },
     {
       "hash": "c706000",
       "date": "2026-10-12",

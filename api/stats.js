@@ -16,6 +16,10 @@ const VERSION = "1.0.0";
 const UA = SERVICE + "/" + VERSION;
 const TOP_N = 10;
 const SEVEN_D_MS = 7 * 86400 * 1000;
+/* Freshness SLA: the numbers dashboard treats a snapshot older than this as
+   stale. A stale snapshot still answers honestly — the envelope reports it
+   as degraded with the age in plain words, never as live. */
+const FRESH_SLA_MS = 24 * 3600 * 1000;
 
 function readJson(rel) {
   const t0 = Date.now();
@@ -115,6 +119,29 @@ module.exports = (req, res) => {
   const snapshotAt = (status.ok && status.obj.snapshot_at) || snap.obj.snapshot_at || null;
   const tracksCaptured = (status.ok && Number(status.obj.tracks_captured)) || tracks.length;
 
+  /* Freshness: the numbers dashboard needs to know how old its numbers are.
+     checked_at is this request's clock; snapshot_at is the data's clock. */
+  const nowMs = Date.now();
+  const snapMs = Date.parse(snapshotAt || "");
+  const ageMs = Number.isFinite(snapMs) ? Math.max(0, nowMs - snapMs) : NaN;
+  const ageHours = Number.isFinite(ageMs) ? Math.round(ageMs / 3600000) : null;
+  const freshnessStatus = !Number.isFinite(ageMs)
+    ? "unknown"
+    : ageMs <= FRESH_SLA_MS ? "fresh" : "stale";
+  const freshness = {
+    checked_at: checkedAt,
+    snapshot_at: snapshotAt,
+    age_hours: ageHours,
+    status: freshnessStatus,
+    sla_hours: FRESH_SLA_MS / 3600000,
+  };
+  const stale = freshnessStatus === "stale";
+  const ageWords = ageHours == null
+    ? "of unknown age"
+    : ageHours < 48
+      ? ageHours + " hours old"
+      : Math.round(ageHours / 24) + " days old";
+
   ok(
     res, SERVICE, VERSION,
     {
@@ -124,12 +151,17 @@ module.exports = (req, res) => {
       top_tracks: topTracks,
       source: snap.obj.source || "soundcloud api-v2",
       delta_baseline_at: baseline ? baseline.snapshot_at : null,
+      freshness,
     },
     {
       source: "live",
-      degraded: false,
+      degraded: stale,
       upstream,
-      note: baseline ? null : "delta_7d is not available yet — the Signal is still building its first week of history.",
+      note: stale
+        ? "The play-count snapshot is " + ageWords + " — the numbers below are the latest verified capture, not live counts."
+        : baseline
+          ? null
+          : "delta_7d is not available yet — the Signal is still building its first week of history.",
     }
   );
 };

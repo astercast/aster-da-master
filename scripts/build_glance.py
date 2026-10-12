@@ -224,6 +224,7 @@ def main() -> int:
         <p>Nine years of transmissions, every headline number from the verified archive. Sixty seconds here, or a lifetime in the <a href="releases/">full archive</a>.</p>
         <p class="chart-sub">Play counts are a {SNAPSHOT} snapshot and drift over time.</p>
         <p class="signal-row"><span class="api-badge" id="glance-signal-badge" data-api-state="waking" role="status" aria-live="polite"></span></p>
+        <p class="chart-sub" data-signal-fresh="stats"></p>
       </div>
 
       <section class="section" aria-label="Headline numbers">
