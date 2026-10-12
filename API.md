@@ -212,6 +212,15 @@ and `tracks.json` (the captured catalog).
   30,088) — from the 2026-10-11 snapshot, labeled as such
   (`scripts/build_milestone_watch.py`; bumps version to 0.11.0).
   Schema: `api/v1/schema/milestone-watch.json`.
+- **Milestone race** (`milestone-race.html` + `api/v1/milestone-races.json`,
+  endpoint #19): the milestone-watch logic as a live race — the 4
+  approaching play-count races ranked by gap-closing proximity
+  (`closest_races`, sorted by `days_at_pace`), the 30,088-play summit chase
+  with the five closest contenders, the session + era record book, and the
+  three most recently crossed milestones. Pace figures are lifetime-average
+  snapshot arithmetic labeled as estimates, never predictions
+  (`scripts/build_milestone_races.py`, last in the chain). Skill:
+  `milestone-race-reader`. Schema: `api/v1/schema/milestone-races.json`.
 - **Glance** (`glance.html`): the one-page infographic — 219 transmissions,
   257,394 plays, 9 years, 61 sessions, 21 collaborators, 16 codex families,
   top-5 tracks, the eras strip, heaviest sessions, bookends
@@ -233,9 +242,10 @@ Task procedures in `skills/` (registry: `skills/index.json`; playbook format: Us
 - `era-briefing` — summarize an era for a writeup
 - `transmission-decoder` — interpret a title word via the codex families
 - `codex-reader` — read a codex family's full deep-dive: decoded reading, era-by-era evolution, key sessions, voices
+- `milestone-race-reader` — read the milestone race: approaching milestones ranked, the 30,088-play summit chase, records, what's just crossed (pace = arithmetic, never predictions)
 
 ## Agents surface (wave 13)
 
-- `agents.html` — the agentic surface doc: 18-endpoint table (incl. `codex-families.json`), llms.txt/llms-full.txt, skills table with endpoint sequences, search-index usage (replicate the `/` overlay via `release-slugs.json` + `circle.json` + `codex.json` + `artist.json` eras), rate/expectation notes (static JSON, no auth; plays are a 2026-10-11 snapshot; upload dates ≠ recording dates; titles/metadata only, never lyrics, never invented bio), 5 worked writeups + the `AGENT.md` codex-trace workflow. Linked from primary nav + footer site-wide.
+- `agents.html` — the agentic surface doc: 19-endpoint table (incl. `codex-families.json`, `milestone-races.json`), llms.txt/llms-full.txt, skills table with endpoint sequences, search-index usage (replicate the `/` overlay via `release-slugs.json` + `circle.json` + `codex.json` + `artist.json` eras), rate/expectation notes (static JSON, no auth; plays are a 2026-10-11 snapshot; upload dates ≠ recording dates; titles/metadata only, never lyrics, never invented bio), 5 worked writeups + the `AGENT.md` milestone-race workflow (7 workflows prove out). Linked from primary nav + footer site-wide.
 - `api-playground.html` — second tab: **Skill recipes**, linking each skill to its endpoint sequence.
 - Agent rules: serve over HTTP (`file://` blocks `fetch()`); check `index.json → version` before caching (0.13.0).

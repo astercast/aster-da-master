@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The milestone race — Aster da Master</title>
+  <meta name="description" content="The archive's milestones as races: tracks approaching round-number play counts, the 30,088-play summit chase, the record book — computed from the 2026-10-11 play-count snapshot. Pace figures are arithmetic, never predictions.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container header-bar">
+      <a class="brand" href="./" aria-label="Aster da Master home">
+        <span class="brand-mark" aria-hidden="true">A✦</span>
+        <span>ASTER DA MASTER</span>
+      </a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="./#discography">Discography</a>
+        <a href="releases/">Releases</a>
+        <a href="years/">Years</a>
+        <a href="timeline.html">Timeline</a>
+        <a href="transmission.html">Transmission</a>
+        <a href="network.html">Network</a>
+        <a href="milestone-race.html" aria-current="page">Race</a>
+        <a href="decoder.html">Decoder</a>
+        <a href="api-playground.html">API</a>
+        <a href="agents.html">Agents</a>
+        <a href="sessions.html">Sessions</a>
+        <a href="changelog.html">Changelog</a>
+        <a href="method.html">Method</a>
+        <a href="trilogy.html">Trilogy</a>
+        <a href="glance.html">Glance</a>
+        <a href="press-kit.html">Press kit</a>
+      </nav>
+      <details class="mnav">
+        <summary><span class="bars" aria-hidden="true"><i></i><i></i><i></i></span>Menu</summary>
+        <nav class="mnav-panel" aria-label="Mobile">
+        <a href="./#discography">Discography</a>
+        <a href="releases/">Releases</a>
+        <a href="years/">Years</a>
+        <a href="timeline.html">Timeline</a>
+        <a href="transmission.html">Transmission</a>
+        <a href="network.html">Network</a>
+        <a href="milestone-race.html" aria-current="page">Race</a>
+        <a href="decoder.html">Decoder</a>
+        <a href="api-playground.html">API</a>
+        <a href="agents.html">Agents</a>
+        <a href="sessions.html">Sessions</a>
+        <a href="changelog.html">Changelog</a>
+        <a href="method.html">Method</a>
+        <a href="trilogy.html">Trilogy</a>
+        <a href="glance.html">Glance</a>
+        <a href="press-kit.html">Press kit</a>
+
+        </nav>
+      </details>
+      <button class="search-btn" id="search-open" type="button" aria-label="Search the archive (keyboard shortcut: slash)">
+        <span aria-hidden="true">⌕</span><kbd aria-hidden="true">/</kbd>
+      </button>
+    </div>
+  </header>
+
+  <div class="search-overlay" id="search-overlay" hidden>
+    <div class="search-box" role="dialog" aria-modal="true" aria-labelledby="search-title">
+      <p class="kicker" id="search-title"><span class="numeral">✦</span>Search the archive</p>
+      <input id="search-input" type="search" placeholder="Tracks, collaborators, eras, the codex…" aria-label="Search the archive" role="combobox" aria-expanded="true" aria-controls="search-results" autocomplete="off" spellcheck="false">
+      <div id="search-results" role="listbox" aria-label="Search results"></div>
+      <p class="search-hint"><kbd>/</kbd> to open · <kbd>↑</kbd><kbd>↓</kbd> to move · <kbd>Enter</kbd> to go · <kbd>Esc</kbd> to close</p>
+    </div>
+  </div>
+
+  <main id="main">
+    <div class="container">
+      <noscript><p class="se-error">The milestone race needs JavaScript — it renders <code>api/v1/milestone-races.json</code> live. The same data sits behind <a href="api/v1/milestone-races.json">the endpoint</a>.</p></noscript>
+
+      <div class="section-head reveal">
+        <span class="kicker"><span class="numeral">✦</span>The milestone race</span>
+        <h1>Races, not predictions</h1>
+        <p>Every approaching play-count milestone in the vault, ranked by how close it is to falling — plus the chase for the 30,088-play summit and the archive's record book.</p>
+        <p class="chart-sub">Play counts are a 2026-10-11 snapshot, not a live leaderboard. Pace figures are simple arithmetic on that snapshot — a lifetime average per track — never a prediction. The data keeps the score.</p>
+      </div>
+
+      <section class="section reveal" aria-labelledby="mr-closest-h">
+        <span class="kicker"><span class="numeral">✦</span>The watch list, ranked</span>
+        <h2 id="mr-closest-h">Closest races</h2>
+        <p class="chart-sub">Sorted by gap-closing proximity — the fewest "at this pace" days first. Each race shows current value, target, gap, and the pace estimate.</p>
+        <div class="mr-races" id="mr-closest"></div>
+      </section>
+
+      <section class="section reveal" aria-labelledby="mr-summit-h">
+        <span class="kicker"><span class="numeral">✦</span>The ceiling</span>
+        <h2 id="mr-summit-h">The summit race</h2>
+        <p class="chart-sub" id="mr-summit-elig"></p>
+        <div id="mr-summit"></div>
+      </section>
+
+      <section class="section reveal" aria-labelledby="mr-records-h">
+        <span class="kicker"><span class="numeral">✦</span>On the books</span>
+        <h2 id="mr-records-h">The record book</h2>
+        <div class="mr-records" id="mr-records"></div>
+      </section>
+
+      <section class="section reveal" aria-labelledby="mr-crossed-h">
+        <span class="kicker"><span class="numeral">✦</span>Already happened</span>
+        <h2 id="mr-crossed-h">Just crossed</h2>
+        <p class="chart-sub">The most recently recorded milestones in the archive, as of the snapshot.</p>
+        <div id="mr-crossed"></div>
+      </section>
+
+      <section class="section reveal" aria-labelledby="mr-method-h">
+        <span class="kicker"><span class="numeral">✦</span>How the race is scored</span>
+        <h2 id="mr-method-h">Methodology, in plain words</h2>
+        <p id="mr-method"></p>
+        <p class="chart-sub">Also at <a href="api/v1/milestone-races.json">api/v1/milestone-races.json</a> · the <a href="api-playground.html">API playground</a> · <a href="agents.html">agents surface</a></p>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <p>© 2026 ASTER DA MASTER — ALL SIGNALS RESERVED</p>
+      <nav aria-label="Footer">
+        <a href="./">Home</a>
+        <a href="./#discography">Discography</a>
+        <a href="releases/">Releases</a>
+        <a href="years/">Years</a>
+        <a href="timeline.html">Timeline</a>
+        <a href="transmission.html">Transmission</a>
+        <a href="network.html">Network</a>
+        <a href="milestone-race.html" aria-current="page">Race</a>
+        <a href="decoder.html">Decoder</a>
+        <a href="api-playground.html">API</a>
+        <a href="agents.html">Agents</a>
+        <a href="sessions.html">Sessions</a>
+        <a href="changelog.html">Changelog</a>
+        <a href="method.html">Method</a>
+        <a href="trilogy.html">Trilogy</a>
+        <a href="glance.html">Glance</a>
+        <a href="press-kit.html">Press kit</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="assets/js/common.js"></script>
+  <script src="assets/js/milestone-race.js"></script>
+  <script src="assets/js/search.js"></script>
+</body>
+</html>

@@ -194,5 +194,56 @@ console.log("[workflow 6] Codex family trace (The Modes)");
     modes.transmissions.every((t) => /^releases\//.test(t.page)));
 }
 
-console.log(failures === 0 ? "\nALL 6 WORKFLOWS PROVE OUT" : `\n${failures} CHECK(S) FAILED`);
+// --- Workflow 7: race the milestones ---
+console.log("[workflow 7] Milestone race");
+{
+  const mr = J("milestone-races.json");
+  check("plays_snapshot 2026-10-11", mr.plays_snapshot === "2026-10-11", mr.plays_snapshot);
+  check("4 play races, ids unique",
+    mr.play_races.length === 4 && new Set(mr.play_races.map((r) => r.id)).size === 4,
+    mr.play_races.map((r) => r.id).join(", "));
+  check("closest race = master key, 9615/10000, 385 needed, ~100.3 days at pace",
+    mr.closest_races[0].indexOf("master-key") !== -1 &&
+    mr.play_races.find((r) => r.id === mr.closest_races[0]).plays === 9615 &&
+    mr.play_races.find((r) => r.id === mr.closest_races[0]).needed === 385 &&
+    mr.play_races.find((r) => r.id === mr.closest_races[0]).days_at_pace === 100.3);
+  check("closest_races sorted by days_at_pace ascending",
+    mr.closest_races.every((rid, i) =>
+      i === 0 || mr.play_races.find((r) => r.id === mr.closest_races[i - 1]).days_at_pace <=
+                  mr.play_races.find((r) => r.id === rid).days_at_pace));
+  check("every race's needed = target - plays, pace arithmetic consistent",
+    mr.play_races.every((r) => r.needed === r.target - r.plays &&
+      Math.abs(r.days_at_pace - r.needed / r.pace_per_day) < 0.06));
+  check("summit holder Take Me 30,088",
+    mr.summit_race.holder.title === "Take Me (prod. Em Klebold)" &&
+    mr.summit_race.holder.plays === 30088);
+  check("top contender candy w/ capoxxo: 11587 plays, 18501 gap, ~4093.1 catch days",
+    mr.summit_race.contenders.length === 5 &&
+    /candy/.test(mr.summit_race.contenders[0].title) &&
+    mr.summit_race.contenders[0].plays === 11587 &&
+    mr.summit_race.contenders[0].gap === 18501 &&
+    mr.summit_race.contenders[0].catch_days_at_pace === 4093.1);
+  check("contenders ascending catch time, all pre-2026-07-13",
+    mr.summit_race.contenders.every((c, i) =>
+      (i === 0 || mr.summit_race.contenders[i - 1].catch_days_at_pace <= c.catch_days_at_pace) &&
+      c.date < "2026-07-13"));
+  check("session records: prolific session-40 x19, 553d silence, loudest session-02 30088",
+    mr.session_records.length === 4 &&
+    mr.session_records[0].session_id === "session-40" && mr.session_records[0].value_number === 19 &&
+    mr.session_records[1].value_number === 553 &&
+    mr.session_records[2].session_id === "session-02" && mr.session_records[2].value_number === 30088);
+  check("era records: the-first-rite leads plays (220,688) and transmissions (79)",
+    mr.era_records.length === 2 &&
+    mr.era_records.every((r) => r.era_id === "the-first-rite") &&
+    mr.era_records[0].value_number === 220688 && mr.era_records[1].value_number === 79);
+  check("just_crossed: latest 2026-10-02, then 2024-05-28, dates descending",
+    mr.just_crossed.length === 3 && mr.just_crossed[0].date === "2026-10-02" &&
+    mr.just_crossed[1].date === "2024-05-28" &&
+    mr.just_crossed.every((m, i) => i === 0 || mr.just_crossed[i - 1].date > m.date));
+  check("pace language: estimate-not-prediction caveat present",
+    /n(?:ot|ever) a prediction/.test(mr.pace_definition) &&
+    mr.play_races.every((r) => /n(?:ot|ever) a prediction/.test(r.pace_note)));
+}
+
+console.log(failures === 0 ? "\nALL 7 WORKFLOWS PROVE OUT" : `\n${failures} CHECK(S) FAILED`);
 process.exit(failures === 0 ? 0 : 1);

@@ -1,8 +1,26 @@
 {
   "generated": "2026-10-11",
   "method": "Parsed from `git log main`: every commit becomes an entry. The site documenting its own becoming.",
-  "entry_count": 48,
+  "entry_count": 51,
   "entries": [
+    {
+      "hash": "5672865",
+      "date": "2026-10-12",
+      "message": "Wave 22: changelog sync after validation rebuild",
+      "files_changed": 3
+    },
+    {
+      "hash": "e931d12",
+      "date": "2026-10-12",
+      "message": "Wave 22: milestone race tracker",
+      "files_changed": 329
+    },
+    {
+      "hash": "f967c92",
+      "date": "2026-10-12",
+      "message": "Wave 21: changelog sync after validation rebuild",
+      "files_changed": 3
+    },
     {
       "hash": "efd3ca8",
       "date": "2026-10-12",

@@ -39,7 +39,9 @@
     { id: "session-clusters", path: "api/v1/session-clusters.json",
       blurb: "Session archaeology, interactive: the 61 upload sessions as an explorable timeline — per-session enrichment (era, loudest + deepest-cut tracks, cross-links), the 60 inter-session gaps, 9 activity seasons, asserted insights. Drives sessions-explorer.html." },
     { id: "codex-families", path: "api/v1/codex-families.json",
-      blurb: "Codex family deep-dives: 16 vocabulary families with decoded readings, era-by-era evolution, key sessions, and title-credited collaborators. Drives the codex/<slug>.html deep-dive pages." }
+      blurb: "Codex family deep-dives: 16 vocabulary families with decoded readings, era-by-era evolution, key sessions, and title-credited collaborators. Drives the codex/<slug>.html deep-dive pages." },
+    { id: "milestone-races", path: "api/v1/milestone-races.json",
+      blurb: "The milestone race: approaching play-count milestones ranked by gap-closing proximity (current value, target, gap, pace arithmetic — estimates, never predictions), the 30,088-play summit chase, session + era records, the most recently crossed milestones. Drives milestone-race.html." }
   ];
 
   function esc(s) {

@@ -35,6 +35,7 @@ NAV = """<nav class="site-nav" aria-label="Primary">
         <a href="../timeline.html">Timeline</a>
         <a href="../transmission.html">Transmission</a>
         <a href="../network.html">Network</a>
+        <a href="../milestone-race.html">Race</a>
         <a href="../decoder.html">Decoder</a>
         <a href="../api-playground.html">API</a>
         <a href="../agents.html">Agents</a>
@@ -54,6 +55,7 @@ NAV = """<nav class="site-nav" aria-label="Primary">
         <a href="../timeline.html">Timeline</a>
         <a href="../transmission.html">Transmission</a>
         <a href="../network.html">Network</a>
+        <a href="../milestone-race.html">Race</a>
         <a href="../decoder.html">Decoder</a>
         <a href="../api-playground.html">API</a>
         <a href="../agents.html">Agents</a>
@@ -109,6 +111,7 @@ FOOT = """    </div>
         <a href="../timeline.html">Timeline</a>
         <a href="../transmission.html">Transmission</a>
         <a href="../network.html">Network</a>
+        <a href="../milestone-race.html">Race</a>
         <a href="../decoder.html">Decoder</a>
         <a href="../api-playground.html">API</a>
         <a href="../agents.html">Agents</a>
@@ -267,6 +270,7 @@ def deepdive_page(s, slug, rank, collabs, era_names, prev_s, next_s):
         {prev_link}
         <a class="btn btn-sm" href="../sessions.html">All sessions</a>
         <a class="btn btn-sm" href="../sessions-explorer.html">Sessions explorer</a>
+        <a class="btn btn-sm" href="../milestone-race.html">Milestone race</a>
         {next_link}
       </nav>
 """

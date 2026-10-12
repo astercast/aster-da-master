@@ -31,6 +31,7 @@ NAV = """      <nav class="site-nav" aria-label="Primary">
         <a href="timeline.html">Timeline</a>
         <a href="transmission.html">Transmission</a>
         <a href="network.html">Network</a>
+        <a href="milestone-race.html">Race</a>
         <a href="decoder.html">Decoder</a>
         <a href="api-playground.html">API</a>
         <a href="agents.html">Agents</a>
@@ -50,6 +51,7 @@ NAV = """      <nav class="site-nav" aria-label="Primary">
         <a href="timeline.html">Timeline</a>
         <a href="transmission.html">Transmission</a>
         <a href="network.html">Network</a>
+        <a href="milestone-race.html">Race</a>
         <a href="decoder.html">Decoder</a>
         <a href="api-playground.html">API</a>
         <a href="agents.html">Agents</a>
@@ -71,6 +73,7 @@ FOOTNAV = """      <nav aria-label="Footer">
         <a href="timeline.html">Timeline</a>
         <a href="transmission.html">Transmission</a>
         <a href="network.html">Network</a>
+        <a href="milestone-race.html">Race</a>
         <a href="decoder.html">Decoder</a>
         <a href="api-playground.html">API</a>
         <a href="agents.html">Agents</a>

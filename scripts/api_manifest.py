@@ -99,6 +99,10 @@ ENDPOINT_ORDER = [
      "Codex family deep-dives: the 16 vocabulary families with decoded readings (traced verbatim to codex.json epithets; unknown where the archive assigns no meaning), era-by-era evolution, key sessions, and title-credited collaborators. Data source for the codex/<slug>.html deep-dive pages.",
      "codex-families.json", "",
      lambda api: len(_doc(api, "codex-families.json")["families"])),
+    ("milestone-races",
+     "The milestone race: approaching play-count milestones as races (current value, target, gap, and pace-arithmetic estimates - never predictions), the 30,088-play summit chase, session and era record book, and the most recently crossed milestones. Data source for milestone-race.html.",
+     "milestone-races.json", "Pace figures are arithmetic on the 2026-10-11 snapshot, not predictions.",
+     lambda api: len(_doc(api, "milestone-races.json")["play_races"])),
 ]
 
 DOCUMENTS = {

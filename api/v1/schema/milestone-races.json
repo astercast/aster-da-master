@@ -1,0 +1,143 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Milestone races",
+  "description": "The archive's milestones as races: approaching play-count milestones with pace arithmetic, the summit chase, session and era records, and the most recently crossed milestones (2026-10-11 snapshot).",
+  "type": "object",
+  "required": [
+    "version",
+    "generated",
+    "plays_snapshot",
+    "method",
+    "pace_definition",
+    "play_races",
+    "closest_races",
+    "summit_race",
+    "session_records",
+    "era_records",
+    "just_crossed"
+  ],
+  "properties": {
+    "version": {
+      "type": "string"
+    },
+    "generated": {
+      "type": "string"
+    },
+    "plays_snapshot": {
+      "type": "string"
+    },
+    "method": {
+      "type": "string"
+    },
+    "pace_definition": {
+      "type": "string"
+    },
+    "play_races": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "title",
+          "plays",
+          "target",
+          "milestone",
+          "needed",
+          "progress_pct",
+          "pace_per_day",
+          "days_at_pace",
+          "pace_note"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "page": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "date": {
+            "type": "string"
+          },
+          "plays": {
+            "type": "integer"
+          },
+          "target": {
+            "type": "integer"
+          },
+          "milestone": {
+            "type": "string"
+          },
+          "needed": {
+            "type": "integer"
+          },
+          "progress_pct": {
+            "type": "number"
+          },
+          "pace_per_day": {
+            "type": "number"
+          },
+          "days_at_pace": {
+            "type": "number"
+          },
+          "pace_note": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "closest_races": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "summit_race": {
+      "type": "object",
+      "required": [
+        "holder",
+        "eligibility",
+        "contenders"
+      ],
+      "properties": {
+        "holder": {
+          "type": "object",
+          "required": [
+            "title",
+            "plays",
+            "date",
+            "page"
+          ]
+        },
+        "contenders": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "title",
+              "plays",
+              "gap",
+              "pace_per_day",
+              "catch_days_at_pace",
+              "catch_note"
+            ]
+          }
+        }
+      }
+    },
+    "session_records": {
+      "type": "array"
+    },
+    "era_records": {
+      "type": "array"
+    },
+    "just_crossed": {
+      "type": "array"
+    }
+  }
+}

@@ -240,6 +240,7 @@ def main() -> int:
         <a href="timeline.html">Timeline</a>
         <a href="transmission.html">Transmission</a>
         <a href="network.html">Network</a>
+        <a href="milestone-race.html">Race</a>
         <a href="decoder.html">Decoder</a>
         <a href="api-playground.html">API</a>
         <a href="agents.html">Agents</a>
@@ -259,6 +260,7 @@ def main() -> int:
         <a href="timeline.html">Timeline</a>
         <a href="transmission.html">Transmission</a>
         <a href="network.html">Network</a>
+        <a href="milestone-race.html">Race</a>
         <a href="decoder.html">Decoder</a>
         <a href="api-playground.html">API</a>
         <a href="agents.html">Agents</a>
@@ -293,7 +295,7 @@ def main() -> int:
         <h1>Upload sessions</h1>
         <p>{len(out)} sessions \u00b7 {sum(s["track_count"] for s in out)} vault transmissions. A new session begins whenever the silence between uploads stretches past seven days. Newest first.</p>
         <p class="chart-sub">Computed from upload dates \u00b7 play counts are a {SNAPSHOT} snapshot \u00b7 also at <a href="api/v1/sessions.json">api/v1/sessions.json</a></p>
-        <p><a class="btn btn-sm" href="sessions-explorer.html">Sessions explorer &rarr;</a> <span class="chart-sub">the 61 sessions as an explorable timeline: activity seasons, the silences, per-session deepest cuts.</span></p>
+        <p><a class="btn btn-sm" href="sessions-explorer.html">Sessions explorer &rarr;</a> <span class="chart-sub">the 61 sessions as an explorable timeline: activity seasons, the silences, per-session deepest cuts.</span></p>\n        <p><a class="btn btn-sm" href="milestone-race.html">Milestone race &rarr;</a> <span class="chart-sub">approaching play-count milestones as races, the summit chase, the record book.</span></p>
       </div>
       {"".join(cards)}
     </div>
@@ -310,6 +312,7 @@ def main() -> int:
         <a href="timeline.html">Timeline</a>
         <a href="transmission.html">Transmission</a>
         <a href="network.html">Network</a>
+        <a href="milestone-race.html">Race</a>
         <a href="decoder.html">Decoder</a>
         <a href="api-playground.html">API</a>
         <a href="agents.html">Agents</a>

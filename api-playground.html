@@ -28,6 +28,7 @@
         <a href="timeline.html">Timeline</a>
         <a href="transmission.html">Transmission</a>
         <a href="network.html">Network</a>
+        <a href="milestone-race.html">Race</a>
         <a href="decoder.html">Decoder</a>
         <a href="api-playground.html" aria-current="page">API</a>
         <a href="agents.html">Agents</a>
@@ -47,6 +48,7 @@
         <a href="timeline.html">Timeline</a>
         <a href="transmission.html">Transmission</a>
         <a href="network.html">Network</a>
+        <a href="milestone-race.html">Race</a>
         <a href="decoder.html">Decoder</a>
         <a href="api-playground.html" aria-current="page">API</a>
         <a href="agents.html">Agents</a>
@@ -194,6 +196,15 @@
                 <li>Mirrors <code>codex/&lt;slug&gt;.html</code> — same data, human page.</li>
               </ol>
             </article>
+            <article class="recipe-card" aria-labelledby="rc-race">
+              <h4 id="rc-race"><a href="skills/milestone-race-reader.md">milestone-race-reader</a></h4>
+              <p>Read the milestone race: approaching milestones ranked by gap-closing proximity, the 30,088-play summit chase, the record book.</p>
+              <ol class="recipe-seq">
+                <li><code>GET api/v1/milestone-races.json</code> — read <code>plays_snapshot</code> first (2026-10-11); read <code>pace_definition</code>: <code>pace_per_day</code> is a lifetime average, and <code>days_at_pace</code> is plain division — an estimate, never a prediction.</li>
+                <li>Walk <code>closest_races[]</code> (ids → <code>play_races[]</code>: plays, target, needed, pace), then <code>summit_race.contenders[]</code> (gap, catch time), <code>session_records[]</code>, <code>era_records[]</code>, <code>just_crossed[]</code>.</li>
+                <li>Mirrors <code>milestone-race.html</code> — same data, human page.</li>
+              </ol>
+            </article>
           </div>
           <p class="chart-sub">Full playbooks live in <code>skills/</code> (registry: <code>skills/index.json</code>). Every skill is: Use when / Inputs / Procedure / Worked example / API references / Pitfalls.</p>
         </div>
@@ -211,6 +222,7 @@
         <a href="timeline.html">Timeline</a>
         <a href="transmission.html">Transmission</a>
         <a href="network.html">Network</a>
+        <a href="milestone-race.html">Race</a>
         <a href="decoder.html">Decoder</a>
         <a href="api-playground.html" aria-current="page">API</a>
         <a href="agents.html">Agents</a>

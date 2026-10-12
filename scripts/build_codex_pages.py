@@ -405,6 +405,7 @@ def family_page(d, prev_s, next_s):
           <li><a href="../decoder.html">The decoder</a> &mdash; speak a word; the archive answers.</li>
           {era_links}
           <li><a href="../sessions-explorer.html">Sessions explorer</a> &mdash; the 61 upload sessions on one timeline.</li>
+          <li><a href="../milestone-race.html">Milestone race</a> &mdash; approaching play-count milestones as races, plus the summit chase.</li>
           <li><a href="../codex/">Codex</a> &mdash; the 16 vocabulary families.</li>
         </ul>
       </section>

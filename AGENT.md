@@ -46,6 +46,7 @@ Static files — **no auth, no keys, no rate limits**. Works on any static host.
 | `api/v1/eras.json` | Era deep-dives: six eras with full transmission lists (every track + plays), ALL in-era collaborators, active codex families, milestones, computed signal lines and summaries | 6 |
 | `api/v1/session-clusters.json` | Session archaeology, interactive: the 61 sessions as an explorable timeline — per-session enrichment (era, loudest + deepest-cut tracks, cross-links), the 60 inter-session gaps, 9 activity seasons, asserted insights. Drives `sessions-explorer.html` | 9 seasons |
 | `api/v1/codex-families.json` | Codex family deep-dives: 16 vocabulary families with decoded readings, era-by-era evolution, key sessions, title-credited collaborators. Drives the `codex/<slug>.html` pages | 16 |
+| `api/v1/milestone-races.json` | The milestone race: approaching play-count milestones ranked by gap-closing proximity (current value, target, gap, pace arithmetic — estimates, never predictions), the 30,088-play summit chase, session + era records, the most recently crossed milestones. Drives `milestone-race.html` | 4 races |
 
 Example requests (Node; swap `fs` for `fetch` in a browser):
 
@@ -220,6 +221,32 @@ family: what does it mean, and how did it evolve?"*
    family's `epithet` quoted verbatim (site framing of title vocabulary,
    not an artist statement). Distributor releases have no session record
    and no vault play count. Never quote or reproduce lyrics — titles and
+   metadata only.
+
+## Example workflow 7 — race the milestones
+
+*Skill: [`milestone-race-reader`](skills/milestone-race-reader.md). Question → "what's the closest race in the archive, and who can catch the summit?"*
+
+1. **`GET api/v1/milestone-races.json`** — read `plays_snapshot` first
+   (2026-10-11): this is a snapshot, not a live leaderboard.
+2. **`closest_races[0]`** — the closest race in the archive: "master key ft.
+   Lil Wintr x Marcelo (prod. ginseng)", 9,615 of 10,000 plays, 385 needed,
+   pace ~3.84 plays/day → at this lifetime pace, ~100.3 days (estimate, not a
+   prediction).
+3. **`summit_race`** — holder "Take Me (prod. Em Klebold)" at 30,088 plays
+   (2018-02-04). Closest contender: "candy w/ capoxxo(prod. razorwrist)" —
+   11,587 plays, 18,501 behind, catch time ~4,093.1 days at lifetime pace.
+   Contenders are tracks uploaded before 2026-07-13 (`eligibility`): pace
+   needs a track record.
+4. **`session_records` / `era_records`** — the standing records: most-prolific
+   session = The November 3rd–12th Session (19 tracks); longest silence =
+   553 days (session-36 → session-37); era with most plays = The First Rite
+   (220,688). **`just_crossed`** — most recent: "Latest transmission"
+   (2026-10-02), then "250,000 plays crossed" (2024-05-28).
+5. Pitfall check: `pace_per_day` is snapshot plays ÷ days from upload to
+   snapshot — a lifetime average, not a current rate. `days_at_pace` and
+   `catch_days_at_pace` are plain division. **Say "estimate, not a prediction"
+   out loud in every report.** Never quote or reproduce lyrics — titles and
    metadata only.
 
 ## Rates & expectations

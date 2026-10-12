@@ -28,6 +28,7 @@
         <a href="timeline.html">Timeline</a>
         <a href="transmission.html">Transmission</a>
         <a href="network.html">Network</a>
+        <a href="milestone-race.html">Race</a>
         <a href="decoder.html">Decoder</a>
         <a href="api-playground.html">API</a>
         <a href="agents.html" aria-current="page">Agents</a>
@@ -47,6 +48,7 @@
         <a href="timeline.html">Timeline</a>
         <a href="transmission.html">Transmission</a>
         <a href="network.html">Network</a>
+        <a href="milestone-race.html">Race</a>
         <a href="decoder.html">Decoder</a>
         <a href="api-playground.html">API</a>
         <a href="agents.html" aria-current="page">Agents</a>
@@ -85,7 +87,7 @@
 
         <div class="reveal">
           <h3 id="ag-endpoints">The API</h3>
-          <p>Eighteen versioned JSON endpoints under <code>api/v1/</code>. Current data version: <strong>0.13.0</strong> (see <code>api/v1/index.json</code> → <code>version</code> before caching anything).</p>
+          <p>Nineteen versioned JSON endpoints under <code>api/v1/</code>. Current data version: <strong>0.13.0</strong> (see <code>api/v1/index.json</code> → <code>version</code> before caching anything).</p>
           <div class="table-wrap">
             <table>
               <caption>API endpoint table</caption>
@@ -106,6 +108,7 @@
                 <tr><th scope="row">network</th><td><code>api/v1/network.json</code></td><td>Collaboration network: artist-centered graph of the 21 title-credited collaborators + producer scene figures, track-weighted edges, co-credit links from shared titles, computed insights</td><td><code>nodes[]</code> → <code>kind, track_count, tracks[], years[], x, y</code>; <code>edges[]</code> → <code>a, b, weight, kind</code>; <code>insights</code></td></tr>
                 <tr><th scope="row">eras</th><td><code>api/v1/eras.json</code></td><td>Era deep-dives: six eras with full transmission lists (every track + plays), all in-era collaborators, active codex families, milestones, computed signal lines and summaries — drives the <code>eras/&lt;id&gt;.html</code> pages</td><td><code>eras[]</code> → <code>tracks[], collaborators[], codex_families[], summary, deep_dive, journey</code></td></tr>
                 <tr><th scope="row">session-clusters</th><td><code>api/v1/session-clusters.json</code></td><td>Session archaeology, interactive: the 61 upload sessions as an explorable timeline — per-session enrichment (era, loudest + deepest-cut tracks, cross-links), the 60 inter-session gaps, 9 activity seasons, asserted insights. Drives <code>sessions-explorer.html</code></td><td><code>sessions[]</code> → <code>loudest, deepest_cut, collaborators, deep_dive, journey</code>; <code>gaps[], clusters[], insights</code></td></tr>
+                <tr><th scope="row">milestone-races</th><td><code>api/v1/milestone-races.json</code></td><td>The milestone race: approaching play-count milestones ranked by gap-closing proximity (current value, target, gap, pace arithmetic — estimates, never predictions), the 30,088-play summit chase, session + era records, the most recently crossed milestones. Drives <code>milestone-race.html</code></td><td><code>play_races[]</code> → <code>plays, target, needed, pace_per_day, days_at_pace</code>; <code>closest_races[]</code>; <code>summit_race.contenders[]</code>; <code>session_records[], era_records[], just_crossed[]</code></td></tr>
                 <tr><th scope="row">years</th><td><code>api/v1/years.json</code></td><td>Year-in-review: per-year stats and top tracks, 2018–2026</td><td><code>transmissions, plays, top_tracks[]</code></td></tr>
                 <tr><th scope="row">on-this-day</th><td><code>api/v1/on-this-day.json</code></td><td>Transmissions keyed by MM-DD upload date</td><td>MM-DD keys</td></tr>
                 <tr><th scope="row">release-slugs</th><td><code>api/v1/release-slugs.json</code></td><td>Slug index for the 219 generated release pages</td><td>slug → page mappings</td></tr>
@@ -146,6 +149,7 @@
                 <tr><th scope="row"><a href="skills/transmission-decoder.md">transmission-decoder</a></th><td>Interprets a title word via the codex families</td><td><code>codex.json</code> → <code>sessions.json</code> (context); mirrors <code>decoder.html</code></td></tr>
                 <tr><th scope="row"><a href="skills/network-graph-reader.md">network-graph-reader</a></th><td>Reads the collaboration network: nodes, edges, co-credit links, insights</td><td><code>network.json</code> → <code>insights</code> → <code>circle.json</code> (per-track detail)</td></tr>
                 <tr><th scope="row"><a href="skills/codex-reader.md">codex-reader</a></th><td>Reads a codex family's full deep-dive: decoded reading, era evolution, sessions, voices</td><td><code>codex-families.json</code> → <code>decoded</code> → <code>eras[]</code> → <code>transmissions[]</code> → <code>key_sessions[]</code> → <code>collaborators[]</code>; mirrors <code>codex/&lt;slug&gt;.html</code></td></tr>
+                <tr><th scope="row"><a href="skills/milestone-race-reader.md">milestone-race-reader</a></th><td>Reads the milestone race: approaching milestones ranked, the 30,088-play summit chase, records, what's just crossed</td><td><code>milestone-races.json</code> → <code>closest_races[]</code> → <code>play_races[]</code> → <code>summit_race</code> → <code>records</code>; mirrors <code>milestone-race.html</code></td></tr>
               </tbody>
             </table>
           </div>
@@ -233,6 +237,7 @@
         <a href="timeline.html">Timeline</a>
         <a href="transmission.html">Transmission</a>
         <a href="network.html">Network</a>
+        <a href="milestone-race.html">Race</a>
         <a href="decoder.html">Decoder</a>
         <a href="api-playground.html">API</a>
         <a href="agents.html" aria-current="page">Agents</a>
