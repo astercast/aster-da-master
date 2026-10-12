@@ -2,7 +2,23 @@
 
 > **LIVE-READY, NOT DEPLOYED. Do not connect Vercel until the user approves.**
 
-Last updated: 2026-10-12 (Vercel Wave B — frontend integration).
+> **TWO-TRACK RELEASE MODEL (user's standing order 2026-10-11 — supersedes the
+> git-integration hookup steps in §2 below).** This working repo
+> (`astercast/aster-da-master`) is NEVER deployed and NEVER connected to Vercel;
+> the wave engine builds here continuously. The deployable release lives in the
+> private snapshot repo **`astercast/aster-da-master-live`** (clean static
+> snapshot, built 2026-10-12 from this working tree).
+> - Deploy = **one-time Vercel CLI deploy from a local clone of
+>   `aster-da-master-live`. No git integration** (can never auto-deploy).
+> - The `-live` snapshot is static-only: no generators, no server functions,
+>   no build step. The `api/` server-functions + cron roadmap documented below
+>   stays in this working repo and is NOT part of the `-live` snapshot.
+> - Future work is GitHub-only: waves keep building here; the `-live` repo is
+>   re-synced ONLY on the user's explicit "push"/"ship it". Never push to
+>   `-live` from wave-engine automation. Before every push, verify the remote
+>   URL matches the intended track.
+
+Last updated: 2026-10-12 (two-track release note; Vercel Wave B — frontend integration).
 
 ## 1. What deploys
 

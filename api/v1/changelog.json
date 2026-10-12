@@ -1,8 +1,14 @@
 {
   "generated": "2026-10-11",
   "method": "Parsed from `git log main`: every commit becomes an entry. The site documenting its own becoming.",
-  "entry_count": 88,
+  "entry_count": 89,
   "entries": [
+    {
+      "hash": "f8d1539",
+      "date": "2026-10-12",
+      "message": "GO_LIVE two-track release note + LIVE_CHECKLIST.md; changelog sync (wave 34)",
+      "files_changed": 5
+    },
     {
       "hash": "84e5e08",
       "date": "2026-10-12",
