@@ -198,6 +198,32 @@
                 "plays"
               ]
             }
+          },
+          "producers": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "page": {
+                  "type": "string"
+                },
+                "transmissions": {
+                  "type": "integer"
+                },
+                "plays": {
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "name",
+                "page",
+                "transmissions",
+                "plays"
+              ]
+            }
           }
         },
         "required": [
@@ -214,7 +240,8 @@
           "eras",
           "transmissions",
           "key_sessions",
-          "collaborators"
+          "collaborators",
+          "producers"
         ]
       }
     }

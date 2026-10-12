@@ -28,7 +28,7 @@ Static files — **no auth, no keys, no rate limits**. Works on any static host.
 
 | Endpoint | Contents | Records |
 |---|---|---|
-| `api/v1/index.json` | Manifest — start here | 20 endpoints |
+| `api/v1/index.json` | Manifest — start here | 22 endpoints |
 | `api/v1/artist.json` | The source of truth: bio, facts, discography (219 entries), platforms, eras, vault, upcoming | 219 |
 | `api/v1/codex.json` | The vocabulary codex: 16 word families with per-family track lists | 16 |
 | `api/v1/release-slugs.json` | Slug index: ordinal string → release-page slug (the search overlay's corpus) | 219 |
@@ -49,6 +49,7 @@ Static files — **no auth, no keys, no rate limits**. Works on any static host.
 | `api/v1/milestone-races.json` | The milestone race: approaching play-count milestones ranked by gap-closing proximity (current value, target, gap, pace arithmetic — estimates, never predictions), the 30,088-play summit chase, session + era records, the most recently crossed milestones. Drives `milestone-race.html` | 4 races |
 | `api/v1/session-tools.json` | Session explorer 2.0 tooling: 61 per-session compare profiles (stats, loudest + deepest-cut tracks, collaborators, play profiles, family/session/era/journey cross-links), the deepest-sessions editorial ranking (lowest average plays per transmission, min 2 transmissions, formula stated in the payload — editorial, not an artist fact), and the honest snapshot-history state (one 2026-10-11 snapshot: no play trajectories exist). Drives the compare / deepest-cuts / timeline-scrubber sections of `sessions-explorer.html` | 61 profiles |
 | `api/v1/codex-network.json` | The codex relationship graph: 16 word families as nodes, shared title-credited collaborators and title-parsed producers as edges, BFS degrees of separation from Aster, the family-overlap graph, and connect-the-dots shortest-path data. Drives `codex-network.html` | 70 nodes |
+| `api/v1/producer-deepdives.json` | Producer deep-dives: every as-credited producer (title prod./produced-by fragments, verbatim) with credited productions (release/session links, co-producers, title-credited voices), codex family ties, a computed production fingerprint, and sourced research where a research pass exists. Drives `producers/<slug>.html` | 113 producers |
 
 Example requests (Node; swap `fs` for `fetch` in a browser):
 

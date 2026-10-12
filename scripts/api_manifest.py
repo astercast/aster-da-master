@@ -111,11 +111,15 @@ ENDPOINT_ORDER = [
      "The codex network: 16 word families as nodes, shared title-credited collaborators and title-parsed producers as edges, BFS degrees of separation from Aster, the family-overlap graph, and the connect-the-dots shortest-path data. Data source for codex-network.html.",
      "codex-network.json", "Producer credits are parsed from titles (as credited, verbatim); degrees are BFS distances on this graph, not a social claim.",
      lambda api: len(_doc(api, "codex-network.json")["nodes"])),
+    ("producer-deepdives",
+     "Producer deep-dives: every as-credited producer in the archive (title prod./produced-by fragments, verbatim) with credited productions (release/session links, co-producers, title-credited voices), codex family ties, a computed production fingerprint, and sourced research where a research pass exists. Data source for producers/<slug>.html.",
+     "producer-deepdives.json", "Fingerprints are computed from the archive's credits, not biographies; research blocks carry their evidence flag.",
+     lambda api: len(_doc(api, "producer-deepdives.json")["producers"])),
 ]
 
 DOCUMENTS = {
     "AGENT.md": "Agent operator's manual: base URL pattern, key endpoints with example requests, end-to-end workflows, rate/expectation notes.",
-    "agents.html": "Human + agent surface: 21-endpoint table, llms files, skills, search-index usage, rates & expectations, worked workflows.",
+    "agents.html": "Human + agent surface: 22-endpoint table, llms files, skills, search-index usage, rates & expectations, worked workflows.",
     "API.md": "Human-readable API reference incl. the shared cross-site conventions block.",
     "llms.txt": "Short agent brief: catalog shape, method, API map, key verified facts, ops.",
     "llms-full.txt": "Full agent brief: per-era detail, collaborator research notes, unknowns register, page map, generator order.",

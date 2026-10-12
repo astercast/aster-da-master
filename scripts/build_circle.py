@@ -31,11 +31,17 @@ ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "scripts"))
 from build_releases import slugify  # noqa: E402  (single source of truth)
 from build_years import parse_collabs, era_for_year  # noqa: E402  (same parser as network.js)
+from build_producer_deepdives import (  # noqa: E402  (wave 27 cross-links)
+    parse_producers, producer_slug)
 
 DATA = json.loads((ROOT / "data" / "artist.json").read_text())
 OUT = ROOT / "circle"
 API = ROOT / "api" / "v1"
 NEW_VERSION = "0.14.0"  # wave 23: Uncle research enrichment + watch block
+
+# wave 27: producer slugs with as-credited productions (populated in main);
+# circle members who also produce get a "Producer deep dive" cross-link.
+PRODUCER_SLUGS = set()
 
 NAV = """<nav class="site-nav" aria-label="Primary">
         <a href="../#discography">Discography</a>
@@ -335,6 +341,13 @@ def collab_page(name, slug, tracks, slug_of, eras, prev_s, next_s, ckey=None):
         f'<a class="btn btn-sm" href="{next_s}.html" rel="next">Next &rarr;</a>'
         if next_s else '<span class="btn btn-sm" aria-disabled="true">&rarr;</span>'
     )
+    # wave 27: circle members who also produce link to their deep dive
+    pd_slug = producer_slug(name)
+    pd_link = (
+        f'<p class="chart-sub"><a href="../producers/{pd_slug}.html">Producer deep dive &rarr;</a> '
+        f'{escape(name)}\u2019s as-credited productions, fingerprint, and scene context.</p>'
+        if pd_slug in PRODUCER_SLUGS else ""
+    )
 
     body = f"""
       <nav class="crumbs" aria-label="Breadcrumb">
@@ -365,6 +378,7 @@ def collab_page(name, slug, tracks, slug_of, eras, prev_s, next_s, ckey=None):
         <ol class="year-list">{rows}</ol>
       </section>
 {enrich_html}
+{pd_link}
       <nav class="year-pager" aria-label="Collaborator navigation">
         {prev_link}
         <a class="btn btn-sm" href="./">The full circle</a>
@@ -463,6 +477,7 @@ def scene_figure_page(slug, info):
         {render_sources(info["sources"])}
       </section>
 {watch}
+      <p class="chart-sub"><a href="../producers/{slug}.html">Producer deep dive &rarr;</a> {escape(info["name"])}&rsquo;s as-credited productions, fingerprint, and scene context.</p>
       <nav class="year-pager" aria-label="Scene figure navigation">
         <a class="btn btn-sm" href="./">The full circle</a>
       </nav>
@@ -483,6 +498,13 @@ def scene_figure_page(slug, info):
 def main():
     releases = DATA["discography"]
     eras = DATA.get("eras", [])
+
+    # wave 27: producer slugs (as-credited) for the deep-dive cross-links
+    sess = json.loads((ROOT / "data" / "sessions.json").read_text())["sessions"]
+    for s in sess:
+        for t in s["tracks"]:
+            for p in parse_producers(t["title"]):
+                PRODUCER_SLUGS.add(producer_slug(p))
 
     # Release slugs: identical algorithm to build_search_index.py.
     used, slugs = set(), []

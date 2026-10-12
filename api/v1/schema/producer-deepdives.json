@@ -1,0 +1,254 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "producer-deepdives",
+  "description": "Producer deep-dives: every as-credited producer in the archive with credited productions (release/session links), codex family ties, title-credited voices, a computed production fingerprint, and sourced research where a research pass exists.",
+  "type": "object",
+  "required": [
+    "version",
+    "generated",
+    "plays_snapshot",
+    "method",
+    "research_pass",
+    "producer_count",
+    "producers",
+    "insights"
+  ],
+  "properties": {
+    "version": {
+      "type": "string"
+    },
+    "generated": {
+      "type": "string"
+    },
+    "plays_snapshot": {
+      "type": "string"
+    },
+    "method": {
+      "type": "string"
+    },
+    "research_pass": {
+      "type": "string"
+    },
+    "producer_count": {
+      "type": "integer"
+    },
+    "producers": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "slug",
+          "page",
+          "aliases",
+          "production_count",
+          "total_plays",
+          "years_active",
+          "first",
+          "last",
+          "productions",
+          "co_producers",
+          "codex_families",
+          "fingerprint",
+          "circle_page",
+          "research",
+          "explorer_deep_link"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "slug": {
+            "type": "string"
+          },
+          "page": {
+            "type": "string"
+          },
+          "aliases": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "production_count": {
+            "type": "integer"
+          },
+          "total_plays": {
+            "type": "integer"
+          },
+          "years_active": {
+            "type": "string"
+          },
+          "first": {
+            "type": "object"
+          },
+          "last": {
+            "type": "object"
+          },
+          "productions": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "title",
+                "date",
+                "plays",
+                "release_page",
+                "session_id",
+                "session_name",
+                "session_page",
+                "co_producers",
+                "voices"
+              ],
+              "properties": {
+                "title": {
+                  "type": "string"
+                },
+                "date": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "plays": {
+                  "type": "integer"
+                },
+                "release_page": {
+                  "type": "string"
+                },
+                "session_id": {
+                  "type": "string"
+                },
+                "session_name": {
+                  "type": "string"
+                },
+                "session_page": {
+                  "type": "string"
+                },
+                "co_producers": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "required": [
+                      "name",
+                      "page"
+                    ],
+                    "properties": {
+                      "name": {
+                        "type": "string"
+                      },
+                      "page": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                },
+                "voices": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "required": [
+                      "name",
+                      "page"
+                    ],
+                    "properties": {
+                      "name": {
+                        "type": "string"
+                      },
+                      "page": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "co_producers": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "name",
+                "page",
+                "shared"
+              ],
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "page": {
+                  "type": "string"
+                },
+                "shared": {
+                  "type": "integer"
+                }
+              }
+            }
+          },
+          "codex_families": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "family_slug",
+                "family_name",
+                "family_page",
+                "transmissions",
+                "titles"
+              ],
+              "properties": {
+                "family_slug": {
+                  "type": "string"
+                },
+                "family_name": {
+                  "type": "string"
+                },
+                "family_page": {
+                  "type": "string"
+                },
+                "transmissions": {
+                  "type": "integer"
+                },
+                "titles": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "fingerprint": {
+            "type": "object"
+          },
+          "circle_page": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "research": {
+            "type": [
+              "object",
+              "null"
+            ]
+          },
+          "explorer_deep_link": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      }
+    },
+    "insights": {
+      "type": "object"
+    }
+  }
+}

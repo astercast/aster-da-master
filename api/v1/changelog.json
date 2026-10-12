@@ -1,8 +1,26 @@
 {
   "generated": "2026-10-11",
   "method": "Parsed from `git log main`: every commit becomes an entry. The site documenting its own becoming.",
-  "entry_count": 58,
+  "entry_count": 61,
   "entries": [
+    {
+      "hash": "6156ecd",
+      "date": "2026-10-12",
+      "message": "Wave 27: changelog sync (3-file convention)",
+      "files_changed": 3
+    },
+    {
+      "hash": "52b2ec2",
+      "date": "2026-10-12",
+      "message": "Wave 27: producer deep-dives — 113 as-credited producers, endpoint #22, research pass (ginseng/Em Klebold/Fish Narc/pvscale/asa41)",
+      "files_changed": 173
+    },
+    {
+      "hash": "5893365",
+      "date": "2026-10-12",
+      "message": "Wave 26: changelog sync (3-file convention)",
+      "files_changed": 3
+    },
     {
       "hash": "a02fc3f",
       "date": "2026-10-12",

@@ -22,7 +22,7 @@
    "description": "Manifest: every endpoint with description, schema URL, updated timestamp, record counts, and deprecation notes. Start here.",
    "schema": "api/v1/schema/index.json",
    "updated": "2026-10-11T00:00:00Z",
-   "records": 21,
+   "records": 22,
    "notes": "meta.version mirrors the top-level version field."
   },
   "artist": {
@@ -94,7 +94,7 @@
    "description": "Site construction history, generated from the git log.",
    "schema": "api/v1/schema/changelog.json",
    "updated": "2026-10-11T00:00:00Z",
-   "records": 58,
+   "records": 61,
    "notes": "A changelog built from git log cannot record its own sync commit (wave-15 convention, WAVELOG.md)."
   },
   "first-last": {
@@ -184,11 +184,19 @@
    "updated": "2026-10-11T00:00:00Z",
    "records": 70,
    "notes": "Producer credits are parsed from titles (as credited, verbatim); degrees are BFS distances on this graph, not a social claim."
+  },
+  "producer-deepdives": {
+   "path": "api/v1/producer-deepdives.json",
+   "description": "Producer deep-dives: every as-credited producer in the archive (title prod./produced-by fragments, verbatim) with credited productions (release/session links, co-producers, title-credited voices), codex family ties, a computed production fingerprint, and sourced research where a research pass exists. Data source for producers/<slug>.html.",
+   "schema": "api/v1/schema/producer-deepdives.json",
+   "updated": "2026-10-11T00:00:00Z",
+   "records": 113,
+   "notes": "Fingerprints are computed from the archive's credits, not biographies; research blocks carry their evidence flag."
   }
  },
  "documents": {
   "AGENT.md": "Agent operator's manual: base URL pattern, key endpoints with example requests, end-to-end workflows, rate/expectation notes.",
-  "agents.html": "Human + agent surface: 21-endpoint table, llms files, skills, search-index usage, rates & expectations, worked workflows.",
+  "agents.html": "Human + agent surface: 22-endpoint table, llms files, skills, search-index usage, rates & expectations, worked workflows.",
   "API.md": "Human-readable API reference incl. the shared cross-site conventions block.",
   "llms.txt": "Short agent brief: catalog shape, method, API map, key verified facts, ops.",
   "llms-full.txt": "Full agent brief: per-era detail, collaborator research notes, unknowns register, page map, generator order."

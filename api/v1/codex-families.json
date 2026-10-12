@@ -206,6 +206,44 @@
           "transmissions": 1,
           "plays": 17
         }
+      ],
+      "producers": [
+        {
+          "name": "ilyagargod",
+          "page": "producers/ilyagargod.html",
+          "transmissions": 1,
+          "plays": 455
+        },
+        {
+          "name": "k3nik",
+          "page": "producers/k3nik.html",
+          "transmissions": 1,
+          "plays": 455
+        },
+        {
+          "name": "runawway",
+          "page": "producers/runawway.html",
+          "transmissions": 1,
+          "plays": 455
+        },
+        {
+          "name": "doublemulti",
+          "page": "producers/doublemulti.html",
+          "transmissions": 1,
+          "plays": 170
+        },
+        {
+          "name": "pinkcat",
+          "page": "producers/pinkcat.html",
+          "transmissions": 1,
+          "plays": 170
+        },
+        {
+          "name": "NaXi",
+          "page": "producers/naxi.html",
+          "transmissions": 1,
+          "plays": 17
+        }
       ]
     },
     {
@@ -326,7 +364,15 @@
           "page": "sessions/the-july-14th-session.html"
         }
       ],
-      "collaborators": []
+      "collaborators": [],
+      "producers": [
+        {
+          "name": "lil biscuit",
+          "page": "producers/lil-biscuit.html",
+          "transmissions": 1,
+          "plays": 212
+        }
+      ]
     },
     {
       "name": "Keys",
@@ -420,6 +466,14 @@
           "name": "Marcelo",
           "page": "circle/marcelo.html",
           "transmissions": 2,
+          "plays": 9615
+        }
+      ],
+      "producers": [
+        {
+          "name": "ginseng",
+          "page": "producers/ginseng.html",
+          "transmissions": 1,
           "plays": 9615
         }
       ]
@@ -522,7 +576,21 @@
           "page": "sessions.html"
         }
       ],
-      "collaborators": []
+      "collaborators": [],
+      "producers": [
+        {
+          "name": "ice trouble",
+          "page": "producers/ice-trouble.html",
+          "transmissions": 1,
+          "plays": 189
+        },
+        {
+          "name": "fiftyzeros",
+          "page": "producers/fiftyzeros.html",
+          "transmissions": 1,
+          "plays": 178
+        }
+      ]
     },
     {
       "name": "Wards & the Spirit",
@@ -622,7 +690,21 @@
           "page": "sessions.html"
         }
       ],
-      "collaborators": []
+      "collaborators": [],
+      "producers": [
+        {
+          "name": "bygus",
+          "page": "producers/bygus.html",
+          "transmissions": 1,
+          "plays": 275
+        },
+        {
+          "name": "fiftyzeros",
+          "page": "producers/fiftyzeros.html",
+          "transmissions": 1,
+          "plays": 178
+        }
+      ]
     },
     {
       "name": "The Rites",
@@ -962,6 +1044,62 @@
           "transmissions": 1,
           "plays": 300
         }
+      ],
+      "producers": [
+        {
+          "name": "itami リネン",
+          "page": "producers/itami.html",
+          "transmissions": 1,
+          "plays": 3940
+        },
+        {
+          "name": "WeDreaming",
+          "page": "producers/wedreaming.html",
+          "transmissions": 1,
+          "plays": 1229
+        },
+        {
+          "name": "Addy",
+          "page": "producers/addy.html",
+          "transmissions": 1,
+          "plays": 935
+        },
+        {
+          "name": "DIX2",
+          "page": "producers/dix2.html",
+          "transmissions": 1,
+          "plays": 697
+        },
+        {
+          "name": "Discent",
+          "page": "producers/discent.html",
+          "transmissions": 1,
+          "plays": 579
+        },
+        {
+          "name": "suli",
+          "page": "producers/suli.html",
+          "transmissions": 1,
+          "plays": 300
+        },
+        {
+          "name": "capsctrl",
+          "page": "producers/capsctrl.html",
+          "transmissions": 1,
+          "plays": 232
+        },
+        {
+          "name": "astral_hp",
+          "page": "producers/astral-hp.html",
+          "transmissions": 1,
+          "plays": 178
+        },
+        {
+          "name": "AWFL",
+          "page": "producers/awfl.html",
+          "transmissions": 1,
+          "plays": 43
+        }
       ]
     },
     {
@@ -1245,6 +1383,68 @@
           "transmissions": 1,
           "plays": 1771
         }
+      ],
+      "producers": [
+        {
+          "name": "Antropolita",
+          "page": "producers/antropolita.html",
+          "transmissions": 1,
+          "plays": 4362
+        },
+        {
+          "name": "Tundra Beats",
+          "page": "producers/tundra-beats.html",
+          "transmissions": 1,
+          "plays": 3096
+        },
+        {
+          "name": "Xtravulous",
+          "page": "producers/xtravulous.html",
+          "transmissions": 1,
+          "plays": 3096
+        },
+        {
+          "name": "Keyblayde808",
+          "page": "producers/keyblayde808.html",
+          "transmissions": 1,
+          "plays": 2650
+        },
+        {
+          "name": "y axis",
+          "page": "producers/y-axis.html",
+          "transmissions": 1,
+          "plays": 1771
+        },
+        {
+          "name": "Josh the Samurai",
+          "page": "producers/josh-the-samurai.html",
+          "transmissions": 1,
+          "plays": 1150
+        },
+        {
+          "name": "odece",
+          "page": "producers/odece.html",
+          "transmissions": 1,
+          "plays": 450
+        },
+        {
+          "name": "lunarlad",
+          "page": "producers/lunarlad.html",
+          "transmissions": 1,
+          "plays": 275
+        },
+        {
+          "name": "lil biscuit",
+          "page": "producers/lil-biscuit.html",
+          "transmissions": 1,
+          "plays": 210
+        },
+        {
+          "name": "paris pas rigolo",
+          "page": "producers/paris-pas-rigolo.html",
+          "transmissions": 1,
+          "plays": 178
+        }
       ]
     },
     {
@@ -1423,6 +1623,20 @@
           "transmissions": 1,
           "plays": 10083
         }
+      ],
+      "producers": [
+        {
+          "name": "Rizi",
+          "page": "producers/rizi.html",
+          "transmissions": 1,
+          "plays": 1293
+        },
+        {
+          "name": "wellfed",
+          "page": "producers/wellfed.html",
+          "transmissions": 1,
+          "plays": 208
+        }
       ]
     },
     {
@@ -1570,6 +1784,20 @@
           "transmissions": 1,
           "plays": 700
         }
+      ],
+      "producers": [
+        {
+          "name": "YungSkah",
+          "page": "producers/yungskah.html",
+          "transmissions": 1,
+          "plays": 5805
+        },
+        {
+          "name": "Rawman",
+          "page": "producers/rawman.html",
+          "transmissions": 1,
+          "plays": 700
+        }
       ]
     },
     {
@@ -1711,6 +1939,38 @@
           "transmissions": 1,
           "plays": 4587
         }
+      ],
+      "producers": [
+        {
+          "name": "Brokn",
+          "page": "producers/brokn.html",
+          "transmissions": 1,
+          "plays": 9535
+        },
+        {
+          "name": "asa41",
+          "page": "producers/asa41.html",
+          "transmissions": 1,
+          "plays": 4587
+        },
+        {
+          "name": "pvscale",
+          "page": "producers/pvscale.html",
+          "transmissions": 1,
+          "plays": 4587
+        },
+        {
+          "name": "Yung Skah",
+          "page": "producers/yung-skah.html",
+          "transmissions": 1,
+          "plays": 854
+        },
+        {
+          "name": "phantasie",
+          "page": "producers/phantasie.html",
+          "transmissions": 1,
+          "plays": 222
+        }
       ]
     },
     {
@@ -1817,7 +2077,21 @@
           "page": "sessions.html"
         }
       ],
-      "collaborators": []
+      "collaborators": [],
+      "producers": [
+        {
+          "name": "Apostle",
+          "page": "producers/apostle.html",
+          "transmissions": 1,
+          "plays": 1815
+        },
+        {
+          "name": "wellfed",
+          "page": "producers/wellfed.html",
+          "transmissions": 1,
+          "plays": 242
+        }
+      ]
     },
     {
       "name": "The Pack",
@@ -1891,7 +2165,15 @@
           "page": "sessions.html"
         }
       ],
-      "collaborators": []
+      "collaborators": [],
+      "producers": [
+        {
+          "name": "waynn",
+          "page": "producers/waynn.html",
+          "transmissions": 1,
+          "plays": 175
+        }
+      ]
     },
     {
       "name": "Lucid States",
@@ -1991,7 +2273,21 @@
           "page": "sessions/the-november-4th-11th-session.html"
         }
       ],
-      "collaborators": []
+      "collaborators": [],
+      "producers": [
+        {
+          "name": "T.N.C",
+          "page": "producers/t-n-c.html",
+          "transmissions": 1,
+          "plays": 918
+        },
+        {
+          "name": "Yukio",
+          "page": "producers/yukio.html",
+          "transmissions": 1,
+          "plays": 175
+        }
+      ]
     },
     {
       "name": "Time",
@@ -2075,7 +2371,21 @@
           "page": "sessions.html"
         }
       ],
-      "collaborators": []
+      "collaborators": [],
+      "producers": [
+        {
+          "name": "Ridicholas",
+          "page": "producers/ridicholas.html",
+          "transmissions": 1,
+          "plays": 801
+        },
+        {
+          "name": "DIX2",
+          "page": "producers/dix2.html",
+          "transmissions": 1,
+          "plays": 697
+        }
+      ]
     },
     {
       "name": "Soul",
@@ -2159,7 +2469,21 @@
           "page": "sessions.html"
         }
       ],
-      "collaborators": []
+      "collaborators": [],
+      "producers": [
+        {
+          "name": "Fish Narc",
+          "page": "producers/fish-narc.html",
+          "transmissions": 1,
+          "plays": 12944
+        },
+        {
+          "name": "Josh the Samurai",
+          "page": "producers/josh-the-samurai.html",
+          "transmissions": 1,
+          "plays": 1150
+        }
+      ]
     },
     {
       "name": "Fire & Water",
@@ -2259,7 +2583,21 @@
           "page": "sessions.html"
         }
       ],
-      "collaborators": []
+      "collaborators": [],
+      "producers": [
+        {
+          "name": "odece",
+          "page": "producers/odece.html",
+          "transmissions": 1,
+          "plays": 450
+        },
+        {
+          "name": "paris pas rigolo",
+          "page": "producers/paris-pas-rigolo.html",
+          "transmissions": 1,
+          "plays": 178
+        }
+      ]
     }
   ]
 }

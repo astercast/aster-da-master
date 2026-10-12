@@ -4,11 +4,12 @@
 # Stages:
 #   1. JS syntax ......... node --check every shipped JS file (assets/js/)
 #   2. JSON parse ........ every JSON file under api/, data/, skills/, scripts/
-#   3. JSON Schema ....... draft-07 validation of all 21 docs under
+#   3. JSON Schema ....... draft-07 validation of all 22 docs under
 #                         api/v1/schema/ (one per endpoint, incl. the index
 #                         manifest, the era deep-dives, session clusters,
 #                         the codex family deep-dives, the milestone races,
-#                         the session tools, and the codex network)
+#                         the session tools, the codex network, and the
+#                         producer deep-dives)
 #   4. Relative links .... every href/src in every HTML page resolves on disk;
 #                         JS fetch() string literals resolve too. 0 broken.
 #   5. Lyric-grep gate .. fail on any lyric-like content. Titles/metadata
@@ -122,7 +123,7 @@ if failures:
     if len(failures) > 20:
         print(f"   ... and {len(failures)-20} more")
     sys.exit(1)
-print("  ok: all 21 endpoints validate against their draft-07 schemas")
+print("  ok: all 22 endpoints validate against their draft-07 schemas")
 EOF
 [ $? -eq 0 ] && pass "schema validation clean" || FAIL=$((FAIL+1))
 
@@ -266,13 +267,13 @@ stage 6 "generator-chain order check (clean re-run -> zero unexpected diffs)"
 # -> session_deepdives -> milestones -> milestone_watch -> firstlast -> glance
 # -> search_index -> changelog -> transmission -> network -> eras
 # -> session_clusters -> codex_pages -> milestone_races -> session_tools
-# -> codex_network
+# -> codex_network -> producer_deepdives
 CHAIN="build_releases build_years build_circle build_codex build_sessions \
 build_session_deepdives build_milestones build_milestone_watch \
 build_firstlast build_glance build_search_index build_changelog \
 build_transmission build_network build_eras build_session_clusters \
 build_codex_pages build_milestone_races build_session_tools \
-build_codex_network"
+build_codex_network build_producer_deepdives"
 CHAIN_OK=1
 for s in $CHAIN; do
   if ! python3 "scripts/$s.py" >/tmp/adm_validate_chain.log 2>&1; then
@@ -390,15 +391,17 @@ CHAIN_ORDER = ("releases", "years", "circle", "codex", "sessions",
                "session_deepdives", "milestones", "milestone_watch",
                "firstlast", "glance", "search_index", "changelog", "transmission",
                "network", "eras", "session_clusters", "codex_pages",
-               "milestone_races", "session_tools", "codex_network")
+               "milestone_races", "session_tools", "codex_network",
+               "producer_deepdives")
 chain_str = " \u2192 ".join(CHAIN_ORDER)
 if chain_str not in llms:
     errors.append("llms.txt generator dependency order doesn't match the canonical chain")
 
 # catalog counts: 219 transmissions, 34 distributor releases, 185 SoundCloud tracks,
-# 16 codex families, 21 collaborators, 61 sessions, 12 skills
+# 16 codex families, 21 collaborators, 61 sessions, 15 skills, 113 producers
 artist = json.loads((ROOT / "data" / "artist.json").read_text())
 circle_keys = json.loads((ROOT / "api" / "v1" / "circle.json").read_text())
+prods = json.loads((ROOT / "api" / "v1" / "producer-deepdives.json").read_text())
 disc = artist["discography"]
 dist = [e for e in disc if e["type"] in ("Album", "Single")]
 vault = [e for e in disc if e["type"] == "SoundCloud-only"]
@@ -407,7 +410,8 @@ sessions = json.loads((ROOT / "data" / "sessions.json").read_text())
 skills = [f for f in (ROOT / "skills").glob("*.md") if f.name != "index.json"]
 checks = [(str(len(disc)), "219"), (str(len(dist)), "34"), (str(len(vault)), "185"),
           (str(len(codex["families"])), "16"), (str(len(sessions["sessions"])), "61"),
-          (str(len(circle_keys)), "21"), (str(len(skills)), "15")]
+          (str(len(circle_keys)), "21"), (str(len(skills)), "15"),
+          (str(len(prods["producers"])), "113")]
 for actual, want in checks:
     if actual != want:
         errors.append(f"catalog drift: expected {want}, data says {actual}")
@@ -419,7 +423,7 @@ if errors:
     for e in errors:
         print("   -", e)
     sys.exit(1)
-print(f"  ok: llms.txt matches index.json v{ver}, all {len(endpoints)} endpoints, chain order, catalog counts (219/34/185/16/21/61/15)")
+print(f"  ok: llms.txt matches index.json v{ver}, all {len(endpoints)} endpoints, chain order, catalog counts (219/34/185/16/21/61/15/113)")
 EOF
 [ $? -eq 0 ] && pass "llms.txt freshness" || FAIL=$((FAIL+1))
 

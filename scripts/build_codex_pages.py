@@ -244,6 +244,7 @@ def build_family(fam):
         "transmissions": tx,
         "key_sessions": family_sessions(fam, pages),
         "collaborators": family_collaborators(fam),
+        "producers": family_producers(fam),
     }
     assert out["track_count"] == len(tx) == len(fam["tracks"])
     assert out["total_plays"] == sum(t["plays"] or 0 for t in tx)
@@ -252,6 +253,31 @@ def build_family(fam):
 
 # --- page template (era-deep-dive treatment, codex-sized) --------------------
 from build_codex import HEAD, FOOT  # noqa: E402
+from build_producer_deepdives import (  # noqa: E402
+    parse_producers, producer_slug, producer_page)
+
+
+def family_producers(fam):
+    """As-credited producers parsed from the family tracks' prod fragments.
+
+    Wave 27: cross-links the producer deep dives. Existence of the producer
+    pages is covered by validate.sh stage 4 (relative-link check) rather than
+    an assert here, because this generator runs before build_producer_deepdives
+    in the chain.
+    """
+    rows = {}
+    for t in fam["tracks"]:
+        for p in parse_producers(t["title"]):
+            slug = producer_slug(p)
+            r = rows.setdefault(slug, {"name": p, "slug": slug,
+                                       "transmissions": 0, "plays": 0})
+            r["transmissions"] += 1
+            r["plays"] += t.get("plays") or 0
+    out = [{"name": r["name"], "page": producer_page(r["slug"]),
+            "transmissions": r["transmissions"], "plays": r["plays"]}
+           for r in rows.values()]
+    out.sort(key=lambda r: (-r["plays"], r["name"]))
+    return out
 
 
 def family_page(d, prev_s, next_s):
@@ -383,6 +409,25 @@ def family_page(d, prev_s, next_s):
       </section>
 """)
 
+    # producers (wave 27: cross-links the producer deep dives)
+    if d["producers"]:
+        pr = "".join(
+            f"<li><a href=\"../{c['page']}\">{escape(c['name'])}</a> "
+            f"<span class=\"dim\">&times;{c['transmissions']} &middot; {fmt(c['plays'])} plays</span></li>"
+            for c in d["producers"])
+        prod_html = f"<ol class=\"top-list\">{pr}</ol>"
+    else:
+        prod_html = ("<p class=\"tx-empty\">No producer credit on this family's "
+                     "transmissions &mdash; the titles carry no prod. fragment.</p>")
+    parts.append(f"""
+      <section class="section" aria-labelledby="pr-h">
+        <span class="kicker"><span class="numeral">&#10022;</span>The architects</span>
+        <h3 id="pr-h">Producers on this family's transmissions ({len(d['producers'])})</h3>
+        {prod_html}
+        <p class="chart-sub">Credits parsed from <em>prod.</em> fragments in titles &mdash; as credited, verbatim. Full deep dives live in the <a href="../producers/">producer index</a>.</p>
+      </section>
+""")
+
     # keep digging + pager
     era_links = " ".join(
         f"<li><a href=\"../{r['deep_dive']}\">{escape(r['name'])}</a> &mdash; "
@@ -406,6 +451,7 @@ def family_page(d, prev_s, next_s):
           <li><a href="../codex-network.html#family-{d['slug']}">Codex network</a> &mdash; this family mapped against the other fifteen.</li>
           {era_links}
           <li><a href="../sessions-explorer.html">Sessions explorer</a> &mdash; the 61 upload sessions on one timeline.</li>
+          <li><a href="../producers/">Producer deep dives</a> &mdash; the architects behind the sound, as credited.</li>
           <li><a href="../milestone-race.html">Milestone race</a> &mdash; approaching play-count milestones as races, plus the summit chase.</li>
           <li><a href="../codex/">Codex</a> &mdash; the 16 vocabulary families.</li>
         </ul>
@@ -513,12 +559,26 @@ SCHEMA = {
                                          "transmissions", "plays"],
                         },
                     },
+                    "producers": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "name": {"type": "string"},
+                                "page": {"type": "string"},
+                                "transmissions": {"type": "integer"},
+                                "plays": {"type": "integer"},
+                            },
+                            "required": ["name", "page",
+                                         "transmissions", "plays"],
+                        },
+                    },
                 },
                 "required": ["name", "slug", "epithet", "words", "page",
                              "track_count", "total_plays", "decoded",
                              "first_appearance", "latest", "eras",
                              "transmissions", "key_sessions",
-                             "collaborators"],
+                             "collaborators", "producers"],
             },
         },
     },

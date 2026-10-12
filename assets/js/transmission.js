@@ -249,7 +249,9 @@
       "Tallied, never translated: the archive assigns no meaning the index doesn't state.</blockquote>" +
       '<div class="tx-block"><h3>Loudest families by transmissions</h3><ul>' + rows + "</ul></div>" +
       '<p class="tx-meta"><a href="codex-network.html">Map the families →</a> ' +
-      "the sixteen families as a network: shared voices as edges, degrees of separation from Aster, and a connect-the-dots pathfinder.</p>";
+      "the sixteen families as a network: shared voices as edges, degrees of separation from Aster, and a connect-the-dots pathfinder.</p>" +
+      '<p class="tx-meta"><a href="producers/">Producer deep dives →</a> ' +
+      "the architects behind the sound — every as-credited producer, their productions, fingerprints, and scene context.</p>";
   }
 
   /* ---------- stop assembly ---------- */

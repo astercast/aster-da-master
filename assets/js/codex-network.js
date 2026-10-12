@@ -305,6 +305,13 @@
         } else {
           html += "<p class=\"chart-sub\">No circle page — credited as named, nothing more claimed.</p>";
         }
+        if (fig.kind === "producer" || fig.kind === "both") {
+          // wave 27: producer deep dives live at producers/<slug>.html; the
+          // slug rule mirrors the generator (node id minus the fig-p-/fig-
+          // prefix). Every producer/both node is asserted to resolve.
+          var pSlug = id.replace(/^fig-p-/, "").replace(/^fig-/, "");
+          html += "<p><a class=\"nw-link\" href=\"producers/" + esc(pSlug) + ".html\">Producer deep dive →</a></p>";
+        }
       } else {
         html += "<p class=\"chart-sub\">0 degrees — the speaker of every family. " +
           "Every family node connects here; every figure is 2 degrees out, via the families that carry them.</p>";
@@ -393,7 +400,13 @@
     function nodeChip(id) {
       var n = byId[id];
       var inner = esc(n.name);
-      if (n.page) inner = "<a href=\"" + esc(n.page) + "\">" + inner + "</a>";
+      if (n.page) {
+        inner = "<a href=\"" + esc(n.page) + "\">" + inner + "</a>";
+      } else if (n.kind === "producer" || n.kind === "both") {
+        // wave 27: producer deep dive (slug rule mirrors the generator)
+        var pSlug = id.replace(/^fig-p-/, "").replace(/^fig-/, "");
+        inner = "<a href=\"producers/" + esc(pSlug) + ".html\">" + inner + "</a>";
+      }
       return inner + " <span class=\"chart-sub\">(" + esc(kindWord(n.kind)) + ")</span>";
     }
 
@@ -452,6 +465,11 @@
       var voices = o.shared_figures.map(function (s) {
         var inner = esc(s.name);
         var pg = figById[s.id] && figById[s.id].page;
+        if (!pg && figById[s.id] &&
+            (figById[s.id].kind === "producer" || figById[s.id].kind === "both")) {
+          // wave 27: producer deep dive (slug rule mirrors the generator)
+          pg = "producers/" + s.id.replace(/^fig-p-/, "").replace(/^fig-/, "") + ".html";
+        }
         if (pg) inner = "<a href=\"" + esc(pg) + "\">" + inner + "</a>";
         return inner;
       }).join(", ");

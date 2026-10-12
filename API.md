@@ -246,9 +246,26 @@ and `tracks.json` (the captured catalog).
   codex-only mode (the Aster hub is forbidden there, so isolated families like
   the-cold and keys genuinely report no path). Cross-links to codex family
   pages, circle pages, `network.html`, the Transmission journey's Codex chapter,
-  and `milestone-race.html` (`scripts/build_codex_network.py`, last in the
+  and `milestone-race.html` (`scripts/build_codex_network.py`, 21st in the
   chain, with pinned-fixture tests in `scripts/test_codex_network.py`). Skill:
   `codex-pathfinder`. Schema: `api/v1/schema/codex-network.json`.
+- **Producer deep-dives** (`producers/` + `api/v1/producer-deepdives.json`,
+  endpoint #22): all 113 as-credited producers get their own page — every
+  production as credited in the titles (release/session links, co-producers,
+  title-credited voices), codex family ties, a computed production fingerprint
+  (counts, spans, solo-credit rate — never a biography), and sourced scene
+  context for 5 researched producers (research pass 2026-10-11, each block
+  carrying its evidence flag; e.g. ginseng via Underground Underdogs, Em
+  Klebold via Traktrain/SoundClick storefronts; pvscale and asa41 are
+  archive-only, capoxxo/lil koi/lil yu excluded by the as-credited rule).
+  Cross-links: the codex-network explorer (producer-node panels, node chips,
+  and overlap-table voices link to the deep dives), the 16 codex family pages
+  ("Producers on these transmissions"), the circle pages of producer-members
+  (pvscale, Fish Narc), `sessions-explorer.html`, and the Transmission
+  journey's Codex chapter (`scripts/build_producer_deepdives.py`, 22nd and
+  last in the chain, with pinned-fixture tests in
+  `scripts/test_producer_deepdives.py`). Schema:
+  `api/v1/schema/producer-deepdives.json`.
 - **Glance** (`glance.html`): the one-page infographic — 219 transmissions,
   257,394 plays, 9 years, 61 sessions, 21 collaborators, 16 codex families,
   top-5 tracks, the eras strip, heaviest sessions, bookends
