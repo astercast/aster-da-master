@@ -7,7 +7,9 @@ Private research archive for the underground artist **Aster da Master** (digicor
 **Codex:** 16 vocabulary families counted across titles (`codex/`).
 **Method:** titles and metadata only — no lyrics ever, no invented biography. Unknowns are listed as unknowns (`method.html` → "The unknowns register").
 
-**API:** all data at `api/v1/*.json` — `artist.json`, `circle.json`, `scene-figures.json`, `codex.json`, `milestones.json`, `milestone-watch.json`, `index.json` (endpoint registry, `version` field). Data version: 0.12.0.
+**API:** all data at `api/v1/*.json` — `artist.json`, `circle.json`, `scene-figures.json`, `codex.json`, `milestones.json`, `milestone-watch.json`, `sessions.json`, `index.json` (endpoint registry, `version` field). Data version: 0.12.0.
+
+**For agents:** `agents.html` documents the full agentic surface (13-endpoint table, llms files, skills, search-index usage, rate/expectation notes, 3 worked workflows). `api-playground.html` has an Explore tab (live endpoint responses) and a Skill recipes tab. `skills/`: 6 archive-analysis playbooks (Use when / Inputs / Procedure / Worked example / API references / Pitfalls) — `deep-cuts-finder`, `session-archaeology`, `collaborator-tracer`, `milestone-watcher`, `era-briefing`, `transmission-decoder` — plus `announce-release`, `build-press-kit`, `verify-platform-links` (registry: `skills/index.json`). Rules for agents: static JSON, no auth; play counts are a 2026-10-11 snapshot (always state the date); upload dates ≠ recording dates; titles/metadata only, never lyrics, never invent bio facts.
 
 **Key research facts (2026-10-11 pass, sources cited on-site):**
 - Earliest indexed track "Protections" (Dec 23, 2019, label "WoT", on album *Master Key*); albums *Cast It:, Pt. 1* (2021), *Cast It:, Pt. 2* (2022); single "Reachhh" (Apr 8, 2024, label "somelowlifes"); 2026 singles "The Night Ends Yeaaa" (Mar), "Writing Books" / "9 Trips" / "Living With The Big Shots" (May).

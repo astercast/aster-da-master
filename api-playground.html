@@ -29,6 +29,7 @@
         <a href="network.html">Network</a>
         <a href="decoder.html">Decoder</a>
         <a href="api-playground.html" aria-current="page">API</a>
+        <a href="agents.html">Agents</a>
         <a href="years/">Years</a>
         <a href="method.html">Method</a>
         <a href="trilogy.html">Trilogy</a>
@@ -46,6 +47,7 @@
         <a href="network.html">Network</a>
         <a href="decoder.html">Decoder</a>
         <a href="api-playground.html" aria-current="page">API</a>
+        <a href="agents.html">Agents</a>
         <a href="years/">Years</a>
         <a href="method.html">Method</a>
         <a href="trilogy.html">Trilogy</a>
@@ -80,6 +82,12 @@
           <p>Every record on this site is a versioned JSON document. Pick an endpoint, read the live response, copy what you need. Agents start at <code>api/v1/index.json</code>.</p>
         </div>
 
+        <div class="pg-tabs reveal" role="tablist" aria-label="Playground views">
+          <button class="pg-tab" role="tab" id="tab-explore" aria-controls="panel-explore" aria-selected="true" type="button">Explore</button>
+          <button class="pg-tab" role="tab" id="tab-recipes" aria-controls="panel-recipes" aria-selected="false" tabindex="-1" type="button">Skill recipes</button>
+        </div>
+
+        <div class="pg-panel" role="tabpanel" id="panel-explore" aria-labelledby="tab-explore" tabindex="0">
         <div class="pg-layout reveal">
           <div class="pg-endpoints" role="listbox" aria-label="API endpoints" id="pg-list"></div>
           <div class="pg-response">
@@ -91,6 +99,71 @@
             <pre class="pg-pre" id="pg-pre" aria-live="polite"><code>Select an endpoint to read its response.</code></pre>
             <p class="chart-sub" id="pg-note">Responses are the live files served with this page. If you opened this file directly from disk, fetching may be blocked — serve the site over HTTP instead.</p>
           </div>
+        </div>
+        </div>
+
+        <div class="pg-panel" role="tabpanel" id="panel-recipes" aria-labelledby="tab-recipes" tabindex="0" hidden>
+          <div class="pg-recipes reveal">
+            <article class="recipe-card" aria-labelledby="rc-deep">
+              <h4 id="rc-deep"><a href="skills/deep-cuts-finder.md">deep-cuts-finder</a></h4>
+              <p>Surface the vault's quietest-play tracks for playlists and deep listening.</p>
+              <ol class="recipe-seq">
+                <li><code>GET api/v1/sessions.json</code> — flatten <code>sessions[].tracks</code> into one list.</li>
+                <li>Sort ascending by <code>plays</code>; take the bottom N (median vault track ≈ 450 plays).</li>
+                <li><code>GET api/v1/codex.json</code> — match title words to families for a playlist theme.</li>
+              </ol>
+            </article>
+            <article class="recipe-card" aria-labelledby="rc-sess">
+              <h4 id="rc-sess"><a href="skills/session-archaeology.md">session-archaeology</a></h4>
+              <p>Reconstruct one of the 61 sessions: when it happened, what came out, who was in the room.</p>
+              <ol class="recipe-seq">
+                <li><code>GET api/v1/sessions.json</code> — find the session by <code>id</code>; read span, tracks, plays.</li>
+                <li><code>GET api/v1/circle.json</code> / <code>api/v1/scene-figures.json</code> — resolve title credits.</li>
+                <li><code>GET api/v1/codex.json</code> — cross title words against the 16 families.</li>
+                <li><code>GET api/v1/artist.json</code> — place the session in <code>eras[]</code>.</li>
+              </ol>
+            </article>
+            <article class="recipe-card" aria-labelledby="rc-collab">
+              <h4 id="rc-collab"><a href="skills/collaborator-tracer.md">collaborator-tracer</a></h4>
+              <p>Map a collaborator's footprint: tracks, plays, years active, verified research notes.</p>
+              <ol class="recipe-seq">
+                <li><code>GET api/v1/circle.json</code> — look up the slug; read <code>shared_transmissions</code>, <code>shared_plays</code>, <code>tracks[]</code>.</li>
+                <li>If absent, <code>GET api/v1/scene-figures.json</code> — producers live here by rule.</li>
+                <li>Read <code>verified_notes</code> (research pass 2026-10-11) and cite the sources.</li>
+                <li><code>GET api/v1/artist.json</code> — map <code>years_active</code> onto <code>eras[]</code>.</li>
+              </ol>
+            </article>
+            <article class="recipe-card" aria-labelledby="rc-mile">
+              <h4 id="rc-mile"><a href="skills/milestone-watcher.md">milestone-watcher</a></h4>
+              <p>Watch vault tracks approaching round-number play counts.</p>
+              <ol class="recipe-seq">
+                <li><code>GET api/v1/milestone-watch.json</code> — read <code>summit</code> and each <code>bands[]</code> entry.</li>
+                <li>Sort approaching tracks by <code>needed</code> ascending — smallest <code>needed</code> is closest.</li>
+                <li>State the <code>plays_snapshot</code> date (2026-10-11) in every report.</li>
+              </ol>
+            </article>
+            <article class="recipe-card" aria-labelledby="rc-era">
+              <h4 id="rc-era"><a href="skills/era-briefing.md">era-briefing</a></h4>
+              <p>Summarize one of the six eras for a writeup — span, numbers, story.</p>
+              <ol class="recipe-seq">
+                <li><code>GET api/v1/artist.json</code> — read <code>eras[]</code>; pick the era (<code>scene</code>, <code>releases[]</code>, <code>note</code>).</li>
+                <li><code>GET api/v1/years.json</code> — per-year transmissions, plays, <code>top_tracks</code> inside the span.</li>
+                <li>Match era releases against <code>discography[]</code> for dates, labels, links.</li>
+                <li><code>GET api/v1/circle.json</code> — collaborator footprints for the era's credits.</li>
+              </ol>
+            </article>
+            <article class="recipe-card" aria-labelledby="rc-dec">
+              <h4 id="rc-dec"><a href="skills/transmission-decoder.md">transmission-decoder</a></h4>
+              <p>Interpret a title word through the codex: its family, its transmissions, its read.</p>
+              <ol class="recipe-seq">
+                <li><code>GET api/v1/codex.json</code> — match the word against each family's <code>words[]</code>.</li>
+                <li>Read the family's <code>epithet</code> and its <code>tracks[]</code> (titles, dates, plays).</li>
+                <li>Mirror <code>decoder.html</code> + <code>assets/js/decoder.js</code> matching logic.</li>
+                <li><code>GET api/v1/sessions.json</code> — session context for any decoded track.</li>
+              </ol>
+            </article>
+          </div>
+          <p class="chart-sub">Full playbooks live in <code>skills/</code> (registry: <code>skills/index.json</code>). Every skill is: Use when / Inputs / Procedure / Worked example / API references / Pitfalls.</p>
         </div>
       </div>
     </section>
@@ -107,6 +180,7 @@
         <a href="network.html">Network</a>
         <a href="decoder.html">Decoder</a>
         <a href="api-playground.html" aria-current="page">API</a>
+        <a href="agents.html">Agents</a>
         <a href="years/">Years</a>
         <a href="method.html">Method</a>
         <a href="trilogy.html">Trilogy</a>

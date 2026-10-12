@@ -193,8 +193,20 @@ and `tracks.json` (the captured catalog).
 
 ## Skills
 
-Task procedures in `skills/`:
+Task procedures in `skills/` (registry: `skills/index.json`; playbook format: Use when / Inputs / Procedure / Worked example / API references / Pitfalls):
 
 - `announce-release` — draft release announcements in the site's voice
 - `verify-platform-links` — audit every outbound link; flag dead links and identity drift
 - `build-press-kit` — assemble a press kit from verified facts only
+- `deep-cuts-finder` — surface the vault's quietest-play tracks for playlists
+- `session-archaeology` — reconstruct one of the 61 sessions: when, what, who
+- `collaborator-tracer` — map a collaborator's footprint across the discography
+- `milestone-watcher` — track near round-number play counts
+- `era-briefing` — summarize an era for a writeup
+- `transmission-decoder` — interpret a title word via the codex families
+
+## Agents surface (wave 13)
+
+- `agents.html` — the agentic surface doc: 13-endpoint table (incl. `scene-figures.json`), llms.txt/llms-full.txt, skills table with endpoint sequences, search-index usage (replicate the `/` overlay via `release-slugs.json` + `circle.json` + `codex.json` + `artist.json` eras), rate/expectation notes (static JSON, no auth; plays are a 2026-10-11 snapshot; upload dates ≠ recording dates; titles/metadata only, never lyrics, never invented bio), 3 worked workflows (500-word era briefing, 10 deep cuts, collaborator trace). Linked from primary nav + footer site-wide.
+- `api-playground.html` — second tab: **Skill recipes**, linking each skill to its endpoint sequence.
+- Agent rules: serve over HTTP (`file://` blocks `fetch()`); check `index.json → version` before caching (0.12.0).

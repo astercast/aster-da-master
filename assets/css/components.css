@@ -1167,3 +1167,32 @@
   .section { padding: 0; }
   .disco-card, .stat, .stat-card, .codex-card, .era-card { break-inside: avoid; border-color: #ccc; }
 }
+
+/* Wave 13 — playground tabs + skill recipes */
+.pg-tabs { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-bottom: var(--space-4); }
+.pg-tab {
+  appearance: none; background: transparent; border: 1px solid var(--line);
+  color: inherit; font: inherit; font-weight: 600; padding: 0.5rem 1.1rem;
+  cursor: pointer; border-radius: 4px;
+}
+.pg-tab:hover { border-color: var(--neon-deep); }
+.pg-tab:focus-visible { outline: 2px solid var(--neon); outline-offset: 2px; }
+.pg-tab[aria-selected="true"] { border-color: var(--neon); color: var(--gold-bright); }
+.pg-recipes { display: grid; gap: var(--space-3); }
+.recipe-card { border: 1px solid var(--line); padding: var(--space-4); border-radius: 4px; }
+.recipe-card h4 { margin: 0 0 0.4rem; font-size: 1rem; }
+.recipe-card h4 a { color: var(--gold-bright); }
+.recipe-card > p { margin: 0 0 0.6rem; color: var(--muted); font-size: 0.9rem; }
+.recipe-seq { margin: 0; padding-left: 1.2rem; font-size: 0.86rem; }
+.recipe-seq li { margin: 0.25rem 0; }
+.recipe-seq code { color: var(--neon); font-family: var(--font-mono); font-size: 0.8rem; overflow-wrap: anywhere; }
+@media (min-width: 720px) { .pg-recipes { grid-template-columns: repeat(2, 1fr); } }
+
+/* Wave 13 — agents page data tables */
+.table-wrap { overflow-x: auto; margin-bottom: var(--space-5); }
+.table-wrap table { width: 100%; border-collapse: collapse; font-size: 0.88rem; min-width: 620px; }
+.table-wrap caption { text-align: left; font-weight: 700; margin-bottom: var(--space-2); color: var(--gold-bright); }
+.table-wrap th, .table-wrap td { text-align: left; padding: 0.55rem 0.7rem; border-bottom: 1px solid var(--line); vertical-align: top; }
+.table-wrap thead th { color: var(--gold-bright); font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.04em; border-bottom: 1px solid var(--neon-deep); }
+.table-wrap tbody th[scope="row"] { font-family: var(--font-mono); font-size: 0.82rem; color: var(--neon); white-space: nowrap; }
+.table-wrap td code { color: var(--neon); font-family: var(--font-mono); font-size: 0.78rem; overflow-wrap: anywhere; }

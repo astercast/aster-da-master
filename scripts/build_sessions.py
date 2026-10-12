@@ -241,6 +241,7 @@ def main() -> int:
         <a href="network.html">Network</a>
         <a href="decoder.html">Decoder</a>
         <a href="api-playground.html">API</a>
+        <a href="agents.html">Agents</a>
         <a href="sessions.html" aria-current="page">Sessions</a>
         <a href="changelog.html">Changelog</a>
         <a href="method.html">Method</a>
@@ -258,6 +259,7 @@ def main() -> int:
         <a href="network.html">Network</a>
         <a href="decoder.html">Decoder</a>
         <a href="api-playground.html">API</a>
+        <a href="agents.html">Agents</a>
         <a href="sessions.html" aria-current="page">Sessions</a>
         <a href="changelog.html">Changelog</a>
         <a href="method.html">Method</a>
@@ -306,6 +308,7 @@ def main() -> int:
         <a href="network.html">Network</a>
         <a href="decoder.html">Decoder</a>
         <a href="api-playground.html">API</a>
+        <a href="agents.html">Agents</a>
         <a href="sessions.html" aria-current="page">Sessions</a>
         <a href="changelog.html">Changelog</a>
         <a href="method.html">Method</a>

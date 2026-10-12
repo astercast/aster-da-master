@@ -32,6 +32,7 @@ NAV = """      <nav class="site-nav" aria-label="Primary">
         <a href="network.html">Network</a>
         <a href="decoder.html">Decoder</a>
         <a href="api-playground.html">API</a>
+        <a href="agents.html">Agents</a>
         <a href="sessions.html">Sessions</a>
         <a href="changelog.html">Changelog</a>
         <a href="method.html">Method</a>
@@ -49,6 +50,7 @@ NAV = """      <nav class="site-nav" aria-label="Primary">
         <a href="network.html">Network</a>
         <a href="decoder.html">Decoder</a>
         <a href="api-playground.html">API</a>
+        <a href="agents.html">Agents</a>
         <a href="sessions.html">Sessions</a>
         <a href="changelog.html">Changelog</a>
         <a href="method.html">Method</a>
@@ -68,6 +70,7 @@ FOOTNAV = """      <nav aria-label="Footer">
         <a href="network.html">Network</a>
         <a href="decoder.html">Decoder</a>
         <a href="api-playground.html">API</a>
+        <a href="agents.html">Agents</a>
         <a href="sessions.html">Sessions</a>
         <a href="changelog.html">Changelog</a>
         <a href="method.html">Method</a>

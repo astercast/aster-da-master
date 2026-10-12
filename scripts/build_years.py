@@ -39,6 +39,7 @@ NAV = """<nav class="site-nav" aria-label="Primary">
         <a href="../network.html">Network</a>
         <a href="../decoder.html">Decoder</a>
         <a href="../api-playground.html">API</a>
+        <a href="../agents.html">Agents</a>
         <a href="../method.html">Method</a>
         <a href="../trilogy.html">Trilogy</a>
         <a href="../sessions.html">Sessions</a>
@@ -56,6 +57,7 @@ NAV = """<nav class="site-nav" aria-label="Primary">
         <a href="../network.html">Network</a>
         <a href="../decoder.html">Decoder</a>
         <a href="../api-playground.html">API</a>
+        <a href="../agents.html">Agents</a>
         <a href="../method.html">Method</a>
         <a href="../trilogy.html">Trilogy</a>
         <a href="../sessions.html">Sessions</a>
@@ -109,6 +111,7 @@ FOOT = """    </div>
         <a href="../network.html">Network</a>
         <a href="../decoder.html">Decoder</a>
         <a href="../api-playground.html">API</a>
+        <a href="../agents.html">Agents</a>
         <a href="../method.html">Method</a>
         <a href="../trilogy.html">Trilogy</a>
         <a href="../sessions.html">Sessions</a>

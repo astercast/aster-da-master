@@ -14,6 +14,8 @@
       blurb: "The vocabulary codex: 16 word families with per-family track lists." },
     { id: "circle", path: "api/v1/circle.json",
       blurb: "The collaborators: 21 voices parsed from title credits." },
+    { id: "scene-figures", path: "api/v1/scene-figures.json",
+      blurb: "Scene figures: producer credits and scene research outside the 21 (e.g. Fish Narc)." },
     { id: "years", path: "api/v1/years.json",
       blurb: "Year-in-review archive: per-year stats and highlights, 2018–2026." },
     { id: "on-this-day", path: "api/v1/on-this-day.json",
@@ -43,6 +45,37 @@
         return '<span class="js">' + str + "</span>";
       }).replace(/\b(true|false|null)\b/g, '<span class="jb">$1</span>')
       .replace(/(^|[\s\[,:])(-?\d[\d.]*)/g, '$1<span class="jn">$2</span>');
+  }
+
+  function initTabs() {
+    var tabs = document.querySelectorAll('[role="tab"]');
+    if (!tabs.length) return;
+    var panels = {};
+    for (var i = 0; i < tabs.length; i++) {
+      panels[tabs[i].id] = document.getElementById(tabs[i].getAttribute("aria-controls"));
+    }
+    function activate(tab) {
+      for (var j = 0; j < tabs.length; j++) {
+        var on = tabs[j] === tab;
+        tabs[j].setAttribute("aria-selected", on ? "true" : "false");
+        tabs[j].tabIndex = on ? 0 : -1;
+        var p = panels[tabs[j].id];
+        if (p) p.hidden = !on;
+      }
+    }
+    for (var k = 0; k < tabs.length; k++) {
+      (function (tab, idx) {
+        tab.addEventListener("click", function () { activate(tab); });
+        tab.addEventListener("keydown", function (e) {
+          var dir = e.key === "ArrowRight" ? 1 : (e.key === "ArrowLeft" ? -1 : 0);
+          if (!dir) return;
+          e.preventDefault();
+          var next = tabs[(idx + dir + tabs.length) % tabs.length];
+          activate(next);
+          next.focus();
+        });
+      })(tabs[k], k);
+    }
   }
 
   function init() {
@@ -129,8 +162,9 @@
   }
 
   if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", init);
+    document.addEventListener("DOMContentLoaded", function () { init(); initTabs(); });
   } else {
     init();
+    initTabs();
   }
 })();
