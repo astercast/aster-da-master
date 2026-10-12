@@ -13,7 +13,7 @@ parsed from w//ft./feat. fragments in titles - as credited, verbatim,
 nothing inferred. Producers are excluded (same rule as network.html).
 
 Titles only - no lyrics anywhere. Idempotent: regenerates cleanly.
-Re-run after any discography change. Also bumps data version to 0.12.0
+Re-run after any discography change. Also bumps data version to 0.13.0
 and mirrors data/artist.json to api/v1/artist.json.
 
 Wave 12 adds verified research notes to capoxxo/pvscale pages and a
@@ -35,7 +35,7 @@ from build_years import parse_collabs, era_for_year  # noqa: E402  (same parser 
 DATA = json.loads((ROOT / "data" / "artist.json").read_text())
 OUT = ROOT / "circle"
 API = ROOT / "api" / "v1"
-NEW_VERSION = "0.12.0"
+NEW_VERSION = "0.13.0"
 
 NAV = """<nav class="site-nav" aria-label="Primary">
         <a href="../#discography">Discography</a>
@@ -213,11 +213,18 @@ SCENE_FIGURES = {
             "and Cold Hart; production noted for live guitar instead of samples.",
             "Solo LPs: 'WiLDFiRE' (2020), 'Camouflage' (2022), "
             "'fruiting body' [KLP295] (2023), 'frog song' (2025, K Records).",
+            "Fifth solo LP 'Uncle' announced (Stereogum, August 2026): "
+            "11 tracks on K Records, scheduled release 2026-10-16; "
+            "lead singles 'Much Less Me' and 'Big Dumb World'.",
         ],
         "sources": [
             ("Fish Narc - Wikipedia", "https://en.wikipedia.org/wiki/Fish_Narc"),
             ("'frog song' - Darkside Records",
              "https://shop.darksiderecords.com/en-jp/products/fish-narc-frog-song"),
+            ("fish narc announces new album 'Uncle' — Stereogum",
+             "https://stereogum.com/2508537/fish-narc-announces-new-album-uncle-hear-much-less-me/music"),
+            ("Fish Narc announces 'Uncle' on K Records — Faygoluvers",
+             "https://www.faygoluvers.net/v5/2026/09/fish-narc-announces-new-album-uncle-on-k-records/"),
         ],
     },
 }

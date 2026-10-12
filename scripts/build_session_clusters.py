@@ -34,7 +34,7 @@ disagreement. Sources (all real archive data):
   - sessions/                     (deep-dive pages that exist on disk)
 
 No payload shape changes to any existing endpoint; data version stays
-0.12.0 (no source data changed). Titles and metadata only - never lyrics,
+0.13.0 (no source data changed). Titles and metadata only - never lyrics,
 never invented bio facts.
 
 Runs LAST in the validate.sh generator chain (after build_eras).
@@ -46,7 +46,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 API = ROOT / "api" / "v1"
-NEW_VERSION = "0.12.0"
+NEW_VERSION = "0.13.0"
 SNAPSHOT = "2026-10-11"
 
 sys.path.insert(0, str(ROOT / "scripts"))

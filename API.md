@@ -228,4 +228,4 @@ Task procedures in `skills/` (registry: `skills/index.json`; playbook format: Us
 
 - `agents.html` — the agentic surface doc: 17-endpoint table (incl. `session-clusters.json`), llms.txt/llms-full.txt, skills table with endpoint sequences, search-index usage (replicate the `/` overlay via `release-slugs.json` + `circle.json` + `codex.json` + `artist.json` eras), rate/expectation notes (static JSON, no auth; plays are a 2026-10-11 snapshot; upload dates ≠ recording dates; titles/metadata only, never lyrics, never invented bio), 5 worked workflows (500-word era briefing, 10 deep cuts, collaborator trace, era deep dive, sessions timeline). Linked from primary nav + footer site-wide.
 - `api-playground.html` — second tab: **Skill recipes**, linking each skill to its endpoint sequence.
-- Agent rules: serve over HTTP (`file://` blocks `fetch()`); check `index.json → version` before caching (0.12.0).
+- Agent rules: serve over HTTP (`file://` blocks `fetch()`); check `index.json → version` before caching (0.13.0).

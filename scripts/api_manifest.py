@@ -113,7 +113,7 @@ def render_manifest(idx, root):
     api/v1/index.json byte-deterministically."""
     root = Path(root)
     api = root / "api" / "v1"
-    ver = idx.get("version", "0.12.0")
+    ver = idx.get("version", "0.13.0")
 
     endpoints = {}
     for key, desc, schema, notes, counter in ENDPOINT_ORDER:

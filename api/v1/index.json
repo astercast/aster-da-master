@@ -1,9 +1,9 @@
 {
  "name": "Aster da Master API",
- "version": "0.12.0",
+ "version": "0.13.0",
  "observed": "2026-10-11",
  "meta": {
-  "version": "0.12.0",
+  "version": "0.13.0",
   "generated": "2026-10-11T00:00:00Z",
   "base": "api/v1/",
   "auth": "none - static files; no keys, no rate limits"
@@ -94,7 +94,7 @@
    "description": "Site construction history, generated from the git log.",
    "schema": "api/v1/schema/changelog.json",
    "updated": "2026-10-11T00:00:00Z",
-   "records": 42,
+   "records": 46,
    "notes": "A changelog built from git log cannot record its own sync commit (wave-15 convention, WAVELOG.md)."
   },
   "first-last": {

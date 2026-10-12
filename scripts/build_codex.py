@@ -16,7 +16,7 @@ Method: titles are lowercased and leet-normalized (1->l, 0->o, 3->e,
 boundaries, multi-word keywords match as phrases. Every claim the codex
 makes is a count - no meanings are invented.
 
-Also bumps data version to 0.12.0 and mirrors to api/v1/.
+Also bumps data version to 0.13.0 and mirrors to api/v1/.
 """
 import json
 import re
@@ -35,7 +35,7 @@ API_OUT = ROOT / "api" / "v1" / "codex.json"
 API_ARTIST = ROOT / "api" / "v1" / "artist.json"
 API_INDEX = ROOT / "api" / "v1" / "index.json"
 CODEX_PAGES = ROOT / "codex"
-NEW_VERSION = "0.12.0"
+NEW_VERSION = "0.13.0"
 SNAPSHOT = "2026-10-11"  # play-count snapshot date; pinned so re-runs are byte-stable
 
 LEET = str.maketrans({"1": "l", "0": "o", "3": "e", "4": "a", "5": "s", "7": "t"})

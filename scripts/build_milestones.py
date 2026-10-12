@@ -9,7 +9,7 @@ crossing — and emits data/milestones.json + api/v1/milestones.json.
 Every milestone is a computed fact from the data; no narrative is
 invented. Play counts are the 2026-10-11 snapshot.
 
-Also bumps data version to 0.12.0 and mirrors to api/v1/.
+Also bumps data version to 0.13.0 and mirrors to api/v1/.
 """
 import json
 import re
@@ -25,7 +25,7 @@ API_OUT = ROOT / "api" / "v1" / "milestones.json"
 API_ARTIST = ROOT / "api" / "v1" / "artist.json"
 API_INDEX = ROOT / "api" / "v1" / "index.json"
 SCHEMA_OUT = ROOT / "api" / "v1" / "schema" / "milestones.json"
-NEW_VERSION = "0.12.0"
+NEW_VERSION = "0.13.0"
 SNAPSHOT = "2026-10-11"
 
 

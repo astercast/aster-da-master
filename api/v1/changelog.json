@@ -1,8 +1,32 @@
 {
   "generated": "2026-10-11",
   "method": "Parsed from `git log main`: every commit becomes an entry. The site documenting its own becoming.",
-  "entry_count": 42,
+  "entry_count": 46,
   "entries": [
+    {
+      "hash": "ccbd55c",
+      "date": "2026-10-12",
+      "message": "Wave 20: changelog sync after WAVELOG hash commit",
+      "files_changed": 3
+    },
+    {
+      "hash": "3a3d76c",
+      "date": "2026-10-12",
+      "message": "Wave 20: add commit hashes to WAVELOG",
+      "files_changed": 1
+    },
+    {
+      "hash": "87a58e2",
+      "date": "2026-10-12",
+      "message": "Wave 20: changelog sync (3-file convention)",
+      "files_changed": 3
+    },
+    {
+      "hash": "64c08ec",
+      "date": "2026-10-12",
+      "message": "Wave 20: Q4 2026 discography + scene sweep (Fish Narc 'Uncle' verified addition, data version 0.12.0 -> 0.13.0)",
+      "files_changed": 37
+    },
     {
       "hash": "ede414f",
       "date": "2026-10-12",

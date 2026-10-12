@@ -32,7 +32,7 @@ Sources (all real archive data):
 
 Every number is recomputed here and the script exits non-zero on any
 disagreement. No payload shape changes to any existing endpoint; data
-version stays 0.12.0 (no source data changed).
+version stays 0.13.0 (no source data changed).
 
 Runs LAST in the validate.sh generator chain (after build_network).
 Titles and metadata only - never lyrics, never invented bio facts.
@@ -45,7 +45,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 API = ROOT / "api" / "v1"
 OUT = ROOT / "eras"
-NEW_VERSION = "0.12.0"
+NEW_VERSION = "0.13.0"
 SNAPSHOT = "2026-10-11"
 
 sys.path.insert(0, str(ROOT / "scripts"))
