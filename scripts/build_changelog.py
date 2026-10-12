@@ -124,6 +124,7 @@ def main() -> int:
         <a href="years/">Years</a>
         <a href="scene/">Scene</a>
         <a href="timeline.html">Timeline</a>
+        <a href="chronicle.html">Chronicle</a>
         <a href="transmission.html">Transmission</a>
         <a href="network.html">Network</a>
         <a href="milestone-race.html">Race</a>
@@ -145,6 +146,7 @@ def main() -> int:
         <a href="years/">Years</a>
         <a href="scene/">Scene</a>
         <a href="timeline.html">Timeline</a>
+        <a href="chronicle.html">Chronicle</a>
         <a href="transmission.html">Transmission</a>
         <a href="network.html">Network</a>
         <a href="milestone-race.html">Race</a>
@@ -197,6 +199,7 @@ def main() -> int:
         <a href="years/">Years</a>
         <a href="scene/">Scene</a>
         <a href="timeline.html">Timeline</a>
+        <a href="chronicle.html">Chronicle</a>
         <a href="transmission.html">Transmission</a>
         <a href="network.html">Network</a>
         <a href="milestone-race.html">Race</a>

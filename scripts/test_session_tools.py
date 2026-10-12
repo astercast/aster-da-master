@@ -14,6 +14,8 @@ from build_session_tools import (  # noqa: E402
     avg_plays_per_track,
     compare_pair,
     deepest_cut_ranking,
+    nearest_rank,
+    track_deep_cut_ranking,
 )
 
 PASS, FAIL = 0, 0
@@ -119,6 +121,32 @@ check("total_plays tiebreak (FF before FE)",
 
 # empty input -> empty ranking, no crash
 check("empty ranking", deepest_cut_ranking([], min_tracks=2) == [])
+
+# --- track_deep_cut_ranking: lowest plays first; tiebreaks = earlier
+# date, then title; no exclusions; ranks are 1-based ---
+TA = {"title": "loud one", "plays": 5000, "date": "2019-01-01"}
+TB = {"title": "quiet one", "plays": 17, "date": "2024-11-05"}
+TC = {"title": "mid one", "plays": 450, "date": "2020-06-01"}
+TD = {"title": "b title", "plays": 100, "date": "2021-03-01"}
+TE = {"title": "a title", "plays": 100, "date": "2021-03-01"}
+TF = {"title": "early bird", "plays": 100, "date": "2020-01-01"}
+tranked = track_deep_cut_ranking([TA, TB, TC, TD, TE, TF])
+tids = [t["title"] for _, t in tranked]
+# plays order: 17, 100(x3), 450, 5000; the 100s break by date then title
+check("track order by plays", tids == ["quiet one", "early bird", "a title",
+                                       "b title", "mid one", "loud one"])
+check("track ranks 1-based", [r for r, _ in tranked] == [1, 2, 3, 4, 5, 6])
+check("single-track tracks are NOT excluded",
+      len(track_deep_cut_ranking([TB])) == 1)
+check("empty track ranking", track_deep_cut_ranking([]) == [])
+
+# --- nearest_rank: ceil(p/100 * n)-th value ---
+vals = list(range(1, 186))  # 1..185
+check("p10 nearest-rank", nearest_rank(vals, 10) == 19)
+check("p25 nearest-rank", nearest_rank(vals, 25) == 47)
+check("p50 nearest-rank", nearest_rank(vals, 50) == 93)
+check("p100 nearest-rank", nearest_rank(vals, 100) == 185)
+check("nearest-rank clamps low", nearest_rank(vals, 0) == 1)
 
 print(f"test_session_tools: {PASS} passed, {FAIL} failed")
 sys.exit(1 if FAIL else 0)

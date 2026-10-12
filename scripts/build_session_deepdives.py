@@ -34,6 +34,7 @@ NAV = """<nav class="site-nav" aria-label="Primary">
         <a href="../sessions.html">Sessions</a>
         <a href="../scene/">Scene</a>
         <a href="../timeline.html">Timeline</a>
+        <a href="../chronicle.html">Chronicle</a>
         <a href="../transmission.html">Transmission</a>
         <a href="../network.html">Network</a>
         <a href="../milestone-race.html">Race</a>
@@ -55,6 +56,7 @@ NAV = """<nav class="site-nav" aria-label="Primary">
         <a href="../sessions.html">Sessions</a>
         <a href="../scene/">Scene</a>
         <a href="../timeline.html">Timeline</a>
+        <a href="../chronicle.html">Chronicle</a>
         <a href="../transmission.html">Transmission</a>
         <a href="../network.html">Network</a>
         <a href="../milestone-race.html">Race</a>
@@ -113,6 +115,7 @@ FOOT = """    </div>
         <a href="../sessions.html">Sessions</a>
         <a href="../scene/">Scene</a>
         <a href="../timeline.html">Timeline</a>
+        <a href="../chronicle.html">Chronicle</a>
         <a href="../transmission.html">Transmission</a>
         <a href="../network.html">Network</a>
         <a href="../milestone-race.html">Race</a>

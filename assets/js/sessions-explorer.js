@@ -328,6 +328,38 @@
     }
   }
 
+  /* ---------------- quietest transmissions (track-level deep cuts) ---------------- */
+  var trackDeepShown = 10;
+
+  function renderTrackDeep() {
+    var tdc = TOOLS.track_deep_cuts;
+    if (!tdc) { return; }
+    $("se-trackdeep-formula").innerHTML = '<strong>The formula, stated:</strong> ' +
+      esc(tdc.formula);
+    var rows = tdc.bottom_25.slice(0, trackDeepShown);
+    $("se-trackdeep-list").innerHTML = rows.map(function (r) {
+      var voices = r.voices.length ?
+        ' <span class=\"dim\">w/ ' + esc(r.voices.join(", ")) + "</span>" : "";
+      return '<li class=\"se-deep-row\"><span class=\"se-deep-rank\" aria-label=\"rank ' +
+        r.rank + '\">#' + r.rank + '</span><div class=\"se-deep-body\">' +
+        '<h4><a href=\"' + esc(r.page) + '\">' + esc(r.title) + "</a>" + voices + "</h4>" +
+        '<p class=\"session-meta\">' + esc(r.date) + " \u00b7 " + esc(r.era_name) +
+        " \u00b7 " + esc(r.session_name) + "</p>" +
+        "<p><strong>" + fmt(r.plays) + " plays</strong> \u00b7 median is " +
+        fmt(tdc.insights.median_plays) + "</p>" +
+        "</div></li>";
+    }).join("");
+    var btn = $("se-trackdeep-toggle");
+    var total = tdc.bottom_25.length;
+    if (trackDeepShown >= total) {
+      btn.textContent = "Show top 10";
+      btn.setAttribute("aria-expanded", "true");
+    } else {
+      btn.textContent = "Show all " + total + " quietest transmissions";
+      btn.setAttribute("aria-expanded", "false");
+    }
+  }
+
   /* ---------------- timeline scrubber ---------------- */
   var scrubIdx = 60;
 
@@ -536,17 +568,23 @@
       renderCards();
       renderCompareControls();
       renderDeep();
+      renderTrackDeep();
       renderScrubControls();
       $("se-deep-toggle").addEventListener("click", function () {
         var total = TOOLS.deepest_cuts.ranking.length;
         deepShown = deepShown >= total ? 10 : total;
         renderDeep();
       });
+      $("se-trackdeep-toggle").addEventListener("click", function () {
+        var total = TOOLS.track_deep_cuts.bottom_25.length;
+        trackDeepShown = trackDeepShown >= total ? 10 : total;
+        renderTrackDeep();
+      });
       jumpToCard();
       ADM.reveal();
     }, function () {
       fail(["se-insights", "se-spotlight", "se-gaps", "se-seasons", "se-cards",
-            "se-compare", "se-deep-list", "se-scrub-card"]);
+            "se-compare", "se-deep-list", "se-trackdeep-list", "se-scrub-card"]);
     });
   }
 

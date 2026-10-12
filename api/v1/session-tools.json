@@ -1,8 +1,8 @@
 {
-  "version": "0.16.0",
+  "version": "0.17.0",
   "generated": "2026-10-11",
   "plays_snapshot": "2026-10-11",
-  "method": "Session explorer 2.0 tooling, computed from data/sessions.json (per-session track plays + dates), api/v1/session-clusters.json (era, loudest + deepest-cut tracks, title-credited collaborators, deep-dive + journey links), api/v1/eras.json (era deep-dive links), and api/v1/codex-families.json (key sessions -> family cross-links). Powers session compare, the deepest-sessions editorial ranking, the timeline scrubber, and per-session play profiles on sessions-explorer.html. Play counts are the single 2026-10-11 snapshot; no per-track play trajectory exists in the archive, so none is drawn.",
+  "method": "Session explorer 2.0 tooling, computed from data/sessions.json (per-session track plays + dates), api/v1/session-clusters.json (era, loudest + deepest-cut tracks, title-credited collaborators, deep-dive + journey links), api/v1/eras.json (era deep-dive links), and api/v1/codex-families.json (key sessions -> family cross-links). Powers session compare, the deepest-sessions editorial ranking, the track-level deepest-transmissions ranking, the timeline scrubber, and per-session play profiles on sessions-explorer.html. Play counts are the single 2026-10-11 snapshot; no per-track play trajectory exists in the archive, so none is drawn.",
   "snapshot_history": {
     "available": false,
     "snapshot_count": 1,
@@ -3916,6 +3916,342 @@
         "journey": "transmission.html#era-the-first-rite"
       }
     ]
+  },
+  "track_deep_cuts": {
+    "editorial": true,
+    "formula": "individual transmissions ranked by 2026-10-11 snapshot plays, ascending. Tiebreaks: earlier upload date, then title. No exclusions - all 185 vault tracks are ranked. An editorial ranking, not an artist fact.",
+    "track_count": 185,
+    "bottom_25": [
+      {
+        "rank": 1,
+        "title": "nitemode2019 w/ Max+Vetty prod. NaXi.wav",
+        "plays": 17,
+        "date": "2024-11-05",
+        "page": "releases/nitemode2019-w-max-vetty-prod-naxi-wav.html",
+        "session_id": "session-52",
+        "session_name": "The November 5th Session",
+        "era_id": "the-somelowlifes-era",
+        "era_name": "The SomeLowLifes Era",
+        "voices": [
+          "Max",
+          "Vetty"
+        ]
+      },
+      {
+        "rank": 2,
+        "title": "No Puppets A11owed prod. xtasane",
+        "plays": 24,
+        "date": "2025-11-10",
+        "page": "releases/no-puppets-a11owed-prod-xtasane.html",
+        "session_id": "session-55",
+        "session_name": "The November 4th–11th Session",
+        "era_id": "the-silence",
+        "era_name": "The Silence",
+        "voices": []
+      },
+      {
+        "rank": 3,
+        "title": "Im tha Bouncerrr prod. sustain",
+        "plays": 28,
+        "date": "2024-04-16",
+        "page": "releases/im-tha-bouncerrr-prod-sustain.html",
+        "session_id": "session-43",
+        "session_name": "The April 16th–18th Session",
+        "era_id": "the-somelowlifes-era",
+        "era_name": "The SomeLowLifes Era",
+        "voices": []
+      },
+      {
+        "rank": 4,
+        "title": "For Brian (Neck Deep) outro [produced by AWFL]",
+        "plays": 43,
+        "date": "2023-11-12",
+        "page": "releases/for-brian-neck-deep-outro-produced-by-awfl.html",
+        "session_id": "session-40",
+        "session_name": "The November 3rd–12th Session",
+        "era_id": "the-somelowlifes-era",
+        "era_name": "The SomeLowLifes Era",
+        "voices": []
+      },
+      {
+        "rank": 5,
+        "title": "6 stop telling myself i'm not",
+        "plays": 46,
+        "date": "2022-02-22",
+        "page": "releases/6-stop-telling-myself-i-m-not.html",
+        "session_id": "session-36",
+        "session_name": "The February 22nd Session",
+        "era_id": "the-cast-it-years",
+        "era_name": "The Cast It: Years",
+        "voices": []
+      },
+      {
+        "rank": 6,
+        "title": "10 stuck in the mix v2",
+        "plays": 58,
+        "date": "2022-02-22",
+        "page": "releases/10-stuck-in-the-mix-v2.html",
+        "session_id": "session-36",
+        "session_name": "The February 22nd Session",
+        "era_id": "the-cast-it-years",
+        "era_name": "The Cast It: Years",
+        "voices": []
+      },
+      {
+        "rank": 7,
+        "title": "7 don't say u love me",
+        "plays": 69,
+        "date": "2022-02-22",
+        "page": "releases/7-don-t-say-u-love-me.html",
+        "session_id": "session-36",
+        "session_name": "The February 22nd Session",
+        "era_id": "the-cast-it-years",
+        "era_name": "The Cast It: Years",
+        "voices": []
+      },
+      {
+        "rank": 8,
+        "title": "2 menace",
+        "plays": 97,
+        "date": "2022-02-22",
+        "page": "releases/2-menace.html",
+        "session_id": "session-36",
+        "session_name": "The February 22nd Session",
+        "era_id": "the-cast-it-years",
+        "era_name": "The Cast It: Years",
+        "voices": []
+      },
+      {
+        "rank": 9,
+        "title": "11 dismissed",
+        "plays": 98,
+        "date": "2022-02-22",
+        "page": "releases/11-dismissed.html",
+        "session_id": "session-36",
+        "session_name": "The February 22nd Session",
+        "era_id": "the-cast-it-years",
+        "era_name": "The Cast It: Years",
+        "voices": []
+      },
+      {
+        "rank": 10,
+        "title": "8 i would do mine",
+        "plays": 104,
+        "date": "2022-02-22",
+        "page": "releases/8-i-would-do-mine.html",
+        "session_id": "session-36",
+        "session_name": "The February 22nd Session",
+        "era_id": "the-cast-it-years",
+        "era_name": "The Cast It: Years",
+        "voices": []
+      },
+      {
+        "rank": 11,
+        "title": "3 sharpie",
+        "plays": 107,
+        "date": "2022-02-22",
+        "page": "releases/3-sharpie.html",
+        "session_id": "session-36",
+        "session_name": "The February 22nd Session",
+        "era_id": "the-cast-it-years",
+        "era_name": "The Cast It: Years",
+        "voices": []
+      },
+      {
+        "rank": 12,
+        "title": "4 wrong to be",
+        "plays": 109,
+        "date": "2022-02-22",
+        "page": "releases/4-wrong-to-be.html",
+        "session_id": "session-36",
+        "session_name": "The February 22nd Session",
+        "era_id": "the-cast-it-years",
+        "era_name": "The Cast It: Years",
+        "voices": []
+      },
+      {
+        "rank": 13,
+        "title": "5 bad cards",
+        "plays": 125,
+        "date": "2022-02-22",
+        "page": "releases/5-bad-cards.html",
+        "session_id": "session-36",
+        "session_name": "The February 22nd Session",
+        "era_id": "the-cast-it-years",
+        "era_name": "The Cast It: Years",
+        "voices": []
+      },
+      {
+        "rank": 14,
+        "title": "9 we grew up",
+        "plays": 126,
+        "date": "2022-02-22",
+        "page": "releases/9-we-grew-up.html",
+        "session_id": "session-36",
+        "session_name": "The February 22nd Session",
+        "era_id": "the-cast-it-years",
+        "era_name": "The Cast It: Years",
+        "voices": []
+      },
+      {
+        "rank": 15,
+        "title": "u Not at the Table (Sunsetzer0) #litemode",
+        "plays": 139,
+        "date": "2024-04-18",
+        "page": "releases/u-not-at-the-table-sunsetzer0-litemode.html",
+        "session_id": "session-43",
+        "session_name": "The April 16th–18th Session",
+        "era_id": "the-somelowlifes-era",
+        "era_name": "The SomeLowLifes Era",
+        "voices": []
+      },
+      {
+        "rank": 16,
+        "title": "Attack!!! 2",
+        "plays": 150,
+        "date": "2023-11-12",
+        "page": "releases/attack-2.html",
+        "session_id": "session-40",
+        "session_name": "The November 3rd–12th Session",
+        "era_id": "the-somelowlifes-era",
+        "era_name": "The SomeLowLifes Era",
+        "voices": []
+      },
+      {
+        "rank": 17,
+        "title": "Mix Up Substances ft. Max Ferrari",
+        "plays": 151,
+        "date": "2021-07-14",
+        "page": "releases/mix-up-substances-ft-max-ferrari.html",
+        "session_id": "session-35",
+        "session_name": "The July 14th Session",
+        "era_id": "the-cast-it-years",
+        "era_name": "The Cast It: Years",
+        "voices": [
+          "Max Ferrari"
+        ]
+      },
+      {
+        "rank": 18,
+        "title": "life's made prod wellfed",
+        "plays": 151,
+        "date": "2026-03-20",
+        "page": "releases/life-s-made-prod-wellfed.html",
+        "session_id": "session-59",
+        "session_name": "The March 17th–25th Session",
+        "era_id": "the-return",
+        "era_name": "The Return",
+        "voices": []
+      },
+      {
+        "rank": 19,
+        "title": "3 Points Pre Game prod. doublemulti x pinkcat #NITEMODE",
+        "plays": 170,
+        "date": "2024-05-28",
+        "page": "releases/3-points-pre-game-prod-doublemulti-x-pinkcat-nitemode.html",
+        "session_id": "session-45",
+        "session_name": "The May 22nd–31st Session",
+        "era_id": "the-somelowlifes-era",
+        "era_name": "The SomeLowLifes Era",
+        "voices": []
+      },
+      {
+        "rank": 20,
+        "title": "my kin (prod xannnn)",
+        "plays": 173,
+        "date": "2025-11-04",
+        "page": "releases/my-kin-prod-xannnn.html",
+        "session_id": "session-55",
+        "session_name": "The November 4th–11th Session",
+        "era_id": "the-silence",
+        "era_name": "The Silence",
+        "voices": []
+      },
+      {
+        "rank": 21,
+        "title": "Got Knots ft. Max Ferrari (prod. lil biscuit)",
+        "plays": 174,
+        "date": "2021-07-14",
+        "page": "releases/got-knots-ft-max-ferrari-prod-lil-biscuit.html",
+        "session_id": "session-35",
+        "session_name": "The July 14th Session",
+        "era_id": "the-cast-it-years",
+        "era_name": "The Cast It: Years",
+        "voices": [
+          "Max Ferrari"
+        ]
+      },
+      {
+        "rank": 22,
+        "title": "like my dogs!!! (prod waynn)",
+        "plays": 175,
+        "date": "2024-09-18",
+        "page": "releases/like-my-dogs-prod-waynn.html",
+        "session_id": "session-50",
+        "session_name": "The September 18th Session",
+        "era_id": "the-somelowlifes-era",
+        "era_name": "The SomeLowLifes Era",
+        "voices": []
+      },
+      {
+        "rank": 23,
+        "title": "Dreamed of U (Hubb1e) prod. Yukio",
+        "plays": 175,
+        "date": "2025-11-10",
+        "page": "releases/dreamed-of-u-hubb1e-prod-yukio.html",
+        "session_id": "session-55",
+        "session_name": "The November 4th–11th Session",
+        "era_id": "the-silence",
+        "era_name": "The Silence",
+        "voices": []
+      },
+      {
+        "rank": 24,
+        "title": "They Talk (prod. wetgropes)",
+        "plays": 176,
+        "date": "2020-12-21",
+        "page": "releases/they-talk-prod-wetgropes.html",
+        "session_id": "session-34",
+        "session_name": "The December 21st Session",
+        "era_id": "the-prolific-year",
+        "era_name": "The Prolific Year",
+        "voices": []
+      },
+      {
+        "rank": 25,
+        "title": "Wandavision (prod. cadence)",
+        "plays": 177,
+        "date": "2021-07-14",
+        "page": "releases/wandavision-prod-cadence.html",
+        "session_id": "session-35",
+        "session_name": "The July 14th Session",
+        "era_id": "the-cast-it-years",
+        "era_name": "The Cast It: Years",
+        "voices": []
+      }
+    ],
+    "insights": {
+      "quietest": {
+        "title": "nitemode2019 w/ Max+Vetty prod. NaXi.wav",
+        "plays": 17,
+        "date": "2024-11-05",
+        "page": "releases/nitemode2019-w-max-vetty-prod-naxi-wav.html",
+        "session_name": "The November 5th Session"
+      },
+      "median_plays": 450,
+      "p10_plays": 170,
+      "p25_plays": 210,
+      "p75_plays": 1293,
+      "p90_plays": 3075,
+      "under_100_plays": 9,
+      "under_50_plays": 5,
+      "loudest": {
+        "title": "Take Me (prod. Em Klebold)",
+        "plays": 30088,
+        "page": "releases/take-me-prod-em-klebold.html"
+      },
+      "note": "individual transmissions ranked by the single 2026-10-11 snapshot; no trajectories exist (editorial)"
+    }
   },
   "insights": {
     "deepest_session": {

@@ -10,6 +10,7 @@
     "snapshot_history",
     "sessions",
     "deepest_cuts",
+    "track_deep_cuts",
     "insights"
   ],
   "properties": {
@@ -173,6 +174,83 @@
         },
         "ranking": {
           "type": "array"
+        }
+      }
+    },
+    "track_deep_cuts": {
+      "type": "object",
+      "required": [
+        "editorial",
+        "formula",
+        "track_count",
+        "bottom_25",
+        "insights"
+      ],
+      "properties": {
+        "editorial": {
+          "type": "boolean"
+        },
+        "formula": {
+          "type": "string"
+        },
+        "track_count": {
+          "type": "integer"
+        },
+        "bottom_25": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "rank",
+              "title",
+              "plays",
+              "date",
+              "session_id",
+              "session_name",
+              "era_id",
+              "era_name",
+              "page",
+              "voices"
+            ],
+            "properties": {
+              "rank": {
+                "type": "integer"
+              },
+              "title": {
+                "type": "string"
+              },
+              "plays": {
+                "type": "integer"
+              },
+              "date": {
+                "type": "string"
+              },
+              "session_id": {
+                "type": "string"
+              },
+              "session_name": {
+                "type": "string"
+              },
+              "era_id": {
+                "type": "string"
+              },
+              "era_name": {
+                "type": "string"
+              },
+              "page": {
+                "type": "string"
+              },
+              "voices": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "insights": {
+          "type": "object"
         }
       }
     },

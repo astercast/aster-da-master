@@ -34,7 +34,7 @@ API_ARTIST = ROOT / "api" / "v1" / "artist.json"
 SCHEMA_OUT = ROOT / "api" / "v1" / "schema" / "sessions.json"
 PAGE_OUT = ROOT / "sessions.html"
 
-NEW_VERSION = "0.16.0"  # wave 32: circle enrichment + Uncle re-verified pre-release
+NEW_VERSION = "0.17.0"  # wave 33: data version 0.17.0
 SNAPSHOT = "2026-10-11"
 GAP_DAYS = 7
 
@@ -240,6 +240,7 @@ def main() -> int:
         <a href="years/">Years</a>
         <a href="scene/">Scene</a>
         <a href="timeline.html">Timeline</a>
+        <a href="chronicle.html">Chronicle</a>
         <a href="transmission.html">Transmission</a>
         <a href="network.html">Network</a>
         <a href="milestone-race.html">Race</a>
@@ -261,6 +262,7 @@ def main() -> int:
         <a href="years/">Years</a>
         <a href="scene/">Scene</a>
         <a href="timeline.html">Timeline</a>
+        <a href="chronicle.html">Chronicle</a>
         <a href="transmission.html">Transmission</a>
         <a href="network.html">Network</a>
         <a href="milestone-race.html">Race</a>
@@ -314,6 +316,7 @@ def main() -> int:
         <a href="years/">Years</a>
         <a href="scene/">Scene</a>
         <a href="timeline.html">Timeline</a>
+        <a href="chronicle.html">Chronicle</a>
         <a href="transmission.html">Transmission</a>
         <a href="network.html">Network</a>
         <a href="milestone-race.html">Race</a>

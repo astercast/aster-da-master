@@ -43,11 +43,13 @@
     { id: "milestone-races", path: "api/v1/milestone-races.json",
       blurb: "The milestone race 2.0: approaching play-count milestones ranked by gap-closing proximity (current value, target, gap, pace arithmetic — estimates, never predictions), race any two of the 185 vault tracks head-to-head at any milestone target (the vault pace database), The Climb (all 182 summit-eligible tracks ranked by catch time), race history (decided races, threshold winners, the 115-day photo finish), the computed race of the week (share card), the 30,088-play summit chase, session + era records; the 2026-10-11 snapshot independently re-captured (185/185, zero differences). Drives milestone-race.html." },
     { id: "session-tools", path: "api/v1/session-tools.json",
-      blurb: "Session explorer 2.0 tooling: 61 per-session compare profiles (stats, loudest + deepest-cut tracks, collaborators, play profiles, cross-links), the deepest-sessions editorial ranking (formula stated), and the honest snapshot-history state (one 2026-10-11 snapshot — no play trajectories). Drives sessions-explorer.html's compare / deepest-cuts / scrubber." },
+      blurb: "Session explorer 2.0 tooling: 61 per-session compare profiles (stats, loudest + deepest-cut tracks, collaborators, play profiles, cross-links), the deepest-sessions editorial ranking (formula stated), the track-level deepest-transmissions ranking (quietest 25 of 185), and the honest snapshot-history state (one 2026-10-11 snapshot — no play trajectories). Drives sessions-explorer.html's compare / deepest-cuts / scrubber." },
     { id: "codex-network", path: "api/v1/codex-network.json",
       blurb: "The codex relationship graph: 16 word families as nodes, shared title-credited collaborators and title-parsed producers as edges, BFS degrees of separation from Aster, the family-overlap graph, and connect-the-dots shortest-path data. Drives codex-network.html." },
     { id: "producer-deepdives", path: "api/v1/producer-deepdives.json",
-      blurb: "Producer deep-dives: every as-credited producer (113) with credited productions (release/session links, co-producers, voices), codex family ties, a computed production fingerprint, and sourced research where a research pass exists. Drives producers/<slug>.html." }
+      blurb: "Producer deep-dives: every as-credited producer (113) with credited productions (release/session links, co-producers, voices), codex family ties, a computed production fingerprint, and sourced research where a research pass exists. Drives producers/<slug>.html." },
+    { id: "chronicle", path: "api/v1/chronicle.json",
+      blurb: "The Chronicle: one merged chronological stream — 61 upload sessions, 9 dated milestones, 44 title-credited collaboration appearances — with era assignment, release/circle/session cross-links, and collaborator tags. Drives chronicle.html." }
   ];
 
   function esc(s) {

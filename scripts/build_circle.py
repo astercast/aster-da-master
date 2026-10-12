@@ -37,7 +37,7 @@ from build_producer_deepdives import (  # noqa: E402  (wave 27 cross-links)
 DATA = json.loads((ROOT / "data" / "artist.json").read_text())
 OUT = ROOT / "circle"
 API = ROOT / "api" / "v1"
-NEW_VERSION = "0.16.0"  # wave 32: circle enrichment + Uncle re-verified pre-release
+NEW_VERSION = "0.17.0"  # wave 33: data version 0.17.0
 
 # wave 27: producer slugs with as-credited productions (populated in main);
 # circle members who also produce get a "Producer deep dive" cross-link.
@@ -50,6 +50,7 @@ NAV = """<nav class="site-nav" aria-label="Primary">
         <a href="./">Circle</a>
         <a href="../scene/">Scene</a>
         <a href="../timeline.html">Timeline</a>
+        <a href="../chronicle.html">Chronicle</a>
         <a href="../transmission.html">Transmission</a>
         <a href="../network.html">Network</a>
         <a href="../milestone-race.html">Race</a>
@@ -72,6 +73,7 @@ NAV = """<nav class="site-nav" aria-label="Primary">
         <a href="./">Circle</a>
         <a href="../scene/">Scene</a>
         <a href="../timeline.html">Timeline</a>
+        <a href="../chronicle.html">Chronicle</a>
         <a href="../transmission.html">Transmission</a>
         <a href="../network.html">Network</a>
         <a href="../milestone-race.html">Race</a>
@@ -131,6 +133,7 @@ FOOT = """    </div>
         <a href="./">Circle</a>
         <a href="../scene/">Scene</a>
         <a href="../timeline.html">Timeline</a>
+        <a href="../chronicle.html">Chronicle</a>
         <a href="../transmission.html">Transmission</a>
         <a href="../network.html">Network</a>
         <a href="../milestone-race.html">Race</a>

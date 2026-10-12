@@ -1,8 +1,20 @@
 {
   "generated": "2026-10-11",
   "method": "Parsed from `git log main`: every commit becomes an entry. The site documenting its own becoming.",
-  "entry_count": 78,
+  "entry_count": 80,
   "entries": [
+    {
+      "hash": "4969a69",
+      "date": "2026-10-12",
+      "message": "Wave 33: changelog sync (79 entries)",
+      "files_changed": 3
+    },
+    {
+      "hash": "58ac38d",
+      "date": "2026-10-12",
+      "message": "Wave 33: The Deep Cuts deepened (track-level ranking) + The Chronicle explorer",
+      "files_changed": 487
+    },
     {
       "hash": "b667072",
       "date": "2026-10-12",

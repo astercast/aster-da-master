@@ -10,7 +10,7 @@
      chapter-codex   <- codex-families.json  (word families)
      chapter-architects <- producer-deepdives.json (as-credited producers)
      chapter-seasons <- session-clusters.json (activity seasons + silences)
-     chapter-deepcuts <- session-tools.json (editorial deepest-sessions ranking)
+     chapter-deepcuts <- session-tools.json (deepest-sessions + deepest-transmissions rankings)
      chapter-horizon <- verified 2026-10-11 research pass, sourced inline
    If any optional file fails to load, its chapter degrades away gracefully.
    Titles/metadata only — never lyrics.
@@ -480,37 +480,69 @@
     var dc = TOOLS.deepest_cuts;
     var ins = TOOLS.insights;
     var rows = dc.ranking.slice(0, 10).map(function (r) {
-      var link = r.deep_dive ? '<a href="' + esc(r.deep_dive) + '">' + esc(r.name) + "</a>" : esc(r.name);
-      return '<li class="tx-track"><span><span class="tx-rank">#' + r.rank + "</span> " + link +
-        '<span class="tx-meta">' + r.track_count + " transmissions &middot; " + fmt(r.total_plays) +
+      var link = r.deep_dive ? '<a href=\"' + esc(r.deep_dive) + '\">' + esc(r.name) + "</a>" : esc(r.name);
+      return '<li class=\"tx-track\"><span><span class=\"tx-rank\">#' + r.rank + "</span> " + link +
+        '<span class=\"tx-meta\">' + r.track_count + " transmissions &middot; " + fmt(r.total_plays) +
         " plays &middot; " + esc(r.era_name) + "</span></span>" +
-        '<span class="tx-plays">' + r.avg_plays_per_track + " avg</span></li>";
+        '<span class=\"tx-plays\">' + r.avg_plays_per_track + " avg</span></li>";
     }).join("");
     var deep = ins.deepest_session, quiet = ins.quietest_session;
-    return '<div class="stat-grid">' +
+    var tdc = TOOLS.track_deep_cuts || null;
+    var tRows = "", tStats = "", tNote = "";
+    if (tdc) {
+      tRows = tdc.bottom_25.slice(0, 10).map(function (r) {
+        var voices = r.voices.length ? " &middot; w/ " + esc(r.voices.join(", ")) : "";
+        return '<li class=\"tx-track\"><span><span class=\"tx-rank\">#' + r.rank + "</span> " +
+          '<a href=\"' + esc(r.page) + '\">' + esc(r.title) + "</a>" +
+          '<span class=\"tx-meta\">' + esc(r.date) + " &middot; " + esc(r.era_name) + voices +
+          "</span></span>" +
+          '<span class=\"tx-plays\">' + fmt(r.plays) + " plays</span></li>";
+      }).join("");
+      var ti = tdc.insights;
+      tStats = statCell(fmt(ti.quietest.plays) + " plays", "Quietest transmission") +
+        statCell(fmt(ti.median_plays), "Median plays / transmission") +
+        statCell(ti.under_100_plays + " of 185", "Transmissions under 100 plays");
+      tNote = '<div class=\"tx-block\"><h3>The quietest transmissions</h3><ol>' + tRows + "</ol>" +
+        '<p class=\"tx-note\"><strong>The formula:</strong> ' + esc(tdc.formula) + "</p>" +
+        '<p class=\"tx-note\">The full quietest-25 lives on the ' +
+        '<a href=\"sessions-explorer.html#se-trackdeep\">sessions explorer</a>. ' +
+        "Nine of the 185 vault transmissions sit under 100 plays; the median is " +
+        fmt(ti.median_plays) + ".</p></div>";
+    }
+    return '<div class=\"stat-grid\">' +
       statCell(dc.ranking.length, "Ranked sessions") +
       statCell(dc.excluded_single_track_sessions, "Single-track sessions excluded") +
       statCell(deep.avg_plays_per_track, "Deepest avg (plays/tx)") +
+      tStats +
       statCell(TOOLS.plays_snapshot, "Snapshot") +
       "</div>" +
-      '<blockquote class="tx-signal"><span class="sig-lab">The signal</span>' +
+      '<blockquote class=\"tx-signal\"><span class=\"sig-lab\">The signal</span>' +
       "The quietest rooms in the vault, ranked by average plays per transmission. The deepest session on record is \u201c" +
       esc(deep.name) + "\u201d \u2014 " + deep.avg_plays_per_track + " plays per transmission across " +
-      "its two tracks. An editorial ranking, not an artist fact.</blockquote>" +
-      '<div class="tx-block"><h3>The deepest sessions</h3><ol>' + rows + "</ol>" +
-      '<p class="tx-note"><strong>The formula:</strong> ' + esc(dc.formula) + "</p>" +
-      '<p class="tx-note">The quietest single session ever uploaded: \u201c' + esc(quiet.name) + "\u201d \u2014 " +
+      "its two tracks." +
+      (tdc ? " And the quietest single transmission ever uploaded is \u201c" +
+        esc(tdc.insights.quietest.title) + "\u201d \u2014 " +
+        fmt(tdc.insights.quietest.plays) + " plays." : "") +
+      " An editorial ranking, not an artist fact.</blockquote>" +
+      '<div class=\"tx-block\"><h3>The deepest sessions</h3><ol>' + rows + "</ol>" +
+      '<p class=\"tx-note\"><strong>The formula:</strong> ' + esc(dc.formula) + "</p>" +
+      '<p class=\"tx-note\">The quietest single session ever uploaded: \u201c' + esc(quiet.name) + "\u201d \u2014 " +
       fmt(quiet.total_plays) + " plays. Play counts are a single snapshot (" + esc(TOOLS.plays_snapshot) +
-      ") — no trajectories are drawn from them.</p></div>";
+      ") \u2014 no trajectories are drawn from them.</p></div>" +
+      tNote;
   }
 
   function deepCutsBrief() {
     var deep = TOOLS.insights.deepest_session;
+    var tdc = TOOLS.track_deep_cuts;
+    var extra = tdc ? " Quietest transmission: \u201c" + tdc.insights.quietest.title +
+      "\u201d (" + tdc.insights.quietest.plays + " plays)." : "";
     return [
-      "The signal: the vault's quietest sessions, ranked — deepest is \u201c" + deep.name +
-      "\u201d at " + deep.avg_plays_per_track + " avg plays per transmission."
+      "The signal: the vault's quietest sessions, ranked \u2014 deepest is \u201c" + deep.name +
+      "\u201d at " + deep.avg_plays_per_track + " avg plays per transmission." + extra
     ];
   }
+
 
   /* ---------- data chapter: THE HORIZON (verified 2026-10-11 research pass)
      Hand-authored from the research report — every fact sourced, nothing from
@@ -635,7 +667,7 @@
     if (TOOLS) {
       list.push({
         kind: "chapter", id: "chapter-deepcuts", hash: "chapter-deepcuts",
-        label: "Data chapter", name: "The Deep Cuts", span: "the quietest rooms \u00b7 ranked",
+        label: "Data chapter", name: "The Deep Cuts", span: "the quietest rooms + transmissions \u00b7 ranked",
         deepDive: { href: "sessions-explorer.html", text: "Deep dive: the sessions explorer" },
         render: renderDeepCuts, brief: deepCutsBrief
       });

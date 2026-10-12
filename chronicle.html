@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Chronicle — Aster da Master</title>
+  <meta name="description" content="Every signal in order: all 61 upload sessions, 9 dated milestones, and 44 title-credited collaboration appearances, 2017–2026 — filterable by era, kind, and voice, with full-text search.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/motifs.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container header-bar">
+      <a class="brand" href="./" aria-label="Aster da Master home">
+        <span class="brand-mark" aria-hidden="true">A✦</span>
+        <span>ASTER DA MASTER</span>
+      </a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="./#discography">Discography</a>
+        <a href="releases/">Releases</a>
+        <a href="years/">Years</a>
+        <a href="scene/">Scene</a>
+        <a href="timeline.html">Timeline</a>
+        <a href="chronicle.html" aria-current="page">Chronicle</a>
+        <a href="transmission.html">Transmission</a>
+        <a href="network.html">Network</a>
+        <a href="milestone-race.html">Race</a>
+        <a href="decoder.html">Decoder</a>
+        <a href="api-playground.html">API</a>
+        <a href="agents.html">Agents</a>
+        <a href="sessions.html">Sessions</a>
+        <a href="changelog.html">Changelog</a>
+        <a href="method.html">Method</a>
+        <a href="trilogy.html">Trilogy</a>
+        <a href="glance.html">Glance</a>
+        <a href="press-kit.html">Press kit</a>
+      </nav>
+      <details class="mnav">
+        <summary><span class="bars" aria-hidden="true"><i></i><i></i><i></i></span>Menu</summary>
+        <nav class="mnav-panel" aria-label="Mobile">
+        <a href="./#discography">Discography</a>
+        <a href="releases/">Releases</a>
+        <a href="years/">Years</a>
+        <a href="scene/">Scene</a>
+        <a href="timeline.html">Timeline</a>
+        <a href="chronicle.html" aria-current="page">Chronicle</a>
+        <a href="transmission.html">Transmission</a>
+        <a href="network.html">Network</a>
+        <a href="milestone-race.html">Race</a>
+        <a href="decoder.html">Decoder</a>
+        <a href="api-playground.html">API</a>
+        <a href="agents.html">Agents</a>
+        <a href="sessions.html">Sessions</a>
+        <a href="changelog.html">Changelog</a>
+        <a href="method.html">Method</a>
+        <a href="trilogy.html">Trilogy</a>
+        <a href="glance.html">Glance</a>
+        <a href="press-kit.html">Press kit</a>
+        </nav>
+      </details>
+      <button class="search-btn" id="search-open" type="button" aria-label="Search the archive (keyboard shortcut: slash)">
+        <span aria-hidden="true">⌕</span><kbd aria-hidden="true">/</kbd>
+      </button>
+    </div>
+  </header>
+
+  <div class="search-overlay" id="search-overlay" hidden>
+    <div class="search-box" role="dialog" aria-modal="true" aria-labelledby="search-title">
+      <p class="kicker" id="search-title"><span class="numeral">✦</span>Search the archive</p>
+      <input id="search-input" type="search" placeholder="Tracks, collaborators, eras, the codex…" aria-label="Search the archive" role="combobox" aria-expanded="true" aria-controls="search-results" autocomplete="off" spellcheck="false">
+      <div id="search-results" role="listbox" aria-label="Search results"></div>
+      <p class="search-hint"><kbd>/</kbd> to open · <kbd>↑</kbd><kbd>↓</kbd> to move · <kbd>Enter</kbd> to go · <kbd>Esc</kbd> to close</p>
+    </div>
+  </div>
+
+  <main id="main">
+    <div class="container">
+      <noscript><p class="se-error">The Chronicle needs JavaScript — it renders <code>api/v1/chronicle.json</code> live. The same data sits behind <a href="api/v1/chronicle.json">the endpoint</a>.</p></noscript>
+
+      <div class="section-head reveal">
+        <span class="kicker"><span class="numeral">✦</span>The Chronicle</span>
+        <h1>Every signal, in order</h1>
+        <p>One merged stream: every upload session, every dated milestone, every title-credited collaboration appearance — 2017 to 2026. Filter by era, by kind, by voice; search the whole run.</p>
+        <p class="chart-sub">Merged from <a href="api/v1/session-clusters.json">session-clusters.json</a>, <a href="api/v1/milestones.json">milestones.json</a>, and <a href="api/v1/circle.json">circle.json</a> · play counts are a 2026-10-11 snapshot · same-date order is milestone → session → collaboration (a stated rule)</p>
+      </div>
+
+      <section class="section reveal" aria-label="Chronicle totals">
+        <div class="stat-grid" id="ch-stats"></div>
+      </section>
+
+      <section class="section reveal" aria-labelledby="ch-filters-h">
+        <span class="kicker"><span class="numeral">✦</span>Tune the signal</span>
+        <h2 id="ch-filters-h">Filter the stream</h2>
+        <form id="ch-filters" aria-describedby="ch-count">
+          <div class="ch-filter-grid">
+            <div class="ch-field">
+              <label for="ch-era">Era</label>
+              <select id="ch-era"></select>
+            </div>
+            <fieldset class="ch-field">
+              <legend>Kind</legend>
+              <div class="ch-kinds">
+                <label><input type="checkbox" id="ch-kind-milestone" checked> <span aria-hidden="true">◆</span> Milestones</label>
+                <label><input type="checkbox" id="ch-kind-session" checked> <span aria-hidden="true">●</span> Sessions</label>
+                <label><input type="checkbox" id="ch-kind-collaboration" checked> <span aria-hidden="true">▲</span> Collaborations</label>
+              </div>
+            </fieldset>
+            <div class="ch-field">
+              <label for="ch-collab">Voice</label>
+              <select id="ch-collab"></select>
+            </div>
+            <div class="ch-field">
+              <label for="ch-q">Search</label>
+              <input type="search" id="ch-q" placeholder="title, session, voice…" autocomplete="off" spellcheck="false">
+            </div>
+            <div class="ch-field">
+              <label for="ch-sort">Order</label>
+              <select id="ch-sort">
+                <option value="asc">Oldest first</option>
+                <option value="desc">Newest first</option>
+              </select>
+            </div>
+          </div>
+          <div class="btn-row">
+            <button class="btn btn-sm" type="button" id="ch-reset">Reset filters</button>
+            <button class="btn btn-sm btn-ghost" type="button" id="ch-copy">Copy link to this view</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="section reveal" aria-labelledby="ch-stream-h">
+        <span class="kicker"><span class="numeral">✦</span>The stream</span>
+        <h2 id="ch-stream-h">The run, event by event</h2>
+        <p id="ch-count" aria-live="polite"></p>
+        <ol class="ms-list" id="ch-stream"></ol>
+      </section>
+
+      <section class="section reveal" aria-labelledby="ch-method-h">
+        <span class="kicker"><span class="numeral">✦</span>How it's built</span>
+        <h2 id="ch-method-h">The merge rules</h2>
+        <ul class="fact-list">
+          <li><span class="k">Sources</span><span>61 sessions from <code>data/sessions.json</code> (enriched by <code>session-clusters.json</code>), 9 dated milestones from <code>milestones.json</code>, 44 collaboration appearances from <code>circle.json</code> — one event per title-credited track, release page resolved by exact title+date join.</span></li>
+          <li><span class="k">Order</span><span>Chronological. When several events share a date, milestones come first, then sessions, then collaborations — a stated presentation rule, not an artist fact.</span></li>
+          <li><span class="k">Eras</span><span>Assigned by calendar year. The April 2017 feature credit predates the era system and is labeled "Before the vault" — honestly, not forced into one.</span></li>
+          <li><span class="k">The silence</span><span>The 553-day longest silence is a span, not a moment: it sits at its start date (2022-02-22) with the end date carried on the row.</span></li>
+          <li><span class="k">Plays</span><span>Single 2026-10-11 snapshot. Distributor singles carry no vault plays — the row says so instead of showing a zero.</span></li>
+        </ul>
+      </section>
+
+      <section class="section reveal" aria-labelledby="ch-keep-h">
+        <span class="kicker"><span class="numeral">✦</span>Keep digging</span>
+        <h2 id="ch-keep-h">The trail continues</h2>
+        <ul class="story-list">
+          <li><a href="timeline.html">Timeline</a> — every transmission plotted 2018–2026, distributor releases in gold, vault in neon.</li>
+          <li><a href="sessions-explorer.html">Sessions explorer</a> — the 61 sessions as an explorable timeline: seasons, silences, compare, deep cuts.</li>
+          <li><a href="transmission.html">Transmission</a> — the guided journey through the six eras and seven data chapters.</li>
+          <li><a href="network.html">Network</a> — the collaboration universe as a graph.</li>
+          <li><a href="milestone-race.html">Milestone race</a> — approaching play-count milestones as races, plus the summit chase.</li>
+          <li><a href="api/v1/chronicle.json">api/v1/chronicle.json</a> — this page's data, endpoint #23; try it in the <a href="api-playground.html">API playground</a>.</li>
+        </ul>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <p>© 2026 ASTER DA MASTER — ALL SIGNALS RESERVED</p>
+      <nav aria-label="Footer">
+        <a href="./">Home</a>
+        <a href="./#discography">Discography</a>
+        <a href="releases/">Releases</a>
+        <a href="years/">Years</a>
+        <a href="scene/">Scene</a>
+        <a href="timeline.html">Timeline</a>
+        <a href="chronicle.html" aria-current="page">Chronicle</a>
+        <a href="transmission.html">Transmission</a>
+        <a href="network.html">Network</a>
+        <a href="milestone-race.html">Race</a>
+        <a href="decoder.html">Decoder</a>
+        <a href="api-playground.html">API</a>
+        <a href="agents.html">Agents</a>
+        <a href="sessions.html">Sessions</a>
+        <a href="changelog.html">Changelog</a>
+        <a href="method.html">Method</a>
+        <a href="trilogy.html">Trilogy</a>
+        <a href="glance.html">Glance</a>
+        <a href="press-kit.html">Press kit</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="assets/js/common.js"></script>
+  <script src="assets/js/chronicle.js"></script>
+  <script src="assets/js/search.js"></script>
+  <script src="assets/js/identity.js"></script>
+</body>
+</html>

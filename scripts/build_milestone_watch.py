@@ -30,7 +30,7 @@ API_INDEX = ROOT / "api" / "v1" / "index.json"
 API_ARTIST = ROOT / "api" / "v1" / "artist.json"
 SCHEMA_OUT = ROOT / "api" / "v1" / "schema" / "milestone-watch.json"
 
-NEW_VERSION = "0.16.0"  # wave 32: circle enrichment + Uncle re-verified pre-release
+NEW_VERSION = "0.17.0"  # wave 33: data version 0.17.0
 SNAPSHOT = "2026-10-11"
 
 BANDS = [

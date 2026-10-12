@@ -28,6 +28,7 @@
         <a href="releases/">Releases</a>
         <a href="scene/">Scene</a>
         <a href="timeline.html">Timeline</a>
+        <a href="chronicle.html">Chronicle</a>
         <a href="transmission.html">Transmission</a>
         <a href="network.html">Network</a>
         <a href="milestone-race.html">Race</a>
@@ -49,6 +50,7 @@
         <a href="releases/">Releases</a>
         <a href="scene/">Scene</a>
         <a href="timeline.html">Timeline</a>
+        <a href="chronicle.html">Chronicle</a>
         <a href="transmission.html">Transmission</a>
         <a href="network.html">Network</a>
         <a href="milestone-race.html">Race</a>
@@ -90,7 +92,7 @@
 
         <div class="reveal">
           <h3 id="ag-endpoints">The API</h3>
-          <p>Twenty-one versioned JSON endpoints under <code>api/v1/</code>. Current data version: <strong>0.16.0</strong> (see <code>api/v1/index.json</code> → <code>version</code> before caching anything).</p>
+          <p>Twenty-three versioned JSON endpoints under <code>api/v1/</code>. Current data version: <strong>0.17.0</strong> (see <code>api/v1/index.json</code> → <code>version</code> before caching anything).</p>
           <div class="table-wrap">
             <table>
               <caption>API endpoint table</caption>
@@ -115,6 +117,7 @@
                 <tr><th scope="row">session-tools</th><td><code>api/v1/session-tools.json</code></td><td>Session explorer 2.0 tooling: 61 per-session compare profiles (stats, loudest + deepest-cut tracks, collaborators, play profiles, cross-links), the deepest-sessions editorial ranking (formula stated), and the honest snapshot-history state (one 2026-10-11 snapshot — no play trajectories). Drives the compare / deepest-cuts / scrubber sections of <code>sessions-explorer.html</code></td><td><code>sessions[]</code> → <code>play_profile, families, deep_dive, journey</code>; <code>deepest_cuts.ranking[]</code>; <code>snapshot_history</code></td></tr>
                 <tr><th scope="row">codex-network</th><td><code>api/v1/codex-network.json</code></td><td>The codex relationship graph: 16 word families as nodes, shared title-credited collaborators and title-parsed producers as edges, BFS degrees of separation from Aster, the family-overlap graph, and connect-the-dots shortest-path data. Drives <code>codex-network.html</code></td><td><code>families[]</code> → <code>figures[]</code> → <code>family_overlap[]</code> → <code>degrees[]</code> → <code>insights</code>; <code>edges[]</code> → <code>a, b, weight, kind, label</code></td></tr>
                 <tr><th scope="row">producer-deepdives</th><td><code>api/v1/producer-deepdives.json</code></td><td>Producer deep-dives: every as-credited producer (113) with credited productions (release/session links, co-producers, title-credited voices), codex family ties, a computed production fingerprint, and sourced research where a research pass exists. Drives the <code>producers/&lt;slug&gt;.html</code> pages</td><td><code>producers[]</code> → <code>productions[], codex_families[], fingerprint, research</code>; <code>insights</code></td></tr>
+                <tr><th scope="row">chronicle</th><td><code>api/v1/chronicle.json</code></td><td>The Chronicle: one merged chronological stream &mdash; 61 upload sessions, 9 dated milestones (the 553-day longest silence as a span), 44 title-credited collaboration appearances &mdash; with era assignment, release/circle/session cross-links, and collaborator tags. Drives <code>chronicle.html</code></td><td><code>events[]</code> &rarr; <code>id, date, kind, era_id, title, detail, links[], collaborators[]</code>; <code>insights</code></td></tr>
                 <tr><th scope="row">years</th><td><code>api/v1/years.json</code></td><td>Year-in-review: per-year stats and top tracks, 2018–2026</td><td><code>transmissions, plays, top_tracks[]</code></td></tr>
                 <tr><th scope="row">on-this-day</th><td><code>api/v1/on-this-day.json</code></td><td>Transmissions keyed by MM-DD upload date</td><td>MM-DD keys</td></tr>
                 <tr><th scope="row">release-slugs</th><td><code>api/v1/release-slugs.json</code></td><td>Slug index for the 219 generated release pages</td><td>slug → page mappings</td></tr>
@@ -180,7 +183,7 @@
           <h3 id="ag-expectations">Rates &amp; expectations</h3>
           <ul>
             <li><strong>Static files, no auth, no rate limits.</strong> This is a static site — the whole API is files on disk. Fetch freely, but serve over HTTP: browsers block <code>fetch()</code> from <code>file://</code> pages.</li>
-            <li><strong>Sizes are small.</strong> Largest endpoints: <code>artist.json</code> (~155 KB), <code>sessions.json</code> (~50 KB), <code>on-this-day.json</code> (~40 KB). Everything else is under 16 KB. Cache aggressively; check <code>index.json → version</code> (currently <code>0.16.0</code>) to invalidate.</li>
+            <li><strong>Sizes are small.</strong> Largest endpoints: <code>artist.json</code> (~155 KB), <code>sessions.json</code> (~50 KB), <code>on-this-day.json</code> (~40 KB). Everything else is under 16 KB. Cache aggressively; check <code>index.json → version</code> (currently <code>0.17.0</code>) to invalidate.</li>
             <li><strong>Play counts are a snapshot.</strong> SoundCloud plays were captured read-only on <strong>2026-10-11</strong> (<code>plays_snapshot</code> / <code>observed</code> fields). They drift daily — always state the snapshot date, never present them as live.</li>
             <li><strong>Upload dates ≠ recording dates.</strong> Sessions are computed clusters (7-day upload-gap rule), not artist-named studio sessions.</li>
             <li><strong>The rules of the archive:</strong> titles and metadata only — <strong>never lyrics</strong>; never invent biography; unknowns are listed as unknowns (<code>method.html</code> → "The unknowns register"); the circle is title-credit only (producers live in <code>scene-figures.json</code>).</li>
@@ -244,6 +247,7 @@
         <a href="releases/">Releases</a>
         <a href="scene/">Scene</a>
         <a href="timeline.html">Timeline</a>
+        <a href="chronicle.html">Chronicle</a>
         <a href="transmission.html">Transmission</a>
         <a href="network.html">Network</a>
         <a href="milestone-race.html">Race</a>

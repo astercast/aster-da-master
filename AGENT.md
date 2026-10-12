@@ -47,9 +47,10 @@ Static files — **no auth, no keys, no rate limits**. Works on any static host.
 | `api/v1/session-clusters.json` | Session archaeology, interactive: the 61 sessions as an explorable timeline — per-session enrichment (era, loudest + deepest-cut tracks, cross-links), the 60 inter-session gaps, 9 activity seasons, asserted insights. Drives `sessions-explorer.html` | 9 seasons |
 | `api/v1/codex-families.json` | Codex family deep-dives: 16 vocabulary families with decoded readings, era-by-era evolution, key sessions, title-credited collaborators. Drives the `codex/<slug>.html` pages | 16 |
 | `api/v1/milestone-races.json` | The milestone race 2.0: approaching play-count milestones ranked by gap-closing proximity (current value, target, gap, pace arithmetic — estimates, never predictions), race any two of the 185 vault tracks head-to-head at any milestone target (the vault pace database, client-side mirror of the asserted pair math), The Climb (all 182 summit-eligible tracks ranked by catch time), race history (decided races: dated crossings, 1k/10k/20k/30k threshold winners, the 115-day photo finish), the computed race of the week (share card), the 30,088-play summit chase, session + era records. The 2026-10-11 snapshot was independently re-captured (185/185 tracks, zero play-count differences). Drives `milestone-race.html` | 4 races, 185-track pace db, 182-track climb |
-| `api/v1/session-tools.json` | Session explorer 2.0 tooling: 61 per-session compare profiles (stats, loudest + deepest-cut tracks, collaborators, play profiles, family/session/era/journey cross-links), the deepest-sessions editorial ranking (lowest average plays per transmission, min 2 transmissions, formula stated in the payload — editorial, not an artist fact), and the honest snapshot-history state (one 2026-10-11 snapshot: no play trajectories exist). Drives the compare / deepest-cuts / timeline-scrubber sections of `sessions-explorer.html` | 61 profiles |
+| `api/v1/session-tools.json` | Session explorer 2.0 tooling: 61 per-session compare profiles (stats, loudest + deepest-cut tracks, collaborators, play profiles, family/session/era/journey cross-links), the deepest-sessions editorial ranking (lowest average plays per transmission, min 2 transmissions, formula stated in the payload — editorial, not an artist fact), the track-level deepest-transmissions ranking (quietest 25 of 185, median 450), and the honest snapshot-history state (one 2026-10-11 snapshot: no play trajectories exist). Drives the compare / deepest-cuts / timeline-scrubber sections of `sessions-explorer.html` | 61 profiles |
 | `api/v1/codex-network.json` | The codex relationship graph: 16 word families as nodes, shared title-credited collaborators and title-parsed producers as edges, BFS degrees of separation from Aster, the family-overlap graph, and connect-the-dots shortest-path data. Drives `codex-network.html` | 70 nodes |
 | `api/v1/producer-deepdives.json` | Producer deep-dives: every as-credited producer (title prod./produced-by fragments, verbatim) with credited productions (release/session links, co-producers, title-credited voices), codex family ties, a computed production fingerprint, and sourced research where a research pass exists. Drives `producers/<slug>.html` | 113 producers |
+| `api/v1/chronicle.json` | The Chronicle: one merged chronological stream — 61 upload sessions, 9 dated milestones (the 553-day longest silence as a span), 44 title-credited collaboration appearances — with era assignment, release/circle/session cross-links, and collaborator tags. Same-date order is milestone → session → collaboration (stated rule); the 2017 feature credit is honestly pre-era. Drives `chronicle.html` | 114 events |
 
 Example requests (Node; swap `fs` for `fetch` in a browser):
 
@@ -59,7 +60,7 @@ const J = p => JSON.parse(fs.readFileSync(p, "utf8"));
 
 // manifest first: confirm version before caching anything
 const idx = J("api/v1/index.json");
-console.log(idx.meta.version, idx.endpoints.network.records); // 0.16.0 23
+console.log(idx.meta.version, idx.endpoints.network.records); // 0.17.0 23
 
 // top 5 vault tracks by plays (plays = 2026-10-11 snapshot)
 const artist = J("api/v1/artist.json");
@@ -270,7 +271,7 @@ family: what does it mean, and how did it evolve?"*
 - **Upload dates ≠ recording dates.** Sessions are computed clusters (7-day
   upload-gap rule), not artist-named studio sessions.
 - **Sizes are small.** Largest: `artist.json` (~155 KB). Cache aggressively;
-  check `index.json → meta.version` (currently `0.16.0`) to invalidate.
+  check `index.json → meta.version` (currently `0.17.0`) to invalidate.
 - **The rules of the archive:** titles and metadata only — **never lyrics**;
   never invent biography; unknowns are listed as unknowns (`method.html` →
   "The unknowns register"); the circle is title-credit only (producers live

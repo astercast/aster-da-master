@@ -45,7 +45,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 API = ROOT / "api" / "v1"
 OUT = ROOT / "eras"
-NEW_VERSION = "0.16.0"  # wave 32: circle enrichment + Uncle re-verified pre-release
+NEW_VERSION = "0.17.0"  # wave 33: data version 0.17.0
 SNAPSHOT = "2026-10-11"
 
 sys.path.insert(0, str(ROOT / "scripts"))
@@ -228,6 +228,7 @@ NAV = """<nav class="site-nav" aria-label="Primary">
         <a href="../sessions.html">Sessions</a>
         <a href="../scene/">Scene</a>
         <a href="../timeline.html">Timeline</a>
+        <a href="../chronicle.html">Chronicle</a>
         <a href="../transmission.html">Transmission</a>
         <a href="../network.html">Network</a>
         <a href="../milestone-race.html">Race</a>
@@ -249,6 +250,7 @@ NAV = """<nav class="site-nav" aria-label="Primary">
         <a href="../sessions.html">Sessions</a>
         <a href="../scene/">Scene</a>
         <a href="../timeline.html">Timeline</a>
+        <a href="../chronicle.html">Chronicle</a>
         <a href="../transmission.html">Transmission</a>
         <a href="../network.html">Network</a>
         <a href="../milestone-race.html">Race</a>
@@ -307,6 +309,7 @@ FOOT = """    </div>
         <a href="../sessions.html">Sessions</a>
         <a href="../scene/">Scene</a>
         <a href="../timeline.html">Timeline</a>
+        <a href="../chronicle.html">Chronicle</a>
         <a href="../transmission.html">Transmission</a>
         <a href="../network.html">Network</a>
         <a href="../milestone-race.html">Race</a>

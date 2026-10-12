@@ -38,7 +38,7 @@ API_OUT = ROOT / "api" / "v1" / "codex.json"
 API_ARTIST = ROOT / "api" / "v1" / "artist.json"
 API_INDEX = ROOT / "api" / "v1" / "index.json"
 CODEX_PAGES = ROOT / "codex"
-NEW_VERSION = "0.16.0"  # wave 32: circle enrichment + Uncle re-verified pre-release
+NEW_VERSION = "0.17.0"  # wave 33: data version 0.17.0
 SNAPSHOT = "2026-10-11"  # play-count snapshot date; pinned so re-runs are byte-stable
 
 LEET = str.maketrans({"1": "l", "0": "o", "3": "e", "4": "a", "5": "s", "7": "t"})
@@ -119,6 +119,7 @@ NAV = """<nav class="site-nav" aria-label="Primary">
         <a href="./">Codex</a>
         <a href="../scene/">Scene</a>
         <a href="../timeline.html">Timeline</a>
+        <a href="../chronicle.html">Chronicle</a>
         <a href="../transmission.html">Transmission</a>
         <a href="../network.html">Network</a>
         <a href="../milestone-race.html">Race</a>
@@ -141,6 +142,7 @@ NAV = """<nav class="site-nav" aria-label="Primary">
         <a href="./">Codex</a>
         <a href="../scene/">Scene</a>
         <a href="../timeline.html">Timeline</a>
+        <a href="../chronicle.html">Chronicle</a>
         <a href="../transmission.html">Transmission</a>
         <a href="../network.html">Network</a>
         <a href="../milestone-race.html">Race</a>
@@ -200,6 +202,7 @@ FOOT = """    </div>
         <a href="./">Codex</a>
         <a href="../scene/">Scene</a>
         <a href="../timeline.html">Timeline</a>
+        <a href="../chronicle.html">Chronicle</a>
         <a href="../transmission.html">Transmission</a>
         <a href="../network.html">Network</a>
         <a href="../milestone-race.html">Race</a>

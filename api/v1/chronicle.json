@@ -1,0 +1,2699 @@
+{
+  "version": "0.17.0",
+  "generated": "2026-10-11",
+  "plays_snapshot": "2026-10-11",
+  "method": "The Chronicle: sessions (data/sessions.json, enriched by api/v1/session-clusters.json), dated milestones (api/v1/milestones.json - the longest silence is a span, dated at its start with end_date carried), and one event per title-credited collaboration appearance (api/v1/circle.json, release page resolved by exact title+date join against data/sessions.json and data/artist.json). Merged and sorted chronologically; same-date order is milestone -> session -> collaboration (a stated presentation rule). Era by calendar year via api/v1/eras.json; the 2017 feature credit predates the eras ('Before the vault'). Powers chronicle.html.",
+  "kinds": [
+    "milestone",
+    "session",
+    "collaboration"
+  ],
+  "same_date_order": [
+    "milestone",
+    "session",
+    "collaboration"
+  ],
+  "eras": [
+    {
+      "id": "the-first-rite",
+      "name": "The First Rite",
+      "years": [
+        "2018",
+        "2019"
+      ]
+    },
+    {
+      "id": "the-prolific-year",
+      "name": "The Prolific Year",
+      "years": [
+        "2020"
+      ]
+    },
+    {
+      "id": "the-cast-it-years",
+      "name": "The Cast It: Years",
+      "years": [
+        "2021",
+        "2022"
+      ]
+    },
+    {
+      "id": "the-somelowlifes-era",
+      "name": "The SomeLowLifes Era",
+      "years": [
+        "2023",
+        "2024"
+      ]
+    },
+    {
+      "id": "the-silence",
+      "name": "The Silence",
+      "years": [
+        "2025"
+      ]
+    },
+    {
+      "id": "the-return",
+      "name": "The Return",
+      "years": [
+        "2026"
+      ]
+    }
+  ],
+  "collaborators": [
+    {
+      "slug": "max-ferrari",
+      "name": "Max Ferrari",
+      "page": "circle/max-ferrari.html",
+      "appearances": 8
+    },
+    {
+      "slug": "yung-vetta",
+      "name": "Yung Vetta",
+      "page": "circle/yung-vetta.html",
+      "appearances": 7
+    },
+    {
+      "slug": "jax",
+      "name": "JAX",
+      "page": "circle/jax.html",
+      "appearances": 3
+    },
+    {
+      "slug": "lil-yu",
+      "name": "lil yu",
+      "page": "circle/lil-yu.html",
+      "appearances": 3
+    },
+    {
+      "slug": "griimxo",
+      "name": "Griimxo",
+      "page": "circle/griimxo.html",
+      "appearances": 2
+    },
+    {
+      "slug": "jo-e-dripp",
+      "name": "JO$E DRIPP",
+      "page": "circle/jo-e-dripp.html",
+      "appearances": 2
+    },
+    {
+      "slug": "lilvicbxi",
+      "name": "LILVICBXI",
+      "page": "circle/lilvicbxi.html",
+      "appearances": 2
+    },
+    {
+      "slug": "lil-wintr",
+      "name": "Lil Wintr",
+      "page": "circle/lil-wintr.html",
+      "appearances": 2
+    },
+    {
+      "slug": "marcelo",
+      "name": "Marcelo",
+      "page": "circle/marcelo.html",
+      "appearances": 2
+    },
+    {
+      "slug": "capoxxo",
+      "name": "capoxxo",
+      "page": "circle/capoxxo.html",
+      "appearances": 2
+    },
+    {
+      "slug": "ammi-age",
+      "name": "AMMI $AGE",
+      "page": "circle/ammi-age.html",
+      "appearances": 1
+    },
+    {
+      "slug": "keyblayde808",
+      "name": "Keyblayde808",
+      "page": "circle/keyblayde808.html",
+      "appearances": 1
+    },
+    {
+      "slug": "lilrareboy",
+      "name": "Lilrareboy",
+      "page": "circle/lilrareboy.html",
+      "appearances": 1
+    },
+    {
+      "slug": "max",
+      "name": "Max",
+      "page": "circle/max.html",
+      "appearances": 1
+    },
+    {
+      "slug": "offline-hp",
+      "name": "Offline_hp",
+      "page": "circle/offline-hp.html",
+      "appearances": 1
+    },
+    {
+      "slug": "shola",
+      "name": "Shola",
+      "page": "circle/shola.html",
+      "appearances": 1
+    },
+    {
+      "slug": "vetty",
+      "name": "Vetty",
+      "page": "circle/vetty.html",
+      "appearances": 1
+    },
+    {
+      "slug": "yung-cortex",
+      "name": "Yung Cortex",
+      "page": "circle/yung-cortex.html",
+      "appearances": 1
+    },
+    {
+      "slug": "lil-soda-boi",
+      "name": "lil soda boi",
+      "page": "circle/lil-soda-boi.html",
+      "appearances": 1
+    },
+    {
+      "slug": "phil-is-lonely",
+      "name": "phil is lonely",
+      "page": "circle/phil-is-lonely.html",
+      "appearances": 1
+    },
+    {
+      "slug": "pvscale",
+      "name": "pvscale",
+      "page": "circle/pvscale.html",
+      "appearances": 1
+    }
+  ],
+  "events": [
+    {
+      "id": "first-distributor",
+      "date": "2017-04-20",
+      "kind": "milestone",
+      "era_id": null,
+      "era_name": "Before the vault",
+      "title": "First distributor transmission",
+      "detail": "The catalog's first appearance on streaming platforms — as a featured artist, two years before the first vault upload. — “lost memories (feat. Aster Da Master)”",
+      "plays": null,
+      "links": [
+        {
+          "label": "Release page",
+          "href": "releases/lost-memories-feat-aster-da-master.html"
+        },
+        {
+          "label": "Release page",
+          "href": "releases/lost-memories-feat-aster-da-master.html"
+        }
+      ],
+      "collaborators": [],
+      "collab_slug": null
+    },
+    {
+      "id": "first-vault",
+      "date": "2018-01-03",
+      "kind": "milestone",
+      "era_id": "the-first-rite",
+      "era_name": "The First Rite",
+      "title": "First vault transmission",
+      "detail": "The first upload to the official SoundCloud — and it arrived already carrying five figures of plays. The opening shot was not a warm-up. — “Soul Shaking (prod. Fish Narc)”",
+      "plays": 12944,
+      "links": [
+        {
+          "label": "Release page",
+          "href": "releases/soul-shaking-prod-fish-narc.html"
+        }
+      ],
+      "collaborators": [],
+      "collab_slug": null
+    },
+    {
+      "id": "session-01",
+      "date": "2018-01-03",
+      "kind": "session",
+      "era_id": "the-first-rite",
+      "era_name": "The First Rite",
+      "title": "The January 3rd–8th Session",
+      "detail": "2 transmissions, 13,862 plays",
+      "plays": 13862,
+      "links": [
+        {
+          "label": "Session card",
+          "href": "sessions-explorer.html#card-session-01"
+        }
+      ],
+      "collaborators": []
+    },
+    {
+      "id": "session-02",
+      "date": "2018-02-04",
+      "kind": "session",
+      "era_id": "the-first-rite",
+      "era_name": "The First Rite",
+      "title": "The February 4th Session",
+      "detail": "1 transmissions, 30,088 plays",
+      "plays": 30088,
+      "links": [
+        {
+          "label": "Session card",
+          "href": "sessions-explorer.html#card-session-02"
+        }
+      ],
+      "collaborators": []
+    },
+    {
+      "id": "session-03",
+      "date": "2018-03-16",
+      "kind": "session",
+      "era_id": "the-first-rite",
+      "era_name": "The First Rite",
+      "title": "The March 16th Session",
+      "detail": "1 transmissions, 1,008 plays",
+      "plays": 1008,
+      "links": [
+        {
+          "label": "Session card",
+          "href": "sessions-explorer.html#card-session-03"
+        }
+      ],
+      "collaborators": []
+    },
+    {
+      "id": "first-collab",
+      "date": "2018-04-28",
+      "kind": "milestone",
+      "era_id": "the-first-rite",
+      "era_name": "The First Rite",
+      "title": "First collaboration",
+      "detail": "The first transmission to summon another voice. The circle starts here and grows to twenty-one collaborators. — “Mistakes Ft. JO$E DRIPP (prod. Tec)”",
+      "plays": 1400,
+      "links": [
+        {
+          "label": "Release page",
+          "href": "releases/mistakes-ft-jo-e-dripp-prod-tec.html"
+        },
+        {
+          "label": "Circle page",
+          "href": "circle/jo-e-dripp.html"
+        }
+      ],
+      "collaborators": [
+        "JO$E DRIPP"
+      ],
+      "collab_slug": "jo-e-dripp"
+    },
+    {
+      "id": "session-04",
+      "date": "2018-04-28",
+      "kind": "session",
+      "era_id": "the-first-rite",
+      "era_name": "The First Rite",
+      "title": "The April 28th Session",
+      "detail": "1 transmissions, 1,400 plays",
+      "plays": 1400,
+      "links": [
+        {
+          "label": "Session card",
+          "href": "sessions-explorer.html#card-session-04"
+        }
+      ],
+      "collaborators": [
+        "JO$E DRIPP"
+      ]
+    },
+    {
+      "id": "collab-jo-e-dripp-1",
+      "date": "2018-04-28",
+      "kind": "collaboration",
+      "era_id": "the-first-rite",
+      "era_name": "The First Rite",
+      "title": "Mistakes Ft. JO$E DRIPP (prod. Tec)",
+      "detail": "JO$E DRIPP on the record — 1,400 plays",
+      "plays": 1400,
+      "links": [
+        {
+          "label": "Release page",
+          "href": "releases/mistakes-ft-jo-e-dripp-prod-tec.html"
+        },
+        {
+          "label": "Circle page",
+          "href": "circle/jo-e-dripp.html"
+        },
+        {
+          "label": "Session",
+          "href": "sessions-explorer.html#card-session-04"
+        }
+      ],
+      "collaborators": [
+        "JO$E DRIPP"
+      ],
+      "collab_slug": "jo-e-dripp"
+    },
+    {
+      "id": "session-05",
+      "date": "2018-06-08",
+      "kind": "session",
+      "era_id": "the-first-rite",
+      "era_name": "The First Rite",
+      "title": "The June 8th–14th Session",
+      "detail": "2 transmissions, 3,030 plays",
+      "plays": 3030,
+      "links": [
+        {
+          "label": "Session card",
+          "href": "sessions-explorer.html#card-session-05"
+        }
+      ],
+      "collaborators": []
+    },
+    {
+      "id": "session-06",
+      "date": "2018-07-01",
+      "kind": "session",
+      "era_id": "the-first-rite",
+      "era_name": "The First Rite",
+      "title": "The July 1st Session",
+      "detail": "1 transmissions, 1,282 plays",
+      "plays": 1282,
+      "links": [
+        {
+          "label": "Session card",
+          "href": "sessions-explorer.html#card-session-06"
+        }
+      ],
+      "collaborators": []
+    },
+    {
+      "id": "session-07",
+      "date": "2018-07-18",
+      "kind": "session",
+      "era_id": "the-first-rite",
+      "era_name": "The First Rite",
+      "title": "The July 18th–20th Session",
+      "detail": "4 transmissions, 12,163 plays",
+      "plays": 12163,
+      "links": [
+        {
+          "label": "Session card",
+          "href": "sessions-explorer.html#card-session-07"
+        }
+      ],
+      "collaborators": []
+    },
+    {
+      "id": "session-08",
+      "date": "2018-08-04",
+      "kind": "session",
+      "era_id": "the-first-rite",
+      "era_name": "The First Rite",
+      "title": "The August 4th Session",
+      "detail": "1 transmissions, 1,602 plays",
+      "plays": 1602,
+      "links": [
+        {
+          "label": "Session card",
+          "href": "sessions-explorer.html#card-session-08"
+        }
+      ],
+      "collaborators": []
+    },
+    {
+      "id": "session-09",
+      "date": "2018-08-13",
+      "kind": "session",
+      "era_id": "the-first-rite",
+      "era_name": "The First Rite",
+      "title": "The August 13th–27th Session",
+      "detail": "7 transmissions, 10,571 plays",
+      "plays": 10571,
+      "links": [
+        {
+          "label": "Deep dive",
+          "href": "sessions/the-august-13th-27th-session.html"
+        }
+      ],
+      "collaborators": [
+        "JAX",
+        "Max Ferrari"
+      ]
+    },
+    {
+      "id": "collab-jax-1",
+      "date": "2018-08-20",
+      "kind": "collaboration",
+      "era_id": "the-first-rite",
+      "era_name": "The First Rite",
+      "title": "DESTINY (ft. JAX & Max Ferrari) ~ [prod. louky]",
+      "detail": "JAX on the record — 2,000 plays",
+      "plays": 2000,
+      "links": [
+        {
+          "label": "Release page",
+          "href": "releases/destiny-ft-jax-and-max-ferrari-prod-louky.html"
+        },
+        {
+          "label": "Circle page",
+          "href": "circle/jax.html"
+        },
+        {
+          "label": "Session",
+          "href": "sessions-explorer.html#card-session-09"
+        }
+      ],
+      "collaborators": [
+        "JAX"
+      ],
+      "collab_slug": "jax"
+    },
+    {
+      "id": "collab-max-ferrari-1",
+      "date": "2018-08-20",
+      "kind": "collaboration",
+      "era_id": "the-first-rite",
+      "era_name": "The First Rite",
+      "title": "DESTINY (ft. JAX & Max Ferrari) ~ [prod. louky]",
+      "detail": "Max Ferrari on the record — 2,000 plays",
+      "plays": 2000,
+      "links": [
+        {
+          "label": "Release page",
+          "href": "releases/destiny-ft-jax-and-max-ferrari-prod-louky.html"
+        },
+        {
+          "label": "Circle page",
+          "href": "circle/max-ferrari.html"
+        },
+        {
+          "label": "Session",
+          "href": "sessions-explorer.html#card-session-09"
+        }
+      ],
+      "collaborators": [
+        "Max Ferrari"
+      ],
+      "collab_slug": "max-ferrari"
+    },
+    {
+      "id": "collab-jax-2",
+      "date": "2018-08-27",
+      "kind": "collaboration",
+      "era_id": "the-first-rite",
+      "era_name": "The First Rite",
+      "title": "Walk With Me w/ JAX (Prod. Rawman)",
+      "detail": "JAX on the record — 700 plays",
+      "plays": 700,
+      "links": [
+        {
+          "label": "Release page",
+          "href": "releases/walk-with-me-w-jax-prod-rawman.html"
+        },
+        {
+          "label": "Circle page",
+          "href": "circle/jax.html"
+        },
+        {
+          "label": "Session",
+          "href": "sessions-explorer.html#card-session-09"
+        }
+      ],
+      "collaborators": [
+        "JAX"
+      ],
+      "collab_slug": "jax"
+    },
+    {
+      "id": "session-10",
+      "date": "2018-09-06",
+      "kind": "session",
+      "era_id": "the-first-rite",
+      "era_name": "The First Rite",
+      "title": "The September 6th Session",
+      "detail": "1 transmissions, 1,485 plays",
+      "plays": 1485,
+      "links": [
+        {
+          "label": "Session card",
+          "href": "sessions-explorer.html#card-session-10"
+        }
+      ],
+      "collaborators": []
+    },
+    {
+      "id": "session-11",
+      "date": "2018-10-06",
+      "kind": "session",
+      "era_id": "the-first-rite",
+      "era_name": "The First Rite",
+      "title": "The October 6th Session",
+      "detail": "1 transmissions, 2,149 plays",
+      "plays": 2149,
+      "links": [
+        {
+          "label": "Session card",
+          "href": "sessions-explorer.html#card-session-11"
+        }
+      ],
+      "collaborators": []
+    },
+    {
+      "id": "session-12",
+      "date": "2018-10-17",
+      "kind": "session",
+      "era_id": "the-first-rite",
+      "era_name": "The First Rite",
+      "title": "The October 17th Session",
+      "detail": "1 transmissions, 2,760 plays",
+      "plays": 2760,
+      "links": [
+        {
+          "label": "Session card",
+          "href": "sessions-explorer.html#card-session-12"
+        }
+      ],
+      "collaborators": []
+    },
+    {
+      "id": "session-13",
+      "date": "2018-10-25",
+      "kind": "session",
+      "era_id": "the-first-rite",
+      "era_name": "The First Rite",
+      "title": "The October 25th Session",
+      "detail": "1 transmissions, 1,001 plays",
+      "plays": 1001,
+      "links": [
+        {
+          "label": "Session card",
+          "href": "sessions-explorer.html#card-session-13"
+        }
+      ],
+      "collaborators": []
+    },
+    {
+      "id": "session-14",
+      "date": "2018-11-07",
+      "kind": "session",
+      "era_id": "the-first-rite",
+      "era_name": "The First Rite",
+      "title": "The November 7th–8th Session",
+      "detail": "4 transmissions, 8,472 plays",
+      "plays": 8472,
+      "links": [
+        {
+          "label": "Session card",
+          "href": "sessions-explorer.html#card-session-14"
+        }
+      ],
+      "collaborators": [
+        "Shola"
+      ]
+    },
+    {
+      "id": "collab-shola-1",
+      "date": "2018-11-08",
+      "kind": "collaboration",
+      "era_id": "the-first-rite",
+      "era_name": "The First Rite",
+      "title": "Far From Me (ft. Shola) ~ [prod. HideousPittius]",
+      "detail": "Shola on the record — 1,443 plays",
+      "plays": 1443,
+      "links": [
+        {
+          "label": "Release page",
+          "href": "releases/far-from-me-ft-shola-prod-hideouspittius.html"
+        },
+        {
+          "label": "Circle page",
+          "href": "circle/shola.html"
+        },
+        {
+          "label": "Session",
+          "href": "sessions-explorer.html#card-session-14"
+        }
+      ],
+      "collaborators": [
+        "Shola"
+      ],
+      "collab_slug": "shola"
+    },
+    {
+      "id": "session-15",
+      "date": "2018-11-27",
+      "kind": "session",
+      "era_id": "the-first-rite",
+      "era_name": "The First Rite",
+      "title": "The Nov 27th – Dec 4th Session",
+      "detail": "6 transmissions, 4,892 plays",
+      "plays": 4892,
+      "links": [
+        {
+          "label": "Deep dive",
+          "href": "sessions/the-nov-27th-dec-4th-session.html"
+        }
+      ],
+      "collaborators": [
+        "Yung Vetta"
+      ]
+    },
+    {
+      "id": "collab-yung-vetta-1",
+      "date": "2018-12-02",
+      "kind": "collaboration",
+      "era_id": "the-first-rite",
+      "era_name": "The First Rite",
+      "title": "Hip On My Blade (ft. Yung Vetta) ~ [prod. Skel]",
+      "detail": "Yung Vetta on the record — 1,368 plays",
+      "plays": 1368,
+      "links": [
+        {
+          "label": "Release page",
+          "href": "releases/hip-on-my-blade-ft-yung-vetta-prod-skel.html"
+        },
+        {
+          "label": "Circle page",
+          "href": "circle/yung-vetta.html"
+        },
+        {
+          "label": "Session",
+          "href": "sessions-explorer.html#card-session-15"
+        }
+      ],
+      "collaborators": [
+        "Yung Vetta"
+      ],
+      "collab_slug": "yung-vetta"
+    },
+    {
+      "id": "session-16",
+      "date": "2018-12-13",
+      "kind": "session",
+      "era_id": "the-first-rite",
+      "era_name": "The First Rite",
+      "title": "The December 13th–15th Session",
+      "detail": "5 transmissions, 8,714 plays",
+      "plays": 8714,
+      "links": [
+        {
+          "label": "Session card",
+          "href": "sessions-explorer.html#card-session-16"
+        }
+      ],
+      "collaborators": []
+    },
+    {
+      "id": "session-17",
+      "date": "2019-01-08",
+      "kind": "session",
+      "era_id": "the-first-rite",
+      "era_name": "The First Rite",
+      "title": "The January 8th Session",
+      "detail": "1 transmissions, 1,150 plays",
+      "plays": 1150,
+      "links": [
+        {
+          "label": "Session card",
+          "href": "sessions-explorer.html#card-session-17"
+        }
+      ],
+      "collaborators": []
+    },
+    {
+      "id": "session-18",
+      "date": "2019-01-21",
+      "kind": "session",
+      "era_id": "the-first-rite",
+      "era_name": "The First Rite",
+      "title": "The January 21st–28th Session",
+      "detail": "5 transmissions, 6,442 plays",
+      "plays": 6442,
+      "links": [
+        {
+          "label": "Session card",
+          "href": "sessions-explorer.html#card-session-18"
+        }
+      ],
+      "collaborators": [
+        "Yung Vetta"
+      ]
+    },
+    {
+      "id": "collab-yung-vetta-2",
+      "date": "2019-01-21",
+      "kind": "collaboration",
+      "era_id": "the-first-rite",
+      "era_name": "The First Rite",
+      "title": "Ima Be There ft. Yung Vetta(prod. Why Loner)",
+      "detail": "Yung Vetta on the record — 1,913 plays",
+      "plays": 1913,
+      "links": [
+        {
+          "label": "Release page",
+          "href": "releases/ima-be-there-ft-yung-vetta-prod-why-loner.html"
+        },
+        {
+          "label": "Circle page",
+          "href": "circle/yung-vetta.html"
+        },
+        {
+          "label": "Session",
+          "href": "sessions-explorer.html#card-session-18"
+        }
+      ],
+      "collaborators": [
+        "Yung Vetta"
+      ],
+      "collab_slug": "yung-vetta"
+    },
+    {
+      "id": "collab-yung-vetta-3",
+      "date": "2019-01-28",
+      "kind": "collaboration",
+      "era_id": "the-first-rite",
+      "era_name": "The First Rite",
+      "title": "Hard To Keep ft. Yung Vetta (prod. Dead Spyro X Scarlet)",
+      "detail": "Yung Vetta on the record — 2,415 plays",
+      "plays": 2415,
+      "links": [
+        {
+          "label": "Release page",
+          "href": "releases/hard-to-keep-ft-yung-vetta-prod-dead-spyro-x-scarlet.html"
+        },
+        {
+          "label": "Circle page",
+          "href": "circle/yung-vetta.html"
+        },
+        {
+          "label": "Session",
+          "href": "sessions-explorer.html#card-session-18"
+        }
+      ],
+      "collaborators": [
+        "Yung Vetta"
+      ],
+      "collab_slug": "yung-vetta"
+    },
+    {
+      "id": "collab-yung-vetta-4",
+      "date": "2019-01-28",
+      "kind": "collaboration",
+      "era_id": "the-first-rite",
+      "era_name": "The First Rite",
+      "title": "Nothing ft. Yung Vetta(prod Xtravulous)",
+      "detail": "Yung Vetta on the record — 724 plays",
+      "plays": 724,
+      "links": [
+        {
+          "label": "Release page",
+          "href": "releases/nothing-ft-yung-vetta-prod-xtravulous.html"
+        },
+        {
+          "label": "Circle page",
+          "href": "circle/yung-vetta.html"
+        },
+        {
+          "label": "Session",
+          "href": "sessions-explorer.html#card-session-18"
+        }
+      ],
+      "collaborators": [
+        "Yung Vetta"
+      ],
+      "collab_slug": "yung-vetta"
+    },
+    {
+      "id": "collab-yung-vetta-5",
+      "date": "2019-01-28",
+      "kind": "collaboration",
+      "era_id": "the-first-rite",
+      "era_name": "The First Rite",
+      "title": "STOP IT! ft. Yung Vetta (prod. okthxbb)",
+      "detail": "Yung Vetta on the record — 455 plays",
+      "plays": 455,
+      "links": [
+        {
+          "label": "Release page",
+          "href": "releases/stop-it-ft-yung-vetta-prod-okthxbb.html"
+        },
+        {
+          "label": "Circle page",
+          "href": "circle/yung-vetta.html"
+        },
+        {
+          "label": "Session",
+          "href": "sessions-explorer.html#card-session-18"
+        }
+      ],
+      "collaborators": [
+        "Yung Vetta"
+      ],
+      "collab_slug": "yung-vetta"
+    },
+    {
+      "id": "collab-yung-vetta-6",
+      "date": "2019-01-28",
+      "kind": "collaboration",
+      "era_id": "the-first-rite",
+      "era_name": "The First Rite",
+      "title": "[outro] Off Beat ft. Yung Vetta (prod. Addy)",
+      "detail": "Yung Vetta on the record — 935 plays",
+      "plays": 935,
+      "links": [
+        {
+          "label": "Release page",
+          "href": "releases/outro-off-beat-ft-yung-vetta-prod-addy.html"
+        },
+        {
+          "label": "Circle page",
+          "href": "circle/yung-vetta.html"
+        },
+        {
+          "label": "Session",
+          "href": "sessions-explorer.html#card-session-18"
+        }
+      ],
+      "collaborators": [
+        "Yung Vetta"
+      ],
+      "collab_slug": "yung-vetta"
+    },
+    {
+      "id": "session-19",
+      "date": "2019-03-03",
+      "kind": "session",
+      "era_id": "the-first-rite",
+      "era_name": "The First Rite",
+      "title": "The March 3rd Session",
+      "detail": "1 transmissions, 719 plays",
+      "plays": 719,
+      "links": [
+        {
+          "label": "Session card",
+          "href": "sessions-explorer.html#card-session-19"
+        }
+      ],
+      "collaborators": []
+    },
+    {
+      "id": "session-20",
+      "date": "2019-03-15",
+      "kind": "session",
+      "era_id": "the-first-rite",
+      "era_name": "The First Rite",
+      "title": "The March 15th–27th Session",
+      "detail": "4 transmissions, 5,132 plays",
+      "plays": 5132,
+      "links": [
+        {
+          "label": "Session card",
+          "href": "sessions-explorer.html#card-session-20"
+        }
+      ],
+      "collaborators": []
+    },
+    {
+      "id": "session-21",
+      "date": "2019-04-07",
+      "kind": "session",
+      "era_id": "the-first-rite",
+      "era_name": "The First Rite",
+      "title": "The April 7th Session",
+      "detail": "1 transmissions, 10,646 plays",
+      "plays": 10646,
+      "links": [
+        {
+          "label": "Session card",
+          "href": "sessions-explorer.html#card-session-21"
+        }
+      ],
+      "collaborators": []
+    },
+    {
+      "id": "session-22",
+      "date": "2019-04-28",
+      "kind": "session",
+      "era_id": "the-first-rite",
+      "era_name": "The First Rite",
+      "title": "The April 28th Session",
+      "detail": "1 transmissions, 4,362 plays",
+      "plays": 4362,
+      "links": [
+        {
+          "label": "Session card",
+          "href": "sessions-explorer.html#card-session-22"
+        }
+      ],
+      "collaborators": []
+    },
+    {
+      "id": "session-23",
+      "date": "2019-06-25",
+      "kind": "session",
+      "era_id": "the-first-rite",
+      "era_name": "The First Rite",
+      "title": "The June 25th Session",
+      "detail": "1 transmissions, 347 plays",
+      "plays": 347,
+      "links": [
+        {
+          "label": "Session card",
+          "href": "sessions-explorer.html#card-session-23"
+        }
+      ],
+      "collaborators": []
+    },
+    {
+      "id": "session-24",
+      "date": "2019-07-09",
+      "kind": "session",
+      "era_id": "the-first-rite",
+      "era_name": "The First Rite",
+      "title": "The July 9th Session",
+      "detail": "7 transmissions, 28,260 plays",
+      "plays": 28260,
+      "links": [
+        {
+          "label": "Deep dive",
+          "href": "sessions/the-july-9th-session.html"
+        }
+      ],
+      "collaborators": [
+        "AMMI $AGE",
+        "JO$E DRIPP",
+        "Offline_hp",
+        "MAX FERRARI",
+        "YUNG VETTA",
+        "JAX"
+      ]
+    },
+    {
+      "id": "collab-offline-hp-1",
+      "date": "2019-07-09",
+      "kind": "collaboration",
+      "era_id": "the-first-rite",
+      "era_name": "The First Rite",
+      "title": "GARDEN ft. Offline_hp (prod. QB)",
+      "detail": "Offline_hp on the record — 1,311 plays",
+      "plays": 1311,
+      "links": [
+        {
+          "label": "Release page",
+          "href": "releases/garden-ft-offline-hp-prod-qb.html"
+        },
+        {
+          "label": "Circle page",
+          "href": "circle/offline-hp.html"
+        },
+        {
+          "label": "Session",
+          "href": "sessions-explorer.html#card-session-24"
+        }
+      ],
+      "collaborators": [
+        "Offline_hp"
+      ],
+      "collab_slug": "offline-hp"
+    },
+    {
+      "id": "collab-ammi-age-1",
+      "date": "2019-07-09",
+      "kind": "collaboration",
+      "era_id": "the-first-rite",
+      "era_name": "The First Rite",
+      "title": "I'M WEAKENING ft. AMMI $AGE",
+      "detail": "AMMI $AGE on the record — 2,490 plays",
+      "plays": 2490,
+      "links": [
+        {
+          "label": "Release page",
+          "href": "releases/i-m-weakening-ft-ammi-age.html"
+        },
+        {
+          "label": "Circle page",
+          "href": "circle/ammi-age.html"
+        },
+        {
+          "label": "Session",
+          "href": "sessions-explorer.html#card-session-24"
+        }
+      ],
+      "collaborators": [
+        "AMMI $AGE"
+      ],
+      "collab_slug": "ammi-age"
+    },
+    {
+      "id": "collab-jax-3",
+      "date": "2019-07-09",
+      "kind": "collaboration",
+      "era_id": "the-first-rite",
+      "era_name": "The First Rite",
+      "title": "NIGHT MODE ft. MAX FERRARI x YUNG VETTA x JAX",
+      "detail": "JAX on the record — 10,083 plays",
+      "plays": 10083,
+      "links": [
+        {
+          "label": "Release page",
+          "href": "releases/night-mode-ft-max-ferrari-x-yung-vetta-x-jax.html"
+        },
+        {
+          "label": "Circle page",
+          "href": "circle/jax.html"
+        },
+        {
+          "label": "Session",
+          "href": "sessions-explorer.html#card-session-24"
+        }
+      ],
+      "collaborators": [
+        "JAX"
+      ],
+      "collab_slug": "jax"
+    },
+    {
+      "id": "collab-max-ferrari-2",
+      "date": "2019-07-09",
+      "kind": "collaboration",
+      "era_id": "the-first-rite",
+      "era_name": "The First Rite",
+      "title": "NIGHT MODE ft. MAX FERRARI x YUNG VETTA x JAX",
+      "detail": "Max Ferrari on the record — 10,083 plays",
+      "plays": 10083,
+      "links": [
+        {
+          "label": "Release page",
+          "href": "releases/night-mode-ft-max-ferrari-x-yung-vetta-x-jax.html"
+        },
+        {
+          "label": "Circle page",
+          "href": "circle/max-ferrari.html"
+        },
+        {
+          "label": "Session",
+          "href": "sessions-explorer.html#card-session-24"
+        }
+      ],
+      "collaborators": [
+        "Max Ferrari"
+      ],
+      "collab_slug": "max-ferrari"
+    },
+    {
+      "id": "collab-yung-vetta-7",
+      "date": "2019-07-09",
+      "kind": "collaboration",
+      "era_id": "the-first-rite",
+      "era_name": "The First Rite",
+      "title": "NIGHT MODE ft. MAX FERRARI x YUNG VETTA x JAX",
+      "detail": "Yung Vetta on the record — 10,083 plays",
+      "plays": 10083,
+      "links": [
+        {
+          "label": "Release page",
+          "href": "releases/night-mode-ft-max-ferrari-x-yung-vetta-x-jax.html"
+        },
+        {
+          "label": "Circle page",
+          "href": "circle/yung-vetta.html"
+        },
+        {
+          "label": "Session",
+          "href": "sessions-explorer.html#card-session-24"
+        }
+      ],
+      "collaborators": [
+        "Yung Vetta"
+      ],
+      "collab_slug": "yung-vetta"
+    },
+    {
+      "id": "collab-jo-e-dripp-2",
+      "date": "2019-07-09",
+      "kind": "collaboration",
+      "era_id": "the-first-rite",
+      "era_name": "The First Rite",
+      "title": "SUN SET FOR U ft. JO$E DRIPP (prod. y axis)",
+      "detail": "JO$E DRIPP on the record — 1,771 plays",
+      "plays": 1771,
+      "links": [
+        {
+          "label": "Release page",
+          "href": "releases/sun-set-for-u-ft-jo-e-dripp-prod-y-axis.html"
+        },
+        {
+          "label": "Circle page",
+          "href": "circle/jo-e-dripp.html"
+        },
+        {
+          "label": "Session",
+          "href": "sessions-explorer.html#card-session-24"
+        }
+      ],
+      "collaborators": [
+        "JO$E DRIPP"
+      ],
+      "collab_slug": "jo-e-dripp"
+    },
+    {
+      "id": "session-25",
+      "date": "2019-10-04",
+      "kind": "session",
+      "era_id": "the-first-rite",
+      "era_name": "The First Rite",
+      "title": "The October 4th Session",
+      "detail": "1 transmissions, 11,587 plays",
+      "plays": 11587,
+      "links": [
+        {
+          "label": "Session card",
+          "href": "sessions-explorer.html#card-session-25"
+        }
+      ],
+      "collaborators": [
+        "capoxxo"
+      ]
+    },
+    {
+      "id": "collab-capoxxo-1",
+      "date": "2019-10-04",
+      "kind": "collaboration",
+      "era_id": "the-first-rite",
+      "era_name": "The First Rite",
+      "title": "candy w/ capoxxo(prod. razorwrist)",
+      "detail": "capoxxo on the record — 11,587 plays",
+      "plays": 11587,
+      "links": [
+        {
+          "label": "Release page",
+          "href": "releases/candy-w-capoxxo-prod-razorwrist.html"
+        },
+        {
+          "label": "Circle page",
+          "href": "circle/capoxxo.html"
+        },
+        {
+          "label": "Session",
+          "href": "sessions-explorer.html#card-session-25"
+        }
+      ],
+      "collaborators": [
+        "capoxxo"
+      ],
+      "collab_slug": "capoxxo"
+    },
+    {
+      "id": "session-26",
+      "date": "2019-12-06",
+      "kind": "session",
+      "era_id": "the-first-rite",
+      "era_name": "The First Rite",
+      "title": "The December 6th Session",
+      "detail": "1 transmissions, 9,615 plays",
+      "plays": 9615,
+      "links": [
+        {
+          "label": "Session card",
+          "href": "sessions-explorer.html#card-session-26"
+        }
+      ],
+      "collaborators": [
+        "Lil Wintr",
+        "Marcelo"
+      ]
+    },
+    {
+      "id": "collab-lil-wintr-1",
+      "date": "2019-12-06",
+      "kind": "collaboration",
+      "era_id": "the-first-rite",
+      "era_name": "The First Rite",
+      "title": "Master Key (feat. Lil Wintr & Marcelo)",
+      "detail": "Lil Wintr on the record — distributor single — no vault plays on record",
+      "plays": null,
+      "links": [
+        {
+          "label": "Release page",
+          "href": "releases/master-key-feat-lil-wintr-and-marcelo.html"
+        },
+        {
+          "label": "Circle page",
+          "href": "circle/lil-wintr.html"
+        }
+      ],
+      "collaborators": [
+        "Lil Wintr"
+      ],
+      "collab_slug": "lil-wintr"
+    },
+    {
+      "id": "collab-marcelo-1",
+      "date": "2019-12-06",
+      "kind": "collaboration",
+      "era_id": "the-first-rite",
+      "era_name": "The First Rite",
+      "title": "Master Key (feat. Lil Wintr & Marcelo)",
+      "detail": "Marcelo on the record — distributor single — no vault plays on record",
+      "plays": null,
+      "links": [
+        {
+          "label": "Release page",
+          "href": "releases/master-key-feat-lil-wintr-and-marcelo.html"
+        },
+        {
+          "label": "Circle page",
+          "href": "circle/marcelo.html"
+        }
+      ],
+      "collaborators": [
+        "Marcelo"
+      ],
+      "collab_slug": "marcelo"
+    },
+    {
+      "id": "collab-lil-wintr-2",
+      "date": "2019-12-06",
+      "kind": "collaboration",
+      "era_id": "the-first-rite",
+      "era_name": "The First Rite",
+      "title": "master key ft. Lil Wintr x Marcelo (prod. ginseng)",
+      "detail": "Lil Wintr on the record — 9,615 plays",
+      "plays": 9615,
+      "links": [
+        {
+          "label": "Release page",
+          "href": "releases/master-key-ft-lil-wintr-x-marcelo-prod-ginseng.html"
+        },
+        {
+          "label": "Circle page",
+          "href": "circle/lil-wintr.html"
+        },
+        {
+          "label": "Session",
+          "href": "sessions-explorer.html#card-session-26"
+        }
+      ],
+      "collaborators": [
+        "Lil Wintr"
+      ],
+      "collab_slug": "lil-wintr"
+    },
+    {
+      "id": "collab-marcelo-2",
+      "date": "2019-12-06",
+      "kind": "collaboration",
+      "era_id": "the-first-rite",
+      "era_name": "The First Rite",
+      "title": "master key ft. Lil Wintr x Marcelo (prod. ginseng)",
+      "detail": "Marcelo on the record — 9,615 plays",
+      "plays": 9615,
+      "links": [
+        {
+          "label": "Release page",
+          "href": "releases/master-key-ft-lil-wintr-x-marcelo-prod-ginseng.html"
+        },
+        {
+          "label": "Circle page",
+          "href": "circle/marcelo.html"
+        },
+        {
+          "label": "Session",
+          "href": "sessions-explorer.html#card-session-26"
+        }
+      ],
+      "collaborators": [
+        "Marcelo"
+      ],
+      "collab_slug": "marcelo"
+    },
+    {
+      "id": "session-27",
+      "date": "2019-12-22",
+      "kind": "session",
+      "era_id": "the-first-rite",
+      "era_name": "The First Rite",
+      "title": "The December 22nd Session",
+      "detail": "7 transmissions, 21,777 plays",
+      "plays": 21777,
+      "links": [
+        {
+          "label": "Deep dive",
+          "href": "sessions/the-december-22nd-session.html"
+        }
+      ],
+      "collaborators": [
+        "capoxxo",
+        "lil yu",
+        "LILVICBXI",
+        "pvscale"
+      ]
+    },
+    {
+      "id": "collab-lil-yu-1",
+      "date": "2019-12-22",
+      "kind": "collaboration",
+      "era_id": "the-first-rite",
+      "era_name": "The First Rite",
+      "title": "I'd rather be w/ lil yu (prod. razorwrist)",
+      "detail": "lil yu on the record — 1,343 plays",
+      "plays": 1343,
+      "links": [
+        {
+          "label": "Release page",
+          "href": "releases/i-d-rather-be-w-lil-yu-prod-razorwrist.html"
+        },
+        {
+          "label": "Circle page",
+          "href": "circle/lil-yu.html"
+        },
+        {
+          "label": "Session",
+          "href": "sessions-explorer.html#card-session-27"
+        }
+      ],
+      "collaborators": [
+        "lil yu"
+      ],
+      "collab_slug": "lil-yu"
+    },
+    {
+      "id": "collab-pvscale-1",
+      "date": "2019-12-22",
+      "kind": "collaboration",
+      "era_id": "the-first-rite",
+      "era_name": "The First Rite",
+      "title": "fly like me w/ pvscale(prod. pvscale)",
+      "detail": "pvscale on the record — 7,786 plays",
+      "plays": 7786,
+      "links": [
+        {
+          "label": "Release page",
+          "href": "releases/fly-like-me-w-pvscale-prod-pvscale.html"
+        },
+        {
+          "label": "Circle page",
+          "href": "circle/pvscale.html"
+        },
+        {
+          "label": "Session",
+          "href": "sessions-explorer.html#card-session-27"
+        }
+      ],
+      "collaborators": [
+        "pvscale"
+      ],
+      "collab_slug": "pvscale"
+    },
+    {
+      "id": "collab-capoxxo-2",
+      "date": "2019-12-22",
+      "kind": "collaboration",
+      "era_id": "the-first-rite",
+      "era_name": "The First Rite",
+      "title": "getting colder w/ capoxxo (prod. pvscale x asa41)",
+      "detail": "capoxxo on the record — 4,587 plays",
+      "plays": 4587,
+      "links": [
+        {
+          "label": "Release page",
+          "href": "releases/getting-colder-w-capoxxo-prod-pvscale-x-asa41.html"
+        },
+        {
+          "label": "Circle page",
+          "href": "circle/capoxxo.html"
+        },
+        {
+          "label": "Session",
+          "href": "sessions-explorer.html#card-session-27"
+        }
+      ],
+      "collaborators": [
+        "capoxxo"
+      ],
+      "collab_slug": "capoxxo"
+    },
+    {
+      "id": "collab-lilvicbxi-1",
+      "date": "2019-12-22",
+      "kind": "collaboration",
+      "era_id": "the-first-rite",
+      "era_name": "The First Rite",
+      "title": "same amount w/ LILVICBXI (prod. LILVICBXI)",
+      "detail": "LILVICBXI on the record — 2,991 plays",
+      "plays": 2991,
+      "links": [
+        {
+          "label": "Release page",
+          "href": "releases/same-amount-w-lilvicbxi-prod-lilvicbxi.html"
+        },
+        {
+          "label": "Circle page",
+          "href": "circle/lilvicbxi.html"
+        },
+        {
+          "label": "Session",
+          "href": "sessions-explorer.html#card-session-27"
+        }
+      ],
+      "collaborators": [
+        "LILVICBXI"
+      ],
+      "collab_slug": "lilvicbxi"
+    },
+    {
+      "id": "collab-lilvicbxi-2",
+      "date": "2019-12-22",
+      "kind": "collaboration",
+      "era_id": "the-first-rite",
+      "era_name": "The First Rite",
+      "title": "snow caps w/ LILVICBXI (prod. LILVICBXI x spliff08_)",
+      "detail": "LILVICBXI on the record — 1,579 plays",
+      "plays": 1579,
+      "links": [
+        {
+          "label": "Release page",
+          "href": "releases/snow-caps-w-lilvicbxi-prod-lilvicbxi-x-spliff08.html"
+        },
+        {
+          "label": "Circle page",
+          "href": "circle/lilvicbxi.html"
+        },
+        {
+          "label": "Session",
+          "href": "sessions-explorer.html#card-session-27"
+        }
+      ],
+      "collaborators": [
+        "LILVICBXI"
+      ],
+      "collab_slug": "lilvicbxi"
+    },
+    {
+      "id": "session-28",
+      "date": "2019-12-30",
+      "kind": "session",
+      "era_id": "the-first-rite",
+      "era_name": "The First Rite",
+      "title": "The December 30th Session",
+      "detail": "6 transmissions, 16,172 plays",
+      "plays": 16172,
+      "links": [
+        {
+          "label": "Deep dive",
+          "href": "sessions/the-december-30th-session.html"
+        }
+      ],
+      "collaborators": [
+        "lil soda boi",
+        "Yung Cortex",
+        "Keyblayde808"
+      ]
+    },
+    {
+      "id": "collab-yung-cortex-1",
+      "date": "2019-12-30",
+      "kind": "collaboration",
+      "era_id": "the-first-rite",
+      "era_name": "The First Rite",
+      "title": "All Alone ft. Yung Cortex (prod. Yung Cortex)",
+      "detail": "Yung Cortex on the record — 1,115 plays",
+      "plays": 1115,
+      "links": [
+        {
+          "label": "Release page",
+          "href": "releases/all-alone-ft-yung-cortex-prod-yung-cortex.html"
+        },
+        {
+          "label": "Circle page",
+          "href": "circle/yung-cortex.html"
+        },
+        {
+          "label": "Session",
+          "href": "sessions-explorer.html#card-session-28"
+        }
+      ],
+      "collaborators": [
+        "Yung Cortex"
+      ],
+      "collab_slug": "yung-cortex"
+    },
+    {
+      "id": "collab-lil-soda-boi-1",
+      "date": "2019-12-30",
+      "kind": "collaboration",
+      "era_id": "the-first-rite",
+      "era_name": "The First Rite",
+      "title": "Best Friend ft. lil soda boi (prod. lil soda boi)",
+      "detail": "lil soda boi on the record — 3,075 plays",
+      "plays": 3075,
+      "links": [
+        {
+          "label": "Release page",
+          "href": "releases/best-friend-ft-lil-soda-boi-prod-lil-soda-boi.html"
+        },
+        {
+          "label": "Circle page",
+          "href": "circle/lil-soda-boi.html"
+        },
+        {
+          "label": "Session",
+          "href": "sessions-explorer.html#card-session-28"
+        }
+      ],
+      "collaborators": [
+        "lil soda boi"
+      ],
+      "collab_slug": "lil-soda-boi"
+    },
+    {
+      "id": "collab-keyblayde808-1",
+      "date": "2019-12-30",
+      "kind": "collaboration",
+      "era_id": "the-first-rite",
+      "era_name": "The First Rite",
+      "title": "White Noise ft. Keyblayde808 (prod. Keyblayde808)",
+      "detail": "Keyblayde808 on the record — 2,650 plays",
+      "plays": 2650,
+      "links": [
+        {
+          "label": "Release page",
+          "href": "releases/white-noise-ft-keyblayde808-prod-keyblayde808.html"
+        },
+        {
+          "label": "Circle page",
+          "href": "circle/keyblayde808.html"
+        },
+        {
+          "label": "Session",
+          "href": "sessions-explorer.html#card-session-28"
+        }
+      ],
+      "collaborators": [
+        "Keyblayde808"
+      ],
+      "collab_slug": "keyblayde808"
+    },
+    {
+      "id": "session-29",
+      "date": "2020-04-09",
+      "kind": "session",
+      "era_id": "the-prolific-year",
+      "era_name": "The Prolific Year",
+      "title": "The April 9th Session",
+      "detail": "1 transmissions, 1,668 plays",
+      "plays": 1668,
+      "links": [
+        {
+          "label": "Session card",
+          "href": "sessions-explorer.html#card-session-29"
+        }
+      ],
+      "collaborators": []
+    },
+    {
+      "id": "session-30",
+      "date": "2020-05-03",
+      "kind": "session",
+      "era_id": "the-prolific-year",
+      "era_name": "The Prolific Year",
+      "title": "The May 3rd Session",
+      "detail": "1 transmissions, 5,008 plays",
+      "plays": 5008,
+      "links": [
+        {
+          "label": "Session card",
+          "href": "sessions-explorer.html#card-session-30"
+        }
+      ],
+      "collaborators": []
+    },
+    {
+      "id": "session-31",
+      "date": "2020-06-18",
+      "kind": "session",
+      "era_id": "the-prolific-year",
+      "era_name": "The Prolific Year",
+      "title": "The June 18th Session",
+      "detail": "1 transmissions, 706 plays",
+      "plays": 706,
+      "links": [
+        {
+          "label": "Session card",
+          "href": "sessions-explorer.html#card-session-31"
+        }
+      ],
+      "collaborators": []
+    },
+    {
+      "id": "session-32",
+      "date": "2020-10-07",
+      "kind": "session",
+      "era_id": "the-prolific-year",
+      "era_name": "The Prolific Year",
+      "title": "The October 7th Session",
+      "detail": "4 transmissions, 1,891 plays",
+      "plays": 1891,
+      "links": [
+        {
+          "label": "Session card",
+          "href": "sessions-explorer.html#card-session-32"
+        }
+      ],
+      "collaborators": [
+        "lil yu",
+        "phil is lonely"
+      ]
+    },
+    {
+      "id": "collab-phil-is-lonely-1",
+      "date": "2020-10-07",
+      "kind": "collaboration",
+      "era_id": "the-prolific-year",
+      "era_name": "The Prolific Year",
+      "title": "keep w/ phil is lonely (prod. uniquate)",
+      "detail": "phil is lonely on the record — 244 plays",
+      "plays": 244,
+      "links": [
+        {
+          "label": "Release page",
+          "href": "releases/keep-w-phil-is-lonely-prod-uniquate.html"
+        },
+        {
+          "label": "Circle page",
+          "href": "circle/phil-is-lonely.html"
+        },
+        {
+          "label": "Session",
+          "href": "sessions-explorer.html#card-session-32"
+        }
+      ],
+      "collaborators": [
+        "phil is lonely"
+      ],
+      "collab_slug": "phil-is-lonely"
+    },
+    {
+      "id": "collab-lil-yu-2",
+      "date": "2020-10-07",
+      "kind": "collaboration",
+      "era_id": "the-prolific-year",
+      "era_name": "The Prolific Year",
+      "title": "playin' by the book w/ lil yu (prod. dxsh)",
+      "detail": "lil yu on the record — 861 plays",
+      "plays": 861,
+      "links": [
+        {
+          "label": "Release page",
+          "href": "releases/playin-by-the-book-w-lil-yu-prod-dxsh.html"
+        },
+        {
+          "label": "Circle page",
+          "href": "circle/lil-yu.html"
+        },
+        {
+          "label": "Session",
+          "href": "sessions-explorer.html#card-session-32"
+        }
+      ],
+      "collaborators": [
+        "lil yu"
+      ],
+      "collab_slug": "lil-yu"
+    },
+    {
+      "id": "session-33",
+      "date": "2020-11-11",
+      "kind": "session",
+      "era_id": "the-prolific-year",
+      "era_name": "The Prolific Year",
+      "title": "The November 11th Session",
+      "detail": "1 transmissions, 551 plays",
+      "plays": 551,
+      "links": [
+        {
+          "label": "Session card",
+          "href": "sessions-explorer.html#card-session-33"
+        }
+      ],
+      "collaborators": []
+    },
+    {
+      "id": "hundredth-entry",
+      "date": "2020-12-21",
+      "kind": "milestone",
+      "era_id": "the-prolific-year",
+      "era_name": "The Prolific Year",
+      "title": "100th transmission on record",
+      "detail": "The catalog's 100th entry in chronological order — reached before the end of 2020. — “I'm Not Looking For Love Anyway”",
+      "plays": 349,
+      "links": [
+        {
+          "label": "Release page",
+          "href": "releases/i-m-not-looking-for-love-anyway.html"
+        }
+      ],
+      "collaborators": [],
+      "collab_slug": null
+    },
+    {
+      "id": "session-34",
+      "date": "2020-12-21",
+      "kind": "session",
+      "era_id": "the-prolific-year",
+      "era_name": "The Prolific Year",
+      "title": "The December 21st Session",
+      "detail": "7 transmissions, 2,426 plays",
+      "plays": 2426,
+      "links": [
+        {
+          "label": "Deep dive",
+          "href": "sessions/the-december-21st-session.html"
+        }
+      ],
+      "collaborators": []
+    },
+    {
+      "id": "hundredth-vault",
+      "date": "2021-07-14",
+      "kind": "milestone",
+      "era_id": "the-cast-it-years",
+      "era_name": "The Cast It: Years",
+      "title": "100th vault transmission",
+      "detail": "The SoundCloud vault's own 100th upload — mid-2021, deep in the Cast It: years. — “I Can't Get Myself to Cast (prod. lil biscuit)”",
+      "plays": 212,
+      "links": [
+        {
+          "label": "Release page",
+          "href": "releases/i-can-t-get-myself-to-cast-prod-lil-biscuit.html"
+        }
+      ],
+      "collaborators": [],
+      "collab_slug": null
+    },
+    {
+      "id": "session-35",
+      "date": "2021-07-14",
+      "kind": "session",
+      "era_id": "the-cast-it-years",
+      "era_name": "The Cast It: Years",
+      "title": "The July 14th Session",
+      "detail": "13 transmissions, 2,704 plays",
+      "plays": 2704,
+      "links": [
+        {
+          "label": "Deep dive",
+          "href": "sessions/the-july-14th-session.html"
+        }
+      ],
+      "collaborators": [
+        "Max Ferrari",
+        "Lilrareboy"
+      ]
+    },
+    {
+      "id": "collab-max-ferrari-3",
+      "date": "2021-07-14",
+      "kind": "collaboration",
+      "era_id": "the-cast-it-years",
+      "era_name": "The Cast It: Years",
+      "title": "Got Knots ft. Max Ferrari (prod. lil biscuit)",
+      "detail": "Max Ferrari on the record — 174 plays",
+      "plays": 174,
+      "links": [
+        {
+          "label": "Release page",
+          "href": "releases/got-knots-ft-max-ferrari-prod-lil-biscuit.html"
+        },
+        {
+          "label": "Circle page",
+          "href": "circle/max-ferrari.html"
+        },
+        {
+          "label": "Session",
+          "href": "sessions-explorer.html#card-session-35"
+        }
+      ],
+      "collaborators": [
+        "Max Ferrari"
+      ],
+      "collab_slug": "max-ferrari"
+    },
+    {
+      "id": "collab-max-ferrari-4",
+      "date": "2021-07-14",
+      "kind": "collaboration",
+      "era_id": "the-cast-it-years",
+      "era_name": "The Cast It: Years",
+      "title": "Mix Up Substances ft. Max Ferrari",
+      "detail": "Max Ferrari on the record — 151 plays",
+      "plays": 151,
+      "links": [
+        {
+          "label": "Release page",
+          "href": "releases/mix-up-substances-ft-max-ferrari.html"
+        },
+        {
+          "label": "Circle page",
+          "href": "circle/max-ferrari.html"
+        },
+        {
+          "label": "Session",
+          "href": "sessions-explorer.html#card-session-35"
+        }
+      ],
+      "collaborators": [
+        "Max Ferrari"
+      ],
+      "collab_slug": "max-ferrari"
+    },
+    {
+      "id": "collab-lilrareboy-1",
+      "date": "2021-07-14",
+      "kind": "collaboration",
+      "era_id": "the-cast-it-years",
+      "era_name": "The Cast It: Years",
+      "title": "Sunvalley Rally ft. Lilrareboy (prod. phantasie)",
+      "detail": "Lilrareboy on the record — 319 plays",
+      "plays": 319,
+      "links": [
+        {
+          "label": "Release page",
+          "href": "releases/sunvalley-rally-ft-lilrareboy-prod-phantasie.html"
+        },
+        {
+          "label": "Circle page",
+          "href": "circle/lilrareboy.html"
+        },
+        {
+          "label": "Session",
+          "href": "sessions-explorer.html#card-session-35"
+        }
+      ],
+      "collaborators": [
+        "Lilrareboy"
+      ],
+      "collab_slug": "lilrareboy"
+    },
+    {
+      "id": "collab-max-ferrari-5",
+      "date": "2021-07-14",
+      "kind": "collaboration",
+      "era_id": "the-cast-it-years",
+      "era_name": "The Cast It: Years",
+      "title": "This Feeling's Newer ft. Max Ferrari (prod. odece)",
+      "detail": "Max Ferrari on the record — 211 plays",
+      "plays": 211,
+      "links": [
+        {
+          "label": "Release page",
+          "href": "releases/this-feeling-s-newer-ft-max-ferrari-prod-odece.html"
+        },
+        {
+          "label": "Circle page",
+          "href": "circle/max-ferrari.html"
+        },
+        {
+          "label": "Session",
+          "href": "sessions-explorer.html#card-session-35"
+        }
+      ],
+      "collaborators": [
+        "Max Ferrari"
+      ],
+      "collab_slug": "max-ferrari"
+    },
+    {
+      "id": "longest-silence",
+      "date": "2022-02-22",
+      "end_date": "2023-08-29",
+      "kind": "milestone",
+      "era_id": "the-cast-it-years",
+      "era_name": "The Silence",
+      "title": "Longest silence",
+      "detail": "The longest gap between uploads on record — the vault went quiet, then returned. (553 days, 2022-02-22 to 2023-08-29)",
+      "plays": null,
+      "links": [
+        {
+          "label": "Gap visualization",
+          "href": "sessions-explorer.html"
+        }
+      ],
+      "collaborators": []
+    },
+    {
+      "id": "session-36",
+      "date": "2022-02-22",
+      "kind": "session",
+      "era_id": "the-cast-it-years",
+      "era_name": "The Cast It: Years",
+      "title": "The February 22nd Session",
+      "detail": "12 transmissions, 1,432 plays",
+      "plays": 1432,
+      "links": [
+        {
+          "label": "Deep dive",
+          "href": "sessions/the-february-22nd-session.html"
+        }
+      ],
+      "collaborators": []
+    },
+    {
+      "id": "session-37",
+      "date": "2023-08-29",
+      "kind": "session",
+      "era_id": "the-somelowlifes-era",
+      "era_name": "The SomeLowLifes Era",
+      "title": "The August 29th Session",
+      "detail": "3 transmissions, 1,280 plays",
+      "plays": 1280,
+      "links": [
+        {
+          "label": "Session card",
+          "href": "sessions-explorer.html#card-session-37"
+        }
+      ],
+      "collaborators": [
+        "Lil Yu"
+      ]
+    },
+    {
+      "id": "collab-lil-yu-3",
+      "date": "2023-08-29",
+      "kind": "collaboration",
+      "era_id": "the-somelowlifes-era",
+      "era_name": "The SomeLowLifes Era",
+      "title": "Clock In The Benz w/ Lil Yu prod shinju",
+      "detail": "lil yu on the record — 725 plays",
+      "plays": 725,
+      "links": [
+        {
+          "label": "Release page",
+          "href": "releases/clock-in-the-benz-w-lil-yu-prod-shinju.html"
+        },
+        {
+          "label": "Circle page",
+          "href": "circle/lil-yu.html"
+        },
+        {
+          "label": "Session",
+          "href": "sessions-explorer.html#card-session-37"
+        }
+      ],
+      "collaborators": [
+        "lil yu"
+      ],
+      "collab_slug": "lil-yu"
+    },
+    {
+      "id": "session-38",
+      "date": "2023-10-08",
+      "kind": "session",
+      "era_id": "the-somelowlifes-era",
+      "era_name": "The SomeLowLifes Era",
+      "title": "The October 8th Session",
+      "detail": "2 transmissions, 468 plays",
+      "plays": 468,
+      "links": [
+        {
+          "label": "Session card",
+          "href": "sessions-explorer.html#card-session-38"
+        }
+      ],
+      "collaborators": []
+    },
+    {
+      "id": "session-39",
+      "date": "2023-10-20",
+      "kind": "session",
+      "era_id": "the-somelowlifes-era",
+      "era_name": "The SomeLowLifes Era",
+      "title": "The October 20th–21st Session",
+      "detail": "2 transmissions, 830 plays",
+      "plays": 830,
+      "links": [
+        {
+          "label": "Session card",
+          "href": "sessions-explorer.html#card-session-39"
+        }
+      ],
+      "collaborators": []
+    },
+    {
+      "id": "session-40",
+      "date": "2023-11-03",
+      "kind": "session",
+      "era_id": "the-somelowlifes-era",
+      "era_name": "The SomeLowLifes Era",
+      "title": "The November 3rd–12th Session",
+      "detail": "19 transmissions, 7,601 plays",
+      "plays": 7601,
+      "links": [
+        {
+          "label": "Deep dive",
+          "href": "sessions/the-november-3rd-12th-session.html"
+        }
+      ],
+      "collaborators": []
+    },
+    {
+      "id": "prolific-day",
+      "date": "2023-11-12",
+      "kind": "milestone",
+      "era_id": "the-somelowlifes-era",
+      "era_name": "The SomeLowLifes Era",
+      "title": "Most prolific day",
+      "detail": "17 transmissions uploaded in a single day — the densest outpouring on record.",
+      "plays": null,
+      "links": [
+        {
+          "label": "Session deep dive",
+          "href": "sessions/the-november-3rd-12th-session.html"
+        }
+      ],
+      "collaborators": [],
+      "collab_slug": null
+    },
+    {
+      "id": "session-41",
+      "date": "2024-03-27",
+      "kind": "session",
+      "era_id": "the-somelowlifes-era",
+      "era_name": "The SomeLowLifes Era",
+      "title": "The March 27th Session",
+      "detail": "1 transmissions, 408 plays",
+      "plays": 408,
+      "links": [
+        {
+          "label": "Session card",
+          "href": "sessions-explorer.html#card-session-41"
+        }
+      ],
+      "collaborators": []
+    },
+    {
+      "id": "session-42",
+      "date": "2024-04-04",
+      "kind": "session",
+      "era_id": "the-somelowlifes-era",
+      "era_name": "The SomeLowLifes Era",
+      "title": "The April 4th–7th Session",
+      "detail": "3 transmissions, 1,035 plays",
+      "plays": 1035,
+      "links": [
+        {
+          "label": "Session card",
+          "href": "sessions-explorer.html#card-session-42"
+        }
+      ],
+      "collaborators": [
+        "Max Ferrari"
+      ]
+    },
+    {
+      "id": "collab-max-ferrari-6",
+      "date": "2024-04-05",
+      "kind": "collaboration",
+      "era_id": "the-somelowlifes-era",
+      "era_name": "The SomeLowLifes Era",
+      "title": "MRari inna Beanstalk w/ Max Ferrari (@mvvi468)",
+      "detail": "Max Ferrari on the record — 515 plays",
+      "plays": 515,
+      "links": [
+        {
+          "label": "Release page",
+          "href": "releases/mrari-inna-beanstalk-w-max-ferrari-mvvi468.html"
+        },
+        {
+          "label": "Circle page",
+          "href": "circle/max-ferrari.html"
+        },
+        {
+          "label": "Session",
+          "href": "sessions-explorer.html#card-session-42"
+        }
+      ],
+      "collaborators": [
+        "Max Ferrari"
+      ],
+      "collab_slug": "max-ferrari"
+    },
+    {
+      "id": "session-43",
+      "date": "2024-04-16",
+      "kind": "session",
+      "era_id": "the-somelowlifes-era",
+      "era_name": "The SomeLowLifes Era",
+      "title": "The April 16th–18th Session",
+      "detail": "2 transmissions, 167 plays",
+      "plays": 167,
+      "links": [
+        {
+          "label": "Session card",
+          "href": "sessions-explorer.html#card-session-43"
+        }
+      ],
+      "collaborators": []
+    },
+    {
+      "id": "session-44",
+      "date": "2024-05-02",
+      "kind": "session",
+      "era_id": "the-somelowlifes-era",
+      "era_name": "The SomeLowLifes Era",
+      "title": "The May 2nd–3rd Session",
+      "detail": "2 transmissions, 452 plays",
+      "plays": 452,
+      "links": [
+        {
+          "label": "Session card",
+          "href": "sessions-explorer.html#card-session-44"
+        }
+      ],
+      "collaborators": []
+    },
+    {
+      "id": "session-45",
+      "date": "2024-05-22",
+      "kind": "session",
+      "era_id": "the-somelowlifes-era",
+      "era_name": "The SomeLowLifes Era",
+      "title": "The May 22nd–31st Session",
+      "detail": "5 transmissions, 1,420 plays",
+      "plays": 1420,
+      "links": [
+        {
+          "label": "Session card",
+          "href": "sessions-explorer.html#card-session-45"
+        }
+      ],
+      "collaborators": []
+    },
+    {
+      "id": "plays-250k",
+      "date": "2024-05-28",
+      "kind": "milestone",
+      "era_id": "the-somelowlifes-era",
+      "era_name": "The SomeLowLifes Era",
+      "title": "250,000 plays crossed",
+      "detail": "Cumulative vault plays crossed a quarter-million with this upload — counted in upload order from the play-count snapshot. — “3 Points Pre Game prod. doublemulti x pinkcat #NITEMODE”",
+      "plays": 170,
+      "links": [
+        {
+          "label": "Release page",
+          "href": "releases/3-points-pre-game-prod-doublemulti-x-pinkcat-nitemode.html"
+        },
+        {
+          "label": "Milestone race",
+          "href": "milestone-race.html"
+        }
+      ],
+      "collaborators": [],
+      "collab_slug": null
+    },
+    {
+      "id": "session-46",
+      "date": "2024-06-16",
+      "kind": "session",
+      "era_id": "the-somelowlifes-era",
+      "era_name": "The SomeLowLifes Era",
+      "title": "The June 16th Session",
+      "detail": "1 transmissions, 185 plays",
+      "plays": 185,
+      "links": [
+        {
+          "label": "Session card",
+          "href": "sessions-explorer.html#card-session-46"
+        }
+      ],
+      "collaborators": []
+    },
+    {
+      "id": "session-47",
+      "date": "2024-06-27",
+      "kind": "session",
+      "era_id": "the-somelowlifes-era",
+      "era_name": "The SomeLowLifes Era",
+      "title": "The June 27th Session",
+      "detail": "1 transmissions, 286 plays",
+      "plays": 286,
+      "links": [
+        {
+          "label": "Session card",
+          "href": "sessions-explorer.html#card-session-47"
+        }
+      ],
+      "collaborators": []
+    },
+    {
+      "id": "session-48",
+      "date": "2024-07-09",
+      "kind": "session",
+      "era_id": "the-somelowlifes-era",
+      "era_name": "The SomeLowLifes Era",
+      "title": "The July 9th Session",
+      "detail": "1 transmissions, 275 plays",
+      "plays": 275,
+      "links": [
+        {
+          "label": "Session card",
+          "href": "sessions-explorer.html#card-session-48"
+        }
+      ],
+      "collaborators": []
+    },
+    {
+      "id": "collab-griimxo-1",
+      "date": "2024-08-24",
+      "kind": "collaboration",
+      "era_id": "the-somelowlifes-era",
+      "era_name": "The SomeLowLifes Era",
+      "title": "Phantom Moshpit (feat. GRiiMXO)",
+      "detail": "Griimxo on the record — distributor single — no vault plays on record",
+      "plays": null,
+      "links": [
+        {
+          "label": "Release page",
+          "href": "releases/phantom-moshpit-feat-griimxo.html"
+        },
+        {
+          "label": "Circle page",
+          "href": "circle/griimxo.html"
+        }
+      ],
+      "collaborators": [
+        "Griimxo"
+      ],
+      "collab_slug": "griimxo"
+    },
+    {
+      "id": "session-49",
+      "date": "2024-08-30",
+      "kind": "session",
+      "era_id": "the-somelowlifes-era",
+      "era_name": "The SomeLowLifes Era",
+      "title": "The August 30th Session",
+      "detail": "1 transmissions, 206 plays",
+      "plays": 206,
+      "links": [
+        {
+          "label": "Session card",
+          "href": "sessions-explorer.html#card-session-49"
+        }
+      ],
+      "collaborators": []
+    },
+    {
+      "id": "session-50",
+      "date": "2024-09-18",
+      "kind": "session",
+      "era_id": "the-somelowlifes-era",
+      "era_name": "The SomeLowLifes Era",
+      "title": "The September 18th Session",
+      "detail": "1 transmissions, 175 plays",
+      "plays": 175,
+      "links": [
+        {
+          "label": "Session card",
+          "href": "sessions-explorer.html#card-session-50"
+        }
+      ],
+      "collaborators": []
+    },
+    {
+      "id": "session-51",
+      "date": "2024-10-04",
+      "kind": "session",
+      "era_id": "the-somelowlifes-era",
+      "era_name": "The SomeLowLifes Era",
+      "title": "The October 4th Session",
+      "detail": "1 transmissions, 177 plays",
+      "plays": 177,
+      "links": [
+        {
+          "label": "Session card",
+          "href": "sessions-explorer.html#card-session-51"
+        }
+      ],
+      "collaborators": []
+    },
+    {
+      "id": "session-52",
+      "date": "2024-11-05",
+      "kind": "session",
+      "era_id": "the-somelowlifes-era",
+      "era_name": "The SomeLowLifes Era",
+      "title": "The November 5th Session",
+      "detail": "1 transmissions, 17 plays",
+      "plays": 17,
+      "links": [
+        {
+          "label": "Session card",
+          "href": "sessions-explorer.html#card-session-52"
+        }
+      ],
+      "collaborators": [
+        "Max",
+        "Vetty"
+      ]
+    },
+    {
+      "id": "collab-max-1",
+      "date": "2024-11-05",
+      "kind": "collaboration",
+      "era_id": "the-somelowlifes-era",
+      "era_name": "The SomeLowLifes Era",
+      "title": "nitemode2019 w/ Max+Vetty prod. NaXi.wav",
+      "detail": "Max on the record — 17 plays",
+      "plays": 17,
+      "links": [
+        {
+          "label": "Release page",
+          "href": "releases/nitemode2019-w-max-vetty-prod-naxi-wav.html"
+        },
+        {
+          "label": "Circle page",
+          "href": "circle/max.html"
+        },
+        {
+          "label": "Session",
+          "href": "sessions-explorer.html#card-session-52"
+        }
+      ],
+      "collaborators": [
+        "Max"
+      ],
+      "collab_slug": "max"
+    },
+    {
+      "id": "collab-vetty-1",
+      "date": "2024-11-05",
+      "kind": "collaboration",
+      "era_id": "the-somelowlifes-era",
+      "era_name": "The SomeLowLifes Era",
+      "title": "nitemode2019 w/ Max+Vetty prod. NaXi.wav",
+      "detail": "Vetty on the record — 17 plays",
+      "plays": 17,
+      "links": [
+        {
+          "label": "Release page",
+          "href": "releases/nitemode2019-w-max-vetty-prod-naxi-wav.html"
+        },
+        {
+          "label": "Circle page",
+          "href": "circle/vetty.html"
+        },
+        {
+          "label": "Session",
+          "href": "sessions-explorer.html#card-session-52"
+        }
+      ],
+      "collaborators": [
+        "Vetty"
+      ],
+      "collab_slug": "vetty"
+    },
+    {
+      "id": "session-53",
+      "date": "2025-01-09",
+      "kind": "session",
+      "era_id": "the-silence",
+      "era_name": "The Silence",
+      "title": "The January 9th Session",
+      "detail": "1 transmissions, 222 plays",
+      "plays": 222,
+      "links": [
+        {
+          "label": "Session card",
+          "href": "sessions-explorer.html#card-session-53"
+        }
+      ],
+      "collaborators": []
+    },
+    {
+      "id": "session-54",
+      "date": "2025-09-13",
+      "kind": "session",
+      "era_id": "the-silence",
+      "era_name": "The Silence",
+      "title": "The September 13th–14th Session",
+      "detail": "2 transmissions, 384 plays",
+      "plays": 384,
+      "links": [
+        {
+          "label": "Session card",
+          "href": "sessions-explorer.html#card-session-54"
+        }
+      ],
+      "collaborators": []
+    },
+    {
+      "id": "session-55",
+      "date": "2025-11-04",
+      "kind": "session",
+      "era_id": "the-silence",
+      "era_name": "The Silence",
+      "title": "The November 4th–11th Session",
+      "detail": "11 transmissions, 2,029 plays",
+      "plays": 2029,
+      "links": [
+        {
+          "label": "Deep dive",
+          "href": "sessions/the-november-4th-11th-session.html"
+        }
+      ],
+      "collaborators": [
+        "Max Ferrari",
+        "Griimxo"
+      ]
+    },
+    {
+      "id": "collab-max-ferrari-7",
+      "date": "2025-11-11",
+      "kind": "collaboration",
+      "era_id": "the-silence",
+      "era_name": "The Silence",
+      "title": "ARCSNOWWW w/ Max Ferrari prod. sustain",
+      "detail": "Max Ferrari on the record — 184 plays",
+      "plays": 184,
+      "links": [
+        {
+          "label": "Release page",
+          "href": "releases/arcsnowww-w-max-ferrari-prod-sustain.html"
+        },
+        {
+          "label": "Circle page",
+          "href": "circle/max-ferrari.html"
+        },
+        {
+          "label": "Session",
+          "href": "sessions-explorer.html#card-session-55"
+        }
+      ],
+      "collaborators": [
+        "Max Ferrari"
+      ],
+      "collab_slug": "max-ferrari"
+    },
+    {
+      "id": "collab-griimxo-2",
+      "date": "2025-11-11",
+      "kind": "collaboration",
+      "era_id": "the-silence",
+      "era_name": "The Silence",
+      "title": "Phantom Moshpit w/ Griimxo (remastered) prod. scared716",
+      "detail": "Griimxo on the record — 178 plays",
+      "plays": 178,
+      "links": [
+        {
+          "label": "Release page",
+          "href": "releases/phantom-moshpit-w-griimxo-remastered-prod-scared716.html"
+        },
+        {
+          "label": "Circle page",
+          "href": "circle/griimxo.html"
+        },
+        {
+          "label": "Session",
+          "href": "sessions-explorer.html#card-session-55"
+        }
+      ],
+      "collaborators": [
+        "Griimxo"
+      ],
+      "collab_slug": "griimxo"
+    },
+    {
+      "id": "collab-max-ferrari-8",
+      "date": "2025-11-11",
+      "kind": "collaboration",
+      "era_id": "the-silence",
+      "era_name": "The Silence",
+      "title": "Sti11 waiting/tunnel freestyle w/ Max Ferrari prod. suli",
+      "detail": "Max Ferrari on the record — 300 plays",
+      "plays": 300,
+      "links": [
+        {
+          "label": "Release page",
+          "href": "releases/sti11-waiting-tunnel-freestyle-w-max-ferrari-prod-suli.html"
+        },
+        {
+          "label": "Circle page",
+          "href": "circle/max-ferrari.html"
+        },
+        {
+          "label": "Session",
+          "href": "sessions-explorer.html#card-session-55"
+        }
+      ],
+      "collaborators": [
+        "Max Ferrari"
+      ],
+      "collab_slug": "max-ferrari"
+    },
+    {
+      "id": "session-56",
+      "date": "2025-11-23",
+      "kind": "session",
+      "era_id": "the-silence",
+      "era_name": "The Silence",
+      "title": "The November 23rd Session",
+      "detail": "2 transmissions, 660 plays",
+      "plays": 660,
+      "links": [
+        {
+          "label": "Session card",
+          "href": "sessions-explorer.html#card-session-56"
+        }
+      ],
+      "collaborators": []
+    },
+    {
+      "id": "session-57",
+      "date": "2025-12-19",
+      "kind": "session",
+      "era_id": "the-silence",
+      "era_name": "The Silence",
+      "title": "The December 19th Session",
+      "detail": "1 transmissions, 638 plays",
+      "plays": 638,
+      "links": [
+        {
+          "label": "Session card",
+          "href": "sessions-explorer.html#card-session-57"
+        }
+      ],
+      "collaborators": []
+    },
+    {
+      "id": "session-58",
+      "date": "2026-01-16",
+      "kind": "session",
+      "era_id": "the-return",
+      "era_name": "The Return",
+      "title": "The January 16th Session",
+      "detail": "1 transmissions, 269 plays",
+      "plays": 269,
+      "links": [
+        {
+          "label": "Session card",
+          "href": "sessions-explorer.html#card-session-58"
+        }
+      ],
+      "collaborators": []
+    },
+    {
+      "id": "session-59",
+      "date": "2026-03-17",
+      "kind": "session",
+      "era_id": "the-return",
+      "era_name": "The Return",
+      "title": "The March 17th–25th Session",
+      "detail": "4 transmissions, 781 plays",
+      "plays": 781,
+      "links": [
+        {
+          "label": "Session card",
+          "href": "sessions-explorer.html#card-session-59"
+        }
+      ],
+      "collaborators": []
+    },
+    {
+      "id": "session-60",
+      "date": "2026-07-15",
+      "kind": "session",
+      "era_id": "the-return",
+      "era_name": "The Return",
+      "title": "The July 15th Session",
+      "detail": "1 transmissions, 178 plays",
+      "plays": 178,
+      "links": [
+        {
+          "label": "Session card",
+          "href": "sessions-explorer.html#card-session-60"
+        }
+      ],
+      "collaborators": []
+    },
+    {
+      "id": "latest",
+      "date": "2026-10-02",
+      "kind": "milestone",
+      "era_id": "the-return",
+      "era_name": "The Return",
+      "title": "Latest transmission",
+      "detail": "The most recent upload on record. The archive is alive. — “turn up w me (prod_timmy)”",
+      "plays": 177,
+      "links": [
+        {
+          "label": "Release page",
+          "href": "releases/turn-up-w-me-prod-timmy.html"
+        }
+      ],
+      "collaborators": [],
+      "collab_slug": null
+    },
+    {
+      "id": "session-61",
+      "date": "2026-10-02",
+      "kind": "session",
+      "era_id": "the-return",
+      "era_name": "The Return",
+      "title": "The October 2nd Session",
+      "detail": "1 transmissions, 177 plays",
+      "plays": 177,
+      "links": [
+        {
+          "label": "Session card",
+          "href": "sessions-explorer.html#card-session-61"
+        }
+      ],
+      "collaborators": []
+    }
+  ],
+  "insights": {
+    "event_count": 114,
+    "by_kind": {
+      "milestone": 9,
+      "session": 61,
+      "collaboration": 44
+    },
+    "first_date": "2017-04-20",
+    "last_date": "2026-10-02",
+    "busiest_year": {
+      "year": "2019",
+      "events": 36
+    },
+    "first_event": {
+      "id": "first-distributor",
+      "title": "First distributor transmission",
+      "date": "2017-04-20"
+    },
+    "last_event": {
+      "id": "session-61",
+      "title": "The October 2nd Session",
+      "date": "2026-10-02"
+    },
+    "note": "one merged stream: every session, every dated milestone, every title-credited collaboration appearance, in order"
+  }
+}

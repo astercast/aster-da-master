@@ -115,11 +115,15 @@ ENDPOINT_ORDER = [
      "Producer deep-dives: every as-credited producer in the archive (title prod./produced-by fragments, verbatim) with credited productions (release/session links, co-producers, title-credited voices), codex family ties, a computed production fingerprint, and sourced research where a research pass exists. Data source for producers/<slug>.html.",
      "producer-deepdives.json", "Fingerprints are computed from the archive's credits, not biographies; research blocks carry their evidence flag.",
      lambda api: len(_doc(api, "producer-deepdives.json")["producers"])),
+    ("chronicle",
+     "The Chronicle: one merged chronological stream - all 61 upload sessions, all 9 dated milestones (the 553-day longest silence as a span), and all 44 title-credited collaboration appearances, each with era assignment, cross-links (release / circle / session pages), and collaborator tags. Data source for chronicle.html.",
+     "chronicle.json", "Same-date order is milestone -> session -> collaboration (a stated presentation rule); the 2017 feature credit predates the eras.",
+     lambda api: len(_doc(api, "chronicle.json")["events"])),
 ]
 
 DOCUMENTS = {
     "AGENT.md": "Agent operator's manual: base URL pattern, key endpoints with example requests, end-to-end workflows, rate/expectation notes.",
-    "agents.html": "Human + agent surface: 22-endpoint table, llms files, skills, search-index usage, rates & expectations, worked workflows.",
+    "agents.html": "Human + agent surface: 23-endpoint table, llms files, skills, search-index usage, rates & expectations, worked workflows.",
     "API.md": "Human-readable API reference incl. the shared cross-site conventions block.",
     "llms.txt": "Short agent brief: catalog shape, method, API map, key verified facts, ops.",
     "llms-full.txt": "Full agent brief: per-era detail, collaborator research notes, unknowns register, page map, generator order.",

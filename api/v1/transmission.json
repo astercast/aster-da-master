@@ -1,5 +1,5 @@
 {
- "version": "0.16.0",
+ "version": "0.17.0",
  "generated": "2026-10-11",
  "plays_snapshot": "2026-10-11",
  "method": "Six eras aggregated from api/v1/years.json, data/sessions.json, api/v1/circle.json, api/v1/milestones.json. Signal lines are computed from the same numbers and asserted in scripts/build_transmission.py. The 2026 era carries an extras block: the four verified 2026 singles (data/artist.json discography) and the Q4 2026 watch (the Uncle-LP status passed through from api/v1/scene-figures.json, the trilogy tease from data/artist.json upcoming). Titles and metadata only — never lyrics.",

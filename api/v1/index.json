@@ -1,9 +1,9 @@
 {
  "name": "Aster da Master API",
- "version": "0.16.0",
+ "version": "0.17.0",
  "observed": "2026-10-11",
  "meta": {
-  "version": "0.16.0",
+  "version": "0.17.0",
   "generated": "2026-10-11T00:00:00Z",
   "base": "api/v1/",
   "auth": "none - static files; no keys, no rate limits"
@@ -22,7 +22,7 @@
    "description": "Manifest: every endpoint with description, schema URL, updated timestamp, record counts, and deprecation notes. Start here.",
    "schema": "api/v1/schema/index.json",
    "updated": "2026-10-11T00:00:00Z",
-   "records": 22,
+   "records": 23,
    "notes": "meta.version mirrors the top-level version field."
   },
   "artist": {
@@ -94,7 +94,7 @@
    "description": "Site construction history, generated from the git log.",
    "schema": "api/v1/schema/changelog.json",
    "updated": "2026-10-11T00:00:00Z",
-   "records": 78,
+   "records": 80,
    "notes": "A changelog built from git log cannot record its own sync commit (wave-15 convention, WAVELOG.md)."
   },
   "first-last": {
@@ -192,11 +192,19 @@
    "updated": "2026-10-11T00:00:00Z",
    "records": 113,
    "notes": "Fingerprints are computed from the archive's credits, not biographies; research blocks carry their evidence flag."
+  },
+  "chronicle": {
+   "path": "api/v1/chronicle.json",
+   "description": "The Chronicle: one merged chronological stream - all 61 upload sessions, all 9 dated milestones (the 553-day longest silence as a span), and all 44 title-credited collaboration appearances, each with era assignment, cross-links (release / circle / session pages), and collaborator tags. Data source for chronicle.html.",
+   "schema": "api/v1/schema/chronicle.json",
+   "updated": "2026-10-11T00:00:00Z",
+   "records": 114,
+   "notes": "Same-date order is milestone -> session -> collaboration (a stated presentation rule); the 2017 feature credit predates the eras."
   }
  },
  "documents": {
   "AGENT.md": "Agent operator's manual: base URL pattern, key endpoints with example requests, end-to-end workflows, rate/expectation notes.",
-  "agents.html": "Human + agent surface: 22-endpoint table, llms files, skills, search-index usage, rates & expectations, worked workflows.",
+  "agents.html": "Human + agent surface: 23-endpoint table, llms files, skills, search-index usage, rates & expectations, worked workflows.",
   "API.md": "Human-readable API reference incl. the shared cross-site conventions block.",
   "llms.txt": "Short agent brief: catalog shape, method, API map, key verified facts, ops.",
   "llms-full.txt": "Full agent brief: per-era detail, collaborator research notes, unknowns register, page map, generator order."

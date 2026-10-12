@@ -5,8 +5,11 @@ Turns the session archaeology data into agent/human tooling:
 api/v1/session-tools.json (endpoint #20) - per-session compare profiles,
 the honest snapshot-history state (a single play-count snapshot exists, so
 no per-session play trajectory can be drawn), a transparently-formulated
-"deepest sessions" editorial ranking, and cross-links (session deep dives,
-era deep dives, codex families, Transmission journey stops).
+"deepest sessions" editorial ranking, a track-level "deepest transmissions"
+editorial ranking (the site's first track-level quiet ranking - the
+deep-cuts-finder skill knew the bottom 5, the site never showed them), and
+cross-links (session deep dives, era deep dives, codex families,
+Transmission journey stops).
 
 Every figure is recomputed here and the script exits non-zero on any
 disagreement. Sources (all real archive data):
@@ -16,12 +19,16 @@ disagreement. Sources (all real archive data):
                                     collaborators, deep-dive + journey links)
   - api/v1/eras.json              (era deep-dive page links)
   - api/v1/codex-families.json    (key_sessions -> family cross-links)
+  - scripts/build_years.py        (parse_collabs - the shared title-credit
+                                    rule, for per-track voices)
 
-No payload shape changes to any existing endpoint; data version stays
-0.14.0 (no source data changed). Titles and metadata only - never lyrics,
-never invented bio facts.
+No payload shape changes to any existing endpoint block; the new
+track_deep_cuts block is additive. Data version 0.16.0 -> 0.17.0 for the
+new verified data slice (wave-33 directive). Titles and metadata only -
+never lyrics, never invented bio facts.
 
-Runs LAST in the validate.sh generator chain (after build_milestone_races).
+Runs after build_milestone_races in the validate.sh generator chain
+(build_chronicle.py runs last).
 """
 import json
 import sys
@@ -29,11 +36,12 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 API = ROOT / "api" / "v1"
-NEW_VERSION = "0.16.0"  # wave 32: circle enrichment + Uncle re-verified pre-release
+NEW_VERSION = "0.17.0"  # wave 33: track-level deep cuts slice (The Deep Cuts deepened)
 SNAPSHOT = "2026-10-11"
 
 sys.path.insert(0, str(ROOT / "scripts"))
 from api_manifest import render_manifest  # noqa: E402
+from build_years import parse_collabs  # noqa: E402
 
 SESS = json.loads((ROOT / "data" / "sessions.json").read_text())["sessions"]
 CL = json.loads((API / "session-clusters.json").read_text())
@@ -90,6 +98,29 @@ def deepest_cut_ranking(sessions, min_tracks=MIN_TRACKS_DEEP):
     return [(i + 1, s, avg) for i, (avg, s) in enumerate(scored)]
 
 
+TRACK_DEEP_N = 25  # editorial: the quietest 25 individual transmissions
+
+
+def track_deep_cut_ranking(tracks):
+    """Transparent editorial ranking: lowest snapshot plays per transmission.
+
+    tracks carry title, plays, date.
+    Tiebreaks: earlier upload date, then title. No exclusions - every one
+    of the 185 vault tracks is ranked.
+    Returns [(rank, track), ...] with 1-based ranks.
+    """
+    ordered = sorted(tracks, key=lambda t: (t["plays"], t["date"], t["title"]))
+    return [(i + 1, t) for i, t in enumerate(ordered)]
+
+
+def nearest_rank(sorted_vals, pct):
+    """Nearest-rank percentile: ceil(p/100 * n)-th value (1-based rank)."""
+    import math
+    n = len(sorted_vals)
+    rank = max(1, min(n, math.ceil(pct / 100 * n)))
+    return sorted_vals[rank - 1]
+
+
 # --- payload build ---
 
 SCHEMA = {
@@ -97,7 +128,8 @@ SCHEMA = {
     "title": "session-tools",
     "type": "object",
     "required": ["version", "generated", "plays_snapshot", "method",
-                 "snapshot_history", "sessions", "deepest_cuts", "insights"],
+                 "snapshot_history", "sessions", "deepest_cuts",
+                 "track_deep_cuts", "insights"],
     "properties": {
         "version": {"type": "string"},
         "generated": {"type": "string"},
@@ -165,6 +197,39 @@ SCHEMA = {
                 "ranking": {"type": "array"},
             },
         },
+        "track_deep_cuts": {
+            "type": "object",
+            "required": ["editorial", "formula", "track_count",
+                         "bottom_25", "insights"],
+            "properties": {
+                "editorial": {"type": "boolean"},
+                "formula": {"type": "string"},
+                "track_count": {"type": "integer"},
+                "bottom_25": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "required": ["rank", "title", "plays", "date",
+                                     "session_id", "session_name", "era_id",
+                                     "era_name", "page", "voices"],
+                        "properties": {
+                            "rank": {"type": "integer"},
+                            "title": {"type": "string"},
+                            "plays": {"type": "integer"},
+                            "date": {"type": "string"},
+                            "session_id": {"type": "string"},
+                            "session_name": {"type": "string"},
+                            "era_id": {"type": "string"},
+                            "era_name": {"type": "string"},
+                            "page": {"type": "string"},
+                            "voices": {"type": "array",
+                                       "items": {"type": "string"}},
+                        },
+                    },
+                },
+                "insights": {"type": "object"},
+            },
+        },
         "insights": {"type": "object"},
     },
 }
@@ -182,6 +247,13 @@ FORMULA = (
     "a quiet single, not a deep session (stated editorial rule). "
     "Tiebreaks: lower total_plays, then fewer transmissions, then session "
     "id. An editorial ranking, not an artist fact."
+)
+
+TRACK_FORMULA = (
+    "individual transmissions ranked by 2026-10-11 snapshot plays, "
+    "ascending. Tiebreaks: earlier upload date, then title. No exclusions "
+    "- all 185 vault tracks are ranked. An editorial ranking, not an "
+    "artist fact."
 )
 
 
@@ -276,6 +348,59 @@ def main() -> int:
         f"deepest drift: {ranked_rows[0]['session_id']}"
     assert ranked_rows[0]["avg_plays_per_track"] == 83.5, "deepest avg drift"
 
+    # track-level deep cuts: every vault transmission ranked by plays
+    sess_by_id = {s["id"]: s for s in sessions}
+    all_tracks = []
+    for raw in SESS:
+        prof = sess_by_id[raw["id"]]
+        for t in raw["tracks"]:
+            all_tracks.append({
+                "title": t["title"],
+                "plays": t["plays"],
+                "date": t["date"],
+                "page": t["page"],
+                "session_id": raw["id"],
+                "session_name": raw["name"],
+                "era_id": prof["era_id"],
+                "era_name": prof["era_name"],
+                "voices": parse_collabs(t["title"]),
+            })
+    assert len(all_tracks) == 185, f"vault track drift: {len(all_tracks)}"
+    track_ranking = track_deep_cut_ranking(all_tracks)
+    bottom_rows = []
+    for rank, t in track_ranking[:TRACK_DEEP_N]:
+        assert (ROOT / t["page"]).exists(), \
+            f"deep-cut track page missing: {t['page']}"
+        bottom_rows.append({"rank": rank, **t})
+    # asserted: the quietest transmission on record (matches the
+    # deep-cuts-finder skill's pinned bottom-5)
+    q = bottom_rows[0]
+    assert q["title"] == "nitemode2019 w/ Max+Vetty prod. NaXi.wav", \
+        f"quietest track drift: {q['title']!r}"
+    assert q["plays"] == 17, "quietest plays drift"
+    plays_sorted = sorted(t["plays"] for t in all_tracks)
+    median = plays_sorted[len(plays_sorted) // 2]
+    assert median == 450, f"median drift: {median}"
+    under_100 = sum(1 for p in plays_sorted if p < 100)
+    under_50 = sum(1 for p in plays_sorted if p < 50)
+    loudest = track_ranking[-1][1]
+    track_insights = {
+        "quietest": {"title": q["title"], "plays": q["plays"],
+                     "date": q["date"], "page": q["page"],
+                     "session_name": q["session_name"]},
+        "median_plays": median,
+        "p10_plays": nearest_rank(plays_sorted, 10),
+        "p25_plays": nearest_rank(plays_sorted, 25),
+        "p75_plays": nearest_rank(plays_sorted, 75),
+        "p90_plays": nearest_rank(plays_sorted, 90),
+        "under_100_plays": under_100,
+        "under_50_plays": under_50,
+        "loudest": {"title": loudest["title"], "plays": loudest["plays"],
+                    "page": loudest["page"]},
+        "note": "individual transmissions ranked by the single 2026-10-11 "
+                "snapshot; no trajectories exist (editorial)",
+    }
+
     ins = CL["insights"]
     insights = {
         "deepest_session": {
@@ -304,7 +429,8 @@ def main() -> int:
             "collaborators, deep-dive + journey links), api/v1/eras.json "
             "(era deep-dive links), and api/v1/codex-families.json "
             "(key sessions -> family cross-links). Powers session compare, "
-            "the deepest-sessions editorial ranking, the timeline scrubber, "
+            "the deepest-sessions editorial ranking, the track-level "
+            "deepest-transmissions ranking, the timeline scrubber, "
             "and per-session play profiles on sessions-explorer.html. Play "
             "counts are the single 2026-10-11 snapshot; no per-track play "
             "trajectory exists in the archive, so none is drawn."
@@ -329,6 +455,13 @@ def main() -> int:
             "excluded_single_track_sessions": excluded,
             "ranking": ranked_rows,
         },
+        "track_deep_cuts": {
+            "editorial": True,
+            "formula": TRACK_FORMULA,
+            "track_count": len(all_tracks),
+            "bottom_25": bottom_rows,
+            "insights": track_insights,
+        },
         "insights": insights,
     }
     (API / "session-tools.json").write_text(
@@ -338,7 +471,9 @@ def main() -> int:
     print(f"session-tools: {len(sessions)} compare profiles, "
           f"deepest = {ranked_rows[0]['session_id']} "
           f"({ranked_rows[0]['avg_plays_per_track']} avg), "
-          f"{excluded} single-track sessions excluded")
+          f"{excluded} single-track sessions excluded, "
+          f"quietest track = {q['title']!r} ({q['plays']} plays), "
+          f"median {median}")
 
     idx = json.loads((API / "index.json").read_text())
     idx["version"] = NEW_VERSION

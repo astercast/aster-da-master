@@ -4,12 +4,12 @@
 # Stages:
 #   1. JS syntax ......... node --check every shipped JS file (assets/js/)
 #   2. JSON parse ........ every JSON file under api/, data/, skills/, scripts/
-#   3. JSON Schema ....... draft-07 validation of all 22 docs under
+#   3. JSON Schema ....... draft-07 validation of all 23 docs under
 #                         api/v1/schema/ (one per endpoint, incl. the index
 #                         manifest, the era deep-dives, session clusters,
 #                         the codex family deep-dives, the milestone races,
-#                         the session tools, the codex network, and the
-#                         producer deep-dives)
+#                         the session tools, the codex network, the
+#                         producer deep-dives, and the chronicle)
 #   4. Relative links .... every href/src in every HTML page resolves on disk;
 #                         JS fetch() string literals resolve too. 0 broken.
 #   5. Lyric-grep gate .. fail on any lyric-like content. Titles/metadata
@@ -18,7 +18,7 @@
 #                         reproduced, never quote lyrics, source domain
 #                         lirik.web.id, and validator self-references).
 #                         Lyric-section markers ([Chorus], Verse 1:, etc.) always fail.
-#   6. Generator chain .. run the 18 generators in the documented dependency
+#   6. Generator chain .. run the 22 generators in the documented dependency
 #                         order (releases -> years -> circle -> codex ->
 #                         sessions -> session_deepdives -> milestones ->
 #                         milestone_watch -> firstlast -> glance -> search_index
@@ -94,7 +94,7 @@ def schema(name):
     Draft7Validator.check_schema(s)  # the schema itself must be valid draft-07
     return Draft7Validator(s)
 
-# all 19 schemas are doc-level (one per endpoint, incl. the index manifest)
+# all 23 schemas are doc-level (one per endpoint, incl. the index manifest)
 pairs = [("index.json", "index.json"), ("artist.json", "artist.json"),
          ("codex.json", "codex.json"), ("release-slugs.json", "release-slugs.json"),
          ("on-this-day.json", "on-this-day.json"), ("years.json", "years.json"),
@@ -110,7 +110,9 @@ pairs = [("index.json", "index.json"), ("artist.json", "artist.json"),
          ("codex-families.json", "codex-families.json"),
          ("milestone-races.json", "milestone-races.json"),
          ("session-tools.json", "session-tools.json"),
-         ("codex-network.json", "codex-network.json")]
+         ("codex-network.json", "codex-network.json"),
+         ("producer-deepdives.json", "producer-deepdives.json"),
+         ("chronicle.json", "chronicle.json")]
 for fname, sname in pairs:
     doc = json.loads((ROOT / "api" / "v1" / fname).read_text())
     for e in schema(sname).iter_errors(doc):
@@ -123,7 +125,7 @@ if failures:
     if len(failures) > 20:
         print(f"   ... and {len(failures)-20} more")
     sys.exit(1)
-print("  ok: all 22 endpoints validate against their draft-07 schemas")
+print("  ok: all 23 endpoints validate against their draft-07 schemas")
 EOF
 [ $? -eq 0 ] && pass "schema validation clean" || FAIL=$((FAIL+1))
 
@@ -147,7 +149,14 @@ def resolve(base, link):
     if re.match(r"^(?:https?:)?//", link, re.I):
         return None  # external: out of scope for this check
     if "{" in link or "}" in link or "$" in link:
-        return None  # JS template placeholder, not a real URL (guarded)
+        return None  # JS template #   6. Generator chain .. run the 22 generators in the documented dependency
+#                         order (releases -> years -> circle -> codex ->
+#                         sessions -> session_deepdives -> milestones ->
+#                         milestone_watch -> firstlast -> glance -> search_index
+#                         -> changelog -> transmission -> network -> eras ->
+#                         session_clusters -> codex_pages -> milestone_races
+#                         -> session_tools -> codex_network ->
+#                         producer_deepdives -> chronicle)., not a real URL (guarded)
     link = unquote(link.split("#", 1)[0].split("?", 1)[0])
     if not link:
         return None
@@ -267,13 +276,13 @@ stage 6 "generator-chain order check (clean re-run -> zero unexpected diffs)"
 # -> session_deepdives -> milestones -> milestone_watch -> firstlast -> glance
 # -> search_index -> changelog -> transmission -> network -> eras
 # -> session_clusters -> codex_pages -> milestone_races -> session_tools
-# -> codex_network -> producer_deepdives
+# -> codex_network -> producer_deepdives -> chronicle
 CHAIN="build_releases build_years build_circle build_codex build_sessions \
 build_session_deepdives build_milestones build_milestone_watch \
 build_firstlast build_glance build_search_index build_changelog \
 build_transmission build_network build_eras build_session_clusters \
 build_codex_pages build_milestone_races build_session_tools \
-build_codex_network build_producer_deepdives"
+build_codex_network build_producer_deepdives build_chronicle"
 CHAIN_OK=1
 for s in $CHAIN; do
   if ! python3 "scripts/$s.py" >/tmp/adm_validate_chain.log 2>&1; then
@@ -392,7 +401,7 @@ CHAIN_ORDER = ("releases", "years", "circle", "codex", "sessions",
                "firstlast", "glance", "search_index", "changelog", "transmission",
                "network", "eras", "session_clusters", "codex_pages",
                "milestone_races", "session_tools", "codex_network",
-               "producer_deepdives")
+               "producer_deepdives", "chronicle")
 chain_str = " \u2192 ".join(CHAIN_ORDER)
 if chain_str not in llms:
     errors.append("llms.txt generator dependency order doesn't match the canonical chain")
