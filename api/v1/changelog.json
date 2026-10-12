@@ -1,8 +1,26 @@
 {
   "generated": "2026-10-11",
   "method": "Parsed from `git log main`: every commit becomes an entry. The site documenting its own becoming.",
-  "entry_count": 52,
+  "entry_count": 55,
   "entries": [
+    {
+      "hash": "ea791b4",
+      "date": "2026-10-12",
+      "message": "Wave 24: changelog sync (3-file convention)",
+      "files_changed": 3
+    },
+    {
+      "hash": "47898cd",
+      "date": "2026-10-12",
+      "message": "Wave 24: Transmission 2.0 — six eras + three live data chapters (2026 extras, race, record book, codex), visited map, resume, share-a-stop links",
+      "files_changed": 11
+    },
+    {
+      "hash": "19c826f",
+      "date": "2026-10-12",
+      "message": "Wave 23: changelog sync (3-file convention)",
+      "files_changed": 3
+    },
     {
       "hash": "a81a021",
       "date": "2026-10-12",

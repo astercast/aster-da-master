@@ -2,7 +2,7 @@
  "version": "0.14.0",
  "generated": "2026-10-11",
  "plays_snapshot": "2026-10-11",
- "method": "Six eras aggregated from api/v1/years.json, data/sessions.json, api/v1/circle.json, api/v1/milestones.json. Signal lines are computed from the same numbers and asserted in scripts/build_transmission.py. Titles and metadata only — never lyrics.",
+ "method": "Six eras aggregated from api/v1/years.json, data/sessions.json, api/v1/circle.json, api/v1/milestones.json. Signal lines are computed from the same numbers and asserted in scripts/build_transmission.py. The 2026 era carries an extras block: the four verified 2026 singles (data/artist.json discography) and the Q4 2026 watch (the Uncle-LP status passed through from api/v1/scene-figures.json, the trilogy tease from data/artist.json upcoming). Titles and metadata only — never lyrics.",
  "archive_totals": {
   "transmissions": 218,
   "plays": 257394,
@@ -552,7 +552,56 @@
      "fact": "The most recent upload on record. The archive is alive."
     }
    ],
-   "signal": "Six singles, March–May 2026, all marked explicit on iHeart — the ritual resumes. Latest transmission on record: “turn up w me (prod_timmy)”, 2026-10-02."
+   "signal": "Six singles, March–May 2026, all marked explicit on iHeart — the ritual resumes. Latest transmission on record: “turn up w me (prod_timmy)”, 2026-10-02.",
+   "extras": {
+    "singles_2026": [
+     {
+      "title": "The Night Ends Yeaaa",
+      "date": "2026-03-25",
+      "page": "releases/the-night-ends-yeaaa.html",
+      "source": "Apple Music profile 1466301103 (“Aster Da Master”) · iTunes Search API primary metadata · verified 2026-10-11"
+     },
+     {
+      "title": "Writing Books",
+      "date": "2026-05-02",
+      "page": "releases/writing-books.html",
+      "source": "Apple Music profile 1466301103 (“Aster Da Master”) · iTunes Search API primary metadata · verified 2026-10-11"
+     },
+     {
+      "title": "9 Trips",
+      "date": "2026-05-03",
+      "page": "releases/9-trips.html",
+      "source": "Apple Music profile 1466301103 (“Aster Da Master”) · iTunes Search API primary metadata · verified 2026-10-11"
+     },
+     {
+      "title": "Living With The Big Shots",
+      "date": "2026-05-05",
+      "page": "releases/living-with-the-big-shots.html",
+      "source": "Apple Music profile 1466301103 (“Aster Da Master”) · iTunes Search API primary metadata · verified 2026-10-11"
+     }
+    ],
+    "singles_note": "The four 2026 distributor singles, re-verified against the iHeart catalog on 2026-10-11: no new distributor releases since.",
+    "q4_watch": {
+     "uncle": {
+      "label": "'Uncle' — fifth solo LP",
+      "status": "announced",
+      "expected": "2026-10-16",
+      "as_of": "2026-10-11",
+      "note": "Pre-release as of this research pass. The archive records a release as 'released' only after a research pass confirms it; the watch never claims the LP is out early.",
+      "figure_page": "circle/fish-narc.html"
+     },
+     "trilogy": {
+      "title": "Litemode Trilogy",
+      "status": "teased in the official SoundCloud bio — not confirmed",
+      "source": "Official SoundCloud profile bio (asterdamaster), observed 2026-10-11",
+      "page": "trilogy.html"
+     }
+    },
+    "snapshot": {
+     "date": "2026-10-11",
+     "note": "Play counts are the 2026-10-11 vault snapshot."
+    }
+   }
   }
  ]
 }

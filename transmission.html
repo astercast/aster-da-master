@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Transmission — Aster da Master</title>
-  <meta name="description" content="Press play on his career: a guided journey through six eras of Aster da Master, 2018 to 2026 — the numbers, the defining tracks, the sessions, the collaborators.">
+  <meta name="description" content="Press play on his career: a guided journey through six eras and three data chapters of Aster da Master, 2018 to 2026 — the numbers, the defining tracks, the sessions, the collaborators, the races, the records, the codex.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
@@ -142,6 +142,23 @@
       color: var(--neon); padding: var(--space-5); margin-top: var(--space-5);
     }
 
+    /* Transmission 2.0: visited stops, data chapters, race bars, noscript index */
+    .tx-visited { color: var(--neon); font-size: 0.7em; }
+    .tx-note { font-size: var(--fs-small); color: var(--muted); margin-top: var(--space-4); max-width: 70ch; }
+    .tx-reading { font-style: italic; }
+    .tx-races { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-4); }
+    .tx-race a { color: var(--ink); text-decoration: none; font-weight: 600; }
+    .tx-race a:hover, .tx-race a:focus-visible { color: var(--neon); }
+    .tx-bar {
+      height: 8px; border: 1px solid var(--line); border-radius: 999px;
+      background: var(--neon-ink); margin: var(--space-2) 0; overflow: hidden;
+    }
+    .tx-bar-fill { height: 100%; background: var(--neon); border-radius: 999px; }
+    .tx-noscript { margin-top: var(--space-6); border-top: 1px solid var(--line-soft); padding-top: var(--space-5); }
+    .tx-noscript-h { font-family: var(--font-display); font-size: var(--fs-2); letter-spacing: 0.01em; margin: 0 0 var(--space-3); }
+    .tx-noscript ol { margin: 0; padding-left: var(--space-5); display: grid; gap: var(--space-2); color: var(--ink-dim); }
+    .tx-noscript a { color: var(--neon); }
+
     @media (max-width: 640px) {
       .tx-stage { padding: var(--space-5) var(--space-4); }
       .tx-rail li { min-width: 104px; }
@@ -225,17 +242,35 @@
       <section class="tx-stage" id="tx-entry" aria-labelledby="tx-title">
         <p class="kicker"><span class="numeral">✦</span>The flagship journey</p>
         <h1 class="tx-hero-title" id="tx-title" tabindex="-1">TRANSMISSION</h1>
-        <p class="tx-lede">Six eras. Nine years. 2018&nbsp;&rarr;&nbsp;2026. Press play on his career — the numbers, the defining tracks, the sessions, the summoned voices, and the one line each era&rsquo;s data tells.</p>
+        <p class="tx-lede">Six eras. Three data chapters. 2018&nbsp;&rarr;&nbsp;2026. Press play on his career — the numbers, the defining tracks, the sessions, the summoned voices, the closest races, the record book, the codex — and the one line each stop&rsquo;s data tells.</p>
         <div class="tx-total-strip" id="tx-totals" aria-label="Archive totals">
           <div><div class="t-num" data-tx-total="transmissions">218</div><div class="t-lab">Transmissions</div></div>
           <div><div class="t-num" data-tx-total="plays">257,394</div><div class="t-lab">Plays</div></div>
           <div><div class="t-num" data-tx-total="sessions">61</div><div class="t-lab">Sessions</div></div>
-          <div><div class="t-num">6</div><div class="t-lab">Eras</div></div>
+          <div><div class="t-num" data-tx-total="stops">9</div><div class="t-lab">Stops</div></div>
         </div>
         <div class="btn-row">
           <button class="btn btn-neon" id="tx-begin" type="button">&#9654; Begin transmission</button>
+          <button class="btn btn-ghost" id="tx-resume" type="button" hidden>Resume</button>
           <button class="btn btn-ghost" id="tx-open-map" type="button">Journey map</button>
         </div>
+        <noscript>
+          <div class="tx-noscript">
+            <h2 class="tx-noscript-h">Chapter index</h2>
+            <p>The guided journey needs JavaScript, but every stop has a static door:</p>
+            <ol>
+              <li><a href="transmission.html#era-the-first-rite">The First Rite</a> — <a href="eras/the-first-rite.html">deep dive</a></li>
+              <li><a href="transmission.html#era-the-prolific-year">The Prolific Year</a> — <a href="eras/the-prolific-year.html">deep dive</a></li>
+              <li><a href="transmission.html#era-the-cast-it-years">The Cast It: Years</a> — <a href="eras/the-cast-it-years.html">deep dive</a></li>
+              <li><a href="transmission.html#era-the-somelowlifes-era">The SomeLowLifes Era</a> — <a href="eras/the-somelowlifes-era.html">deep dive</a></li>
+              <li><a href="transmission.html#era-the-silence">The Silence</a> — <a href="eras/the-silence.html">deep dive</a></li>
+              <li><a href="transmission.html#era-the-return">The Return</a> — <a href="eras/the-return.html">deep dive</a></li>
+              <li><a href="milestone-race.html">The Race</a> — the closest play-count races and the summit chase</li>
+              <li><a href="milestone-race.html">The Record Book</a> — session and era records, just-crossed milestones</li>
+              <li><a href="decoder.html">The Codex</a> — the sixteen word families</li>
+            </ol>
+          </div>
+        </noscript>
         <p class="chart-sub" style="margin-top:var(--space-5)">Play counts are the 2026-10-11 vault snapshot. Titles and metadata only — never lyrics. <noscript>The journey needs JavaScript; the archive itself is all static pages.</noscript></p>
       </section>
 
@@ -251,6 +286,7 @@
           <button class="btn btn-sm btn-ghost tx-autoplay" id="tx-autoplay" type="button" aria-pressed="false">&#9654; Press play</button>
           <span class="spacer" aria-hidden="true"></span>
           <button class="btn btn-sm btn-ghost" id="tx-map-btn" type="button">Journey map</button>
+          <button class="btn btn-sm btn-ghost" id="tx-stop-link" type="button">Copy stop link</button>
           <button class="btn btn-sm btn-neon tx-copy" id="tx-copy" type="button">Copy my transmission</button>
         </div>
         <p class="visually-hidden" aria-live="polite" id="tx-live"></p>
@@ -271,7 +307,7 @@
       <section class="tx-stage" id="tx-end" aria-labelledby="tx-end-heading" hidden>
         <p class="kicker"><span class="numeral">✦</span>Signal received</p>
         <h2 id="tx-end-heading" tabindex="-1" style="font-family:var(--font-display);font-size:var(--fs-1)">THE VAULT AT A GLANCE</h2>
-        <p class="tx-lede">You rode all six eras, 2018 to 2026. Here is the whole signal in one frame — and the full vault, if you want to keep digging.</p>
+        <p class="tx-lede">You rode six eras and three data chapters, 2018 to 2026. Here is the whole signal in one frame — and the full vault, if you want to keep digging.</p>
         <div class="stat-grid tx-end-stats" id="tx-end-stats"></div>
         <div class="btn-row">
           <a class="btn btn-neon" href="glance.html">Open the vault at a glance</a>

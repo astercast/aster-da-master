@@ -94,7 +94,7 @@
    "description": "Site construction history, generated from the git log.",
    "schema": "api/v1/schema/changelog.json",
    "updated": "2026-10-11T00:00:00Z",
-   "records": 52,
+   "records": 55,
    "notes": "A changelog built from git log cannot record its own sync commit (wave-15 convention, WAVELOG.md)."
   },
   "first-last": {
@@ -123,7 +123,7 @@
   },
   "transmission": {
    "path": "api/v1/transmission.json",
-   "description": "The guided journey: six eras with stats, top tracks, key sessions, collaborators, milestones, and computed signal lines.",
+   "description": "The guided journey: six eras with stats, top tracks, key sessions, collaborators, milestones, and computed signal lines — plus a 2026 extras block on The Return era (the four verified 2026 singles, the Q4 2026 Uncle-LP/trilogy watch, the play-count snapshot).",
    "schema": "api/v1/schema/transmission.json",
    "updated": "2026-10-11T00:00:00Z",
    "records": 6,

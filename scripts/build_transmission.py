@@ -6,7 +6,10 @@ Aggregates the six eras from the real archive sources:
   - data/sessions.json       (61 sessions; track -> release page links)
   - api/v1/circle.json       (collaborator footprints, filtered to era years)
   - api/v1/milestones.json   (career firsts, assigned to eras by date)
-  - data/artist.json         (era names, spans, scene lines)
+  - data/artist.json         (era names, spans, scene lines; discography for the
+                              2026 singles; upcoming for the trilogy tease status)
+  - api/v1/scene-figures.json (Fish Narc's Uncle-LP watch block, passed through
+                              to the 2026 extras — status is research-owned)
 
 Every "signal" one-liner is computed from these numbers — no invented facts.
 Signal verification: each signal's numeric claims are recomputed here and the
@@ -29,7 +32,11 @@ YEARS = json.loads((ROOT / "api/v1/years.json").read_text())
 SESS = json.loads((ROOT / "data/sessions.json").read_text())["sessions"]
 CIRCLE = json.loads((ROOT / "api/v1/circle.json").read_text())
 MILES = json.loads((ROOT / "api/v1/milestones.json").read_text())["milestones"]
-ERAS_SRC = json.loads((ROOT / "data/artist.json").read_text())["eras"]
+ARTIST = json.loads((ROOT / "data/artist.json").read_text())
+ERAS_SRC = ARTIST["eras"]
+DISC = ARTIST["discography"]
+UPCOMING = ARTIST["upcoming"]
+SCENE = json.loads((ROOT / "api/v1/scene-figures.json").read_text())
 
 # Era -> the archive years that carry its data (spans start 2017, but
 # years.json covers 2018-2026; the 2017 feature credit is a milestone).
@@ -181,6 +188,44 @@ def signal_return(st, latest):
             f"\u201c{latest['title']}\u201d, {latest['date']}.")
 
 
+# ---- the 2026 extras: the verified singles, the Q4 watch, the snapshot.
+# Every value comes from an existing verified source; nothing is authored here.
+def return_extras():
+    single_titles = ["The Night Ends Yeaaa", "Writing Books", "9 Trips",
+                     "Living With The Big Shots"]
+    singles = []
+    for t in single_titles:
+        d = next((x for x in DISC
+                  if x["title"] == t and x["type"] == "Single"), None)
+        assert d, f"2026 single missing from data/artist.json discography: {t}"
+        page = ("releases/" +
+                re.sub(r"[^a-z0-9]+", "-", t.lower()).strip("-") + ".html")
+        assert (ROOT / page).exists(), f"release page missing: {page}"
+        singles.append({"title": t, "date": d["date"], "page": page,
+                        "source": d.get("source")})
+    dates = [s["date"] for s in singles]
+    assert dates == sorted(dates), "2026 singles out of order"
+    watch = SCENE["fish-narc"]["watch"]
+    tri = UPCOMING[0]
+    assert tri["title"] == "Litemode Trilogy", "upcoming[0] is not the trilogy"
+    return {
+        "singles_2026": singles,
+        "singles_note": ("The four 2026 distributor singles, re-verified against "
+                         "the iHeart catalog on 2026-10-11: no new distributor "
+                         "releases since."),
+        "q4_watch": {
+            "uncle": {"label": watch["label"], "status": watch["status"],
+                      "expected": watch["expected"], "as_of": watch["as_of"],
+                      "note": watch["note"],
+                      "figure_page": "circle/fish-narc.html"},
+            "trilogy": {"title": tri["title"], "status": tri["status"],
+                        "source": tri["source"], "page": "trilogy.html"},
+        },
+        "snapshot": {"date": SNAPSHOT,
+                     "note": f"Play counts are the {SNAPSHOT} vault snapshot."},
+    }
+
+
 def main() -> int:
     total_plays = sum(v["plays"] for v in YEARS.values())
     total_tx = sum(v["transmissions"] for v in YEARS.values())
@@ -223,7 +268,7 @@ def main() -> int:
             signal = signal_silence(st)
         elif name == "The Return":
             signal = signal_return(st, latest)
-        eras.append({
+        era = {
             "id": re.sub(r"[^a-z0-9]+", "-", name.lower()).strip("-"),
             "name": name,
             "span": src.get("span"),
@@ -238,7 +283,10 @@ def main() -> int:
             "collaborators": era_collabs(ys),
             "milestones": era_milestones(name, ys),
             "signal": signal,
-        })
+        }
+        if name == "The Return":
+            era["extras"] = return_extras()
+        eras.append(era)
 
     # every top track must resolve to a real release page
     for e in eras:
@@ -252,7 +300,11 @@ def main() -> int:
         "method": ("Six eras aggregated from api/v1/years.json, data/sessions.json, "
                    "api/v1/circle.json, api/v1/milestones.json. Signal lines are "
                    "computed from the same numbers and asserted in "
-                   "scripts/build_transmission.py. Titles and metadata only — never lyrics."),
+                   "scripts/build_transmission.py. The 2026 era carries an extras "
+                   "block: the four verified 2026 singles (data/artist.json "
+                   "discography) and the Q4 2026 watch (the Uncle-LP status passed "
+                   "through from api/v1/scene-figures.json, the trilogy tease from "
+                   "data/artist.json upcoming). Titles and metadata only — never lyrics."),
         "archive_totals": {"transmissions": total_tx, "plays": total_plays,
                            "sessions": len(SESS), "years": sorted(YEARS)},
         "longest_gap": LONGEST_GAP,
@@ -266,7 +318,10 @@ def main() -> int:
         "$schema": "http://json-schema.org/draft-07/schema#",
         "description": "The guided-journey era aggregates: six eras with "
                        "transmissions, plays, sessions, top tracks, key sessions, "
-                       "collaborators, milestones, and computed signal lines. "
+                       "collaborators, milestones, and computed signal lines — "
+                       "plus a 2026 extras block on The Return era (the four "
+                       "verified 2026 singles, the Q4 2026 Uncle-LP/trilogy watch, "
+                       "the play-count snapshot). "
                        "Generated by scripts/build_transmission.py.",
         "type": "object",
         "properties": {
@@ -363,6 +418,68 @@ def main() -> int:
                             },
                         },
                         "signal": {"type": "string"},
+                        "extras": {
+                            "type": "object",
+                            "description": "2026-era extras (The Return only): "
+                                           "the verified 2026 singles, the Q4 "
+                                           "2026 watch, the play-count snapshot.",
+                            "properties": {
+                                "singles_2026": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object",
+                                        "properties": {
+                                            "title": {"type": "string"},
+                                            "date": {"type": "string"},
+                                            "page": {"type": "string"},
+                                            "source": {"type": ["string", "null"]},
+                                        },
+                                        "required": ["title", "date", "page"],
+                                    },
+                                },
+                                "singles_note": {"type": "string"},
+                                "q4_watch": {
+                                    "type": "object",
+                                    "properties": {
+                                        "uncle": {
+                                            "type": "object",
+                                            "properties": {
+                                                "label": {"type": "string"},
+                                                "status": {"type": "string"},
+                                                "expected": {"type": "string"},
+                                                "as_of": {"type": "string"},
+                                                "note": {"type": "string"},
+                                                "figure_page": {"type": "string"},
+                                            },
+                                            "required": ["label", "status",
+                                                         "expected", "as_of",
+                                                         "figure_page"],
+                                        },
+                                        "trilogy": {
+                                            "type": "object",
+                                            "properties": {
+                                                "title": {"type": "string"},
+                                                "status": {"type": "string"},
+                                                "source": {"type": "string"},
+                                                "page": {"type": "string"},
+                                            },
+                                            "required": ["title", "status",
+                                                         "source", "page"],
+                                        },
+                                    },
+                                    "required": ["uncle", "trilogy"],
+                                },
+                                "snapshot": {
+                                    "type": "object",
+                                    "properties": {
+                                        "date": {"type": "string"},
+                                        "note": {"type": "string"},
+                                    },
+                                    "required": ["date", "note"],
+                                },
+                            },
+                            "required": ["singles_2026", "q4_watch", "snapshot"],
+                        },
                     },
                     "required": ["id", "name", "transmissions", "plays",
                                  "top_tracks", "key_sessions", "collaborators",

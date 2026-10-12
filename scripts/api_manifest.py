@@ -80,7 +80,7 @@ ENDPOINT_ORDER = [
      "scene-figures.json", "",
      lambda api: len(_doc(api, "scene-figures.json"))),
     ("transmission",
-     "The guided journey: six eras with stats, top tracks, key sessions, collaborators, milestones, and computed signal lines.",
+     "The guided journey: six eras with stats, top tracks, key sessions, collaborators, milestones, and computed signal lines — plus a 2026 extras block on The Return era (the four verified 2026 singles, the Q4 2026 Uncle-LP/trilogy watch, the play-count snapshot).",
      "transmission.json", "",
      lambda api: len(_doc(api, "transmission.json")["eras"])),
     ("network",
