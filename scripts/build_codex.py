@@ -22,7 +22,6 @@ import json
 import re
 import shutil
 import sys
-from datetime import date
 from html import escape
 from pathlib import Path
 
@@ -37,6 +36,7 @@ API_ARTIST = ROOT / "api" / "v1" / "artist.json"
 API_INDEX = ROOT / "api" / "v1" / "index.json"
 CODEX_PAGES = ROOT / "codex"
 NEW_VERSION = "0.12.0"
+SNAPSHOT = "2026-10-11"  # play-count snapshot date; pinned so re-runs are byte-stable
 
 LEET = str.maketrans({"1": "l", "0": "o", "3": "e", "4": "a", "5": "s", "7": "t"})
 
@@ -336,7 +336,7 @@ def main():
 
     codex = {
         "version": NEW_VERSION,
-        "generated": date.today().isoformat(),
+        "generated": SNAPSHOT,
         "method": ("Word-boundary matching over lowercased, leet-normalized titles "
                    "(1->l, 0->o, 3->e, 4->a, 5->s, 7->t); multi-word phrases matched "
                    "as phrases. Counts are of titles containing the word. No meanings invented."),

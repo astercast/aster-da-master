@@ -1,8 +1,50 @@
 {
   "generated": "2026-10-11",
   "method": "Parsed from `git log main`: every commit becomes an entry. The site documenting its own becoming.",
-  "entry_count": 18,
+  "entry_count": 25,
   "entries": [
+    {
+      "hash": "ae5a605",
+      "date": "2026-10-12",
+      "message": "Wave 15: add commit hash to WAVELOG",
+      "files_changed": 1
+    },
+    {
+      "hash": "f9d182f",
+      "date": "2026-10-12",
+      "message": "Wave 15: validation pipeline (scripts/validate.sh) + chain idempotency fixes",
+      "files_changed": 13
+    },
+    {
+      "hash": "590352b",
+      "date": "2026-10-12",
+      "message": "Wave 14: FLAGSHIP Transmission — guided journey through the six eras (2018-2026)",
+      "files_changed": 312
+    },
+    {
+      "hash": "ffa6c4e",
+      "date": "2026-10-12",
+      "message": "Wave 13: add commit hashes to WAVELOG",
+      "files_changed": 1
+    },
+    {
+      "hash": "77ca63f",
+      "date": "2026-10-12",
+      "message": "Wave 13: agentic/API/skills expansion",
+      "files_changed": 314
+    },
+    {
+      "hash": "637d725",
+      "date": "2026-10-11",
+      "message": "Wave 12: add commit hash to WAVELOG",
+      "files_changed": 1
+    },
+    {
+      "hash": "28fba84",
+      "date": "2026-10-11",
+      "message": "Wave 12: research integration — collaborator enrichment + scene figures + unknowns register + llms.txt",
+      "files_changed": 29
+    },
     {
       "hash": "446e13b",
       "date": "2026-10-11",

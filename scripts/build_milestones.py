@@ -202,9 +202,11 @@ def main():
     idx["version"] = NEW_VERSION
     idx["observed"] = SNAPSHOT
     idx["endpoints"]["milestones"] = "api/v1/milestones.json"
-    idx["provenance"] += (" v0.9.0: milestones endpoint (career firsts computed "
-                          "from the verified discography); API playground + "
-                          "transmission decoder pages.")
+    # idempotent: milestones endpoint was introduced at v0.9.0; never re-append
+    if "milestones endpoint" not in idx["provenance"]:
+        idx["provenance"] += (" v0.9.0: milestones endpoint (career firsts computed "
+                              "from the verified discography); API playground + "
+                              "transmission decoder pages.")
     API_INDEX.write_text(json.dumps(idx, indent=2, ensure_ascii=False) + "\n")
 
     print(f"milestones: {len(milestones)} -> {MS_OUT} + {API_OUT}, version {NEW_VERSION}")

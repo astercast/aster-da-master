@@ -214,7 +214,9 @@ def main() -> int:
 
     idx = json.loads(API_INDEX.read_text())
     idx["endpoints"]["changelog"] = "api/v1/changelog.json"
-    idx["provenance"] += " Changelog endpoint (site construction history from git log)."
+    # idempotent: never re-append on re-run
+    if "Changelog endpoint" not in idx["provenance"]:
+        idx["provenance"] += " Changelog endpoint (site construction history from git log)."
     API_INDEX.write_text(json.dumps(idx, indent=2, ensure_ascii=False) + "\n")
 
     print(f"changelog: {len(entries)} entries -> changelog.html + JSON")

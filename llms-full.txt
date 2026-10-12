@@ -67,7 +67,7 @@ Agent rules: static JSON, no auth, no rate limits (serve over HTTP — `file://`
 
 ## Generators
 
-`scripts/build_*.py` — dependency order: releases → years → circle → codex → search_index → milestones → milestone_watch → sessions → session_deepdives → glance → firstlast → changelog. Each reads `data/artist.json`; version-writing scripts set `version` (0.12.0) and mirror to `api/v1/artist.json` / `api/v1/index.json`. Never hand-edit generated pages; edit the script or data and re-run.
+`scripts/build_*.py` — dependency order: releases → years → circle → codex → sessions → session_deepdives → milestones → milestone_watch → firstlast → glance → search_index → changelog → transmission. Each reads `data/artist.json`; version-writing scripts set `version` (0.12.0) and mirror to `api/v1/artist.json` / `api/v1/index.json`. Never hand-edit generated pages; edit the script or data and re-run.
 
 ## Ops
 

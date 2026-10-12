@@ -169,8 +169,10 @@ def main() -> int:
     idx["version"] = NEW_VERSION
     idx["observed"] = SNAPSHOT
     idx["endpoints"]["milestone-watch"] = "api/v1/milestone-watch.json"
-    idx["provenance"] += (" v0.11.0: milestone-watch endpoint "
-                          "(vault tracks near round-number play counts).")
+    # idempotent: milestone-watch endpoint was introduced at v0.11.0; never re-append
+    if "milestone-watch endpoint" not in idx["provenance"]:
+        idx["provenance"] += (" v0.11.0: milestone-watch endpoint "
+                              "(vault tracks near round-number play counts).")
     API_INDEX.write_text(json.dumps(idx, indent=2, ensure_ascii=False) + "\n")
 
     counts = ", ".join(f"{b['id']}: {len(b['tracks'])}" for b in bands)

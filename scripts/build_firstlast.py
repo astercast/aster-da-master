@@ -118,7 +118,9 @@ def main() -> int:
 
     idx = json.loads(API_INDEX.read_text())
     idx["endpoints"]["first-last"] = "api/v1/first-last.json"
-    idx["provenance"] += " First-and-last endpoint (per-year opening/closing transmissions)."
+    # idempotent: never re-append on re-run
+    if "First-and-last endpoint" not in idx["provenance"]:
+        idx["provenance"] += " First-and-last endpoint (per-year opening/closing transmissions)."
     API_INDEX.write_text(json.dumps(idx, indent=2, ensure_ascii=False) + "\n")
 
     print(f"first-last: {len(years)} years -> data/first-last.json + JSON")
