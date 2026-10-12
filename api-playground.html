@@ -205,6 +205,16 @@
                 <li>Mirrors <code>milestone-race.html</code> — same data, human page.</li>
               </ol>
             </article>
+            <article class="recipe-card" aria-labelledby="rc-cmp">
+              <h4 id="rc-cmp"><a href="skills/session-compare.md">session-compare</a></h4>
+              <p>Compare any two sessions head to head, or read the deepest-sessions ranking.</p>
+              <ol class="recipe-seq">
+                <li><code>GET api/v1/session-tools.json</code> — read <code>method</code> + <code>snapshot_history</code> first (one 2026-10-11 snapshot — no play trajectories exist; <code>play_profile</code> is lifetime plays in upload order).</li>
+                <li>Compare: pick two <code>sessions[]</code> profiles — tracks, plays, avg, span, era, loudest/deepest cut, collaborator overlap (only A / both / only B); deltas are B-minus-A.</li>
+                <li>Deepest: quote <code>deepest_cuts.formula</code> (avg plays per transmission, min 2 transmissions — editorial, not an artist fact).</li>
+                <li>Mirrors the compare / deepest-cuts / scrubber sections of <code>sessions-explorer.html</code>.</li>
+              </ol>
+            </article>
           </div>
           <p class="chart-sub">Full playbooks live in <code>skills/</code> (registry: <code>skills/index.json</code>). Every skill is: Use when / Inputs / Procedure / Worked example / API references / Pitfalls.</p>
         </div>

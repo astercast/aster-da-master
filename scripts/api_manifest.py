@@ -103,11 +103,15 @@ ENDPOINT_ORDER = [
      "The milestone race: approaching play-count milestones as races (current value, target, gap, and pace-arithmetic estimates - never predictions), the 30,088-play summit chase, session and era record book, and the most recently crossed milestones. Data source for milestone-race.html.",
      "milestone-races.json", "Pace figures are arithmetic on the 2026-10-11 snapshot, not predictions.",
      lambda api: len(_doc(api, "milestone-races.json")["play_races"])),
+    ("session-tools",
+     "Session explorer 2.0 tooling: per-session compare profiles (stats, loudest + deepest-cut tracks, collaborators, play profiles, family/session/era/journey cross-links), the honest snapshot-history state (one 2026-10-11 snapshot - no play trajectories exist), and the deepest-sessions editorial ranking (lowest average plays per transmission, min 2 transmissions, formula stated). Data source for sessions-explorer.html's compare / deepest-cuts / timeline-scrubber sections.",
+     "session-tools.json", "The deepest-cuts ranking is editorial (formula stated in the payload), not an artist fact.",
+     lambda api: len(_doc(api, "session-tools.json")["sessions"])),
 ]
 
 DOCUMENTS = {
     "AGENT.md": "Agent operator's manual: base URL pattern, key endpoints with example requests, end-to-end workflows, rate/expectation notes.",
-    "agents.html": "Human + agent surface: 18-endpoint table, llms files, skills, search-index usage, rates & expectations, worked workflows.",
+    "agents.html": "Human + agent surface: 20-endpoint table, llms files, skills, search-index usage, rates & expectations, worked workflows.",
     "API.md": "Human-readable API reference incl. the shared cross-site conventions block.",
     "llms.txt": "Short agent brief: catalog shape, method, API map, key verified facts, ops.",
     "llms-full.txt": "Full agent brief: per-era detail, collaborator research notes, unknowns register, page map, generator order.",

@@ -1,0 +1,183 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "session-tools",
+  "type": "object",
+  "required": [
+    "version",
+    "generated",
+    "plays_snapshot",
+    "method",
+    "snapshot_history",
+    "sessions",
+    "deepest_cuts",
+    "insights"
+  ],
+  "properties": {
+    "version": {
+      "type": "string"
+    },
+    "generated": {
+      "type": "string"
+    },
+    "plays_snapshot": {
+      "type": "string"
+    },
+    "method": {
+      "type": "string"
+    },
+    "snapshot_history": {
+      "type": "object",
+      "required": [
+        "available",
+        "snapshot_count",
+        "snapshot_at",
+        "note"
+      ],
+      "properties": {
+        "available": {
+          "type": "boolean"
+        },
+        "snapshot_count": {
+          "type": "integer"
+        },
+        "snapshot_at": {
+          "type": "string"
+        },
+        "note": {
+          "type": "string"
+        }
+      }
+    },
+    "sessions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "start",
+          "end",
+          "days",
+          "track_count",
+          "total_plays",
+          "avg_plays_per_track",
+          "era_id",
+          "era_name",
+          "era_deep_dive",
+          "loudest",
+          "deepest_cut",
+          "collaborators",
+          "deep_dive",
+          "journey",
+          "play_profile",
+          "profile_note",
+          "families"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "start": {
+            "type": "string"
+          },
+          "end": {
+            "type": "string"
+          },
+          "days": {
+            "type": "integer"
+          },
+          "track_count": {
+            "type": "integer"
+          },
+          "total_plays": {
+            "type": "integer"
+          },
+          "avg_plays_per_track": {
+            "type": "number"
+          },
+          "era_id": {
+            "type": "string"
+          },
+          "era_name": {
+            "type": "string"
+          },
+          "era_deep_dive": {
+            "type": "string"
+          },
+          "loudest": {
+            "type": "object"
+          },
+          "deepest_cut": {
+            "type": "object"
+          },
+          "collaborators": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "deep_dive": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "journey": {
+            "type": "string"
+          },
+          "play_profile": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "title",
+                "date",
+                "plays",
+                "page"
+              ]
+            }
+          },
+          "profile_note": {
+            "type": "string"
+          },
+          "families": {
+            "type": "array"
+          }
+        }
+      }
+    },
+    "deepest_cuts": {
+      "type": "object",
+      "required": [
+        "editorial",
+        "formula",
+        "min_tracks",
+        "excluded_single_track_sessions",
+        "ranking"
+      ],
+      "properties": {
+        "editorial": {
+          "type": "boolean"
+        },
+        "formula": {
+          "type": "string"
+        },
+        "min_tracks": {
+          "type": "integer"
+        },
+        "excluded_single_track_sessions": {
+          "type": "integer"
+        },
+        "ranking": {
+          "type": "array"
+        }
+      }
+    },
+    "insights": {
+      "type": "object"
+    }
+  }
+}

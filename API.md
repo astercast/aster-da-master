@@ -219,8 +219,23 @@ and `tracks.json` (the captured catalog).
   with the five closest contenders, the session + era record book, and the
   three most recently crossed milestones. Pace figures are lifetime-average
   snapshot arithmetic labeled as estimates, never predictions
-  (`scripts/build_milestone_races.py`, last in the chain). Skill:
+  (`scripts/build_milestone_races.py`). Skill:
   `milestone-race-reader`. Schema: `api/v1/schema/milestone-races.json`.
+- **Session explorer 2.0** (`sessions-explorer.html` + `api/v1/session-tools.json`,
+  endpoint #20): the session-archaeology timeline gains three tools — a
+  head-to-head compare for any two sessions (track count, play totals, date
+  span, standout tracks with the pace caveats, collaborator overlap, all
+  figures from real data), per-session play profiles (each transmission's
+  lifetime plays in upload order from the single 2026-10-11 snapshot —
+  trajectories are honestly unavailable: `snapshot_history.available` is
+  `false`), a "deepest sessions" editorial ranking with its formula stated
+  (lowest average plays per transmission, min 2 transmissions; #1 is
+  session-43 at 83.5 avg; 33 single-transmission sessions excluded by rule),
+  and a keyboard-operable chronological timeline scrubber. Cross-links to
+  session deep dives, era deep dives, codex families, and Transmission
+  journey stops (`scripts/build_session_tools.py`, last in the chain, with
+  pinned-fixture tests in `scripts/test_session_tools.py`). Skill:
+  `session-compare`. Schema: `api/v1/schema/session-tools.json`.
 - **Glance** (`glance.html`): the one-page infographic — 219 transmissions,
   257,394 plays, 9 years, 61 sessions, 21 collaborators, 16 codex families,
   top-5 tracks, the eras strip, heaviest sessions, bookends

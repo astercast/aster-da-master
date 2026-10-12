@@ -1,8 +1,20 @@
 {
   "generated": "2026-10-11",
   "method": "Parsed from `git log main`: every commit becomes an entry. The site documenting its own becoming.",
-  "entry_count": 55,
+  "entry_count": 57,
   "entries": [
+    {
+      "hash": "b638143",
+      "date": "2026-10-12",
+      "message": "Wave 25: changelog sync (3-file convention)",
+      "files_changed": 3
+    },
+    {
+      "hash": "16ce120",
+      "date": "2026-10-12",
+      "message": "Wave 25: Session explorer 2.0 — session compare, deepest-cuts ranking, timeline scrubber (endpoint #20 session-tools)",
+      "files_changed": 22
+    },
     {
       "hash": "ea791b4",
       "date": "2026-10-12",

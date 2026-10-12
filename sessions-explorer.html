@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Sessions explorer — Aster da Master</title>
-  <meta name="description" content="All 61 upload sessions as an explorable timeline: activity seasons, the 553-day silence, the most-prolific session, per-session deepest cuts — filterable by era and year.">
+  <meta name="description" content="All 61 upload sessions as an explorable timeline: activity seasons, the 553-day silence, the most-prolific session, head-to-head session compare, the deepest-sessions ranking, and a chronological timeline scrubber.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
@@ -119,6 +119,46 @@
         <div class="se-cards" id="se-cards"></div>
       </section>
 
+      <section class="section reveal" aria-labelledby="se-cmp-h">
+        <span class="kicker"><span class="numeral">✦</span>Head to head</span>
+        <h2 id="se-cmp-h">Compare any two sessions</h2>
+        <p class="chart-sub">Pick two sessions — track counts, play totals, date spans, standout tracks, and who was in the room. Every figure comes from <code>api/v1/session-tools.json</code>.</p>
+        <div class="se-compare-controls" id="se-compare">
+          <div class="se-control">
+            <label for="se-cmp-a">Session A</label>
+            <select id="se-cmp-a"></select>
+          </div>
+          <div class="se-control">
+            <label for="se-cmp-b">Session B</label>
+            <select id="se-cmp-b"></select>
+          </div>
+          <button class="btn btn-sm" id="se-cmp-copy" type="button">Copy comparison link</button>
+        </div>
+        <div id="se-compare-out" aria-live="polite"></div>
+        <p class="chart-sub" id="se-cmp-note"></p>
+      </section>
+
+      <section class="section reveal" aria-labelledby="se-deep-h">
+        <span class="kicker"><span class="numeral">✦</span>The deepest sessions</span>
+        <h2 id="se-deep-h">The archive's quietest runs</h2>
+        <p class="chart-sub" id="se-formula"></p>
+        <ol class="se-deep-list" id="se-deep-list"></ol>
+        <button class="btn btn-sm" id="se-deep-toggle" type="button" aria-expanded="false"></button>
+      </section>
+
+      <section class="section reveal" aria-labelledby="se-scrub-h">
+        <span class="kicker"><span class="numeral">✦</span>Scrub the timeline</span>
+        <h2 id="se-scrub-h">Eight years, one slider</h2>
+        <p class="chart-sub">Drag — or arrow-key — through all 61 sessions in chronological order. Each stop carries the session's key stats and its cross-links.</p>
+        <div class="se-scrub-controls">
+          <button class="btn btn-sm" id="se-scrub-prev" type="button" aria-label="Previous session">← Prev</button>
+          <input type="range" id="se-scrub" min="0" max="60" step="1" value="60" aria-label="Scrub through the sessions in chronological order" aria-describedby="se-scrub-pos">
+          <button class="btn btn-sm" id="se-scrub-next" type="button" aria-label="Next session">Next →</button>
+        </div>
+        <p class="chart-sub" id="se-scrub-pos" aria-live="polite">Session 61 of 61</p>
+        <div id="se-scrub-card"></div>
+      </section>
+
       <section class="section reveal" aria-labelledby="se-keep-h">
         <span class="kicker"><span class="numeral">✦</span>Keep digging</span>
         <h2 id="se-keep-h">The trail continues</h2>
@@ -129,7 +169,9 @@
           <li><a href="network.html">Network</a> — the collaboration universe as a graph.</li>
           <li><a href="milestone-race.html">Milestone race</a> — the approaching play-count milestones as races, plus the summit chase.</li>
           <li><a href="skills/session-archaeology.md">session-archaeology</a> — the agent playbook this explorer turns into a page.</li>
-          <li><a href="api/v1/session-clusters.json">api/v1/session-clusters.json</a> — this page's data, endpoint #17; try it in the <a href="api-playground.html">API playground</a>.</li>
+          <li><a href="api/v1/session-clusters.json">api/v1/session-clusters.json</a> — this page's timeline data, endpoint #17; try it in the <a href="api-playground.html">API playground</a>.</li>
+          <li><a href="api/v1/session-tools.json">api/v1/session-tools.json</a> — the compare / deepest-cuts / scrubber data, endpoint #20: per-session compare profiles, the deepest-sessions editorial ranking, and the honest snapshot-history state (one 2026-10-11 snapshot — no play trajectories exist).</li>
+          <li><a href="skills/session-compare.md">session-compare</a> — the agent playbook for the head-to-head compare tool and the deepest-sessions ranking.</li>
         </ul>
         <p class="chart-sub">Every figure on this page is computed by <code>scripts/build_session_clusters.py</code>; the page renders it and adds nothing.</p>
       </section>

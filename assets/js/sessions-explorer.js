@@ -12,6 +12,7 @@
   var state = { era: "all", year: "all", q: "", sort: "date-desc" };
   var DATA = null;      // session-clusters.json
   var TRACKS = {};      // session id -> tracks[] from sessions.json
+  var TOOLS = null;     // session-tools.json (wave 25: compare / deepest / scrubber)
 
   function $(id) { return document.getElementById(id); }
 
@@ -132,7 +133,243 @@
     '<p class="chart-sub">Seasons are a computed browsing convention: consecutive sessions while the separating silence is \u2264 90 days \u2014 not artist-named eras.</p>';
   }
 
-  /* ---------------- filter controls ---------------- */
+  /* ---------------- wave 25: session tools ---------------- */
+  /* All compare math mirrors the server-side pure functions in
+     scripts/build_session_tools.py (tested by test_session_tools.py). */
+
+  function profById(id) {
+    for (var i = 0; i < TOOLS.sessions.length; i++) {
+      if (TOOLS.sessions[i].id === id) return TOOLS.sessions[i];
+    }
+    return null;
+  }
+
+  function deltaStr(n, places) {
+    var v = places ? Number(n).toFixed(places) : String(Math.round(n));
+    return (n > 0 ? "+" : n < 0 ? "\u2212" : "") + String(v).replace("-", "");
+  }
+
+  /* play profile: each transmission's lifetime plays in upload order.
+     Honest labeling: a single snapshot cannot show a trajectory. */
+  function stripHtml(s) {
+    var prof = s.play_profile;
+    var max = 1;
+    for (var i = 0; i < prof.length; i++) max = Math.max(max, prof[i].plays);
+    var bars = prof.map(function (t) {
+      var w = Math.max(3, Math.round(t.plays / max * 100));
+      return '<li aria-hidden="true"><span class="se-strip-barwrap">' +
+        '<span class="se-strip-bar" style="width:' + w + '%" title="' +
+        esc(t.title) + ' \u2014 ' + fmt(t.plays) + ' plays"></span></span></li>';
+    }).join("");
+    var min = prof[0].plays, mx = prof[0].plays;
+    prof.forEach(function (t) { min = Math.min(min, t.plays); mx = Math.max(mx, t.plays); });
+    var sr = prof.map(function (t) {
+      return '<li>' + esc(t.title) + ' \u2014 ' + fmt(t.plays) + ' plays, ' + esc(t.date) + '</li>';
+    }).join("");
+    return '<div class="se-strip" role="img" aria-label="Play profile for ' + esc(s.name) +
+      ': ' + prof.length + ' transmissions in upload order, lifetime plays ' + fmt(min) +
+      ' to ' + fmt(mx) + ' (single 2026-10-11 snapshot, not a trajectory)">' +
+      '<ol class="se-strip-bars">' + bars + '</ol></div>' +
+      '<ul class="visually-hidden">' + sr + '</ul>' +
+      '<p class="chart-sub">Play profile \u2014 lifetime plays per transmission in upload order ' +
+      '(single snapshot, not a trajectory).</p>';
+  }
+
+  function sessionNameLink(s) {
+    var href = s.deep_dive ? s.deep_dive : '#card-' + s.id;
+    return '<a href="' + esc(href) + '">' + esc(s.name) + '</a>';
+  }
+
+  function crossLinks(s) {
+    var out = (s.deep_dive ? '<a href="' + esc(s.deep_dive) + '">Session deep dive \u2192</a> ' : '') +
+      '<a href="' + esc(s.era_deep_dive) + '">' + esc(s.era_name) + ' deep dive \u2192</a> ' +
+      '<a href="' + esc(s.journey) + '">Journey node \u2192</a>';
+    if (s.families.length) {
+      out += ' <span class="chart-sub">Codex:</span> ' + s.families.map(function (f) {
+        return '<a href="' + esc(f.page) + '">' + esc(f.name) + '</a>';
+      }).join(' ');
+    }
+    return out;
+  }
+
+  /* ---------------- compare ---------------- */
+  var cmp = { a: "session-02", b: "session-43" };
+
+  function cmpOptions(sel) {
+    return TOOLS.sessions.map(function (s) {
+      var n = s.id.replace("session-", "#");
+      return '<option value="' + esc(s.id) + '"' + (s.id === sel ? ' selected' : '') +
+        '>' + esc(n) + ' \u2014 ' + esc(s.name) + '</option>';
+    }).join("");
+  }
+
+  function overlapHtml(ov) {
+    var part = function (label, ids) {
+      return '<p class="se-cut"><strong>' + label + ':</strong> ' +
+        (ids.length ? ids.map(function (c) {
+          return '<span class="se-chip">' + esc(c) + '</span>';
+        }).join(' ') : '<span class="chart-sub">none</span>') + '</p>';
+    };
+    return part("Only in A", ov.only_a) + part("In both", ov.both) + part("Only in B", ov.only_b);
+  }
+
+  function renderCompare() {
+    var a = profById(cmp.a), b = profById(cmp.b);
+    var box = $("se-compare-out");
+    if (!a || !b || a.id === b.id) {
+      box.innerHTML = '<p class="chart-sub">Pick two different sessions to compare.</p>';
+      return;
+    }
+    var ca = new Set(a.collaborators), cb = new Set(b.collaborators);
+    var ov = {
+      only_a: a.collaborators.filter(function (c) { return !cb.has(c); }),
+      only_b: b.collaborators.filter(function (c) { return !ca.has(c); }),
+      both: a.collaborators.filter(function (c) { return cb.has(c); })
+    };
+    var span = function (s) { return s.start === s.end ? s.start : s.start + " \u2013 " + s.end; };
+    var row = function (label, va, vb, delta) {
+      return '<tr><th scope="row">' + label + '</th><td>' + va + '</td><td>' + vb +
+        (delta ? ' <span class="chart-sub">' + delta + '</span>' : '') + '</td></tr>';
+    };
+    var dTracks = b.track_count - a.track_count;
+    var dPlays = b.total_plays - a.total_plays;
+    var dAvg = b.avg_plays_per_track - a.avg_plays_per_track;
+    var sumBits = [];
+    sumBits.push((dTracks >= 0 ? "+" : "\u2212") + Math.abs(dTracks) + " transmissions");
+    sumBits.push((dPlays >= 0 ? "+" : "\u2212") + fmt(Math.abs(dPlays)) + " plays");
+    sumBits.push((dAvg >= 0 ? "+" : "\u2212") + Math.abs(dAvg).toFixed(1) + " avg plays");
+    box.innerHTML =
+      '<p class="se-cmp-sum"><strong>B vs A:</strong> ' + sumBits.join(" \u00b7 ") +
+      ' <span class="chart-sub">(B ' + (dAvg < 0 ? "runs deeper" : dAvg > 0 ? "runs louder" : "matches A") +
+      ' on average plays)</span></p>' +
+      '<div class="table-wrap"><table>' +
+      '<caption class="visually-hidden">Head-to-head session comparison</caption>' +
+      '<thead><tr><th scope="col">Metric</th><th scope="col">' + esc(a.id.replace("session-", "#")) +
+      ' \u2014 ' + sessionNameLink(a) + '</th><th scope="col">' + esc(b.id.replace("session-", "#")) +
+      ' \u2014 ' + sessionNameLink(b) + '</th></tr></thead><tbody>' +
+      row("Span", esc(span(a)), esc(span(b)), null) +
+      row("Era", '<a href="' + esc(a.era_deep_dive) + '">' + esc(a.era_name) + '</a>',
+          '<a href="' + esc(b.era_deep_dive) + '">' + esc(b.era_name) + '</a>', null) +
+      row("Transmissions", String(a.track_count), String(b.track_count), "B vs A " + deltaStr(dTracks)) +
+      row("Total plays", fmt(a.total_plays), fmt(b.total_plays), "B vs A " + deltaStr(dPlays)) +
+      row("Avg plays / transmission", a.avg_plays_per_track.toFixed(1), b.avg_plays_per_track.toFixed(1),
+          "B vs A " + deltaStr(dAvg, 1)) +
+      row("Loudest", '<a href="' + esc(a.loudest.page) + '">' + esc(a.loudest.title) + '</a> <span class="dim">' +
+          fmt(a.loudest.plays) + '</span>',
+          '<a href="' + esc(b.loudest.page) + '">' + esc(b.loudest.title) + '</a> <span class="dim">' +
+          fmt(b.loudest.plays) + '</span>', null) +
+      row("Deepest cut", '<a href="' + esc(a.deepest_cut.page) + '">' + esc(a.deepest_cut.title) + '</a> <span class="dim">' +
+          fmt(a.deepest_cut.plays) + '</span>',
+          '<a href="' + esc(b.deepest_cut.page) + '">' + esc(b.deepest_cut.title) + '</a> <span class="dim">' +
+          fmt(b.deepest_cut.plays) + '</span>', null) +
+      '</tbody></table></div>' +
+      '<h4 class="se-sub">Who was in the room</h4>' + overlapHtml(ov) +
+      '<h4 class="se-sub">Play profiles</h4>' +
+      '<div class="se-cmp-profiles"><div><h5>' + esc(a.id.replace("session-", "#")) + '</h5>' + stripHtml(a) +
+      '</div><div><h5>' + esc(b.id.replace("session-", "#")) + '</h5>' + stripHtml(b) + '</div></div>' +
+      '<h4 class="se-sub">Keep digging</h4>' +
+      '<p class="se-links"><strong>A:</strong> ' + crossLinks(a) + '</p>' +
+      '<p class="se-links"><strong>B:</strong> ' + crossLinks(b) + '</p>';
+    $("se-cmp-note").textContent = "Trajectory honesty: " + TOOLS.snapshot_history.note;
+    try {
+      history.replaceState(null, "", "#compare=" + a.id + "," + b.id);
+    } catch (err) { /* noop */ }
+  }
+
+  function renderCompareControls() {
+    $("se-cmp-a").innerHTML = cmpOptions(cmp.a);
+    $("se-cmp-b").innerHTML = cmpOptions(cmp.b);
+    $("se-cmp-a").addEventListener("change", function (e) { cmp.a = e.target.value; renderCompare(); });
+    $("se-cmp-b").addEventListener("change", function (e) { cmp.b = e.target.value; renderCompare(); });
+    $("se-cmp-copy").addEventListener("click", function () {
+      var link = location.origin + location.pathname + "#compare=" + cmp.a + "," + cmp.b;
+      var done = function (btn) {
+        btn.textContent = "Copied \u2713";
+        setTimeout(function () { btn.textContent = "Copy comparison link"; }, 1600);
+      };
+      var btn = $("se-cmp-copy");
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(link).then(function () { done(btn); }, function () { done(btn); });
+      } else { done(btn); }
+    });
+    renderCompare();
+  }
+
+  /* ---------------- deepest cuts ---------------- */
+  var deepShown = 10;
+
+  function renderDeep() {
+    var dc = TOOLS.deepest_cuts;
+    $("se-formula").innerHTML = '<strong>The formula, stated:</strong> ' + esc(dc.formula) +
+      ' <span class="chart-sub">' + dc.excluded_single_track_sessions +
+      ' single-transmission sessions sit outside the ranking by that rule.</span>';
+    var rows = dc.ranking.slice(0, deepShown);
+    $("se-deep-list").innerHTML = rows.map(function (r) {
+      var p = profById(r.session_id);
+      var href = r.deep_dive ? r.deep_dive : '#card-' + r.session_id;
+      return '<li class="se-deep-row"><span class="se-deep-rank" aria-label="rank ' + r.rank + '">#' +
+        r.rank + '</span><div class="se-deep-body">' +
+        '<h4><a href="' + esc(href) + '">' + esc(r.name) + '</a></h4>' +
+        '<p class="session-meta">' + esc(r.start) + ' \u2013 ' + esc(r.end) + ' \u00b7 ' +
+        esc(r.era_name) + '</p>' +
+        '<p>' + r.track_count + ' transmissions \u00b7 ' + fmt(r.total_plays) + ' plays \u00b7 ' +
+        '<strong>' + r.avg_plays_per_track.toFixed(1) + ' avg</strong></p>' +
+        (p ? stripHtml(p) : '') +
+        '</div></li>';
+    }).join("");
+    var btn = $("se-deep-toggle");
+    var total = dc.ranking.length;
+    if (deepShown >= total) {
+      btn.textContent = "Show top 10";
+      btn.setAttribute("aria-expanded", "true");
+    } else {
+      btn.textContent = "Show all " + total + " ranked sessions";
+      btn.setAttribute("aria-expanded", "false");
+    }
+  }
+
+  /* ---------------- timeline scrubber ---------------- */
+  var scrubIdx = 60;
+
+  function stopHtml(s) {
+    var span = s.start === s.end ? s.start : s.start + " \u2013 " + s.end;
+    return '<article class="se-card se-scrub-card">' +
+      '<span class="session-meta"><span class="n">' + esc(s.id) + '</span> ' + esc(span) + '</span>' +
+      '<h3>' + sessionNameLink(s) + '</h3>' +
+      '<p class="se-stats">' + s.track_count + ' transmission' + (s.track_count === 1 ? '' : 's') +
+      ' \u00b7 ' + fmt(s.total_plays) + ' plays \u00b7 ' + s.avg_plays_per_track.toFixed(1) +
+      ' avg <span class="chart-sub">(snapshot ' + esc(TOOLS.plays_snapshot) + ')</span></p>' +
+      '<p class="se-cut"><strong>Era:</strong> <a href="' + esc(s.era_deep_dive) + '">' +
+      esc(s.era_name) + '</a></p>' +
+      '<p class="se-cut"><strong>Loudest:</strong> <a href="' + esc(s.loudest.page) + '">' +
+      esc(s.loudest.title) + '</a> <span class="dim">' + fmt(s.loudest.plays) + ' plays</span></p>' +
+      '<p class="se-cut"><strong>Deepest cut:</strong> <a href="' + esc(s.deepest_cut.page) + '">' +
+      esc(s.deepest_cut.title) + '</a> <span class="dim">' + fmt(s.deepest_cut.plays) + ' plays</span></p>' +
+      '<p class="se-links">' + crossLinks(s) + '</p>' +
+      '</article>';
+  }
+
+  function renderScrub(i) {
+    scrubIdx = Math.max(0, Math.min(TOOLS.sessions.length - 1, i));
+    var s = TOOLS.sessions[scrubIdx];
+    var range = $("se-scrub");
+    range.value = String(scrubIdx);
+    range.setAttribute("aria-valuetext",
+      "Session " + (scrubIdx + 1) + " of " + TOOLS.sessions.length + ": " +
+      s.name + ", " + s.start);
+    $("se-scrub-pos").textContent = "Session " + (scrubIdx + 1) + " of " +
+      TOOLS.sessions.length + " \u2014 " + s.id + ", " + s.start + " \u2013 " + s.end;
+    $("se-scrub-card").innerHTML = stopHtml(s);
+  }
+
+  function renderScrubControls() {
+    var range = $("se-scrub");
+    range.max = String(TOOLS.sessions.length - 1);
+    range.addEventListener("input", function (e) { renderScrub(Number(e.target.value)); });
+    $("se-scrub-prev").addEventListener("click", function () { renderScrub(scrubIdx - 1); });
+    $("se-scrub-next").addEventListener("click", function () { renderScrub(scrubIdx + 1); });
+    renderScrub(TOOLS.sessions.length - 1);
+  }
   function renderFilters() {
     var eraOpts = '<option value="all">All eras</option>' + DATA.eras.map(function (e) {
       return '<option value="' + esc(e.id) + '"' + (state.era === e.id ? ' selected' : '') + '>' +
@@ -258,7 +495,10 @@
 
   function readHash() {
     var h = (location.hash || "").replace(/^#/, "");
-    if (/^era-/.test(h)) {
+    var m = h.match(/^compare=(session-\d+),(session-\d+)$/);
+    if (m && profById(m[1]) && profById(m[2])) {
+      cmp.a = m[1]; cmp.b = m[2];
+    } else if (/^era-/.test(h)) {
       var eraId = h.replace(/^era-/, "");
       if (eraById(eraId)) state.era = eraId;
     } else if (/^session-\d+$/.test(h) || /^card-session-\d+$/.test(h)) {
@@ -281,10 +521,12 @@
   function boot() {
     Promise.all([
       loadData("api/v1/session-clusters.json"),
-      loadData("api/v1/sessions.json")
+      loadData("api/v1/sessions.json"),
+      loadData("api/v1/session-tools.json")
     ]).then(function (res) {
       DATA = res[0];
       res[1].sessions.forEach(function (s) { TRACKS[s.id] = s.tracks; });
+      TOOLS = res[2];
       readHash();
       renderInsights();
       renderSpotlight();
@@ -292,10 +534,19 @@
       renderSeasons();
       renderFilters();
       renderCards();
+      renderCompareControls();
+      renderDeep();
+      renderScrubControls();
+      $("se-deep-toggle").addEventListener("click", function () {
+        var total = TOOLS.deepest_cuts.ranking.length;
+        deepShown = deepShown >= total ? 10 : total;
+        renderDeep();
+      });
       jumpToCard();
       ADM.reveal();
     }, function () {
-      fail(["se-insights", "se-spotlight", "se-gaps", "se-seasons", "se-cards"]);
+      fail(["se-insights", "se-spotlight", "se-gaps", "se-seasons", "se-cards",
+            "se-compare", "se-deep-list", "se-scrub-card"]);
     });
   }
 

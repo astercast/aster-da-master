@@ -1,0 +1,3948 @@
+{
+  "version": "0.14.0",
+  "generated": "2026-10-11",
+  "plays_snapshot": "2026-10-11",
+  "method": "Session explorer 2.0 tooling, computed from data/sessions.json (per-session track plays + dates), api/v1/session-clusters.json (era, loudest + deepest-cut tracks, title-credited collaborators, deep-dive + journey links), api/v1/eras.json (era deep-dive links), and api/v1/codex-families.json (key sessions -> family cross-links). Powers session compare, the deepest-sessions editorial ranking, the timeline scrubber, and per-session play profiles on sessions-explorer.html. Play counts are the single 2026-10-11 snapshot; no per-track play trajectory exists in the archive, so none is drawn.",
+  "snapshot_history": {
+    "available": false,
+    "snapshot_count": 1,
+    "snapshot_at": "2026-10-11",
+    "note": "The archive holds a single play-count snapshot (2026-10-11). Per-track play trajectories over time are not computable from one snapshot - no trend is shown anywhere on the page. Session play profiles are each transmission's lifetime plays in upload order, not a time series."
+  },
+  "sessions": [
+    {
+      "id": "session-01",
+      "name": "The January 3rd–8th Session",
+      "start": "2018-01-03",
+      "end": "2018-01-08",
+      "days": 6,
+      "track_count": 2,
+      "total_plays": 13862,
+      "avg_plays_per_track": 6931.0,
+      "era_id": "the-first-rite",
+      "era_name": "The First Rite",
+      "era_deep_dive": "eras/the-first-rite.html",
+      "loudest": {
+        "title": "Soul Shaking (prod. Fish Narc)",
+        "plays": 12944,
+        "date": "2018-01-03",
+        "page": "releases/soul-shaking-prod-fish-narc.html"
+      },
+      "deepest_cut": {
+        "title": "Lucid Boi (prod. $ T.N.C $)",
+        "plays": 918,
+        "date": "2018-01-08",
+        "page": "releases/lucid-boi-prod-t-n-c.html"
+      },
+      "collaborators": [],
+      "deep_dive": null,
+      "journey": "transmission.html#era-the-first-rite",
+      "play_profile": [
+        {
+          "title": "Soul Shaking (prod. Fish Narc)",
+          "date": "2018-01-03",
+          "plays": 12944,
+          "page": "releases/soul-shaking-prod-fish-narc.html"
+        },
+        {
+          "title": "Lucid Boi (prod. $ T.N.C $)",
+          "date": "2018-01-08",
+          "plays": 918,
+          "page": "releases/lucid-boi-prod-t-n-c.html"
+        }
+      ],
+      "profile_note": "Play profile: each transmission's lifetime plays in upload order from the single 2026-10-11 snapshot. Not a trajectory - earlier tracks have had longer to accumulate plays, and one snapshot cannot show change over time.",
+      "families": [
+        {
+          "name": "Lucid States",
+          "slug": "lucid-states",
+          "page": "codex/lucid-states.html",
+          "family_transmissions": 1,
+          "family_plays": 918
+        },
+        {
+          "name": "Soul",
+          "slug": "soul",
+          "page": "codex/soul.html",
+          "family_transmissions": 1,
+          "family_plays": 12944
+        }
+      ]
+    },
+    {
+      "id": "session-02",
+      "name": "The February 4th Session",
+      "start": "2018-02-04",
+      "end": "2018-02-04",
+      "days": 1,
+      "track_count": 1,
+      "total_plays": 30088,
+      "avg_plays_per_track": 30088.0,
+      "era_id": "the-first-rite",
+      "era_name": "The First Rite",
+      "era_deep_dive": "eras/the-first-rite.html",
+      "loudest": {
+        "title": "Take Me (prod. Em Klebold)",
+        "plays": 30088,
+        "date": "2018-02-04",
+        "page": "releases/take-me-prod-em-klebold.html"
+      },
+      "deepest_cut": {
+        "title": "Take Me (prod. Em Klebold)",
+        "plays": 30088,
+        "date": "2018-02-04",
+        "page": "releases/take-me-prod-em-klebold.html"
+      },
+      "collaborators": [],
+      "deep_dive": null,
+      "journey": "transmission.html#era-the-first-rite",
+      "play_profile": [
+        {
+          "title": "Take Me (prod. Em Klebold)",
+          "date": "2018-02-04",
+          "plays": 30088,
+          "page": "releases/take-me-prod-em-klebold.html"
+        }
+      ],
+      "profile_note": "Play profile: each transmission's lifetime plays in upload order from the single 2026-10-11 snapshot. Not a trajectory - earlier tracks have had longer to accumulate plays, and one snapshot cannot show change over time.",
+      "families": []
+    },
+    {
+      "id": "session-03",
+      "name": "The March 16th Session",
+      "start": "2018-03-16",
+      "end": "2018-03-16",
+      "days": 1,
+      "track_count": 1,
+      "total_plays": 1008,
+      "avg_plays_per_track": 1008.0,
+      "era_id": "the-first-rite",
+      "era_name": "The First Rite",
+      "era_deep_dive": "eras/the-first-rite.html",
+      "loudest": {
+        "title": "I See U (prod. Haruhi)",
+        "plays": 1008,
+        "date": "2018-03-16",
+        "page": "releases/i-see-u-prod-haruhi.html"
+      },
+      "deepest_cut": {
+        "title": "I See U (prod. Haruhi)",
+        "plays": 1008,
+        "date": "2018-03-16",
+        "page": "releases/i-see-u-prod-haruhi.html"
+      },
+      "collaborators": [],
+      "deep_dive": null,
+      "journey": "transmission.html#era-the-first-rite",
+      "play_profile": [
+        {
+          "title": "I See U (prod. Haruhi)",
+          "date": "2018-03-16",
+          "plays": 1008,
+          "page": "releases/i-see-u-prod-haruhi.html"
+        }
+      ],
+      "profile_note": "Play profile: each transmission's lifetime plays in upload order from the single 2026-10-11 snapshot. Not a trajectory - earlier tracks have had longer to accumulate plays, and one snapshot cannot show change over time.",
+      "families": []
+    },
+    {
+      "id": "session-04",
+      "name": "The April 28th Session",
+      "start": "2018-04-28",
+      "end": "2018-04-28",
+      "days": 1,
+      "track_count": 1,
+      "total_plays": 1400,
+      "avg_plays_per_track": 1400.0,
+      "era_id": "the-first-rite",
+      "era_name": "The First Rite",
+      "era_deep_dive": "eras/the-first-rite.html",
+      "loudest": {
+        "title": "Mistakes Ft. JO$E DRIPP (prod. Tec)",
+        "plays": 1400,
+        "date": "2018-04-28",
+        "page": "releases/mistakes-ft-jo-e-dripp-prod-tec.html"
+      },
+      "deepest_cut": {
+        "title": "Mistakes Ft. JO$E DRIPP (prod. Tec)",
+        "plays": 1400,
+        "date": "2018-04-28",
+        "page": "releases/mistakes-ft-jo-e-dripp-prod-tec.html"
+      },
+      "collaborators": [
+        "JO$E DRIPP"
+      ],
+      "deep_dive": null,
+      "journey": "transmission.html#era-the-first-rite",
+      "play_profile": [
+        {
+          "title": "Mistakes Ft. JO$E DRIPP (prod. Tec)",
+          "date": "2018-04-28",
+          "plays": 1400,
+          "page": "releases/mistakes-ft-jo-e-dripp-prod-tec.html"
+        }
+      ],
+      "profile_note": "Play profile: each transmission's lifetime plays in upload order from the single 2026-10-11 snapshot. Not a trajectory - earlier tracks have had longer to accumulate plays, and one snapshot cannot show change over time.",
+      "families": []
+    },
+    {
+      "id": "session-05",
+      "name": "The June 8th–14th Session",
+      "start": "2018-06-08",
+      "end": "2018-06-14",
+      "days": 7,
+      "track_count": 2,
+      "total_plays": 3030,
+      "avg_plays_per_track": 1515.0,
+      "era_id": "the-first-rite",
+      "era_name": "The First Rite",
+      "era_deep_dive": "eras/the-first-rite.html",
+      "loudest": {
+        "title": "That's a Lie (prod. Xtravulous x WhyLoner)",
+        "plays": 1522,
+        "date": "2018-06-08",
+        "page": "releases/that-s-a-lie-prod-xtravulous-x-whyloner.html"
+      },
+      "deepest_cut": {
+        "title": "Place For Me(prod. Born Hero)",
+        "plays": 1508,
+        "date": "2018-06-14",
+        "page": "releases/place-for-me-prod-born-hero.html"
+      },
+      "collaborators": [],
+      "deep_dive": null,
+      "journey": "transmission.html#era-the-first-rite",
+      "play_profile": [
+        {
+          "title": "That's a Lie (prod. Xtravulous x WhyLoner)",
+          "date": "2018-06-08",
+          "plays": 1522,
+          "page": "releases/that-s-a-lie-prod-xtravulous-x-whyloner.html"
+        },
+        {
+          "title": "Place For Me(prod. Born Hero)",
+          "date": "2018-06-14",
+          "plays": 1508,
+          "page": "releases/place-for-me-prod-born-hero.html"
+        }
+      ],
+      "profile_note": "Play profile: each transmission's lifetime plays in upload order from the single 2026-10-11 snapshot. Not a trajectory - earlier tracks have had longer to accumulate plays, and one snapshot cannot show change over time.",
+      "families": []
+    },
+    {
+      "id": "session-06",
+      "name": "The July 1st Session",
+      "start": "2018-07-01",
+      "end": "2018-07-01",
+      "days": 1,
+      "track_count": 1,
+      "total_plays": 1282,
+      "avg_plays_per_track": 1282.0,
+      "era_id": "the-first-rite",
+      "era_name": "The First Rite",
+      "era_deep_dive": "eras/the-first-rite.html",
+      "loudest": {
+        "title": "Take Me Back to the City (prod. RainyBaby)",
+        "plays": 1282,
+        "date": "2018-07-01",
+        "page": "releases/take-me-back-to-the-city-prod-rainybaby.html"
+      },
+      "deepest_cut": {
+        "title": "Take Me Back to the City (prod. RainyBaby)",
+        "plays": 1282,
+        "date": "2018-07-01",
+        "page": "releases/take-me-back-to-the-city-prod-rainybaby.html"
+      },
+      "collaborators": [],
+      "deep_dive": null,
+      "journey": "transmission.html#era-the-first-rite",
+      "play_profile": [
+        {
+          "title": "Take Me Back to the City (prod. RainyBaby)",
+          "date": "2018-07-01",
+          "plays": 1282,
+          "page": "releases/take-me-back-to-the-city-prod-rainybaby.html"
+        }
+      ],
+      "profile_note": "Play profile: each transmission's lifetime plays in upload order from the single 2026-10-11 snapshot. Not a trajectory - earlier tracks have had longer to accumulate plays, and one snapshot cannot show change over time.",
+      "families": []
+    },
+    {
+      "id": "session-07",
+      "name": "The July 18th–20th Session",
+      "start": "2018-07-18",
+      "end": "2018-07-20",
+      "days": 3,
+      "track_count": 4,
+      "total_plays": 12163,
+      "avg_plays_per_track": 3040.8,
+      "era_id": "the-first-rite",
+      "era_name": "The First Rite",
+      "era_deep_dive": "eras/the-first-rite.html",
+      "loudest": {
+        "title": "When the World Gets Colder (prod. Brokn)",
+        "plays": 9535,
+        "date": "2018-07-18",
+        "page": "releases/when-the-world-gets-colder-prod-brokn.html"
+      },
+      "deepest_cut": {
+        "title": "As Above [So Below] (prod. Xtravulous x Young Taylor)",
+        "plays": 757,
+        "date": "2018-07-20",
+        "page": "releases/as-above-so-below-prod-xtravulous-x-young-taylor.html"
+      },
+      "collaborators": [],
+      "deep_dive": null,
+      "journey": "transmission.html#era-the-first-rite",
+      "play_profile": [
+        {
+          "title": "When the World Gets Colder (prod. Brokn)",
+          "date": "2018-07-18",
+          "plays": 9535,
+          "page": "releases/when-the-world-gets-colder-prod-brokn.html"
+        },
+        {
+          "title": "As Above [So Below] (prod. Xtravulous x Young Taylor)",
+          "date": "2018-07-20",
+          "plays": 757,
+          "page": "releases/as-above-so-below-prod-xtravulous-x-young-taylor.html"
+        },
+        {
+          "title": "Talk 2 U (prod. Whiz)",
+          "date": "2018-07-20",
+          "plays": 1090,
+          "page": "releases/talk-2-u-prod-whiz.html"
+        },
+        {
+          "title": "Hurts Sometimes (prod. 8ROKEBOY)",
+          "date": "2018-07-20",
+          "plays": 781,
+          "page": "releases/hurts-sometimes-prod-8rokeboy.html"
+        }
+      ],
+      "profile_note": "Play profile: each transmission's lifetime plays in upload order from the single 2026-10-11 snapshot. Not a trajectory - earlier tracks have had longer to accumulate plays, and one snapshot cannot show change over time.",
+      "families": [
+        {
+          "name": "The Cold",
+          "slug": "the-cold",
+          "page": "codex/the-cold.html",
+          "family_transmissions": 1,
+          "family_plays": 9535
+        }
+      ]
+    },
+    {
+      "id": "session-08",
+      "name": "The August 4th Session",
+      "start": "2018-08-04",
+      "end": "2018-08-04",
+      "days": 1,
+      "track_count": 1,
+      "total_plays": 1602,
+      "avg_plays_per_track": 1602.0,
+      "era_id": "the-first-rite",
+      "era_name": "The First Rite",
+      "era_deep_dive": "eras/the-first-rite.html",
+      "loudest": {
+        "title": "all i really need is a text from u (prod. benizjaminn)",
+        "plays": 1602,
+        "date": "2018-08-04",
+        "page": "releases/all-i-really-need-is-a-text-from-u-prod-benizjaminn.html"
+      },
+      "deepest_cut": {
+        "title": "all i really need is a text from u (prod. benizjaminn)",
+        "plays": 1602,
+        "date": "2018-08-04",
+        "page": "releases/all-i-really-need-is-a-text-from-u-prod-benizjaminn.html"
+      },
+      "collaborators": [],
+      "deep_dive": null,
+      "journey": "transmission.html#era-the-first-rite",
+      "play_profile": [
+        {
+          "title": "all i really need is a text from u (prod. benizjaminn)",
+          "date": "2018-08-04",
+          "plays": 1602,
+          "page": "releases/all-i-really-need-is-a-text-from-u-prod-benizjaminn.html"
+        }
+      ],
+      "profile_note": "Play profile: each transmission's lifetime plays in upload order from the single 2026-10-11 snapshot. Not a trajectory - earlier tracks have had longer to accumulate plays, and one snapshot cannot show change over time.",
+      "families": []
+    },
+    {
+      "id": "session-09",
+      "name": "The August 13th–27th Session",
+      "start": "2018-08-13",
+      "end": "2018-08-27",
+      "days": 15,
+      "track_count": 7,
+      "total_plays": 10571,
+      "avg_plays_per_track": 1510.1,
+      "era_id": "the-first-rite",
+      "era_name": "The First Rite",
+      "era_deep_dive": "eras/the-first-rite.html",
+      "loudest": {
+        "title": "Just Wanted U to Shine (prod. Xtravulous x Tundra Beats)",
+        "plays": 3096,
+        "date": "2018-08-26",
+        "page": "releases/just-wanted-u-to-shine-prod-xtravulous-x-tundra-beats.html"
+      },
+      "deepest_cut": {
+        "title": "I Don't Rlly (prod. FELD)",
+        "plays": 587,
+        "date": "2018-08-27",
+        "page": "releases/i-don-t-rlly-prod-feld.html"
+      },
+      "collaborators": [
+        "JAX",
+        "Max Ferrari"
+      ],
+      "deep_dive": "sessions/the-august-13th-27th-session.html",
+      "journey": "transmission.html#era-the-first-rite",
+      "play_profile": [
+        {
+          "title": "stay out of the dark (prod. Rizi)",
+          "date": "2018-08-13",
+          "plays": 1293,
+          "page": "releases/stay-out-of-the-dark-prod-rizi.html"
+        },
+        {
+          "title": "DESTINY (ft. JAX & Max Ferrari) ~ [prod. louky]",
+          "date": "2018-08-20",
+          "plays": 2000,
+          "page": "releases/destiny-ft-jax-and-max-ferrari-prod-louky.html"
+        },
+        {
+          "title": "Share Ur Thoughts (prod. Mont Beats)",
+          "date": "2018-08-22",
+          "plays": 1728,
+          "page": "releases/share-ur-thoughts-prod-mont-beats.html"
+        },
+        {
+          "title": "Just Wanted U to Shine (prod. Xtravulous x Tundra Beats)",
+          "date": "2018-08-26",
+          "plays": 3096,
+          "page": "releases/just-wanted-u-to-shine-prod-xtravulous-x-tundra-beats.html"
+        },
+        {
+          "title": "I Don't Rlly (prod. FELD)",
+          "date": "2018-08-27",
+          "plays": 587,
+          "page": "releases/i-don-t-rlly-prod-feld.html"
+        },
+        {
+          "title": "Hit This (prod. Tyzen)",
+          "date": "2018-08-27",
+          "plays": 1167,
+          "page": "releases/hit-this-prod-tyzen.html"
+        },
+        {
+          "title": "Walk With Me w/ JAX (Prod. Rawman)",
+          "date": "2018-08-27",
+          "plays": 700,
+          "page": "releases/walk-with-me-w-jax-prod-rawman.html"
+        }
+      ],
+      "profile_note": "Play profile: each transmission's lifetime plays in upload order from the single 2026-10-11 snapshot. Not a trajectory - earlier tracks have had longer to accumulate plays, and one snapshot cannot show change over time.",
+      "families": [
+        {
+          "name": "Light",
+          "slug": "light",
+          "page": "codex/light.html",
+          "family_transmissions": 1,
+          "family_plays": 3096
+        },
+        {
+          "name": "Dark",
+          "slug": "dark",
+          "page": "codex/dark.html",
+          "family_transmissions": 1,
+          "family_plays": 1293
+        },
+        {
+          "name": "Journeys",
+          "slug": "journeys",
+          "page": "codex/journeys.html",
+          "family_transmissions": 1,
+          "family_plays": 700
+        }
+      ]
+    },
+    {
+      "id": "session-10",
+      "name": "The September 6th Session",
+      "start": "2018-09-06",
+      "end": "2018-09-06",
+      "days": 1,
+      "track_count": 1,
+      "total_plays": 1485,
+      "avg_plays_per_track": 1485.0,
+      "era_id": "the-first-rite",
+      "era_name": "The First Rite",
+      "era_deep_dive": "eras/the-first-rite.html",
+      "loudest": {
+        "title": "Autumn (prod. Tundra Beats)",
+        "plays": 1485,
+        "date": "2018-09-06",
+        "page": "releases/autumn-prod-tundra-beats.html"
+      },
+      "deepest_cut": {
+        "title": "Autumn (prod. Tundra Beats)",
+        "plays": 1485,
+        "date": "2018-09-06",
+        "page": "releases/autumn-prod-tundra-beats.html"
+      },
+      "collaborators": [],
+      "deep_dive": null,
+      "journey": "transmission.html#era-the-first-rite",
+      "play_profile": [
+        {
+          "title": "Autumn (prod. Tundra Beats)",
+          "date": "2018-09-06",
+          "plays": 1485,
+          "page": "releases/autumn-prod-tundra-beats.html"
+        }
+      ],
+      "profile_note": "Play profile: each transmission's lifetime plays in upload order from the single 2026-10-11 snapshot. Not a trajectory - earlier tracks have had longer to accumulate plays, and one snapshot cannot show change over time.",
+      "families": []
+    },
+    {
+      "id": "session-11",
+      "name": "The October 6th Session",
+      "start": "2018-10-06",
+      "end": "2018-10-06",
+      "days": 1,
+      "track_count": 1,
+      "total_plays": 2149,
+      "avg_plays_per_track": 2149.0,
+      "era_id": "the-first-rite",
+      "era_name": "The First Rite",
+      "era_deep_dive": "eras/the-first-rite.html",
+      "loudest": {
+        "title": "Inside My Dome (prod. Karattt)",
+        "plays": 2149,
+        "date": "2018-10-06",
+        "page": "releases/inside-my-dome-prod-karattt.html"
+      },
+      "deepest_cut": {
+        "title": "Inside My Dome (prod. Karattt)",
+        "plays": 2149,
+        "date": "2018-10-06",
+        "page": "releases/inside-my-dome-prod-karattt.html"
+      },
+      "collaborators": [],
+      "deep_dive": null,
+      "journey": "transmission.html#era-the-first-rite",
+      "play_profile": [
+        {
+          "title": "Inside My Dome (prod. Karattt)",
+          "date": "2018-10-06",
+          "plays": 2149,
+          "page": "releases/inside-my-dome-prod-karattt.html"
+        }
+      ],
+      "profile_note": "Play profile: each transmission's lifetime plays in upload order from the single 2026-10-11 snapshot. Not a trajectory - earlier tracks have had longer to accumulate plays, and one snapshot cannot show change over time.",
+      "families": []
+    },
+    {
+      "id": "session-12",
+      "name": "The October 17th Session",
+      "start": "2018-10-17",
+      "end": "2018-10-17",
+      "days": 1,
+      "track_count": 1,
+      "total_plays": 2760,
+      "avg_plays_per_track": 2760.0,
+      "era_id": "the-first-rite",
+      "era_name": "The First Rite",
+      "era_deep_dive": "eras/the-first-rite.html",
+      "loudest": {
+        "title": "Pills By My Lonely(prod. Discent)",
+        "plays": 2760,
+        "date": "2018-10-17",
+        "page": "releases/pills-by-my-lonely-prod-discent.html"
+      },
+      "deepest_cut": {
+        "title": "Pills By My Lonely(prod. Discent)",
+        "plays": 2760,
+        "date": "2018-10-17",
+        "page": "releases/pills-by-my-lonely-prod-discent.html"
+      },
+      "collaborators": [],
+      "deep_dive": null,
+      "journey": "transmission.html#era-the-first-rite",
+      "play_profile": [
+        {
+          "title": "Pills By My Lonely(prod. Discent)",
+          "date": "2018-10-17",
+          "plays": 2760,
+          "page": "releases/pills-by-my-lonely-prod-discent.html"
+        }
+      ],
+      "profile_note": "Play profile: each transmission's lifetime plays in upload order from the single 2026-10-11 snapshot. Not a trajectory - earlier tracks have had longer to accumulate plays, and one snapshot cannot show change over time.",
+      "families": []
+    },
+    {
+      "id": "session-13",
+      "name": "The October 25th Session",
+      "start": "2018-10-25",
+      "end": "2018-10-25",
+      "days": 1,
+      "track_count": 1,
+      "total_plays": 1001,
+      "avg_plays_per_track": 1001.0,
+      "era_id": "the-first-rite",
+      "era_name": "The First Rite",
+      "era_deep_dive": "eras/the-first-rite.html",
+      "loudest": {
+        "title": "Taught Me(prod. ℝ꒐꒯꒐꒝Ʉ꒒o̲ʊꍛ)",
+        "plays": 1001,
+        "date": "2018-10-25",
+        "page": "releases/taught-me-prod-o.html"
+      },
+      "deepest_cut": {
+        "title": "Taught Me(prod. ℝ꒐꒯꒐꒝Ʉ꒒o̲ʊꍛ)",
+        "plays": 1001,
+        "date": "2018-10-25",
+        "page": "releases/taught-me-prod-o.html"
+      },
+      "collaborators": [],
+      "deep_dive": null,
+      "journey": "transmission.html#era-the-first-rite",
+      "play_profile": [
+        {
+          "title": "Taught Me(prod. ℝ꒐꒯꒐꒝Ʉ꒒o̲ʊꍛ)",
+          "date": "2018-10-25",
+          "plays": 1001,
+          "page": "releases/taught-me-prod-o.html"
+        }
+      ],
+      "profile_note": "Play profile: each transmission's lifetime plays in upload order from the single 2026-10-11 snapshot. Not a trajectory - earlier tracks have had longer to accumulate plays, and one snapshot cannot show change over time.",
+      "families": []
+    },
+    {
+      "id": "session-14",
+      "name": "The November 7th–8th Session",
+      "start": "2018-11-07",
+      "end": "2018-11-08",
+      "days": 2,
+      "track_count": 4,
+      "total_plays": 8472,
+      "avg_plays_per_track": 2118.0,
+      "era_id": "the-first-rite",
+      "era_name": "The First Rite",
+      "era_deep_dive": "eras/the-first-rite.html",
+      "loudest": {
+        "title": "Past Life (prod. Charlie Shuffler)",
+        "plays": 4494,
+        "date": "2018-11-07",
+        "page": "releases/past-life-prod-charlie-shuffler.html"
+      },
+      "deepest_cut": {
+        "title": "Fuck Time 3 (outro) [Prod. DIX2]",
+        "plays": 697,
+        "date": "2018-11-08",
+        "page": "releases/fuck-time-3-outro-prod-dix2.html"
+      },
+      "collaborators": [
+        "Shola"
+      ],
+      "deep_dive": null,
+      "journey": "transmission.html#era-the-first-rite",
+      "play_profile": [
+        {
+          "title": "Past Life (prod. Charlie Shuffler)",
+          "date": "2018-11-07",
+          "plays": 4494,
+          "page": "releases/past-life-prod-charlie-shuffler.html"
+        },
+        {
+          "title": "Fuck Time 3 (outro) [Prod. DIX2]",
+          "date": "2018-11-08",
+          "plays": 697,
+          "page": "releases/fuck-time-3-outro-prod-dix2.html"
+        },
+        {
+          "title": "I See U 2 (prod. Zed Miller)",
+          "date": "2018-11-08",
+          "plays": 1838,
+          "page": "releases/i-see-u-2-prod-zed-miller.html"
+        },
+        {
+          "title": "Far From Me (ft. Shola) ~ [prod. HideousPittius]",
+          "date": "2018-11-08",
+          "plays": 1443,
+          "page": "releases/far-from-me-ft-shola-prod-hideouspittius.html"
+        }
+      ],
+      "profile_note": "Play profile: each transmission's lifetime plays in upload order from the single 2026-10-11 snapshot. Not a trajectory - earlier tracks have had longer to accumulate plays, and one snapshot cannot show change over time.",
+      "families": [
+        {
+          "name": "The Rites",
+          "slug": "the-rites",
+          "page": "codex/the-rites.html",
+          "family_transmissions": 1,
+          "family_plays": 697
+        },
+        {
+          "name": "Time",
+          "slug": "time",
+          "page": "codex/time.html",
+          "family_transmissions": 1,
+          "family_plays": 697
+        }
+      ]
+    },
+    {
+      "id": "session-15",
+      "name": "The Nov 27th – Dec 4th Session",
+      "start": "2018-11-27",
+      "end": "2018-12-04",
+      "days": 8,
+      "track_count": 6,
+      "total_plays": 4892,
+      "avg_plays_per_track": 815.3,
+      "era_id": "the-first-rite",
+      "era_name": "The First Rite",
+      "era_deep_dive": "eras/the-first-rite.html",
+      "loudest": {
+        "title": "Hip On My Blade (ft. Yung Vetta) ~ [prod. Skel]",
+        "plays": 1368,
+        "date": "2018-12-02",
+        "page": "releases/hip-on-my-blade-ft-yung-vetta-prod-skel.html"
+      },
+      "deepest_cut": {
+        "title": "Throwing Signs (prod. HideousPittius)",
+        "plays": 241,
+        "date": "2018-11-27",
+        "page": "releases/throwing-signs-prod-hideouspittius.html"
+      },
+      "collaborators": [
+        "Yung Vetta"
+      ],
+      "deep_dive": "sessions/the-nov-27th-dec-4th-session.html",
+      "journey": "transmission.html#era-the-first-rite",
+      "play_profile": [
+        {
+          "title": "XLR8 (prod. lil sora)",
+          "date": "2018-11-27",
+          "plays": 677,
+          "page": "releases/xlr8-prod-lil-sora.html"
+        },
+        {
+          "title": "Input (prod. Luca Malaspina)",
+          "date": "2018-11-27",
+          "plays": 1226,
+          "page": "releases/input-prod-luca-malaspina.html"
+        },
+        {
+          "title": "Y u Gotta (prod. Yoos)",
+          "date": "2018-11-27",
+          "plays": 526,
+          "page": "releases/y-u-gotta-prod-yoos.html"
+        },
+        {
+          "title": "Throwing Signs (prod. HideousPittius)",
+          "date": "2018-11-27",
+          "plays": 241,
+          "page": "releases/throwing-signs-prod-hideouspittius.html"
+        },
+        {
+          "title": "Hip On My Blade (ft. Yung Vetta) ~ [prod. Skel]",
+          "date": "2018-12-02",
+          "plays": 1368,
+          "page": "releases/hip-on-my-blade-ft-yung-vetta-prod-skel.html"
+        },
+        {
+          "title": "When the World Gets Colder 2 (prod. Yung Skah)",
+          "date": "2018-12-04",
+          "plays": 854,
+          "page": "releases/when-the-world-gets-colder-2-prod-yung-skah.html"
+        }
+      ],
+      "profile_note": "Play profile: each transmission's lifetime plays in upload order from the single 2026-10-11 snapshot. Not a trajectory - earlier tracks have had longer to accumulate plays, and one snapshot cannot show change over time.",
+      "families": [
+        {
+          "name": "The Cold",
+          "slug": "the-cold",
+          "page": "codex/the-cold.html",
+          "family_transmissions": 1,
+          "family_plays": 854
+        }
+      ]
+    },
+    {
+      "id": "session-16",
+      "name": "The December 13th–15th Session",
+      "start": "2018-12-13",
+      "end": "2018-12-15",
+      "days": 3,
+      "track_count": 5,
+      "total_plays": 8714,
+      "avg_plays_per_track": 1742.8,
+      "era_id": "the-first-rite",
+      "era_name": "The First Rite",
+      "era_deep_dive": "eras/the-first-rite.html",
+      "loudest": {
+        "title": "All Kinds Of Trips (prod. YungSkah) <ON ALL PLATFORMS NOW!>",
+        "plays": 5805,
+        "date": "2018-12-15",
+        "page": "releases/all-kinds-of-trips-prod-yungskah-on-all-platforms-now.html"
+      },
+      "deepest_cut": {
+        "title": "Mid (prod. FELD)",
+        "plays": 428,
+        "date": "2018-12-15",
+        "page": "releases/mid-prod-feld.html"
+      },
+      "collaborators": [],
+      "deep_dive": null,
+      "journey": "transmission.html#era-the-first-rite",
+      "play_profile": [
+        {
+          "title": "Time to Grow (prod. Ridicholas)",
+          "date": "2018-12-13",
+          "plays": 801,
+          "page": "releases/time-to-grow-prod-ridicholas.html"
+        },
+        {
+          "title": "Understand (prod 5AMTruly)",
+          "date": "2018-12-15",
+          "plays": 1169,
+          "page": "releases/understand-prod-5amtruly.html"
+        },
+        {
+          "title": "Hurts Sometimes 2 (prod. FELD)",
+          "date": "2018-12-15",
+          "plays": 511,
+          "page": "releases/hurts-sometimes-2-prod-feld.html"
+        },
+        {
+          "title": "Mid (prod. FELD)",
+          "date": "2018-12-15",
+          "plays": 428,
+          "page": "releases/mid-prod-feld.html"
+        },
+        {
+          "title": "All Kinds Of Trips (prod. YungSkah) <ON ALL PLATFORMS NOW!>",
+          "date": "2018-12-15",
+          "plays": 5805,
+          "page": "releases/all-kinds-of-trips-prod-yungskah-on-all-platforms-now.html"
+        }
+      ],
+      "profile_note": "Play profile: each transmission's lifetime plays in upload order from the single 2026-10-11 snapshot. Not a trajectory - earlier tracks have had longer to accumulate plays, and one snapshot cannot show change over time.",
+      "families": [
+        {
+          "name": "Journeys",
+          "slug": "journeys",
+          "page": "codex/journeys.html",
+          "family_transmissions": 1,
+          "family_plays": 5805
+        },
+        {
+          "name": "Time",
+          "slug": "time",
+          "page": "codex/time.html",
+          "family_transmissions": 1,
+          "family_plays": 801
+        }
+      ]
+    },
+    {
+      "id": "session-17",
+      "name": "The January 8th Session",
+      "start": "2019-01-08",
+      "end": "2019-01-08",
+      "days": 1,
+      "track_count": 1,
+      "total_plays": 1150,
+      "avg_plays_per_track": 1150.0,
+      "era_id": "the-first-rite",
+      "era_name": "The First Rite",
+      "era_deep_dive": "eras/the-first-rite.html",
+      "loudest": {
+        "title": "Soul Shines ~ [prod Josh the Samurai]",
+        "plays": 1150,
+        "date": "2019-01-08",
+        "page": "releases/soul-shines-prod-josh-the-samurai.html"
+      },
+      "deepest_cut": {
+        "title": "Soul Shines ~ [prod Josh the Samurai]",
+        "plays": 1150,
+        "date": "2019-01-08",
+        "page": "releases/soul-shines-prod-josh-the-samurai.html"
+      },
+      "collaborators": [],
+      "deep_dive": null,
+      "journey": "transmission.html#era-the-first-rite",
+      "play_profile": [
+        {
+          "title": "Soul Shines ~ [prod Josh the Samurai]",
+          "date": "2019-01-08",
+          "plays": 1150,
+          "page": "releases/soul-shines-prod-josh-the-samurai.html"
+        }
+      ],
+      "profile_note": "Play profile: each transmission's lifetime plays in upload order from the single 2026-10-11 snapshot. Not a trajectory - earlier tracks have had longer to accumulate plays, and one snapshot cannot show change over time.",
+      "families": [
+        {
+          "name": "Light",
+          "slug": "light",
+          "page": "codex/light.html",
+          "family_transmissions": 1,
+          "family_plays": 1150
+        },
+        {
+          "name": "Soul",
+          "slug": "soul",
+          "page": "codex/soul.html",
+          "family_transmissions": 1,
+          "family_plays": 1150
+        }
+      ]
+    },
+    {
+      "id": "session-18",
+      "name": "The January 21st–28th Session",
+      "start": "2019-01-21",
+      "end": "2019-01-28",
+      "days": 8,
+      "track_count": 5,
+      "total_plays": 6442,
+      "avg_plays_per_track": 1288.4,
+      "era_id": "the-first-rite",
+      "era_name": "The First Rite",
+      "era_deep_dive": "eras/the-first-rite.html",
+      "loudest": {
+        "title": "Hard To Keep ft. Yung Vetta (prod. Dead Spyro X Scarlet)",
+        "plays": 2415,
+        "date": "2019-01-28",
+        "page": "releases/hard-to-keep-ft-yung-vetta-prod-dead-spyro-x-scarlet.html"
+      },
+      "deepest_cut": {
+        "title": "STOP IT! ft. Yung Vetta (prod. okthxbb)",
+        "plays": 455,
+        "date": "2019-01-28",
+        "page": "releases/stop-it-ft-yung-vetta-prod-okthxbb.html"
+      },
+      "collaborators": [
+        "Yung Vetta"
+      ],
+      "deep_dive": null,
+      "journey": "transmission.html#era-the-first-rite",
+      "play_profile": [
+        {
+          "title": "Ima Be There ft. Yung Vetta(prod. Why Loner)",
+          "date": "2019-01-21",
+          "plays": 1913,
+          "page": "releases/ima-be-there-ft-yung-vetta-prod-why-loner.html"
+        },
+        {
+          "title": "[outro] Off Beat ft. Yung Vetta (prod. Addy)",
+          "date": "2019-01-28",
+          "plays": 935,
+          "page": "releases/outro-off-beat-ft-yung-vetta-prod-addy.html"
+        },
+        {
+          "title": "STOP IT! ft. Yung Vetta (prod. okthxbb)",
+          "date": "2019-01-28",
+          "plays": 455,
+          "page": "releases/stop-it-ft-yung-vetta-prod-okthxbb.html"
+        },
+        {
+          "title": "Hard To Keep ft. Yung Vetta (prod. Dead Spyro X Scarlet)",
+          "date": "2019-01-28",
+          "plays": 2415,
+          "page": "releases/hard-to-keep-ft-yung-vetta-prod-dead-spyro-x-scarlet.html"
+        },
+        {
+          "title": "Nothing ft. Yung Vetta(prod Xtravulous)",
+          "date": "2019-01-28",
+          "plays": 724,
+          "page": "releases/nothing-ft-yung-vetta-prod-xtravulous.html"
+        }
+      ],
+      "profile_note": "Play profile: each transmission's lifetime plays in upload order from the single 2026-10-11 snapshot. Not a trajectory - earlier tracks have had longer to accumulate plays, and one snapshot cannot show change over time.",
+      "families": [
+        {
+          "name": "The Rites",
+          "slug": "the-rites",
+          "page": "codex/the-rites.html",
+          "family_transmissions": 1,
+          "family_plays": 935
+        }
+      ]
+    },
+    {
+      "id": "session-19",
+      "name": "The March 3rd Session",
+      "start": "2019-03-03",
+      "end": "2019-03-03",
+      "days": 1,
+      "track_count": 1,
+      "total_plays": 719,
+      "avg_plays_per_track": 719.0,
+      "era_id": "the-first-rite",
+      "era_name": "The First Rite",
+      "era_deep_dive": "eras/the-first-rite.html",
+      "loudest": {
+        "title": "Stay Away Freestyle ~",
+        "plays": 719,
+        "date": "2019-03-03",
+        "page": "releases/stay-away-freestyle.html"
+      },
+      "deepest_cut": {
+        "title": "Stay Away Freestyle ~",
+        "plays": 719,
+        "date": "2019-03-03",
+        "page": "releases/stay-away-freestyle.html"
+      },
+      "collaborators": [],
+      "deep_dive": null,
+      "journey": "transmission.html#era-the-first-rite",
+      "play_profile": [
+        {
+          "title": "Stay Away Freestyle ~",
+          "date": "2019-03-03",
+          "plays": 719,
+          "page": "releases/stay-away-freestyle.html"
+        }
+      ],
+      "profile_note": "Play profile: each transmission's lifetime plays in upload order from the single 2026-10-11 snapshot. Not a trajectory - earlier tracks have had longer to accumulate plays, and one snapshot cannot show change over time.",
+      "families": [
+        {
+          "name": "The Rites",
+          "slug": "the-rites",
+          "page": "codex/the-rites.html",
+          "family_transmissions": 1,
+          "family_plays": 719
+        }
+      ]
+    },
+    {
+      "id": "session-20",
+      "name": "The March 15th–27th Session",
+      "start": "2019-03-15",
+      "end": "2019-03-27",
+      "days": 13,
+      "track_count": 4,
+      "total_plays": 5132,
+      "avg_plays_per_track": 1283.0,
+      "era_id": "the-first-rite",
+      "era_name": "The First Rite",
+      "era_deep_dive": "eras/the-first-rite.html",
+      "loudest": {
+        "title": "POWER~! (brb)(prod. Apostle)",
+        "plays": 1815,
+        "date": "2019-03-20",
+        "page": "releases/power-brb-prod-apostle.html"
+      },
+      "deepest_cut": {
+        "title": "Day Comes Freestyle ~(prod. Discent)",
+        "plays": 579,
+        "date": "2019-03-15",
+        "page": "releases/day-comes-freestyle-prod-discent.html"
+      },
+      "collaborators": [],
+      "deep_dive": null,
+      "journey": "transmission.html#era-the-first-rite",
+      "play_profile": [
+        {
+          "title": "Day Comes Freestyle ~(prod. Discent)",
+          "date": "2019-03-15",
+          "plays": 579,
+          "page": "releases/day-comes-freestyle-prod-discent.html"
+        },
+        {
+          "title": "Gadgets(prod.Trap)",
+          "date": "2019-03-20",
+          "plays": 1509,
+          "page": "releases/gadgets-prod-trap.html"
+        },
+        {
+          "title": "POWER~! (brb)(prod. Apostle)",
+          "date": "2019-03-20",
+          "plays": 1815,
+          "page": "releases/power-brb-prod-apostle.html"
+        },
+        {
+          "title": "Face Down Freestyle ~(prod. WeDreaming)",
+          "date": "2019-03-27",
+          "plays": 1229,
+          "page": "releases/face-down-freestyle-prod-wedreaming.html"
+        }
+      ],
+      "profile_note": "Play profile: each transmission's lifetime plays in upload order from the single 2026-10-11 snapshot. Not a trajectory - earlier tracks have had longer to accumulate plays, and one snapshot cannot show change over time.",
+      "families": [
+        {
+          "name": "The Rites",
+          "slug": "the-rites",
+          "page": "codex/the-rites.html",
+          "family_transmissions": 2,
+          "family_plays": 1808
+        },
+        {
+          "name": "Power",
+          "slug": "power",
+          "page": "codex/power.html",
+          "family_transmissions": 1,
+          "family_plays": 1815
+        }
+      ]
+    },
+    {
+      "id": "session-21",
+      "name": "The April 7th Session",
+      "start": "2019-04-07",
+      "end": "2019-04-07",
+      "days": 1,
+      "track_count": 1,
+      "total_plays": 10646,
+      "avg_plays_per_track": 10646.0,
+      "era_id": "the-first-rite",
+      "era_name": "The First Rite",
+      "era_deep_dive": "eras/the-first-rite.html",
+      "loudest": {
+        "title": "CONTACT! ~(prod Born Hero) [NOW ON ALL PLATFORMS!]",
+        "plays": 10646,
+        "date": "2019-04-07",
+        "page": "releases/contact-prod-born-hero-now-on-all-platforms.html"
+      },
+      "deepest_cut": {
+        "title": "CONTACT! ~(prod Born Hero) [NOW ON ALL PLATFORMS!]",
+        "plays": 10646,
+        "date": "2019-04-07",
+        "page": "releases/contact-prod-born-hero-now-on-all-platforms.html"
+      },
+      "collaborators": [],
+      "deep_dive": null,
+      "journey": "transmission.html#era-the-first-rite",
+      "play_profile": [
+        {
+          "title": "CONTACT! ~(prod Born Hero) [NOW ON ALL PLATFORMS!]",
+          "date": "2019-04-07",
+          "plays": 10646,
+          "page": "releases/contact-prod-born-hero-now-on-all-platforms.html"
+        }
+      ],
+      "profile_note": "Play profile: each transmission's lifetime plays in upload order from the single 2026-10-11 snapshot. Not a trajectory - earlier tracks have had longer to accumulate plays, and one snapshot cannot show change over time.",
+      "families": []
+    },
+    {
+      "id": "session-22",
+      "name": "The April 28th Session",
+      "start": "2019-04-28",
+      "end": "2019-04-28",
+      "days": 1,
+      "track_count": 1,
+      "total_plays": 4362,
+      "avg_plays_per_track": 4362.0,
+      "era_id": "the-first-rite",
+      "era_name": "The First Rite",
+      "era_deep_dive": "eras/the-first-rite.html",
+      "loudest": {
+        "title": "GOLD 💛💔💛 ~ (prod. Antropolita)",
+        "plays": 4362,
+        "date": "2019-04-28",
+        "page": "releases/gold-prod-antropolita.html"
+      },
+      "deepest_cut": {
+        "title": "GOLD 💛💔💛 ~ (prod. Antropolita)",
+        "plays": 4362,
+        "date": "2019-04-28",
+        "page": "releases/gold-prod-antropolita.html"
+      },
+      "collaborators": [],
+      "deep_dive": null,
+      "journey": "transmission.html#era-the-first-rite",
+      "play_profile": [
+        {
+          "title": "GOLD 💛💔💛 ~ (prod. Antropolita)",
+          "date": "2019-04-28",
+          "plays": 4362,
+          "page": "releases/gold-prod-antropolita.html"
+        }
+      ],
+      "profile_note": "Play profile: each transmission's lifetime plays in upload order from the single 2026-10-11 snapshot. Not a trajectory - earlier tracks have had longer to accumulate plays, and one snapshot cannot show change over time.",
+      "families": [
+        {
+          "name": "Light",
+          "slug": "light",
+          "page": "codex/light.html",
+          "family_transmissions": 1,
+          "family_plays": 4362
+        }
+      ]
+    },
+    {
+      "id": "session-23",
+      "name": "The June 25th Session",
+      "start": "2019-06-25",
+      "end": "2019-06-25",
+      "days": 1,
+      "track_count": 1,
+      "total_plays": 347,
+      "avg_plays_per_track": 347.0,
+      "era_id": "the-first-rite",
+      "era_name": "The First Rite",
+      "era_deep_dive": "eras/the-first-rite.html",
+      "loudest": {
+        "title": "You Don't Wanna Miss Tonight(prod. Luca Malaspina)",
+        "plays": 347,
+        "date": "2019-06-25",
+        "page": "releases/you-don-t-wanna-miss-tonight-prod-luca-malaspina.html"
+      },
+      "deepest_cut": {
+        "title": "You Don't Wanna Miss Tonight(prod. Luca Malaspina)",
+        "plays": 347,
+        "date": "2019-06-25",
+        "page": "releases/you-don-t-wanna-miss-tonight-prod-luca-malaspina.html"
+      },
+      "collaborators": [],
+      "deep_dive": null,
+      "journey": "transmission.html#era-the-first-rite",
+      "play_profile": [
+        {
+          "title": "You Don't Wanna Miss Tonight(prod. Luca Malaspina)",
+          "date": "2019-06-25",
+          "plays": 347,
+          "page": "releases/you-don-t-wanna-miss-tonight-prod-luca-malaspina.html"
+        }
+      ],
+      "profile_note": "Play profile: each transmission's lifetime plays in upload order from the single 2026-10-11 snapshot. Not a trajectory - earlier tracks have had longer to accumulate plays, and one snapshot cannot show change over time.",
+      "families": []
+    },
+    {
+      "id": "session-24",
+      "name": "The July 9th Session",
+      "start": "2019-07-09",
+      "end": "2019-07-09",
+      "days": 1,
+      "track_count": 7,
+      "total_plays": 28260,
+      "avg_plays_per_track": 4037.1,
+      "era_id": "the-first-rite",
+      "era_name": "The First Rite",
+      "era_deep_dive": "eras/the-first-rite.html",
+      "loudest": {
+        "title": "NIGHT MODE ft. MAX FERRARI x YUNG VETTA x JAX",
+        "plays": 10083,
+        "date": "2019-07-09",
+        "page": "releases/night-mode-ft-max-ferrari-x-yung-vetta-x-jax.html"
+      },
+      "deepest_cut": {
+        "title": "GARDEN ft. Offline_hp (prod. QB)",
+        "plays": 1311,
+        "date": "2019-07-09",
+        "page": "releases/garden-ft-offline-hp-prod-qb.html"
+      },
+      "collaborators": [
+        "AMMI $AGE",
+        "JO$E DRIPP",
+        "Offline_hp",
+        "MAX FERRARI",
+        "YUNG VETTA",
+        "JAX"
+      ],
+      "deep_dive": "sessions/the-july-9th-session.html",
+      "journey": "transmission.html#era-the-first-rite",
+      "play_profile": [
+        {
+          "title": "outro ~ I RLLY DID THT(prod. itami リネン)",
+          "date": "2019-07-09",
+          "plays": 3940,
+          "page": "releases/outro-i-rlly-did-tht-prod-itami.html"
+        },
+        {
+          "title": "I'M WEAKENING ft. AMMI $AGE",
+          "date": "2019-07-09",
+          "plays": 2490,
+          "page": "releases/i-m-weakening-ft-ammi-age.html"
+        },
+        {
+          "title": "SUN SET FOR U ft. JO$E DRIPP (prod. y axis)",
+          "date": "2019-07-09",
+          "plays": 1771,
+          "page": "releases/sun-set-for-u-ft-jo-e-dripp-prod-y-axis.html"
+        },
+        {
+          "title": "NECK DEEP (prod. AWFL)",
+          "date": "2019-07-09",
+          "plays": 5276,
+          "page": "releases/neck-deep-prod-awfl.html"
+        },
+        {
+          "title": "GARDEN ft. Offline_hp (prod. QB)",
+          "date": "2019-07-09",
+          "plays": 1311,
+          "page": "releases/garden-ft-offline-hp-prod-qb.html"
+        },
+        {
+          "title": "NIGHT MODE ft. MAX FERRARI x YUNG VETTA x JAX",
+          "date": "2019-07-09",
+          "plays": 10083,
+          "page": "releases/night-mode-ft-max-ferrari-x-yung-vetta-x-jax.html"
+        },
+        {
+          "title": "SIGNS POINT UP! (prod Jayy Praax)",
+          "date": "2019-07-09",
+          "plays": 3389,
+          "page": "releases/signs-point-up-prod-jayy-praax.html"
+        }
+      ],
+      "profile_note": "Play profile: each transmission's lifetime plays in upload order from the single 2026-10-11 snapshot. Not a trajectory - earlier tracks have had longer to accumulate plays, and one snapshot cannot show change over time.",
+      "families": [
+        {
+          "name": "The Modes",
+          "slug": "the-modes",
+          "page": "codex/the-modes.html",
+          "family_transmissions": 1,
+          "family_plays": 10083
+        },
+        {
+          "name": "The Rites",
+          "slug": "the-rites",
+          "page": "codex/the-rites.html",
+          "family_transmissions": 1,
+          "family_plays": 3940
+        },
+        {
+          "name": "Light",
+          "slug": "light",
+          "page": "codex/light.html",
+          "family_transmissions": 1,
+          "family_plays": 1771
+        },
+        {
+          "name": "Dark",
+          "slug": "dark",
+          "page": "codex/dark.html",
+          "family_transmissions": 1,
+          "family_plays": 10083
+        }
+      ]
+    },
+    {
+      "id": "session-25",
+      "name": "The October 4th Session",
+      "start": "2019-10-04",
+      "end": "2019-10-04",
+      "days": 1,
+      "track_count": 1,
+      "total_plays": 11587,
+      "avg_plays_per_track": 11587.0,
+      "era_id": "the-first-rite",
+      "era_name": "The First Rite",
+      "era_deep_dive": "eras/the-first-rite.html",
+      "loudest": {
+        "title": "candy w/ capoxxo(prod. razorwrist)",
+        "plays": 11587,
+        "date": "2019-10-04",
+        "page": "releases/candy-w-capoxxo-prod-razorwrist.html"
+      },
+      "deepest_cut": {
+        "title": "candy w/ capoxxo(prod. razorwrist)",
+        "plays": 11587,
+        "date": "2019-10-04",
+        "page": "releases/candy-w-capoxxo-prod-razorwrist.html"
+      },
+      "collaborators": [
+        "capoxxo"
+      ],
+      "deep_dive": null,
+      "journey": "transmission.html#era-the-first-rite",
+      "play_profile": [
+        {
+          "title": "candy w/ capoxxo(prod. razorwrist)",
+          "date": "2019-10-04",
+          "plays": 11587,
+          "page": "releases/candy-w-capoxxo-prod-razorwrist.html"
+        }
+      ],
+      "profile_note": "Play profile: each transmission's lifetime plays in upload order from the single 2026-10-11 snapshot. Not a trajectory - earlier tracks have had longer to accumulate plays, and one snapshot cannot show change over time.",
+      "families": []
+    },
+    {
+      "id": "session-26",
+      "name": "The December 6th Session",
+      "start": "2019-12-06",
+      "end": "2019-12-06",
+      "days": 1,
+      "track_count": 1,
+      "total_plays": 9615,
+      "avg_plays_per_track": 9615.0,
+      "era_id": "the-first-rite",
+      "era_name": "The First Rite",
+      "era_deep_dive": "eras/the-first-rite.html",
+      "loudest": {
+        "title": "master key ft. Lil Wintr x Marcelo (prod. ginseng)",
+        "plays": 9615,
+        "date": "2019-12-06",
+        "page": "releases/master-key-ft-lil-wintr-x-marcelo-prod-ginseng.html"
+      },
+      "deepest_cut": {
+        "title": "master key ft. Lil Wintr x Marcelo (prod. ginseng)",
+        "plays": 9615,
+        "date": "2019-12-06",
+        "page": "releases/master-key-ft-lil-wintr-x-marcelo-prod-ginseng.html"
+      },
+      "collaborators": [
+        "Lil Wintr",
+        "Marcelo"
+      ],
+      "deep_dive": null,
+      "journey": "transmission.html#era-the-first-rite",
+      "play_profile": [
+        {
+          "title": "master key ft. Lil Wintr x Marcelo (prod. ginseng)",
+          "date": "2019-12-06",
+          "plays": 9615,
+          "page": "releases/master-key-ft-lil-wintr-x-marcelo-prod-ginseng.html"
+        }
+      ],
+      "profile_note": "Play profile: each transmission's lifetime plays in upload order from the single 2026-10-11 snapshot. Not a trajectory - earlier tracks have had longer to accumulate plays, and one snapshot cannot show change over time.",
+      "families": [
+        {
+          "name": "Keys",
+          "slug": "keys",
+          "page": "codex/keys.html",
+          "family_transmissions": 1,
+          "family_plays": 9615
+        }
+      ]
+    },
+    {
+      "id": "session-27",
+      "name": "The December 22nd Session",
+      "start": "2019-12-22",
+      "end": "2019-12-22",
+      "days": 1,
+      "track_count": 7,
+      "total_plays": 21777,
+      "avg_plays_per_track": 3111.0,
+      "era_id": "the-first-rite",
+      "era_name": "The First Rite",
+      "era_deep_dive": "eras/the-first-rite.html",
+      "loudest": {
+        "title": "fly like me w/ pvscale(prod. pvscale)",
+        "plays": 7786,
+        "date": "2019-12-22",
+        "page": "releases/fly-like-me-w-pvscale-prod-pvscale.html"
+      },
+      "deepest_cut": {
+        "title": "I'd rather be w/ lil yu (prod. razorwrist)",
+        "plays": 1343,
+        "date": "2019-12-22",
+        "page": "releases/i-d-rather-be-w-lil-yu-prod-razorwrist.html"
+      },
+      "collaborators": [
+        "capoxxo",
+        "lil yu",
+        "LILVICBXI",
+        "pvscale"
+      ],
+      "deep_dive": "sessions/the-december-22nd-session.html",
+      "journey": "transmission.html#era-the-first-rite",
+      "play_profile": [
+        {
+          "title": "getting colder w/ capoxxo (prod. pvscale x asa41)",
+          "date": "2019-12-22",
+          "plays": 4587,
+          "page": "releases/getting-colder-w-capoxxo-prod-pvscale-x-asa41.html"
+        },
+        {
+          "title": "I'd rather be w/ lil yu (prod. razorwrist)",
+          "date": "2019-12-22",
+          "plays": 1343,
+          "page": "releases/i-d-rather-be-w-lil-yu-prod-razorwrist.html"
+        },
+        {
+          "title": "snow caps w/ LILVICBXI (prod. LILVICBXI x spliff08_)",
+          "date": "2019-12-22",
+          "plays": 1579,
+          "page": "releases/snow-caps-w-lilvicbxi-prod-lilvicbxi-x-spliff08.html"
+        },
+        {
+          "title": "my friends (prod. deephartt)",
+          "date": "2019-12-22",
+          "plays": 1582,
+          "page": "releases/my-friends-prod-deephartt.html"
+        },
+        {
+          "title": "fly like me w/ pvscale(prod. pvscale)",
+          "date": "2019-12-22",
+          "plays": 7786,
+          "page": "releases/fly-like-me-w-pvscale-prod-pvscale.html"
+        },
+        {
+          "title": "same amount w/ LILVICBXI (prod. LILVICBXI)",
+          "date": "2019-12-22",
+          "plays": 2991,
+          "page": "releases/same-amount-w-lilvicbxi-prod-lilvicbxi.html"
+        },
+        {
+          "title": "attempt to be (prod. uniquate)",
+          "date": "2019-12-22",
+          "plays": 1909,
+          "page": "releases/attempt-to-be-prod-uniquate.html"
+        }
+      ],
+      "profile_note": "Play profile: each transmission's lifetime plays in upload order from the single 2026-10-11 snapshot. Not a trajectory - earlier tracks have had longer to accumulate plays, and one snapshot cannot show change over time.",
+      "families": [
+        {
+          "name": "The Cold",
+          "slug": "the-cold",
+          "page": "codex/the-cold.html",
+          "family_transmissions": 1,
+          "family_plays": 4587
+        }
+      ]
+    },
+    {
+      "id": "session-28",
+      "name": "The December 30th Session",
+      "start": "2019-12-30",
+      "end": "2019-12-30",
+      "days": 1,
+      "track_count": 6,
+      "total_plays": 16172,
+      "avg_plays_per_track": 2695.3,
+      "era_id": "the-first-rite",
+      "era_name": "The First Rite",
+      "era_deep_dive": "eras/the-first-rite.html",
+      "loudest": {
+        "title": "Soulless Soldiers (prod. Born Hero)",
+        "plays": 5878,
+        "date": "2019-12-30",
+        "page": "releases/soulless-soldiers-prod-born-hero.html"
+      },
+      "deepest_cut": {
+        "title": "Pavement (prod. Fish Narc)",
+        "plays": 733,
+        "date": "2019-12-30",
+        "page": "releases/pavement-prod-fish-narc.html"
+      },
+      "collaborators": [
+        "lil soda boi",
+        "Yung Cortex",
+        "Keyblayde808"
+      ],
+      "deep_dive": "sessions/the-december-30th-session.html",
+      "journey": "transmission.html#era-the-first-rite",
+      "play_profile": [
+        {
+          "title": "Best Friend ft. lil soda boi (prod. lil soda boi)",
+          "date": "2019-12-30",
+          "plays": 3075,
+          "page": "releases/best-friend-ft-lil-soda-boi-prod-lil-soda-boi.html"
+        },
+        {
+          "title": "Costs Of Life (prod. aster)",
+          "date": "2019-12-30",
+          "plays": 2721,
+          "page": "releases/costs-of-life-prod-aster.html"
+        },
+        {
+          "title": "Soulless Soldiers (prod. Born Hero)",
+          "date": "2019-12-30",
+          "plays": 5878,
+          "page": "releases/soulless-soldiers-prod-born-hero.html"
+        },
+        {
+          "title": "All Alone ft. Yung Cortex (prod. Yung Cortex)",
+          "date": "2019-12-30",
+          "plays": 1115,
+          "page": "releases/all-alone-ft-yung-cortex-prod-yung-cortex.html"
+        },
+        {
+          "title": "Pavement (prod. Fish Narc)",
+          "date": "2019-12-30",
+          "plays": 733,
+          "page": "releases/pavement-prod-fish-narc.html"
+        },
+        {
+          "title": "White Noise ft. Keyblayde808 (prod. Keyblayde808)",
+          "date": "2019-12-30",
+          "plays": 2650,
+          "page": "releases/white-noise-ft-keyblayde808-prod-keyblayde808.html"
+        }
+      ],
+      "profile_note": "Play profile: each transmission's lifetime plays in upload order from the single 2026-10-11 snapshot. Not a trajectory - earlier tracks have had longer to accumulate plays, and one snapshot cannot show change over time.",
+      "families": [
+        {
+          "name": "Light",
+          "slug": "light",
+          "page": "codex/light.html",
+          "family_transmissions": 1,
+          "family_plays": 2650
+        }
+      ]
+    },
+    {
+      "id": "session-29",
+      "name": "The April 9th Session",
+      "start": "2020-04-09",
+      "end": "2020-04-09",
+      "days": 1,
+      "track_count": 1,
+      "total_plays": 1668,
+      "avg_plays_per_track": 1668.0,
+      "era_id": "the-prolific-year",
+      "era_name": "The Prolific Year",
+      "era_deep_dive": "eras/the-prolific-year.html",
+      "loudest": {
+        "title": "I HATE IT prod. Taurs",
+        "plays": 1668,
+        "date": "2020-04-09",
+        "page": "releases/i-hate-it-prod-taurs.html"
+      },
+      "deepest_cut": {
+        "title": "I HATE IT prod. Taurs",
+        "plays": 1668,
+        "date": "2020-04-09",
+        "page": "releases/i-hate-it-prod-taurs.html"
+      },
+      "collaborators": [],
+      "deep_dive": null,
+      "journey": "transmission.html#era-the-prolific-year",
+      "play_profile": [
+        {
+          "title": "I HATE IT prod. Taurs",
+          "date": "2020-04-09",
+          "plays": 1668,
+          "page": "releases/i-hate-it-prod-taurs.html"
+        }
+      ],
+      "profile_note": "Play profile: each transmission's lifetime plays in upload order from the single 2026-10-11 snapshot. Not a trajectory - earlier tracks have had longer to accumulate plays, and one snapshot cannot show change over time.",
+      "families": []
+    },
+    {
+      "id": "session-30",
+      "name": "The May 3rd Session",
+      "start": "2020-05-03",
+      "end": "2020-05-03",
+      "days": 1,
+      "track_count": 1,
+      "total_plays": 5008,
+      "avg_plays_per_track": 5008.0,
+      "era_id": "the-prolific-year",
+      "era_name": "The Prolific Year",
+      "era_deep_dive": "eras/the-prolific-year.html",
+      "loudest": {
+        "title": "used to be messy prod. DeepHartt",
+        "plays": 5008,
+        "date": "2020-05-03",
+        "page": "releases/used-to-be-messy-prod-deephartt.html"
+      },
+      "deepest_cut": {
+        "title": "used to be messy prod. DeepHartt",
+        "plays": 5008,
+        "date": "2020-05-03",
+        "page": "releases/used-to-be-messy-prod-deephartt.html"
+      },
+      "collaborators": [],
+      "deep_dive": null,
+      "journey": "transmission.html#era-the-prolific-year",
+      "play_profile": [
+        {
+          "title": "used to be messy prod. DeepHartt",
+          "date": "2020-05-03",
+          "plays": 5008,
+          "page": "releases/used-to-be-messy-prod-deephartt.html"
+        }
+      ],
+      "profile_note": "Play profile: each transmission's lifetime plays in upload order from the single 2026-10-11 snapshot. Not a trajectory - earlier tracks have had longer to accumulate plays, and one snapshot cannot show change over time.",
+      "families": []
+    },
+    {
+      "id": "session-31",
+      "name": "The June 18th Session",
+      "start": "2020-06-18",
+      "end": "2020-06-18",
+      "days": 1,
+      "track_count": 1,
+      "total_plays": 706,
+      "avg_plays_per_track": 706.0,
+      "era_id": "the-prolific-year",
+      "era_name": "The Prolific Year",
+      "era_deep_dive": "eras/the-prolific-year.html",
+      "loudest": {
+        "title": "fleeting [prod. AURA]",
+        "plays": 706,
+        "date": "2020-06-18",
+        "page": "releases/fleeting-prod-aura.html"
+      },
+      "deepest_cut": {
+        "title": "fleeting [prod. AURA]",
+        "plays": 706,
+        "date": "2020-06-18",
+        "page": "releases/fleeting-prod-aura.html"
+      },
+      "collaborators": [],
+      "deep_dive": null,
+      "journey": "transmission.html#era-the-prolific-year",
+      "play_profile": [
+        {
+          "title": "fleeting [prod. AURA]",
+          "date": "2020-06-18",
+          "plays": 706,
+          "page": "releases/fleeting-prod-aura.html"
+        }
+      ],
+      "profile_note": "Play profile: each transmission's lifetime plays in upload order from the single 2026-10-11 snapshot. Not a trajectory - earlier tracks have had longer to accumulate plays, and one snapshot cannot show change over time.",
+      "families": []
+    },
+    {
+      "id": "session-32",
+      "name": "The October 7th Session",
+      "start": "2020-10-07",
+      "end": "2020-10-07",
+      "days": 1,
+      "track_count": 4,
+      "total_plays": 1891,
+      "avg_plays_per_track": 472.8,
+      "era_id": "the-prolific-year",
+      "era_name": "The Prolific Year",
+      "era_deep_dive": "eras/the-prolific-year.html",
+      "loudest": {
+        "title": "playin' by the book w/ lil yu (prod. dxsh)",
+        "plays": 861,
+        "date": "2020-10-07",
+        "page": "releases/playin-by-the-book-w-lil-yu-prod-dxsh.html"
+      },
+      "deepest_cut": {
+        "title": "keep w/ phil is lonely (prod. uniquate)",
+        "plays": 244,
+        "date": "2020-10-07",
+        "page": "releases/keep-w-phil-is-lonely-prod-uniquate.html"
+      },
+      "collaborators": [
+        "lil yu",
+        "phil is lonely"
+      ],
+      "deep_dive": null,
+      "journey": "transmission.html#era-the-prolific-year",
+      "play_profile": [
+        {
+          "title": "white fire (prod. odece)",
+          "date": "2020-10-07",
+          "plays": 450,
+          "page": "releases/white-fire-prod-odece.html"
+        },
+        {
+          "title": "playin' by the book w/ lil yu (prod. dxsh)",
+          "date": "2020-10-07",
+          "plays": 861,
+          "page": "releases/playin-by-the-book-w-lil-yu-prod-dxsh.html"
+        },
+        {
+          "title": "keep w/ phil is lonely (prod. uniquate)",
+          "date": "2020-10-07",
+          "plays": 244,
+          "page": "releases/keep-w-phil-is-lonely-prod-uniquate.html"
+        },
+        {
+          "title": "never pick it up (prod. fearbanquo)",
+          "date": "2020-10-07",
+          "plays": 336,
+          "page": "releases/never-pick-it-up-prod-fearbanquo.html"
+        }
+      ],
+      "profile_note": "Play profile: each transmission's lifetime plays in upload order from the single 2026-10-11 snapshot. Not a trajectory - earlier tracks have had longer to accumulate plays, and one snapshot cannot show change over time.",
+      "families": [
+        {
+          "name": "Light",
+          "slug": "light",
+          "page": "codex/light.html",
+          "family_transmissions": 1,
+          "family_plays": 450
+        },
+        {
+          "name": "Fire & Water",
+          "slug": "fire-and-water",
+          "page": "codex/fire-and-water.html",
+          "family_transmissions": 1,
+          "family_plays": 450
+        }
+      ]
+    },
+    {
+      "id": "session-33",
+      "name": "The November 11th Session",
+      "start": "2020-11-11",
+      "end": "2020-11-11",
+      "days": 1,
+      "track_count": 1,
+      "total_plays": 551,
+      "avg_plays_per_track": 551.0,
+      "era_id": "the-prolific-year",
+      "era_name": "The Prolific Year",
+      "era_deep_dive": "eras/the-prolific-year.html",
+      "loudest": {
+        "title": "my fault (prod shinju)",
+        "plays": 551,
+        "date": "2020-11-11",
+        "page": "releases/my-fault-prod-shinju.html"
+      },
+      "deepest_cut": {
+        "title": "my fault (prod shinju)",
+        "plays": 551,
+        "date": "2020-11-11",
+        "page": "releases/my-fault-prod-shinju.html"
+      },
+      "collaborators": [],
+      "deep_dive": null,
+      "journey": "transmission.html#era-the-prolific-year",
+      "play_profile": [
+        {
+          "title": "my fault (prod shinju)",
+          "date": "2020-11-11",
+          "plays": 551,
+          "page": "releases/my-fault-prod-shinju.html"
+        }
+      ],
+      "profile_note": "Play profile: each transmission's lifetime plays in upload order from the single 2026-10-11 snapshot. Not a trajectory - earlier tracks have had longer to accumulate plays, and one snapshot cannot show change over time.",
+      "families": []
+    },
+    {
+      "id": "session-34",
+      "name": "The December 21st Session",
+      "start": "2020-12-21",
+      "end": "2020-12-21",
+      "days": 1,
+      "track_count": 7,
+      "total_plays": 2426,
+      "avg_plays_per_track": 346.6,
+      "era_id": "the-prolific-year",
+      "era_name": "The Prolific Year",
+      "era_deep_dive": "eras/the-prolific-year.html",
+      "loudest": {
+        "title": "Lunch Break (prod wetgropes)",
+        "plays": 677,
+        "date": "2020-12-21",
+        "page": "releases/lunch-break-prod-wetgropes.html"
+      },
+      "deepest_cut": {
+        "title": "They Talk (prod. wetgropes)",
+        "plays": 176,
+        "date": "2020-12-21",
+        "page": "releases/they-talk-prod-wetgropes.html"
+      },
+      "collaborators": [],
+      "deep_dive": "sessions/the-december-21st-session.html",
+      "journey": "transmission.html#era-the-prolific-year",
+      "play_profile": [
+        {
+          "title": "Lunch Break (prod wetgropes)",
+          "date": "2020-12-21",
+          "plays": 677,
+          "page": "releases/lunch-break-prod-wetgropes.html"
+        },
+        {
+          "title": "Decent (prod. venus)",
+          "date": "2020-12-21",
+          "plays": 355,
+          "page": "releases/decent-prod-venus.html"
+        },
+        {
+          "title": "'Til Ur Sad Again (prod. wetgropes)",
+          "date": "2020-12-21",
+          "plays": 345,
+          "page": "releases/til-ur-sad-again-prod-wetgropes.html"
+        },
+        {
+          "title": "They Talk (prod. wetgropes)",
+          "date": "2020-12-21",
+          "plays": 176,
+          "page": "releases/they-talk-prod-wetgropes.html"
+        },
+        {
+          "title": "Elf Anthem Interlude (prod. capsctrl)",
+          "date": "2020-12-21",
+          "plays": 232,
+          "page": "releases/elf-anthem-interlude-prod-capsctrl.html"
+        },
+        {
+          "title": "Added Up (prod. pink)",
+          "date": "2020-12-21",
+          "plays": 292,
+          "page": "releases/added-up-prod-pink.html"
+        },
+        {
+          "title": "I'm Not Looking For Love Anyway",
+          "date": "2020-12-21",
+          "plays": 349,
+          "page": "releases/i-m-not-looking-for-love-anyway.html"
+        }
+      ],
+      "profile_note": "Play profile: each transmission's lifetime plays in upload order from the single 2026-10-11 snapshot. Not a trajectory - earlier tracks have had longer to accumulate plays, and one snapshot cannot show change over time.",
+      "families": [
+        {
+          "name": "The Rites",
+          "slug": "the-rites",
+          "page": "codex/the-rites.html",
+          "family_transmissions": 1,
+          "family_plays": 232
+        }
+      ]
+    },
+    {
+      "id": "session-35",
+      "name": "The July 14th Session",
+      "start": "2021-07-14",
+      "end": "2021-07-14",
+      "days": 1,
+      "track_count": 13,
+      "total_plays": 2704,
+      "avg_plays_per_track": 208.0,
+      "era_id": "the-cast-it-years",
+      "era_name": "The Cast It: Years",
+      "era_deep_dive": "eras/the-cast-it-years.html",
+      "loudest": {
+        "title": "Sunvalley Rally ft. Lilrareboy (prod. phantasie)",
+        "plays": 319,
+        "date": "2021-07-14",
+        "page": "releases/sunvalley-rally-ft-lilrareboy-prod-phantasie.html"
+      },
+      "deepest_cut": {
+        "title": "Mix Up Substances ft. Max Ferrari",
+        "plays": 151,
+        "date": "2021-07-14",
+        "page": "releases/mix-up-substances-ft-max-ferrari.html"
+      },
+      "collaborators": [
+        "Max Ferrari",
+        "Lilrareboy"
+      ],
+      "deep_dive": "sessions/the-july-14th-session.html",
+      "journey": "transmission.html#era-the-cast-it-years",
+      "play_profile": [
+        {
+          "title": "Intro (prod. astral_hp)",
+          "date": "2021-07-14",
+          "plays": 178,
+          "page": "releases/intro-prod-astral-hp.html"
+        },
+        {
+          "title": "When the World Gets Colder 3 (prod. phantasie)",
+          "date": "2021-07-14",
+          "plays": 222,
+          "page": "releases/when-the-world-gets-colder-3-prod-phantasie.html"
+        },
+        {
+          "title": "Wandavision (prod. cadence)",
+          "date": "2021-07-14",
+          "plays": 177,
+          "page": "releases/wandavision-prod-cadence.html"
+        },
+        {
+          "title": "This Feeling's Newer ft. Max Ferrari (prod. odece)",
+          "date": "2021-07-14",
+          "plays": 211,
+          "page": "releases/this-feeling-s-newer-ft-max-ferrari-prod-odece.html"
+        },
+        {
+          "title": "Got Knots ft. Max Ferrari (prod. lil biscuit)",
+          "date": "2021-07-14",
+          "plays": 174,
+          "page": "releases/got-knots-ft-max-ferrari-prod-lil-biscuit.html"
+        },
+        {
+          "title": "Only Human Pilot (prod. shinju x forty)",
+          "date": "2021-07-14",
+          "plays": 184,
+          "page": "releases/only-human-pilot-prod-shinju-x-forty.html"
+        },
+        {
+          "title": "Like the Cup (prod. ice trouble)",
+          "date": "2021-07-14",
+          "plays": 189,
+          "page": "releases/like-the-cup-prod-ice-trouble.html"
+        },
+        {
+          "title": "Mix Up Substances ft. Max Ferrari",
+          "date": "2021-07-14",
+          "plays": 151,
+          "page": "releases/mix-up-substances-ft-max-ferrari.html"
+        },
+        {
+          "title": "Sunvalley Rally ft. Lilrareboy (prod. phantasie)",
+          "date": "2021-07-14",
+          "plays": 319,
+          "page": "releases/sunvalley-rally-ft-lilrareboy-prod-phantasie.html"
+        },
+        {
+          "title": "I Can't Get Myself to Cast (prod. lil biscuit)",
+          "date": "2021-07-14",
+          "plays": 212,
+          "page": "releases/i-can-t-get-myself-to-cast-prod-lil-biscuit.html"
+        },
+        {
+          "title": "Beacon (prod. johnnyfriend)",
+          "date": "2021-07-14",
+          "plays": 253,
+          "page": "releases/beacon-prod-johnnyfriend.html"
+        },
+        {
+          "title": "Memory Complete (prod. odece)",
+          "date": "2021-07-14",
+          "plays": 224,
+          "page": "releases/memory-complete-prod-odece.html"
+        },
+        {
+          "title": "Asterisms Shine (prod. lil biscuit)",
+          "date": "2021-07-14",
+          "plays": 210,
+          "page": "releases/asterisms-shine-prod-lil-biscuit.html"
+        }
+      ],
+      "profile_note": "Play profile: each transmission's lifetime plays in upload order from the single 2026-10-11 snapshot. Not a trajectory - earlier tracks have had longer to accumulate plays, and one snapshot cannot show change over time.",
+      "families": [
+        {
+          "name": "The Castings",
+          "slug": "the-castings",
+          "page": "codex/the-castings.html",
+          "family_transmissions": 1,
+          "family_plays": 212
+        },
+        {
+          "name": "Vessels",
+          "slug": "vessels",
+          "page": "codex/vessels.html",
+          "family_transmissions": 1,
+          "family_plays": 189
+        },
+        {
+          "name": "The Rites",
+          "slug": "the-rites",
+          "page": "codex/the-rites.html",
+          "family_transmissions": 1,
+          "family_plays": 178
+        },
+        {
+          "name": "Light",
+          "slug": "light",
+          "page": "codex/light.html",
+          "family_transmissions": 1,
+          "family_plays": 210
+        },
+        {
+          "name": "The Cold",
+          "slug": "the-cold",
+          "page": "codex/the-cold.html",
+          "family_transmissions": 1,
+          "family_plays": 222
+        }
+      ]
+    },
+    {
+      "id": "session-36",
+      "name": "The February 22nd Session",
+      "start": "2022-02-22",
+      "end": "2022-02-22",
+      "days": 1,
+      "track_count": 12,
+      "total_plays": 1432,
+      "avg_plays_per_track": 119.3,
+      "era_id": "the-cast-it-years",
+      "era_name": "The Cast It: Years",
+      "era_deep_dive": "eras/the-cast-it-years.html",
+      "loudest": {
+        "title": "12 is it working?",
+        "plays": 277,
+        "date": "2022-02-22",
+        "page": "releases/12-is-it-working.html"
+      },
+      "deepest_cut": {
+        "title": "6 stop telling myself i'm not",
+        "plays": 46,
+        "date": "2022-02-22",
+        "page": "releases/6-stop-telling-myself-i-m-not.html"
+      },
+      "collaborators": [],
+      "deep_dive": "sessions/the-february-22nd-session.html",
+      "journey": "transmission.html#era-the-cast-it-years",
+      "play_profile": [
+        {
+          "title": "1 my fault",
+          "date": "2022-02-22",
+          "plays": 216,
+          "page": "releases/1-my-fault.html"
+        },
+        {
+          "title": "2 menace",
+          "date": "2022-02-22",
+          "plays": 97,
+          "page": "releases/2-menace.html"
+        },
+        {
+          "title": "3 sharpie",
+          "date": "2022-02-22",
+          "plays": 107,
+          "page": "releases/3-sharpie.html"
+        },
+        {
+          "title": "4 wrong to be",
+          "date": "2022-02-22",
+          "plays": 109,
+          "page": "releases/4-wrong-to-be.html"
+        },
+        {
+          "title": "5 bad cards",
+          "date": "2022-02-22",
+          "plays": 125,
+          "page": "releases/5-bad-cards.html"
+        },
+        {
+          "title": "6 stop telling myself i'm not",
+          "date": "2022-02-22",
+          "plays": 46,
+          "page": "releases/6-stop-telling-myself-i-m-not.html"
+        },
+        {
+          "title": "7 don't say u love me",
+          "date": "2022-02-22",
+          "plays": 69,
+          "page": "releases/7-don-t-say-u-love-me.html"
+        },
+        {
+          "title": "8 i would do mine",
+          "date": "2022-02-22",
+          "plays": 104,
+          "page": "releases/8-i-would-do-mine.html"
+        },
+        {
+          "title": "9 we grew up",
+          "date": "2022-02-22",
+          "plays": 126,
+          "page": "releases/9-we-grew-up.html"
+        },
+        {
+          "title": "10 stuck in the mix v2",
+          "date": "2022-02-22",
+          "plays": 58,
+          "page": "releases/10-stuck-in-the-mix-v2.html"
+        },
+        {
+          "title": "11 dismissed",
+          "date": "2022-02-22",
+          "plays": 98,
+          "page": "releases/11-dismissed.html"
+        },
+        {
+          "title": "12 is it working?",
+          "date": "2022-02-22",
+          "plays": 277,
+          "page": "releases/12-is-it-working.html"
+        }
+      ],
+      "profile_note": "Play profile: each transmission's lifetime plays in upload order from the single 2026-10-11 snapshot. Not a trajectory - earlier tracks have had longer to accumulate plays, and one snapshot cannot show change over time.",
+      "families": []
+    },
+    {
+      "id": "session-37",
+      "name": "The August 29th Session",
+      "start": "2023-08-29",
+      "end": "2023-08-29",
+      "days": 1,
+      "track_count": 3,
+      "total_plays": 1280,
+      "avg_plays_per_track": 426.7,
+      "era_id": "the-somelowlifes-era",
+      "era_name": "The SomeLowLifes Era",
+      "era_deep_dive": "eras/the-somelowlifes-era.html",
+      "loudest": {
+        "title": "Clock In The Benz w/ Lil Yu prod shinju",
+        "plays": 725,
+        "date": "2023-08-29",
+        "page": "releases/clock-in-the-benz-w-lil-yu-prod-shinju.html"
+      },
+      "deepest_cut": {
+        "title": "9 Trips",
+        "plays": 262,
+        "date": "2023-08-29",
+        "page": "releases/9-trips-2.html"
+      },
+      "collaborators": [
+        "Lil Yu"
+      ],
+      "deep_dive": null,
+      "journey": "transmission.html#era-the-somelowlifes-era",
+      "play_profile": [
+        {
+          "title": "Clock In The Benz w/ Lil Yu prod shinju",
+          "date": "2023-08-29",
+          "plays": 725,
+          "page": "releases/clock-in-the-benz-w-lil-yu-prod-shinju.html"
+        },
+        {
+          "title": "9 Trips",
+          "date": "2023-08-29",
+          "plays": 262,
+          "page": "releases/9-trips-2.html"
+        },
+        {
+          "title": "Writing Books But I Cant Read Em",
+          "date": "2023-08-29",
+          "plays": 293,
+          "page": "releases/writing-books-but-i-cant-read-em.html"
+        }
+      ],
+      "profile_note": "Play profile: each transmission's lifetime plays in upload order from the single 2026-10-11 snapshot. Not a trajectory - earlier tracks have had longer to accumulate plays, and one snapshot cannot show change over time.",
+      "families": [
+        {
+          "name": "Journeys",
+          "slug": "journeys",
+          "page": "codex/journeys.html",
+          "family_transmissions": 1,
+          "family_plays": 262
+        }
+      ]
+    },
+    {
+      "id": "session-38",
+      "name": "The October 8th Session",
+      "start": "2023-10-08",
+      "end": "2023-10-08",
+      "days": 1,
+      "track_count": 2,
+      "total_plays": 468,
+      "avg_plays_per_track": 234.0,
+      "era_id": "the-somelowlifes-era",
+      "era_name": "The SomeLowLifes Era",
+      "era_deep_dive": "eras/the-somelowlifes-era.html",
+      "loudest": {
+        "title": "Crazy Around The World",
+        "plays": 235,
+        "date": "2023-10-08",
+        "page": "releases/crazy-around-the-world.html"
+      },
+      "deepest_cut": {
+        "title": "I Cannot Be Ignored Much Longer U Hurt Me Real Bad",
+        "plays": 233,
+        "date": "2023-10-08",
+        "page": "releases/i-cannot-be-ignored-much-longer-u-hurt-me-real-bad.html"
+      },
+      "collaborators": [],
+      "deep_dive": null,
+      "journey": "transmission.html#era-the-somelowlifes-era",
+      "play_profile": [
+        {
+          "title": "Crazy Around The World",
+          "date": "2023-10-08",
+          "plays": 235,
+          "page": "releases/crazy-around-the-world.html"
+        },
+        {
+          "title": "I Cannot Be Ignored Much Longer U Hurt Me Real Bad",
+          "date": "2023-10-08",
+          "plays": 233,
+          "page": "releases/i-cannot-be-ignored-much-longer-u-hurt-me-real-bad.html"
+        }
+      ],
+      "profile_note": "Play profile: each transmission's lifetime plays in upload order from the single 2026-10-11 snapshot. Not a trajectory - earlier tracks have had longer to accumulate plays, and one snapshot cannot show change over time.",
+      "families": []
+    },
+    {
+      "id": "session-39",
+      "name": "The October 20th–21st Session",
+      "start": "2023-10-20",
+      "end": "2023-10-21",
+      "days": 2,
+      "track_count": 2,
+      "total_plays": 830,
+      "avg_plays_per_track": 415.0,
+      "era_id": "the-somelowlifes-era",
+      "era_name": "The SomeLowLifes Era",
+      "era_deep_dive": "eras/the-somelowlifes-era.html",
+      "loudest": {
+        "title": "Warrior Returning Alive [@Melokajj]",
+        "plays": 614,
+        "date": "2023-10-21",
+        "page": "releases/warrior-returning-alive-melokajj.html"
+      },
+      "deepest_cut": {
+        "title": "no WAY!!??",
+        "plays": 216,
+        "date": "2023-10-20",
+        "page": "releases/no-way.html"
+      },
+      "collaborators": [],
+      "deep_dive": null,
+      "journey": "transmission.html#era-the-somelowlifes-era",
+      "play_profile": [
+        {
+          "title": "no WAY!!??",
+          "date": "2023-10-20",
+          "plays": 216,
+          "page": "releases/no-way.html"
+        },
+        {
+          "title": "Warrior Returning Alive [@Melokajj]",
+          "date": "2023-10-21",
+          "plays": 614,
+          "page": "releases/warrior-returning-alive-melokajj.html"
+        }
+      ],
+      "profile_note": "Play profile: each transmission's lifetime plays in upload order from the single 2026-10-11 snapshot. Not a trajectory - earlier tracks have had longer to accumulate plays, and one snapshot cannot show change over time.",
+      "families": []
+    },
+    {
+      "id": "session-40",
+      "name": "The November 3rd–12th Session",
+      "start": "2023-11-03",
+      "end": "2023-11-12",
+      "days": 10,
+      "track_count": 19,
+      "total_plays": 7601,
+      "avg_plays_per_track": 400.1,
+      "era_id": "the-somelowlifes-era",
+      "era_name": "The SomeLowLifes Era",
+      "era_deep_dive": "eras/the-somelowlifes-era.html",
+      "loudest": {
+        "title": "On Our Way (Baseline)",
+        "plays": 696,
+        "date": "2023-11-12",
+        "page": "releases/on-our-way-baseline.html"
+      },
+      "deepest_cut": {
+        "title": "For Brian (Neck Deep) outro [produced by AWFL]",
+        "plays": 43,
+        "date": "2023-11-12",
+        "page": "releases/for-brian-neck-deep-outro-produced-by-awfl.html"
+      },
+      "collaborators": [],
+      "deep_dive": "sessions/the-november-3rd-12th-session.html",
+      "journey": "transmission.html#era-the-somelowlifes-era",
+      "play_profile": [
+        {
+          "title": "Hidden Lakes Backpack [@Yurkswag]",
+          "date": "2023-11-03",
+          "plays": 381,
+          "page": "releases/hidden-lakes-backpack-yurkswag.html"
+        },
+        {
+          "title": "Long Day (End Task) outro [@Staaaas.ily]",
+          "date": "2023-11-10",
+          "plays": 519,
+          "page": "releases/long-day-end-task-outro-staaaas-ily.html"
+        },
+        {
+          "title": "On Our Way (Baseline)",
+          "date": "2023-11-12",
+          "plays": 696,
+          "page": "releases/on-our-way-baseline.html"
+        },
+        {
+          "title": "Cast OUT!!!",
+          "date": "2023-11-12",
+          "plays": 481,
+          "page": "releases/cast-out-2.html"
+        },
+        {
+          "title": "One Piece X Sketchers",
+          "date": "2023-11-12",
+          "plays": 437,
+          "page": "releases/one-piece-x-sketchers.html"
+        },
+        {
+          "title": "Good Turns Bad Freestyle",
+          "date": "2023-11-12",
+          "plays": 482,
+          "page": "releases/good-turns-bad-freestyle.html"
+        },
+        {
+          "title": "Playing Pretend :)",
+          "date": "2023-11-12",
+          "plays": 565,
+          "page": "releases/playing-pretend.html"
+        },
+        {
+          "title": "Attack!!! intro",
+          "date": "2023-11-12",
+          "plays": 501,
+          "page": "releases/attack-intro.html"
+        },
+        {
+          "title": "Attack!!! 2",
+          "date": "2023-11-12",
+          "plays": 150,
+          "page": "releases/attack-2.html"
+        },
+        {
+          "title": "12 ÷ 4 (Eckhart's Plea)",
+          "date": "2023-11-12",
+          "plays": 342,
+          "page": "releases/12-4-eckhart-s-plea.html"
+        },
+        {
+          "title": "Fleeting n' Geekinggg",
+          "date": "2023-11-12",
+          "plays": 682,
+          "page": "releases/fleeting-n-geekinggg.html"
+        },
+        {
+          "title": "i been in tha AIR",
+          "date": "2023-11-12",
+          "plays": 432,
+          "page": "releases/i-been-in-tha-air.html"
+        },
+        {
+          "title": "Day Comes Freestyle",
+          "date": "2023-11-12",
+          "plays": 210,
+          "page": "releases/day-comes-freestyle.html"
+        },
+        {
+          "title": "I Just Got Lost In The City xD",
+          "date": "2023-11-12",
+          "plays": 206,
+          "page": "releases/i-just-got-lost-in-the-city-xd.html"
+        },
+        {
+          "title": "This Is Why I Hate Mirrors",
+          "date": "2023-11-12",
+          "plays": 242,
+          "page": "releases/this-is-why-i-hate-mirrors.html"
+        },
+        {
+          "title": "6 AM In Da Bay Interlude",
+          "date": "2023-11-12",
+          "plays": 488,
+          "page": "releases/6-am-in-da-bay-interlude.html"
+        },
+        {
+          "title": "Do It Againnn",
+          "date": "2023-11-12",
+          "plays": 269,
+          "page": "releases/do-it-againnn.html"
+        },
+        {
+          "title": "No Lullaby :/",
+          "date": "2023-11-12",
+          "plays": 475,
+          "page": "releases/no-lullaby.html"
+        },
+        {
+          "title": "For Brian (Neck Deep) outro [produced by AWFL]",
+          "date": "2023-11-12",
+          "plays": 43,
+          "page": "releases/for-brian-neck-deep-outro-produced-by-awfl.html"
+        }
+      ],
+      "profile_note": "Play profile: each transmission's lifetime plays in upload order from the single 2026-10-11 snapshot. Not a trajectory - earlier tracks have had longer to accumulate plays, and one snapshot cannot show change over time.",
+      "families": [
+        {
+          "name": "The Castings",
+          "slug": "the-castings",
+          "page": "codex/the-castings.html",
+          "family_transmissions": 1,
+          "family_plays": 481
+        },
+        {
+          "name": "The Rites",
+          "slug": "the-rites",
+          "page": "codex/the-rites.html",
+          "family_transmissions": 6,
+          "family_plays": 2243
+        }
+      ]
+    },
+    {
+      "id": "session-41",
+      "name": "The March 27th Session",
+      "start": "2024-03-27",
+      "end": "2024-03-27",
+      "days": 1,
+      "track_count": 1,
+      "total_plays": 408,
+      "avg_plays_per_track": 408.0,
+      "era_id": "the-somelowlifes-era",
+      "era_name": "The SomeLowLifes Era",
+      "era_deep_dive": "eras/the-somelowlifes-era.html",
+      "loudest": {
+        "title": "Dark City Destiny @dxcember13 @rudey0on10",
+        "plays": 408,
+        "date": "2024-03-27",
+        "page": "releases/dark-city-destiny-dxcember13-rudey0on10.html"
+      },
+      "deepest_cut": {
+        "title": "Dark City Destiny @dxcember13 @rudey0on10",
+        "plays": 408,
+        "date": "2024-03-27",
+        "page": "releases/dark-city-destiny-dxcember13-rudey0on10.html"
+      },
+      "collaborators": [],
+      "deep_dive": null,
+      "journey": "transmission.html#era-the-somelowlifes-era",
+      "play_profile": [
+        {
+          "title": "Dark City Destiny @dxcember13 @rudey0on10",
+          "date": "2024-03-27",
+          "plays": 408,
+          "page": "releases/dark-city-destiny-dxcember13-rudey0on10.html"
+        }
+      ],
+      "profile_note": "Play profile: each transmission's lifetime plays in upload order from the single 2026-10-11 snapshot. Not a trajectory - earlier tracks have had longer to accumulate plays, and one snapshot cannot show change over time.",
+      "families": [
+        {
+          "name": "Dark",
+          "slug": "dark",
+          "page": "codex/dark.html",
+          "family_transmissions": 1,
+          "family_plays": 408
+        }
+      ]
+    },
+    {
+      "id": "session-42",
+      "name": "The April 4th–7th Session",
+      "start": "2024-04-04",
+      "end": "2024-04-07",
+      "days": 4,
+      "track_count": 3,
+      "total_plays": 1035,
+      "avg_plays_per_track": 345.0,
+      "era_id": "the-somelowlifes-era",
+      "era_name": "The SomeLowLifes Era",
+      "era_deep_dive": "eras/the-somelowlifes-era.html",
+      "loudest": {
+        "title": "MRari inna Beanstalk w/ Max Ferrari (@mvvi468)",
+        "plays": 515,
+        "date": "2024-04-05",
+        "page": "releases/mrari-inna-beanstalk-w-max-ferrari-mvvi468.html"
+      },
+      "deepest_cut": {
+        "title": "Reachhh (Prawjex x Jordaan)",
+        "plays": 189,
+        "date": "2024-04-07",
+        "page": "releases/reachhh-prawjex-x-jordaan.html"
+      },
+      "collaborators": [
+        "Max Ferrari"
+      ],
+      "deep_dive": null,
+      "journey": "transmission.html#era-the-somelowlifes-era",
+      "play_profile": [
+        {
+          "title": "Early Morning (Yukiidaruma X Fumiko)",
+          "date": "2024-04-04",
+          "plays": 331,
+          "page": "releases/early-morning-yukiidaruma-x-fumiko.html"
+        },
+        {
+          "title": "MRari inna Beanstalk w/ Max Ferrari (@mvvi468)",
+          "date": "2024-04-05",
+          "plays": 515,
+          "page": "releases/mrari-inna-beanstalk-w-max-ferrari-mvvi468.html"
+        },
+        {
+          "title": "Reachhh (Prawjex x Jordaan)",
+          "date": "2024-04-07",
+          "plays": 189,
+          "page": "releases/reachhh-prawjex-x-jordaan.html"
+        }
+      ],
+      "profile_note": "Play profile: each transmission's lifetime plays in upload order from the single 2026-10-11 snapshot. Not a trajectory - earlier tracks have had longer to accumulate plays, and one snapshot cannot show change over time.",
+      "families": []
+    },
+    {
+      "id": "session-43",
+      "name": "The April 16th–18th Session",
+      "start": "2024-04-16",
+      "end": "2024-04-18",
+      "days": 3,
+      "track_count": 2,
+      "total_plays": 167,
+      "avg_plays_per_track": 83.5,
+      "era_id": "the-somelowlifes-era",
+      "era_name": "The SomeLowLifes Era",
+      "era_deep_dive": "eras/the-somelowlifes-era.html",
+      "loudest": {
+        "title": "u Not at the Table (Sunsetzer0) #litemode",
+        "plays": 139,
+        "date": "2024-04-18",
+        "page": "releases/u-not-at-the-table-sunsetzer0-litemode.html"
+      },
+      "deepest_cut": {
+        "title": "Im tha Bouncerrr prod. sustain",
+        "plays": 28,
+        "date": "2024-04-16",
+        "page": "releases/im-tha-bouncerrr-prod-sustain.html"
+      },
+      "collaborators": [],
+      "deep_dive": null,
+      "journey": "transmission.html#era-the-somelowlifes-era",
+      "play_profile": [
+        {
+          "title": "Im tha Bouncerrr prod. sustain",
+          "date": "2024-04-16",
+          "plays": 28,
+          "page": "releases/im-tha-bouncerrr-prod-sustain.html"
+        },
+        {
+          "title": "u Not at the Table (Sunsetzer0) #litemode",
+          "date": "2024-04-18",
+          "plays": 139,
+          "page": "releases/u-not-at-the-table-sunsetzer0-litemode.html"
+        }
+      ],
+      "profile_note": "Play profile: each transmission's lifetime plays in upload order from the single 2026-10-11 snapshot. Not a trajectory - earlier tracks have had longer to accumulate plays, and one snapshot cannot show change over time.",
+      "families": [
+        {
+          "name": "The Modes",
+          "slug": "the-modes",
+          "page": "codex/the-modes.html",
+          "family_transmissions": 1,
+          "family_plays": 139
+        }
+      ]
+    },
+    {
+      "id": "session-44",
+      "name": "The May 2nd–3rd Session",
+      "start": "2024-05-02",
+      "end": "2024-05-03",
+      "days": 2,
+      "track_count": 2,
+      "total_plays": 452,
+      "avg_plays_per_track": 226.0,
+      "era_id": "the-somelowlifes-era",
+      "era_name": "The SomeLowLifes Era",
+      "era_deep_dive": "eras/the-somelowlifes-era.html",
+      "loudest": {
+        "title": "P1aced a Ward (prodbygus)",
+        "plays": 275,
+        "date": "2024-05-02",
+        "page": "releases/p1aced-a-ward-prodbygus.html"
+      },
+      "deepest_cut": {
+        "title": "i Was in Attics prod. Ochoo",
+        "plays": 177,
+        "date": "2024-05-03",
+        "page": "releases/i-was-in-attics-prod-ochoo.html"
+      },
+      "collaborators": [],
+      "deep_dive": null,
+      "journey": "transmission.html#era-the-somelowlifes-era",
+      "play_profile": [
+        {
+          "title": "P1aced a Ward (prodbygus)",
+          "date": "2024-05-02",
+          "plays": 275,
+          "page": "releases/p1aced-a-ward-prodbygus.html"
+        },
+        {
+          "title": "i Was in Attics prod. Ochoo",
+          "date": "2024-05-03",
+          "plays": 177,
+          "page": "releases/i-was-in-attics-prod-ochoo.html"
+        }
+      ],
+      "profile_note": "Play profile: each transmission's lifetime plays in upload order from the single 2026-10-11 snapshot. Not a trajectory - earlier tracks have had longer to accumulate plays, and one snapshot cannot show change over time.",
+      "families": [
+        {
+          "name": "Wards & the Spirit",
+          "slug": "wards-and-the-spirit",
+          "page": "codex/wards-and-the-spirit.html",
+          "family_transmissions": 1,
+          "family_plays": 275
+        }
+      ]
+    },
+    {
+      "id": "session-45",
+      "name": "The May 22nd–31st Session",
+      "start": "2024-05-22",
+      "end": "2024-05-31",
+      "days": 10,
+      "track_count": 5,
+      "total_plays": 1420,
+      "avg_plays_per_track": 284.0,
+      "era_id": "the-somelowlifes-era",
+      "era_name": "The SomeLowLifes Era",
+      "era_deep_dive": "eras/the-somelowlifes-era.html",
+      "loudest": {
+        "title": "FittedUP/fadedUP prod. xtasane",
+        "plays": 358,
+        "date": "2024-05-29",
+        "page": "releases/fittedup-fadedup-prod-xtasane.html"
+      },
+      "deepest_cut": {
+        "title": "3 Points Pre Game prod. doublemulti x pinkcat #NITEMODE",
+        "plays": 170,
+        "date": "2024-05-28",
+        "page": "releases/3-points-pre-game-prod-doublemulti-x-pinkcat-nitemode.html"
+      },
+      "collaborators": [],
+      "deep_dive": null,
+      "journey": "transmission.html#era-the-somelowlifes-era",
+      "play_profile": [
+        {
+          "title": "In Trance prod. deadtalks!",
+          "date": "2024-05-22",
+          "plays": 237,
+          "page": "releases/in-trance-prod-deadtalks.html"
+        },
+        {
+          "title": "Just so U know prod. Buggy",
+          "date": "2024-05-24",
+          "plays": 347,
+          "page": "releases/just-so-u-know-prod-buggy.html"
+        },
+        {
+          "title": "3 Points Pre Game prod. doublemulti x pinkcat #NITEMODE",
+          "date": "2024-05-28",
+          "plays": 170,
+          "page": "releases/3-points-pre-game-prod-doublemulti-x-pinkcat-nitemode.html"
+        },
+        {
+          "title": "FittedUP/fadedUP prod. xtasane",
+          "date": "2024-05-29",
+          "plays": 358,
+          "page": "releases/fittedup-fadedup-prod-xtasane.html"
+        },
+        {
+          "title": "End Times Gate Code (prod @1ohmygon)",
+          "date": "2024-05-31",
+          "plays": 308,
+          "page": "releases/end-times-gate-code-prod-1ohmygon.html"
+        }
+      ],
+      "profile_note": "Play profile: each transmission's lifetime plays in upload order from the single 2026-10-11 snapshot. Not a trajectory - earlier tracks have had longer to accumulate plays, and one snapshot cannot show change over time.",
+      "families": [
+        {
+          "name": "The Modes",
+          "slug": "the-modes",
+          "page": "codex/the-modes.html",
+          "family_transmissions": 1,
+          "family_plays": 170
+        }
+      ]
+    },
+    {
+      "id": "session-46",
+      "name": "The June 16th Session",
+      "start": "2024-06-16",
+      "end": "2024-06-16",
+      "days": 1,
+      "track_count": 1,
+      "total_plays": 185,
+      "avg_plays_per_track": 185.0,
+      "era_id": "the-somelowlifes-era",
+      "era_name": "The SomeLowLifes Era",
+      "era_deep_dive": "eras/the-somelowlifes-era.html",
+      "loudest": {
+        "title": "Tri:ed (prod ysosexy)",
+        "plays": 185,
+        "date": "2024-06-16",
+        "page": "releases/tri-ed-prod-ysosexy.html"
+      },
+      "deepest_cut": {
+        "title": "Tri:ed (prod ysosexy)",
+        "plays": 185,
+        "date": "2024-06-16",
+        "page": "releases/tri-ed-prod-ysosexy.html"
+      },
+      "collaborators": [],
+      "deep_dive": null,
+      "journey": "transmission.html#era-the-somelowlifes-era",
+      "play_profile": [
+        {
+          "title": "Tri:ed (prod ysosexy)",
+          "date": "2024-06-16",
+          "plays": 185,
+          "page": "releases/tri-ed-prod-ysosexy.html"
+        }
+      ],
+      "profile_note": "Play profile: each transmission's lifetime plays in upload order from the single 2026-10-11 snapshot. Not a trajectory - earlier tracks have had longer to accumulate plays, and one snapshot cannot show change over time.",
+      "families": []
+    },
+    {
+      "id": "session-47",
+      "name": "The June 27th Session",
+      "start": "2024-06-27",
+      "end": "2024-06-27",
+      "days": 1,
+      "track_count": 1,
+      "total_plays": 286,
+      "avg_plays_per_track": 286.0,
+      "era_id": "the-somelowlifes-era",
+      "era_name": "The SomeLowLifes Era",
+      "era_deep_dive": "eras/the-somelowlifes-era.html",
+      "loudest": {
+        "title": "SSSolid (prod Kuva) *MUSIC VIDEO IN DESC*",
+        "plays": 286,
+        "date": "2024-06-27",
+        "page": "releases/sssolid-prod-kuva-music-video-in-desc.html"
+      },
+      "deepest_cut": {
+        "title": "SSSolid (prod Kuva) *MUSIC VIDEO IN DESC*",
+        "plays": 286,
+        "date": "2024-06-27",
+        "page": "releases/sssolid-prod-kuva-music-video-in-desc.html"
+      },
+      "collaborators": [],
+      "deep_dive": null,
+      "journey": "transmission.html#era-the-somelowlifes-era",
+      "play_profile": [
+        {
+          "title": "SSSolid (prod Kuva) *MUSIC VIDEO IN DESC*",
+          "date": "2024-06-27",
+          "plays": 286,
+          "page": "releases/sssolid-prod-kuva-music-video-in-desc.html"
+        }
+      ],
+      "profile_note": "Play profile: each transmission's lifetime plays in upload order from the single 2026-10-11 snapshot. Not a trajectory - earlier tracks have had longer to accumulate plays, and one snapshot cannot show change over time.",
+      "families": []
+    },
+    {
+      "id": "session-48",
+      "name": "The July 9th Session",
+      "start": "2024-07-09",
+      "end": "2024-07-09",
+      "days": 1,
+      "track_count": 1,
+      "total_plays": 275,
+      "avg_plays_per_track": 275.0,
+      "era_id": "the-somelowlifes-era",
+      "era_name": "The SomeLowLifes Era",
+      "era_deep_dive": "eras/the-somelowlifes-era.html",
+      "loudest": {
+        "title": "Sipping 1ightning prod. lunarlad",
+        "plays": 275,
+        "date": "2024-07-09",
+        "page": "releases/sipping-1ightning-prod-lunarlad.html"
+      },
+      "deepest_cut": {
+        "title": "Sipping 1ightning prod. lunarlad",
+        "plays": 275,
+        "date": "2024-07-09",
+        "page": "releases/sipping-1ightning-prod-lunarlad.html"
+      },
+      "collaborators": [],
+      "deep_dive": null,
+      "journey": "transmission.html#era-the-somelowlifes-era",
+      "play_profile": [
+        {
+          "title": "Sipping 1ightning prod. lunarlad",
+          "date": "2024-07-09",
+          "plays": 275,
+          "page": "releases/sipping-1ightning-prod-lunarlad.html"
+        }
+      ],
+      "profile_note": "Play profile: each transmission's lifetime plays in upload order from the single 2026-10-11 snapshot. Not a trajectory - earlier tracks have had longer to accumulate plays, and one snapshot cannot show change over time.",
+      "families": [
+        {
+          "name": "Light",
+          "slug": "light",
+          "page": "codex/light.html",
+          "family_transmissions": 1,
+          "family_plays": 275
+        }
+      ]
+    },
+    {
+      "id": "session-49",
+      "name": "The August 30th Session",
+      "start": "2024-08-30",
+      "end": "2024-08-30",
+      "days": 1,
+      "track_count": 1,
+      "total_plays": 206,
+      "avg_plays_per_track": 206.0,
+      "era_id": "the-somelowlifes-era",
+      "era_name": "The SomeLowLifes Era",
+      "era_deep_dive": "eras/the-somelowlifes-era.html",
+      "loudest": {
+        "title": "every nite, blessings (prod meutry)",
+        "plays": 206,
+        "date": "2024-08-30",
+        "page": "releases/every-nite-blessings-prod-meutry.html"
+      },
+      "deepest_cut": {
+        "title": "every nite, blessings (prod meutry)",
+        "plays": 206,
+        "date": "2024-08-30",
+        "page": "releases/every-nite-blessings-prod-meutry.html"
+      },
+      "collaborators": [],
+      "deep_dive": null,
+      "journey": "transmission.html#era-the-somelowlifes-era",
+      "play_profile": [
+        {
+          "title": "every nite, blessings (prod meutry)",
+          "date": "2024-08-30",
+          "plays": 206,
+          "page": "releases/every-nite-blessings-prod-meutry.html"
+        }
+      ],
+      "profile_note": "Play profile: each transmission's lifetime plays in upload order from the single 2026-10-11 snapshot. Not a trajectory - earlier tracks have had longer to accumulate plays, and one snapshot cannot show change over time.",
+      "families": []
+    },
+    {
+      "id": "session-50",
+      "name": "The September 18th Session",
+      "start": "2024-09-18",
+      "end": "2024-09-18",
+      "days": 1,
+      "track_count": 1,
+      "total_plays": 175,
+      "avg_plays_per_track": 175.0,
+      "era_id": "the-somelowlifes-era",
+      "era_name": "The SomeLowLifes Era",
+      "era_deep_dive": "eras/the-somelowlifes-era.html",
+      "loudest": {
+        "title": "like my dogs!!! (prod waynn)",
+        "plays": 175,
+        "date": "2024-09-18",
+        "page": "releases/like-my-dogs-prod-waynn.html"
+      },
+      "deepest_cut": {
+        "title": "like my dogs!!! (prod waynn)",
+        "plays": 175,
+        "date": "2024-09-18",
+        "page": "releases/like-my-dogs-prod-waynn.html"
+      },
+      "collaborators": [],
+      "deep_dive": null,
+      "journey": "transmission.html#era-the-somelowlifes-era",
+      "play_profile": [
+        {
+          "title": "like my dogs!!! (prod waynn)",
+          "date": "2024-09-18",
+          "plays": 175,
+          "page": "releases/like-my-dogs-prod-waynn.html"
+        }
+      ],
+      "profile_note": "Play profile: each transmission's lifetime plays in upload order from the single 2026-10-11 snapshot. Not a trajectory - earlier tracks have had longer to accumulate plays, and one snapshot cannot show change over time.",
+      "families": [
+        {
+          "name": "The Pack",
+          "slug": "the-pack",
+          "page": "codex/the-pack.html",
+          "family_transmissions": 1,
+          "family_plays": 175
+        }
+      ]
+    },
+    {
+      "id": "session-51",
+      "name": "The October 4th Session",
+      "start": "2024-10-04",
+      "end": "2024-10-04",
+      "days": 1,
+      "track_count": 1,
+      "total_plays": 177,
+      "avg_plays_per_track": 177.0,
+      "era_id": "the-somelowlifes-era",
+      "era_name": "The SomeLowLifes Era",
+      "era_deep_dive": "eras/the-somelowlifes-era.html",
+      "loudest": {
+        "title": "ViiXX (prod skrrtur)",
+        "plays": 177,
+        "date": "2024-10-04",
+        "page": "releases/viixx-prod-skrrtur.html"
+      },
+      "deepest_cut": {
+        "title": "ViiXX (prod skrrtur)",
+        "plays": 177,
+        "date": "2024-10-04",
+        "page": "releases/viixx-prod-skrrtur.html"
+      },
+      "collaborators": [],
+      "deep_dive": null,
+      "journey": "transmission.html#era-the-somelowlifes-era",
+      "play_profile": [
+        {
+          "title": "ViiXX (prod skrrtur)",
+          "date": "2024-10-04",
+          "plays": 177,
+          "page": "releases/viixx-prod-skrrtur.html"
+        }
+      ],
+      "profile_note": "Play profile: each transmission's lifetime plays in upload order from the single 2026-10-11 snapshot. Not a trajectory - earlier tracks have had longer to accumulate plays, and one snapshot cannot show change over time.",
+      "families": []
+    },
+    {
+      "id": "session-52",
+      "name": "The November 5th Session",
+      "start": "2024-11-05",
+      "end": "2024-11-05",
+      "days": 1,
+      "track_count": 1,
+      "total_plays": 17,
+      "avg_plays_per_track": 17.0,
+      "era_id": "the-somelowlifes-era",
+      "era_name": "The SomeLowLifes Era",
+      "era_deep_dive": "eras/the-somelowlifes-era.html",
+      "loudest": {
+        "title": "nitemode2019 w/ Max+Vetty prod. NaXi.wav",
+        "plays": 17,
+        "date": "2024-11-05",
+        "page": "releases/nitemode2019-w-max-vetty-prod-naxi-wav.html"
+      },
+      "deepest_cut": {
+        "title": "nitemode2019 w/ Max+Vetty prod. NaXi.wav",
+        "plays": 17,
+        "date": "2024-11-05",
+        "page": "releases/nitemode2019-w-max-vetty-prod-naxi-wav.html"
+      },
+      "collaborators": [
+        "Max",
+        "Vetty"
+      ],
+      "deep_dive": null,
+      "journey": "transmission.html#era-the-somelowlifes-era",
+      "play_profile": [
+        {
+          "title": "nitemode2019 w/ Max+Vetty prod. NaXi.wav",
+          "date": "2024-11-05",
+          "plays": 17,
+          "page": "releases/nitemode2019-w-max-vetty-prod-naxi-wav.html"
+        }
+      ],
+      "profile_note": "Play profile: each transmission's lifetime plays in upload order from the single 2026-10-11 snapshot. Not a trajectory - earlier tracks have had longer to accumulate plays, and one snapshot cannot show change over time.",
+      "families": [
+        {
+          "name": "The Modes",
+          "slug": "the-modes",
+          "page": "codex/the-modes.html",
+          "family_transmissions": 1,
+          "family_plays": 17
+        }
+      ]
+    },
+    {
+      "id": "session-53",
+      "name": "The January 9th Session",
+      "start": "2025-01-09",
+      "end": "2025-01-09",
+      "days": 1,
+      "track_count": 1,
+      "total_plays": 222,
+      "avg_plays_per_track": 222.0,
+      "era_id": "the-silence",
+      "era_name": "The Silence",
+      "era_deep_dive": "eras/the-silence.html",
+      "loudest": {
+        "title": "oh We11 (prod Vuksai)",
+        "plays": 222,
+        "date": "2025-01-09",
+        "page": "releases/oh-we11-prod-vuksai.html"
+      },
+      "deepest_cut": {
+        "title": "oh We11 (prod Vuksai)",
+        "plays": 222,
+        "date": "2025-01-09",
+        "page": "releases/oh-we11-prod-vuksai.html"
+      },
+      "collaborators": [],
+      "deep_dive": null,
+      "journey": "transmission.html#era-the-silence",
+      "play_profile": [
+        {
+          "title": "oh We11 (prod Vuksai)",
+          "date": "2025-01-09",
+          "plays": 222,
+          "page": "releases/oh-we11-prod-vuksai.html"
+        }
+      ],
+      "profile_note": "Play profile: each transmission's lifetime plays in upload order from the single 2026-10-11 snapshot. Not a trajectory - earlier tracks have had longer to accumulate plays, and one snapshot cannot show change over time.",
+      "families": []
+    },
+    {
+      "id": "session-54",
+      "name": "The September 13th–14th Session",
+      "start": "2025-09-13",
+      "end": "2025-09-14",
+      "days": 2,
+      "track_count": 2,
+      "total_plays": 384,
+      "avg_plays_per_track": 192.0,
+      "era_id": "the-silence",
+      "era_name": "The Silence",
+      "era_deep_dive": "eras/the-silence.html",
+      "loudest": {
+        "title": "switch (prod fiftyzeros)",
+        "plays": 206,
+        "date": "2025-09-14",
+        "page": "releases/switch-prod-fiftyzeros.html"
+      },
+      "deepest_cut": {
+        "title": "water + sun (prod paris pas rigolo)",
+        "plays": 178,
+        "date": "2025-09-13",
+        "page": "releases/water-sun-prod-paris-pas-rigolo.html"
+      },
+      "collaborators": [],
+      "deep_dive": null,
+      "journey": "transmission.html#era-the-silence",
+      "play_profile": [
+        {
+          "title": "water + sun (prod paris pas rigolo)",
+          "date": "2025-09-13",
+          "plays": 178,
+          "page": "releases/water-sun-prod-paris-pas-rigolo.html"
+        },
+        {
+          "title": "switch (prod fiftyzeros)",
+          "date": "2025-09-14",
+          "plays": 206,
+          "page": "releases/switch-prod-fiftyzeros.html"
+        }
+      ],
+      "profile_note": "Play profile: each transmission's lifetime plays in upload order from the single 2026-10-11 snapshot. Not a trajectory - earlier tracks have had longer to accumulate plays, and one snapshot cannot show change over time.",
+      "families": [
+        {
+          "name": "Light",
+          "slug": "light",
+          "page": "codex/light.html",
+          "family_transmissions": 1,
+          "family_plays": 178
+        },
+        {
+          "name": "Fire & Water",
+          "slug": "fire-and-water",
+          "page": "codex/fire-and-water.html",
+          "family_transmissions": 1,
+          "family_plays": 178
+        }
+      ]
+    },
+    {
+      "id": "session-55",
+      "name": "The November 4th–11th Session",
+      "start": "2025-11-04",
+      "end": "2025-11-11",
+      "days": 8,
+      "track_count": 11,
+      "total_plays": 2029,
+      "avg_plays_per_track": 184.5,
+      "era_id": "the-silence",
+      "era_name": "The Silence",
+      "era_deep_dive": "eras/the-silence.html",
+      "loudest": {
+        "title": "Sti11 waiting/tunnel freestyle w/ Max Ferrari prod. suli",
+        "plays": 300,
+        "date": "2025-11-11",
+        "page": "releases/sti11-waiting-tunnel-freestyle-w-max-ferrari-prod-suli.html"
+      },
+      "deepest_cut": {
+        "title": "No Puppets A11owed prod. xtasane",
+        "plays": 24,
+        "date": "2025-11-10",
+        "page": "releases/no-puppets-a11owed-prod-xtasane.html"
+      },
+      "collaborators": [
+        "Max Ferrari",
+        "Griimxo"
+      ],
+      "deep_dive": "sessions/the-november-4th-11th-session.html",
+      "journey": "transmission.html#era-the-silence",
+      "play_profile": [
+        {
+          "title": "my kin (prod xannnn)",
+          "date": "2025-11-04",
+          "plays": 173,
+          "page": "releases/my-kin-prod-xannnn.html"
+        },
+        {
+          "title": "No Puppets A11owed prod. xtasane",
+          "date": "2025-11-10",
+          "plays": 24,
+          "page": "releases/no-puppets-a11owed-prod-xtasane.html"
+        },
+        {
+          "title": "Fa11 LeaVes prod. Gehx",
+          "date": "2025-11-10",
+          "plays": 222,
+          "page": "releases/fa11-leaves-prod-gehx.html"
+        },
+        {
+          "title": "Dreamed of U (Hubb1e) prod. Yukio",
+          "date": "2025-11-10",
+          "plays": 175,
+          "page": "releases/dreamed-of-u-hubb1e-prod-yukio.html"
+        },
+        {
+          "title": "Get Away prod. Gehx",
+          "date": "2025-11-10",
+          "plays": 217,
+          "page": "releases/get-away-prod-gehx.html"
+        },
+        {
+          "title": "Green Wa11s prod. Ocurie",
+          "date": "2025-11-10",
+          "plays": 186,
+          "page": "releases/green-wa11s-prod-ocurie.html"
+        },
+        {
+          "title": "Cut tha 1ights prod. ohmygon!",
+          "date": "2025-11-11",
+          "plays": 180,
+          "page": "releases/cut-tha-1ights-prod-ohmygon.html"
+        },
+        {
+          "title": "1otso prod. branwen",
+          "date": "2025-11-11",
+          "plays": 190,
+          "page": "releases/1otso-prod-branwen.html"
+        },
+        {
+          "title": "Sti11 waiting/tunnel freestyle w/ Max Ferrari prod. suli",
+          "date": "2025-11-11",
+          "plays": 300,
+          "page": "releases/sti11-waiting-tunnel-freestyle-w-max-ferrari-prod-suli.html"
+        },
+        {
+          "title": "ARCSNOWWW w/ Max Ferrari prod. sustain",
+          "date": "2025-11-11",
+          "plays": 184,
+          "page": "releases/arcsnowww-w-max-ferrari-prod-sustain.html"
+        },
+        {
+          "title": "Phantom Moshpit w/ Griimxo (remastered) prod. scared716",
+          "date": "2025-11-11",
+          "plays": 178,
+          "page": "releases/phantom-moshpit-w-griimxo-remastered-prod-scared716.html"
+        }
+      ],
+      "profile_note": "Play profile: each transmission's lifetime plays in upload order from the single 2026-10-11 snapshot. Not a trajectory - earlier tracks have had longer to accumulate plays, and one snapshot cannot show change over time.",
+      "families": [
+        {
+          "name": "The Rites",
+          "slug": "the-rites",
+          "page": "codex/the-rites.html",
+          "family_transmissions": 1,
+          "family_plays": 300
+        },
+        {
+          "name": "Lucid States",
+          "slug": "lucid-states",
+          "page": "codex/lucid-states.html",
+          "family_transmissions": 1,
+          "family_plays": 175
+        }
+      ]
+    },
+    {
+      "id": "session-56",
+      "name": "The November 23rd Session",
+      "start": "2025-11-23",
+      "end": "2025-11-23",
+      "days": 1,
+      "track_count": 2,
+      "total_plays": 660,
+      "avg_plays_per_track": 330.0,
+      "era_id": "the-silence",
+      "era_name": "The Silence",
+      "era_deep_dive": "eras/the-silence.html",
+      "loudest": {
+        "title": "big litemode (prod runawway, ilyagargod & k3nik)",
+        "plays": 455,
+        "date": "2025-11-23",
+        "page": "releases/big-litemode-prod-runawway-ilyagargod-and-k3nik.html"
+      },
+      "deepest_cut": {
+        "title": "go and did (prod runawway + hidy)",
+        "plays": 205,
+        "date": "2025-11-23",
+        "page": "releases/go-and-did-prod-runawway-hidy.html"
+      },
+      "collaborators": [],
+      "deep_dive": null,
+      "journey": "transmission.html#era-the-silence",
+      "play_profile": [
+        {
+          "title": "big litemode (prod runawway, ilyagargod & k3nik)",
+          "date": "2025-11-23",
+          "plays": 455,
+          "page": "releases/big-litemode-prod-runawway-ilyagargod-and-k3nik.html"
+        },
+        {
+          "title": "go and did (prod runawway + hidy)",
+          "date": "2025-11-23",
+          "plays": 205,
+          "page": "releases/go-and-did-prod-runawway-hidy.html"
+        }
+      ],
+      "profile_note": "Play profile: each transmission's lifetime plays in upload order from the single 2026-10-11 snapshot. Not a trajectory - earlier tracks have had longer to accumulate plays, and one snapshot cannot show change over time.",
+      "families": [
+        {
+          "name": "The Modes",
+          "slug": "the-modes",
+          "page": "codex/the-modes.html",
+          "family_transmissions": 1,
+          "family_plays": 455
+        }
+      ]
+    },
+    {
+      "id": "session-57",
+      "name": "The December 19th Session",
+      "start": "2025-12-19",
+      "end": "2025-12-19",
+      "days": 1,
+      "track_count": 1,
+      "total_plays": 638,
+      "avg_plays_per_track": 638.0,
+      "era_id": "the-silence",
+      "era_name": "The Silence",
+      "era_deep_dive": "eras/the-silence.html",
+      "loudest": {
+        "title": "bound 2 my ways.wav",
+        "plays": 638,
+        "date": "2025-12-19",
+        "page": "releases/bound-2-my-ways-wav.html"
+      },
+      "deepest_cut": {
+        "title": "bound 2 my ways.wav",
+        "plays": 638,
+        "date": "2025-12-19",
+        "page": "releases/bound-2-my-ways-wav.html"
+      },
+      "collaborators": [],
+      "deep_dive": null,
+      "journey": "transmission.html#era-the-silence",
+      "play_profile": [
+        {
+          "title": "bound 2 my ways.wav",
+          "date": "2025-12-19",
+          "plays": 638,
+          "page": "releases/bound-2-my-ways-wav.html"
+        }
+      ],
+      "profile_note": "Play profile: each transmission's lifetime plays in upload order from the single 2026-10-11 snapshot. Not a trajectory - earlier tracks have had longer to accumulate plays, and one snapshot cannot show change over time.",
+      "families": []
+    },
+    {
+      "id": "session-58",
+      "name": "The January 16th Session",
+      "start": "2026-01-16",
+      "end": "2026-01-16",
+      "days": 1,
+      "track_count": 1,
+      "total_plays": 269,
+      "avg_plays_per_track": 269.0,
+      "era_id": "the-return",
+      "era_name": "The Return",
+      "era_deep_dive": "eras/the-return.html",
+      "loudest": {
+        "title": "all i really need is a text from u 2 (prod astral hp)",
+        "plays": 269,
+        "date": "2026-01-16",
+        "page": "releases/all-i-really-need-is-a-text-from-u-2-prod-astral-hp.html"
+      },
+      "deepest_cut": {
+        "title": "all i really need is a text from u 2 (prod astral hp)",
+        "plays": 269,
+        "date": "2026-01-16",
+        "page": "releases/all-i-really-need-is-a-text-from-u-2-prod-astral-hp.html"
+      },
+      "collaborators": [],
+      "deep_dive": null,
+      "journey": "transmission.html#era-the-return",
+      "play_profile": [
+        {
+          "title": "all i really need is a text from u 2 (prod astral hp)",
+          "date": "2026-01-16",
+          "plays": 269,
+          "page": "releases/all-i-really-need-is-a-text-from-u-2-prod-astral-hp.html"
+        }
+      ],
+      "profile_note": "Play profile: each transmission's lifetime plays in upload order from the single 2026-10-11 snapshot. Not a trajectory - earlier tracks have had longer to accumulate plays, and one snapshot cannot show change over time.",
+      "families": []
+    },
+    {
+      "id": "session-59",
+      "name": "The March 17th–25th Session",
+      "start": "2026-03-17",
+      "end": "2026-03-25",
+      "days": 9,
+      "track_count": 4,
+      "total_plays": 781,
+      "avg_plays_per_track": 195.2,
+      "era_id": "the-return",
+      "era_name": "The Return",
+      "era_deep_dive": "eras/the-return.html",
+      "loudest": {
+        "title": "no power prod wellfed",
+        "plays": 242,
+        "date": "2026-03-23",
+        "page": "releases/no-power-prod-wellfed.html"
+      },
+      "deepest_cut": {
+        "title": "life's made prod wellfed",
+        "plays": 151,
+        "date": "2026-03-20",
+        "page": "releases/life-s-made-prod-wellfed.html"
+      },
+      "collaborators": [],
+      "deep_dive": null,
+      "journey": "transmission.html#era-the-return",
+      "play_profile": [
+        {
+          "title": "games stop prod branwen",
+          "date": "2026-03-17",
+          "plays": 180,
+          "page": "releases/games-stop-prod-branwen.html"
+        },
+        {
+          "title": "life's made prod wellfed",
+          "date": "2026-03-20",
+          "plays": 151,
+          "page": "releases/life-s-made-prod-wellfed.html"
+        },
+        {
+          "title": "no power prod wellfed",
+          "date": "2026-03-23",
+          "plays": 242,
+          "page": "releases/no-power-prod-wellfed.html"
+        },
+        {
+          "title": "the night ends yeaaa prod wellfed",
+          "date": "2026-03-25",
+          "plays": 208,
+          "page": "releases/the-night-ends-yeaaa-prod-wellfed.html"
+        }
+      ],
+      "profile_note": "Play profile: each transmission's lifetime plays in upload order from the single 2026-10-11 snapshot. Not a trajectory - earlier tracks have had longer to accumulate plays, and one snapshot cannot show change over time.",
+      "families": [
+        {
+          "name": "Dark",
+          "slug": "dark",
+          "page": "codex/dark.html",
+          "family_transmissions": 1,
+          "family_plays": 208
+        },
+        {
+          "name": "Power",
+          "slug": "power",
+          "page": "codex/power.html",
+          "family_transmissions": 1,
+          "family_plays": 242
+        }
+      ]
+    },
+    {
+      "id": "session-60",
+      "name": "The July 15th Session",
+      "start": "2026-07-15",
+      "end": "2026-07-15",
+      "days": 1,
+      "track_count": 1,
+      "total_plays": 178,
+      "avg_plays_per_track": 178.0,
+      "era_id": "the-return",
+      "era_name": "The Return",
+      "era_deep_dive": "eras/the-return.html",
+      "loudest": {
+        "title": "the peace of the spirit urn (prod +fiftyzeros)",
+        "plays": 178,
+        "date": "2026-07-15",
+        "page": "releases/the-peace-of-the-spirit-urn-prod-fiftyzeros.html"
+      },
+      "deepest_cut": {
+        "title": "the peace of the spirit urn (prod +fiftyzeros)",
+        "plays": 178,
+        "date": "2026-07-15",
+        "page": "releases/the-peace-of-the-spirit-urn-prod-fiftyzeros.html"
+      },
+      "collaborators": [],
+      "deep_dive": null,
+      "journey": "transmission.html#era-the-return",
+      "play_profile": [
+        {
+          "title": "the peace of the spirit urn (prod +fiftyzeros)",
+          "date": "2026-07-15",
+          "plays": 178,
+          "page": "releases/the-peace-of-the-spirit-urn-prod-fiftyzeros.html"
+        }
+      ],
+      "profile_note": "Play profile: each transmission's lifetime plays in upload order from the single 2026-10-11 snapshot. Not a trajectory - earlier tracks have had longer to accumulate plays, and one snapshot cannot show change over time.",
+      "families": [
+        {
+          "name": "Vessels",
+          "slug": "vessels",
+          "page": "codex/vessels.html",
+          "family_transmissions": 1,
+          "family_plays": 178
+        },
+        {
+          "name": "Wards & the Spirit",
+          "slug": "wards-and-the-spirit",
+          "page": "codex/wards-and-the-spirit.html",
+          "family_transmissions": 1,
+          "family_plays": 178
+        }
+      ]
+    },
+    {
+      "id": "session-61",
+      "name": "The October 2nd Session",
+      "start": "2026-10-02",
+      "end": "2026-10-02",
+      "days": 1,
+      "track_count": 1,
+      "total_plays": 177,
+      "avg_plays_per_track": 177.0,
+      "era_id": "the-return",
+      "era_name": "The Return",
+      "era_deep_dive": "eras/the-return.html",
+      "loudest": {
+        "title": "turn up w me (prod_timmy)",
+        "plays": 177,
+        "date": "2026-10-02",
+        "page": "releases/turn-up-w-me-prod-timmy.html"
+      },
+      "deepest_cut": {
+        "title": "turn up w me (prod_timmy)",
+        "plays": 177,
+        "date": "2026-10-02",
+        "page": "releases/turn-up-w-me-prod-timmy.html"
+      },
+      "collaborators": [],
+      "deep_dive": null,
+      "journey": "transmission.html#era-the-return",
+      "play_profile": [
+        {
+          "title": "turn up w me (prod_timmy)",
+          "date": "2026-10-02",
+          "plays": 177,
+          "page": "releases/turn-up-w-me-prod-timmy.html"
+        }
+      ],
+      "profile_note": "Play profile: each transmission's lifetime plays in upload order from the single 2026-10-11 snapshot. Not a trajectory - earlier tracks have had longer to accumulate plays, and one snapshot cannot show change over time.",
+      "families": []
+    }
+  ],
+  "deepest_cuts": {
+    "editorial": true,
+    "formula": "average plays per transmission = total_plays / track_count, ranked ascending. Minimum 2 transmissions: a single-transmission session is a quiet single, not a deep session (stated editorial rule). Tiebreaks: lower total_plays, then fewer transmissions, then session id. An editorial ranking, not an artist fact.",
+    "min_tracks": 2,
+    "excluded_single_track_sessions": 33,
+    "ranking": [
+      {
+        "rank": 1,
+        "session_id": "session-43",
+        "name": "The April 16th–18th Session",
+        "start": "2024-04-16",
+        "end": "2024-04-18",
+        "track_count": 2,
+        "total_plays": 167,
+        "avg_plays_per_track": 83.5,
+        "era_id": "the-somelowlifes-era",
+        "era_name": "The SomeLowLifes Era",
+        "deep_dive": null,
+        "journey": "transmission.html#era-the-somelowlifes-era"
+      },
+      {
+        "rank": 2,
+        "session_id": "session-36",
+        "name": "The February 22nd Session",
+        "start": "2022-02-22",
+        "end": "2022-02-22",
+        "track_count": 12,
+        "total_plays": 1432,
+        "avg_plays_per_track": 119.3,
+        "era_id": "the-cast-it-years",
+        "era_name": "The Cast It: Years",
+        "deep_dive": "sessions/the-february-22nd-session.html",
+        "journey": "transmission.html#era-the-cast-it-years"
+      },
+      {
+        "rank": 3,
+        "session_id": "session-55",
+        "name": "The November 4th–11th Session",
+        "start": "2025-11-04",
+        "end": "2025-11-11",
+        "track_count": 11,
+        "total_plays": 2029,
+        "avg_plays_per_track": 184.5,
+        "era_id": "the-silence",
+        "era_name": "The Silence",
+        "deep_dive": "sessions/the-november-4th-11th-session.html",
+        "journey": "transmission.html#era-the-silence"
+      },
+      {
+        "rank": 4,
+        "session_id": "session-54",
+        "name": "The September 13th–14th Session",
+        "start": "2025-09-13",
+        "end": "2025-09-14",
+        "track_count": 2,
+        "total_plays": 384,
+        "avg_plays_per_track": 192.0,
+        "era_id": "the-silence",
+        "era_name": "The Silence",
+        "deep_dive": null,
+        "journey": "transmission.html#era-the-silence"
+      },
+      {
+        "rank": 5,
+        "session_id": "session-59",
+        "name": "The March 17th–25th Session",
+        "start": "2026-03-17",
+        "end": "2026-03-25",
+        "track_count": 4,
+        "total_plays": 781,
+        "avg_plays_per_track": 195.2,
+        "era_id": "the-return",
+        "era_name": "The Return",
+        "deep_dive": null,
+        "journey": "transmission.html#era-the-return"
+      },
+      {
+        "rank": 6,
+        "session_id": "session-35",
+        "name": "The July 14th Session",
+        "start": "2021-07-14",
+        "end": "2021-07-14",
+        "track_count": 13,
+        "total_plays": 2704,
+        "avg_plays_per_track": 208.0,
+        "era_id": "the-cast-it-years",
+        "era_name": "The Cast It: Years",
+        "deep_dive": "sessions/the-july-14th-session.html",
+        "journey": "transmission.html#era-the-cast-it-years"
+      },
+      {
+        "rank": 7,
+        "session_id": "session-44",
+        "name": "The May 2nd–3rd Session",
+        "start": "2024-05-02",
+        "end": "2024-05-03",
+        "track_count": 2,
+        "total_plays": 452,
+        "avg_plays_per_track": 226.0,
+        "era_id": "the-somelowlifes-era",
+        "era_name": "The SomeLowLifes Era",
+        "deep_dive": null,
+        "journey": "transmission.html#era-the-somelowlifes-era"
+      },
+      {
+        "rank": 8,
+        "session_id": "session-38",
+        "name": "The October 8th Session",
+        "start": "2023-10-08",
+        "end": "2023-10-08",
+        "track_count": 2,
+        "total_plays": 468,
+        "avg_plays_per_track": 234.0,
+        "era_id": "the-somelowlifes-era",
+        "era_name": "The SomeLowLifes Era",
+        "deep_dive": null,
+        "journey": "transmission.html#era-the-somelowlifes-era"
+      },
+      {
+        "rank": 9,
+        "session_id": "session-45",
+        "name": "The May 22nd–31st Session",
+        "start": "2024-05-22",
+        "end": "2024-05-31",
+        "track_count": 5,
+        "total_plays": 1420,
+        "avg_plays_per_track": 284.0,
+        "era_id": "the-somelowlifes-era",
+        "era_name": "The SomeLowLifes Era",
+        "deep_dive": null,
+        "journey": "transmission.html#era-the-somelowlifes-era"
+      },
+      {
+        "rank": 10,
+        "session_id": "session-56",
+        "name": "The November 23rd Session",
+        "start": "2025-11-23",
+        "end": "2025-11-23",
+        "track_count": 2,
+        "total_plays": 660,
+        "avg_plays_per_track": 330.0,
+        "era_id": "the-silence",
+        "era_name": "The Silence",
+        "deep_dive": null,
+        "journey": "transmission.html#era-the-silence"
+      },
+      {
+        "rank": 11,
+        "session_id": "session-42",
+        "name": "The April 4th–7th Session",
+        "start": "2024-04-04",
+        "end": "2024-04-07",
+        "track_count": 3,
+        "total_plays": 1035,
+        "avg_plays_per_track": 345.0,
+        "era_id": "the-somelowlifes-era",
+        "era_name": "The SomeLowLifes Era",
+        "deep_dive": null,
+        "journey": "transmission.html#era-the-somelowlifes-era"
+      },
+      {
+        "rank": 12,
+        "session_id": "session-34",
+        "name": "The December 21st Session",
+        "start": "2020-12-21",
+        "end": "2020-12-21",
+        "track_count": 7,
+        "total_plays": 2426,
+        "avg_plays_per_track": 346.6,
+        "era_id": "the-prolific-year",
+        "era_name": "The Prolific Year",
+        "deep_dive": "sessions/the-december-21st-session.html",
+        "journey": "transmission.html#era-the-prolific-year"
+      },
+      {
+        "rank": 13,
+        "session_id": "session-40",
+        "name": "The November 3rd–12th Session",
+        "start": "2023-11-03",
+        "end": "2023-11-12",
+        "track_count": 19,
+        "total_plays": 7601,
+        "avg_plays_per_track": 400.1,
+        "era_id": "the-somelowlifes-era",
+        "era_name": "The SomeLowLifes Era",
+        "deep_dive": "sessions/the-november-3rd-12th-session.html",
+        "journey": "transmission.html#era-the-somelowlifes-era"
+      },
+      {
+        "rank": 14,
+        "session_id": "session-39",
+        "name": "The October 20th–21st Session",
+        "start": "2023-10-20",
+        "end": "2023-10-21",
+        "track_count": 2,
+        "total_plays": 830,
+        "avg_plays_per_track": 415.0,
+        "era_id": "the-somelowlifes-era",
+        "era_name": "The SomeLowLifes Era",
+        "deep_dive": null,
+        "journey": "transmission.html#era-the-somelowlifes-era"
+      },
+      {
+        "rank": 15,
+        "session_id": "session-37",
+        "name": "The August 29th Session",
+        "start": "2023-08-29",
+        "end": "2023-08-29",
+        "track_count": 3,
+        "total_plays": 1280,
+        "avg_plays_per_track": 426.7,
+        "era_id": "the-somelowlifes-era",
+        "era_name": "The SomeLowLifes Era",
+        "deep_dive": null,
+        "journey": "transmission.html#era-the-somelowlifes-era"
+      },
+      {
+        "rank": 16,
+        "session_id": "session-32",
+        "name": "The October 7th Session",
+        "start": "2020-10-07",
+        "end": "2020-10-07",
+        "track_count": 4,
+        "total_plays": 1891,
+        "avg_plays_per_track": 472.8,
+        "era_id": "the-prolific-year",
+        "era_name": "The Prolific Year",
+        "deep_dive": null,
+        "journey": "transmission.html#era-the-prolific-year"
+      },
+      {
+        "rank": 17,
+        "session_id": "session-15",
+        "name": "The Nov 27th – Dec 4th Session",
+        "start": "2018-11-27",
+        "end": "2018-12-04",
+        "track_count": 6,
+        "total_plays": 4892,
+        "avg_plays_per_track": 815.3,
+        "era_id": "the-first-rite",
+        "era_name": "The First Rite",
+        "deep_dive": "sessions/the-nov-27th-dec-4th-session.html",
+        "journey": "transmission.html#era-the-first-rite"
+      },
+      {
+        "rank": 18,
+        "session_id": "session-20",
+        "name": "The March 15th–27th Session",
+        "start": "2019-03-15",
+        "end": "2019-03-27",
+        "track_count": 4,
+        "total_plays": 5132,
+        "avg_plays_per_track": 1283.0,
+        "era_id": "the-first-rite",
+        "era_name": "The First Rite",
+        "deep_dive": null,
+        "journey": "transmission.html#era-the-first-rite"
+      },
+      {
+        "rank": 19,
+        "session_id": "session-18",
+        "name": "The January 21st–28th Session",
+        "start": "2019-01-21",
+        "end": "2019-01-28",
+        "track_count": 5,
+        "total_plays": 6442,
+        "avg_plays_per_track": 1288.4,
+        "era_id": "the-first-rite",
+        "era_name": "The First Rite",
+        "deep_dive": null,
+        "journey": "transmission.html#era-the-first-rite"
+      },
+      {
+        "rank": 20,
+        "session_id": "session-09",
+        "name": "The August 13th–27th Session",
+        "start": "2018-08-13",
+        "end": "2018-08-27",
+        "track_count": 7,
+        "total_plays": 10571,
+        "avg_plays_per_track": 1510.1,
+        "era_id": "the-first-rite",
+        "era_name": "The First Rite",
+        "deep_dive": "sessions/the-august-13th-27th-session.html",
+        "journey": "transmission.html#era-the-first-rite"
+      },
+      {
+        "rank": 21,
+        "session_id": "session-05",
+        "name": "The June 8th–14th Session",
+        "start": "2018-06-08",
+        "end": "2018-06-14",
+        "track_count": 2,
+        "total_plays": 3030,
+        "avg_plays_per_track": 1515.0,
+        "era_id": "the-first-rite",
+        "era_name": "The First Rite",
+        "deep_dive": null,
+        "journey": "transmission.html#era-the-first-rite"
+      },
+      {
+        "rank": 22,
+        "session_id": "session-16",
+        "name": "The December 13th–15th Session",
+        "start": "2018-12-13",
+        "end": "2018-12-15",
+        "track_count": 5,
+        "total_plays": 8714,
+        "avg_plays_per_track": 1742.8,
+        "era_id": "the-first-rite",
+        "era_name": "The First Rite",
+        "deep_dive": null,
+        "journey": "transmission.html#era-the-first-rite"
+      },
+      {
+        "rank": 23,
+        "session_id": "session-14",
+        "name": "The November 7th–8th Session",
+        "start": "2018-11-07",
+        "end": "2018-11-08",
+        "track_count": 4,
+        "total_plays": 8472,
+        "avg_plays_per_track": 2118.0,
+        "era_id": "the-first-rite",
+        "era_name": "The First Rite",
+        "deep_dive": null,
+        "journey": "transmission.html#era-the-first-rite"
+      },
+      {
+        "rank": 24,
+        "session_id": "session-28",
+        "name": "The December 30th Session",
+        "start": "2019-12-30",
+        "end": "2019-12-30",
+        "track_count": 6,
+        "total_plays": 16172,
+        "avg_plays_per_track": 2695.3,
+        "era_id": "the-first-rite",
+        "era_name": "The First Rite",
+        "deep_dive": "sessions/the-december-30th-session.html",
+        "journey": "transmission.html#era-the-first-rite"
+      },
+      {
+        "rank": 25,
+        "session_id": "session-07",
+        "name": "The July 18th–20th Session",
+        "start": "2018-07-18",
+        "end": "2018-07-20",
+        "track_count": 4,
+        "total_plays": 12163,
+        "avg_plays_per_track": 3040.8,
+        "era_id": "the-first-rite",
+        "era_name": "The First Rite",
+        "deep_dive": null,
+        "journey": "transmission.html#era-the-first-rite"
+      },
+      {
+        "rank": 26,
+        "session_id": "session-27",
+        "name": "The December 22nd Session",
+        "start": "2019-12-22",
+        "end": "2019-12-22",
+        "track_count": 7,
+        "total_plays": 21777,
+        "avg_plays_per_track": 3111.0,
+        "era_id": "the-first-rite",
+        "era_name": "The First Rite",
+        "deep_dive": "sessions/the-december-22nd-session.html",
+        "journey": "transmission.html#era-the-first-rite"
+      },
+      {
+        "rank": 27,
+        "session_id": "session-24",
+        "name": "The July 9th Session",
+        "start": "2019-07-09",
+        "end": "2019-07-09",
+        "track_count": 7,
+        "total_plays": 28260,
+        "avg_plays_per_track": 4037.1,
+        "era_id": "the-first-rite",
+        "era_name": "The First Rite",
+        "deep_dive": "sessions/the-july-9th-session.html",
+        "journey": "transmission.html#era-the-first-rite"
+      },
+      {
+        "rank": 28,
+        "session_id": "session-01",
+        "name": "The January 3rd–8th Session",
+        "start": "2018-01-03",
+        "end": "2018-01-08",
+        "track_count": 2,
+        "total_plays": 13862,
+        "avg_plays_per_track": 6931.0,
+        "era_id": "the-first-rite",
+        "era_name": "The First Rite",
+        "deep_dive": null,
+        "journey": "transmission.html#era-the-first-rite"
+      }
+    ]
+  },
+  "insights": {
+    "deepest_session": {
+      "session_id": "session-43",
+      "name": "The April 16th–18th Session",
+      "avg_plays_per_track": 83.5,
+      "note": "lowest average plays per transmission among sessions with 2+ transmissions (editorial)"
+    },
+    "most_prolific": {
+      "id": "session-40",
+      "name": "The November 3rd–12th Session",
+      "start": "2023-11-03",
+      "end": "2023-11-12",
+      "track_count": 19,
+      "total_plays": 7601,
+      "deep_dive": "sessions/the-november-3rd-12th-session.html",
+      "season": "season-06"
+    },
+    "loudest_session": {
+      "id": "session-02",
+      "name": "The February 4th Session",
+      "total_plays": 30088
+    },
+    "quietest_session": {
+      "id": "session-52",
+      "name": "The November 5th Session",
+      "total_plays": 17
+    }
+  }
+}
