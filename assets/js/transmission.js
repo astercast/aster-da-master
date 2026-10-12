@@ -1,10 +1,16 @@
-/* TRANSMISSION 3.0 — the flagship guided journey: six eras + seven data chapters.
-   Era stops come from api/v1/transmission.json (incl. the 2026 extras block on
-   The Return). Era enrichment ("the archive's reading") loads LIVE from
-   api/v1/eras.json + api/v1/years.json — ranks, archive-play shares, per-year
-   strips, deepest cuts, top word families; all computed, never authored.
+/* TRANSMISSION 4.0 — the full broadcast (wow wave 1).
+   Scroll-driven pirate broadcast: six era segments (2018→2026) + seven data
+   chapters rendered as broadcast segments on one long scroll. Traveling
+   between segments plays a signal-static flash (pure CSS/SVG, opacity only);
+   the station tuner jumps straight to any era. Numbers count up live as each
+   segment enters the viewport — every count target from the real api/v1 JSON,
+   never invented:
+     era transmissions/plays/sessions/distributor/milestones <- transmission.json
+     archive totals <- transmission.json archive_totals; the plays cells also
+       carry data-signal="plays" so The Signal repaints them live when
+       /api/stats answers (the static snapshot stands otherwise).
    Data chapters pull LIVE from the real api/v1 JSON (no figures hardcoded, so
-   future waves update the journey automatically):
+   future waves update the broadcast automatically):
      chapter-race    <- milestone-races.json (closest races + summit)
      chapter-record  <- milestone-races.json (records + just crossed)
      chapter-codex   <- codex-families.json  (word families)
@@ -14,14 +20,19 @@
      chapter-horizon <- verified 2026-10-11 research pass, sourced inline
    If any optional file fails to load, its chapter degrades away gracefully.
    Titles/metadata only — never lyrics.
-   Keyboard: in the journey, ←/→ step stops (Home/End jump), Esc in the map
-   returns to the journey. Tab order follows rail → panel → controls.
-   Motion: era changes ride the View Transitions API (crossfade on the panel)
-   when available and allowed; otherwise the tuning flicker. Scroll-driven
-   card/glow motion is CSS-only (animation-timeline) with @supports guards.
-   Auto-play (~12s) is fully disabled under prefers-reduced-motion: manual
-   stepping only. Progress (stop + visited map) persists via localStorage
-   (resume from last stop; clearable) — the journey never auto-jumps. */
+   Station frequencies (87.9–98.5 MHz) are station chrome — the pirate dial
+   aesthetic from the identity system — not archive facts.
+   Keyboard: the tuner is a radiogroup — Tab in, ←/→/↑/↓ tune between era
+   stations (announced), Enter/Space tunes the focused station; the mobile era
+   picker is a native select. No global arrow hijacking: the page scrolls
+   natively. Focus moves to the segment heading on deliberate jumps
+   (tuner click/Enter, picker, prev/next); passive scroll never yanks focus.
+   Motion: count-ups ride requestAnimationFrame and set their final value even
+   if anything fails; the static flash is opacity-only. Under
+   prefers-reduced-motion the broadcast is a plain readable document: every
+   number stated in full, no flash, no typing, instant scrolling, no autoplay.
+   Progress (segment + visited map) persists via localStorage (resume offered,
+   never auto-jumps). */
 (function () {
   "use strict";
 
@@ -29,49 +40,65 @@
   var fmt = window.ADM.fmt;
   var loadData = window.ADM.loadData;
   var REDUCED = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  var VT = !REDUCED && typeof document.startViewTransition === "function";
+  var MOBILE_Q = window.matchMedia ? window.matchMedia("(max-width: 640px)") : null;
   var AUTOPLAY_MS = 12000;
   var STORE_KEY = "adm.transmission.stop";
   var STORE_KEY_V = "adm.transmission.visited";
+  /* Station chrome: the pirate dial. Aesthetic only — not archive facts. */
+  var FREQS = ["87.9", "89.1", "91.3", "93.7", "96.2", "98.5"];
 
   var DATA = null, RACES = null, CODEX = null, ERASJ = null, YRS = null,
       CLUST = null, TOOLS = null, PD = null;
-  var view = "entry";       // entry | journey | map | end
-  var stops = [];           // [{kind,id,hash,label,name,span,era,deepDive,render,brief}]
-  var stop = 0;
+  var stops = [];           // [{kind,id,hash,label,name,span,freq,era,deepDive,render,brief}]
+  var segEls = [];          // rendered <section> per stop
   var visited = {};         // stop index -> true
+  var activeIdx = -1;
   var timer = null;
+  var lastFlash = 0;
+  var announceTimer = null;
 
   var $ = function (id) { return document.getElementById(id); };
-  var entryEl = $("tx-entry"), journeyEl = $("tx-journey"), mapEl = $("tx-map"), endEl = $("tx-end");
-  var railEl = $("tx-rail"), innerEl = $("tx-era-inner"), eraEl = $("tx-era");
+  var entryEl = $("tx-entry"), bcEl = $("tx-broadcast");
+  var segWrap = $("tx-segments"), signoffEl = $("tx-signoff"), indexEl = $("tx-index");
+  var tunerEl = $("tx-tuner"), dialEl = $("tx-dial"), pickEl = $("tx-tuner-pick");
+  var needleEl = $("tx-needle"), readoutEl = $("tx-readout");
+  var staticEl = $("tx-static");
   var liveEl = $("tx-live");
   var autoplayBtn = $("tx-autoplay");
 
+  function isMobile() { return MOBILE_Q && MOBILE_Q.matches; }
+
   /* ---------- views ---------- */
-  function show(v) {
-    view = v;
-    entryEl.hidden = v !== "entry";
-    journeyEl.hidden = v !== "journey";
-    mapEl.hidden = v !== "map";
-    endEl.hidden = v !== "end";
-    if (v === "journey") focusStopHeading();
-    if (v === "map") $("tx-map-heading").focus();
-    if (v === "end") { renderEnd(); $("tx-end-heading").focus(); }
-    if (v === "entry") { updateProgress(); $("tx-title").focus(); }
+  function showBroadcast() {
+    entryEl.hidden = true;
+    bcEl.hidden = false;
+  }
+  function showEntry() {
+    bcEl.hidden = true;
+    entryEl.hidden = false;
   }
 
-  function announce(msg) { liveEl.textContent = ""; liveEl.textContent = msg; }
-
-  function focusStopHeading() {
-    var h = $("tx-era-heading");
-    if (h) h.focus({ preventScroll: false });
+  function announce(msg) {
+    if (!liveEl) return;
+    if (announceTimer) { clearTimeout(announceTimer); announceTimer = null; }
+    liveEl.textContent = "";
+    announceTimer = setTimeout(function () {
+      liveEl.textContent = msg;
+      announceTimer = null;
+    }, REDUCED ? 0 : 700);
   }
 
-  /* ---------- progress persistence (stop + visited map) ---------- */
+  function announceNow(msg) {
+    if (!liveEl) return;
+    if (announceTimer) { clearTimeout(announceTimer); announceTimer = null; }
+    liveEl.textContent = "";
+    liveEl.textContent = msg;
+  }
+
+  /* ---------- progress persistence (segment + visited map) ---------- */
   function remember() {
     try {
-      localStorage.setItem(STORE_KEY, String(stop));
+      localStorage.setItem(STORE_KEY, String(activeIdx));
       localStorage.setItem(STORE_KEY_V, JSON.stringify(Object.keys(visited).map(Number)));
     } catch (e) { /* private mode */ }
   }
@@ -98,15 +125,22 @@
       localStorage.removeItem(STORE_KEY_V);
     } catch (e) { /* noop */ }
     visited = {};
-    stop = 0;
+    activeIdx = -1;
   }
 
   function visitedCount() { return Object.keys(visited).length; }
 
+  function markVisited(i) {
+    if (!visited[i]) {
+      visited[i] = true;
+      updateProgress();
+    }
+  }
+
   function updateProgress() {
     var n = visitedCount();
     var pl = $("tx-progress");
-    if (pl) pl.textContent = n + " of " + stops.length + " stops visited.";
+    if (pl) pl.textContent = n + " of " + stops.length + " segments visited.";
     var cb = $("tx-clear");
     if (cb) cb.hidden = !(n > 0 || savedStop() != null);
   }
@@ -120,7 +154,7 @@
 
   function sessionRow(s) {
     var name = s.deep_dive
-      ? '<a href="' + esc(s.deep_dive) + '">' + esc(s.name) + '</a> <span class="tx-dd">deep dive</span>'
+      ? '<a href="' + esc(s.deep_dive) + '">' + esc(s.name) + "</a> <span class=\"tx-dd\">deep dive</span>"
       : '<a href="sessions.html">' + esc(s.name) + "</a>";
     return '<li class="tx-sess">' + name +
       '<span class="tx-meta">' + s.track_count + " transmissions &middot; " + fmt(s.total_plays) +
@@ -139,8 +173,20 @@
       '<p class="m-fact">' + esc(m.fact) + "</p></li>";
   }
 
-  function statCell(v, l) {
-    return '<div class="stat"><div class="stat-value">' + v + '</div><div class="stat-label">' + l + "</div></div>";
+  /* Stat cell. n = raw count target for the live count-up (numbers only).
+     The cell renders at zero and counts up when its segment enters; every
+     no-motion/no-JS-observer path sets the final value immediately, so a
+     failed animation can never leave a wrong number. dec = decimals,
+     suffix = appended label. */
+  function statCell(v, l, n, dec, suffix) {
+    var attrs = "", initial = v;
+    if (typeof n === "number" && isFinite(n)) {
+      attrs = ' data-count="' + n + '"';
+      if (dec) attrs += ' data-count-dec="' + dec + '"';
+      if (suffix) attrs += ' data-count-suffix="' + esc(suffix) + '"';
+      initial = fmtCount(0, dec || 0) + (suffix || "");
+    }
+    return '<div class="stat"><div class="stat-value"' + attrs + ">" + initial + '</div><div class="stat-label">' + l + "</div></div>";
   }
 
   function deepDivePara(dd) {
@@ -228,10 +274,11 @@
       ? "<ul>" + e.milestones.map(mileRow).join("") + "</ul>"
       : '<p class="tx-empty">No milestones filed for this era. The numbers speak.</p>';
     return '<div class="stat-grid">' +
-      statCell(fmt(e.transmissions), "Transmissions") +
-      statCell(fmt(e.plays), "Plays") +
-      statCell(e.sessions, "Sessions") +
-      statCell(e.distributor, "Distributor releases") +
+      statCell(fmt(e.transmissions), "Transmissions", e.transmissions) +
+      statCell(fmt(e.plays), "Plays", e.plays) +
+      statCell(e.sessions, "Sessions", e.sessions) +
+      statCell(e.milestones.length, "Milestones filed", e.milestones.length) +
+      statCell(e.distributor, "Distributor releases", e.distributor) +
       "</div>" +
       '<blockquote class="tx-signal"><span class="sig-lab">The signal</span>' + esc(e.signal) + "</blockquote>" +
       renderReading(e) +
@@ -273,9 +320,9 @@
         '<span class="tx-plays">' + fmt(c.plays) + " plays</span></li>";
     }).join("");
     return '<div class="stat-grid">' +
-      statCell(RACES.play_races.length, "Play-count races") +
-      statCell(fmt(nearest), "Nearest gap (plays)") +
-      statCell(fmt(h.plays), "Summit plays") +
+      statCell(RACES.play_races.length, "Play-count races", RACES.play_races.length) +
+      statCell(fmt(nearest), "Nearest gap (plays)", nearest) +
+      statCell(fmt(h.plays), "Summit plays", h.plays) +
       statCell(RACES.plays_snapshot, "Snapshot") +
       "</div>" +
       '<blockquote class="tx-signal"><span class="sig-lab">The signal</span>' +
@@ -323,9 +370,9 @@
         '<p class="m-fact">' + esc(j.fact) + "</p></li>";
     }).join("");
     return '<div class="stat-grid">' +
-      statCell(RACES.session_records.length, "Session records") +
-      statCell(RACES.era_records.length, "Era records") +
-      statCell(RACES.just_crossed.length, "Just crossed") +
+      statCell(RACES.session_records.length, "Session records", RACES.session_records.length) +
+      statCell(RACES.era_records.length, "Era records", RACES.era_records.length) +
+      statCell(RACES.just_crossed.length, "Just crossed", RACES.just_crossed.length) +
       statCell(RACES.plays_snapshot, "Snapshot") +
       "</div>" +
       '<blockquote class="tx-signal"><span class="sig-lab">The signal</span>' +
@@ -358,9 +405,9 @@
         '<p class="m-fact tx-reading">' + esc(f.decoded.reading) + "</p></li>";
     }).join("");
     return '<div class="stat-grid">' +
-      statCell(CODEX.family_count, "Word families") +
-      statCell(totalLinks, "Family-track links") +
-      statCell(fmt(loudest.total_plays), "Loudest family plays") +
+      statCell(CODEX.family_count, "Word families", CODEX.family_count) +
+      statCell(totalLinks, "Family-track links", totalLinks) +
+      statCell(fmt(loudest.total_plays), "Loudest family plays", loudest.total_plays) +
       statCell(esc(loudest.name), "Loudest family") +
       "</div>" +
       '<blockquote class="tx-signal"><span class="sig-lab">The signal</span>' +
@@ -400,9 +447,9 @@
         '<span class="tx-meta">' + p.production_count + " production" + (p.production_count > 1 ? "s" : "") + "</span></li>";
     }).join("");
     return '<div class="stat-grid">' +
-      statCell(ins.producer_count, "As-credited producers") +
-      statCell(ins.total_credits, "Title prod. credits") +
-      statCell(ins.researched_count, "Researched profiles") +
+      statCell(ins.producer_count, "As-credited producers", ins.producer_count) +
+      statCell(ins.total_credits, "Title prod. credits", ins.total_credits) +
+      statCell(ins.researched_count, "Researched profiles", ins.researched_count) +
       statCell(PD.research_pass || PD.plays_snapshot, "Research pass") +
       "</div>" +
       '<blockquote class="tx-signal"><span class="sig-lab">The signal</span>' +
@@ -445,10 +492,10 @@
         esc(g.from_end) + " \u2192 " + esc(g.to_start) + "</p></li>";
     }).join("");
     return '<div class="stat-grid">' +
-      statCell(ins.session_count, "Upload sessions") +
-      statCell(ins.season_count, "Activity seasons") +
-      statCell(CLUST.gaps.length, "Session gaps") +
-      statCell(longS.days + " days", "Longest silence") +
+      statCell(ins.session_count, "Upload sessions", ins.session_count) +
+      statCell(ins.season_count, "Activity seasons", ins.season_count) +
+      statCell(CLUST.gaps.length, "Session gaps", CLUST.gaps.length) +
+      statCell(longS.days + " days", "Longest silence", longS.days, 0, " days") +
       "</div>" +
       '<blockquote class="tx-signal"><span class="sig-lab">The signal</span>' +
       ins.session_count + " upload sessions fall into " + ins.season_count +
@@ -480,11 +527,11 @@
     var dc = TOOLS.deepest_cuts;
     var ins = TOOLS.insights;
     var rows = dc.ranking.slice(0, 10).map(function (r) {
-      var link = r.deep_dive ? '<a href=\"' + esc(r.deep_dive) + '\">' + esc(r.name) + "</a>" : esc(r.name);
-      return '<li class=\"tx-track\"><span><span class=\"tx-rank\">#' + r.rank + "</span> " + link +
-        '<span class=\"tx-meta\">' + r.track_count + " transmissions &middot; " + fmt(r.total_plays) +
+      var link = r.deep_dive ? '<a href="' + esc(r.deep_dive) + '">' + esc(r.name) + "</a>" : esc(r.name);
+      return '<li class="tx-track"><span><span class="tx-rank">#' + r.rank + "</span> " + link +
+        '<span class="tx-meta">' + r.track_count + " transmissions &middot; " + fmt(r.total_plays) +
         " plays &middot; " + esc(r.era_name) + "</span></span>" +
-        '<span class=\"tx-plays\">' + r.avg_plays_per_track + " avg</span></li>";
+        '<span class="tx-plays">' + r.avg_plays_per_track + " avg</span></li>";
     }).join("");
     var deep = ins.deepest_session, quiet = ins.quietest_session;
     var tdc = TOOLS.track_deep_cuts || null;
@@ -492,31 +539,31 @@
     if (tdc) {
       tRows = tdc.bottom_25.slice(0, 10).map(function (r) {
         var voices = r.voices.length ? " &middot; w/ " + esc(r.voices.join(", ")) : "";
-        return '<li class=\"tx-track\"><span><span class=\"tx-rank\">#' + r.rank + "</span> " +
-          '<a href=\"' + esc(r.page) + '\">' + esc(r.title) + "</a>" +
-          '<span class=\"tx-meta\">' + esc(r.date) + " &middot; " + esc(r.era_name) + voices +
+        return '<li class="tx-track"><span><span class="tx-rank">#' + r.rank + "</span> " +
+          '<a href="' + esc(r.page) + '">' + esc(r.title) + "</a>" +
+          '<span class="tx-meta">' + esc(r.date) + " &middot; " + esc(r.era_name) + voices +
           "</span></span>" +
-          '<span class=\"tx-plays\">' + fmt(r.plays) + " plays</span></li>";
+          '<span class="tx-plays">' + fmt(r.plays) + " plays</span></li>";
       }).join("");
       var ti = tdc.insights;
-      tStats = statCell(fmt(ti.quietest.plays) + " plays", "Quietest transmission") +
-        statCell(fmt(ti.median_plays), "Median plays / transmission") +
+      tStats = statCell(fmt(ti.quietest.plays) + " plays", "Quietest transmission", ti.quietest.plays) +
+        statCell(fmt(ti.median_plays), "Median plays / transmission", ti.median_plays) +
         statCell(ti.under_100_plays + " of 185", "Transmissions under 100 plays");
-      tNote = '<div class=\"tx-block\"><h3>The quietest transmissions</h3><ol>' + tRows + "</ol>" +
-        '<p class=\"tx-note\"><strong>The formula:</strong> ' + esc(tdc.formula) + "</p>" +
-        '<p class=\"tx-note\">The full quietest-25 lives on the ' +
-        '<a href=\"sessions-explorer.html#se-trackdeep\">sessions explorer</a>. ' +
+      tNote = '<div class="tx-block"><h3>The quietest transmissions</h3><ol>' + tRows + "</ol>" +
+        '<p class="tx-note"><strong>The formula:</strong> ' + esc(tdc.formula) + "</p>" +
+        '<p class="tx-note">The full quietest-25 lives on the ' +
+        '<a href="sessions-explorer.html#se-trackdeep">sessions explorer</a>. ' +
         "Nine of the 185 vault transmissions sit under 100 plays; the median is " +
         fmt(ti.median_plays) + ".</p></div>";
     }
-    return '<div class=\"stat-grid\">' +
-      statCell(dc.ranking.length, "Ranked sessions") +
-      statCell(dc.excluded_single_track_sessions, "Single-track sessions excluded") +
-      statCell(deep.avg_plays_per_track, "Deepest avg (plays/tx)") +
+    return '<div class="stat-grid">' +
+      statCell(dc.ranking.length, "Ranked sessions", dc.ranking.length) +
+      statCell(dc.excluded_single_track_sessions, "Single-track sessions excluded", dc.excluded_single_track_sessions) +
+      statCell(deep.avg_plays_per_track, "Deepest avg (plays/tx)", deep.avg_plays_per_track, 1) +
       tStats +
       statCell(TOOLS.plays_snapshot, "Snapshot") +
       "</div>" +
-      '<blockquote class=\"tx-signal\"><span class=\"sig-lab\">The signal</span>' +
+      '<blockquote class="tx-signal"><span class="sig-lab">The signal</span>' +
       "The quietest rooms in the vault, ranked by average plays per transmission. The deepest session on record is \u201c" +
       esc(deep.name) + "\u201d \u2014 " + deep.avg_plays_per_track + " plays per transmission across " +
       "its two tracks." +
@@ -524,9 +571,9 @@
         esc(tdc.insights.quietest.title) + "\u201d \u2014 " +
         fmt(tdc.insights.quietest.plays) + " plays." : "") +
       " An editorial ranking, not an artist fact.</blockquote>" +
-      '<div class=\"tx-block\"><h3>The deepest sessions</h3><ol>' + rows + "</ol>" +
-      '<p class=\"tx-note\"><strong>The formula:</strong> ' + esc(dc.formula) + "</p>" +
-      '<p class=\"tx-note\">The quietest single session ever uploaded: \u201c' + esc(quiet.name) + "\u201d \u2014 " +
+      '<div class="tx-block"><h3>The deepest sessions</h3><ol>' + rows + "</ol>" +
+      '<p class="tx-note"><strong>The formula:</strong> ' + esc(dc.formula) + "</p>" +
+      '<p class="tx-note">The quietest single session ever uploaded: \u201c' + esc(quiet.name) + "\u201d \u2014 " +
       fmt(quiet.total_plays) + " plays. Play counts are a single snapshot (" + esc(TOOLS.plays_snapshot) +
       ") \u2014 no trajectories are drawn from them.</p></div>" +
       tNote;
@@ -543,11 +590,7 @@
     ];
   }
 
-
-  /* ---------- data chapter: THE HORIZON (verified 2026-10-11 research pass)
-     Hand-authored from the research report — every fact sourced, nothing from
-     the archive's play counts. Status words only ("announced", "as of"),
-     never released-claims. */
+  /* ---------- data chapter: THE HORIZON (verified 2026-10-11 research pass) ---------- */
   function srcLink(href, text) {
     return '<a href="' + esc(href) + '" rel="noopener">' + esc(text) + "</a>";
   }
@@ -681,49 +724,11 @@
     return list;
   }
 
-  function pad(n) { return ("0" + (n + 1)).slice(-2); }
-
-  /* ---------- rendering ---------- */
-  function renderRail() {
-    railEl.innerHTML = stops.map(function (s, i) {
-      var cur = i === stop ? ' aria-current="step"' : "";
-      var seen = visited[i] ? ' <span class="tx-visited" aria-hidden="true">\u25cf</span>' : "";
-      var al = "Stop " + (i + 1) + " of " + stops.length + ", " + s.label + ": " + s.name +
-        (visited[i] ? ", visited" : "");
-      return '<li><button type="button" class="tx-node" data-stop="' + i + '"' + cur + ' aria-label="' + esc(al) + '">' +
-        '<span class="n-num">' + pad(i) + " / " + pad(stops.length - 1) + seen + "</span>" +
-        '<span class="n-name">' + esc(s.name) + "</span>" +
-        '<span class="tx-meta">' + esc(s.span || "") + "</span></button></li>";
-    }).join("");
-  }
-
-  function renderCrumb() {
-    var s = stops[stop];
-    var crumb = $("tx-crumb");
-    if (!crumb) return;
-    crumb.innerHTML = '<ol><li><a href="transmission.html">Transmission</a></li>' +
-      '<li><span class="crumb-stop">Stop ' + (stop + 1) + " of " + stops.length + "</span></li>" +
-      '<li aria-current="page">' + esc(s.name) + "</li></ol>";
-    var prev = stops[stop - 1], next = stops[stop + 1];
-    $("tx-prev").setAttribute("aria-label", prev ? "Previous stop: " + prev.label + " — " + prev.name : "Previous stop");
-    $("tx-next").setAttribute("aria-label", next ? "Next stop: " + next.label + " — " + next.name : "Next stop");
-  }
-
-  function renderStop() {
-    var s = stops[stop];
-    visited[stop] = true;
-    var kick = s.kind === "era"
-      ? '<span class="kicker"><span class="numeral">\u2726</span>Era ' + (eraIndex(stop) + 1) + " of " + DATA.eras.length + "</span>"
-      : '<span class="kicker"><span class="numeral">\u2726</span>Data chapter</span>';
-    innerEl.innerHTML =
-      '<div class="tx-era-kicker">' + kick + '<span class="tx-span">' + esc(s.span || "") + "</span></div>" +
-      '<h2 id="tx-era-heading" tabindex="-1">' + esc(s.name) + "</h2>" +
-      (s.kind === "era" ? '<p class="tx-scene">' + esc(s.era.scene) + "</p>" : "") +
-      s.render() +
-      deepDivePara(s.deepDive);
-    renderRail();
-    renderCrumb();
-    document.title = s.name + " \u00b7 Transmission \u2014 Aster da Master";
+  function attachFreqs() {
+    var n = 0;
+    stops.forEach(function (s) {
+      if (s.kind === "era") s.freq = FREQS[n++] || "";
+    });
   }
 
   function eraIndex(i) {
@@ -732,89 +737,9 @@
     return n;
   }
 
-  function renderMap() {
-    $("tx-map-grid").innerHTML = stops.map(function (s, i) {
-      var seen = visited[i] ? ' <span class="tx-visited" aria-hidden="true">\u25cf</span>' : "";
-      var stat = "";
-      if (s.kind === "era") stat = fmt(s.era.transmissions) + " tx \u00b7 " + fmt(s.era.plays) + " plays";
-      return '<div class="tx-map-item">' +
-        '<button type="button" class="tx-map-card" data-stop="' + i + '">' +
-        '<span class="c-num">' + esc(s.label.toUpperCase()) + " " + pad(i) + seen + "</span>" +
-        '<span class="c-name">' + esc(s.name) + "</span>" +
-        '<span class="c-stats">' + esc(stat || s.span || "") + "</span>" +
-        "</button>" +
-        '<a class="tx-map-dd" href="' + esc(s.deepDive.href) + '">' + esc(s.deepDive.text) + " &rarr;</a>" +
-        "</div>";
-    }).join("");
-  }
-
-  /* ---------- navigation ---------- */
-  function afterNav(s, opts) {
-    renderCrumb(); /* crumb holds prev/next names after the move */
-    try {
-      window.history.replaceState(null, "", "#" + s.hash);
-    } catch (err) { /* file:// or sandboxed contexts: the link still works */ }
-    announce("Stop " + (stop + 1) + " of " + stops.length + ": " + s.label + " — " + s.name +
-      (s.span ? ", " + s.span : "") + ".");
-    if (!VT && !REDUCED) {
-      eraEl.classList.remove("tuning");
-      void eraEl.offsetWidth; /* restart the tuning animation */
-      eraEl.classList.add("tuning");
-    }
-    if (opts.focus !== false) focusStopHeading();
-    if (view !== "journey") show("journey");
-  }
-
-  function goStop(i, opts) {
-    opts = opts || {};
-    stopAutoplay();
-    if (i >= stops.length) { show("end"); return; }
-    if (i < 0) i = 0;
-    stop = i;
-    if (VT) {
-      /* view-transition crossfade on the panel; focus after it lands */
-      var vt = document.startViewTransition(function () { renderStop(); remember(); });
-      vt.finished.then(function () {
-        if (opts.focus !== false) focusStopHeading();
-      }, function () {
-        if (opts.focus !== false) focusStopHeading();
-      });
-      afterNav(stops[stop], { focus: false });
-    } else {
-      renderStop();
-      remember();
-      afterNav(stops[stop], opts);
-    }
-  }
-
-  function nextStop(manual) { goStop(stop + 1, { focus: manual !== false }); }
-  function prevStop() { goStop(stop - 1); }
-
-  /* ---------- auto-play ---------- */
-  function startAutoplay() {
-    if (REDUCED || timer) return;
-    autoplayBtn.setAttribute("aria-pressed", "true");
-    autoplayBtn.innerHTML = "&#10074;&#10074; Pause";
-    timer = setInterval(function () {
-      if (stop + 1 >= stops.length) { stopAutoplay(); show("end"); return; }
-      stop += 1;
-      renderStop();
-      remember();
-      var s = stops[stop];
-      announce("Stop " + (stop + 1) + " of " + stops.length + ": " + s.label + " — " + s.name + ".");
-    }, AUTOPLAY_MS);
-    announce("Auto-play on: advancing every 12 seconds. Press pause to take over.");
-  }
-
-  function stopAutoplay() {
-    if (timer) { clearInterval(timer); timer = null; }
-    autoplayBtn.setAttribute("aria-pressed", "false");
-    autoplayBtn.innerHTML = "&#9654; Press play";
-  }
-
-  /* ---------- share ---------- */
   function eraStops() { return stops.map(function (s, i) { return s.kind === "era" ? i : -1; }).filter(function (i) { return i >= 0; }); }
 
+  /* ---------- share ---------- */
   function favoriteEra() {
     var idx = eraStops().filter(function (i) { return visited[i]; });
     if (!idx.length) idx = eraStops().slice(0, 1);
@@ -828,7 +753,7 @@
     var n = visitedCount();
     var lines = [
       "MY TRANSMISSION \u2014 Aster da Master (2018 \u2192 2026)",
-      "Stops visited: " + n + " of " + stops.length + (names.length ? " \u2014 " + names.join(" \u00b7 ") : ""),
+      "Segments visited: " + n + " of " + stops.length + (names.length ? " \u2014 " + names.join(" \u00b7 ") : ""),
       "Favorite era by plays: " + fe.name + " \u2014 " + fmt(fe.era.plays) + " plays across " + fe.era.transmissions + " transmissions",
       "Top track: \u201c" + top.title + "\u201d \u2014 " + fmt(top.plays) + " plays"
     ];
@@ -849,7 +774,8 @@
     if (s.kind === "era") {
       var e = s.era;
       L.push(fmt(e.transmissions) + " transmissions \u00b7 " + fmt(e.plays) + " plays \u00b7 " +
-        e.sessions + " sessions \u00b7 " + e.distributor + " distributor releases");
+        e.sessions + " sessions \u00b7 " + e.milestones.length + " milestones filed \u00b7 " +
+        e.distributor + " distributor releases");
       L.push("The signal: " + e.signal);
       var top = e.top_tracks[0];
       if (top) L.push("Top track: \u201c" + top.title + "\u201d \u2014 " + fmt(top.plays) + " plays");
@@ -866,7 +792,7 @@
       var label = btn.getAttribute("data-label") || btn.textContent;
       btn.setAttribute("data-label", label);
       btn.textContent = "Copied \u2713";
-      announce(doneMsg);
+      announceNow(doneMsg);
       setTimeout(function () { btn.textContent = label; }, 2000);
     };
     if (navigator.clipboard && navigator.clipboard.writeText) {
@@ -892,95 +818,465 @@
   function copyTransmission(btn) {
     copyText(shareText(), btn,
       "Transmission copied: " + visitedCount() + " of " + stops.length +
-      " stops visited. Favorite era by plays: " + stops[favoriteEra()].name + ".");
+      " segments visited. Favorite era by plays: " + stops[favoriteEra()].name + ".");
   }
 
-  function copyStopLink(btn) {
-    var s = stops[stop];
+  function copyStopLink(s, btn) {
     var url = window.location.href.split("#")[0] + "#" + s.hash;
     copyText(url, btn, "Stop link copied: " + s.label + " — " + s.name + ".");
   }
 
-  function copyBrief(btn) {
-    var s = stops[stop];
+  function copyBrief(s, btn) {
     copyText(stopBrief(s), btn, "Stop brief copied: " + s.label + " — " + s.name + ".");
   }
 
-  /* ---------- end card ---------- */
-  function renderEnd() {
+  /* ================= THE BROADCAST ENGINE ================= */
+
+  /* ---------- segment rendering ---------- */
+  function segHeadingId(i) { return "tx-seg-h-" + i; }
+
+  function renderSegment(s, i) {
+    var freqLine = s.kind === "era"
+      ? '<p class="tx-seg-freq" aria-hidden="true">' + esc(s.freq) + ' <span>MHz</span></p>'
+      : '<p class="tx-seg-freq tx-seg-data" aria-hidden="true">DATA BAND</p>';
+    var kick = s.kind === "era"
+      ? "Era " + (eraIndex(i) + 1) + " of " + DATA.eras.length
+      : "Data chapter";
+    return '<section class="tx-seg" id="' + s.hash + '" data-stop="' + i + '" aria-labelledby="' + segHeadingId(i) + '">' +
+      '<header class="tx-seg-head">' +
+      '<p class="kicker"><span class="numeral">\u2726</span>' + kick + "</p>" +
+      freqLine +
+      '<h2 id="' + segHeadingId(i) + '" tabindex="-1">' + esc(s.name) + "</h2>" +
+      '<p class="tx-span">' + esc(s.span || "") + "</p>" +
+      (s.kind === "era" ? '<p class="tx-scene">' + esc(s.era.scene) + "</p>" : "") +
+      "</header>" +
+      '<div class="tx-seg-body">' + s.render() + "</div>" +
+      '<footer class="tx-seg-foot">' +
+      deepDivePara(s.deepDive) +
+      '<div class="tx-seg-actions">' +
+      '<button type="button" class="btn btn-sm btn-ghost" data-act="link">Copy stop link</button>' +
+      '<button type="button" class="btn btn-sm btn-ghost" data-act="brief">Copy stop brief</button>' +
+      "</div></footer></section>";
+  }
+
+  function renderSegments() {
+    segEls = stops.map(function (s, i) {
+      var tmp = document.createElement("div");
+      tmp.innerHTML = renderSegment(s, i);
+      var sec = tmp.firstChild;
+      segWrap.appendChild(sec);
+      return sec;
+    });
+  }
+
+  /* ---------- station index (plain anchor jumps; the tuner is the dial) ---------- */
+  function renderIndex() {
+    indexEl.innerHTML = '<p class="kicker"><span class="numeral">\u2726</span>Station index</p>' +
+      "<ol>" + stops.map(function (s, i) {
+        var stat = s.kind === "era"
+          ? fmt(s.era.transmissions) + " tx \u00b7 " + fmt(s.era.plays) + " plays"
+          : s.span;
+        return '<li><a href="#' + s.hash + '" data-jump="' + i + '">' +
+          '<span class="ix-num">' + (s.kind === "era" ? "ERA" : "DATA") + "</span> " +
+          '<span class="ix-name">' + esc(s.name) + "</span> " +
+          '<span class="ix-stat">' + esc(stat || "") + "</span></a></li>";
+      }).join("") + "</ol>";
+  }
+
+  /* ---------- sign-off ---------- */
+  function renderSignoff() {
     var t = DATA.archive_totals;
-    /* The plays cell carries data-signal="plays": the Signal (Vercel Wave B)
-       repaints it with the live count when the function answers; the static
-       snapshot stands otherwise (badge is the honesty mechanism). */
-    var playsCell = '<div class="stat"><div class="stat-value"><span data-signal="plays">' +
-      fmt(t.plays) + '</span></div><div class="stat-label">Plays (' + DATA.plays_snapshot + " snapshot)</div></div>";
-    $("tx-end-stats").innerHTML =
-      statCell(fmt(t.transmissions), "Transmissions, 2018\u20132026") +
+    /* The plays cell carries data-signal="plays": The Signal (Vercel Wave B)
+       repaints it with the live count when /api/stats answers; the static
+       snapshot stands otherwise (the badge is the honesty mechanism). It also
+       count-ups on entry like every other number. */
+    var playsCell = '<div class="stat"><div class="stat-value" data-count="' + t.plays +
+      '"><span data-signal="plays">0</span></div>' +
+      '<div class="stat-label">Plays (' + DATA.plays_snapshot + " snapshot)</div></div>";
+    signoffEl.innerHTML =
+      '<p class="kicker"><span class="numeral">\u2726</span>Signal received</p>' +
+      '<h2 id="tx-signoff-h" tabindex="-1">TRANSMISSION ENDS</h2>' +
+      '<p class="signal-row"><span class="api-badge" id="tx-signal-badge" data-api-state="waking" role="status" aria-live="polite"></span></p>' +
+      '<p class="tx-lede">You rode six eras and seven data chapters, 2018 to 2026. Here is the whole signal in one frame — and the full vault, if you want to keep digging.</p>' +
+      '<div class="stat-grid tx-end-stats">' +
+      statCell(fmt(t.transmissions), "Transmissions, 2018\u20132026", t.transmissions) +
       playsCell +
-      statCell(t.sessions, "Upload sessions") +
-      statCell(stops.length, "Stops traversed");
-    var box = $("tx-share-out");
-    box.textContent = shareText();
-    box.hidden = false;
-    document.title = "Signal received \u00b7 Transmission \u2014 Aster da Master";
-    if (window.Signal) window.Signal.wireStats("tx-signal-badge");
+      statCell(t.sessions, "Upload sessions", t.sessions) +
+      statCell(stops.length, "Segments traversed", stops.length) +
+      "</div>" +
+      '<div class="btn-row">' +
+      '<a class="btn btn-neon" href="glance.html">Open the vault at a glance</a>' +
+      '<button class="btn btn-ghost" id="tx-copy-end" type="button">Copy my transmission</button>' +
+      '<button class="btn btn-ghost" id="tx-replay" type="button">\u21bb Replay the broadcast</button>' +
+      "</div>" +
+      '<div class="tx-share-out" id="tx-share-out" hidden></div>';
+  }
+
+  /* ---------- the tuner ---------- */
+  function startYear(s) {
+    var m = /^(\d{4})/.exec(s.span || "");
+    return m ? m[1] : "";
+  }
+
+  function renderTuner() {
+    var eraIdx = eraStops();
+    dialEl.innerHTML = '<span class="tx-needle" id="tx-needle" aria-hidden="true">\u25be</span>' +
+      eraIdx.map(function (i) {
+        var s = stops[i];
+        var seen = visited[i] ? ' <span class="tx-visited" aria-hidden="true">\u25cf</span>' : "";
+        return '<button type="button" role="radio" aria-checked="false" class="tx-station" data-tune="' + i + '" ' +
+          'aria-label="Tune to ' + esc(s.freq) + " MHz — " + esc(s.name) + '">' +
+          '<span class="st-freq">' + esc(s.freq) + seen + "</span>" +
+          '<span class="st-name">' + esc(s.name) + "</span>" +
+          '<span class="st-years">' + esc(startYear(s)) + "</span></button>";
+      }).join("");
+    needleEl = $("tx-needle");
+    pickEl.innerHTML = '<option value="">Jump to a segment\u2026</option>' + stops.map(function (s, i) {
+      return '<option value="' + i + '">' + esc((s.kind === "era" ? "Era \u2014 " : "Chapter \u2014 ") + s.name) + "</option>";
+    }).join("");
+  }
+
+  function moveNeedle() {
+    if (!needleEl) return;
+    var btn = dialEl.querySelector('[data-tune="' + activeIdx + '"]');
+    if (!btn) return;
+    var x = btn.offsetLeft + btn.offsetWidth / 2;
+    needleEl.style.transform = "translateX(" + x + "px) translateX(-50%)";
+  }
+
+  /* Boot-sequence aesthetic for the readout: type TUNING, then land on the
+     station. Visual only (aria-hidden) — the live region announces once. */
+  var typeTimer = null;
+  function setReadoutPlain(s) {
+    if (typeTimer) { clearTimeout(typeTimer); typeTimer = null; }
+    paintReadout(s.freq ? s.freq + " MHz \u00b7 SIGNAL FOUND" : "DATA BAND \u00b7 SIGNAL FOUND", s.name);
+  }
+
+  function setReadoutTyped(s) {
+    if (REDUCED || isMobile()) { setReadoutPlain(s); return; }
+    if (typeTimer) { clearTimeout(typeTimer); typeTimer = null; }
+    var line1 = s.freq ? "TUNING " + s.freq + " \u2026" : "TUNING DATA BAND \u2026";
+    var line2 = s.freq ? s.freq + " MHz \u00b7 SIGNAL FOUND" : "DATA BAND \u00b7 SIGNAL FOUND";
+    var ci = 0;
+    paintReadout("", s.name);
+    (function tick() {
+      ci++;
+      paintReadout(line1.slice(0, ci), s.name);
+      if (ci < line1.length) {
+        typeTimer = setTimeout(tick, 26);
+      } else {
+        typeTimer = setTimeout(function () { paintReadout(line2, s.name); typeTimer = null; }, 320);
+      }
+    })();
+  }
+
+  function paintReadout(status, name) {
+    if (!readoutEl) return;
+    readoutEl.innerHTML =
+      '<span class="tx-ro-status" aria-hidden="true">' + esc(status) + "</span>" +
+      '<span class="tx-ro-name" aria-hidden="true">' + esc(name) + "</span>";
+  }
+
+  function syncTuner(i) {
+    var btns = dialEl.querySelectorAll("[data-tune]");
+    Array.prototype.forEach.call(btns, function (b) {
+      var on = +b.getAttribute("data-tune") === i;
+      b.setAttribute("aria-checked", on ? "true" : "false");
+      if (on) b.classList.add("is-on"); else b.classList.remove("is-on");
+      var dot = b.querySelector(".tx-visited");
+      var si = +b.getAttribute("data-tune");
+      if (visited[si] && !dot) {
+        var f = b.querySelector(".st-freq");
+        if (f) f.insertAdjacentHTML("beforeend", ' <span class="tx-visited" aria-hidden="true">\u25cf</span>');
+      }
+    });
+    if (pickEl && String(pickEl.value) !== String(i)) pickEl.value = String(i);
+    moveNeedle();
+  }
+
+  /* ---------- signal static: pure CSS/SVG, opacity only ---------- */
+  function flashStatic() {
+    if (REDUCED || isMobile() || !staticEl) return;
+    var now = Date.now();
+    if (now - lastFlash < 600) return; /* don't strobe on fast scroll */
+    lastFlash = now;
+    staticEl.classList.add("on");
+    setTimeout(function () { staticEl.classList.remove("on"); }, 170);
+  }
+
+  /* ---------- count-up: numbers roll live as a segment enters ---------- */
+  function fmtCount(v, dec) {
+    if (dec > 0) {
+      return v.toLocaleString("en-US", { minimumFractionDigits: dec, maximumFractionDigits: dec });
+    }
+    return Math.round(v).toLocaleString("en-US");
+  }
+
+  function countUp(el) {
+    if (el.hasAttribute("data-counted")) return;
+    el.setAttribute("data-counted", "1");
+    var target = parseFloat(el.getAttribute("data-count"));
+    var dec = parseInt(el.getAttribute("data-count-dec") || "0", 10);
+    var suf = el.getAttribute("data-count-suffix") || "";
+    if (!isFinite(target)) return;
+    /* The plays cells carry a data-signal span the Signal may repaint live;
+       count the span so a live repaint lands in the right place. */
+    var inner = el.querySelector("[data-signal]") || el;
+    var set = function (v) { inner.textContent = fmtCount(v, dec) + suf; };
+    if (REDUCED || !window.requestAnimationFrame) { set(target); return; }
+    set(0);
+    var t0 = null, DUR = 1150;
+    function frame(now) {
+      if (t0 === null) t0 = now;
+      var t = Math.min(1, (now - t0) / DUR);
+      var e = 1 - Math.pow(1 - t, 3);
+      set(target * e);
+      if (t < 1) window.requestAnimationFrame(frame);
+      else set(target);
+    }
+    window.requestAnimationFrame(frame);
+  }
+
+  function runCounts(root) {
+    if (!root) return;
+    var cells = root.querySelectorAll("[data-count]:not([data-counted])");
+    Array.prototype.forEach.call(cells, countUp);
+  }
+
+  /* ---------- activation: tune (deliberate) vs scroll (passive) ---------- */
+  function segLabel(i) {
+    var s = stops[i];
+    if (s.kind === "era") {
+      var e = s.era;
+      return s.name + " — " + fmt(e.transmissions) + " transmissions, " + fmt(e.plays) +
+        " plays, " + e.sessions + " sessions, " + e.milestones.length + " milestones filed.";
+    }
+    return s.name + " — " + s.span + ".";
+  }
+
+  function activate(i, origin, opts) {
+    opts = opts || {};
+    if (i < 0 || i >= stops.length) return;
+    var first = activeIdx < 0;
+    activeIdx = i;
+    markVisited(i);
+    runCounts(segEls[i]);
+    syncTuner(i);
+    if (!first) flashStatic();
+    if (origin === "tune") {
+      setReadoutTyped(stops[i]);
+      try { window.history.replaceState(null, "", "#" + stops[i].hash); } catch (e) { /* file:// */ }
+      document.title = stops[i].name + " \u00b7 Transmission \u2014 Aster da Master";
+    } else {
+      setReadoutPlain(stops[i]);
+    }
+    if (origin === "tune") announceNow("Tuned to segment " + (i + 1) + " of " + stops.length + ": " + segLabel(i));
+    else announce("Segment " + (i + 1) + " of " + stops.length + ": " + segLabel(i));
+    remember();
+    if (opts.focus) {
+      var h = $(segHeadingId(i));
+      if (h) h.focus({ preventScroll: true });
+    }
+  }
+
+  /* While a tune's smooth scroll is in flight, scroll-origin activations are
+     suppressed — the tune already activated its target; the observer just
+     marks visited segments and runs their count-ups. */
+  var tuneGuard = 0;
+
+  function tune(i, opts) {
+    opts = opts || {};
+    if (!opts.auto) stopAutoplay();
+    if (i < 0) i = 0;
+    if (i >= stops.length) i = stops.length - 1;
+    var sec = segEls[i];
+    if (!sec) return;
+    activate(i, "tune", opts);
+    if (!REDUCED) tuneGuard = Date.now() + 1400;
+    try {
+      sec.scrollIntoView({ behavior: (REDUCED || opts.instant) ? "auto" : "smooth", block: "start" });
+    } catch (e) {
+      sec.scrollIntoView();
+    }
+  }
+
+  function scrollToSignoff() {
+    stopAutoplay();
+    tuneGuard = 0;
+    try {
+      signoffEl.scrollIntoView({ behavior: REDUCED ? "auto" : "smooth", block: "start" });
+    } catch (e) {
+      signoffEl.scrollIntoView();
+    }
+    runCounts(signoffEl);
+    var h = $("tx-signoff-h");
+    if (h) h.focus({ preventScroll: true });
+    announceNow("Transmission ends: the vault at a glance.");
+  }
+
+  /* ---------- scroll observation ---------- */
+  function watchSegments() {
+    if (!("IntersectionObserver" in window)) {
+      /* Ancient: everything counts up immediately, stated plainly. */
+      segEls.forEach(function (sec) { runCounts(sec); });
+      runCounts(signoffEl);
+      return;
+    }
+    var segIO = new IntersectionObserver(function (entries) {
+      var best = null, bestRatio = 0;
+      entries.forEach(function (en) {
+        if (en.isIntersecting && en.intersectionRatio > bestRatio) {
+          bestRatio = en.intersectionRatio;
+          best = +en.target.getAttribute("data-stop");
+        }
+      });
+      if (best === null || best === activeIdx) return;
+      /* every visible segment counts up and marks visited, immediately */
+      markVisited(best);
+      runCounts(segEls[best]);
+      if (Date.now() < tuneGuard) return; /* a tune's scroll is in flight */
+      activate(best, "scroll");
+    }, { threshold: [0.35, 0.6] });
+    segEls.forEach(function (sec) { segIO.observe(sec); });
+    /* The sign-off counts up when it arrives, too. */
+    var soIO = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting) { runCounts(signoffEl); soIO.disconnect(); }
+      });
+    }, { threshold: 0.35 });
+    soIO.observe(signoffEl);
+  }
+
+  /* ---------- auto-play: the station plays the segments ---------- */
+  function startAutoplay() {
+    if (REDUCED || timer) return;
+    autoplayBtn.setAttribute("aria-pressed", "true");
+    autoplayBtn.innerHTML = "\u275a\u275a Pause";
+    timer = setInterval(function () {
+      var n = activeIdx + 1;
+      if (n >= stops.length) { stopAutoplay(); scrollToSignoff(); return; }
+      tune(n, { auto: true });
+    }, AUTOPLAY_MS);
+    announceNow("Auto-play on: tuning through the segments every 12 seconds. Scroll or press pause to take over.");
+  }
+
+  function stopAutoplay() {
+    if (timer) { clearInterval(timer); timer = null; }
+    if (!autoplayBtn) return;
+    autoplayBtn.setAttribute("aria-pressed", "false");
+    autoplayBtn.innerHTML = "\u25b6 Press play";
   }
 
   /* ---------- wiring ---------- */
   function wire() {
-    $("tx-begin").addEventListener("click", function () { stop = 0; goStop(0); });
+    $("tx-begin").addEventListener("click", function () {
+      showBroadcast();
+      tune(0, { instant: true });
+      if (window.Signal) window.Signal.wireStats("tx-signal-badge");
+    });
     var resumeBtn = $("tx-resume");
     if (resumeBtn) resumeBtn.addEventListener("click", function () {
       var v = savedStop();
-      goStop(v == null ? 0 : Math.min(v, stops.length - 1));
+      showBroadcast();
+      tune(v == null ? 0 : Math.min(v, stops.length - 1), { instant: true });
+      if (window.Signal) window.Signal.wireStats("tx-signal-badge");
     });
     var clearBtn = $("tx-clear");
     if (clearBtn) clearBtn.addEventListener("click", function () {
       clearProgress();
       updateProgress();
+      syncTuner(-1);
       var rb = $("tx-resume");
       if (rb) rb.hidden = true;
-      announce("Progress cleared. The journey is back at the start.");
+      announceNow("Progress cleared. The broadcast is back at the start.");
     });
-    $("tx-open-map").addEventListener("click", function () { renderMap(); show("map"); });
-    $("tx-map-btn").addEventListener("click", function () { renderMap(); show("map"); });
-    $("tx-map-back").addEventListener("click", function () { show("journey"); });
-    $("tx-prev").addEventListener("click", prevStop);
-    $("tx-next").addEventListener("click", function () { nextStop(true); });
-    $("tx-stop-link").addEventListener("click", function () { copyStopLink($("tx-stop-link")); });
-    $("tx-brief").addEventListener("click", function () { copyBrief($("tx-brief")); });
-    $("tx-replay").addEventListener("click", function () { stopAutoplay(); stop = 0; goStop(0); });
-    $("tx-copy").addEventListener("click", function () { copyTransmission($("tx-copy")); });
-    $("tx-copy-end").addEventListener("click", function () { copyTransmission($("tx-copy-end")); });
 
-    var jump = function (ev) {
-      var b = ev.target.closest("[data-stop]");
-      if (b) goStop(parseInt(b.getAttribute("data-stop"), 10));
-    };
-    railEl.addEventListener("click", jump);
-    $("tx-map-grid").addEventListener("click", jump);
+    /* tuner dial: click tunes; arrows retune (focus stays on the dial) */
+    dialEl.addEventListener("click", function (ev) {
+      var b = ev.target.closest("[data-tune]");
+      if (!b) return;
+      tune(+b.getAttribute("data-tune"), { focus: true });
+      b.focus();
+    });
+    dialEl.addEventListener("keydown", function (ev) {
+      var b = ev.target.closest("[data-tune]");
+      if (!b) return;
+      var cur = +b.getAttribute("data-tune");
+      var eraIdx = eraStops();
+      var pos = eraIdx.indexOf(cur);
+      var n = null;
+      if (ev.key === "ArrowRight" || ev.key === "ArrowDown") n = eraIdx[(pos + 1) % eraIdx.length];
+      else if (ev.key === "ArrowLeft" || ev.key === "ArrowUp") n = eraIdx[(pos - 1 + eraIdx.length) % eraIdx.length];
+      else if (ev.key === "Home") n = eraIdx[0];
+      else if (ev.key === "End") n = eraIdx[eraIdx.length - 1];
+      if (n === null || n === undefined) return;
+      ev.preventDefault();
+      tune(n);
+      var nb = dialEl.querySelector('[data-tune="' + n + '"]');
+      if (nb) nb.focus();
+    });
 
+    /* mobile era picker */
+    if (pickEl) pickEl.addEventListener("change", function () {
+      if (pickEl.value === "") return;
+      tune(+pickEl.value, { focus: true });
+    });
+
+    /* broadcast transport */
+    $("tx-prev").addEventListener("click", function () {
+      tune(activeIdx <= 0 ? 0 : activeIdx - 1, { focus: true });
+    });
+    $("tx-next").addEventListener("click", function () {
+      if (activeIdx >= stops.length - 1) scrollToSignoff();
+      else tune(activeIdx + 1, { focus: true });
+    });
     if (REDUCED) {
-      autoplayBtn.hidden = true; /* manual stepping only */
+      autoplayBtn.hidden = true;
     } else {
       autoplayBtn.addEventListener("click", function () {
         if (timer) stopAutoplay();
         else startAutoplay();
       });
+      /* the listener takes over on any manual scroll */
+      var interrupt = function () {
+        if (timer) stopAutoplay();
+        tuneGuard = 0;
+      };
+      window.addEventListener("wheel", interrupt, { passive: true });
+      window.addEventListener("touchmove", interrupt, { passive: true });
+      window.addEventListener("pointerdown", interrupt, { passive: true });
     }
 
-    document.addEventListener("keydown", function (ev) {
-      var tag = (document.activeElement && document.activeElement.tagName) || "";
-      if (/INPUT|TEXTAREA|SELECT/.test(tag)) return;
-      if (view === "journey") {
-        if (ev.key === "ArrowRight") { ev.preventDefault(); nextStop(true); }
-        else if (ev.key === "ArrowLeft") { ev.preventDefault(); prevStop(); }
-        else if (ev.key === "Home") { ev.preventDefault(); goStop(0); }
-        else if (ev.key === "End") { ev.preventDefault(); goStop(stops.length - 1); }
-      } else if (view === "map" && ev.key === "Escape") {
-        ev.preventDefault(); show("journey");
+    /* per-segment copy buttons (delegated) */
+    segWrap.addEventListener("click", function (ev) {
+      var b = ev.target.closest("[data-act]");
+      if (!b) return;
+      var sec = ev.target.closest("[data-stop]");
+      if (!sec) return;
+      var s = stops[+sec.getAttribute("data-stop")];
+      if (b.getAttribute("data-act") === "link") copyStopLink(s, b);
+      else copyBrief(s, b);
+    });
+
+    /* station index: plain anchors — let them jump, the observer activates */
+    indexEl.addEventListener("click", function (ev) {
+      var a = ev.target.closest("[data-jump]");
+      if (!a) return;
+      stopAutoplay();
+    });
+
+    /* sign-off buttons (delegated — rendered before wire in boot) */
+    signoffEl.addEventListener("click", function (ev) {
+      if (ev.target.closest("#tx-copy-end")) copyTransmission(ev.target.closest("#tx-copy-end"));
+      else if (ev.target.closest("#tx-replay")) {
+        stopAutoplay();
+        tuneGuard = 0;
+        activate(0, "tune", {});
+        try { window.scrollTo({ top: 0, behavior: REDUCED ? "auto" : "smooth" }); } catch (e) { window.scrollTo(0, 0); }
       }
     });
+
+    window.addEventListener("resize", function () { moveNeedle(); });
   }
 
   /* ---------- boot ---------- */
@@ -988,29 +1284,49 @@
     DATA = d;
     restoreVisited();
     stops = buildStops();
+    attachFreqs();
     var t = d.archive_totals;
-    document.querySelector('[data-tx-total="transmissions"]').textContent = fmt(t.transmissions);
-    document.querySelector('[data-tx-total="plays"]').textContent = fmt(t.plays);
-    document.querySelector('[data-tx-total="sessions"]').textContent = fmt(t.sessions);
-    document.querySelector('[data-tx-total="stops"]').textContent = stops.length;
-    wire();
+    var q = function (sel) { return document.querySelector(sel); };
+    q('[data-tx-total="transmissions"]').textContent = fmt(t.transmissions);
+    q('[data-tx-total="plays"]').textContent = fmt(t.plays);
+    q('[data-tx-total="sessions"]').textContent = fmt(t.sessions);
+    q('[data-tx-total="stops"]').textContent = stops.length;
 
-    /* resume: offer the last stop, never auto-jump */
-    var v = savedStop();
+    renderTuner();
+    renderSegments();
+    renderIndex();
+    renderSignoff();
+    wire();
+    paintReadout("STANDBY", "THE PIRATE BROADCAST");
+    syncTuner(-1);
+
+    /* deep link straight into the broadcast */
     var m = /^#((?:era|chapter)-[a-z0-9-]+)$/.exec(window.location.hash || "");
     if (m) {
       for (var k = 0; k < stops.length; k++) {
-        if (stops[k].hash === m[1]) { goStop(k, { focus: false }); break; }
+        if (stops[k].hash === m[1]) {
+          showBroadcast();
+          /* layout first, then tune */
+          (function (kk) {
+            setTimeout(function () { tune(kk, { instant: true }); }, 60);
+          })(k);
+          if (window.Signal) window.Signal.wireStats("tx-signal-badge");
+          break;
+        }
       }
-      if (view !== "journey") show("entry");
-    } else if (v != null && v >= 0 && v < stops.length) {
-      var rb = $("tx-resume");
-      if (rb) {
-        rb.hidden = false;
-        rb.innerHTML = "Resume \u2014 " + esc(stops[v].name) + " &rarr;";
+      if (bcEl.hidden) showEntry();
+    } else {
+      var v = savedStop();
+      if (v != null && v >= 0 && v < stops.length) {
+        var rb = $("tx-resume");
+        if (rb) {
+          rb.hidden = false;
+          rb.innerHTML = "Resume \u2014 " + esc(stops[v].name) + " &rarr;";
+        }
       }
     }
     updateProgress();
+    watchSegments();
     if (window.ADM.reveal) window.ADM.reveal();
   }
 
@@ -1034,6 +1350,6 @@
     boot(res[0]);
   }).catch(function () {
     $("tx-entry").insertAdjacentHTML("beforeend",
-      '<p class="chart-sub" role="alert">The transmission data failed to load. The archive pages are all static and fine — this journey just needs its JSON.</p>');
+      '<p class="chart-sub" role="alert">The transmission data failed to load. The archive pages are all static and fine — this broadcast just needs its JSON.</p>');
   });
 })();

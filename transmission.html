@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Transmission — Aster da Master</title>
-  <meta name="description" content="Press play on his career: a guided journey through six eras and seven data chapters of Aster da Master, 2018 to 2026 — the numbers, the defining tracks, the sessions, the summoned voices, the closest races, the record book, the codex, the architects, the seasons, the deep cuts, and the horizon.">
+  <meta name="description" content="The full broadcast: a scroll-driven pirate transmission through six eras and seven data chapters of Aster da Master, 2018 to 2026. Tune the dial between eras — signal static between stations, the numbers counting up live as each era comes on air: transmissions, plays, sessions, milestones.">
   <link rel="preload" href="assets/fonts/anton-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/css/fonts.css">
 
@@ -19,7 +19,9 @@
     @view-transition {
       navigation: auto;
     }
-    /* TRANSMISSION — flagship journey. Phosphor green on near-black, restrained scanlines. */
+    /* TRANSMISSION 4.0 — the full broadcast. Phosphor green on near-black,
+       restrained scanlines. Station frequencies on the tuner are station
+       chrome (the pirate dial aesthetic), not archive facts. */
     .tx-stage {
       position: relative;
       border: 1px solid var(--line);
@@ -48,55 +50,108 @@
       text-wrap: balance;
     }
     .tx-lede { font-size: var(--fs-3); color: var(--ink-dim); max-width: 44ch; }
+    .tx-station-line {
+      font-family: var(--font-mono); font-size: var(--fs-small); letter-spacing: 0.22em;
+      text-transform: uppercase; color: var(--gold); margin: 0 0 var(--space-4);
+    }
+    .tx-station-line .onair-dot { color: var(--live); }
     .tx-total-strip {
       display: flex; flex-wrap: wrap; gap: var(--space-5);
       margin: var(--space-6) 0; padding: var(--space-5) 0;
       border-top: 1px solid var(--line-soft); border-bottom: 1px solid var(--line-soft);
     }
-    .tx-total-strip .t-num { font-family: var(--font-mono); font-size: 1.6rem; color: var(--neon); font-weight: 700; }
+    .tx-total-strip .t-num { font-family: var(--font-mono); font-size: 1.6rem; color: var(--neon); font-weight: 700; font-variant-numeric: tabular-nums; }
     .tx-total-strip .t-lab { font-family: var(--font-mono); font-size: var(--fs-micro); text-transform: uppercase; letter-spacing: 0.14em; color: var(--muted); }
 
-    /* progress rail */
-    .tx-rail { list-style: none; display: flex; gap: var(--space-2); padding: 0; margin: 0 0 var(--space-6); overflow-x: auto; }
-    .tx-rail li { flex: 1 0 auto; min-width: 120px; }
-    .tx-node {
-      width: 100%; display: flex; flex-direction: column; gap: 2px; align-items: flex-start;
-      background: transparent; border: 1px solid var(--line); border-radius: var(--radius-s);
-      color: var(--ink-dim); font-family: var(--font-mono); font-size: var(--fs-micro);
-      padding: var(--space-3); cursor: pointer; text-align: left;
+    /* ---------- the tuner ---------- */
+    .tx-tuner {
+      position: sticky; top: 0; z-index: 40;
+      background: rgba(6, 10, 8, 0.94);
+      border: 1px solid var(--line); border-radius: var(--radius-m);
+      padding: var(--space-4) var(--space-5);
+      margin-bottom: var(--space-6);
     }
-    .tx-node .n-num { color: var(--muted); letter-spacing: 0.2em; }
-    .tx-node .n-name { font-weight: 700; font-size: 0.8rem; color: var(--ink-dim); }
-    .tx-node:hover { border-color: var(--neon-deep); }
-    .tx-node[aria-current="step"] { border-color: var(--neon); background: rgba(0, 240, 144, 0.07); }
-    .tx-node[aria-current="step"] .n-name { color: var(--neon); }
-    .tx-node[aria-current="step"] .n-num { color: var(--neon); }
-    .tx-node:focus-visible, .tx-era a:focus-visible, .tx-controls .btn:focus-visible,
-    .tx-map-card:focus-visible, .tx-copy:focus-visible {
+    .tx-tuner-top { display: flex; align-items: center; gap: var(--space-4); flex-wrap: wrap; }
+    .tx-readout {
+      font-family: var(--font-mono); font-size: var(--fs-small); color: var(--neon);
+      display: flex; gap: var(--space-3); align-items: baseline;
+      min-width: 0; flex: 1 1 220px; margin: 0;
+    }
+    .tx-ro-status { letter-spacing: 0.18em; white-space: nowrap; }
+    .tx-ro-name { color: var(--ink-dim); letter-spacing: 0.06em; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .tx-bc-controls { display: flex; gap: var(--space-2); align-items: center; margin-left: auto; }
+    .tx-autoplay[aria-pressed="true"] { background: var(--neon); color: var(--neon-ink); }
+    .tx-dial {
+      position: relative; display: flex; gap: var(--space-2);
+      margin-top: var(--space-4); padding: var(--space-3) 0 var(--space-2);
+      border-top: 1px solid var(--line-soft);
+    }
+    .tx-dial::before {
+      content: ""; position: absolute; left: 0; right: 0; top: -1px; height: 1px;
+      background: repeating-linear-gradient(to right, var(--line) 0 1px, transparent 1px 12px);
+    }
+    .tx-needle {
+      position: absolute; top: -12px; left: 0; color: var(--neon);
+      font-size: 1rem; line-height: 1; text-shadow: var(--glow-neon);
+      transition: transform 0.38s var(--ease); will-change: transform;
+    }
+    .tx-station {
+      flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; gap: 2px; align-items: flex-start;
+      background: transparent; border: 1px solid transparent; border-radius: var(--radius-s);
+      padding: var(--space-2) var(--space-3); cursor: pointer; color: var(--ink-dim);
+      font-family: var(--font-mono); text-align: left;
+    }
+    .tx-station .st-freq { font-size: 1.05rem; font-weight: 700; color: var(--ink-dim); font-variant-numeric: tabular-nums; }
+    .tx-station .st-name { font-size: var(--fs-micro); letter-spacing: 0.04em; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 100%; }
+    .tx-station .st-years { font-size: var(--fs-micro); color: var(--muted); }
+    .tx-station:hover { border-color: var(--line); }
+    .tx-station:hover .st-freq { color: var(--neon); }
+    .tx-station.is-on { background: rgba(0, 240, 144, 0.07); border-color: var(--neon-deep); }
+    .tx-station.is-on .st-freq { color: var(--neon); text-shadow: var(--glow-neon); }
+    .tx-station.is-on .st-name { color: var(--ink); }
+    .tx-station:focus-visible { outline: 2px solid var(--neon); outline-offset: 2px; }
+    .tx-tuner-pick {
+      display: none; width: 100%; margin-top: var(--space-3);
+      font-family: var(--font-mono); font-size: var(--fs-small); color: var(--ink);
+      background: var(--bg-soft); border: 1px solid var(--line); border-radius: var(--radius-s);
+      padding: var(--space-3);
+    }
+
+    /* ---------- broadcast segments ---------- */
+    #tx-segments { display: grid; gap: var(--space-7); }
+    .tx-seg {
+      border: 1px solid var(--line); border-radius: var(--radius-l);
+      background: var(--bg-soft); padding: var(--space-7) var(--space-6);
+      scroll-margin-top: 170px;
+    }
+    .tx-seg-head .kicker { margin-bottom: var(--space-2); }
+    .tx-seg-freq { font-family: var(--font-mono); color: var(--gold); font-size: var(--fs-small); letter-spacing: 0.2em; margin: 0; }
+    .tx-seg-freq span { font-size: var(--fs-micro); color: var(--muted); letter-spacing: 0.1em; }
+    .tx-seg-freq.tx-seg-data { color: var(--muted); }
+    .tx-seg h2 {
+      font-family: var(--font-display); font-size: clamp(2.2rem, 6vw, 4rem); line-height: 1.02;
+      color: var(--ink); margin: var(--space-2) 0; letter-spacing: 0.01em; text-wrap: balance;
+    }
+    .tx-seg h2:focus { outline: none; }
+    .tx-seg h2:focus-visible { outline: 2px solid var(--neon); outline-offset: 4px; }
+    .tx-seg-foot {
+      margin-top: var(--space-6); padding-top: var(--space-5); border-top: 1px solid var(--line-soft);
+      display: flex; flex-wrap: wrap; gap: var(--space-4); align-items: center; justify-content: space-between;
+    }
+    .tx-seg-actions { display: flex; gap: var(--space-3); flex-wrap: wrap; }
+    .tx-seg a:focus-visible, .tx-index a:focus-visible, .tx-tuner-pick:focus-visible {
       outline: 2px solid var(--neon); outline-offset: 2px;
     }
 
-    /* era panel + tuning transition */
-    .tx-era { position: relative; }
-    .tx-era.tuning .tx-era-inner { animation: tx-tune 0.5s var(--ease); }
-    @keyframes tx-tune {
-      0% { opacity: 0; transform: translateY(14px); filter: saturate(2); }
-      35% { opacity: 1; filter: none; }
-      55% { opacity: 0.55; }
-      100% { opacity: 1; transform: none; }
-    }
-    .tx-era-kicker { display: flex; align-items: baseline; gap: var(--space-3); flex-wrap: wrap; }
-    .tx-era h2 { font-family: var(--font-display); font-size: clamp(2.2rem, 6vw, 4rem); line-height: 1.02; color: var(--ink); margin: var(--space-2) 0; letter-spacing: 0.01em; text-wrap: balance; }
-    .tx-era h2:focus { outline: none; }
-    .tx-era h2:focus-visible { outline: 2px solid var(--neon); outline-offset: 4px; }
+    /* era + chapter content (rendered by transmission.js) */
     .tx-span { font-family: var(--font-mono); color: var(--gold); font-size: var(--fs-small); letter-spacing: 0.12em; }
-    .tx-scene { color: var(--ink-dim); font-style: italic; max-width: 60ch; }
+    .tx-scene { color: var(--ink-dim); font-style: italic; max-width: 60ch; line-height: 1.65; }
     .tx-signal {
-      border-left: 3px solid var(--neon);
+      border-left: 4px solid var(--neon);
       padding: var(--space-4) var(--space-5);
       margin: var(--space-6) 0;
       background: rgba(0, 240, 144, 0.05);
-      font-size: 1.05rem; color: var(--ink);
+      font-size: 1.125rem; color: var(--ink);
     }
     .tx-signal .sig-lab {
       display: block; font-family: var(--font-mono); font-size: var(--fs-micro);
@@ -119,40 +174,11 @@
     .tx-mile .m-name { font-weight: 600; color: var(--ink); }
     .tx-mile .m-fact { color: var(--ink-dim); font-size: var(--fs-small); margin: var(--space-2) 0 0; }
     .tx-empty { color: var(--muted); font-size: var(--fs-small); font-style: italic; }
-
-    .tx-controls { display: flex; flex-wrap: wrap; gap: var(--space-3); margin-top: var(--space-7); padding-top: var(--space-5); border-top: 1px solid var(--line-soft); align-items: center; }
-    .tx-controls .spacer { flex: 1; }
-    .tx-autoplay[aria-pressed="true"] { background: var(--neon); color: var(--neon-ink); }
-
-    /* journey map */
     .tx-era-dd { margin: var(--space-4) 0 0; }
     .tx-era-dd a { font-family: var(--font-mono); font-size: var(--fs-small); color: var(--neon); text-decoration: none; letter-spacing: 0.06em; }
     .tx-era-dd a:hover, .tx-era-dd a:focus-visible { text-decoration: underline; }
-    .tx-map-item { display: flex; flex-direction: column; gap: var(--space-2); }
-    .tx-map-dd { font-family: var(--font-mono); font-size: var(--fs-micro); color: var(--neon-deep); text-transform: uppercase; letter-spacing: 0.1em; text-decoration: none; }
-    .tx-map-dd:hover, .tx-map-dd:focus-visible { color: var(--neon); text-decoration: underline; }
-    .tx-map-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: var(--space-4); margin-top: var(--space-6); }
-    .tx-map-card {
-      display: block; text-align: left; background: var(--panel); border: 1px solid var(--line);
-      border-radius: var(--radius-m); padding: var(--space-5); cursor: pointer; color: var(--ink);
-      font-family: var(--font-body); width: 100%;
-    }
-    .tx-map-card:hover { border-color: var(--neon); }
-    .tx-map-card .c-num { font-family: var(--font-mono); font-size: var(--fs-micro); color: var(--muted); letter-spacing: 0.2em; }
-    .tx-map-card .c-name { font-family: var(--font-display); font-size: 1.4rem; margin: var(--space-2) 0; letter-spacing: 0.01em; }
-    .tx-map-card .c-stats { font-family: var(--font-mono); font-size: var(--fs-small); color: var(--neon); }
-
-    .tx-end-stats { margin: var(--space-6) 0; }
-    .tx-share-out {
-      font-family: var(--font-mono); font-size: var(--fs-small); white-space: pre-wrap;
-      background: var(--neon-ink); border: 1px solid var(--neon-deep); border-radius: var(--radius-s);
-      color: var(--neon); padding: var(--space-5); margin-top: var(--space-5);
-    }
-
-    /* Transmission 2.0: visited stops, data chapters, race bars, noscript index */
     .tx-visited { color: var(--neon); font-size: 0.7em; }
     .tx-note { font-size: var(--fs-small); color: var(--muted); margin-top: var(--space-4); max-width: 70ch; }
-    .tx-reading { font-style: italic; }
     .tx-races { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-4); }
     .tx-race a { color: var(--ink); text-decoration: none; font-weight: 600; }
     .tx-race a:hover, .tx-race a:focus-visible { color: var(--neon); }
@@ -165,26 +191,11 @@
     .tx-noscript-h { font-family: var(--font-display); font-size: var(--fs-2); letter-spacing: 0.01em; margin: 0 0 var(--space-3); }
     .tx-noscript ol { margin: 0; padding-left: var(--space-5); display: grid; gap: var(--space-2); color: var(--ink-dim); }
     .tx-noscript a { color: var(--neon); }
-
-    /* Transmission 3.0: breadcrumb, progress, era readings, motion craft */
-    .tx-crumb { margin-bottom: var(--space-4); }
-    .tx-crumb ol {
-      list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap;
-      gap: var(--space-2); align-items: baseline;
-      font-family: var(--font-mono); font-size: var(--fs-micro);
-      text-transform: uppercase; letter-spacing: 0.14em; color: var(--muted);
-    }
-    .tx-crumb ol li { display: flex; gap: var(--space-2); align-items: baseline; }
-    .tx-crumb ol li + li::before { content: "/"; color: var(--neon-deep); }
-    .tx-crumb a { color: var(--neon-deep); text-decoration: none; }
-    .tx-crumb a:hover, .tx-crumb a:focus-visible { color: var(--neon); text-decoration: underline; }
-    .tx-crumb [aria-current="page"] { color: var(--neon); }
-    .tx-crumb .crumb-stop { color: var(--muted); }
     .tx-progress-note { font-family: var(--font-mono); font-size: var(--fs-small); color: var(--muted); margin-top: var(--space-4); }
 
     /* "the archive's reading" — computed era enrichment */
-    .tx-reading { margin-top: var(--space-6); }
-    .tx-readline { font-size: 1rem; color: var(--ink-dim); margin: 0 0 var(--space-4); }
+    .tx-reading { margin-top: var(--space-6); font-style: italic; }
+    .tx-readline { font-size: 1rem; color: var(--ink-dim); margin: 0 0 var(--space-4); font-style: normal; }
     .tx-readline strong { color: var(--neon); font-weight: 700; }
     .tx-sharebar {
       position: relative; height: 22px; border: 1px solid var(--line);
@@ -202,7 +213,7 @@
     .tx-yrow .y-bar { height: 10px; border: 1px solid var(--line-soft); border-radius: 999px; background: var(--neon-ink); overflow: hidden; }
     .tx-yrow .y-bar i { display: block; height: 100%; background: var(--neon); border-radius: 999px; }
     .tx-yrow .y-num { font-family: var(--font-mono); font-size: var(--fs-micro); color: var(--muted); font-variant-numeric: tabular-nums; white-space: nowrap; }
-    .tx-readlist { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-2); font-size: var(--fs-small); color: var(--ink-dim); }
+    .tx-readlist { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-2); font-size: var(--fs-small); color: var(--ink-dim); font-style: normal; }
     .tx-readlist .rl-lab {
       display: inline-block; min-width: 10.5em; font-family: var(--font-mono); font-size: var(--fs-micro);
       text-transform: uppercase; letter-spacing: 0.14em; color: var(--neon-deep);
@@ -211,16 +222,49 @@
     .tx-readlist a:hover, .tx-readlist a:focus-visible { color: var(--neon); }
     .tx-rank { font-family: var(--font-mono); font-size: var(--fs-micro); color: var(--neon-deep); margin-right: var(--space-2); }
 
-    /* typography & spacing refinements: sharper era hierarchy, tabular stats */
-    .tx-signal { font-size: 1.125rem; border-left-width: 4px; }
-    .tx-scene { line-height: 1.65; }
+    /* typography refinements: tabular stats */
     .stat-grid .stat-value, .tx-plays { font-variant-numeric: tabular-nums; }
-    .tx-era-inner { view-transition-name: tx-panel; }
 
-    /* view transitions: phosphor-tinted crossfade between stops */
-    ::view-transition-old(tx-panel), ::view-transition-new(tx-panel) { animation-duration: 0.32s; animation-timing-function: var(--ease); }
-    ::view-transition-old(tx-panel) { filter: saturate(1.6) brightness(1.1); }
-    ::view-transition-new(tx-panel) { filter: none; }
+    /* ---------- station index ---------- */
+    .tx-index { margin-top: var(--space-7); border-top: 1px solid var(--line-soft); padding-top: var(--space-5); }
+    .tx-index ol { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-2); }
+    .tx-index a {
+      display: flex; gap: var(--space-3); align-items: baseline;
+      font-family: var(--font-mono); font-size: var(--fs-small); color: var(--ink-dim);
+      text-decoration: none; padding: var(--space-2) 0; border-bottom: 1px dotted var(--line-soft);
+    }
+    .tx-index a:hover { color: var(--neon); }
+    .ix-num { color: var(--muted); font-size: var(--fs-micro); letter-spacing: 0.18em; min-width: 3.5em; }
+    .ix-name { color: var(--ink); }
+    .ix-stat { margin-left: auto; color: var(--muted); font-size: var(--fs-micro); text-align: right; }
+
+    /* ---------- sign-off ---------- */
+    .tx-signoff { border-color: var(--neon-deep); scroll-margin-top: 170px; }
+    .tx-signoff h2 { color: var(--neon); text-shadow: var(--glow-neon); font-size: clamp(2.6rem, 7vw, 5rem); }
+    .tx-end-stats { margin: var(--space-6) 0; }
+    .tx-share-out {
+      font-family: var(--font-mono); font-size: var(--fs-small); white-space: pre-wrap;
+      background: var(--neon-ink); border: 1px solid var(--neon-deep); border-radius: var(--radius-s);
+      color: var(--neon); padding: var(--space-5); margin-top: var(--space-5);
+    }
+
+    /* ---------- signal static: pure CSS/SVG, opacity only ---------- */
+    .tx-static {
+      position: fixed; inset: 0; z-index: 60; pointer-events: none; opacity: 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23n)' opacity='0.6'/%3E%3C/svg%3E");
+      background-size: 240px 240px;
+      transition: opacity 0.22s ease-out;
+    }
+    .tx-static.on { opacity: 0.8; transition-duration: 0.05s; }
+    .tx-static-band {
+      position: absolute; left: 0; right: 0; top: 0; height: 3px;
+      background: var(--neon); box-shadow: var(--glow-neon); opacity: 0;
+    }
+    .tx-static.on .tx-static-band { opacity: 0.9; animation: tx-band-sweep 0.17s linear; }
+    @keyframes tx-band-sweep {
+      from { transform: translateY(-10px); }
+      to { transform: translateY(100vh); }
+    }
 
     /* scroll-driven motion (progressive enhancement, CSS-only) */
     @supports (animation-timeline: view()) {
@@ -233,12 +277,12 @@
         from { filter: none; }
         to { filter: brightness(1.3) saturate(1.2); }
       }
-      .tx-map-card {
-        animation: tx-card-in linear both;
+      .tx-seg-head {
+        animation: tx-seg-in linear both;
         animation-timeline: view();
-        animation-range: entry 0% entry 100%;
+        animation-range: entry 0% entry 55%;
       }
-      @keyframes tx-card-in {
+      @keyframes tx-seg-in {
         from { opacity: 0; transform: translateY(26px); }
         to { opacity: 1; transform: none; }
       }
@@ -246,14 +290,20 @@
 
     @media (max-width: 640px) {
       .tx-stage { padding: var(--space-5) var(--space-4); }
-      .tx-rail li { min-width: 104px; }
+      .tx-seg { padding: var(--space-5) var(--space-4); scroll-margin-top: 190px; }
+      .tx-tuner { padding: var(--space-3) var(--space-4); }
+      .tx-dial { display: none; }
+      .tx-tuner-pick { display: block; }
+      .tx-bc-controls { margin-left: 0; }
     }
 
     @media (prefers-reduced-motion: reduce) {
       .tx-stage::after { display: none; }
-      .tx-era.tuning .tx-era-inner { animation: none; }
+      .tx-static { display: none; }
       .tx-hero-title { text-shadow: none; }
-      .tx-hero-title, .tx-map-card { animation: none !important; }
+      .tx-hero-title, .tx-seg-head { animation: none !important; }
+      .tx-needle { transition: none; }
+      .tx-static.on .tx-static-band { animation: none; }
       *, *::before, *::after { transition-duration: 0.01ms !important; }
     }
   </style>
@@ -328,28 +378,28 @@
   <main id="main">
     <div class="container">
 
-      <!-- ENTRY -->
+      <!-- ENTRY: the station ID card -->
       <section class="tx-stage" id="tx-entry" aria-labelledby="tx-title">
         <p class="kicker"><span class="numeral">✦</span>The flagship journey</p>
         <h1 class="tx-hero-title" id="tx-title" tabindex="-1">TRANSMISSION</h1>
-        <p class="tx-lede">Six eras. Seven data chapters. 2018&nbsp;&rarr;&nbsp;2026. Press play on his career — the numbers, the defining tracks, the sessions, the summoned voices, the closest races, the record book, the codex, the architects, the seasons, the deep cuts, the horizon — and the one line each stop&rsquo;s data tells.</p>
+        <p class="tx-station-line"><span class="onair-dot" aria-hidden="true">●</span> On air · The Pirate Broadcast · 87.9–98.5 MHz</p>
+        <p class="tx-lede">Six eras. Seven data chapters. 2018&nbsp;&rarr;&nbsp;2026. Tune through his career — scroll the broadcast and the numbers count up live as each era comes on air: the transmissions, the plays, the sessions, the milestones filed, the defining tracks, the summoned voices, the closest races, the record book, the codex, the architects, the seasons, the deep cuts, the horizon.</p>
         <div class="tx-total-strip" id="tx-totals" aria-label="Archive totals">
           <div><div class="t-num" data-tx-total="transmissions">218</div><div class="t-lab">Transmissions</div></div>
-          <div><div class="t-num" data-tx-total="plays">257,394</div><div class="t-lab">Plays</div></div>
+          <div><div class="t-num" data-tx-total="plays" data-signal="plays">257,394</div><div class="t-lab">Plays</div></div>
           <div><div class="t-num" data-tx-total="sessions">61</div><div class="t-lab">Sessions</div></div>
-          <div><div class="t-num" data-tx-total="stops">13</div><div class="t-lab">Stops</div></div>
+          <div><div class="t-num" data-tx-total="stops">13</div><div class="t-lab">Segments</div></div>
         </div>
         <div class="btn-row">
           <button class="btn btn-neon" id="tx-begin" type="button">&#9654; Begin transmission</button>
           <button class="btn btn-ghost" id="tx-resume" type="button" hidden>Resume</button>
           <button class="btn btn-ghost" id="tx-clear" type="button" hidden>Clear progress</button>
-          <button class="btn btn-ghost" id="tx-open-map" type="button">Journey map</button>
         </div>
         <p class="tx-progress-note" id="tx-progress" aria-live="polite"></p>
         <noscript>
           <div class="tx-noscript">
             <h2 class="tx-noscript-h">Chapter index</h2>
-            <p>The guided journey needs JavaScript, but every stop has a static door:</p>
+            <p>The broadcast needs JavaScript, but every segment has a static door:</p>
             <ol>
               <li><a href="transmission.html#era-the-first-rite">The First Rite</a> — <a href="eras/the-first-rite.html">deep dive</a></li>
               <li><a href="transmission.html#era-the-prolific-year">The Prolific Year</a> — <a href="eras/the-prolific-year.html">deep dive</a></li>
@@ -367,53 +417,30 @@
             </ol>
           </div>
         </noscript>
-        <p class="chart-sub" style="margin-top:var(--space-5)">Play counts are the 2026-10-11 vault snapshot. Titles and metadata only — never lyrics. <noscript>The journey needs JavaScript; the archive itself is all static pages.</noscript></p>
+        <p class="chart-sub" style="margin-top:var(--space-5)">Play counts are the 2026-10-11 vault snapshot — the Signal repaints the live count when it answers. Titles and metadata only — never lyrics. <noscript>The broadcast needs JavaScript; the archive itself is all static pages.</noscript></p>
       </section>
 
-      <!-- JOURNEY -->
-      <section class="tx-stage" id="tx-journey" aria-labelledby="tx-era-heading" hidden>
-        <nav class="tx-crumb" id="tx-crumb" aria-label="Breadcrumb"></nav>
-        <ol class="tx-rail" id="tx-rail" aria-label="Era progress"></ol>
-        <article class="tx-era" id="tx-era">
-          <div class="tx-era-inner" id="tx-era-inner"><!-- rendered by transmission.js --></div>
-        </article>
-        <div class="tx-controls">
-          <button class="btn btn-sm btn-ghost" id="tx-prev" type="button">&larr; Prev stop</button>
-          <button class="btn btn-sm btn-ghost" id="tx-next" type="button">Next stop &rarr;</button>
-          <button class="btn btn-sm btn-ghost tx-autoplay" id="tx-autoplay" type="button" aria-pressed="false">&#9654; Press play</button>
-          <span class="spacer" aria-hidden="true"></span>
-          <button class="btn btn-sm btn-ghost" id="tx-map-btn" type="button">Journey map</button>
-          <button class="btn btn-sm btn-ghost" id="tx-stop-link" type="button">Copy stop link</button>
-          <button class="btn btn-sm btn-ghost" id="tx-brief" type="button">Copy stop brief</button>
-          <button class="btn btn-sm btn-neon tx-copy" id="tx-copy" type="button">Copy my transmission</button>
+      <!-- BROADCAST -->
+      <section id="tx-broadcast" aria-label="The broadcast" hidden>
+        <div class="tx-tuner" id="tx-tuner" role="region" aria-label="Station tuner">
+          <div class="tx-tuner-top">
+            <p class="tx-readout" id="tx-readout" aria-hidden="true"></p>
+            <div class="tx-bc-controls">
+              <button class="btn btn-sm btn-ghost" id="tx-prev" type="button">&larr; Prev</button>
+              <button class="btn btn-sm btn-ghost tx-autoplay" id="tx-autoplay" type="button" aria-pressed="false">&#9654; Press play</button>
+              <button class="btn btn-sm btn-ghost" id="tx-next" type="button">Next &rarr;</button>
+            </div>
+          </div>
+          <div class="tx-dial" id="tx-dial" role="radiogroup" aria-label="Era stations, 2018 to 2026"></div>
+          <select class="tx-tuner-pick" id="tx-tuner-pick" aria-label="Jump to a broadcast segment"></select>
         </div>
+        <div class="tx-stage">
+          <div id="tx-segments"></div>
+          <nav class="tx-index" id="tx-index" aria-label="Station index"></nav>
+          <section class="tx-seg tx-signoff" id="tx-signoff" aria-labelledby="tx-signoff-h"></section>
+        </div>
+        <div class="tx-static" id="tx-static" aria-hidden="true"><div class="tx-static-band"></div></div>
         <p class="visually-hidden" aria-live="polite" id="tx-live"></p>
-      </section>
-
-      <!-- MAP -->
-      <section class="tx-stage" id="tx-map" aria-labelledby="tx-map-heading" hidden>
-        <p class="kicker"><span class="numeral">✦</span>Journey map</p>
-        <h2 id="tx-map-heading" tabindex="-1" style="font-family:var(--font-display);font-size:var(--fs-2)">PICK YOUR FREQUENCY</h2>
-        <p class="tx-lede">Jump straight to any era. The journey keeps your place.</p>
-        <div class="tx-map-grid" id="tx-map-grid"></div>
-        <div class="btn-row">
-          <button class="btn btn-sm btn-ghost" id="tx-map-back" type="button">&larr; Back to the journey</button>
-        </div>
-      </section>
-
-      <!-- END -->
-      <section class="tx-stage" id="tx-end" aria-labelledby="tx-end-heading" hidden>
-        <p class="kicker"><span class="numeral">✦</span>Signal received</p>
-        <h2 id="tx-end-heading" tabindex="-1" style="font-family:var(--font-display);font-size:var(--fs-1)">THE VAULT AT A GLANCE</h2>
-        <p class="signal-row"><span class="api-badge" id="tx-signal-badge" data-api-state="waking" role="status" aria-live="polite"></span></p>
-        <p class="tx-lede">You rode six eras and seven data chapters, 2018 to 2026. Here is the whole signal in one frame — and the full vault, if you want to keep digging.</p>
-        <div class="stat-grid tx-end-stats" id="tx-end-stats"></div>
-        <div class="btn-row">
-          <a class="btn btn-neon" href="glance.html">Open the vault at a glance</a>
-          <button class="btn btn-ghost tx-copy" id="tx-copy-end" type="button">Copy my transmission</button>
-          <button class="btn btn-ghost" id="tx-replay" type="button">&#8635; Replay the journey</button>
-        </div>
-        <div class="tx-share-out" id="tx-share-out" hidden></div>
       </section>
 
     </div>

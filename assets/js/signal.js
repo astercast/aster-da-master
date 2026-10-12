@@ -52,7 +52,12 @@
    * honesty mechanism, not a repaint). */
   function paintStats(d) {
     var nodes = document.querySelectorAll('[data-signal="plays"]');
-    Array.prototype.forEach.call(nodes, function (el) { el.textContent = fmt(d.total_plays); });
+    Array.prototype.forEach.call(nodes, function (el) {
+      el.textContent = fmt(d.total_plays);
+      /* keep any count-up target honest: the live total replaces the static one */
+      var cell = el.closest ? el.closest("[data-count]") : null;
+      if (cell) cell.setAttribute("data-count", String(d.total_plays));
+    });
     nodes = document.querySelectorAll('[data-signal="tracks"]');
     Array.prototype.forEach.call(nodes, function (el) { el.textContent = fmt(d.tracks_captured); });
     nodes = document.querySelectorAll('[data-signal="snapshot"]');
