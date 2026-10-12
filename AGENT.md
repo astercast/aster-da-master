@@ -28,7 +28,7 @@ Static files — **no auth, no keys, no rate limits**. Works on any static host.
 
 | Endpoint | Contents | Records |
 |---|---|---|
-| `api/v1/index.json` | Manifest — start here | 15 endpoints |
+| `api/v1/index.json` | Manifest — start here | 16 endpoints |
 | `api/v1/artist.json` | The source of truth: bio, facts, discography (219 entries), platforms, eras, vault, upcoming | 219 |
 | `api/v1/codex.json` | The vocabulary codex: 16 word families with per-family track lists | 16 |
 | `api/v1/release-slugs.json` | Slug index: ordinal string → release-page slug (the search overlay's corpus) | 219 |
@@ -43,6 +43,7 @@ Static files — **no auth, no keys, no rate limits**. Works on any static host.
 | `api/v1/scene-figures.json` | Producer/scene figures outside the 21 (e.g. Fish Narc), with facts + sources | 1 |
 | `api/v1/transmission.json` | The guided journey: six eras with stats, top tracks, key sessions, collaborators, milestones, computed "signal" lines | 6 |
 | `api/v1/network.json` | Collaboration network: 23 nodes, 27 track-weighted edges, co-credit links, computed insights | 23 nodes |
+| `api/v1/eras.json` | Era deep-dives: six eras with full transmission lists (every track + plays), ALL in-era collaborators, active codex families, milestones, computed signal lines and summaries | 6 |
 
 Example requests (Node; swap `fs` for `fetch` in a browser):
 
@@ -134,6 +135,31 @@ console.log(mf.shared_transmissions, mf.shared_plays, mf.years_active); // 8 136
    (chronological, with plays), **the network** (co-credit links to JAX and
    Yung Vetta). Anything beyond the endpoints — how they met, who introduced
    whom — is unknown; say so.
+
+## Example workflow 4 — deep-dive one era
+
+*Skill: [`era-briefing`](skills/era-briefing.md). Question → "deep-dive the
+SomeLowLifes era."*
+
+1. **`GET api/v1/eras.json`** — pick the era by `id` (`the-somelowlifes-era`).
+   One file now answers the whole brief: `summary`, `tracks[]`,
+   `collaborators[]`, `codex_families[]`, `key_sessions[]`, `milestones[]`.
+2. **Read `summary` first** — every figure there is recomputed and asserted
+   by `scripts/build_eras.py`: The SomeLowLifes Era is rank #2 of 6 by
+   transmissions (58) and by plays (14,982 — 5.82% of the archive); busiest
+   year 2023 (31 transmissions, 10,179 plays); loudest transmission "Clock
+   In The Benz w/ Lil Yu prod shinju" (725 plays); deepest cut "nitemode2019
+   w/ Max+Vetty prod. NaXi.wav" (17 plays); most-played codex family "The
+   Rites" (7 transmissions, 2,243 plays); 5 collaborators carrying 8.5% of
+   the era's plays; 3 milestones filed.
+3. **Walk `tracks[]`** for the full transmission list (every entry with
+   release-page link; distributor releases carry no vault play count),
+   **`collaborators[]`** for every in-era voice (lil yu, and 4 more —
+   `transmission.json` keeps only the top 3), **`codex_families[]`** for the
+   era's vocabulary.
+4. Pitfall check: play counts are the 2026-10-11 snapshot; upload dates ≠
+   recording dates. Never quote or reproduce lyrics — titles and metadata
+   only.
 
 ## Rates & expectations
 

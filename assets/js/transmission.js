@@ -107,6 +107,7 @@
       stat(e.distributor, "Distributor releases") +
       "</div>" +
       '<blockquote class="tx-signal"><span class="sig-lab">The signal</span>' + esc(e.signal) + "</blockquote>" +
+      '<p class="tx-era-dd"><a href="eras/' + e.id + '.html">Deep dive: ' + esc(e.name) + " &rarr;</a></p>" +
       '<div class="tx-cols">' +
       '<div class="tx-block"><h3>Defining tracks</h3><ol>' + e.top_tracks.map(trackRow).join("") + "</ol></div>" +
       '<div class="tx-block"><h3>Key sessions</h3><ul>' + e.key_sessions.map(sessionRow).join("") + "</ul></div>" +
@@ -119,11 +120,14 @@
 
   function renderMap() {
     $("tx-map-grid").innerHTML = eras().map(function (e, i) {
-      return '<button type="button" class="tx-map-card" data-era="' + i + '">' +
+      return '<div class="tx-map-item">' +
+        '<button type="button" class="tx-map-card" data-era="' + i + '">' +
         '<span class="c-num">ERA ' + ("0" + (i + 1)) + " \u00b7 " + esc(e.span) + "</span>" +
         '<span class="c-name">' + esc(e.name) + "</span>" +
         '<span class="c-stats">' + fmt(e.transmissions) + " transmissions \u00b7 " + fmt(e.plays) + " plays</span>" +
-        "</button>";
+        "</button>" +
+        '<a class="tx-map-dd" href="eras/' + e.id + '.html">Deep dive: ' + esc(e.name) + " &rarr;</a>" +
+        "</div>";
     }).join("");
   }
 
@@ -136,6 +140,10 @@
     era = i;
     renderEra();
     var e = eras()[era];
+    /* deep-linkable era nodes: era deep-dive pages link back here */
+    try {
+      window.history.replaceState(null, "", "#era-" + e.id);
+    } catch (err) { /* file:// or sandboxed contexts: the link still works */ }
     announce("Era " + (era + 1) + " of " + eras().length + ": " + e.name + ", " + e.span +
       ". " + fmt(e.transmissions) + " transmissions, " + fmt(e.plays) + " plays.");
     if (!REDUCED) {
@@ -288,6 +296,14 @@
     document.querySelector('[data-tx-total="plays"]').textContent = fmt(t.plays);
     document.querySelector('[data-tx-total="sessions"]').textContent = fmt(t.sessions);
     wire();
+    /* era deep-dive pages link back as transmission.html#era-<id> */
+    var m = /^#era-([a-z0-9-]+)$/.exec(window.location.hash || "");
+    if (m) {
+      var list = eras();
+      for (var k = 0; k < list.length; k++) {
+        if (list[k].id === m[1]) { goEra(k); break; } /* goEra shows the journey view */
+      }
+    }
     if (window.ADM.reveal) window.ADM.reveal();
   }).catch(function () {
     $("tx-entry").insertAdjacentHTML("beforeend",

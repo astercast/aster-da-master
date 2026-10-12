@@ -118,6 +118,12 @@
     .tx-autoplay[aria-pressed="true"] { background: var(--neon); color: var(--neon-ink); }
 
     /* journey map */
+    .tx-era-dd { margin: var(--space-4) 0 0; }
+    .tx-era-dd a { font-family: var(--font-mono); font-size: var(--fs-small); color: var(--neon); text-decoration: none; letter-spacing: 0.06em; }
+    .tx-era-dd a:hover, .tx-era-dd a:focus-visible { text-decoration: underline; }
+    .tx-map-item { display: flex; flex-direction: column; gap: var(--space-2); }
+    .tx-map-dd { font-family: var(--font-mono); font-size: var(--fs-micro); color: var(--neon-deep); text-transform: uppercase; letter-spacing: 0.1em; text-decoration: none; }
+    .tx-map-dd:hover, .tx-map-dd:focus-visible { color: var(--neon); text-decoration: underline; }
     .tx-map-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: var(--space-4); margin-top: var(--space-6); }
     .tx-map-card {
       display: block; text-align: left; background: var(--panel); border: 1px solid var(--line);

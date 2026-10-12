@@ -148,8 +148,9 @@
               <h4 id="rc-era"><a href="skills/era-briefing.md">era-briefing</a></h4>
               <p>Summarize one of the six eras for a writeup — span, numbers, story.</p>
               <ol class="recipe-seq">
-                <li><code>GET api/v1/artist.json</code> — read <code>eras[]</code>; pick the era (<code>scene</code>, <code>releases[]</code>, <code>note</code>).</li>
-                <li><code>GET api/v1/years.json</code> — per-year transmissions, plays, <code>top_tracks</code> inside the span.</li>
+                <li><code>GET api/v1/eras.json</code> — the deep-dive endpoint: pick the era by <code>id</code>; read <code>summary</code> (ranks, archive-play share, busiest year, loudest/deepest tracks, top codex family), then <code>tracks[]</code>, <code>collaborators[]</code>, <code>codex_families[]</code>.</li>
+                <li><code>GET api/v1/artist.json</code> — read <code>eras[]</code> for <code>scene</code>, <code>releases[]</code>, <code>note</code> if the brief needs era color.</li>
+                <li><code>GET api/v1/years.json</code> — per-year transmissions, plays, <code>top_tracks</code> inside the span (cross-check).</li>
                 <li>Match era releases against <code>discography[]</code> for dates, labels, links.</li>
                 <li><code>GET api/v1/circle.json</code> — collaborator footprints for the era's credits.</li>
               </ol>

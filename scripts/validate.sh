@@ -4,9 +4,9 @@
 # Stages:
 #   1. JS syntax ......... node --check every shipped JS file (assets/js/)
 #   2. JSON parse ........ every JSON file under api/, data/, skills/, scripts/
-#   3. JSON Schema ....... draft-07 validation of the 9 docs under
-#                         api/v1/schema/ (artist, changelog, codex, first-last,
-#                         milestone-watch, milestones, network, sessions, transmission)
+#   3. JSON Schema ....... draft-07 validation of all 16 docs under
+#                         api/v1/schema/ (one per endpoint, incl. the index
+#                         manifest and the era deep-dives)
 #   4. Relative links .... every href/src in every HTML page resolves on disk;
 #                         JS fetch() string literals resolve too. 0 broken.
 #   5. Lyric-grep gate .. fail on any lyric-like content. Titles/metadata
@@ -15,11 +15,12 @@
 #                         reproduced, never quote lyrics, source domain
 #                         lirik.web.id, and validator self-references).
 #                         Lyric-section markers ([Chorus], Verse 1:, etc.) always fail.
-#   6. Generator chain .. run the 14 generators in the documented dependency
+#   6. Generator chain .. run the 15 generators in the documented dependency
 #                         order (releases -> years -> circle -> codex ->
 #                         sessions -> session_deepdives -> milestones ->
 #                         milestone_watch -> firstlast -> glance -> search_index
-#                         -> changelog -> transmission -> network). A clean re-run must
+#                         -> changelog -> transmission -> network -> eras).
+#                         A clean re-run must
 #                         produce zero diff outside changelog.html +
 #                         api/v1/changelog.json (rebuilt from git log, so it
 #                         legitimately grows after any new commit; its
@@ -89,7 +90,7 @@ def schema(name):
     Draft7Validator.check_schema(s)  # the schema itself must be valid draft-07
     return Draft7Validator(s)
 
-# all 15 schemas are doc-level (one per endpoint, incl. the index manifest)
+# all 16 schemas are doc-level (one per endpoint, incl. the index manifest)
 pairs = [("index.json", "index.json"), ("artist.json", "artist.json"),
          ("codex.json", "codex.json"), ("release-slugs.json", "release-slugs.json"),
          ("on-this-day.json", "on-this-day.json"), ("years.json", "years.json"),
@@ -99,7 +100,8 @@ pairs = [("index.json", "index.json"), ("artist.json", "artist.json"),
          ("milestone-watch.json", "milestone-watch.json"),
          ("scene-figures.json", "scene-figures.json"),
          ("transmission.json", "transmission.json"),
-         ("network.json", "network.json")]
+         ("network.json", "network.json"),
+         ("eras.json", "eras.json")]
 for fname, sname in pairs:
     doc = json.loads((ROOT / "api" / "v1" / fname).read_text())
     for e in schema(sname).iter_errors(doc):
@@ -112,7 +114,7 @@ if failures:
     if len(failures) > 20:
         print(f"   ... and {len(failures)-20} more")
     sys.exit(1)
-print("  ok: all 15 endpoints validate against their draft-07 schemas")
+print("  ok: all 16 endpoints validate against their draft-07 schemas")
 EOF
 [ $? -eq 0 ] && pass "schema validation clean" || FAIL=$((FAIL+1))
 
@@ -161,10 +163,10 @@ for page in sorted(ROOT.glob("*.html")) + sorted(ROOT.glob("*/index.html")):
     text = page.read_text()
     for m in ATTR.finditer(text):
         check_link(page.parent, m.group(1), page.relative_to(ROOT))
-# subdir content pages (releases/, years/, circle/, codex/, sessions/)
+# subdir content pages (releases/, years/, circle/, codex/, sessions/, eras/)
 for page in sorted(ROOT.glob("releases/*.html")) + sorted(ROOT.glob("years/*.html")) \
         + sorted(ROOT.glob("circle/*.html")) + sorted(ROOT.glob("codex/*.html")) \
-        + sorted(ROOT.glob("sessions/*.html")):
+        + sorted(ROOT.glob("sessions/*.html")) + sorted(ROOT.glob("eras/*.html")):
     text = page.read_text()
     for m in ATTR.finditer(text):
         check_link(page.parent, m.group(1), page.relative_to(ROOT))
@@ -254,11 +256,11 @@ EOF
 stage 6 "generator-chain order check (clean re-run -> zero unexpected diffs)"
 # Canonical dependency order: releases -> years -> circle -> codex -> sessions
 # -> session_deepdives -> milestones -> milestone_watch -> firstlast -> glance
-# -> search_index -> changelog -> transmission -> network
+# -> search_index -> changelog -> transmission -> network -> eras
 CHAIN="build_releases build_years build_circle build_codex build_sessions \
 build_session_deepdives build_milestones build_milestone_watch \
 build_firstlast build_glance build_search_index build_changelog \
-build_transmission build_network"
+build_transmission build_network build_eras"
 CHAIN_OK=1
 for s in $CHAIN; do
   if ! python3 "scripts/$s.py" >/tmp/adm_validate_chain.log 2>&1; then
@@ -375,7 +377,7 @@ if missing:
 CHAIN_ORDER = ("releases", "years", "circle", "codex", "sessions",
                "session_deepdives", "milestones", "milestone_watch",
                "firstlast", "glance", "search_index", "changelog", "transmission",
-               "network")
+               "network", "eras")
 chain_str = " \u2192 ".join(CHAIN_ORDER)
 if chain_str not in llms:
     errors.append("llms.txt generator dependency order doesn't match the canonical chain")

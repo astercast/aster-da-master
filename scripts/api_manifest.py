@@ -87,11 +87,15 @@ ENDPOINT_ORDER = [
      "Collaboration network: artist-centered nodes (21 title-credited collaborators + producer scene figures), track-weighted edges, co-credit links, computed insights.",
      "network.json", "23 nodes / 27 edges; no producer-collaborator edges exist on record.",
      lambda api: len(_doc(api, "network.json")["nodes"])),
+    ("eras",
+     "Era deep-dives: six eras with full transmission lists (every track + plays), ALL in-era collaborators, active codex families, milestones, computed signal lines and summaries. Data source for the eras/<id>.html deep-dive pages.",
+     "eras.json", "collaborators[] holds every in-era voice; transmission.json keeps only the top 3.",
+     lambda api: len(_doc(api, "eras.json")["eras"])),
 ]
 
 DOCUMENTS = {
     "AGENT.md": "Agent operator's manual: base URL pattern, key endpoints with example requests, end-to-end workflows, rate/expectation notes.",
-    "agents.html": "Human + agent surface: 15-endpoint table, llms files, skills, search-index usage, rates & expectations, worked workflows.",
+    "agents.html": "Human + agent surface: 16-endpoint table, llms files, skills, search-index usage, rates & expectations, worked workflows.",
     "API.md": "Human-readable API reference incl. the shared cross-site conventions block.",
     "llms.txt": "Short agent brief: catalog shape, method, API map, key verified facts, ops.",
     "llms-full.txt": "Full agent brief: per-era detail, collaborator research notes, unknowns register, page map, generator order.",

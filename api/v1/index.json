@@ -22,7 +22,7 @@
    "description": "Manifest: every endpoint with description, schema URL, updated timestamp, record counts, and deprecation notes. Start here.",
    "schema": "api/v1/schema/index.json",
    "updated": "2026-10-11T00:00:00Z",
-   "records": 15,
+   "records": 16,
    "notes": "meta.version mirrors the top-level version field."
   },
   "artist": {
@@ -94,7 +94,7 @@
    "description": "Site construction history, generated from the git log.",
    "schema": "api/v1/schema/changelog.json",
    "updated": "2026-10-11T00:00:00Z",
-   "records": 37,
+   "records": 40,
    "notes": "A changelog built from git log cannot record its own sync commit (wave-15 convention, WAVELOG.md)."
   },
   "first-last": {
@@ -136,11 +136,19 @@
    "updated": "2026-10-11T00:00:00Z",
    "records": 23,
    "notes": "23 nodes / 27 edges; no producer-collaborator edges exist on record."
+  },
+  "eras": {
+   "path": "api/v1/eras.json",
+   "description": "Era deep-dives: six eras with full transmission lists (every track + plays), ALL in-era collaborators, active codex families, milestones, computed signal lines and summaries. Data source for the eras/<id>.html deep-dive pages.",
+   "schema": "api/v1/schema/eras.json",
+   "updated": "2026-10-11T00:00:00Z",
+   "records": 6,
+   "notes": "collaborators[] holds every in-era voice; transmission.json keeps only the top 3."
   }
  },
  "documents": {
   "AGENT.md": "Agent operator's manual: base URL pattern, key endpoints with example requests, end-to-end workflows, rate/expectation notes.",
-  "agents.html": "Human + agent surface: 15-endpoint table, llms files, skills, search-index usage, rates & expectations, worked workflows.",
+  "agents.html": "Human + agent surface: 16-endpoint table, llms files, skills, search-index usage, rates & expectations, worked workflows.",
   "API.md": "Human-readable API reference incl. the shared cross-site conventions block.",
   "llms.txt": "Short agent brief: catalog shape, method, API map, key verified facts, ops.",
   "llms-full.txt": "Full agent brief: per-era detail, collaborator research notes, unknowns register, page map, generator order."

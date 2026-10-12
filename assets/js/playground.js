@@ -33,7 +33,9 @@
     { id: "transmission", path: "api/v1/transmission.json",
       blurb: "The guided journey: six eras with stats, top tracks, key sessions, collaborators, milestones, computed signal lines." },
     { id: "network", path: "api/v1/network.json",
-      blurb: "Collaboration network: artist-centered nodes (21 title-credited collaborators + producer scene figures), track-weighted edges, co-credit links, computed insights." }
+      blurb: "Collaboration network: artist-centered nodes (21 title-credited collaborators + producer scene figures), track-weighted edges, co-credit links, computed insights." },
+    { id: "eras", path: "api/v1/eras.json",
+      blurb: "Era deep-dives: six eras with full transmission lists (every track + plays), all in-era collaborators, active codex families, computed signal summaries. Drives the eras/<id>.html pages." }
   ];
 
   function esc(s) {

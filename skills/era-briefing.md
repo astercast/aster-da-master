@@ -31,6 +31,7 @@ The First Rite opens the archive: the earliest trace is a 2017 feature credit on
 
 ## API references
 
+- `api/v1/eras.json` — the deep-dive endpoint: pick the era by `id`; `summary` (ranks, archive-play share, busiest year, loudest/deepest transmissions, top codex family — all recomputed and asserted), full `tracks[]`, every in-era `collaborators[]`, `codex_families[]`, `key_sessions[]`, `milestones[]`. Start here.
 - `api/v1/artist.json` — `eras[]` (name, span, scene, releases, note); `discography` (34 distributor releases with dates/labels/links)
 - `api/v1/years.json` — per-year stats and `top_tracks`, 2018–2026
 - `api/v1/circle.json` — collaborator footprints within the era

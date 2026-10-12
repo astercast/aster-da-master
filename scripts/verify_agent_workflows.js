@@ -78,5 +78,40 @@ console.log("[workflow 3] Max Ferrari collab trace");
     !mf.tracks.some((t) => /Max\+Vetty/.test(t.title)));
 }
 
-console.log(failures === 0 ? "\nALL 3 WORKFLOWS PROVE OUT" : `\n${failures} CHECK(S) FAILED`);
+// --- Workflow 4: deep-dive one era (eras.json) ---
+console.log("[workflow 4] SomeLowLifes era deep dive");
+{
+  const er = J("eras.json");
+  check("6 eras", er.eras.length === 6, String(er.eras.length));
+  const e = er.eras.find((x) => x.id === "the-somelowlifes-era");
+  check("era found", !!e);
+  check("58 transmissions / 14,982 plays", e && e.transmissions === 58 && e.plays === 14982,
+    e && `${e.transmissions} tx / ${e.plays} plays`);
+  check("rank #2 by tx and by plays", e && e.summary.rank_by_transmissions === 2 &&
+    e.summary.rank_by_plays === 2, e && JSON.stringify({ t: e.summary.rank_by_transmissions, p: e.summary.rank_by_plays }));
+  check("archive share 5.82%", e && e.summary.archive_plays_share === 0.0582,
+    e && String(e.summary.archive_plays_share));
+  check("busiest year 2023 (31 tx / 10,179 plays)",
+    e && e.summary.busiest_year.year === "2023" &&
+    e.summary.busiest_year.transmissions === 31 && e.summary.busiest_year.plays === 10179);
+  check("loudest = Clock In The Benz (725 plays)",
+    e && e.summary.loudest_transmission.plays === 725 &&
+    /Clock In The Benz/.test(e.summary.loudest_transmission.title));
+  check("deepest cut = nitemode2019 (17 plays)",
+    e && e.summary.deepest_cut.plays === 17 && /nitemode2019/.test(e.summary.deepest_cut.title));
+  check("top family = The Rites (7 tx / 2,243 plays)",
+    e && e.summary.top_family.name === "The Rites" &&
+    e.summary.top_family.transmissions === 7 && e.summary.top_family.plays === 2243);
+  check("5 collaborators / 8.5% collab share", e && e.summary.collaborators_count === 5 &&
+    e.summary.collab_plays_share === 0.085);
+  check("3 milestones", e && e.summary.milestones_count === 3);
+  check("full track list = 58 entries", e && e.tracks.length === 58, e && String(e.tracks.length));
+  check("more collaborators than transmission.json top-3",
+    e && e.collaborators.length === 5,
+    e && e.collaborators.map((c) => c.name).join(", "));
+  check("deep_dive + journey links", e && e.deep_dive === "eras/the-somelowlifes-era.html" &&
+    e.journey === "transmission.html#era-the-somelowlifes-era");
+}
+
+console.log(failures === 0 ? "\nALL 4 WORKFLOWS PROVE OUT" : `\n${failures} CHECK(S) FAILED`);
 process.exit(failures === 0 ? 0 : 1);

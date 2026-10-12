@@ -1,8 +1,26 @@
 {
   "generated": "2026-10-11",
   "method": "Parsed from `git log main`: every commit becomes an entry. The site documenting its own becoming.",
-  "entry_count": 37,
+  "entry_count": 40,
   "entries": [
+    {
+      "hash": "6ee4fda",
+      "date": "2026-10-12",
+      "message": "Wave 18: changelog sync",
+      "files_changed": 3
+    },
+    {
+      "hash": "f6552d2",
+      "date": "2026-10-12",
+      "message": "Wave 18: era deep-dives (eras.json endpoint #16 + 6 deep-dive pages + journey links)",
+      "files_changed": 26
+    },
+    {
+      "hash": "5b873c8",
+      "date": "2026-10-12",
+      "message": "Wave 17 changelog sync",
+      "files_changed": 3
+    },
     {
       "hash": "d792bd3",
       "date": "2026-10-12",
