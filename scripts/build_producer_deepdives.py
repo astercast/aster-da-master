@@ -184,7 +184,12 @@ def breadcrumb(name):
             f'<span aria-current="page">{escape(name)}</span></nav>')
 
 
-def producer_page_html(p):
+def producer_page_html(p, racing=()):
+    """Deep-dive page for one producer.
+
+    racing: slugs of producers with a track in an active milestone race -
+    they get a race-watch keep-digging link (wave 28).
+    """
     parts = [breadcrumb(p["name"])]
     parts.append(f"""
       <p class="kicker"><span class="numeral">&#10022;</span>Producer deep dive</p>
@@ -276,6 +281,11 @@ def producer_page_html(p):
       </section>
 """)
     keep = [f'<li><a href="./">All producers</a> &mdash; the full index of as-credited producers.</li>']
+    if p["slug"] in racing:
+        keep.append(
+            '<li><a href="../milestone-race.html#watch">Milestone race &mdash; race to watch</a> '
+            '&mdash; a track produced by this producer is in an active '
+            'play-count race.</li>')
     if p["explorer_deep_link"]:
         keep.append(
             f'<li><a href="../codex-network.html#{escape(p["explorer_deep_link"])}">Codex network</a> '
@@ -653,11 +663,22 @@ def main():
 
     # pages (this generator OWNS producers/)
     PROD_DIR.mkdir(exist_ok=True)
+    # racing producers: their tracks are in an active milestone race
+    # (wave 28 cross-link; milestone_races runs before this generator)
+    races_doc = json.loads((API / "milestone-races.json").read_text())
+    racing = set()
+    for r in races_doc["play_races"]:
+        for name in parse_producers(r["title"]):
+            racing.add(producer_slug(name))
+    assert racing, "no racing producers found"
+    slug_set = {p["slug"] for p in out_producers}
+    assert racing <= slug_set, \
+        f"racing slug has no producer page: {racing - slug_set}"
     for f in PROD_DIR.glob("*.html"):
         f.unlink()
     for p in out_producers:
         (PROD_DIR / (p["slug"] + ".html")).write_text(
-            producer_page_html(p), encoding="utf-8")
+            producer_page_html(p, racing=racing), encoding="utf-8")
         assert (ROOT / p["page"]).exists()
     (PROD_DIR / "index.html").write_text(
         index_page_html(out_producers, insights), encoding="utf-8")

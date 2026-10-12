@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "Milestone races",
-  "description": "The archive's milestones as races: approaching play-count milestones with pace arithmetic, the summit chase, session and era records, and the most recently crossed milestones (2026-10-11 snapshot).",
+  "description": "The archive's milestones as races: approaching play-count milestones with pace arithmetic, head-to-head race pairs, the summit chase, session and era records, race history, and the computed race of the week (2026-10-11 snapshot).",
   "type": "object",
   "required": [
     "version",
@@ -14,7 +14,13 @@
     "summit_race",
     "session_records",
     "era_records",
-    "just_crossed"
+    "just_crossed",
+    "head_to_head",
+    "vault_pace",
+    "the_climb",
+    "race_history",
+    "race_of_the_week",
+    "snapshot_provenance"
   ],
   "properties": {
     "version": {
@@ -46,7 +52,8 @@
           "progress_pct",
           "pace_per_day",
           "days_at_pace",
-          "pace_note"
+          "pace_note",
+          "producers"
         ],
         "properties": {
           "id": {
@@ -63,6 +70,28 @@
           },
           "date": {
             "type": "string"
+          },
+          "producers": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "name",
+                "slug",
+                "page"
+              ],
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "slug": {
+                  "type": "string"
+                },
+                "page": {
+                  "type": "string"
+                }
+              }
+            }
           },
           "plays": {
             "type": "integer"
@@ -138,6 +167,126 @@
     },
     "just_crossed": {
       "type": "array"
+    },
+    "head_to_head": {
+      "type": "object",
+      "required": [
+        "method",
+        "pairs"
+      ],
+      "properties": {
+        "method": {
+          "type": "string"
+        },
+        "pairs": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "a",
+              "b",
+              "a_title",
+              "b_title",
+              "a_needed",
+              "b_needed",
+              "a_days_at_pace",
+              "b_days_at_pace",
+              "same_target",
+              "already_crossed",
+              "days_gap",
+              "projected_first",
+              "projected_note"
+            ]
+          }
+        }
+      }
+    },
+    "vault_pace": {
+      "type": "object",
+      "required": [
+        "method",
+        "count",
+        "tracks"
+      ],
+      "properties": {
+        "method": {
+          "type": "string"
+        },
+        "count": {
+          "type": "integer"
+        },
+        "tracks": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "id",
+              "title",
+              "plays",
+              "date",
+              "page",
+              "pace_per_day",
+              "producers"
+            ]
+          }
+        }
+      }
+    },
+    "the_climb": {
+      "type": "object",
+      "required": [
+        "method",
+        "holder",
+        "count",
+        "entries"
+      ],
+      "properties": {
+        "method": {
+          "type": "string"
+        },
+        "count": {
+          "type": "integer"
+        },
+        "entries": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "rank",
+              "title",
+              "plays",
+              "gap",
+              "pace_per_day",
+              "catch_days_at_pace",
+              "catch_note"
+            ]
+          }
+        }
+      }
+    },
+    "race_history": {
+      "type": "object",
+      "required": [
+        "method",
+        "undated_excluded",
+        "completed_crossings",
+        "threshold_winners",
+        "photo_finish"
+      ]
+    },
+    "race_of_the_week": {
+      "type": "object",
+      "required": [
+        "race_id",
+        "computed",
+        "basis",
+        "share_text",
+        "deep_link",
+        "caveat"
+      ]
+    },
+    "snapshot_provenance": {
+      "type": "string"
     }
   }
 }

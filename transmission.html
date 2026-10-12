@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Transmission — Aster da Master</title>
-  <meta name="description" content="Press play on his career: a guided journey through six eras and three data chapters of Aster da Master, 2018 to 2026 — the numbers, the defining tracks, the sessions, the collaborators, the races, the records, the codex.">
+  <meta name="description" content="Press play on his career: a guided journey through six eras and seven data chapters of Aster da Master, 2018 to 2026 — the numbers, the defining tracks, the sessions, the summoned voices, the closest races, the record book, the codex, the architects, the seasons, the deep cuts, and the horizon.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
@@ -159,6 +159,85 @@
     .tx-noscript ol { margin: 0; padding-left: var(--space-5); display: grid; gap: var(--space-2); color: var(--ink-dim); }
     .tx-noscript a { color: var(--neon); }
 
+    /* Transmission 3.0: breadcrumb, progress, era readings, motion craft */
+    .tx-crumb { margin-bottom: var(--space-4); }
+    .tx-crumb ol {
+      list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap;
+      gap: var(--space-2); align-items: baseline;
+      font-family: var(--font-mono); font-size: var(--fs-micro);
+      text-transform: uppercase; letter-spacing: 0.14em; color: var(--muted);
+    }
+    .tx-crumb ol li { display: flex; gap: var(--space-2); align-items: baseline; }
+    .tx-crumb ol li + li::before { content: "/"; color: var(--neon-deep); }
+    .tx-crumb a { color: var(--neon-deep); text-decoration: none; }
+    .tx-crumb a:hover, .tx-crumb a:focus-visible { color: var(--neon); text-decoration: underline; }
+    .tx-crumb [aria-current="page"] { color: var(--neon); }
+    .tx-crumb .crumb-stop { color: var(--muted); }
+    .tx-progress-note { font-family: var(--font-mono); font-size: var(--fs-small); color: var(--muted); margin-top: var(--space-4); }
+
+    /* "the archive's reading" — computed era enrichment */
+    .tx-reading { margin-top: var(--space-6); }
+    .tx-readline { font-size: 1rem; color: var(--ink-dim); margin: 0 0 var(--space-4); }
+    .tx-readline strong { color: var(--neon); font-weight: 700; }
+    .tx-sharebar {
+      position: relative; height: 22px; border: 1px solid var(--line);
+      border-radius: 999px; background: var(--neon-ink); overflow: hidden;
+      margin-bottom: var(--space-5);
+    }
+    .tx-sharebar-fill { height: 100%; background: linear-gradient(90deg, var(--neon-deep), var(--neon)); border-radius: 999px; }
+    .tx-sharebar-num {
+      position: absolute; right: var(--space-3); top: 50%; transform: translateY(-50%);
+      font-family: var(--font-mono); font-size: var(--fs-micro); font-weight: 700; color: var(--neon);
+    }
+    .tx-yrows { display: grid; gap: var(--space-2); margin-bottom: var(--space-4); }
+    .tx-yrow { display: grid; grid-template-columns: 44px 1fr auto; gap: var(--space-3); align-items: center; }
+    .tx-yrow .y-lab { font-family: var(--font-mono); font-size: var(--fs-small); color: var(--gold); font-weight: 700; }
+    .tx-yrow .y-bar { height: 10px; border: 1px solid var(--line-soft); border-radius: 999px; background: var(--neon-ink); overflow: hidden; }
+    .tx-yrow .y-bar i { display: block; height: 100%; background: var(--neon); border-radius: 999px; }
+    .tx-yrow .y-num { font-family: var(--font-mono); font-size: var(--fs-micro); color: var(--muted); font-variant-numeric: tabular-nums; white-space: nowrap; }
+    .tx-readlist { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-2); font-size: var(--fs-small); color: var(--ink-dim); }
+    .tx-readlist .rl-lab {
+      display: inline-block; min-width: 10.5em; font-family: var(--font-mono); font-size: var(--fs-micro);
+      text-transform: uppercase; letter-spacing: 0.14em; color: var(--neon-deep);
+    }
+    .tx-readlist a { color: var(--ink); }
+    .tx-readlist a:hover, .tx-readlist a:focus-visible { color: var(--neon); }
+    .tx-rank { font-family: var(--font-mono); font-size: var(--fs-micro); color: var(--neon-deep); margin-right: var(--space-2); }
+
+    /* typography & spacing refinements: sharper era hierarchy, tabular stats */
+    .tx-era h2 { font-size: clamp(2.2rem, 6vw, 4rem); line-height: 1.02; }
+    .tx-signal { font-size: 1.125rem; border-left-width: 4px; }
+    .tx-scene { line-height: 1.65; }
+    .stat-grid .stat-value, .tx-plays { font-variant-numeric: tabular-nums; }
+    .tx-era-inner { view-transition-name: tx-panel; }
+
+    /* view transitions: phosphor-tinted crossfade between stops */
+    ::view-transition-old(tx-panel), ::view-transition-new(tx-panel) { animation-duration: 0.32s; animation-timing-function: var(--ease); }
+    ::view-transition-old(tx-panel) { filter: saturate(1.6) brightness(1.1); }
+    ::view-transition-new(tx-panel) { filter: none; }
+
+    /* scroll-driven motion (progressive enhancement, CSS-only) */
+    @supports (animation-timeline: view()) {
+      .tx-hero-title {
+        animation: tx-hero-scroll linear both;
+        animation-timeline: view();
+        animation-range: entry 0% exit 100%;
+      }
+      @keyframes tx-hero-scroll {
+        from { filter: none; }
+        to { filter: brightness(1.3) saturate(1.2); }
+      }
+      .tx-map-card {
+        animation: tx-card-in linear both;
+        animation-timeline: view();
+        animation-range: entry 0% entry 100%;
+      }
+      @keyframes tx-card-in {
+        from { opacity: 0; transform: translateY(26px); }
+        to { opacity: 1; transform: none; }
+      }
+    }
+
     @media (max-width: 640px) {
       .tx-stage { padding: var(--space-5) var(--space-4); }
       .tx-rail li { min-width: 104px; }
@@ -168,6 +247,7 @@
       .tx-stage::after { display: none; }
       .tx-era.tuning .tx-era-inner { animation: none; }
       .tx-hero-title { text-shadow: none; }
+      .tx-hero-title, .tx-map-card { animation: none !important; }
       *, *::before, *::after { transition-duration: 0.01ms !important; }
     }
   </style>
@@ -242,18 +322,20 @@
       <section class="tx-stage" id="tx-entry" aria-labelledby="tx-title">
         <p class="kicker"><span class="numeral">✦</span>The flagship journey</p>
         <h1 class="tx-hero-title" id="tx-title" tabindex="-1">TRANSMISSION</h1>
-        <p class="tx-lede">Six eras. Three data chapters. 2018&nbsp;&rarr;&nbsp;2026. Press play on his career — the numbers, the defining tracks, the sessions, the summoned voices, the closest races, the record book, the codex — and the one line each stop&rsquo;s data tells.</p>
+        <p class="tx-lede">Six eras. Seven data chapters. 2018&nbsp;&rarr;&nbsp;2026. Press play on his career — the numbers, the defining tracks, the sessions, the summoned voices, the closest races, the record book, the codex, the architects, the seasons, the deep cuts, the horizon — and the one line each stop&rsquo;s data tells.</p>
         <div class="tx-total-strip" id="tx-totals" aria-label="Archive totals">
           <div><div class="t-num" data-tx-total="transmissions">218</div><div class="t-lab">Transmissions</div></div>
           <div><div class="t-num" data-tx-total="plays">257,394</div><div class="t-lab">Plays</div></div>
           <div><div class="t-num" data-tx-total="sessions">61</div><div class="t-lab">Sessions</div></div>
-          <div><div class="t-num" data-tx-total="stops">9</div><div class="t-lab">Stops</div></div>
+          <div><div class="t-num" data-tx-total="stops">13</div><div class="t-lab">Stops</div></div>
         </div>
         <div class="btn-row">
           <button class="btn btn-neon" id="tx-begin" type="button">&#9654; Begin transmission</button>
           <button class="btn btn-ghost" id="tx-resume" type="button" hidden>Resume</button>
+          <button class="btn btn-ghost" id="tx-clear" type="button" hidden>Clear progress</button>
           <button class="btn btn-ghost" id="tx-open-map" type="button">Journey map</button>
         </div>
+        <p class="tx-progress-note" id="tx-progress" aria-live="polite"></p>
         <noscript>
           <div class="tx-noscript">
             <h2 class="tx-noscript-h">Chapter index</h2>
@@ -265,9 +347,13 @@
               <li><a href="transmission.html#era-the-somelowlifes-era">The SomeLowLifes Era</a> — <a href="eras/the-somelowlifes-era.html">deep dive</a></li>
               <li><a href="transmission.html#era-the-silence">The Silence</a> — <a href="eras/the-silence.html">deep dive</a></li>
               <li><a href="transmission.html#era-the-return">The Return</a> — <a href="eras/the-return.html">deep dive</a></li>
-              <li><a href="milestone-race.html">The Race</a> — the closest play-count races and the summit chase</li>
-              <li><a href="milestone-race.html">The Record Book</a> — session and era records, just-crossed milestones</li>
+              <li><a href="milestone-race.html">The Race</a> — the closest play-count races, head-to-head matchups, the race to watch, and the summit chase</li>
+              <li><a href="milestone-race.html">The Record Book</a> — session and era records, race history (decided races, threshold winners, the photo finish)</li>
               <li><a href="decoder.html">The Codex</a> — the sixteen word families</li>
+              <li><a href="transmission.html#chapter-architects">The Architects</a> — <a href="producers/">producer deep dives</a></li>
+              <li><a href="transmission.html#chapter-seasons">The Seasons</a> — <a href="sessions-explorer.html">sessions explorer</a></li>
+              <li><a href="transmission.html#chapter-deepcuts">The Deep Cuts</a> — the quietest sessions, ranked (<a href="sessions-explorer.html">sessions explorer</a>)</li>
+              <li><a href="transmission.html#chapter-horizon">The Horizon</a> — beyond the vault: <a href="circle/fish-narc.html">the Uncle watch</a> · <a href="trilogy.html">the trilogy tease</a></li>
             </ol>
           </div>
         </noscript>
@@ -276,17 +362,19 @@
 
       <!-- JOURNEY -->
       <section class="tx-stage" id="tx-journey" aria-labelledby="tx-era-heading" hidden>
+        <nav class="tx-crumb" id="tx-crumb" aria-label="Breadcrumb"></nav>
         <ol class="tx-rail" id="tx-rail" aria-label="Era progress"></ol>
         <article class="tx-era" id="tx-era">
           <div class="tx-era-inner" id="tx-era-inner"><!-- rendered by transmission.js --></div>
         </article>
         <div class="tx-controls">
-          <button class="btn btn-sm btn-ghost" id="tx-prev" type="button">&larr; Prev era</button>
-          <button class="btn btn-sm btn-ghost" id="tx-next" type="button">Next era &rarr;</button>
+          <button class="btn btn-sm btn-ghost" id="tx-prev" type="button">&larr; Prev stop</button>
+          <button class="btn btn-sm btn-ghost" id="tx-next" type="button">Next stop &rarr;</button>
           <button class="btn btn-sm btn-ghost tx-autoplay" id="tx-autoplay" type="button" aria-pressed="false">&#9654; Press play</button>
           <span class="spacer" aria-hidden="true"></span>
           <button class="btn btn-sm btn-ghost" id="tx-map-btn" type="button">Journey map</button>
           <button class="btn btn-sm btn-ghost" id="tx-stop-link" type="button">Copy stop link</button>
+          <button class="btn btn-sm btn-ghost" id="tx-brief" type="button">Copy stop brief</button>
           <button class="btn btn-sm btn-neon tx-copy" id="tx-copy" type="button">Copy my transmission</button>
         </div>
         <p class="visually-hidden" aria-live="polite" id="tx-live"></p>
@@ -307,7 +395,7 @@
       <section class="tx-stage" id="tx-end" aria-labelledby="tx-end-heading" hidden>
         <p class="kicker"><span class="numeral">✦</span>Signal received</p>
         <h2 id="tx-end-heading" tabindex="-1" style="font-family:var(--font-display);font-size:var(--fs-1)">THE VAULT AT A GLANCE</h2>
-        <p class="tx-lede">You rode six eras and three data chapters, 2018 to 2026. Here is the whole signal in one frame — and the full vault, if you want to keep digging.</p>
+        <p class="tx-lede">You rode six eras and seven data chapters, 2018 to 2026. Here is the whole signal in one frame — and the full vault, if you want to keep digging.</p>
         <div class="stat-grid tx-end-stats" id="tx-end-stats"></div>
         <div class="btn-row">
           <a class="btn btn-neon" href="glance.html">Open the vault at a glance</a>

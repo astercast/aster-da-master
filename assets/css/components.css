@@ -1408,3 +1408,55 @@
 @media (prefers-reduced-motion: reduce) {
   .se-strip-bar { transition: none; }
 }
+
+/* ---------- Milestone race 2.0 (wave 28): race page components ---------- */
+.mr-races { display: grid; gap: var(--space-4); }
+.mr-race, .mr-watch-card, .mr-photo-card {
+  background: var(--panel); border: 1px solid var(--line-soft);
+  border-radius: var(--radius-m); padding: var(--space-4) var(--space-5);
+}
+.mr-watch-card { border-color: var(--gold); }
+.mr-race h3 { margin: 0.25rem 0 0.5rem; font-size: 1.1rem; }
+.mr-rank { font-family: var(--font-display); color: var(--gold-bright); margin: 0; }
+.mr-line, .mr-pace { margin: 0.35rem 0; font-size: 0.92rem; }
+.mr-bar { height: 0.55rem; background: var(--panel-2); border-radius: 3px; overflow: hidden; margin: 0.5rem 0; }
+.mr-bar span { display: block; height: 100%; background: var(--neon-deep, #0a5c40); }
+.mr-holder { margin: 0 0 var(--space-5); }
+.mr-summit-title { font-size: 1.2rem; font-weight: 700; margin: 0; }
+.mr-summit-num { font-family: var(--font-display); font-size: 2rem; color: var(--gold-bright); margin: 0.25rem 0; line-height: 1.1; }
+.mr-summit-num span { font-size: 1rem; color: var(--muted); font-family: var(--font-body, inherit); }
+.mr-contenders { list-style: none; padding: 0; margin: 0; display: grid; gap: var(--space-3); }
+.mr-records { display: grid; gap: var(--space-5); grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+.mr-rec { margin: 0 0 var(--space-3); }
+.mr-rec dt { font-weight: 700; }
+.mr-rec dd { margin: 0.2rem 0 0; font-size: 0.92rem; }
+.mr-h2h-form { display: flex; flex-wrap: wrap; gap: var(--space-4); margin: 0 0 var(--space-4); }
+.mr-h2h-form label { display: grid; gap: 0.3rem; font-size: 0.85rem; font-weight: 600; }
+.mr-h2h-form select { min-width: 14rem; }
+.mr-verdict { border-left: 3px solid var(--neon); padding-left: var(--space-3); font-size: 0.95rem; }
+@media (max-width: 720px) {
+  .mr-records { grid-template-columns: 1fr; }
+  .mr-h2h-form select { min-width: 0; width: 100%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .mr-bar span { transition: none; }
+}
+.mr-climb-controls { margin: 0 0 var(--space-4); max-width: 28rem; }
+.mr-climb-controls label { display: grid; gap: 0.3rem; font-size: 0.85rem; font-weight: 600; }
+.mr-climb-controls input[type="search"] { width: 100%; }
+
+/* race-card jump nav (wayfinding for the long race page) */
+.mr-jumpnav {
+  display: flex; flex-wrap: wrap; gap: var(--space-2) var(--space-4);
+  align-items: baseline;
+  border-top: 1px solid var(--line-soft); border-bottom: 1px solid var(--line-soft);
+  padding: var(--space-3) 0; margin: 0 0 var(--space-6);
+}
+.mr-jumpnav-label {
+  font-family: var(--font-display); text-transform: uppercase;
+  letter-spacing: 0.08em; font-size: 0.78rem; color: var(--gold-bright);
+}
+.mr-jumpnav a { font-size: 0.88rem; text-decoration: none; color: var(--ink-dim); }
+.mr-jumpnav a:hover, .mr-jumpnav a:focus-visible { color: var(--neon); text-decoration: underline; }
+.mr-h2h-form select, .mr-climb-controls input { font-size: 0.95rem; }
+#mr-history-h + .chart-sub, .section h3 { scroll-margin-top: 96px; }

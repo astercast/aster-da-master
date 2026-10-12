@@ -243,6 +243,57 @@ console.log("[workflow 7] Milestone race");
   check("pace language: estimate-not-prediction caveat present",
     /n(?:ot|ever) a prediction/.test(mr.pace_definition) &&
     mr.play_races.every((r) => /n(?:ot|ever) a prediction/.test(r.pace_note)));
+  check("head_to_head: 6 pairs, sorted by days_gap, projected_first consistent",
+    mr.head_to_head.pairs.length === 6 &&
+    mr.head_to_head.pairs.every((p) =>
+      Math.abs(p.days_gap - Math.abs(p.a_days_at_pace - p.b_days_at_pace)) < 0.06 &&
+      p.projected_first === (p.a_days_at_pace < p.b_days_at_pace ? p.a :
+        p.b_days_at_pace < p.a_days_at_pace ? p.b : null) &&
+      /not a forecast/.test(p.projected_note)) &&
+    mr.head_to_head.pairs.every((p, i) =>
+      i === 0 || mr.head_to_head.pairs[i - 1].days_gap <= p.days_gap));
+  check("head_to_head: closest pair master key vs colder, 46.4 days, master key first",
+    mr.head_to_head.pairs[0].a_title.indexOf("master key") !== -1 &&
+    mr.head_to_head.pairs[0].b_title.indexOf("Colder") !== -1 &&
+    mr.head_to_head.pairs[0].days_gap === 46.4 &&
+    mr.head_to_head.pairs[0].projected_first === mr.head_to_head.pairs[0].a);
+  check("race_history: 8 dated crossings descending; photo finish 115d",
+    mr.race_history.completed_crossings.length === 8 &&
+    mr.race_history.completed_crossings.every((m, i) => i === 0 ||
+      mr.race_history.completed_crossings[i - 1].date > m.date) &&
+    mr.race_history.photo_finish.gap_days === 115 &&
+    mr.race_history.photo_finish.a.name === "First vault transmission" &&
+    mr.race_history.photo_finish.b.name === "First collaboration");
+  check("race_history: threshold winners 57/5/1/1, Take Me leads every band",
+    mr.race_history.threshold_winners.map((t) => t.crossed_count).join(",") === "57,5,1,1" &&
+    mr.race_history.threshold_winners.every((t) => t.leader.title === "Take Me (prod. Em Klebold)") &&
+    /not recorded/.test(mr.race_history.method));
+  check("race_of_the_week: computed from closest_races[0], share card present",
+    mr.race_of_the_week.race_id === mr.closest_races[0] &&
+    /computed/i.test(mr.race_of_the_week.basis) &&
+    mr.race_of_the_week.share_text.indexOf("Race to watch:") === 0 &&
+    mr.race_of_the_week.deep_link === "milestone-race.html#watch" &&
+    /never a prediction/.test(mr.race_of_the_week.caveat));
+  check("play_races carry producer deep-dive links",
+    mr.play_races.every((r) => r.producers.length > 0 &&
+      r.producers.every((p) => /^producers\//.test(p.page) && p.page.endsWith(".html"))));
+  check("vault_pace: 185 tracks, unique ids, alphabetical, pace > 0",
+    mr.vault_pace.count === 185 && mr.vault_pace.tracks.length === 185 &&
+    new Set(mr.vault_pace.tracks.map((v) => v.id)).size === 185 &&
+    mr.vault_pace.tracks.every((v) => v.pace_per_day > 0) &&
+    mr.vault_pace.tracks.map((v) => v.title.toLowerCase()).join("\n") ===
+      mr.vault_pace.tracks.map((v) => v.title.toLowerCase()).sort().join("\n"));
+  check("the_climb: 182 entries, ranks 1..182, sorted by catch time, top5 == summit contenders",
+    mr.the_climb.count === 182 && mr.the_climb.entries.length === 182 &&
+    mr.the_climb.entries.every((c, i) => c.rank === i + 1) &&
+    mr.the_climb.entries.every((c, i) => i === 0 ||
+      mr.the_climb.entries[i - 1].catch_days_at_pace <= c.catch_days_at_pace) &&
+    mr.the_climb.entries.every((c) => c.plays < 30088 && c.date < "2026-07-13") &&
+    mr.the_climb.entries.slice(0, 5).map((c) => c.title).join("|") ===
+      mr.summit_race.contenders.map((c) => c.title).join("|"));
+  check("snapshot_provenance: independent 185-track re-capture recorded",
+    /185 tracks/.test(mr.snapshot_provenance) &&
+    /zero play-count differences/.test(mr.snapshot_provenance));
 }
 
 console.log(failures === 0 ? "\nALL 7 WORKFLOWS PROVE OUT" : `\n${failures} CHECK(S) FAILED`);

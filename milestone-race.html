@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>The milestone race — Aster da Master</title>
-  <meta name="description" content="The archive's milestones as races: tracks approaching round-number play counts, the 30,088-play summit chase, the record book — computed from the 2026-10-11 play-count snapshot. Pace figures are arithmetic, never predictions.">
+  <meta name="description" content="The archive's milestones as races: tracks approaching round-number play counts, head-to-head race pairings, the 30,088-play summit chase, race history, the record book — computed from the 2026-10-11 play-count snapshot. Pace figures are arithmetic, never predictions.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
@@ -87,38 +87,99 @@
         <p class="chart-sub">Play counts are a 2026-10-11 snapshot, not a live leaderboard. Pace figures are simple arithmetic on that snapshot — a lifetime average per track — never a prediction. The data keeps the score.</p>
       </div>
 
-      <section class="section reveal" aria-labelledby="mr-closest-h">
+      <nav class="mr-jumpnav reveal" aria-label="Race page sections">
+        <span class="mr-jumpnav-label" aria-hidden="true">The race card</span>
+        <a href="#closest">Closest races</a>
+        <a href="#watch">Race to watch</a>
+        <a href="#h2h">Head-to-head</a>
+        <a href="#summit">The summit</a>
+        <a href="#climb">The Climb</a>
+        <a href="#records">Record book</a>
+        <a href="#history">Race history</a>
+        <a href="#method">Method</a>
+      </nav>
+
+      <section class="section reveal" id="closest" aria-labelledby="mr-closest-h">
         <span class="kicker"><span class="numeral">✦</span>The watch list, ranked</span>
         <h2 id="mr-closest-h">Closest races</h2>
         <p class="chart-sub">Sorted by gap-closing proximity — the fewest "at this pace" days first. Each race shows current value, target, gap, and the pace estimate.</p>
         <div class="mr-races" id="mr-closest"></div>
       </section>
 
-      <section class="section reveal" aria-labelledby="mr-summit-h">
+      <section class="section reveal" id="watch" aria-labelledby="mr-watch-h">
+        <span class="kicker"><span class="numeral">✦</span>Computed, not editorial</span>
+        <h2 id="mr-watch-h">Race to watch</h2>
+        <p class="chart-sub" id="mr-watch-basis"></p>
+        <div id="mr-watch"></div>
+      </section>
+
+      <section class="section reveal" id="h2h" aria-labelledby="mr-h2h-h">
+        <span class="kicker"><span class="numeral">✦</span>Pick your matchup</span>
+        <h2 id="mr-h2h-h">Head-to-head</h2>
+        <p class="chart-sub">Race <strong>any two vault tracks</strong> against each other — all 185 tracks, any milestone target. Current plays, gaps to target, pace comparison, and the at-pace projected finisher. Pairs with different targets have different finish lines: the race is who gets there first, not who runs fastest. A track already past the line has no race to run — the table says so. The projected finish order is arithmetic, never a forecast.</p>
+        <div class="mr-h2h-form">
+          <label for="mr-h2h-a">Track A
+            <select id="mr-h2h-a"></select>
+          </label>
+          <label for="mr-h2h-b">Track B
+            <select id="mr-h2h-b"></select>
+          </label>
+          <label for="mr-h2h-t">Milestone target
+            <select id="mr-h2h-t">
+              <option value="1000">1,000 plays</option>
+              <option value="10000" selected>10,000 plays</option>
+              <option value="20000">20,000 plays</option>
+              <option value="30000">30,000 plays</option>
+            </select>
+          </label>
+        </div>
+        <p class="chart-sub">The math, stated: needed = target − plays; days at pace = needed ÷ lifetime pace (snapshot plays ÷ days from upload to the 2026-10-11 snapshot); the smaller days-at-pace crosses first. Shareable deep links: <code>#h2h=&lt;track&gt;,&lt;track&gt;,&lt;target&gt;</code>.</p>
+        <div id="mr-h2h"></div>
+      </section>
+
+      <section class="section reveal" id="summit" aria-labelledby="mr-summit-h">
         <span class="kicker"><span class="numeral">✦</span>The ceiling</span>
         <h2 id="mr-summit-h">The summit race</h2>
         <p class="chart-sub" id="mr-summit-elig"></p>
         <div id="mr-summit"></div>
       </section>
 
-      <section class="section reveal" aria-labelledby="mr-records-h">
+      <section class="section reveal" id="climb" aria-labelledby="mr-climb-h">
+        <span class="kicker"><span class="numeral">✦</span>The full leaderboard</span>
+        <h2 id="mr-climb-h">The Climb</h2>
+        <p class="chart-sub" id="mr-climb-method"></p>
+        <div class="mr-climb-controls">
+          <label for="mr-climb-q">Filter tracks
+            <input id="mr-climb-q" type="search" placeholder="Type to filter the leaderboard…" autocomplete="off">
+          </label>
+        </div>
+        <div id="mr-climb"></div>
+      </section>
+
+      <section class="section reveal" id="records" aria-labelledby="mr-records-h">
         <span class="kicker"><span class="numeral">✦</span>On the books</span>
         <h2 id="mr-records-h">The record book</h2>
         <div class="mr-records" id="mr-records"></div>
       </section>
 
-      <section class="section reveal" aria-labelledby="mr-crossed-h">
-        <span class="kicker"><span class="numeral">✦</span>Already happened</span>
-        <h2 id="mr-crossed-h">Just crossed</h2>
-        <p class="chart-sub">The most recently recorded milestones in the archive, as of the snapshot.</p>
+      <section class="section reveal" id="history" aria-labelledby="mr-history-h">
+        <span class="kicker"><span class="numeral">✦</span>Decided races</span>
+        <h2 id="mr-history-h">Race history</h2>
+        <p class="chart-sub" id="mr-history-method"></p>
+        <h3>Completed crossings</h3>
         <div id="mr-crossed"></div>
+        <h3>Threshold winners</h3>
+        <p class="chart-sub">Vault tracks past each round-number play threshold, with the current leader of each band. The archive holds one play-count snapshot (2026-10-11) — crossing dates and finish orders for these races cannot be recovered, and are not claimed.</p>
+        <div id="mr-winners"></div>
+        <h3>Photo finish</h3>
+        <div id="mr-photo"></div>
       </section>
 
-      <section class="section reveal" aria-labelledby="mr-method-h">
+      <section class="section reveal" id="method" aria-labelledby="mr-method-h">
         <span class="kicker"><span class="numeral">✦</span>How the race is scored</span>
         <h2 id="mr-method-h">Methodology, in plain words</h2>
         <p id="mr-method"></p>
-        <p class="chart-sub">Also at <a href="api/v1/milestone-races.json">api/v1/milestone-races.json</a> · the <a href="api-playground.html">API playground</a> · <a href="agents.html">agents surface</a> · <a href="codex-network.html">codex network</a> (the word families as a graph)</p>
+        <p class="chart-sub">Also at <a href="api/v1/milestone-races.json">api/v1/milestone-races.json</a> · the <a href="api-playground.html">API playground</a> · <a href="agents.html">agents surface</a> · <a href="codex-network.html">codex network</a> (the word families as a graph) · keep digging: <a href="sessions-explorer.html">sessions explorer</a>, <a href="transmission.html">Transmission — The Race</a>, <a href="producers/">producer deep dives</a></p>
       </section>
     </div>
   </main>

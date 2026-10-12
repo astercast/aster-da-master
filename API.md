@@ -215,11 +215,23 @@ and `tracks.json` (the captured catalog).
 - **Milestone race** (`milestone-race.html` + `api/v1/milestone-races.json`,
   endpoint #19): the milestone-watch logic as a live race — the 4
   approaching play-count races ranked by gap-closing proximity
-  (`closest_races`, sorted by `days_at_pace`), the 30,088-play summit chase
-  with the five closest contenders, the session + era record book, and the
-  three most recently crossed milestones. Pace figures are lifetime-average
-  snapshot arithmetic labeled as estimates, never predictions
-  (`scripts/build_milestone_races.py`). Skill:
+  (`closest_races`, sorted by `days_at_pace`), a head-to-head tool for any
+  two of the 185 vault tracks at any milestone target (the `vault_pace` pace
+  database; the page mirrors the generator's `project_pair` arithmetic
+  client-side, already-crossed tracks get "no race to run" instead of a
+  projection), The Climb (all 182 summit-eligible tracks ranked by catch time
+  at lifetime pace), the race history (all dated crossings, 1k/10k/20k/30k
+  threshold winners — crossing dates unrecoverable from one snapshot, and
+  said so — plus the 115-day photo finish), the computed race of the week
+  with a share card, the 30,088-play summit chase with the five closest
+  contenders, and the session + era record book. The 2026-10-11 snapshot was
+  independently re-captured via live browser (185/185 tracks, zero play-count
+  differences — recorded in `snapshot_provenance`). Pace figures are
+  lifetime-average snapshot arithmetic labeled as estimates, never
+  predictions (`scripts/build_milestone_races.py`, pinned-fixture tests in
+  `scripts/test_milestone_races.py`). Cross-links: Transmission's The Race
+  chapter, `sessions-explorer.html` keep-digging, and the racing producers'
+  deep dives (addy, t-n-c, ginseng, brokn link back to the race). Skill:
   `milestone-race-reader`. Schema: `api/v1/schema/milestone-races.json`.
 - **Session explorer 2.0** (`sessions-explorer.html` + `api/v1/session-tools.json`,
   endpoint #20): the session-archaeology timeline gains three tools — a
@@ -287,7 +299,7 @@ Task procedures in `skills/` (registry: `skills/index.json`; playbook format: Us
 - `era-briefing` — summarize an era for a writeup
 - `transmission-decoder` — interpret a title word via the codex families
 - `codex-reader` — read a codex family's full deep-dive: decoded reading, era-by-era evolution, key sessions, voices
-- `milestone-race-reader` — read the milestone race: approaching milestones ranked, the 30,088-play summit chase, records, what's just crossed (pace = arithmetic, never predictions)
+- `milestone-race-reader` — read the milestone race: approaching milestones ranked, race any two vault tracks head-to-head, The Climb (182-track summit leaderboard), race history, the computed race of the week, the 30,088-play summit chase, records, what's just crossed (pace = arithmetic, never predictions)
 
 ## Agents surface (wave 13)
 

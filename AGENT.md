@@ -46,7 +46,7 @@ Static files — **no auth, no keys, no rate limits**. Works on any static host.
 | `api/v1/eras.json` | Era deep-dives: six eras with full transmission lists (every track + plays), ALL in-era collaborators, active codex families, milestones, computed signal lines and summaries | 6 |
 | `api/v1/session-clusters.json` | Session archaeology, interactive: the 61 sessions as an explorable timeline — per-session enrichment (era, loudest + deepest-cut tracks, cross-links), the 60 inter-session gaps, 9 activity seasons, asserted insights. Drives `sessions-explorer.html` | 9 seasons |
 | `api/v1/codex-families.json` | Codex family deep-dives: 16 vocabulary families with decoded readings, era-by-era evolution, key sessions, title-credited collaborators. Drives the `codex/<slug>.html` pages | 16 |
-| `api/v1/milestone-races.json` | The milestone race: approaching play-count milestones ranked by gap-closing proximity (current value, target, gap, pace arithmetic — estimates, never predictions), the 30,088-play summit chase, session + era records, the most recently crossed milestones. Drives `milestone-race.html` | 4 races |
+| `api/v1/milestone-races.json` | The milestone race 2.0: approaching play-count milestones ranked by gap-closing proximity (current value, target, gap, pace arithmetic — estimates, never predictions), race any two of the 185 vault tracks head-to-head at any milestone target (the vault pace database, client-side mirror of the asserted pair math), The Climb (all 182 summit-eligible tracks ranked by catch time), race history (decided races: dated crossings, 1k/10k/20k/30k threshold winners, the 115-day photo finish), the computed race of the week (share card), the 30,088-play summit chase, session + era records. The 2026-10-11 snapshot was independently re-captured (185/185 tracks, zero play-count differences). Drives `milestone-race.html` | 4 races, 185-track pace db, 182-track climb |
 | `api/v1/session-tools.json` | Session explorer 2.0 tooling: 61 per-session compare profiles (stats, loudest + deepest-cut tracks, collaborators, play profiles, family/session/era/journey cross-links), the deepest-sessions editorial ranking (lowest average plays per transmission, min 2 transmissions, formula stated in the payload — editorial, not an artist fact), and the honest snapshot-history state (one 2026-10-11 snapshot: no play trajectories exist). Drives the compare / deepest-cuts / timeline-scrubber sections of `sessions-explorer.html` | 61 profiles |
 | `api/v1/codex-network.json` | The codex relationship graph: 16 word families as nodes, shared title-credited collaborators and title-parsed producers as edges, BFS degrees of separation from Aster, the family-overlap graph, and connect-the-dots shortest-path data. Drives `codex-network.html` | 70 nodes |
 | `api/v1/producer-deepdives.json` | Producer deep-dives: every as-credited producer (title prod./produced-by fragments, verbatim) with credited productions (release/session links, co-producers, title-credited voices), codex family ties, a computed production fingerprint, and sourced research where a research pass exists. Drives `producers/<slug>.html` | 113 producers |
@@ -235,18 +235,26 @@ family: what does it mean, and how did it evolve?"*
 2. **`closest_races[0]`** — the closest race in the archive: "master key ft.
    Lil Wintr x Marcelo (prod. ginseng)", 9,615 of 10,000 plays, 385 needed,
    pace ~3.84 plays/day → at this lifetime pace, ~100.3 days (estimate, not a
-   prediction).
-3. **`summit_race`** — holder "Take Me (prod. Em Klebold)" at 30,088 plays
+   prediction). **`race_of_the_week`** names the same race — computed from
+   the snapshot, not editorial — with a share card.
+3. **`head_to_head` + `vault_pace`** — race any two of the 185 vault tracks at any milestone target (1k/10k/20k/30k): `needed = target − plays`, `days_at_pace = needed ÷ pace_per_day` (the page mirrors the generator's `project_pair` exactly, banker's rounding included). A track already past the line has no race to run — the table says so. The 6 featured pairs (active races at their band targets) are precomputed and asserted; the closest is "master key" vs "When the World Gets Colder (prod. Brokn)", 46.4 days apart. **`the_climb`** — all 182 summit-eligible tracks ranked by catch time at lifetime pace (top 5 = the summit contenders).
+4. **`summit_race`** — holder "Take Me (prod. Em Klebold)" at 30,088 plays
    (2018-02-04). Closest contender: "candy w/ capoxxo(prod. razorwrist)" —
    11,587 plays, 18,501 behind, catch time ~4,093.1 days at lifetime pace.
    Contenders are tracks uploaded before 2026-07-13 (`eligibility`): pace
    needs a track record.
-4. **`session_records` / `era_records`** — the standing records: most-prolific
+5. **`race_history`** — the decided races: all 8 dated milestone crossings,
+   the 1k/10k/20k/30k threshold winners (57 / 5 / 1 / 1 tracks past it; "Take
+   Me" leads every band; crossing dates are NOT recorded — the archive holds
+   one snapshot, and the method says so), and the photo finish — "First vault
+   transmission" vs "First collaboration", 115 days apart, the tightest
+   back-to-back recorded crossings.
+6. **`session_records` / `era_records`** — the standing records: most-prolific
    session = The November 3rd–12th Session (19 tracks); longest silence =
    553 days (session-36 → session-37); era with most plays = The First Rite
    (220,688). **`just_crossed`** — most recent: "Latest transmission"
    (2026-10-02), then "250,000 plays crossed" (2024-05-28).
-5. Pitfall check: `pace_per_day` is snapshot plays ÷ days from upload to
+7. Pitfall check: `pace_per_day` is snapshot plays ÷ days from upload to
    snapshot — a lifetime average, not a current rate. `days_at_pace` and
    `catch_days_at_pace` are plain division. **Say "estimate, not a prediction"
    out loud in every report.** Never quote or reproduce lyrics — titles and
