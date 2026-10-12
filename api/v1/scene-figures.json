@@ -4,7 +4,7 @@
   "kind": "scene figure — producer credit",
   "page": "circle/fish-narc.html",
   "standing": "Fish Narc enters this archive through producer credits on two SoundCloud tracks, not through title features. He is not one of the 21 title-credited collaborators and stands outside the circle count. The circle's title-credit rule is unchanged.",
-  "research_pass": "2026-10-11",
+  "research_pass": "2026-10-12",
   "tracks": [
    {
     "title": "Pavement (prod. Fish Narc)",
@@ -38,7 +38,12 @@
    "'Big Dumb World' video: posted by its maker James Logan Hyson on Vimeo — corroborating Stereogum's 'James Hyson's video' credit (single-source).",
    "K Records' label copy (via upcomingvinyl): recently relocated to Los Angeles; tours the US and Europe this autumn with a full band (single-source).",
    "Release Wave artist profile's comparison line: fans of Gin Blossoms, The Replacements, Yuck, and Superdrag (single-source).",
-   "The August 18, 2026 'new songs out today' roundup (Our Culture Mag) covers 'Much Less Me' as the lead single with Alex Farrar's production (single-source — corroborates the Stereogum announcement)."
+   "The August 18, 2026 'new songs out today' roundup (Our Culture Mag) covers 'Much Less Me' as the lead single with Alex Farrar's production (single-source — corroborates the Stereogum announcement).",
+   "Listening party: Thu Oct 15, 7 PM, FREE, RSVP — re-verified live on the venue calendar (roadhouse.permanentrecordsla.com, verified). No third single, no advance reviews, no 'Uncle' interviews as of 2026-10-12 (normal 4 days out).",
+   "Europe leg upgraded one notch: upcomingvinyl's promo copy now includes an autumn US+Europe tour line — promo text only, no dates (stays uncertain).",
+   "Sputnikmusic: 'Uncle' listed with no rating yet; 'frog song' at 3.5/5 on 1 vote (single-source).",
+   "The Reconnoiter's weekly playlist #152 (Oct 9, 2026) includes 'Big Dumb World' — playlist placement, not a review (single-source).",
+   "RIFF Magazine's Sept 22 'Tuesday Tracks' capsule carries 'Big Dumb World' as second single — first press (single-source)."
   ],
   "sources": [
    {
@@ -84,15 +89,27 @@
    {
     "label": "16 New Songs Out Today (Aug 18, 2026) — Our Culture Mag",
     "url": "https://ourculturemag.com/2026/08/18/16-new-songs-out-today-to-listen-to-gang-of-youths-fontaines-d-c-and-more/"
+   },
+   {
+    "label": "Fish Narc — listening party (Permanent Records Roadhouse)",
+    "url": "https://roadhouse.permanentrecordsla.com/"
+   },
+   {
+    "label": "Weekly playlist #152 — The Reconnoiter",
+    "url": "https://areconnoiter.wordpress.com/2026/10/09/this-weeks-playlist-152/"
+   },
+   {
+    "label": "Fish Narc — Sputnikmusic",
+    "url": "http://www.sputnikmusic.com/bands/Fish-Narc/128081/"
    }
   ],
   "watch": {
    "label": "'Uncle' — fifth solo LP",
    "status": "announced",
    "expected": "2026-10-16",
-   "as_of": "2026-10-11",
-   "note": "Pre-release as of this research pass. Same-evening re-verification 2026-10-11 (~22:00 PDT): upcomingvinyl (crawled ~2h before the pass), Faygoluvers (crawled ~4h), and Consequence's upcoming-releases page (crawled ~3d) all still carry 2026-10-16 as upcoming. The archive records a release as 'released' only after a research pass confirms it; the watch never claims the LP is out early.",
-   "last_reverified": "2026-10-11",
+   "as_of": "2026-10-12",
+   "note": "Pre-release as of this research pass (2026-10-12). No third single, no advance reviews, no interviews (normal 4 days out). A listening party is listed for Thu Oct 15, 7 PM at Permanent Records Roadhouse (free, RSVP — verified on the venue calendar). upcomingvinyl's promo copy now adds an autumn US+Europe tour line (no dates — stays uncertain). The archive records a release as 'released' only after a research pass confirms it; the watch never claims the LP is out early.",
+   "last_reverified": "2026-10-12",
    "reverify_sources": [
     "https://upcomingvinyl.com/artists/fish-narc",
     "https://www.faygoluvers.net/v5/2026/09/fish-narc-announces-new-album-uncle-on-k-records/",

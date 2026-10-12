@@ -1,5 +1,5 @@
 {
-  "version": "0.17.0",
+  "version": "0.18.0",
   "generated": "2026-10-11",
   "plays_snapshot": "2026-10-11",
   "method": "The archive's milestones as races, computed from api/v1/milestone-watch.json (bands + summit), data/artist.json (plays and upload dates), api/v1/milestones.json (crossed milestone dates), api/v1/session-clusters.json (session records), and api/v1/eras.json (era records). Race figures are simple snapshot arithmetic: current value, target, gap, and an at-pace figure that is pace-arithmetic, never a prediction.",

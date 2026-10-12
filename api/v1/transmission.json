@@ -1,5 +1,5 @@
 {
- "version": "0.17.0",
+ "version": "0.18.0",
  "generated": "2026-10-11",
  "plays_snapshot": "2026-10-11",
  "method": "Six eras aggregated from api/v1/years.json, data/sessions.json, api/v1/circle.json, api/v1/milestones.json. Signal lines are computed from the same numbers and asserted in scripts/build_transmission.py. The 2026 era carries an extras block: the four verified 2026 singles (data/artist.json discography) and the Q4 2026 watch (the Uncle-LP status passed through from api/v1/scene-figures.json, the trilogy tease from data/artist.json upcoming). Titles and metadata only — never lyrics.",
@@ -586,8 +586,8 @@
       "label": "'Uncle' — fifth solo LP",
       "status": "announced",
       "expected": "2026-10-16",
-      "as_of": "2026-10-11",
-      "note": "Pre-release as of this research pass. Same-evening re-verification 2026-10-11 (~22:00 PDT): upcomingvinyl (crawled ~2h before the pass), Faygoluvers (crawled ~4h), and Consequence's upcoming-releases page (crawled ~3d) all still carry 2026-10-16 as upcoming. The archive records a release as 'released' only after a research pass confirms it; the watch never claims the LP is out early.",
+      "as_of": "2026-10-12",
+      "note": "Pre-release as of this research pass (2026-10-12). No third single, no advance reviews, no interviews (normal 4 days out). A listening party is listed for Thu Oct 15, 7 PM at Permanent Records Roadhouse (free, RSVP — verified on the venue calendar). upcomingvinyl's promo copy now adds an autumn US+Europe tour line (no dates — stays uncertain). The archive records a release as 'released' only after a research pass confirms it; the watch never claims the LP is out early.",
       "figure_page": "circle/fish-narc.html"
      },
      "trilogy": {

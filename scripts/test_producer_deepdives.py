@@ -122,7 +122,7 @@ FAMS = {f["slug"]: f for f in
 
 check("doc-producer-count", DOC["producer_count"] == len(DOC["producers"]) == 113,
       str(DOC["producer_count"]))
-check("doc-version", DOC["version"] == "0.17.0")
+check("doc-version", DOC["version"] == "0.18.0")
 
 missing_pages, missing_sessions = [], []
 for p in DOC["producers"]:

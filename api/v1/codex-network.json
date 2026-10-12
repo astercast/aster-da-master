@@ -1,5 +1,5 @@
 {
- "version": "0.17.0",
+ "version": "0.18.0",
  "generated": "2026-10-11",
  "plays_snapshot": "2026-10-11",
  "method": "The codex relationship graph, computed from real archive data. Nodes: Aster da Master (the speaker of every family), the 16 codex families (api/v1/codex-families.json), and every figure named on family transmissions. Collaborator figures follow the circle's title-credit rule: parsed from w//ft./feat. fragments in titles, as credited verbatim (build_years.parse_collabs). Producer figures are parsed from the titles' own prod./produced-by fragments (as credited, verbatim; multi-producer credits split on x / & / + / comma). Edges: aster-family (Aster speaks every word in the family), family-figure (weight = shared transmissions), figure-figure co-credit from api/v1/network.json title co-occurrences. Degrees of separation are BFS distances from Aster on this graph: every family is 1 degree (Aster speaks every family directly), every figure is 2 degrees (via the family or families that carry them). The pathfinder's codex-only mode excludes the Aster hub, so figures in families that share no voices honestly report no path. Play counts are the single 2026-10-11 snapshot; upload dates are not recording dates. Titles and metadata only -- never lyrics, never invented bio facts.",

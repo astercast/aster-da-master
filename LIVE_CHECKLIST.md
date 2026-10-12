@@ -58,7 +58,7 @@ badge when `/api/*` is unreachable.
 - Live cron rehearsal (read-only): 185 tracks fresh from SoundCloud,
   0 new uploads, 7/7 sources ok.
 - Static validation: 19,737 relative links, 0 broken; 23/23 JSON schemas;
-  lyric-grep clean; chain byte-stable; data version 0.17.0.
+  lyric-grep clean; chain byte-stable; data version 0.18.0.
 - **Not deployed.** Deploy = one-time Vercel CLI from a local clone of
   `-live` (`vercel --prod`), then run the GO_LIVE.md §2 checklist
   (health assert, cron assert, curl roster, functions-disabled pass).
@@ -67,3 +67,6 @@ badge when `/api/*` is unreachable.
 
 **Standard. Never Turbo.** (Sept 2026 Turbo invoice 1ZU1WJJS-0012: $38.64 —
 never repeat it. Static sites = negligible build minutes; Hobby covers them.)
+
+**Function runtime: nodejs20.x, never nodejs22.x.** (Vercel rejects nodejs22.x —
+"use nodejs20.x" — 2026-10-12: all 5 first deploys failed validation on nodejs22.x.)

@@ -34,7 +34,7 @@ API_ARTIST = ROOT / "api" / "v1" / "artist.json"
 SCHEMA_OUT = ROOT / "api" / "v1" / "schema" / "sessions.json"
 PAGE_OUT = ROOT / "sessions.html"
 
-NEW_VERSION = "0.17.0"  # wave 33: data version 0.17.0
+NEW_VERSION = "0.18.0"  # wave 35: data version 0.18.0 (verified-data expansion)
 SNAPSHOT = "2026-10-11"
 GAP_DAYS = 7
 

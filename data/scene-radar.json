@@ -1,8 +1,8 @@
 {
   "aster_diligence": {
-    "litemode_trilogy_movement": "none",
-    "new_distributor_releases": "none — the four 2026 singles already in the archive re-verified against the iHeart catalog listing",
-    "new_uploads_sept_oct_2026": "none found — latest verified distributor releases remain the May 2026 batch (iHeart artist page, single-source); no press/blog coverage of the artist exists; SoundCloud-only uploads are invisible to public web search",
+    "litemode_trilogy_movement": "none — sixteen consecutive rounds of searching, zero music-related results",
+    "new_distributor_releases": "none — sixteen consecutive distributor checks since 2026-10-11; latest release remains \"Living With The Big Shots\" (May 2026, iHeart artist page, verified 2026-10-12)",
+    "new_uploads_sept_oct_2026": "none found — latest verified distributor releases remain the May 2026 batch (iHeart artist page, single-source); no press/blog coverage of the artist exists; SoundCloud-only uploads are invisible to public web search (SoundCloud blocked to web-index search 7 rounds running)",
     "somelowlifes_signals": "none"
   },
   "confidence": {
@@ -54,8 +54,8 @@
     ],
     "source": "https://musically.com/2026/02/12/soundcloud-trends-for-2026-eclectic-indie-and-hip-hop-evolution/"
   },
-  "research_pass": "2026-10-11",
-  "scope": "Wave-30 verified content expansion. Public web sources only; every claim carries a source URL and a confidence flag. No lyrics reproduced — titles and metadata only. No biographical invention.",
+  "research_pass": "2026-10-12",
+  "scope": "Wave-30 + wave-35 verified content expansion. Public web sources only; every claim carries a source URL and a confidence flag. No lyrics reproduced — titles and metadata only. No biographical invention.",
   "uncle_lp": {
     "artist": "Fish Narc",
     "catalog": "KLP313",
@@ -100,6 +100,36 @@
         "video": "video by James Hyson"
       }
     ],
+    "third_single": "none as of 2026-10-12 — no advance reviews or interviews on record (normal 4 days out)",
+    "listening_party": {
+      "date": "2026-10-15",
+      "time": "7 PM",
+      "price": "FREE, RSVP",
+      "venue": "Permanent Records Roadhouse",
+      "confidence": "verified",
+      "note": "re-verified live on the venue calendar (direct open, research pass 2026-10-12)",
+      "source": "https://roadhouse.permanentrecordsla.com/"
+    },
+    "press_2026": [
+      {
+        "confidence": "single-source",
+        "entry": "RIFF Magazine Sept 22 'Tuesday Tracks' capsule carries 'Big Dumb World' as second single — first press"
+      },
+      {
+        "confidence": "single-source",
+        "entry": "The Reconnoiter's weekly playlist #152 (Oct 9, 2026) includes 'Big Dumb World' — playlist placement, not a review",
+        "source": "https://areconnoiter.wordpress.com/2026/10/09/this-weeks-playlist-152/"
+      },
+      {
+        "confidence": "single-source",
+        "entry": "Sputnikmusic: 'Uncle' listed with no rating yet; 'frog song' at 3.5/5 on 1 vote",
+        "source": "http://www.sputnikmusic.com/bands/Fish-Narc/128081/"
+      }
+    ],
+    "europe_tour": {
+      "confidence": "uncertain",
+      "entry": "upcomingvinyl's promo copy now includes an autumn US+Europe tour line — promo text only, no dates"
+    },
     "sources": [
       "https://stereogum.com/2508537/fish-narc-announces-new-album-uncle-hear-much-less-me/music",
       "https://stereogum.com/2511545/fish-narc-big-dumb-world/music/",
@@ -107,11 +137,14 @@
       "https://upcomingvinyl.com/artists/fish-narc",
       "https://www.altpress.com/2026-album-releases/",
       "http://consequence.net/upcoming-releases/",
-      "https://www.releasewave.com/artists/fish-narc"
+      "https://www.releasewave.com/artists/fish-narc",
+      "https://roadhouse.permanentrecordsla.com/",
+      "https://areconnoiter.wordpress.com/2026/10/09/this-weeks-playlist-152/",
+      "http://www.sputnikmusic.com/bands/Fish-Narc/128081/"
     ],
     "status": "announced",
-    "status_as_of": "2026-10-11",
-    "status_note": "Re-verified 2026-10-11: upcomingvinyl (crawled ~1h before the pass), AltPress October calendar (updated ~9 days prior), Consequence upcoming-releases (crawled ~3 days prior), and Faygoluvers (crawled ~2h prior) all still carry 2026-10-16 as upcoming. Not released early; no date change on record.",
+    "status_as_of": "2026-10-12",
+    "status_note": "Re-verified 2026-10-12 — still pre-release: no third single, no advance reviews, no interviews (normal 4 days out). A listening party is listed for Thu Oct 15, 7 PM at Permanent Records Roadhouse (free, RSVP — verified on the venue calendar). upcomingvinyl's promo copy now adds an autumn US+Europe tour line (no dates — stays uncertain). Not released early; no date change on record.",
     "title": "Uncle",
     "title_meaning": "Artist's own framing (Stereogum interview): the title as a tongue-in-cheek nod to giving up — the record reflects on the last ten years, expectations, and aging; mid-30s perspective, giving a project his best shot rather than chasing youth lanes.",
     "tour_fall_2026": [
@@ -170,5 +203,5 @@
     ],
     "note": "Honest empty states. Nothing here meets the archive's bar for a canon page; both are tracked so the next research pass can fill or close them."
   },
-  "version": "0.17.0"
+  "version": "0.18.0"
 }

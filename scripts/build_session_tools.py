@@ -23,7 +23,7 @@ disagreement. Sources (all real archive data):
                                     rule, for per-track voices)
 
 No payload shape changes to any existing endpoint block; the new
-track_deep_cuts block is additive. Data version 0.16.0 -> 0.17.0 for the
+track_deep_cuts block is additive. Data version 0.17.0 -> 0.18.0 for the
 new verified data slice (wave-33 directive). Titles and metadata only -
 never lyrics, never invented bio facts.
 
@@ -36,7 +36,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 API = ROOT / "api" / "v1"
-NEW_VERSION = "0.17.0"  # wave 33: track-level deep cuts slice (The Deep Cuts deepened)
+NEW_VERSION = "0.18.0"  # wave 35: data version 0.18.0 (verified-data expansion)
 SNAPSHOT = "2026-10-11"
 
 sys.path.insert(0, str(ROOT / "scripts"))

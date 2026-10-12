@@ -37,7 +37,7 @@ from build_producer_deepdives import (  # noqa: E402  (wave 27 cross-links)
 DATA = json.loads((ROOT / "data" / "artist.json").read_text())
 OUT = ROOT / "circle"
 API = ROOT / "api" / "v1"
-NEW_VERSION = "0.17.0"  # wave 33: data version 0.17.0
+NEW_VERSION = "0.18.0"  # wave 35: verified-data expansion - collaborator deep-enrichment (rounds 15-16)
 
 # wave 27: producer slugs with as-credited productions (populated in main);
 # circle members who also produce get a "Producer deep dive" cross-link.
@@ -173,12 +173,75 @@ ENRICH = {
             "The two Aster Da Master tracks carrying a capoxxo title credit are "
             "'candy' (2019-10-04, prod. razorwrist) and 'getting colder' "
             "(2019-12-22, prod. pvscale x asa41).",
+            # Wave 35 (2026-10-12): rounds 15-16 research integration.
+            # Every claim from the 2026-10-12 scene research passes;
+            # single-source flagged, never confirmed press.
+            "Streaming-metrics layer (musicmetricsvault, data ~2 months "
+            "old, single-source): 53,275 monthly listeners, 29,890 "
+            "followers, 36.6M total streams, 119 releases. Most-streamed: "
+            "'Perfect' (Apr 18, 2020, 6.2M streams), 'Ouueeoueou' "
+            "(Mar 19, 2019, 2.6M), 'wait 4 it' (Aug 7, 2020, 2.3M), "
+            "'Monster' (Mar 19, 2020, 2.2M), 'IDLY' (Dec 29, 2023, 2.1M). "
+            "Related artists: dreamcache, 5v, Pitfall, Senses, mayh3mp, "
+            "Hinoni, RudeClub, bliiiss, Boofbby, Peake, mental, bodyGaard, "
+            "Kid Trash, tropes, dxsh, emorave archive, Dion, kid sora, "
+            "Crystal Statues.",
+            "'dont sleep (feat. bliiiss)' - released by Hinoni, 22 Oct "
+            "2023; explicit feature credit on the primary-artist Qobuz "
+            "page (single-source, direct open).",
+            "'Perfect' trio: last.fm's track page lists 'Perfect Capoxxo, "
+            "Oaf1 & Dreamcache' (index snapshot, crawl ~10 days) and "
+            "musicmetricsvault prints 'Perfect (feat. Oaf1 & Dreamcache)' "
+            "- two single-sources, two rounds, never presented as "
+            "confirmed press.",
+            "First verifiable live appearances: Oct 28 Seattle @ Arch "
+            "Rivals Studios (116 S Washington St), doors 7:30 PM, $25.63; "
+            "Oct 29 Portland @ 211 SE Madison St, doors 7 PM, $28.52 - a "
+            "Korpsebunny support bill with mayh3mp and Scarly (Portland "
+            "also Eunhae + DJ sets from B3xtac33, DJ Shortstop, Sora Boyd) "
+            "(Eventbrite listings, direct open, single-source each). "
+            "Songkick still reads 'Off tour' - headliner data; mainstream "
+            "trackers don't list the support slots.",
+            "Qobuz catalog: 46 albums; newest single 'nostalgia' "
+            "(30 Jun 2026, Hinoni) (direct open). 'Sorry' - releasing "
+            "entity printed as 'Teo Laza & Capoxxo' (9 May 2023, "
+            "single-source); association-level, never published as a "
+            "confirmed collab.",
+            "last.fm index snapshots (direct pages blocked 11 rounds "
+            "running): top tracks 'perfect' (394 listeners), 'ouueeoueou' "
+            "(148), 'it was beautiful' (133), 'sequence' (94), 'monster' "
+            "(90) - crawl ~5 days; similar artists oaf1 and 'Capoxxo, "
+            "mayh3mp' (368 listeners); 'Wett Brain, Capoxxo' page tracks "
+            "'Fxcked Up Bad' (59), 'IDLY' (55) (single-source, index "
+            "snapshots).",
+            "mayh3mp - recent activity: '# madeira funchal' (4 Sep 2026) "
+            "and '# i kno u' on Last.fm's recently-popular view "
+            "(single-source).",
+            "'Lullaby' distributor evidence: a scraped nhaccuatui page "
+            "lists 'Lullaby (Single), phonewifey, mayh3mp, Capoxxo' and "
+            "states 'Uploaded by The Orchard' (single-source); the DMY "
+            "smart link dmy.ffm.to/lullaby (single-source); Trackify "
+            "streaming metadata (159.9 BPM, key B, single-source). No "
+            "exact release date on record.",
+            "'Torn Ft Capoxxo & Lil Yu Prod Truss' appears on mayh3mp's "
+            "'mylifeasahorse' cassette (Cult Love Sound Tapes, ~2022-era "
+            "catalog, single-source) - a capoxxo x lil yu x mayh3mp scene "
+            "link new to the graph.",
         ],
         "sources": [
             ("The Pitchfork digicore canon (via Wikipedia: Digicore)",
              "https://en.wikipedia.org/wiki/Digicore"),
             ("'Persona' - Cult Love Sound Tapes (Bandcamp)",
              "https://cultlovesoundtapes.bandcamp.com/album/persona"),
+            # Wave 35 (2026-10-12): rounds 15-16 research sources.
+            ("capoxxo streaming metrics + related artists - musicmetricsvault",
+             "https://www.musicmetricsvault.com/artists/capoxxo/"
+             "4lDzMjsz7xLw4CFmfWJmWJ"),
+            ("'mylifeasahorse' - Cult Love Sound Tapes (Bandcamp)",
+             "https://cultlovesoundtapes.bandcamp.com/album/mylifeasahorse"),
+            ("mayh3mp - Last.fm recently popular",
+             "https://www.last.fm/music/mayh3mp/+albums"),
+            ("'Lullaby' - DMY smart link", "https://dmy.ffm.to/lullaby"),
         ],
     },
     "pvscale": {
@@ -189,6 +252,13 @@ ENRICH = {
             "'Summer Days [prod. pvscale]' for spiff x capoxxo), lil koi, "
             "lil yu ('i miss you (feat. pvscale)'), and "
             "kevinhilfiger/kidtrashpop ('buy It !') - per public tracklistings.",
+            # Wave 35 (2026-10-12): independent catalog corroboration.
+            "An undated mp3 index for pvscale independently catalogs "
+            "'ASTER DA MASTER \u2600\ufe0f - getting colder w/ capoxxo "
+            "(prod. pvscale x asa41)' - corroborating the archive's own "
+            "credit; the index gives no date, so it documents the "
+            "collaboration, not its timeline (single-source, uncertain "
+            "date).",
         ],
         "sources": [
             ("pvscale catalog mirror (mp3.pm)",
@@ -380,6 +450,21 @@ SCENE_FIGURES = {
             "Mag) covers 'Much Less Me' as the lead single with Alex "
             "Farrar's production (single-source — corroborates the "
             "Stereogum announcement).",
+            # Wave 35 (2026-10-12): rounds 15-16 research integration.
+            "Listening party: Thu Oct 15, 7 PM, FREE, RSVP — re-verified "
+            "live on the venue calendar (roadhouse.permanentrecordsla.com, "
+            "verified). No third single, no advance reviews, no 'Uncle' "
+            "interviews as of 2026-10-12 (normal 4 days out).",
+            "Europe leg upgraded one notch: upcomingvinyl's promo copy now "
+            "includes an autumn US+Europe tour line — promo text only, no "
+            "dates (stays uncertain).",
+            "Sputnikmusic: 'Uncle' listed with no rating yet; 'frog song' "
+            "at 3.5/5 on 1 vote (single-source).",
+            "The Reconnoiter's weekly playlist #152 (Oct 9, 2026) includes "
+            "'Big Dumb World' — playlist placement, not a review "
+            "(single-source).",
+            "RIFF Magazine's Sept 22 'Tuesday Tracks' capsule carries 'Big "
+            "Dumb World' as second single — first press (single-source).",
         ],
         "sources": [
             ("Fish Narc - Wikipedia", "https://en.wikipedia.org/wiki/Fish_Narc"),
@@ -406,23 +491,35 @@ SCENE_FIGURES = {
             ("16 New Songs Out Today (Aug 18, 2026) — Our Culture Mag",
              "https://ourculturemag.com/2026/08/18/16-new-songs-out-today-"
              "to-listen-to-gang-of-youths-fontaines-d-c-and-more/"),
+            # Wave 35 (2026-10-12): rounds 15-16 research sources.
+            ("Fish Narc — listening party (Permanent Records Roadhouse)",
+             "https://roadhouse.permanentrecordsla.com/"),
+            ("Weekly playlist #152 — The Reconnoiter",
+             "https://areconnoiter.wordpress.com/2026/10/09/"
+             "this-weeks-playlist-152/"),
+            ("Fish Narc — Sputnikmusic",
+             "http://www.sputnikmusic.com/bands/Fish-Narc/128081/"),
         ],
         "watch": {
             "label": "'Uncle' — fifth solo LP",
             "status": "announced",
             "expected": "2026-10-16",
-            "as_of": "2026-10-11",
-            "note": ("Pre-release as of this research pass. Same-evening "
-                     "re-verification 2026-10-11 (~22:00 PDT): upcomingvinyl "
-                     "(crawled ~2h before the pass), Faygoluvers (crawled "
-                     "~4h), and Consequence's upcoming-releases page "
-                     "(crawled ~3d) all still carry 2026-10-16 as upcoming. "
+            "as_of": "2026-10-12",
+            "note": ("Pre-release as of this research pass (2026-10-12). "
+                     "No third single, no advance reviews, no interviews "
+                     "(normal 4 days out). A listening party is listed for "
+                     "Thu Oct 15, 7 PM at Permanent Records Roadhouse "
+                     "(free, RSVP — verified on the venue calendar). "
+                     "upcomingvinyl's promo copy now adds an autumn "
+                     "US+Europe tour line (no dates — stays uncertain). "
                      "The archive records a release as 'released' only after "
                      "a research pass confirms it; the watch never claims the "
                      "LP is out early."),
             # wave 30 merge: re-verified pre-release 2026-10-11
             # wave 32: same-evening pass, still pre-release 2026-10-11
-            "last_reverified": "2026-10-11",
+            # wave 35: re-verified pre-release 2026-10-12 (listening party
+            # added; Europe leg one notch up, still uncertain)
+            "last_reverified": "2026-10-12",
             "reverify_sources": [
                 "https://upcomingvinyl.com/artists/fish-narc",
                 "https://www.faygoluvers.net/v5/2026/09/"
@@ -460,16 +557,19 @@ SCENE_FIGURES = {
 # the archive flags thin records, never fills them with invention.
 GAPS = [
     "Max Ferrari — 8 shared transmissions, the circle's most frequent voice: "
-    "no public bio, interview, or catalog page found as of 2026-10-11. The "
+    "no public bio, interview, or catalog page found as of 2026-10-12. The "
     "eight title credits are the whole public record.",
     "Yung Vetta: no verifiable public record beyond the title credits — "
     "search returns unrelated same-name artists (Young Vetta, Vetta Borne); "
     "nothing attributable.",
     "jax, vetty, lil soda boi, lil yu, lilvicbxi, ammi $age, shola, "
     "phil is lonely, offline_hp, jo$e dripp, max: no public record found "
-    "beyond the archive's title credits as of 2026-10-11.",
+    "beyond the archive's title credits as of 2026-10-12.",
     "lilrareboy: catalog-level only — Shazam carries the 'World/War/Rare "
     "Interlude' single (composition & lyrics credited); no bio or press.",
+    "pvscale: no new 2026 activity found across 60+ days of searching — his "
+    "name collides with the K-pop group PLAVE, drowning web search. The "
+    "as-credited productions are the archive record (flagged, not filled).",
     "lil koi is a scene-page figure, not a circle member — the "
     "verified-minimum record lives at scene/lil-koi.html.",
     "The SomeLowLifes member roster still has no public coverage — see the "
@@ -483,7 +583,7 @@ def render_gaps_section():
       <section class="section" aria-labelledby="ci-gaps">
         <span class="kicker"><span class="numeral">&#10022;</span>The honest gaps</span>
         <h2 id="ci-gaps">Where the record is thin</h2>
-        <p>The archive flags what it could not verify instead of inventing it. Every gap below was searched on 2026-10-11 and came back empty or catalog-level.</p>
+        <p>The archive flags what it could not verify instead of inventing it. Every gap below was searched on 2026-10-12 and came back empty or catalog-level.</p>
         <ul class="fact-list">{items}</ul>
       </section>
 """
@@ -501,7 +601,7 @@ def render_verified_section(info):
       <section class="section" aria-labelledby="cv-h">
         <span class="kicker"><span class="numeral">&#10022;</span>The scene record</span>
         <h3 id="cv-h">Verified beyond the titles</h3>
-        <p class="chart-sub">Research pass 2026-10-11 &mdash; public sources only, no biographical invention, no lyrics.</p>
+        <p class="chart-sub">Research pass 2026-10-12 &mdash; public sources only, no biographical invention, no lyrics.</p>
         <ul class="fact-list">{facts}</ul>
         {render_sources(info["sources"])}
       </section>
@@ -706,7 +806,7 @@ def scene_figure_page(slug, info):
       <section class="section" aria-labelledby="cv-h">
         <span class="kicker"><span class="numeral">&#10022;</span>The scene record</span>
         <h3 id="cv-h">Verified beyond the titles</h3>
-        <p class="chart-sub">Research pass 2026-10-11 &mdash; public sources only, no biographical invention, no lyrics.</p>
+        <p class="chart-sub">Research pass 2026-10-12 &mdash; public sources only, no biographical invention, no lyrics.</p>
         <ul class="fact-list">{facts}</ul>
         {render_sources(info["sources"])}
       </section>
@@ -812,7 +912,7 @@ def main():
                 for t in sorted(e["tracks"], key=lambda t: t.get("date") or "")
             ],
             **({"verified_notes": {
-                "research_pass": "2026-10-11",
+                "research_pass": "2026-10-12",
                 "facts": ENRICH[e["key"]]["facts"],
                 "sources": [
                     {"label": label, "url": url}
@@ -830,7 +930,7 @@ def main():
         s: {
             "name": info["name"], "kind": info["kind"], "page": f"circle/{s}.html",
             "standing": info["standing"],
-            "research_pass": "2026-10-11",
+            "research_pass": "2026-10-12",
             "tracks": info["tracks"],
             "facts": info["facts"],
             "sources": [{"label": label, "url": url} for label, url in info["sources"]],

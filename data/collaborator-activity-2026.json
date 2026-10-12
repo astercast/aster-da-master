@@ -15,9 +15,33 @@
       "tour_status": {
         "confidence": "verified",
         "off_tour": true,
+        "off_tour_note": "headliner data — mainstream trackers don't list support slots",
         "setlist_fm": "zero setlists on record",
         "setlist_fm_source": "https://www.setlist.fm/setlists/capoxxo-53f3e735.html",
-        "source": "https://www.songkick.com/artists/9749264-capoxxo"
+        "source": "https://www.songkick.com/artists/9749264-capoxxo",
+        "support_dates_2026": [
+          {
+            "bill": "Korpsebunny support: capoxxo, mayh3mp, Scarly",
+            "city": "Seattle, WA",
+            "confidence": "single-source",
+            "date": "2026-10-28",
+            "doors": "7:30 PM",
+            "price": "$25.63",
+            "source": "Eventbrite listing (direct open, research pass 2026-10-12)",
+            "venue": "Arch Rivals Studios, 116 S Washington St"
+          },
+          {
+            "bill": "Korpsebunny, Capoxxo, Mayh3mp, Eunhae, Scarly + DJ sets (B3xtac33, DJ Shortstop, Sora Boyd)",
+            "city": "Portland, OR",
+            "confidence": "single-source",
+            "date": "2026-10-29",
+            "doors": "7 PM",
+            "price": "$28.52",
+            "source": "Eventbrite listing (direct open, research pass 2026-10-12)",
+            "venue": "211 SE Madison St"
+          }
+        ],
+        "support_dates_note": "first verifiable live appearances on record — billed as Korpsebunny support, not a headline run"
       },
       "watch_2026": [
         {
@@ -32,6 +56,45 @@
           "date": "2026-05-02",
           "entry": "\"are we cool\" — released via DistroKid",
           "source": "https://www.youtube.com/watch?v=sE7jnjhIBpU"
+        },
+        {
+          "confidence": "single-source",
+          "date": "2026-06-30",
+          "entry": "\"nostalgia\" — newest single on record, released via Hinoni",
+          "note": "Qobuz capoxxo page lists 46 albums (direct open, research pass 2026-10-12)",
+          "source": "Qobuz capoxxo artist page (direct open, research pass 2026-10-12)"
+        },
+        {
+          "confidence": "single-source",
+          "date": "2023-10-22",
+          "entry": "\"dont sleep (feat. bliiiss)\" — explicit feature credit on the primary-artist Qobuz page; released by Hinoni",
+          "source": "Qobuz capoxxo artist page (direct open, research pass 2026-10-12)"
+        },
+        {
+          "confidence": "single-source",
+          "date": "2026-10-12",
+          "entry": "\"Perfect\" trio — last.fm track page lists \"Perfect Capoxxo, Oaf1 & Dreamcache\"; musicmetricsvault prints \"Perfect (feat. Oaf1 & Dreamcache)\"",
+          "note": "two single-sources, two rounds; never presented as confirmed press",
+          "source": "https://www.musicmetricsvault.com/artists/capoxxo/4lDzMjsz7xLw4CFmfWJmWJ"
+        },
+        {
+          "confidence": "single-source",
+          "date": "2026-10-12",
+          "entry": "mayh3mp recent singles: \"# madeira funchal\" (2026-09-04) and \"# i kno u\" on Last.fm's recently-popular view",
+          "source": "https://www.last.fm/music/mayh3mp/+albums"
+        },
+        {
+          "confidence": "single-source",
+          "date": "2026-10-12",
+          "entry": "\"Lullaby (Single), phonewifey, mayh3mp, Capoxxo\" — scraped page states \"Uploaded by The Orchard\"; DMY smart link dmy.ffm.to/lullaby; Trackify metadata (159.9 BPM, key B)",
+          "note": "first distributor-name evidence for the single; no exact release date",
+          "source": "https://dmy.ffm.to/lullaby"
+        },
+        {
+          "confidence": "single-source",
+          "date": "2026-10-12",
+          "entry": "\"Torn Ft Capoxxo & Lil Yu Prod Truss\" on mayh3mp's \"mylifeasahorse\" cassette (Cult Love Sound Tapes, ~2022-era catalog)",
+          "source": "https://cultlovesoundtapes.bandcamp.com/album/mylifeasahorse"
         }
       ]
     },
@@ -45,9 +108,9 @@
       "slug": "pvscale",
       "watch_2026": [
         {
-          "date": "2026-10-11",
+          "date": "2026-10-12",
           "entry": "no new 2026 activity found",
-          "note": "verified gap — searches across the last 60 days returned no new releases, credits, or appearances"
+          "note": "verified gap — searches across the last 60 days returned no new releases, credits, or appearances; name collides with K-pop group PLAVE, drowning web search"
         },
         {
           "confidence": "single-source",
@@ -64,9 +127,9 @@
       "slug": "lil-koi",
       "watch_2026": [
         {
-          "date": "2026-10-11",
+          "date": "2026-10-12",
           "entry": "no new 2026 releases confirmed",
-          "note": "older catalog only"
+          "note": "older catalog only; name still collides with unrelated artists"
         },
         {
           "confidence": "single-source",
@@ -106,9 +169,9 @@
       "slug": "lil-yu",
       "watch_2026": [
         {
-          "date": "2026-10-11",
+          "date": "2026-10-12",
           "entry": "no new 2026 releases confirmed",
-          "note": "newest listed single on record is 2024"
+          "note": "newest listed single on record is 2024; old catalog only"
         },
         {
           "confidence": "single-source",
@@ -125,7 +188,7 @@
       ]
     }
   ],
-  "research_pass": "2026-10-11",
-  "scope": "Wave-30 verified 2026 activity sweep for ASTER DA MASTER's circle collaborators. Public sources only; every claim carries a source URL and confidence flag. No lyrics reproduced — titles and metadata only.",
-  "version": "0.17.0"
+  "research_pass": "2026-10-12",
+  "scope": "Wave-30 + wave-35 verified 2026 activity sweep for ASTER DA MASTER's circle collaborators. Public sources only; every claim carries a source URL and confidence flag. No lyrics reproduced — titles and metadata only.",
+  "version": "0.18.0"
 }

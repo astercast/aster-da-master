@@ -1,5 +1,5 @@
 {
-  "version": "0.17.0",
+  "version": "0.18.0",
   "generated": "2026-10-11",
   "plays_snapshot": "2026-10-11",
   "method": "Vault tracks grouped by proximity to round-number play counts, from the 2026-10-11 snapshot. Play counts drift; the watch is a snapshot, not a live leaderboard.",

@@ -1,8 +1,38 @@
 {
   "generated": "2026-10-11",
   "method": "Parsed from `git log main`: every commit becomes an entry. The site documenting its own becoming.",
-  "entry_count": 91,
+  "entry_count": 96,
   "entries": [
+    {
+      "hash": "23a3377",
+      "date": "2026-10-12",
+      "message": "changelog sync (runtime fix)",
+      "files_changed": 3
+    },
+    {
+      "hash": "f2b82bf",
+      "date": "2026-10-12",
+      "message": "Vercel runtime fix: nodejs22.x rejected -> nodejs20.x (2026-10-12)",
+      "files_changed": 5
+    },
+    {
+      "hash": "3959491",
+      "date": "2026-10-12",
+      "message": "changelog sync (wave 35)",
+      "files_changed": 3
+    },
+    {
+      "hash": "7fd1714",
+      "date": "2026-10-12",
+      "message": "Wave 35: verified-data expansion — collaborator deep-enrichment (rounds 15-16)",
+      "files_changed": 61
+    },
+    {
+      "hash": "7bb4812",
+      "date": "2026-10-12",
+      "message": "changelog sync (wow wave 1)",
+      "files_changed": 3
+    },
     {
       "hash": "6b278ff",
       "date": "2026-10-12",
