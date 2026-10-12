@@ -27,7 +27,7 @@ Wave 12 research enrichment (2026-10-11, public sources only, no lyrics, no inve
 
 ## Pages
 
-Home `index.html` (discography) · `releases/` (219 pages + index) · `years/` (2018–2026 + index) · `circle/` (21 + 1 scene figure) · `codex/` (16 vocabulary families) · `timeline.html` · `network.html` · `decoder.html` (transmission decoder) · `api-playground.html` (Explore + Skill recipes tabs) · `agents.html` (agentic surface: API table, llms, skills, search-index usage, 3 worked workflows) · `method.html` (methodology, scene context, unknowns) · `trilogy.html` (Litemode Trilogy watch) · `sessions.html` + `sessions/` (61 upload sessions, 10 deep-dives) · `changelog.html` · `glance.html` · `press-kit.html` · `transmission.html` (flagship guided journey: six eras 2018→2026 with stats, defining tracks, key sessions, collaborators, milestones, computed signal lines; keyboard + auto-play + share text).
+Home `index.html` (discography) · `releases/` (219 pages + index) · `years/` (2018–2026 + index) · `circle/` (21 + 1 scene figure) · `codex/` (16 vocabulary families) · `timeline.html` · `network.html` (collaboration universe: interactive SVG graph of the 21 title-credited collaborators + producer scene figures, track-weighted edges, co-credit links, era slider, producers toggle, name search, accessible table, computed insights; data `api/v1/network.json` via `scripts/build_network.py`) · `decoder.html` (transmission decoder) · `api-playground.html` (Explore + Skill recipes tabs) · `agents.html` (agentic surface: API table, llms, skills, search-index usage, 3 worked workflows) · `method.html` (methodology, scene context, unknowns) · `trilogy.html` (Litemode Trilogy watch) · `sessions.html` + `sessions/` (61 upload sessions, 10 deep-dives) · `changelog.html` · `glance.html` · `press-kit.html` · `transmission.html` (flagship guided journey: six eras 2018→2026 with stats, defining tracks, key sessions, collaborators, milestones, computed signal lines; keyboard + auto-play + share text).
 
 Design: "UNDERGROUND TRANSMISSION" — semantic HTML, ARIA landmarks, keyboard-accessible, `prefers-reduced-motion` respected, mobile-first.
 
@@ -57,17 +57,19 @@ Agent rules: static JSON, no auth, no rate limits (serve over HTTP — `file://`
 | index (registry + version) | api/v1/index.json |
 | milestone-watch | api/v1/milestone-watch.json |
 | milestones | api/v1/milestones.json |
+| network | api/v1/network.json |
 | on-this-day | api/v1/on-this-day.json |
 | release-slugs | api/v1/release-slugs.json |
 | scene-figures | api/v1/scene-figures.json |
 | sessions | api/v1/sessions.json |
+| transmission | api/v1/transmission.json |
 | years | api/v1/years.json |
 
 `data/artist.json` sections: version, observed, research_status, artist, collaborators, featured_release, discography, platforms, socials, booking, eras, vault, upcoming. Enriched circle entries carry `verified_notes` (research_pass, facts, sources). Scene figures carry `kind`, `standing`, tracks, facts, sources.
 
 ## Generators
 
-`scripts/build_*.py` — dependency order: releases → years → circle → codex → sessions → session_deepdives → milestones → milestone_watch → firstlast → glance → search_index → changelog → transmission. Each reads `data/artist.json`; version-writing scripts set `version` (0.12.0) and mirror to `api/v1/artist.json` / `api/v1/index.json`. Never hand-edit generated pages; edit the script or data and re-run.
+`scripts/build_*.py` — dependency order: releases → years → circle → codex → sessions → session_deepdives → milestones → milestone_watch → firstlast → glance → search_index → changelog → transmission → network. Each reads `data/artist.json`; version-writing scripts set `version` (0.12.0) and mirror to `api/v1/artist.json` / `api/v1/index.json`. Never hand-edit generated pages; edit the script or data and re-run.
 
 ## Ops
 

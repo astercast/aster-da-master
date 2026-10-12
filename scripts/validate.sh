@@ -4,9 +4,9 @@
 # Stages:
 #   1. JS syntax ......... node --check every shipped JS file (assets/js/)
 #   2. JSON parse ........ every JSON file under api/, data/, skills/, scripts/
-#   3. JSON Schema ....... draft-07 validation of the 8 docs under
+#   3. JSON Schema ....... draft-07 validation of the 9 docs under
 #                         api/v1/schema/ (artist, changelog, codex, first-last,
-#                         milestone-watch, milestones, sessions, transmission)
+#                         milestone-watch, milestones, network, sessions, transmission)
 #   4. Relative links .... every href/src in every HTML page resolves on disk;
 #                         JS fetch() string literals resolve too. 0 broken.
 #   5. Lyric-grep gate .. fail on any lyric-like content. Titles/metadata
@@ -15,11 +15,11 @@
 #                         reproduced, never quote lyrics, source domain
 #                         lirik.web.id, and validator self-references).
 #                         Lyric-section markers ([Chorus], Verse 1:, etc.) always fail.
-#   6. Generator chain .. run the 13 generators in the documented dependency
+#   6. Generator chain .. run the 14 generators in the documented dependency
 #                         order (releases -> years -> circle -> codex ->
 #                         sessions -> session_deepdives -> milestones ->
 #                         milestone_watch -> firstlast -> glance -> search_index
-#                         -> changelog -> transmission). A clean re-run must
+#                         -> changelog -> transmission -> network). A clean re-run must
 #                         produce zero diff outside changelog.html +
 #                         api/v1/changelog.json (rebuilt from git log, so it
 #                         legitimately grows after any new commit; its
@@ -93,7 +93,8 @@ def schema(name):
 pairs = [("artist.json", "artist.json"), ("changelog.json", "changelog.json"),
          ("codex.json", "codex.json"), ("first-last.json", "first-last.json"),
          ("milestone-watch.json", "milestone-watch.json"),
-         ("milestones.json", "milestones.json"), ("sessions.json", "sessions.json"),
+         ("milestones.json", "milestones.json"),
+         ("network.json", "network.json"), ("sessions.json", "sessions.json"),
          ("transmission.json", "transmission.json")]
 for fname, sname in pairs:
     doc = json.loads((ROOT / "api" / "v1" / fname).read_text())
@@ -107,7 +108,7 @@ if failures:
     if len(failures) > 20:
         print(f"   ... and {len(failures)-20} more")
     sys.exit(1)
-print("  ok: artist/changelog/codex/first-last/milestone-watch/milestones/sessions/transmission validate against draft-07 schemas")
+print("  ok: artist/changelog/codex/first-last/milestone-watch/milestones/network/sessions/transmission validate against draft-07 schemas")
 EOF
 [ $? -eq 0 ] && pass "schema validation clean" || FAIL=$((FAIL+1))
 
@@ -249,11 +250,11 @@ EOF
 stage 6 "generator-chain order check (clean re-run -> zero unexpected diffs)"
 # Canonical dependency order: releases -> years -> circle -> codex -> sessions
 # -> session_deepdives -> milestones -> milestone_watch -> firstlast -> glance
-# -> search_index -> changelog -> transmission
+# -> search_index -> changelog -> transmission -> network
 CHAIN="build_releases build_years build_circle build_codex build_sessions \
 build_session_deepdives build_milestones build_milestone_watch \
 build_firstlast build_glance build_search_index build_changelog \
-build_transmission"
+build_transmission build_network"
 CHAIN_OK=1
 for s in $CHAIN; do
   if ! python3 "scripts/$s.py" >/tmp/adm_validate_chain.log 2>&1; then
@@ -361,7 +362,8 @@ if missing:
 
 CHAIN_ORDER = ("releases", "years", "circle", "codex", "sessions",
                "session_deepdives", "milestones", "milestone_watch",
-               "firstlast", "glance", "search_index", "changelog", "transmission")
+               "firstlast", "glance", "search_index", "changelog", "transmission",
+               "network")
 chain_str = " \u2192 ".join(CHAIN_ORDER)
 if chain_str not in llms:
     errors.append("llms.txt generator dependency order doesn't match the canonical chain")

@@ -31,7 +31,9 @@
     { id: "milestone-watch", path: "api/v1/milestone-watch.json",
       blurb: "Milestone watch: vault tracks near round-number play counts (2026-10-11 snapshot)." },
     { id: "transmission", path: "api/v1/transmission.json",
-      blurb: "The guided journey: six eras with stats, top tracks, key sessions, collaborators, milestones, computed signal lines." }
+      blurb: "The guided journey: six eras with stats, top tracks, key sessions, collaborators, milestones, computed signal lines." },
+    { id: "network", path: "api/v1/network.json",
+      blurb: "Collaboration network: artist-centered nodes (21 title-credited collaborators + producer scene figures), track-weighted edges, co-credit links, computed insights." }
   ];
 
   function esc(s) {

@@ -1,0 +1,847 @@
+{
+ "version": "0.12.0",
+ "generated": "2026-10-11",
+ "artist": {
+  "id": "aster",
+  "name": "Aster da Master"
+ },
+ "nodes": [
+  {
+   "id": "aster",
+   "name": "Aster da Master",
+   "kind": "artist",
+   "track_count": 40,
+   "first_date": null,
+   "last_date": null,
+   "page": "index.html",
+   "tracks": [],
+   "years": [
+    2018,
+    2019,
+    2020,
+    2021,
+    2023,
+    2024,
+    2025
+   ],
+   "x": 460,
+   "y": 320,
+   "r": 40
+  },
+  {
+   "id": "max-ferrari",
+   "name": "Max Ferrari",
+   "kind": "collaborator",
+   "track_count": 8,
+   "first_date": "2018-08-20",
+   "last_date": "2025-11-11",
+   "page": "circle/max-ferrari.html",
+   "tracks": [
+    {
+     "title": "DESTINY (ft. JAX & Max Ferrari) ~ [prod. louky]",
+     "date": "2018-08-20",
+     "plays": 2000
+    },
+    {
+     "title": "NIGHT MODE ft. MAX FERRARI x YUNG VETTA x JAX",
+     "date": "2019-07-09",
+     "plays": 10083
+    },
+    {
+     "title": "This Feeling's Newer ft. Max Ferrari (prod. odece)",
+     "date": "2021-07-14",
+     "plays": 211
+    },
+    {
+     "title": "Got Knots ft. Max Ferrari (prod. lil biscuit)",
+     "date": "2021-07-14",
+     "plays": 174
+    },
+    {
+     "title": "Mix Up Substances ft. Max Ferrari",
+     "date": "2021-07-14",
+     "plays": 151
+    },
+    {
+     "title": "MRari inna Beanstalk w/ Max Ferrari (@mvvi468)",
+     "date": "2024-04-05",
+     "plays": 515
+    },
+    {
+     "title": "Sti11 waiting/tunnel freestyle w/ Max Ferrari prod. suli",
+     "date": "2025-11-11",
+     "plays": 300
+    },
+    {
+     "title": "ARCSNOWWW w/ Max Ferrari prod. sustain",
+     "date": "2025-11-11",
+     "plays": 184
+    }
+   ],
+   "years": [
+    2018,
+    2019,
+    2021,
+    2024,
+    2025
+   ],
+   "x": 460.0,
+   "y": 170.0,
+   "r": 34.0
+  },
+  {
+   "id": "yung-vetta",
+   "name": "Yung Vetta",
+   "kind": "collaborator",
+   "track_count": 7,
+   "first_date": "2018-12-02",
+   "last_date": "2019-07-09",
+   "page": "circle/yung-vetta.html",
+   "tracks": [
+    {
+     "title": "Hip On My Blade (ft. Yung Vetta) ~ [prod. Skel]",
+     "date": "2018-12-02",
+     "plays": 1368
+    },
+    {
+     "title": "Ima Be There ft. Yung Vetta(prod. Why Loner)",
+     "date": "2019-01-21",
+     "plays": 1913
+    },
+    {
+     "title": "[outro] Off Beat ft. Yung Vetta (prod. Addy)",
+     "date": "2019-01-28",
+     "plays": 935
+    },
+    {
+     "title": "STOP IT! ft. Yung Vetta (prod. okthxbb)",
+     "date": "2019-01-28",
+     "plays": 455
+    },
+    {
+     "title": "Hard To Keep ft. Yung Vetta (prod. Dead Spyro X Scarlet)",
+     "date": "2019-01-28",
+     "plays": 2415
+    },
+    {
+     "title": "Nothing ft. Yung Vetta(prod Xtravulous)",
+     "date": "2019-01-28",
+     "plays": 724
+    },
+    {
+     "title": "NIGHT MODE ft. MAX FERRARI x YUNG VETTA x JAX",
+     "date": "2019-07-09",
+     "plays": 10083
+    }
+   ],
+   "years": [
+    2018,
+    2019
+   ],
+   "x": 566.1,
+   "y": 213.9,
+   "r": 31.2
+  },
+  {
+   "id": "jax",
+   "name": "JAX",
+   "kind": "collaborator",
+   "track_count": 3,
+   "first_date": "2018-08-20",
+   "last_date": "2019-07-09",
+   "page": "circle/jax.html",
+   "tracks": [
+    {
+     "title": "DESTINY (ft. JAX & Max Ferrari) ~ [prod. louky]",
+     "date": "2018-08-20",
+     "plays": 2000
+    },
+    {
+     "title": "Walk With Me w/ JAX (Prod. Rawman)",
+     "date": "2018-08-27",
+     "plays": 700
+    },
+    {
+     "title": "NIGHT MODE ft. MAX FERRARI x YUNG VETTA x JAX",
+     "date": "2019-07-09",
+     "plays": 10083
+    }
+   ],
+   "years": [
+    2018,
+    2019
+   ],
+   "x": 610.0,
+   "y": 320.0,
+   "r": 20.2
+  },
+  {
+   "id": "lil-yu",
+   "name": "lil yu",
+   "kind": "collaborator",
+   "track_count": 3,
+   "first_date": "2019-12-22",
+   "last_date": "2023-08-29",
+   "page": "circle/lil-yu.html",
+   "tracks": [
+    {
+     "title": "I'd rather be w/ lil yu (prod. razorwrist)",
+     "date": "2019-12-22",
+     "plays": 1343
+    },
+    {
+     "title": "playin' by the book w/ lil yu (prod. dxsh)",
+     "date": "2020-10-07",
+     "plays": 861
+    },
+    {
+     "title": "Clock In The Benz w/ Lil Yu prod shinju",
+     "date": "2023-08-29",
+     "plays": 725
+    }
+   ],
+   "years": [
+    2019,
+    2020,
+    2023
+   ],
+   "x": 566.1,
+   "y": 426.1,
+   "r": 20.2
+  },
+  {
+   "id": "griimxo",
+   "name": "Griimxo",
+   "kind": "collaborator",
+   "track_count": 2,
+   "first_date": "2024-08-24",
+   "last_date": "2025-11-11",
+   "page": "circle/griimxo.html",
+   "tracks": [
+    {
+     "title": "Phantom Moshpit (feat. GRiiMXO)",
+     "date": "2024-08-24",
+     "plays": null
+    },
+    {
+     "title": "Phantom Moshpit w/ Griimxo (remastered) prod. scared716",
+     "date": "2025-11-11",
+     "plays": 178
+    }
+   ],
+   "years": [
+    2024,
+    2025
+   ],
+   "x": 460.0,
+   "y": 470.0,
+   "r": 17.5
+  },
+  {
+   "id": "jo-e-dripp",
+   "name": "JO$E DRIPP",
+   "kind": "collaborator",
+   "track_count": 2,
+   "first_date": "2018-04-28",
+   "last_date": "2019-07-09",
+   "page": "circle/jo-e-dripp.html",
+   "tracks": [
+    {
+     "title": "Mistakes Ft. JO$E DRIPP (prod. Tec)",
+     "date": "2018-04-28",
+     "plays": 1400
+    },
+    {
+     "title": "SUN SET FOR U ft. JO$E DRIPP (prod. y axis)",
+     "date": "2019-07-09",
+     "plays": 1771
+    }
+   ],
+   "years": [
+    2018,
+    2019
+   ],
+   "x": 353.9,
+   "y": 426.1,
+   "r": 17.5
+  },
+  {
+   "id": "lilvicbxi",
+   "name": "LILVICBXI",
+   "kind": "collaborator",
+   "track_count": 2,
+   "first_date": "2019-12-22",
+   "last_date": "2019-12-22",
+   "page": "circle/lilvicbxi.html",
+   "tracks": [
+    {
+     "title": "snow caps w/ LILVICBXI (prod. LILVICBXI x spliff08_)",
+     "date": "2019-12-22",
+     "plays": 1579
+    },
+    {
+     "title": "same amount w/ LILVICBXI (prod. LILVICBXI)",
+     "date": "2019-12-22",
+     "plays": 2991
+    }
+   ],
+   "years": [
+    2019
+   ],
+   "x": 310.0,
+   "y": 320.0,
+   "r": 17.5
+  },
+  {
+   "id": "lil-wintr",
+   "name": "Lil Wintr",
+   "kind": "collaborator",
+   "track_count": 2,
+   "first_date": "2019-12-06",
+   "last_date": "2019-12-06",
+   "page": "circle/lil-wintr.html",
+   "tracks": [
+    {
+     "title": "Master Key (feat. Lil Wintr & Marcelo)",
+     "date": "2019-12-06",
+     "plays": null
+    },
+    {
+     "title": "master key ft. Lil Wintr x Marcelo (prod. ginseng)",
+     "date": "2019-12-06",
+     "plays": 9615
+    }
+   ],
+   "years": [
+    2019
+   ],
+   "x": 353.9,
+   "y": 213.9,
+   "r": 17.5
+  },
+  {
+   "id": "marcelo",
+   "name": "Marcelo",
+   "kind": "collaborator",
+   "track_count": 2,
+   "first_date": "2019-12-06",
+   "last_date": "2019-12-06",
+   "page": "circle/marcelo.html",
+   "tracks": [
+    {
+     "title": "Master Key (feat. Lil Wintr & Marcelo)",
+     "date": "2019-12-06",
+     "plays": null
+    },
+    {
+     "title": "master key ft. Lil Wintr x Marcelo (prod. ginseng)",
+     "date": "2019-12-06",
+     "plays": 9615
+    }
+   ],
+   "years": [
+    2019
+   ],
+   "x": 460.0,
+   "y": 99.2,
+   "r": 17.5
+  },
+  {
+   "id": "capoxxo",
+   "name": "capoxxo",
+   "kind": "collaborator",
+   "track_count": 2,
+   "first_date": "2019-10-04",
+   "last_date": "2019-12-22",
+   "page": "circle/capoxxo.html",
+   "tracks": [
+    {
+     "title": "candy w/ capoxxo(prod. razorwrist)",
+     "date": "2019-10-04",
+     "plays": 11587
+    },
+    {
+     "title": "getting colder w/ capoxxo (prod. pvscale x asa41)",
+     "date": "2019-12-22",
+     "plays": 4587
+    }
+   ],
+   "years": [
+    2019
+   ],
+   "x": 571.5,
+   "y": 124.5,
+   "r": 17.5
+  },
+  {
+   "id": "ammi-age",
+   "name": "AMMI $AGE",
+   "kind": "collaborator",
+   "track_count": 1,
+   "first_date": "2019-07-09",
+   "last_date": "2019-07-09",
+   "page": "circle/ammi-age.html",
+   "tracks": [
+    {
+     "title": "I'M WEAKENING ft. AMMI $AGE",
+     "date": "2019-07-09",
+     "plays": 2490
+    }
+   ],
+   "years": [
+    2019
+   ],
+   "x": 657.5,
+   "y": 194.6,
+   "r": 14.8
+  },
+  {
+   "id": "keyblayde808",
+   "name": "Keyblayde808",
+   "kind": "collaborator",
+   "track_count": 1,
+   "first_date": "2019-12-30",
+   "last_date": "2019-12-30",
+   "page": "circle/keyblayde808.html",
+   "tracks": [
+    {
+     "title": "White Noise ft. Keyblayde808 (prod. Keyblayde808)",
+     "date": "2019-12-30",
+     "plays": 2650
+    }
+   ],
+   "years": [
+    2019
+   ],
+   "x": 698.3,
+   "y": 293.4,
+   "r": 14.8
+  },
+  {
+   "id": "lilrareboy",
+   "name": "Lilrareboy",
+   "kind": "collaborator",
+   "track_count": 1,
+   "first_date": "2021-07-14",
+   "last_date": "2021-07-14",
+   "page": "circle/lilrareboy.html",
+   "tracks": [
+    {
+     "title": "Sunvalley Rally ft. Lilrareboy (prod. phantasie)",
+     "date": "2021-07-14",
+     "plays": 319
+    }
+   ],
+   "years": [
+    2021
+   ],
+   "x": 684.4,
+   "y": 398.3,
+   "r": 14.8
+  },
+  {
+   "id": "max",
+   "name": "Max",
+   "kind": "collaborator",
+   "track_count": 1,
+   "first_date": "2024-11-05",
+   "last_date": "2024-11-05",
+   "page": "circle/max.html",
+   "tracks": [
+    {
+     "title": "nitemode2019 w/ Max+Vetty prod. NaXi.wav",
+     "date": "2024-11-05",
+     "plays": 17
+    }
+   ],
+   "years": [
+    2024
+   ],
+   "x": 619.1,
+   "y": 485.3,
+   "r": 14.8
+  },
+  {
+   "id": "offline-hp",
+   "name": "Offline_hp",
+   "kind": "collaborator",
+   "track_count": 1,
+   "first_date": "2019-07-09",
+   "last_date": "2019-07-09",
+   "page": "circle/offline-hp.html",
+   "tracks": [
+    {
+     "title": "GARDEN ft. Offline_hp (prod. QB)",
+     "date": "2019-07-09",
+     "plays": 1311
+    }
+   ],
+   "years": [
+    2019
+   ],
+   "x": 517.4,
+   "y": 534.4,
+   "r": 14.8
+  },
+  {
+   "id": "shola",
+   "name": "Shola",
+   "kind": "collaborator",
+   "track_count": 1,
+   "first_date": "2018-11-08",
+   "last_date": "2018-11-08",
+   "page": "circle/shola.html",
+   "tracks": [
+    {
+     "title": "Far From Me (ft. Shola) ~ [prod. HideousPittius]",
+     "date": "2018-11-08",
+     "plays": 1443
+    }
+   ],
+   "years": [
+    2018
+   ],
+   "x": 402.6,
+   "y": 534.4,
+   "r": 14.8
+  },
+  {
+   "id": "vetty",
+   "name": "Vetty",
+   "kind": "collaborator",
+   "track_count": 1,
+   "first_date": "2024-11-05",
+   "last_date": "2024-11-05",
+   "page": "circle/vetty.html",
+   "tracks": [
+    {
+     "title": "nitemode2019 w/ Max+Vetty prod. NaXi.wav",
+     "date": "2024-11-05",
+     "plays": 17
+    }
+   ],
+   "years": [
+    2024
+   ],
+   "x": 300.9,
+   "y": 485.3,
+   "r": 14.8
+  },
+  {
+   "id": "yung-cortex",
+   "name": "Yung Cortex",
+   "kind": "collaborator",
+   "track_count": 1,
+   "first_date": "2019-12-30",
+   "last_date": "2019-12-30",
+   "page": "circle/yung-cortex.html",
+   "tracks": [
+    {
+     "title": "All Alone ft. Yung Cortex (prod. Yung Cortex)",
+     "date": "2019-12-30",
+     "plays": 1115
+    }
+   ],
+   "years": [
+    2019
+   ],
+   "x": 235.6,
+   "y": 398.3,
+   "r": 14.8
+  },
+  {
+   "id": "lil-soda-boi",
+   "name": "lil soda boi",
+   "kind": "collaborator",
+   "track_count": 1,
+   "first_date": "2019-12-30",
+   "last_date": "2019-12-30",
+   "page": "circle/lil-soda-boi.html",
+   "tracks": [
+    {
+     "title": "Best Friend ft. lil soda boi (prod. lil soda boi)",
+     "date": "2019-12-30",
+     "plays": 3075
+    }
+   ],
+   "years": [
+    2019
+   ],
+   "x": 221.7,
+   "y": 293.4,
+   "r": 14.8
+  },
+  {
+   "id": "phil-is-lonely",
+   "name": "phil is lonely",
+   "kind": "collaborator",
+   "track_count": 1,
+   "first_date": "2020-10-07",
+   "last_date": "2020-10-07",
+   "page": "circle/phil-is-lonely.html",
+   "tracks": [
+    {
+     "title": "keep w/ phil is lonely (prod. uniquate)",
+     "date": "2020-10-07",
+     "plays": 244
+    }
+   ],
+   "years": [
+    2020
+   ],
+   "x": 262.5,
+   "y": 194.6,
+   "r": 14.8
+  },
+  {
+   "id": "pvscale",
+   "name": "pvscale",
+   "kind": "collaborator",
+   "track_count": 1,
+   "first_date": "2019-12-22",
+   "last_date": "2019-12-22",
+   "page": "circle/pvscale.html",
+   "tracks": [
+    {
+     "title": "fly like me w/ pvscale(prod. pvscale)",
+     "date": "2019-12-22",
+     "plays": 7786
+    }
+   ],
+   "years": [
+    2019
+   ],
+   "x": 348.5,
+   "y": 124.5,
+   "r": 14.8
+  },
+  {
+   "id": "fish-narc",
+   "name": "Fish Narc",
+   "kind": "producer",
+   "track_count": 2,
+   "first_date": "2018-01-03",
+   "last_date": "2019-12-30",
+   "page": "circle/fish-narc.html",
+   "tracks": [
+    {
+     "title": "Soul Shaking (prod. Fish Narc)",
+     "date": "2018-01-03",
+     "plays": 12944
+    },
+    {
+     "title": "Pavement (prod. Fish Narc)",
+     "date": "2019-12-30",
+     "plays": 733
+    }
+   ],
+   "years": [
+    2018,
+    2019
+   ],
+   "x": 460.0,
+   "y": 575.0,
+   "r": 17.5
+  }
+ ],
+ "edges": [
+  {
+   "a": "aster",
+   "b": "ammi-age",
+   "weight": 1,
+   "kind": "artist"
+  },
+  {
+   "a": "aster",
+   "b": "capoxxo",
+   "weight": 2,
+   "kind": "artist"
+  },
+  {
+   "a": "aster",
+   "b": "griimxo",
+   "weight": 2,
+   "kind": "artist"
+  },
+  {
+   "a": "aster",
+   "b": "jax",
+   "weight": 3,
+   "kind": "artist"
+  },
+  {
+   "a": "aster",
+   "b": "jo-e-dripp",
+   "weight": 2,
+   "kind": "artist"
+  },
+  {
+   "a": "aster",
+   "b": "keyblayde808",
+   "weight": 1,
+   "kind": "artist"
+  },
+  {
+   "a": "aster",
+   "b": "lil-soda-boi",
+   "weight": 1,
+   "kind": "artist"
+  },
+  {
+   "a": "aster",
+   "b": "lil-wintr",
+   "weight": 2,
+   "kind": "artist"
+  },
+  {
+   "a": "aster",
+   "b": "lil-yu",
+   "weight": 3,
+   "kind": "artist"
+  },
+  {
+   "a": "aster",
+   "b": "lilrareboy",
+   "weight": 1,
+   "kind": "artist"
+  },
+  {
+   "a": "aster",
+   "b": "lilvicbxi",
+   "weight": 2,
+   "kind": "artist"
+  },
+  {
+   "a": "aster",
+   "b": "marcelo",
+   "weight": 2,
+   "kind": "artist"
+  },
+  {
+   "a": "aster",
+   "b": "max",
+   "weight": 1,
+   "kind": "artist"
+  },
+  {
+   "a": "aster",
+   "b": "max-ferrari",
+   "weight": 8,
+   "kind": "artist"
+  },
+  {
+   "a": "aster",
+   "b": "offline-hp",
+   "weight": 1,
+   "kind": "artist"
+  },
+  {
+   "a": "aster",
+   "b": "phil-is-lonely",
+   "weight": 1,
+   "kind": "artist"
+  },
+  {
+   "a": "aster",
+   "b": "pvscale",
+   "weight": 1,
+   "kind": "artist"
+  },
+  {
+   "a": "aster",
+   "b": "shola",
+   "weight": 1,
+   "kind": "artist"
+  },
+  {
+   "a": "aster",
+   "b": "vetty",
+   "weight": 1,
+   "kind": "artist"
+  },
+  {
+   "a": "aster",
+   "b": "yung-cortex",
+   "weight": 1,
+   "kind": "artist"
+  },
+  {
+   "a": "aster",
+   "b": "yung-vetta",
+   "weight": 7,
+   "kind": "artist"
+  },
+  {
+   "a": "aster",
+   "b": "fish-narc",
+   "weight": 2,
+   "kind": "artist"
+  },
+  {
+   "a": "jax",
+   "b": "max-ferrari",
+   "weight": 2,
+   "kind": "co-credit",
+   "shared_tracks": [
+    "DESTINY (ft. JAX & Max Ferrari) ~ [prod. louky]",
+    "NIGHT MODE ft. MAX FERRARI x YUNG VETTA x JAX"
+   ]
+  },
+  {
+   "a": "jax",
+   "b": "yung-vetta",
+   "weight": 1,
+   "kind": "co-credit",
+   "shared_tracks": [
+    "NIGHT MODE ft. MAX FERRARI x YUNG VETTA x JAX"
+   ]
+  },
+  {
+   "a": "lil-wintr",
+   "b": "marcelo",
+   "weight": 2,
+   "kind": "co-credit",
+   "shared_tracks": [
+    "Master Key (feat. Lil Wintr & Marcelo)",
+    "master key ft. Lil Wintr x Marcelo (prod. ginseng)"
+   ]
+  },
+  {
+   "a": "max",
+   "b": "vetty",
+   "weight": 1,
+   "kind": "co-credit",
+   "shared_tracks": [
+    "nitemode2019 w/ Max+Vetty prod. NaXi.wav"
+   ]
+  },
+  {
+   "a": "max-ferrari",
+   "b": "yung-vetta",
+   "weight": 1,
+   "kind": "co-credit",
+   "shared_tracks": [
+    "NIGHT MODE ft. MAX FERRARI x YUNG VETTA x JAX"
+   ]
+  }
+ ],
+ "insights": {
+  "most_frequent_collaborator": {
+   "name": "Max Ferrari",
+   "track_count": 8
+  },
+  "producer_most_credits": {
+   "name": "Fish Narc",
+   "track_count": 2
+  },
+  "year_most_collabs": {
+   "year": 2019,
+   "collab_tracks": 21
+  },
+  "first_ever_collaborator": {
+   "name": "JO$E DRIPP",
+   "date": "2018-04-28",
+   "title": "Mistakes Ft. JO$E DRIPP (prod. Tec)"
+  }
+ }
+}

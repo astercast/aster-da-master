@@ -1,0 +1,243 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "network",
+  "type": "object",
+  "properties": {
+    "version": {
+      "type": "string"
+    },
+    "generated": {
+      "type": "string"
+    },
+    "artist": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "name"
+      ]
+    },
+    "nodes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "kind": {
+            "enum": [
+              "artist",
+              "collaborator",
+              "producer"
+            ]
+          },
+          "track_count": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "first_date": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "last_date": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "page": {
+            "type": "string"
+          },
+          "tracks": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "title": {
+                  "type": "string"
+                },
+                "date": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "plays": {
+                  "type": [
+                    "integer",
+                    "null"
+                  ]
+                }
+              },
+              "required": [
+                "title"
+              ]
+            }
+          },
+          "years": {
+            "type": "array",
+            "items": {
+              "type": "integer"
+            }
+          },
+          "x": {
+            "type": "number"
+          },
+          "y": {
+            "type": "number"
+          },
+          "r": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "kind",
+          "track_count",
+          "page",
+          "tracks",
+          "years",
+          "x",
+          "y",
+          "r"
+        ]
+      }
+    },
+    "edges": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "a": {
+            "type": "string"
+          },
+          "b": {
+            "type": "string"
+          },
+          "weight": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "kind": {
+            "enum": [
+              "artist",
+              "co-credit"
+            ]
+          },
+          "shared_tracks": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "a",
+          "b",
+          "weight",
+          "kind"
+        ]
+      }
+    },
+    "insights": {
+      "type": "object",
+      "properties": {
+        "most_frequent_collaborator": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "track_count": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "name",
+            "track_count"
+          ]
+        },
+        "producer_most_credits": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "track_count": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "name",
+            "track_count"
+          ]
+        },
+        "year_most_collabs": {
+          "type": "object",
+          "properties": {
+            "year": {
+              "type": "integer"
+            },
+            "collab_tracks": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "year",
+            "collab_tracks"
+          ]
+        },
+        "first_ever_collaborator": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "date": {
+              "type": "string"
+            },
+            "title": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "name",
+            "date",
+            "title"
+          ]
+        }
+      },
+      "required": [
+        "most_frequent_collaborator",
+        "producer_most_credits",
+        "year_most_collabs",
+        "first_ever_collaborator"
+      ]
+    }
+  },
+  "required": [
+    "version",
+    "generated",
+    "artist",
+    "nodes",
+    "edges",
+    "insights"
+  ]
+}

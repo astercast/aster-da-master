@@ -862,6 +862,68 @@
 .nw-list summary:focus-visible { outline: 2px solid var(--neon); outline-offset: 2px; }
 .nw-list .top-list { padding: 0 var(--space-4) var(--space-4); }
 
+/* ---------- Network page (wave 16) ---------- */
+.nw-insights {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-4);
+  margin: 0 0 var(--space-6); padding: 0;
+}
+.nw-stat {
+  background: var(--panel); border: 1px solid var(--line-soft); border-radius: var(--radius-m);
+  padding: var(--space-4);
+}
+.nw-stat dt { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink-dim); margin-bottom: var(--space-1); }
+.nw-stat dd { margin: 0; font-family: var(--font-display); font-size: 1.35rem; color: var(--gold-bright); letter-spacing: 0.02em; }
+.nw-stat p { margin: var(--space-1) 0 0; font-size: 0.82rem; color: var(--ink-dim); }
+.nw-controls {
+  display: flex; flex-wrap: wrap; gap: var(--space-4) var(--space-6);
+  border: 1px solid var(--line-soft); border-radius: var(--radius-m);
+  padding: var(--space-4); margin: 0 0 var(--space-5); background: var(--panel);
+}
+.nw-controls legend { padding: 0 var(--space-2); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink-dim); }
+.nw-control { display: flex; align-items: center; gap: var(--space-2); font-size: 0.9rem; }
+.nw-control input[type="range"] { width: 10rem; accent-color: var(--neon); }
+.nw-control input[type="range"]:disabled { opacity: 0.35; }
+.nw-control input[type="search"] {
+  background: var(--panel-2); border: 1px solid var(--line); color: var(--ink);
+  border-radius: var(--radius-s); padding: 0.4rem 0.6rem; font-size: 0.9rem; width: 11rem;
+}
+.nw-check { display: inline-flex; align-items: center; gap: 0.45rem; cursor: pointer; }
+.nw-check input { accent-color: var(--neon); }
+#nw-era-label { font-family: var(--font-mono); font-size: 0.85rem; color: var(--neon); min-width: 4.5rem; }
+.nw-kb-hint { margin-top: var(--space-2); }
+
+/* graph nodes — collaborators are circles, producers are squares */
+.nw-shape { fill: var(--panel-2); stroke: var(--neon); stroke-width: 1.5; transition: stroke-width var(--dur-1) var(--ease); }
+.nw-node.is-producer .nw-shape { stroke: var(--violet, #b28dff); stroke-dasharray: 5 3; }
+.nw-node.is-artist .nw-shape { fill: #141006; stroke: var(--gold); stroke-width: 2; }
+.nw-node:hover .nw-shape, .nw-node:focus-visible .nw-shape { stroke: #fff; stroke-width: 2.5; }
+.nw-node.is-selected .nw-shape { stroke: var(--gold); stroke-width: 3; }
+.nw-node:focus-visible { outline: 2px solid var(--neon); outline-offset: 4px; border-radius: 50%; }
+.nw-edge.is-cocredit { stroke: var(--gold); opacity: 0.4; }
+.nw-node.is-dim, .nw-edge.is-dim { opacity: 0.12; }
+.nw-node.is-dim .nw-label { opacity: 0.35; }
+.nw-node.is-hidden, .nw-edge.is-hidden { display: none; }
+
+/* side panel extras */
+.nw-links { list-style: none; margin: var(--space-2) 0 0; padding: 0; display: grid; gap: var(--space-2); }
+.nw-link {
+  background: none; border: 1px solid var(--line); border-radius: var(--radius-s);
+  color: var(--neon); font: inherit; cursor: pointer; padding: 0.3rem 0.6rem; text-align: left;
+}
+.nw-link:hover, .nw-link:focus-visible { border-color: var(--neon); outline: none; }
+.nw-panel h4 { margin: var(--space-4) 0 var(--space-1); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink-dim); }
+
+/* table — the accessible core */
+.table-scroll { overflow-x: auto; }
+.nw-table { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
+.nw-table caption { text-align: left; }
+.nw-table th, .nw-table td { text-align: left; padding: 0.55rem 0.7rem; border-bottom: 1px solid var(--line-soft); }
+.nw-table thead th { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink-dim); }
+.nw-table tbody th { font-weight: 600; }
+.nw-table .num { font-family: var(--font-mono); }
+.nw-table a { color: var(--ink); }
+.nw-table a:hover { color: var(--gold-bright); }
+
 /* ---------- Global search ---------- */
 .search-btn {
   display: inline-flex; align-items: center; gap: 0.45rem;
@@ -1138,13 +1200,16 @@
   .disco-card h3 { font-size: 1rem; }
   .stat-grid { grid-template-columns: 1fr 1fr; }
   .hero-cta .btn { width: 100%; }
+  .nw-insights { grid-template-columns: 1fr 1fr; }
+  .nw-control input[type="range"] { width: 7rem; }
 }
 
 /* ---------- Reduced motion: kill the rest ---------- */
 @media (prefers-reduced-motion: reduce) {
   .btn, .disco-card, .stat, .stat-card, .codex-card, .era-card, .circle-card,
   .cut-card, .ms-card, .fl-card, .session-card, .otd-card, .dec-fam, .platform,
-  .search-item, .era-deep summary, .lots-card, .pg-ep, .brand-mark, .site-nav a::after {
+  .search-item, .era-deep summary, .lots-card, .pg-ep, .brand-mark, .site-nav a::after,
+  .nw-shape {
     transition: none;
   }
   .disco-card:hover, .stat:hover, .stat-card:hover, .codex-card:hover, .era-card:hover,

@@ -1,8 +1,32 @@
 {
   "generated": "2026-10-11",
   "method": "Parsed from `git log main`: every commit becomes an entry. The site documenting its own becoming.",
-  "entry_count": 25,
+  "entry_count": 29,
   "entries": [
+    {
+      "hash": "0f54439",
+      "date": "2026-10-12",
+      "message": "Wave 16: sync changelog",
+      "files_changed": 2
+    },
+    {
+      "hash": "56d1952",
+      "date": "2026-10-12",
+      "message": "Wave 16: sync changelog",
+      "files_changed": 2
+    },
+    {
+      "hash": "d6bacea",
+      "date": "2026-10-12",
+      "message": "Wave 16: collaboration network graph (api/v1/network.json + network.html + build_network.py)",
+      "files_changed": 16
+    },
+    {
+      "hash": "2fc300f",
+      "date": "2026-10-12",
+      "message": "Wave 15: sync changelog",
+      "files_changed": 2
+    },
     {
       "hash": "ae5a605",
       "date": "2026-10-12",

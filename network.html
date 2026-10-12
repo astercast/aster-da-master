@@ -97,24 +97,54 @@
         <div class="section-head reveal">
           <span class="kicker"><span class="numeral">✦</span>The network</span>
           <h2 id="nw-h">Everyone he summoned</h2>
-          <p>Every collaborator credited in a title across 219 transmissions, mapped. Node size and thread weight grow with the number of shared tracks. Select any node for their transmissions — or browse the full list below, no graph required.</p>
+          <p>Every collaborator credited in a title across 219 transmissions, mapped — node size and thread weight grow with the number of shared tracks. Producer scene figures join as squares. Select any node for their transmissions, or browse the full table below: the graph is the flourish, the table is the data.</p>
         </div>
+
+        <dl class="nw-insights reveal" id="nw-insights" aria-label="Network insights"></dl>
+
+        <fieldset class="nw-controls reveal">
+          <legend>Graph controls</legend>
+          <div class="nw-control">
+            <label for="nw-era">Highlight era</label>
+            <input type="range" id="nw-era" min="2018" max="2026" step="1" value="2018" aria-describedby="nw-era-label">
+            <output id="nw-era-label" for="nw-era">All years</output>
+            <label class="nw-check"><input type="checkbox" id="nw-era-all" checked> All years</label>
+          </div>
+          <div class="nw-control">
+            <label class="nw-check"><input type="checkbox" id="nw-producers" checked> Show producers</label>
+          </div>
+          <div class="nw-control">
+            <label for="nw-search">Find a name</label>
+            <input type="search" id="nw-search" placeholder="e.g. Max Ferrari" autocomplete="off" spellcheck="false">
+          </div>
+        </fieldset>
 
         <div class="nw-layout reveal">
           <div class="nw-graph-wrap">
-            <svg id="nw-svg" role="img" aria-label="Collaboration network graph" viewBox="0 0 920 620" preserveAspectRatio="xMidYMid meet"></svg>
+            <svg id="nw-svg" role="img" viewBox="0 0 920 640" preserveAspectRatio="xMidYMid meet"
+                 aria-label="Collaboration network graph. Aster da Master at the center; circles are title-credited collaborators, squares are producers. Tab to a node, Enter selects, arrow keys move between nodes, Escape resets. The table below holds the same data."></svg>
+            <p class="chart-sub nw-kb-hint">Drag nodes to rearrange · Tab + Enter to inspect · Esc resets the filters</p>
           </div>
-          <aside class="nw-panel" id="nw-panel" aria-live="polite" aria-label="Selected collaborator">
+          <aside class="nw-panel" id="nw-panel" aria-live="polite" aria-label="Selected node">
             <p class="chart-sub">Select a node to see their transmissions.</p>
           </aside>
         </div>
 
-        <div class="reveal">
-          <h3 class="stat-h">The full circle, as a list</h3>
-          <div class="nw-list" id="nw-list"></div>
+        <div class="reveal" id="nw-table-wrap">
+          <h3 class="stat-h">The full network, as a table</h3>
+          <p class="chart-sub nw-table-note" aria-live="polite"></p>
+          <div class="table-scroll">
+          <table class="nw-table">
+            <caption class="visually-hidden">Collaborators and producers: shared transmissions, first and last dates</caption>
+            <thead>
+              <tr><th scope="col">Name</th><th scope="col">Kind</th><th scope="col">Tracks</th><th scope="col">First</th><th scope="col">Last</th></tr>
+            </thead>
+            <tbody id="nw-table-body"></tbody>
+          </table>
+          </div>
         </div>
 
-        <p class="chart-sub reveal">Parsed from <em>w/</em> and <em>ft.</em> credits in titles — as credited, verbatim. Producers are not counted as collaborators here.</p>
+        <p class="chart-sub reveal">Collaborator edges come from <em>w/</em> and <em>ft.</em> credits in titles — as credited, verbatim; producer edges from producer credits on tracks. Every node and edge is computed by <code>scripts/build_network.py</code> into <code>api/v1/network.json</code>; the page renders it and adds nothing.</p>
       </div>
     </section>
   </main>
