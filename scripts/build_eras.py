@@ -63,17 +63,14 @@ CIRCLE = json.loads((API / "circle.json").read_text())
 CODEX = json.loads((API / "codex.json").read_text())["families"]
 RSLUGS = json.loads((API / "release-slugs.json").read_text())
 
-
 def fmt(n):
     return f"{n:,}"
-
 
 # --- release pages: ordinal -> root-relative page; assert every one exists ---
 def release_page(i):
     p = "releases/" + RSLUGS[str(i)] + ".html"
     assert (ROOT / p).exists(), f"missing release page {p}"
     return p
-
 
 # --- codex family slugs: identical rule to scripts/build_codex.py ---
 FAMSLUG = {}
@@ -89,7 +86,6 @@ for fam in CODEX:
     assert (ROOT / "codex" / (s + ".html")).exists(), f"missing codex page {s}"
 assert len(FAMSLUG) == 16, "codex family slug drift"
 
-
 def era_entries(ys):
     """All discography entries in the era's years, with ordinal + page."""
     out = []
@@ -100,7 +96,6 @@ def era_entries(ys):
                         "plays": x.get("plays"),
                         "page": release_page(i)})
     return out
-
 
 def era_all_collabs(ys):
     """Every title-credited collaborator with tracks in the era's years."""
@@ -115,7 +110,6 @@ def era_all_collabs(ys):
             assert (ROOT / c["page"]).exists(), f"missing circle page {c['page']}"
     rows.sort(key=lambda r: (-r["plays"], r["name"]))
     return rows
-
 
 def era_families(ys):
     """Codex families with tracks in the era's years, by plays desc."""
@@ -134,7 +128,6 @@ def era_families(ys):
                                         for t in tr[:3]]})
     rows.sort(key=lambda r: (-r["plays"], r["name"]))
     return rows
-
 
 def era_summary(e, tx_eras, ys, entries, collabs, families):
     """Computed signal summary; every figure recomputed + asserted by caller."""
@@ -173,7 +166,6 @@ def era_summary(e, tx_eras, ys, entries, collabs, families):
                        if top_family else None),
         "milestones_count": len(e["milestones"]),
     }
-
 
 def verify(e, ys, entries, collabs, families, summary):
     """Recompute everything the page/JSON claims about this era."""
@@ -219,7 +211,6 @@ def verify(e, ys, entries, collabs, families, summary):
         assert (ROOT / t["page"]).exists(), t["page"]
     for f in families:
         assert (ROOT / f["page"]).exists(), f["page"]
-
 
 NAV = """<nav class="site-nav" aria-label="Primary">
         <a href="../#discography">Discography</a>
@@ -273,9 +264,9 @@ HEAD = """<!DOCTYPE html>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{title} — era deep dive — Aster da Master</title>
   <meta name="description" content="{desc}">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Anton&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preload" href="../assets/fonts/anton-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../assets/css/fonts.css">
+
   <link rel="stylesheet" href="../assets/css/tokens.css">
   <link rel="stylesheet" href="../assets/css/base.css">
   <link rel="stylesheet" href="../assets/css/layout.css">
@@ -329,11 +320,9 @@ FOOT = """    </div>
 </html>
 """
 
-
 def ordinal_word(n):
     return {1: "first", 2: "second", 3: "third", 4: "fourth",
             5: "fifth", 6: "sixth"}.get(n, str(n) + "th")
-
 
 def era_page(e, idx, n_eras, entries, collabs, families, summary):
     ys = ", ".join(e["years"])
@@ -533,7 +522,6 @@ def era_page(e, idx, n_eras, entries, collabs, families, summary):
     return (HEAD.format(title=escape(title), desc=escape(desc))
             + "".join(parts) + FOOT)
 
-
 SCHEMA = {
     "$schema": "http://json-schema.org/draft-07/schema#",
     "title": "eras",
@@ -648,7 +636,6 @@ SCHEMA = {
     "required": ["version", "archive_totals", "eras"],
 }
 
-
 def main() -> int:
     tx_eras = TX["eras"]
     assert len(tx_eras) == 6, "era count drift"
@@ -732,7 +719,6 @@ def main() -> int:
           f"{sum(len(e['collaborators']) for e in eras_out)} collab slots, "
           f"{sum(len(e['codex_families']) for e in eras_out)} family slots")
     return 0
-
 
 if __name__ == "__main__":
     raise SystemExit(main())

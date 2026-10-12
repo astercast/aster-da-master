@@ -24,9 +24,9 @@ HEAD = """<!DOCTYPE html>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{title} — Aster da Master</title>
   <meta name="description" content="{desc}">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Anton&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preload" href="../assets/fonts/anton-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../assets/css/fonts.css">
+
   <link rel="stylesheet" href="../assets/css/tokens.css">
   <link rel="stylesheet" href="../assets/css/base.css">
   <link rel="stylesheet" href="../assets/css/layout.css">
@@ -110,13 +110,11 @@ FOOT = """    </div>
 </html>
 """
 
-
 def slugify(title: str) -> str:
     s = title.lower()
     s = s.replace("&", " and ")
     s = re.sub(r"[^a-z0-9]+", "-", s).strip("-")
     return s or "release"
-
 
 def credits_from_title(title: str):
     """Extract credit fragments verbatim from the title (parens/brackets).
@@ -124,7 +122,6 @@ def credits_from_title(title: str):
     frags = re.findall(r"\(([^)]*)\)", title) + re.findall(r"\[([^\]]*)\]", title)
     keep = [f.strip() for f in frags if re.search(r"(?i)feat|ft\.|prod|w/|with", f)]
     return keep
-
 
 def build():
     releases = DATA["discography"]
@@ -282,7 +279,6 @@ def build():
         encoding="utf-8",
     )
     print(f"Built {len(releases)} release pages + index in {OUT}/")
-
 
 if __name__ == "__main__":
     build()

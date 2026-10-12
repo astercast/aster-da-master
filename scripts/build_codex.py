@@ -43,14 +43,11 @@ SNAPSHOT = "2026-10-11"  # play-count snapshot date; pinned so re-runs are byte-
 
 LEET = str.maketrans({"1": "l", "0": "o", "3": "e", "4": "a", "5": "s", "7": "t"})
 
-
 def norm(title):
     return title.lower().translate(LEET)
 
-
 def tokens(title):
     return set(re.findall(r"[a-z']+", norm(title)))
-
 
 # (arcane name, ritual epithet (counting claim only), keywords)
 FAMILIES = [
@@ -104,13 +101,11 @@ FAMILIES = [
      ["fire", "water"]),
 ]
 
-
 def matches(title, keyword):
     n = norm(title)
     if " " in keyword:
         return keyword in n
     return keyword in tokens(title)
-
 
 NAV = """<nav class="site-nav" aria-label="Primary">
         <a href="../#discography">Discography</a>
@@ -166,9 +161,9 @@ HEAD = """<!DOCTYPE html>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{title} — Aster da Master</title>
   <meta name="description" content="{desc}">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Anton&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preload" href="../assets/fonts/anton-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../assets/css/fonts.css">
+
   <link rel="stylesheet" href="../assets/css/tokens.css">
   <link rel="stylesheet" href="../assets/css/base.css">
   <link rel="stylesheet" href="../assets/css/layout.css">
@@ -223,17 +218,14 @@ FOOT = """    </div>
 </html>
 """
 
-
 def fmt(n):
     return f"{n:,}"
-
 
 def year_span(tracks):
     yrs = sorted({t["date"][:4] for t in tracks if t.get("date")})
     if not yrs:
         return "dates unknown"
     return yrs[0] if len(yrs) == 1 else f"{yrs[0]}–{yrs[-1]}"
-
 
 def index_page(families):
     cards = "".join(
@@ -260,7 +252,6 @@ def index_page(families):
         title="The codex — vocabulary families",
         desc="Sixteen families of Aster da Master's ritual title vocabulary, each with its full track record.",
     ) + body + FOOT
-
 
 def main():
     data = json.loads(DATA.read_text())
@@ -341,7 +332,6 @@ def main():
     from api_manifest import render_manifest
     render_manifest(idx, ROOT)
     print(f"version -> {NEW_VERSION}; api/v1 mirrored")
-
 
 if __name__ == "__main__":
     main()

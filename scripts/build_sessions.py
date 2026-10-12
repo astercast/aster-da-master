@@ -43,7 +43,6 @@ MONTHS = ["", "January", "February", "March", "April", "May", "June",
 MON_ABBR = ["", "Jan", "Feb", "Mar", "Apr", "May", "Jun",
             "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
 
-
 def ordinal(n: int) -> str:
     if 10 <= n % 100 <= 20:
         suf = "th"
@@ -51,11 +50,9 @@ def ordinal(n: int) -> str:
         suf = {1: "st", 2: "nd", 3: "rd"}.get(n % 10, "th")
     return f"{n}{suf}"
 
-
 def parse(d: str) -> date:
     y, m, day = (int(x) for x in d.split("-"))
     return date(y, m, day)
-
 
 def session_name(start: date, end: date) -> str:
     if start == end:
@@ -66,7 +63,6 @@ def session_name(start: date, end: date) -> str:
     return (f"The {MON_ABBR[start.month]} {ordinal(start.day)}"
             f" \u2013 {MON_ABBR[end.month]} {ordinal(end.day)} Session")
 
-
 def session_slug(name: str) -> str:
     """URL slug for a session deep-dive page.
 
@@ -74,7 +70,6 @@ def session_slug(name: str) -> str:
     Session names are unique, so no dedup suffix is needed (asserted there).
     """
     return slugify(name)
-
 
 def main() -> int:
     d = json.loads(DATA.read_text())
@@ -217,9 +212,9 @@ def main() -> int:
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Upload sessions \u2014 Aster da Master</title>
   <meta name="description" content="Every SoundCloud upload session, clustered by date: the studio diary of nine years of transmissions.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Anton&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preload" href="assets/fonts/anton-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/css/fonts.css">
+
   <link rel="stylesheet" href="assets/css/tokens.css">
   <link rel="stylesheet" href="assets/css/base.css">
   <link rel="stylesheet" href="assets/css/layout.css">
@@ -361,7 +356,6 @@ def main() -> int:
           f"{sum(s['track_count'] for s in out)} tracks -> sessions.html + JSON, "
           f"version {NEW_VERSION}")
     return 0
-
 
 if __name__ == "__main__":
     sys.exit(main())

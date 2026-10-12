@@ -79,9 +79,9 @@ HEAD = """<!DOCTYPE html>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{title} — Aster da Master</title>
   <meta name="description" content="{desc}">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Anton&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preload" href="../assets/fonts/anton-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../assets/css/fonts.css">
+
   <link rel="stylesheet" href="../assets/css/tokens.css">
   <link rel="stylesheet" href="../assets/css/base.css">
   <link rel="stylesheet" href="../assets/css/layout.css">
@@ -136,10 +136,8 @@ FOOT = """    </div>
 </html>
 """
 
-
 def fmt(n):
     return f"{n:,}"
-
 
 def ordinal(n: int) -> str:
     if 10 <= n % 100 <= 20:
@@ -148,10 +146,8 @@ def ordinal(n: int) -> str:
         suf = {1: "st", 2: "nd", 3: "rd"}.get(n % 10, "th")
     return f"{n}{suf}"
 
-
 def rank_word(i: int) -> str:
     return {1: "1st", 2: "2nd", 3: "3rd"}.get(i, f"{i}th")
-
 
 def session_story(s, rank: int):
     """Factual story lines from the session's own dates. No narrative invented."""
@@ -182,7 +178,6 @@ def session_story(s, rank: int):
     )
     return lines
 
-
 def session_collabs(s):
     collabs = {}
     for t in s["tracks"]:
@@ -193,7 +188,6 @@ def session_collabs(s):
             collabs[k]["n"] += 1
     return sorted(collabs.values(), key=lambda c: (-c["n"], c["name"].lower()))[:5]
 
-
 def session_eras(s, eras):
     names = []
     for y in {s["start"][:4], s["end"][:4]}:
@@ -202,7 +196,6 @@ def session_eras(s, eras):
             if e and e["name"] not in names:
                 names.append(e["name"])
     return names
-
 
 def deepdive_page(s, slug, rank, collabs, era_names, prev_s, next_s):
     story = "".join(f"<li>{escape(line)}</li>" for line in session_story(s, rank))
@@ -287,7 +280,6 @@ def deepdive_page(s, slug, rank, collabs, era_names, prev_s, next_s):
         desc=f"{s['name']}: {s['track_count']} transmissions, {fmt(s['total_plays'])} plays. The studio diary, up close.",
     ) + body + FOOT
 
-
 def main() -> int:
     eras = DATA.get("eras", [])
     sessions = SESS["sessions"]
@@ -310,7 +302,6 @@ def main() -> int:
 
     print(f"session deep-dives: {len(top)} pages -> sessions/")
     return 0
-
 
 if __name__ == "__main__":
     raise SystemExit(main())

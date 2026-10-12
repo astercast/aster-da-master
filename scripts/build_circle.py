@@ -97,9 +97,9 @@ HEAD = """<!DOCTYPE html>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{title} — Aster da Master</title>
   <meta name="description" content="{desc}">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Anton&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preload" href="../assets/fonts/anton-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../assets/css/fonts.css">
+
   <link rel="stylesheet" href="../assets/css/tokens.css">
   <link rel="stylesheet" href="../assets/css/base.css">
   <link rel="stylesheet" href="../assets/css/layout.css">
@@ -154,10 +154,8 @@ FOOT = """    </div>
 </html>
 """
 
-
 def fmt(n):
     return f"{n:,}"
-
 
 # --- Wave 12 (2026-10-11) research enrichment ---------------------------------
 # Verified public findings ONLY. Every fact below is backed by a public source;
@@ -457,7 +455,6 @@ SCENE_FIGURES = {
     },
 }
 
-
 # Wave 32 (2026-10-11): the honest gaps. Collaborators whose public record
 # ends at the archive's title credits. Stated as-is on the circle index —
 # the archive flags thin records, never fills them with invention.
@@ -479,7 +476,6 @@ GAPS = [
     "unknowns register in method.html.",
 ]
 
-
 def render_gaps_section():
     """Wave 32: the honest gaps — thin records stated, never filled."""
     items = "".join(f"<li>{escape(g)}</li>" for g in GAPS)
@@ -492,14 +488,12 @@ def render_gaps_section():
       </section>
 """
 
-
 def render_sources(sources):
     links = " &middot; ".join(
         f'<a href="{escape(u)}" target="_blank" rel="noopener">{escape(label)}</a>'
         for label, u in sources
     )
     return f'<p class="chart-sub">Sources: {links}</p>'
-
 
 def render_verified_section(info):
     facts = "".join(f"<li>{escape(f)}</li>" for f in info["facts"])
@@ -512,7 +506,6 @@ def render_verified_section(info):
         {render_sources(info["sources"])}
       </section>
 """
-
 
 def render_scene_section(info):
     """Wave-30 merge: highlighted "new verified facts" section for a scene
@@ -530,7 +523,6 @@ def render_scene_section(info):
       </section>
 """
 
-
 def render_watch_section(info):
     """The 'Uncle watch': honest release-status widget driven by data.
     Only rendered when a figure carries a 'watch' block."""
@@ -547,13 +539,11 @@ def render_watch_section(info):
       </section>
 """
 
-
 def years_active(tracks):
     yrs = sorted({t["date"][:4] for t in tracks if t.get("date")})
     if not yrs:
         return "dates unknown"
     return yrs[0] if len(yrs) == 1 else f"{yrs[0]}–{yrs[-1]}"
-
 
 def collab_page(name, slug, tracks, slug_of, eras, prev_s, next_s, ckey=None):
     total_plays = sum(t.get("plays") or 0 for t in tracks)
@@ -634,7 +624,6 @@ def collab_page(name, slug, tracks, slug_of, eras, prev_s, next_s, ckey=None):
         desc=f"{name} and Aster da Master: {len(tracks)} shared transmissions, {fmt(total_plays)} plays.",
     ) + body + FOOT
 
-
 def index_page(entries):
     cards = "".join(
         f'<a class="year-card" href="{e["slug"]}.html">'
@@ -676,7 +665,6 @@ def index_page(entries):
         title="The circle — collaborator archive",
         desc="Every Aster da Master collaborator: shared tracks, plays, years active.",
     ) + body + FOOT
-
 
 def scene_figure_page(slug, info):
     tracks = info["tracks"]
@@ -740,7 +728,6 @@ def scene_figure_page(slug, info):
             1,
         )
     return html
-
 
 def main():
     releases = DATA["discography"]
@@ -866,7 +853,6 @@ def main():
     from api_manifest import render_manifest
     render_manifest(idx, ROOT)
     print(f"circle: {len(entries)} pages + {len(SCENE_FIGURES)} scene figures + index + api/v1/circle.json + api/v1/scene-figures.json; version -> {NEW_VERSION}")
-
 
 if __name__ == "__main__":
     main()

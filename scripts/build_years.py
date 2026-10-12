@@ -83,9 +83,9 @@ HEAD = """<!DOCTYPE html>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{title} — Aster da Master</title>
   <meta name="description" content="{desc}">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Anton&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preload" href="../assets/fonts/anton-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../assets/css/fonts.css">
+
   <link rel="stylesheet" href="../assets/css/tokens.css">
   <link rel="stylesheet" href="../assets/css/base.css">
   <link rel="stylesheet" href="../assets/css/layout.css">
@@ -139,7 +139,6 @@ FOOT = """    </div>
 </html>
 """
 
-
 def parse_collabs(title):
     """Port of assets/js/common.js parseCollabs: credit names from the
     title's own w//ft./feat. fragments. Nothing invented."""
@@ -159,7 +158,6 @@ def parse_collabs(title):
                 names.append(p)
     return names
 
-
 def era_for_year(year, eras):
     for e in eras:
         m = re.search(r"(\d{4})(?:\s*[–—-]\s*(\d{4}))?", str(e.get("span") or ""))
@@ -170,10 +168,8 @@ def era_for_year(year, eras):
             return e
     return None
 
-
 def fmt(n):
     return f"{n:,}"
-
 
 def year_page(year, entries, slug_of, era):
     dist = [r for r in entries if r["type"] != "SoundCloud-only"]
@@ -305,7 +301,6 @@ def year_page(year, entries, slug_of, era):
         desc=f"Aster da Master in {year}: {len(entries)} transmissions, {fmt(plays)} vault plays, top tracks and collaborators.",
     ) + body + FOOT
 
-
 def index_page(summaries):
     cards = "".join(
         f'<a class="year-card" href="{y}.html">'
@@ -331,7 +326,6 @@ def index_page(summaries):
         title="Year in review — the yearly archive",
         desc="Aster da Master year by year, 2018–2026: transmissions, plays, defining tracks, collaborators.",
     ) + body + FOOT
-
 
 def main():
     releases = DATA["discography"]
@@ -391,7 +385,6 @@ def main():
         json.dumps(api_years, indent=1, ensure_ascii=False) + "\n", encoding="utf-8"
     )
     print(f"years: {len(YEARS)} pages + index + api/v1/years.json")
-
 
 if __name__ == "__main__":
     main()

@@ -1,8 +1,26 @@
 {
   "generated": "2026-10-11",
   "method": "Parsed from `git log main`: every commit becomes an entry. The site documenting its own becoming.",
-  "entry_count": 85,
+  "entry_count": 88,
   "entries": [
+    {
+      "hash": "84e5e08",
+      "date": "2026-10-12",
+      "message": "changelog sync (wave 34)",
+      "files_changed": 3
+    },
+    {
+      "hash": "8310094",
+      "date": "2026-10-12",
+      "message": "Wave 34: font self-hosting — Anton + IBM Plex Mono self-hosted WOFF2, zero remote font requests",
+      "files_changed": 449
+    },
+    {
+      "hash": "c9adab0",
+      "date": "2026-10-12",
+      "message": "changelog sync: record Wave B sync commit",
+      "files_changed": 3
+    },
     {
       "hash": "3b77e8e",
       "date": "2026-10-12",

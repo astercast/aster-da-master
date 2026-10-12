@@ -26,12 +26,10 @@ PAGE_OUT = ROOT / "changelog.html"
 
 SNAPSHOT = "2026-10-11"
 
-
 def git(*args: str) -> str:
     return subprocess.run(
         ["git", *args], cwd=ROOT, capture_output=True, text=True,
         check=True).stdout
-
 
 def main() -> int:
     log = git("log", "--format=%H|%ad|%s", "--date=short", "main")
@@ -101,9 +99,9 @@ def main() -> int:
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Changelog \u2014 Aster da Master</title>
   <meta name="description" content="The construction history of the Aster da Master archive, generated from the site's own git log.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Anton&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preload" href="assets/fonts/anton-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/css/fonts.css">
+
   <link rel="stylesheet" href="assets/css/tokens.css">
   <link rel="stylesheet" href="assets/css/base.css">
   <link rel="stylesheet" href="assets/css/layout.css">
@@ -232,7 +230,6 @@ def main() -> int:
 
     print(f"changelog: {len(entries)} entries -> changelog.html + JSON")
     return 0
-
 
 if __name__ == "__main__":
     sys.exit(main())

@@ -91,10 +91,8 @@ FOOTNAV = """      <nav aria-label="Footer">
         <a href="press-kit.html">Press kit</a>
       </nav>"""
 
-
 def fmt(n):
     return f"{n:,}"
-
 
 def main() -> int:
     releases = DATA["discography"]
@@ -185,9 +183,9 @@ def main() -> int:
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>At a glance — Aster da Master</title>
   <meta name="description" content="Aster da Master in 60 seconds: 219 transmissions, 257,394 plays, nine years, sixty-one sessions — every headline number from the verified archive.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Anton&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preload" href="assets/fonts/anton-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/css/fonts.css">
+
   <link rel="stylesheet" href="assets/css/tokens.css">
   <link rel="stylesheet" href="assets/css/base.css">
   <link rel="stylesheet" href="assets/css/layout.css">
@@ -294,7 +292,6 @@ def main() -> int:
     OUT.write_text(page, encoding="utf-8")
     print(f"glance: 1 page -> glance.html")
     return 0
-
 
 if __name__ == "__main__":
     raise SystemExit(main())
