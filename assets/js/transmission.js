@@ -909,15 +909,21 @@
   /* ---------- end card ---------- */
   function renderEnd() {
     var t = DATA.archive_totals;
+    /* The plays cell carries data-signal="plays": the Signal (Vercel Wave B)
+       repaints it with the live count when the function answers; the static
+       snapshot stands otherwise (badge is the honesty mechanism). */
+    var playsCell = '<div class="stat"><div class="stat-value"><span data-signal="plays">' +
+      fmt(t.plays) + '</span></div><div class="stat-label">Plays (' + DATA.plays_snapshot + " snapshot)</div></div>";
     $("tx-end-stats").innerHTML =
       statCell(fmt(t.transmissions), "Transmissions, 2018\u20132026") +
-      statCell(fmt(t.plays), "Plays (" + DATA.plays_snapshot + " snapshot)") +
+      playsCell +
       statCell(t.sessions, "Upload sessions") +
       statCell(stops.length, "Stops traversed");
     var box = $("tx-share-out");
     box.textContent = shareText();
     box.hidden = false;
     document.title = "Signal received \u00b7 Transmission \u2014 Aster da Master";
+    if (window.Signal) window.Signal.wireStats("tx-signal-badge");
   }
 
   /* ---------- wiring ---------- */

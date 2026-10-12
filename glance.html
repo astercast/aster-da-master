@@ -88,16 +88,17 @@
         <h1>Aster da Master in 60 seconds</h1>
         <p>Nine years of transmissions, every headline number from the verified archive. Sixty seconds here, or a lifetime in the <a href="releases/">full archive</a>.</p>
         <p class="chart-sub">Play counts are a 2026-10-11 snapshot and drift over time.</p>
+        <p class="signal-row"><span class="api-badge" id="glance-signal-badge" data-api-state="waking" role="status" aria-live="polite"></span></p>
       </div>
 
       <section class="section" aria-label="Headline numbers">
-        <div class="stat-grid"><div class="stat"><div class="stat-value">219</div><div class="stat-label">Transmissions archived</div></div><div class="stat"><div class="stat-value">257,394</div><div class="stat-label">SoundCloud plays (snapshot)</div></div><div class="stat"><div class="stat-value">2018–2026</div><div class="stat-label">Years of output</div></div><div class="stat"><div class="stat-value">61</div><div class="stat-label">Upload sessions</div></div><div class="stat"><div class="stat-value">34</div><div class="stat-label">Distributor releases</div></div><div class="stat"><div class="stat-value">21</div><div class="stat-label">Collaborators</div></div><div class="stat"><div class="stat-value">16</div><div class="stat-label">Codex families</div></div><div class="stat"><div class="stat-value">185</div><div class="stat-label">Vault tracks</div></div></div>
+        <div class="stat-grid"><div class="stat"><div class="stat-value">219</div><div class="stat-label">Transmissions archived</div></div><div class="stat"><div class="stat-value" data-signal="plays">257,394</div><div class="stat-label">SoundCloud plays (snapshot)</div></div><div class="stat"><div class="stat-value">2018–2026</div><div class="stat-label">Years of output</div></div><div class="stat"><div class="stat-value">61</div><div class="stat-label">Upload sessions</div></div><div class="stat"><div class="stat-value">34</div><div class="stat-label">Distributor releases</div></div><div class="stat"><div class="stat-value">21</div><div class="stat-label">Collaborators</div></div><div class="stat"><div class="stat-value">16</div><div class="stat-label">Codex families</div></div><div class="stat"><div class="stat-value" data-signal="tracks">185</div><div class="stat-label">Vault tracks</div></div></div>
       </section>
 
       <section class="section" aria-labelledby="g-top">
         <span class="kicker"><span class="numeral">&#10022;</span>The summit</span>
         <h2 id="g-top">Most played transmissions</h2>
-        <ol class="year-list"><li><a href="releases/take-me-prod-em-klebold.html">Take Me (prod. Em Klebold)</a> <span class="dim">30,088 plays &middot; 2018-02-04</span></li><li><a href="releases/soul-shaking-prod-fish-narc.html">Soul Shaking (prod. Fish Narc)</a> <span class="dim">12,944 plays &middot; 2018-01-03</span></li><li><a href="releases/candy-w-capoxxo-prod-razorwrist.html">candy w/ capoxxo(prod. razorwrist)</a> <span class="dim">11,587 plays &middot; 2019-10-04</span></li><li><a href="releases/contact-prod-born-hero-now-on-all-platforms.html">CONTACT! ~(prod Born Hero) [NOW ON ALL PLATFORMS!]</a> <span class="dim">10,646 plays &middot; 2019-04-07</span></li><li><a href="releases/night-mode-ft-max-ferrari-x-yung-vetta-x-jax.html">NIGHT MODE ft. MAX FERRARI x YUNG VETTA x JAX</a> <span class="dim">10,083 plays &middot; 2019-07-09</span></li></ol>
+        <ol class="year-list"><li><a href="releases/take-me-prod-em-klebold.html">Take Me (prod. Em Klebold)</a> <span class="dim"><span data-signal-top="Take Me (prod. Em Klebold)">30,088 plays</span> &middot; 2018-02-04</span></li><li><a href="releases/soul-shaking-prod-fish-narc.html">Soul Shaking (prod. Fish Narc)</a> <span class="dim"><span data-signal-top="Soul Shaking (prod. Fish Narc)">12,944 plays</span> &middot; 2018-01-03</span></li><li><a href="releases/candy-w-capoxxo-prod-razorwrist.html">candy w/ capoxxo(prod. razorwrist)</a> <span class="dim"><span data-signal-top="candy w/ capoxxo(prod. razorwrist)">11,587 plays</span> &middot; 2019-10-04</span></li><li><a href="releases/contact-prod-born-hero-now-on-all-platforms.html">CONTACT! ~(prod Born Hero) [NOW ON ALL PLATFORMS!]</a> <span class="dim"><span data-signal-top="CONTACT! ~(prod Born Hero) [NOW ON ALL PLATFORMS!]">10,646 plays</span> &middot; 2019-04-07</span></li><li><a href="releases/night-mode-ft-max-ferrari-x-yung-vetta-x-jax.html">NIGHT MODE ft. MAX FERRARI x YUNG VETTA x JAX</a> <span class="dim"><span data-signal-top="NIGHT MODE ft. MAX FERRARI x YUNG VETTA x JAX">10,083 plays</span> &middot; 2019-07-09</span></li></ol>
       </section>
 
       <section class="section" aria-labelledby="g-eras">
@@ -162,6 +163,13 @@
     </div>
   </footer>
   <script src="assets/js/common.js"></script>
+  <script src="assets/js/api-client.js"></script>
+  <script src="assets/js/signal.js"></script>
   <script src="assets/js/identity.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      if (window.Signal) window.Signal.wireStats("glance-signal-badge");
+    });
+  </script>
 </body>
 </html>

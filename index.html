@@ -130,6 +130,7 @@
         <div class="section-head reveal">
           <span class="kicker"><span class="numeral">I</span>Latest transmission</span>
           <h2 id="latest-h">Fresh from the source</h2>
+          <p class="signal-row"><span class="api-badge" id="feature-signal-badge" data-api-state="waking" role="status" aria-live="polite"></span></p>
         </div>
         <div class="feature reveal" id="feature">
           <div class="feature-art" aria-hidden="true">✦</div>
@@ -139,6 +140,13 @@
             <p>Every release, every platform, every signal — collected into one place. Check back soon.</p>
           </div>
         </div>
+        <ul class="year-list reveal" id="feature-uploads" aria-label="Newest uploads in the log">
+          <li><span class="dim">2026-10-02</span> turn up w me (prod_timmy)</li>
+          <li><span class="dim">2026-07-16</span> the peace of the spirit urn (prod +fiftyzeros)</li>
+          <li><span class="dim">2026-03-17</span> life’s made prod wellfed</li>
+          <li><span class="dim">2026-03-17</span> no power prod wellfed</li>
+          <li><span class="dim">2026-03-17</span> the night ends yeaaa prod wellfed</li>
+        </ul>
       </div>
     </section>
 
@@ -244,8 +252,14 @@
           <span class="kicker"><span class="numeral">VIII</span>The numbers</span>
           <h2 id="numbers-h">Let the work speak</h2>
           <p>Every figure below is computed live from the verified archive — play counts are a 2026-10-11 snapshot.</p>
+          <p class="signal-row"><span class="api-badge" id="index-stats-badge" data-api-state="waking" role="status" aria-live="polite"></span></p>
         </div>
-        <div class="stat-grid reveal" id="stat-cards"></div>
+        <div class="stat-grid reveal" id="stat-cards">
+          <article class="stat-card"><p class="stat-num" data-signal="plays">257,394</p><p class="stat-label">SoundCloud plays</p><p class="chart-sub">across <span data-signal="tracks">185</span> vault tracks · snapshot <span data-signal="snapshot">2026-10-11</span></p></article>
+          <article class="stat-card"><p class="stat-num">219</p><p class="stat-label">Transmissions on record</p><p class="chart-sub">34 distributor + 185 vault</p></article>
+          <article class="stat-card"><p class="stat-num">10</p><p class="stat-label">Years of output</p><p class="chart-sub">2017 – 2026</p></article>
+          <article class="stat-card"><p class="stat-num">Take Me (prod. Em Klebold)</p><p class="stat-label">Most played transmission</p><p class="chart-sub">30,088 plays</p></article>
+        </div>
         <div class="stat-cols">
           <div class="reveal">
             <h3 class="stat-h">Plays by year</h3>
@@ -402,6 +416,8 @@
   </footer>
 
   <script src="assets/js/common.js"></script>
+  <script src="assets/js/api-client.js"></script>
+  <script src="assets/js/signal.js"></script>
   <script src="assets/js/site.js"></script>
   <script src="assets/js/search.js"></script>
   <script src="assets/js/identity.js"></script>

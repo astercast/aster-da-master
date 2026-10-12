@@ -64,6 +64,11 @@
           "</div>";
       }
 
+      /* The Signal (Vercel Wave B): the newest-upload log goes live-first with
+         an honest cached fallback. The pre-rendered list in the HTML stands
+         until the function answers. */
+      if (window.Signal) window.Signal.wireUploads("feature-signal-badge", "feature-uploads");
+
       /* Discography — with provenance lines and a vault filter */
       var grid = document.getElementById("disco-grid");
       var discoMeta = document.getElementById("disco-meta");
@@ -274,6 +279,23 @@
           return '<article class="stat-card"><p class="stat-num">' + c.v + '</p>' +
             '<p class="stat-label">' + esc(c.l) + '</p><p class="chart-sub">' + esc(c.s) + "</p></article>";
         }).join("");
+        /* Keep the pre-rendered data-signal hooks on the live re-render, so a
+           later Signal refresh can repaint the fresh numbers in place. */
+        (function () {
+          var cards = statCards.querySelectorAll(".stat-card");
+          if (cards[0]) {
+            var num = cards[0].querySelector(".stat-num");
+            var sub = cards[0].querySelector(".chart-sub");
+            if (num) num.setAttribute("data-signal", "plays");
+            if (sub) sub.innerHTML = "across " + '<span data-signal="tracks">' + esc(String(vault.length)) + "</span>" +
+              ' vault tracks · snapshot <span data-signal="snapshot">2026-10-11</span>';
+          }
+        })();
+
+        /* The Signal (Vercel Wave B): live numbers first, honest fallback.
+           Pre-rendered cards above stand on their own; the wire only repaints
+           when the live function answers. */
+        if (window.Signal) window.Signal.wireStats("index-stats-badge");
 
         var playsBars = document.getElementById("plays-bars");
         if (playsBars) {

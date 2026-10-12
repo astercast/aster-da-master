@@ -120,7 +120,7 @@ def main() -> int:
     top5 = sorted(vault, key=lambda r: -(r.get("plays") or 0))[:5]
     top5_html = "".join(
         f'<li><a href="releases/{slug_of[id(r)]}.html">{escape(r["title"])}</a>'
-        f' <span class="dim">{fmt(r.get("plays") or 0)} plays'
+        f' <span class="dim"><span data-signal-top="{escape(r["title"], quote=True)}">{fmt(r.get("plays") or 0)} plays</span>'
         f' &middot; {escape(r.get("date") or "")}</span></li>'
         for r in top5
     )
@@ -163,19 +163,19 @@ def main() -> int:
     last = max(vault, key=lambda r: r.get("date") or "")
 
     stats = [
-        (fmt(len(releases)), "Transmissions archived"),
-        (fmt(total_plays), "SoundCloud plays (snapshot)"),
-        (year_span, "Years of output"),
-        (fmt(len(sessions)), "Upload sessions"),
-        (fmt(len(dist)), "Distributor releases"),
-        (fmt(len(collabs and CIRCLE)), "Collaborators"),
-        (fmt(len(families)), "Codex families"),
-        (fmt(len(vault)), "Vault tracks"),
+        (fmt(len(releases)), "Transmissions archived", ""),
+        (fmt(total_plays), "SoundCloud plays (snapshot)", ' data-signal="plays"'),
+        (year_span, "Years of output", ""),
+        (fmt(len(sessions)), "Upload sessions", ""),
+        (fmt(len(dist)), "Distributor releases", ""),
+        (fmt(len(collabs and CIRCLE)), "Collaborators", ""),
+        (fmt(len(families)), "Codex families", ""),
+        (fmt(len(vault)), "Vault tracks", ' data-signal="tracks"'),
     ]
     stat_html = "".join(
-        f'<div class="stat"><div class="stat-value">{escape(v)}</div>'
+        f'<div class="stat"><div class="stat-value"{attr}>{escape(v)}</div>'
         f'<div class="stat-label">{escape(l)}</div></div>'
-        for v, l in stats
+        for v, l, attr in stats
     )
 
     page = f"""<!DOCTYPE html>
@@ -225,6 +225,7 @@ def main() -> int:
         <h1>Aster da Master in 60 seconds</h1>
         <p>Nine years of transmissions, every headline number from the verified archive. Sixty seconds here, or a lifetime in the <a href="releases/">full archive</a>.</p>
         <p class="chart-sub">Play counts are a {SNAPSHOT} snapshot and drift over time.</p>
+        <p class="signal-row"><span class="api-badge" id="glance-signal-badge" data-api-state="waking" role="status" aria-live="polite"></span></p>
       </div>
 
       <section class="section" aria-label="Headline numbers">
@@ -279,7 +280,14 @@ def main() -> int:
     </div>
   </footer>
   <script src="assets/js/common.js"></script>
+  <script src="assets/js/api-client.js"></script>
+  <script src="assets/js/signal.js"></script>
   <script src="assets/js/identity.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {{
+      if (window.Signal) window.Signal.wireStats("glance-signal-badge");
+    }});
+  </script>
 </body>
 </html>
 """

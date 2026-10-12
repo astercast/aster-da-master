@@ -1,8 +1,26 @@
 {
   "generated": "2026-10-11",
   "method": "Parsed from `git log main`: every commit becomes an entry. The site documenting its own becoming.",
-  "entry_count": 82,
+  "entry_count": 85,
   "entries": [
+    {
+      "hash": "3b77e8e",
+      "date": "2026-10-12",
+      "message": "changelog sync: record Wave B commit",
+      "files_changed": 3
+    },
+    {
+      "hash": "a453f31",
+      "date": "2026-10-12",
+      "message": "Vercel Wave B: The Signal frontend integration — api-client.js (verbatim fallback contract), signal.js wiring, api-badge CSS, wired index/glance/transmission, GO_LIVE.md §11 template, API.md live functions",
+      "files_changed": 15
+    },
+    {
+      "hash": "321fb55",
+      "date": "2026-10-12",
+      "message": "Wave A: changelog sync (82 entries)",
+      "files_changed": 3
+    },
     {
       "hash": "e8560b2",
       "date": "2026-10-12",

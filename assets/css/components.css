@@ -1515,3 +1515,50 @@ html.js .reveal.in { opacity: 1; transform: none; }
 @media (max-width: 460px) {
   .ch-filter-grid { grid-template-columns: 1fr; }
 }
+
+/* ============================================================
+   THE SIGNAL — api-badge (Vercel Wave B, ARCHITECTURE.md §3.2)
+   Honesty pill for every live-wired widget. Four states:
+   live (phosphor green) · waking (dim pulse) · cached (amber) ·
+   none (hidden — pre-rendered static content stands alone).
+   Phosphor green is the signal/voice; amber is the heat —
+   same glyph language as the rest of the broadcast (●).
+   role="status" + aria-live="polite" are set on the markup,
+   so state changes are announced to screen readers.
+   ============================================================ */
+.signal-row { margin-top: var(--space-3); }
+.api-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45em;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-dim);
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-s);
+  padding: 0.3em 0.65em;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+.api-badge:empty { display: none; } /* no JS → no badge; static page stands */
+.api-badge::before { content: "\25CF"; font-size: 0.72em; line-height: 1; }
+.api-badge[data-api-state="live"] { color: var(--neon); border-color: var(--neon-dim); }
+.api-badge[data-api-state="live"]::before { color: var(--neon); }
+.api-badge[data-api-state="waking"] { color: var(--ink-dim); border-color: var(--line); }
+.api-badge[data-api-state="waking"]::before { color: var(--neon-dim); animation: api-badge-pulse 1.4s ease-in-out infinite; }
+.api-badge[data-api-state="cached"] { color: var(--gold-bright); border-color: rgba(245, 165, 36, 0.45); }
+.api-badge[data-api-state="cached"]::before { color: var(--gold); }
+.api-badge[data-api-state="none"] { display: none; }
+@keyframes api-badge-pulse {
+  0%, 100% { opacity: 0.35; }
+  50% { opacity: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .api-badge[data-api-state="waking"]::before { animation: none; opacity: 0.7; }
+}
+@media (max-width: 720px) {
+  .api-badge { font-size: 0.62rem; }
+}

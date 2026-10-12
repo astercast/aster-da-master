@@ -22,6 +22,44 @@ of truth; `data/artist.json` feeds the site renderer and mirrors it.
 - `api/v1/schema/artist.json` — JSON Schema (draft-07) for the artist record
 - `api/v1/schema/codex.json` — JSON Schema (draft-07) for the codex
 
+## Live functions — The Signal (Vercel, wave B)
+
+Unversioned server functions, same-origin only (`fetch("/api/stats")` needs no
+CORS). Every response uses the standard envelope (`ok`, `data`, `meta` with
+`service:"aster-signal"`, `generated_at`, `source`, `request_id`; schema:
+`api/v1/schema/envelope.json`). All `GET`s edge-cache 10 minutes
+(`s-maxage=600, stale-while-revalidate=86400`); 60 requests/min/IP. The static
+`api/v1/` files are the honest fallback — the frontend tries the function
+first (7s timeout) and keeps the published static data with a "cached ·
+updated HH:MM" badge when the function is cold or down (see
+`assets/js/api-client.js`, `assets/js/signal.js`). Numbers only — no content,
+no lyrics, no bio facts.
+
+- `GET /api/health` — service status: `ok`/`degraded` (never 5xx), per-instance
+  uptime, the function roster (`health`, `stats`, `uploads`, `cron/signal`),
+  `data_freshness` per static dependency vs the 24h SLA, boolean-only checks
+  (`static_fallback_present`, `cron_secret_configured`, `github_token_configured`).
+- `GET /api/stats` — fresh numbers dashboard payload, computed live from the
+  latest committed snapshot: `{tracks_captured, total_plays, snapshot_at,
+  top_tracks[{title, plays, delta_7d}], source}`. `delta_7d` is null until a
+  week of history exists (honest gap, never interpolated). Fallback:
+  `api/v1/stats-snapshots.json`.
+- `GET /api/uploads?since=&limit=` — new uploads since an ISO date (default
+  30d ago; `?since=` garbage → 400 `BAD_INPUT`; `?limit=` clamped 1–200):
+  `{since, count, uploads:[{title, uploaded_at, url, first_seen_at}]}`,
+  newest-first, titles + dates + permalinks only. Fallback:
+  `api/v1/uploads.json` (185 seeded rows).
+- `GET /api/cron/signal` — daily (UTC, `0 16 * * *`) incremental refresh:
+  SoundCloud api-v2 pull, play-count snapshot, new-upload detection, commit
+  `refresh-status.json` + snapshot row on change only. Requires
+  `Authorization: Bearer <CRON_SECRET>` (Vercel sends it automatically; 401
+  otherwise); 60s duplicate cooldown; idempotent. Read-only until
+  `GITHUB_REPO_TOKEN` is set — then it returns fresh data in the envelope
+  without persisting (`read_only:true`).
+
+Full hookup, env vars, cost rules, cold-start behavior, and rollback live in
+`GO_LIVE.md`. Not deployed until the user approves.
+
 ## Publication rule
 
 `research_status` gates everything. While it reads `PENDING`, no artist facts
