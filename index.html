@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Aster da Master — He Transcends Music</title>
-  <meta name="description" content="The all-in-one world of Aster da Master: music, transmissions, and everything beyond.">
+  <meta name="description" content="A pirate broadcast from the dark between frequencies: the archive, the eras, and the instruments of Aster da Master.">
   <link rel="preload" href="assets/fonts/anton-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/css/fonts.css">
 
@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="assets/css/layout.css">
   <link rel="stylesheet" href="assets/css/components.css">
   <link rel="stylesheet" href="assets/css/motifs.css">
+  <link rel="stylesheet" href="assets/css/home.css">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -24,73 +25,23 @@
         <span>ASTER DA MASTER</span>
       </a>
       <nav class="site-nav" aria-label="Primary">
-        <a href="#latest">Latest</a>
-        <a href="#discography">Discography</a>
-        <a href="releases/">Releases</a>
-        <a href="#listen">Listen</a>
-        <a href="#circle">Circle</a>
-        <a href="#about">About</a>
-        <a href="#connect">Connect</a>
-        <a href="#eras">Eras</a>
-        <a href="#numbers">Numbers</a>
-        <a href="#codex">Codex</a>
-        <a href="#deepcuts">Deep cuts</a>
-        <a href="#onthisday">On this day</a>
-        <a href="#lots">Cast lots</a>
-        <a href="#milestones">Milestones</a>
-        <a href="#watch">Milestone watch</a>
-        <a href="scene/">Scene</a>
-        <a href="timeline.html">Timeline</a>
-        <a href="chronicle.html">Chronicle</a>
         <a href="transmission.html">Transmission</a>
-        <a href="network.html">Network</a>
-        <a href="milestone-race.html">Race</a>
-        <a href="decoder.html">Decoder</a>
-        <a href="api-playground.html">API</a>
-        <a href="agents.html">Agents</a>
-        <a href="years/">Years</a>
-        <a href="method.html">Method</a>
-<a href="trilogy.html">Trilogy</a>
-        <a href="sessions.html">Sessions</a>
-        <a href="changelog.html">Changelog</a>
-        <a href="glance.html">Glance</a>
-        <a href="press-kit.html">Press kit</a>
+        <a href="releases/">Archive</a>
+        <a href="scene/">Scene</a>
+        <a href="#rooms">Rooms</a>
       </nav>
+      <button class="index-btn" id="index-open" type="button" aria-haspopup="dialog">
+        <span aria-hidden="true">▤</span> Index
+      </button>
       <details class="mnav">
         <summary><span class="bars" aria-hidden="true"><i></i><i></i><i></i></span>Menu</summary>
         <nav class="mnav-panel" aria-label="Mobile">
-        <a href="#latest">Latest</a>
-        <a href="#discography">Discography</a>
-        <a href="releases/">Releases</a>
-        <a href="#listen">Listen</a>
-        <a href="#circle">Circle</a>
-        <a href="#about">About</a>
-        <a href="#connect">Connect</a>
-        <a href="#eras">Eras</a>
-        <a href="#numbers">Numbers</a>
-        <a href="#codex">Codex</a>
-        <a href="#deepcuts">Deep cuts</a>
-        <a href="#onthisday">On this day</a>
-        <a href="#lots">Cast lots</a>
-        <a href="#milestones">Milestones</a>
-        <a href="#watch">Milestone watch</a>
-        <a href="scene/">Scene</a>
-        <a href="timeline.html">Timeline</a>
-        <a href="chronicle.html">Chronicle</a>
-        <a href="transmission.html">Transmission</a>
-        <a href="network.html">Network</a>
-        <a href="milestone-race.html">Race</a>
-        <a href="decoder.html">Decoder</a>
-        <a href="api-playground.html">API</a>
-        <a href="agents.html">Agents</a>
-        <a href="years/">Years</a>
-        <a href="method.html">Method</a>
-<a href="trilogy.html">Trilogy</a>
-        <a href="sessions.html">Sessions</a>
-        <a href="changelog.html">Changelog</a>
-        <a href="glance.html">Glance</a>
-        <a href="press-kit.html">Press kit</a>
-      
+          <a href="transmission.html">Transmission</a>
+          <a href="releases/">Archive</a>
+          <a href="scene/">Scene</a>
+          <a href="#rooms">Rooms</a>
+          <a href="#log">Station log</a>
+          <button class="index-btn" id="index-open-mobile" type="button" aria-haspopup="dialog"><span aria-hidden="true">▤</span> Full index</button>
         </nav>
       </details>
       <button class="search-btn" id="search-open" type="button" aria-label="Search the archive (keyboard shortcut: slash)">
@@ -98,6 +49,79 @@
       </button>
     </div>
   </header>
+
+  <dialog id="station-index" aria-labelledby="station-index-title">
+    <div class="index-inner">
+      <div class="index-head">
+        <p class="kicker" id="station-index-title"><span class="numeral">▤</span>The station index</p>
+        <form method="dialog"><button class="btn btn-sm" type="submit" aria-label="Close the index">✕ Close</button></form>
+      </div>
+      <div class="index-groups">
+        <section aria-labelledby="idx-onair">
+          <h3 id="idx-onair">On air</h3>
+          <ul>
+            <li><a href="transmission.html">The Broadcast <span>— the flagship journey, 13 stops</span></a></li>
+            <li><a href="glance.html">60-second glance <span>— the whole station in one minute</span></a></li>
+            <li><a href="#onthisday">On this day <span>— the calendar remembers</span></a></li>
+          </ul>
+        </section>
+        <section aria-labelledby="idx-archive">
+          <h3 id="idx-archive">The archive</h3>
+          <ul>
+            <li><a href="releases/">Releases <span>— 219 transmissions, in order</span></a></li>
+            <li><a href="#discography">Discography <span>— the filterable vault</span></a></li>
+            <li><a href="chronicle.html">Chronicle <span>— sessions, milestones, collaborations as one stream</span></a></li>
+            <li><a href="sessions.html">Sessions <span>— the 61 upload sessions</span></a></li>
+            <li><a href="sessions-explorer.html">Sessions explorer <span>— dig through every session</span></a></li>
+            <li><a href="timeline.html">Timeline <span>— the long view</span></a></li>
+            <li><a href="years/">Years <span>— year by year</span></a></li>
+            <li><a href="#firstlast">First &amp; last <span>— how each year opened and closed</span></a></li>
+            <li><a href="#numbers">The numbers <span>— plays, charts, leaderboards</span></a></li>
+            <li><a href="#milestones">Milestones <span>— the career told in firsts</span></a></li>
+            <li><a href="#watch">Milestone watch <span>— what to watch next</span></a></li>
+          </ul>
+        </section>
+        <section aria-labelledby="idx-circle">
+          <h3 id="idx-circle">Circle &amp; scene</h3>
+          <ul>
+            <li><a href="circle/">The circle <span>— voices on record with him</span></a></li>
+            <li><a href="#circle">Circle register <span>— the quick list</span></a></li>
+            <li><a href="scene/">The scene <span>— the wider orbit, 2026 activity</span></a></li>
+            <li><a href="producers/">Producers <span>— 113 as-credited architects</span></a></li>
+            <li><a href="codex/">The codex <span>— sixteen word-families</span></a></li>
+            <li><a href="#codex">Codex register <span>— the quick list</span></a></li>
+            <li><a href="codex-network.html">Codex network <span>— the families as a map</span></a></li>
+            <li><a href="network.html">Network <span>— the collaboration graph</span></a></li>
+          </ul>
+        </section>
+        <section aria-labelledby="idx-tools">
+          <h3 id="idx-tools">Instruments</h3>
+          <ul>
+            <li><a href="milestone-race.html">Milestone race <span>— head-to-head tools, the climb, the record book</span></a></li>
+            <li><a href="decoder.html">Decoder <span>— read the titles like a local</span></a></li>
+            <li><a href="#deepcuts">Deep cuts <span>— fifteen the algorithm forgot</span></a></li>
+            <li><a href="#lots">Cast lots <span>— summon a random transmission</span></a></li>
+            <li><a href="api-playground.html">API playground <span>— query the archive like a machine</span></a></li>
+            <li><a href="agents.html">Agents <span>— the 15 skills that run this station</span></a></li>
+            <li><a href="press-kit.html">Press kit <span>— facts, figures, assets</span></a></li>
+          </ul>
+        </section>
+        <section aria-labelledby="idx-station">
+          <h3 id="idx-station">Station</h3>
+          <ul>
+            <li><a href="#eras">The eras <span>— nine years, six rites</span></a></li>
+            <li><a href="#about">About <span>— what the sources actually say</span></a></li>
+            <li><a href="#listen">Listen <span>— every platform carrying the signal</span></a></li>
+            <li><a href="#connect">Connect <span>— booking and contact</span></a></li>
+            <li><a href="trilogy.html">Trilogy watch <span>— the unconfirmed third act</span></a></li>
+            <li><a href="method.html">Method <span>— how this archive is built</span></a></li>
+            <li><a href="changelog.html">Changelog <span>— the intercept log</span></a></li>
+          </ul>
+        </section>
+      </div>
+      <p class="index-foot">Lost? <a href="#lots">Cast lots</a> — the archive decides.</p>
+    </div>
+  </dialog>
 
   <div class="search-overlay" id="search-overlay" hidden>
     <div class="search-box" role="dialog" aria-modal="true" aria-labelledby="search-title">
@@ -109,148 +133,27 @@
   </div>
 
   <main id="main">
-    <section class="hero" id="top" aria-labelledby="hero-title">
+    <section class="hero hero-signon" id="top" aria-labelledby="hero-title">
       <div class="container hero-inner">
-        <span class="hero-kicker">// transmission from beyond genre</span>
+        <span class="hero-kicker">// a pirate broadcast from the dark between frequencies</span>
         <h1 class="hero-title" id="hero-title">ASTER <span class="mark">DA</span> MASTER</h1>
-        <p class="hero-sub">He transcends music</p>
+        <p class="hero-sub">He transcends music.</p>
+        <p class="hero-stats">2017–2026 <span aria-hidden="true">·</span> 219 transmissions <span aria-hidden="true">·</span> 185 vault tracks <span aria-hidden="true">·</span> <span data-signal="plays">257,394</span> plays</p>
         <div class="hero-cta">
-          <a class="btn btn-neon" href="#listen">Listen everywhere</a>
-          <a class="btn" href="#discography">Enter the archive</a>
-          <a class="btn" href="glance.html">60-second glance</a>
+          <a class="btn btn-neon btn-hero" href="transmission.html">▶ Begin the transmission</a>
         </div>
+        <p class="hero-alt">Short on time? <a href="glance.html">Take the 60-second glance →</a></p>
       </div>
-      <span class="hero-scroll" aria-hidden="true">Descend</span>
+      <span class="hero-scroll" aria-hidden="true">Tune down</span>
     </section>
 
     <div class="wire" aria-hidden="true"><div class="wire-track" id="wire-track"></div></div>
 
-    <section class="section" id="latest" aria-labelledby="latest-h">
-      <div class="container">
-        <div class="section-head reveal">
-          <span class="kicker"><span class="numeral">I</span>Latest transmission</span>
-          <h2 id="latest-h">Fresh from the source</h2>
-          <p class="signal-row"><span class="api-badge" id="feature-signal-badge" data-api-state="waking" role="status" aria-live="polite"></span></p>
-        </div>
-        <div class="feature reveal" id="feature">
-          <div class="feature-art" aria-hidden="true">✦</div>
-          <div>
-            <p class="feature-meta">Assembling the archive</p>
-            <h3>The transmissions are being gathered</h3>
-            <p>Every release, every platform, every signal — collected into one place. Check back soon.</p>
-          </div>
-        </div>
-        <ul class="year-list reveal" id="feature-uploads" aria-label="Newest uploads in the log">
-          <li><span class="dim">2026-10-02</span> turn up w me (prod_timmy)</li>
-          <li><span class="dim">2026-07-16</span> the peace of the spirit urn (prod +fiftyzeros)</li>
-          <li><span class="dim">2026-03-17</span> life’s made prod wellfed</li>
-          <li><span class="dim">2026-03-17</span> no power prod wellfed</li>
-          <li><span class="dim">2026-03-17</span> the night ends yeaaa prod wellfed</li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="section" id="discography" aria-labelledby="disco-h">
-      <div class="container">
-        <div class="section-head reveal">
-          <span class="kicker"><span class="numeral">II</span>Discography</span>
-          <h2 id="disco-h">The archive</h2>
-          <p id="disco-meta">Every transmission on record, in order.</p>
-        </div>
-        <div class="disco-filters reveal" role="group" aria-label="Filter the archive">
-          <button class="btn btn-sm is-on" type="button" data-disco-filter="all" aria-pressed="true">All</button>
-          <button class="btn btn-sm" type="button" data-disco-filter="Album" aria-pressed="false">Albums</button>
-          <button class="btn btn-sm" type="button" data-disco-filter="Single" aria-pressed="false">Singles</button>
-          <button class="btn btn-sm" type="button" data-disco-filter="vault" aria-pressed="false">SoundCloud vault</button>
-        </div>
-        <div class="vault-note reveal" id="vault-note" hidden>
-          <p></p>
-        </div>
-        <div class="disco-grid" id="disco-grid">
-          <article class="disco-card reveal">
-            <span class="type">Archive</span>
-            <h3>Gathering signals…</h3>
-            <p class="date">The full discography is being researched across every platform.</p>
-          </article>
-        </div>
-        <div class="horizon reveal" id="horizon" hidden>
-          <p class="kicker"><span class="numeral">&#10022;</span>On the horizon</p>
-          <ul id="horizon-list"></ul>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="listen" aria-labelledby="listen-h">
-      <div class="container">
-        <div class="section-head reveal">
-          <span class="kicker"><span class="numeral">III</span>Listen everywhere</span>
-          <h2 id="listen-h">Tune in</h2>
-          <p>Every platform carrying the signal.</p>
-        </div>
-        <div class="platform-grid" id="platform-grid">
-          <span class="chart-sub reveal">Platform links incoming.</span>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="circle" aria-labelledby="circle-h">
-      <div class="container">
-        <div class="section-head reveal">
-          <span class="kicker"><span class="numeral">IV</span>The circle</span>
-          <h2 id="circle-h">Fellow travelers</h2>
-          <p>The voices, producers, and collectives on record with him — verified credits, marked where single-sourced.</p>
-        </div>
-        <div class="circle-grid reveal" id="circle-grid"></div>
-      </div>
-    </section>
-
-    <section class="section" id="about" aria-labelledby="about-h">
-      <div class="container">
-        <div class="section-head reveal">
-          <span class="kicker"><span class="numeral">V</span>About</span>
-          <h2 id="about-h">Beyond category</h2>
-        </div>
-        <div class="about-grid">
-          <div class="reveal" id="bio">
-            <p class="lede">Not a rapper. Not a genre. A transmission.</p>
-            <p>The full story is being written from the sources.</p>
-          </div>
-          <div class="reveal">
-            <ul class="fact-list" id="fact-list"></ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="connect" aria-labelledby="connect-h">
-      <div class="container">
-        <div class="section-head reveal">
-          <span class="kicker"><span class="numeral">VI</span>Connect</span>
-          <h2 id="connect-h">Join the signal</h2>
-          <p>Follow everywhere. Booking and contact below.</p>
-        </div>
-        <div class="connect-grid" id="connect-grid"></div>
-        <hr class="rule">
-        <div id="booking"></div>
-      </div>
-    </section>
-
-    <section class="section" id="eras" aria-labelledby="eras-h">
-      <div class="container">
-        <div class="section-head reveal">
-          <span class="kicker"><span class="numeral">VII</span>Eras</span>
-          <h2 id="eras-h">Nine years, six rites</h2>
-          <p>The catalog's arc, read from verified distributor records — staged like mythology, stated like fact.</p>
-        </div>
-        <div class="era-list reveal" id="eras-list"></div>
-      </div>
-    </section>
-
     <section class="section" id="numbers" aria-labelledby="numbers-h">
       <div class="container">
         <div class="section-head reveal">
-          <span class="kicker"><span class="numeral">VIII</span>The numbers</span>
-          <h2 id="numbers-h">Let the work speak</h2>
+          <span class="kicker"><span class="numeral">I</span>Station status</span>
+          <h2 id="numbers-h">The signal, in numbers</h2>
           <p>Every figure below is computed live from the verified archive — play counts are a 2026-10-11 snapshot.</p>
           <p class="signal-row"><span class="api-badge" id="index-stats-badge" data-api-state="waking" role="status" aria-live="polite"></span></p>
         </div>
@@ -260,119 +163,283 @@
           <article class="stat-card"><p class="stat-num">10</p><p class="stat-label">Years of output</p><p class="chart-sub">2017 – 2026</p></article>
           <article class="stat-card"><p class="stat-num">Take Me (prod. Em Klebold)</p><p class="stat-label">Most played transmission</p><p class="chart-sub">30,088 plays</p></article>
         </div>
-        <div class="stat-cols">
-          <div class="reveal">
-            <h3 class="stat-h">Plays by year</h3>
-            <div class="bars" id="plays-bars" role="img" aria-label="Bar chart of SoundCloud plays per year"></div>
+        <details class="log-drawer reveal">
+          <summary><span class="kicker"><span class="numeral">▸</span>Charts &amp; leaderboards</span><span class="drawer-line">Plays by year, top transmissions, current heat, most-summoned collaborators.</span></summary>
+          <div class="drawer-body">
+            <div class="stat-cols">
+              <div>
+                <h3 class="stat-h">Plays by year</h3>
+                <div class="bars" id="plays-bars" role="img" aria-label="Bar chart of SoundCloud plays per year"></div>
+              </div>
+              <div>
+                <h3 class="stat-h">Transmissions by year</h3>
+                <div class="bars" id="tracks-bars" role="img" aria-label="Bar chart of tracks per year, vault and distributor"></div>
+              </div>
+            </div>
+            <div class="stat-cols">
+              <div>
+                <h3 class="stat-h">Most played transmissions</h3>
+                <ol class="top-list" id="top-tracks"></ol>
+              </div>
+              <div>
+                <h3 class="stat-h">Hottest right now — plays per day</h3>
+                <p class="chart-sub">Plays &divide; days since upload, from the 2026-10-11 snapshot. Favors recent uploads by construction &mdash; catalog depth vs. current heat.</p>
+                <ol class="top-list" id="top-velocity"></ol>
+              </div>
+            </div>
+            <div class="stat-cols">
+              <div>
+                <h3 class="stat-h">Most summoned collaborators</h3>
+                <p class="chart-sub">Parsed from <em>w/</em> and <em>ft.</em> credits in titles — as credited, verbatim.</p>
+                <ol class="top-list" id="top-collabs"></ol>
+              </div>
+            </div>
           </div>
-          <div class="reveal">
-            <h3 class="stat-h">Transmissions by year</h3>
-            <div class="bars" id="tracks-bars" role="img" aria-label="Bar chart of tracks per year, vault and distributor"></div>
-          </div>
+        </details>
+      </div>
+    </section>
+
+    <section class="section" id="fresh" aria-labelledby="fresh-h">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="kicker"><span class="numeral">II</span>Latest transmission</span>
+          <h2 id="fresh-h">Fresh from the source</h2>
+          <p class="signal-row"><span class="api-badge" id="feature-signal-badge" data-api-state="waking" role="status" aria-live="polite"></span></p>
         </div>
-        <div class="stat-cols">
-          <div class="reveal">
-            <h3 class="stat-h">Most played transmissions</h3>
-            <ol class="top-list" id="top-tracks"></ol>
+        <div class="fresh-grid">
+          <div id="latest">
+            <div class="feature reveal" id="feature">
+              <div class="feature-art" aria-hidden="true">✦</div>
+              <div>
+                <p class="feature-meta">Latest transmission</p>
+                <h3>Living With The Big Shots</h3>
+                <p>The most recent distributor release on record — May 2026.</p>
+              </div>
+            </div>
+            <ul class="year-list reveal" id="feature-uploads" aria-label="Newest uploads in the log">
+              <li><span class="dim">2026-10-02</span> turn up w me (prod_timmy)</li>
+              <li><span class="dim">2026-07-16</span> the peace of the spirit urn (prod +fiftyzeros)</li>
+              <li><span class="dim">2026-03-17</span> life’s made prod wellfed</li>
+              <li><span class="dim">2026-03-17</span> no power prod wellfed</li>
+              <li><span class="dim">2026-03-17</span> the night ends yeaaa prod wellfed</li>
+            </ul>
           </div>
-          <div class="reveal">
-            <h3 class="stat-h">Hottest right now — plays per day</h3>
-            <p class="chart-sub">Plays &divide; days since upload, from the 2026-10-11 snapshot. Favors recent uploads by construction &mdash; catalog depth vs. current heat.</p>
-            <ol class="top-list" id="top-velocity"></ol>
-          </div>
-        </div>
-        <div class="stat-cols">
-          <div class="reveal">
-            <h3 class="stat-h">Most summoned collaborators</h3>
-            <p class="chart-sub">Parsed from <em>w/</em> and <em>ft.</em> credits in titles — as credited, verbatim.</p>
-            <ol class="top-list" id="top-collabs"></ol>
-          </div>
+          <aside class="keepers-note reveal" aria-labelledby="keepers-note-h">
+            <p class="kicker"><span class="numeral">✦</span>Keeper's note</p>
+            <h3 id="keepers-note-h">New here? Start with "Take Me."</h3>
+            <p>It's the most-played transmission in the archive — 30,088 plays — and the summit everything else is still climbing toward. Then <a href="#lots">cast lots</a> below and let the vault surprise you.</p>
+            <p class="chart-sub">— the keeper of this station</p>
+          </aside>
         </div>
       </div>
     </section>
 
-    <section class="section" id="codex" aria-labelledby="codex-h">
+    <section class="section" id="rooms" aria-labelledby="rooms-h">
       <div class="container">
         <div class="section-head reveal">
-          <span class="kicker"><span class="numeral">IX</span>The codex</span>
-          <h2 id="codex-h">The vocabulary of the rites</h2>
-          <p>His titles run on ritual words — modes, castings, vessels, wards. This codex counts them: sixteen families, every claim a tally of titles. No meanings invented; the words speak.</p>
+          <span class="kicker"><span class="numeral">III</span>The station</span>
+          <h2 id="rooms-h">Four rooms, one signal</h2>
+          <p>Everything this station carries lives behind these doors. Pick one — nothing here will shout at you.</p>
         </div>
-        <div class="codex-grid reveal" id="codex-grid"></div>
-      </div>
-    </section>
-
-    <section class="section" id="deepcuts" aria-labelledby="deepcuts-h">
-      <div class="container">
-        <div class="section-head reveal">
-          <span class="kicker"><span class="numeral">X</span>The buried transmissions</span>
-          <h2 id="deepcuts-h">Deep cuts</h2>
-          <p>Fifteen vault tracks the algorithm forgot — the lowest-play transmissions uploaded before 2025, every one with years to breathe. The signal was always there; hardly anyone tuned in.</p>
+        <div class="rooms-grid">
+          <article class="room-card reveal">
+            <p class="kicker">01 · The flagship</p>
+            <h3><a href="transmission.html">The Broadcast</a></h3>
+            <p>Thirteen stops, 2017 to 2026 — the eras, the data chapters, the race, the deep cuts. This is the way in.</p>
+            <p class="room-sub">Also: <a href="glance.html">the 60-second glance</a></p>
+            <span class="room-go" aria-hidden="true">→</span>
+          </article>
+          <article class="room-card reveal">
+            <p class="kicker">02 · 219 on record</p>
+            <h3><a href="releases/">The Archive</a></h3>
+            <p>Every transmission in order — 34 distributor releases and the full 185-track SoundCloud vault.</p>
+            <p class="room-sub">Also: <a href="chronicle.html">chronicle</a> · <a href="sessions-explorer.html">sessions explorer</a> · <a href="timeline.html">timeline</a></p>
+            <span class="room-go" aria-hidden="true">→</span>
+          </article>
+          <article class="room-card reveal">
+            <p class="kicker">03 · The wider orbit</p>
+            <h3><a href="circle/">The Circle</a></h3>
+            <p>The voices, producers, and collectives on record with him — verified credits, single-source flags where they apply.</p>
+            <p class="room-sub">Also: <a href="scene/">the scene</a> · <a href="producers/">producers</a> · <a href="codex/">the codex</a> · <a href="network.html">network</a></p>
+            <span class="room-go" aria-hidden="true">→</span>
+          </article>
+          <article class="room-card reveal">
+            <p class="kicker">04 · Hands on</p>
+            <h3><a href="milestone-race.html">The Instruments</a></h3>
+            <p>Race any two tracks head-to-head, climb the leaderboard, decode the titles. The station's tools, kept sharp.</p>
+            <p class="room-sub">Also: <a href="decoder.html">decoder</a> · <a href="api-playground.html">API playground</a> · <a href="agents.html">agents</a> · <a href="press-kit.html">press kit</a></p>
+            <span class="room-go" aria-hidden="true">→</span>
+          </article>
         </div>
-        <ol class="cuts-grid reveal" id="deepcuts-grid"></ol>
-        <p class="chart-sub reveal" id="deepcuts-note" hidden>Ranked by play count, ascending · snapshot 2026-10-11 · all streaming on the <a href="https://soundcloud.com/asterdamaster" target="_blank" rel="noopener">official SoundCloud</a>.</p>
-      </div>
-    </section>
-
-    <section class="section" id="onthisday" aria-labelledby="onthisday-h">
-      <div class="container">
-        <div class="section-head reveal">
-          <span class="kicker"><span class="numeral">XI</span>On this day</span>
-          <h2 id="onthisday-h">The calendar remembers</h2>
-          <p id="onthisday-sub">Transmissions that landed on today's date, across all nine years.</p>
-        </div>
-        <ol class="otd-list reveal" id="onthisday-list"></ol>
       </div>
     </section>
 
     <section class="section" id="lots" aria-labelledby="lots-h">
       <div class="container">
-        <div class="section-head reveal">
-          <span class="kicker"><span class="numeral">XII</span>Cast lots</span>
-          <h2 id="lots-h">Summon a random transmission</h2>
-          <p>Leave it to chance. One vault track, drawn blind from the archive.</p>
-        </div>
-        <div class="lots-wrap reveal">
+        <div class="lots-strip reveal">
+          <div>
+            <span class="kicker"><span class="numeral">IV</span>Cast lots</span>
+            <h2 id="lots-h">Feeling lucky?</h2>
+            <p>One vault track, drawn blind from the archive. No skips, no take-backs.</p>
+          </div>
           <button class="btn btn-neon" id="summon-btn" type="button">&#10022; Summon a transmission</button>
-          <div id="lots-result" aria-live="polite"></div>
         </div>
-      </div>
-    </section>
-    <section class="section" id="milestones" aria-labelledby="milestones-h">
-      <div class="container">
-        <div class="section-head reveal">
-          <span class="kicker"><span class="numeral">XIII</span>Milestones</span>
-          <h2 id="milestones-h">The career, told in firsts</h2>
-          <p>Every milestone below is computed from the verified archive — firsts, records, and the silences between. No narrative invented; the data keeps the score.</p>
-        </div>
-        <ol class="ms-list reveal" id="milestones-list"></ol>
-        <p class="chart-sub reveal">Computed live from the archive · play counts are a 2026-10-11 snapshot · also at <a href="api/v1/milestones.json">api/v1/milestones.json</a></p>
+        <div id="lots-result" aria-live="polite"></div>
       </div>
     </section>
 
-    <section class="section" id="firstlast" aria-labelledby="firstlast-h">
+    <section class="section" id="log" aria-labelledby="log-h">
       <div class="container">
         <div class="section-head reveal">
-          <span class="kicker"><span class="numeral">XIV</span>First &amp; last</span>
-          <h2 id="firstlast-h">How each year opened and closed</h2>
-          <p>Nine years, eighteen bookends. The year opened with one transmission and closed with another — pure chronology, no narrative added.</p>
+          <span class="kicker"><span class="numeral">V</span>The station log</span>
+          <h2 id="log-h">Everything else, on demand</h2>
+          <p>The deep shelves live in these drawers. Open what you want — the station keeps its voice down.</p>
         </div>
-        <ol class="fl-grid reveal" id="firstlast-grid"></ol>
-        <p class="chart-sub reveal">Computed live from the archive · also at <a href="api/v1/first-last.json">api/v1/first-last.json</a></p>
+
+        <details class="log-drawer reveal">
+          <summary><span class="kicker"><span class="numeral">01</span>Discography</span><span class="drawer-line">The full archive — every transmission on record, filterable by kind.</span></summary>
+          <div class="drawer-body" id="discography" aria-labelledby="disco-h">
+            <h3 id="disco-h" class="drawer-h">The archive</h3>
+            <p id="disco-meta">Every transmission on record, in order.</p>
+            <div class="disco-filters" role="group" aria-label="Filter the archive">
+              <button class="btn btn-sm is-on" type="button" data-disco-filter="all" aria-pressed="true">All</button>
+              <button class="btn btn-sm" type="button" data-disco-filter="Album" aria-pressed="false">Albums</button>
+              <button class="btn btn-sm" type="button" data-disco-filter="Single" aria-pressed="false">Singles</button>
+              <button class="btn btn-sm" type="button" data-disco-filter="vault" aria-pressed="false">SoundCloud vault</button>
+            </div>
+            <div class="vault-note" id="vault-note" hidden>
+              <p></p>
+            </div>
+            <div class="disco-grid" id="disco-grid">
+              <article class="disco-card">
+                <span class="type">Archive</span>
+                <h3>Gathering signals…</h3>
+                <p class="date">The full discography is being researched across every platform.</p>
+              </article>
+            </div>
+            <div class="horizon" id="horizon" hidden>
+              <p class="kicker"><span class="numeral">&#10022;</span>On the horizon</p>
+              <ul id="horizon-list"></ul>
+            </div>
+          </div>
+        </details>
+
+        <details class="log-drawer reveal">
+          <summary><span class="kicker"><span class="numeral">02</span>Listen</span><span class="drawer-line">Every platform carrying the signal.</span></summary>
+          <div class="drawer-body" id="listen" aria-labelledby="listen-h">
+            <h3 id="listen-h" class="drawer-h">Tune in</h3>
+            <div class="platform-grid" id="platform-grid">
+              <span class="chart-sub">Platform links incoming.</span>
+            </div>
+          </div>
+        </details>
+
+        <details class="log-drawer reveal">
+          <summary><span class="kicker"><span class="numeral">03</span>The circle</span><span class="drawer-line">Fellow travelers — the voices and producers on record with him.</span></summary>
+          <div class="drawer-body" id="circle" aria-labelledby="circle-h">
+            <h3 id="circle-h" class="drawer-h">Fellow travelers</h3>
+            <p>The voices, producers, and collectives on record with him — verified credits, marked where single-sourced. Full dossiers at <a href="circle/">the circle</a>.</p>
+            <div class="circle-grid" id="circle-grid"></div>
+          </div>
+        </details>
+
+        <details class="log-drawer reveal">
+          <summary><span class="kicker"><span class="numeral">04</span>About</span><span class="drawer-line">Beyond category — what the sources actually say.</span></summary>
+          <div class="drawer-body" id="about" aria-labelledby="about-h">
+            <h3 id="about-h" class="drawer-h">Beyond category</h3>
+            <div class="about-grid">
+              <div id="bio">
+                <p class="lede">Not a rapper. Not a genre. A transmission.</p>
+                <p>The full story is being written from the sources.</p>
+              </div>
+              <div>
+                <ul class="fact-list" id="fact-list"></ul>
+              </div>
+            </div>
+          </div>
+        </details>
+
+        <details class="log-drawer reveal">
+          <summary><span class="kicker"><span class="numeral">05</span>Connect</span><span class="drawer-line">Booking and contact.</span></summary>
+          <div class="drawer-body" id="connect" aria-labelledby="connect-h">
+            <h3 id="connect-h" class="drawer-h">Join the signal</h3>
+            <p>No public booking contact on record — the signal goes out through the platforms in <a href="#listen">Listen</a>.</p>
+            <div class="connect-grid" id="connect-grid"></div>
+            <hr class="rule">
+            <div id="booking"></div>
+          </div>
+        </details>
+
+        <details class="log-drawer reveal">
+          <summary><span class="kicker"><span class="numeral">06</span>The codex</span><span class="drawer-line">The vocabulary of the rites — sixteen word-families, counted from titles.</span></summary>
+          <div class="drawer-body" id="codex" aria-labelledby="codex-h">
+            <h3 id="codex-h" class="drawer-h">The vocabulary of the rites</h3>
+            <p>His titles run on ritual words — modes, castings, vessels, wards. This codex counts them: sixteen families, every claim a tally of titles. No meanings invented; the words speak. Full entries at <a href="codex/">the codex</a>.</p>
+            <div class="codex-grid" id="codex-grid"></div>
+          </div>
+        </details>
+
+        <details class="log-drawer reveal">
+          <summary><span class="kicker"><span class="numeral">07</span>Deep cuts</span><span class="drawer-line">The buried transmissions — fifteen the algorithm forgot.</span></summary>
+          <div class="drawer-body" id="deepcuts" aria-labelledby="deepcuts-h">
+            <h3 id="deepcuts-h" class="drawer-h">Deep cuts</h3>
+            <p>Fifteen vault tracks the algorithm forgot — the lowest-play transmissions uploaded before 2025, every one with years to breathe. The signal was always there; hardly anyone tuned in.</p>
+            <ol class="cuts-grid" id="deepcuts-grid"></ol>
+            <p class="chart-sub" id="deepcuts-note" hidden>Ranked by play count, ascending · snapshot 2026-10-11 · all streaming on the <a href="https://soundcloud.com/asterdamaster" target="_blank" rel="noopener">official SoundCloud</a>.</p>
+          </div>
+        </details>
+
+        <details class="log-drawer reveal">
+          <summary><span class="kicker"><span class="numeral">08</span>On this day</span><span class="drawer-line">The calendar remembers.</span></summary>
+          <div class="drawer-body" id="onthisday" aria-labelledby="onthisday-h">
+            <h3 id="onthisday-h" class="drawer-h">The calendar remembers</h3>
+            <p id="onthisday-sub">Transmissions that landed on today's date, across all nine years.</p>
+            <ol class="otd-list" id="onthisday-list"></ol>
+          </div>
+        </details>
+
+        <details class="log-drawer reveal">
+          <summary><span class="kicker"><span class="numeral">09</span>Milestones</span><span class="drawer-line">The career, told in firsts.</span></summary>
+          <div class="drawer-body" id="milestones" aria-labelledby="milestones-h">
+            <h3 id="milestones-h" class="drawer-h">The career, told in firsts</h3>
+            <p>Every milestone below is computed from the verified archive — firsts, records, and the silences between. No narrative invented; the data keeps the score.</p>
+            <ol class="ms-list" id="milestones-list"></ol>
+            <p class="chart-sub">Computed live from the archive · play counts are a 2026-10-11 snapshot · also at <a href="data/v1/milestones.json">data/v1/milestones.json</a></p>
+          </div>
+        </details>
+
+        <details class="log-drawer reveal">
+          <summary><span class="kicker"><span class="numeral">10</span>First &amp; last</span><span class="drawer-line">How each year opened and closed.</span></summary>
+          <div class="drawer-body" id="firstlast" aria-labelledby="firstlast-h">
+            <h3 id="firstlast-h" class="drawer-h">How each year opened and closed</h3>
+            <p>Nine years, eighteen bookends. The year opened with one transmission and closed with another — pure chronology, no narrative added.</p>
+            <ol class="fl-grid" id="firstlast-grid"></ol>
+            <p class="chart-sub">Computed live from the archive · also at <a href="data/v1/first-last.json">data/v1/first-last.json</a></p>
+          </div>
+        </details>
+
+        <details class="log-drawer reveal">
+          <summary><span class="kicker"><span class="numeral">11</span>Milestone watch</span><span class="drawer-line">What to watch — the next round numbers.</span></summary>
+          <div class="drawer-body" id="watch" aria-labelledby="watch-h">
+            <h3 id="watch-h" class="drawer-h">What to watch</h3>
+            <p>Transmissions closing in on round-number play counts — the next milestones, as of the snapshot. Not a live leaderboard; the data keeps the score.</p>
+            <div id="watch-summit"></div>
+            <div id="watch-bands"></div>
+            <p><a class="btn" href="milestone-race.html">Race the milestones &rarr;</a> <span class="chart-sub">every approaching milestone ranked, the 30,088-play summit chase, and the record book.</span></p>
+            <p class="chart-sub">Computed live from the archive · play counts are a 2026-10-11 snapshot · also at <a href="data/v1/milestone-watch.json">data/v1/milestone-watch.json</a></p>
+          </div>
+        </details>
       </div>
     </section>
 
-    <section class="section" id="watch" aria-labelledby="watch-h">
+    <section class="section" id="eras" aria-labelledby="eras-h">
       <div class="container">
         <div class="section-head reveal">
-          <span class="kicker"><span class="numeral">XV</span>Milestone watch</span>
-          <h2 id="watch-h">What to watch</h2>
-          <p>Transmissions closing in on round-number play counts — the next milestones, as of the snapshot. Not a live leaderboard; the data keeps the score.</p>
+          <span class="kicker"><span class="numeral">VI</span>Eras</span>
+          <h2 id="eras-h">Nine years, six rites</h2>
+          <p>The catalog's arc, read from verified distributor records — staged like mythology, stated like fact. Open any rite for its intelligence.</p>
         </div>
-        <div class="reveal" id="watch-summit"></div>
-        <div id="watch-bands"></div>
-        <p class="reveal"><a class="btn" href="milestone-race.html">Race the milestones &rarr;</a> <span class="chart-sub">every approaching milestone ranked, the 30,088-play summit chase, and the record book.</span></p>
-        <p class="chart-sub reveal">Computed live from the archive · play counts are a 2026-10-11 snapshot · also at <a href="api/v1/milestone-watch.json">api/v1/milestone-watch.json</a></p>
+        <div class="era-list reveal" id="eras-list"></div>
       </div>
     </section>
   </main>
@@ -381,36 +448,26 @@
     <div class="container footer-grid">
       <p>© 2026 ASTER DA MASTER — ALL SIGNALS RESERVED</p>
       <nav aria-label="Footer">
-        <a href="#latest">Latest</a>
-        <a href="#discography">Discography</a>
-        <a href="releases/">Releases</a>
-        <a href="#listen">Listen</a>
-        <a href="#circle">Circle</a>
-        <a href="#connect">Connect</a>
-        <a href="#eras">Eras</a>
-        <a href="#numbers">Numbers</a>
-        <a href="#codex">Codex</a>
-        <a href="#deepcuts">Deep cuts</a>
-        <a href="#onthisday">On this day</a>
-        <a href="#lots">Cast lots</a>
-        <a href="#milestones">Milestones</a>
-        <a href="#watch">Milestone watch</a>
-        <a href="scene/">Scene</a>
-        <a href="timeline.html">Timeline</a>
-        <a href="chronicle.html">Chronicle</a>
+        <a href="#top">Top</a>
         <a href="transmission.html">Transmission</a>
+        <a href="releases/">Releases</a>
+        <a href="glance.html">Glance</a>
+        <a href="chronicle.html">Chronicle</a>
+        <a href="timeline.html">Timeline</a>
+        <a href="circle/">Circle</a>
+        <a href="scene/">Scene</a>
+        <a href="producers/">Producers</a>
+        <a href="codex/">Codex</a>
+        <a href="codex-network.html">Codex network</a>
         <a href="network.html">Network</a>
         <a href="milestone-race.html">Race</a>
         <a href="decoder.html">Decoder</a>
         <a href="api-playground.html">API</a>
         <a href="agents.html">Agents</a>
-        <a href="years/">Years</a>
-        <a href="method.html">Method</a>
-<a href="trilogy.html">Trilogy</a>
-        <a href="sessions.html">Sessions</a>
-        <a href="changelog.html">Changelog</a>
-        <a href="glance.html">Glance</a>
         <a href="press-kit.html">Press kit</a>
+        <a href="trilogy.html">Trilogy</a>
+        <a href="method.html">Method</a>
+        <a href="changelog.html">Changelog</a>
       </nav>
     </div>
   </footer>

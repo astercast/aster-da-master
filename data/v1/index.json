@@ -5,12 +5,12 @@
  "meta": {
   "version": "0.18.0",
   "generated": "2026-10-11T00:00:00Z",
-  "base": "api/v1/",
+  "base": "data/v1/",
   "auth": "none - static files; no keys, no rate limits"
  },
  "repository": "https://github.com/astercast/aster-da-master",
- "for_agents": "Start at api/v1/index.json. The artist record is the source of truth; data/artist.json feeds the site renderer.",
- "provenance": "All artist facts verified against public platform pages (Apple Music, iHeart, Anghami, Shazam, Boomplay, SonicHits, album.link, SoundCloud). v0.5.0: the official SoundCloud profile (asterdamaster) catalog is fully verified — 185 SoundCloud-only tracks (upload dates + play-count snapshot) alongside the 34 distributor releases (219 total). Spotify is artist-linked via the official SoundCloud bio; Instagram + official site likewise bio-linked. 'Litemode Trilogy' is teased in the bio, not confirmed. v0.7.0: global-search slug index + on-this-day (MM-DD) API; homepage gains search overlay, on-this-day section, era intelligence deep-dives, and cast-lots. v0.7.1: year-in-review archive (years/2018-2026.html + api/v1/years.json), methodology page, Litemode Trilogy watch page. v0.9.0: milestones endpoint (career firsts computed from the verified discography); API playground + transmission decoder pages. v0.10.0: upload-sessions endpoint (61 sessions clustered from vault upload dates). Changelog endpoint (site construction history from git log). First-and-last endpoint (per-year opening/closing transmissions). v0.11.0: milestone-watch endpoint (vault tracks near round-number play counts).",
+ "for_agents": "Start at data/v1/index.json. The artist record is the source of truth; data/artist.json feeds the site renderer.",
+ "provenance": "All artist facts verified against public platform pages (Apple Music, iHeart, Anghami, Shazam, Boomplay, SonicHits, album.link, SoundCloud). v0.5.0: the official SoundCloud profile (asterdamaster) catalog is fully verified — 185 SoundCloud-only tracks (upload dates + play-count snapshot) alongside the 34 distributor releases (219 total). Spotify is artist-linked via the official SoundCloud bio; Instagram + official site likewise bio-linked. 'Litemode Trilogy' is teased in the bio, not confirmed. v0.7.0: global-search slug index + on-this-day (MM-DD) API; homepage gains search overlay, on-this-day section, era intelligence deep-dives, and cast-lots. v0.7.1: year-in-review archive (years/2018-2026.html + data/v1/years.json), methodology page, Litemode Trilogy watch page. v0.9.0: milestones endpoint (career firsts computed from the verified discography); API playground + transmission decoder pages. v0.10.0: upload-sessions endpoint (61 sessions clustered from vault upload dates). Changelog endpoint (site construction history from git log). First-and-last endpoint (per-year opening/closing transmissions). v0.11.0: milestone-watch endpoint (vault tracks near round-number play counts).",
  "skills": {
   "registry": "skills/index.json",
   "count": 15,
@@ -18,185 +18,185 @@
  },
  "endpoints": {
   "index": {
-   "path": "api/v1/index.json",
+   "path": "data/v1/index.json",
    "description": "Manifest: every endpoint with description, schema URL, updated timestamp, record counts, and deprecation notes. Start here.",
-   "schema": "api/v1/schema/index.json",
+   "schema": "data/v1/schema/index.json",
    "updated": "2026-10-11T00:00:00Z",
    "records": 23,
    "notes": "meta.version mirrors the top-level version field."
   },
   "artist": {
-   "path": "api/v1/artist.json",
+   "path": "data/v1/artist.json",
    "description": "The source of truth: artist record - bio, facts, discography (219 entries), platforms, eras, vault, upcoming. data/artist.json feeds the site renderer and mirrors it.",
-   "schema": "api/v1/schema/artist.json",
+   "schema": "data/v1/schema/artist.json",
    "updated": "2026-10-11T00:00:00Z",
    "records": 219,
    "notes": ""
   },
   "codex": {
-   "path": "api/v1/codex.json",
+   "path": "data/v1/codex.json",
    "description": "The vocabulary codex: 16 word families with per-family track lists.",
-   "schema": "api/v1/schema/codex.json",
+   "schema": "data/v1/schema/codex.json",
    "updated": "2026-10-11T00:00:00Z",
    "records": 16,
    "notes": ""
   },
   "release-slugs": {
-   "path": "api/v1/release-slugs.json",
+   "path": "data/v1/release-slugs.json",
    "description": "Slug index for the generated release pages: ordinal string -> slug.",
-   "schema": "api/v1/schema/release-slugs.json",
+   "schema": "data/v1/schema/release-slugs.json",
    "updated": "2026-10-11T00:00:00Z",
    "records": 219,
    "notes": ""
   },
   "on-this-day": {
-   "path": "api/v1/on-this-day.json",
+   "path": "data/v1/on-this-day.json",
    "description": "Calendar index: transmissions keyed by MM-DD upload date.",
-   "schema": "api/v1/schema/on-this-day.json",
+   "schema": "data/v1/schema/on-this-day.json",
    "updated": "2026-10-11T00:00:00Z",
    "records": 96,
    "notes": ""
   },
   "years": {
-   "path": "api/v1/years.json",
+   "path": "data/v1/years.json",
    "description": "Year-in-review archive: per-year stats and highlights, 2018-2026.",
-   "schema": "api/v1/schema/years.json",
+   "schema": "data/v1/schema/years.json",
    "updated": "2026-10-11T00:00:00Z",
    "records": 9,
    "notes": ""
   },
   "circle": {
-   "path": "api/v1/circle.json",
+   "path": "data/v1/circle.json",
    "description": "The collaborators: 21 voices parsed from title credits.",
-   "schema": "api/v1/schema/circle.json",
+   "schema": "data/v1/schema/circle.json",
    "updated": "2026-10-11T00:00:00Z",
    "records": 21,
    "notes": "Title-credit only; producers live in scene-figures.json."
   },
   "milestones": {
-   "path": "api/v1/milestones.json",
+   "path": "data/v1/milestones.json",
    "description": "Career firsts computed from the verified discography: firsts, records, silences.",
-   "schema": "api/v1/schema/milestones.json",
+   "schema": "data/v1/schema/milestones.json",
    "updated": "2026-10-11T00:00:00Z",
    "records": 9,
    "notes": ""
   },
   "sessions": {
-   "path": "api/v1/sessions.json",
+   "path": "data/v1/sessions.json",
    "description": "Upload sessions: 61 studio sessions clustered from vault upload dates (7-day gap rule).",
-   "schema": "api/v1/schema/sessions.json",
+   "schema": "data/v1/schema/sessions.json",
    "updated": "2026-10-11T00:00:00Z",
    "records": 61,
    "notes": "Computed clusters, not artist-named studio sessions."
   },
   "changelog": {
-   "path": "api/v1/changelog.json",
+   "path": "data/v1/changelog.json",
    "description": "Site construction history, generated from the git log.",
-   "schema": "api/v1/schema/changelog.json",
+   "schema": "data/v1/schema/changelog.json",
    "updated": "2026-10-11T00:00:00Z",
-   "records": 96,
+   "records": 100,
    "notes": "A changelog built from git log cannot record its own sync commit (wave-15 convention, WAVELOG.md)."
   },
   "first-last": {
-   "path": "api/v1/first-last.json",
+   "path": "data/v1/first-last.json",
    "description": "Per year 2018-2026: the opening and closing transmissions.",
-   "schema": "api/v1/schema/first-last.json",
+   "schema": "data/v1/schema/first-last.json",
    "updated": "2026-10-11T00:00:00Z",
    "records": 9,
    "notes": ""
   },
   "milestone-watch": {
-   "path": "api/v1/milestone-watch.json",
+   "path": "data/v1/milestone-watch.json",
    "description": "Milestone watch: vault tracks near round-number play counts.",
-   "schema": "api/v1/schema/milestone-watch.json",
+   "schema": "data/v1/schema/milestone-watch.json",
    "updated": "2026-10-11T00:00:00Z",
    "records": 3,
    "notes": "Play counts are a 2026-10-11 snapshot; they drift."
   },
   "scene-figures": {
-   "path": "api/v1/scene-figures.json",
+   "path": "data/v1/scene-figures.json",
    "description": "Scene figures: producer credits and scene research outside the 21 (e.g. Fish Narc).",
-   "schema": "api/v1/schema/scene-figures.json",
+   "schema": "data/v1/schema/scene-figures.json",
    "updated": "2026-10-11T00:00:00Z",
    "records": 1,
    "notes": ""
   },
   "transmission": {
-   "path": "api/v1/transmission.json",
+   "path": "data/v1/transmission.json",
    "description": "The guided journey: 13 stops — six eras with stats, top tracks, key sessions, collaborators, milestones, and computed signal lines, plus seven live data chapters (The Race, The Record Book, The Codex, The Architects, The Seasons, The Deep Cuts, The Horizon) — plus a 2026 extras block on The Return era (the four verified 2026 singles, the Q4 2026 Uncle-LP/trilogy watch, the play-count snapshot).",
-   "schema": "api/v1/schema/transmission.json",
+   "schema": "data/v1/schema/transmission.json",
    "updated": "2026-10-11T00:00:00Z",
    "records": 6,
    "notes": ""
   },
   "network": {
-   "path": "api/v1/network.json",
+   "path": "data/v1/network.json",
    "description": "Collaboration network: artist-centered nodes (21 title-credited collaborators + producer scene figures), track-weighted edges, co-credit links, computed insights.",
-   "schema": "api/v1/schema/network.json",
+   "schema": "data/v1/schema/network.json",
    "updated": "2026-10-11T00:00:00Z",
    "records": 23,
    "notes": "23 nodes / 27 edges; no producer-collaborator edges exist on record."
   },
   "eras": {
-   "path": "api/v1/eras.json",
+   "path": "data/v1/eras.json",
    "description": "Era deep-dives: six eras with full transmission lists (every track + plays), ALL in-era collaborators, active codex families, milestones, computed signal lines and summaries. Data source for the eras/<id>.html deep-dive pages.",
-   "schema": "api/v1/schema/eras.json",
+   "schema": "data/v1/schema/eras.json",
    "updated": "2026-10-11T00:00:00Z",
    "records": 6,
    "notes": "collaborators[] holds every in-era voice; transmission.json keeps only the top 3."
   },
   "session-clusters": {
-   "path": "api/v1/session-clusters.json",
+   "path": "data/v1/session-clusters.json",
    "description": "Session archaeology, interactive: the 61 upload sessions as an explorable timeline - per-session enrichment (era, loudest + deepest-cut tracks, title-credited collaborators, deep-dive/era/journey cross-links), the 60 inter-session gaps, activity seasons, and asserted insights. Data source for sessions-explorer.html.",
-   "schema": "api/v1/schema/session-clusters.json",
+   "schema": "data/v1/schema/session-clusters.json",
    "updated": "2026-10-11T00:00:00Z",
    "records": 9,
    "notes": "Seasons are a computed browsing convention (silence > 90 days opens a new season), not artist-named eras."
   },
   "codex-families": {
-   "path": "api/v1/codex-families.json",
+   "path": "data/v1/codex-families.json",
    "description": "Codex family deep-dives: the 16 vocabulary families with decoded readings (traced verbatim to codex.json epithets; unknown where the archive assigns no meaning), era-by-era evolution, key sessions, and title-credited collaborators. Data source for the codex/<slug>.html deep-dive pages.",
-   "schema": "api/v1/schema/codex-families.json",
+   "schema": "data/v1/schema/codex-families.json",
    "updated": "2026-10-11T00:00:00Z",
    "records": 16,
    "notes": ""
   },
   "milestone-races": {
-   "path": "api/v1/milestone-races.json",
+   "path": "data/v1/milestone-races.json",
    "description": "The milestone race: approaching play-count milestones as races (current value, target, gap, and pace-arithmetic estimates - never predictions), the 30,088-play summit chase, session and era record book, and the most recently crossed milestones. Data source for milestone-race.html.",
-   "schema": "api/v1/schema/milestone-races.json",
+   "schema": "data/v1/schema/milestone-races.json",
    "updated": "2026-10-11T00:00:00Z",
    "records": 4,
    "notes": "Pace figures are arithmetic on the 2026-10-11 snapshot, not predictions."
   },
   "session-tools": {
-   "path": "api/v1/session-tools.json",
+   "path": "data/v1/session-tools.json",
    "description": "Session explorer 2.0 tooling: per-session compare profiles (stats, loudest + deepest-cut tracks, collaborators, play profiles, family/session/era/journey cross-links), the honest snapshot-history state (one 2026-10-11 snapshot - no play trajectories exist), and the deepest-sessions editorial ranking (lowest average plays per transmission, min 2 transmissions, formula stated). Data source for sessions-explorer.html's compare / deepest-cuts / timeline-scrubber sections.",
-   "schema": "api/v1/schema/session-tools.json",
+   "schema": "data/v1/schema/session-tools.json",
    "updated": "2026-10-11T00:00:00Z",
    "records": 61,
    "notes": "The deepest-cuts ranking is editorial (formula stated in the payload), not an artist fact."
   },
   "codex-network": {
-   "path": "api/v1/codex-network.json",
+   "path": "data/v1/codex-network.json",
    "description": "The codex network: 16 word families as nodes, shared title-credited collaborators and title-parsed producers as edges, BFS degrees of separation from Aster, the family-overlap graph, and the connect-the-dots shortest-path data. Data source for codex-network.html.",
-   "schema": "api/v1/schema/codex-network.json",
+   "schema": "data/v1/schema/codex-network.json",
    "updated": "2026-10-11T00:00:00Z",
    "records": 70,
    "notes": "Producer credits are parsed from titles (as credited, verbatim); degrees are BFS distances on this graph, not a social claim."
   },
   "producer-deepdives": {
-   "path": "api/v1/producer-deepdives.json",
+   "path": "data/v1/producer-deepdives.json",
    "description": "Producer deep-dives: every as-credited producer in the archive (title prod./produced-by fragments, verbatim) with credited productions (release/session links, co-producers, title-credited voices), codex family ties, a computed production fingerprint, and sourced research where a research pass exists. Data source for producers/<slug>.html.",
-   "schema": "api/v1/schema/producer-deepdives.json",
+   "schema": "data/v1/schema/producer-deepdives.json",
    "updated": "2026-10-11T00:00:00Z",
    "records": 113,
    "notes": "Fingerprints are computed from the archive's credits, not biographies; research blocks carry their evidence flag."
   },
   "chronicle": {
-   "path": "api/v1/chronicle.json",
+   "path": "data/v1/chronicle.json",
    "description": "The Chronicle: one merged chronological stream - all 61 upload sessions, all 9 dated milestones (the 553-day longest silence as a span), and all 44 title-credited collaboration appearances, each with era assignment, cross-links (release / circle / session pages), and collaborator tags. Data source for chronicle.html.",
-   "schema": "api/v1/schema/chronicle.json",
+   "schema": "data/v1/schema/chronicle.json",
    "updated": "2026-10-11T00:00:00Z",
    "records": 114,
    "notes": "Same-date order is milestone -> session -> collaboration (a stated presentation rule); the 2017 feature credit predates the eras."

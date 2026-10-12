@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Signal lost — Aster da Master</title>
+  <meta name="description" content="No transmission on this frequency.">
+  <link rel="preload" href="assets/fonts/anton-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/css/fonts.css">
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/motifs.css">
+  <link rel="stylesheet" href="assets/css/home.css">
+  <style>
+    /* 404-only: the dead-frequency card. Lives here, not in the shared sheets. */
+    .lost-wrap {
+      min-height: 100svh;
+      display: grid;
+      place-items: center;
+      padding: var(--space-8) var(--space-4);
+      text-align: center;
+    }
+    .lost-card { max-width: 560px; }
+    .lost-code {
+      font-family: var(--font-display);
+      font-size: clamp(4rem, 16vw, 10rem);
+      color: var(--live);
+      text-shadow: 0 0 24px rgba(255, 84, 104, 0.35);
+      line-height: 1;
+      margin: 0;
+    }
+    .lost-card h1 {
+      font-family: var(--font-display);
+      font-weight: 400;
+      font-size: var(--fs-1);
+      letter-spacing: 0.04em;
+      margin: var(--space-4) 0;
+    }
+    .lost-tune {
+      color: var(--muted);
+      font-size: var(--fs-small);
+      letter-spacing: var(--track-label);
+      text-transform: uppercase;
+      margin-bottom: var(--space-6);
+    }
+    .lost-card .btn-row {
+      display: flex;
+      gap: var(--space-4);
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: var(--space-6);
+    }
+  </style>
+</head>
+<body>
+  <!-- the keeper checked: nothing broadcasts here. the static is honest. -->
+  <a class="skip-link" href="#main">Skip to content</a>
+  <main id="main">
+    <div class="lost-wrap">
+      <div class="lost-card">
+        <p class="lost-code" aria-hidden="true">404</p>
+        <h1>Signal lost</h1>
+        <p class="lost-tune">Tuning 87.9 … 98.5 — nothing but static on this frequency.</p>
+        <p>No transmission was ever filed under this address. The archive doesn't lose things; this one simply never existed.</p>
+        <div class="btn-row">
+          <a class="btn btn-neon" href="index.html">Retune to the station</a>
+          <a class="btn" href="index.html#lots">Cast lots instead</a>
+        </div>
+      </div>
+    </div>
+  </main>
+  <script src="assets/js/common.js"></script>
+  <script src="assets/js/identity.js"></script>
+</body>
+</html>

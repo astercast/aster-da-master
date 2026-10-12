@@ -11,12 +11,12 @@ An agent needs a "watch list": which tracks are closing in on 1,000 / 10,000 / 3
 
 ## Inputs
 
-- `api/v1/milestone-watch.json` (bands + summit, snapshot 2026-10-11)
+- `data/v1/milestone-watch.json` (bands + summit, snapshot 2026-10-11)
 - Optional: a band id (`near-1k`, `near-10k`, `near-30k`) to focus on
 
 ## Procedure
 
-1. Fetch `api/v1/milestone-watch.json`. Read `plays_snapshot` first — this is a snapshot, not a live leaderboard; state the date in every report.
+1. Fetch `data/v1/milestone-watch.json`. Read `plays_snapshot` first — this is a snapshot, not a live leaderboard; state the date in every report.
 2. Read `summit` — the single highest-play vault transmission. That's the ceiling reference.
 3. Walk each `bands[]` entry: `name`, `target`, `blurb`, and every track with `plays` and `needed` (plays still required to hit the target).
 4. Sort the approaching tracks by `needed` ascending — the smallest `needed` is the closest to its milestone.
@@ -33,9 +33,9 @@ Snapshot 2026-10-11:
 
 ## API references
 
-- `api/v1/milestone-watch.json` — bands, summit, `needed` per track, snapshot date
-- `api/v1/sessions.json` — full per-track play counts if you need to compute your own bands
-- `api/v1/index.json` — registry; `plays_snapshot` provenance
+- `data/v1/milestone-watch.json` — bands, summit, `needed` per track, snapshot date
+- `data/v1/sessions.json` — full per-track play counts if you need to compute your own bands
+- `data/v1/index.json` — registry; `plays_snapshot` provenance
 
 ## Pitfalls
 

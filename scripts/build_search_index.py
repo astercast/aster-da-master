@@ -2,12 +2,12 @@
 """Build search + on-this-day API artifacts for the Aster da Master site.
 
 Outputs (committed):
-  api/v1/release-slugs.json  - discography index -> release page slug
+  data/v1/release-slugs.json  - discography index -> release page slug
                                (slug logic identical to scripts/build_releases.py)
-  api/v1/on-this-day.json    - "MM-DD" -> tracks uploaded/released on that
+  data/v1/on-this-day.json    - "MM-DD" -> tracks uploaded/released on that
                                month-day across all years (titles + metadata)
 
-Both are registered in api/v1/index.json. Re-run after any discography change.
+Both are registered in data/v1/index.json. Re-run after any discography change.
 """
 import json
 import re
@@ -20,7 +20,7 @@ sys.path.insert(0, str(ROOT / "scripts"))
 from build_releases import slugify  # noqa: E402  (single source of truth)
 
 DATA = json.loads((ROOT / "data" / "artist.json").read_text())
-API = ROOT / "api" / "v1"
+API = ROOT / "data" / "v1"
 
 
 def build_slugs(releases):

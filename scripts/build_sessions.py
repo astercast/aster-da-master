@@ -8,9 +8,9 @@ track count, total plays, and the tracks themselves.
 Output:
   sessions.html            - standalone studio-diary page (root)
   data/sessions.json       - machine-readable sessions (site use)
-  api/v1/sessions.json     - machine-readable sessions (public API)
-  api/v1/schema/sessions.json - draft-07 schema
-  (registers the endpoint in api/v1/index.json; bumps data to 0.10.0)
+  data/v1/sessions.json     - machine-readable sessions (public API)
+  data/v1/schema/sessions.json - draft-07 schema
+  (registers the endpoint in data/v1/index.json; bumps data to 0.10.0)
 
 Titles only - no lyrics anywhere. Idempotent: regenerates cleanly.
 Re-run after any discography change.
@@ -28,10 +28,10 @@ from build_releases import slugify  # noqa: E402  (single source of truth)
 
 DATA = ROOT / "data" / "artist.json"
 DATA_OUT = ROOT / "data" / "sessions.json"
-API_OUT = ROOT / "api" / "v1" / "sessions.json"
-API_INDEX = ROOT / "api" / "v1" / "index.json"
-API_ARTIST = ROOT / "api" / "v1" / "artist.json"
-SCHEMA_OUT = ROOT / "api" / "v1" / "schema" / "sessions.json"
+API_OUT = ROOT / "data" / "v1" / "sessions.json"
+API_INDEX = ROOT / "data" / "v1" / "index.json"
+API_ARTIST = ROOT / "data" / "v1" / "artist.json"
+SCHEMA_OUT = ROOT / "data" / "v1" / "schema" / "sessions.json"
 PAGE_OUT = ROOT / "sessions.html"
 
 NEW_VERSION = "0.18.0"  # wave 35: data version 0.18.0 (verified-data expansion)
@@ -294,7 +294,7 @@ def main() -> int:
         <span class="kicker"><span class="numeral">\u2726</span>The studio diary</span>
         <h1>Upload sessions</h1>
         <p>{len(out)} sessions \u00b7 {sum(s["track_count"] for s in out)} vault transmissions. A new session begins whenever the silence between uploads stretches past seven days. Newest first.</p>
-        <p class="chart-sub">Computed from upload dates \u00b7 play counts are a {SNAPSHOT} snapshot \u00b7 also at <a href="api/v1/sessions.json">api/v1/sessions.json</a></p>
+        <p class="chart-sub">Computed from upload dates \u00b7 play counts are a {SNAPSHOT} snapshot \u00b7 also at <a href="data/v1/sessions.json">data/v1/sessions.json</a></p>
         <p><a class="btn btn-sm" href="sessions-explorer.html">Sessions explorer &rarr;</a> <span class="chart-sub">the 61 sessions as an explorable timeline: activity seasons, the silences, per-session deepest cuts.</span></p>\n        <p><a class="btn btn-sm" href="milestone-race.html">Milestone race &rarr;</a> <span class="chart-sub">approaching play-count milestones as races, the summit chase, the record book.</span></p>
       </div>
       {"".join(cards)}

@@ -14,15 +14,15 @@ sits in. Feeds the `sessions-explorer.html` page and any timeline feature.
 
 ## Inputs
 
-- `api/v1/session-clusters.json` — the whole explorable timeline in one file:
+- `data/v1/session-clusters.json` — the whole explorable timeline in one file:
   per-session enrichment, the 60 inter-session gaps, the 9 activity seasons,
   the top-5 silences, asserted insights
-- Optional: `api/v1/sessions.json` — per-session track lists with plays
+- Optional: `data/v1/sessions.json` — per-session track lists with plays
   (the explorer lazy-loads it when a session card expands)
 
 ## Procedure
 
-1. Fetch `api/v1/session-clusters.json`. Read `method` first — it states the
+1. Fetch `data/v1/session-clusters.json`. Read `method` first — it states the
    computed conventions: the **7-day upload-gap rule** builds the 61 sessions;
    **activity seasons** group consecutive sessions while the separating silence
    is ≤ 90 days (a browsing convention, not an artist fact); upload dates are
@@ -43,7 +43,7 @@ sits in. Feeds the `sessions-explorer.html` page and any timeline feature.
    `loudest` / `deepest_cut` (session min/max plays), `collaborators`
    (w//ft. title credits, producers excluded), `deep_dive`
    (`sessions/<slug>.html` for the top-10 sessions, `null` otherwise).
-4. For track-level detail on any session, fetch `api/v1/sessions.json` and
+4. For track-level detail on any session, fetch `data/v1/sessions.json` and
    find the session by `id` — `tracks[]` carries title, date, plays, page.
 5. The human-facing page `sessions-explorer.html` renders all of this with
    era/year filters, the gap visualization, and the session cards.
@@ -52,7 +52,7 @@ sits in. Feeds the `sessions-explorer.html` page and any timeline feature.
 
 "Which session is the most prolific, and what is its deepest cut?"
 
-- `GET api/v1/session-clusters.json` → `insights.most_prolific`:
+- `GET data/v1/session-clusters.json` → `insights.most_prolific`:
   session-40, "The November 3rd–12th Session", 2023-11-03 → 2023-11-12,
   19 tracks, 7,601 plays, season-06.
 - The session row's `deepest_cut`: "For Brian (Neck Deep) outro
@@ -65,13 +65,13 @@ sits in. Feeds the `sessions-explorer.html` page and any timeline feature.
 
 ## API references
 
-- `api/v1/session-clusters.json` — the explorable timeline: 61 enriched
+- `data/v1/session-clusters.json` — the explorable timeline: 61 enriched
   sessions, 60 gaps, 9 seasons, insights (endpoint #17; drives
   `sessions-explorer.html`)
-- `api/v1/sessions.json` — the 61 sessions with per-track plays
+- `data/v1/sessions.json` — the 61 sessions with per-track plays
   (track lists for expanded session cards)
-- `api/v1/eras.json` — the six eras with deep-dive pages and journey links
-- `api/v1/milestones.json` — `longest-silence` record (canonical source the
+- `data/v1/eras.json` — the six eras with deep-dive pages and journey links
+- `data/v1/milestones.json` — `longest-silence` record (canonical source the
   generator asserts against)
 
 ## Pitfalls

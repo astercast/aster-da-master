@@ -17,8 +17,8 @@ Also:
   - Adds a teased "Litemode Trilogy" upcoming note (teased in bio, not
     confirmed).
   - Updates the top-level `vault` object to full-catalog-verified status.
-  - Bumps version to 0.5.0. Mirrors data/artist.json -> api/v1/artist.json.
-  - Updates api/v1/index.json version + provenance.
+  - Bumps version to 0.5.0. Mirrors data/artist.json -> data/v1/artist.json.
+  - Updates data/v1/index.json version + provenance.
 
 Idempotent: safe to re-run (vault entries are rebuilt from tracks.json).
 """
@@ -27,8 +27,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data" / "artist.json"
-API = ROOT / "api" / "v1" / "artist.json"
-API_INDEX = ROOT / "api" / "v1" / "index.json"
+API = ROOT / "data" / "v1" / "artist.json"
+API_INDEX = ROOT / "data" / "v1" / "index.json"
 TRACKS = Path("/home/hatch/workspace/research_notes/aster-soundcloud-20261011/tracks.json")
 
 PROFILE_URL = "https://soundcloud.com/asterdamaster"

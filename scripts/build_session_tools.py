@@ -2,7 +2,7 @@
 """Wave 25: session explorer 2.0 - session tools.
 
 Turns the session archaeology data into agent/human tooling:
-api/v1/session-tools.json (endpoint #20) - per-session compare profiles,
+data/v1/session-tools.json (endpoint #20) - per-session compare profiles,
 the honest snapshot-history state (a single play-count snapshot exists, so
 no per-session play trajectory can be drawn), a transparently-formulated
 "deepest sessions" editorial ranking, a track-level "deepest transmissions"
@@ -14,11 +14,11 @@ Transmission journey stops).
 Every figure is recomputed here and the script exits non-zero on any
 disagreement. Sources (all real archive data):
   - data/sessions.json            (61 sessions, per-track plays + dates)
-  - api/v1/session-clusters.json  (enriched sessions: era, loudest +
+  - data/v1/session-clusters.json  (enriched sessions: era, loudest +
                                     deepest-cut tracks, title-credited
                                     collaborators, deep-dive + journey links)
-  - api/v1/eras.json              (era deep-dive page links)
-  - api/v1/codex-families.json    (key_sessions -> family cross-links)
+  - data/v1/eras.json              (era deep-dive page links)
+  - data/v1/codex-families.json    (key_sessions -> family cross-links)
   - scripts/build_years.py        (parse_collabs - the shared title-credit
                                     rule, for per-track voices)
 
@@ -35,7 +35,7 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-API = ROOT / "api" / "v1"
+API = ROOT / "data" / "v1"
 NEW_VERSION = "0.18.0"  # wave 35: data version 0.18.0 (verified-data expansion)
 SNAPSHOT = "2026-10-11"
 
@@ -424,10 +424,10 @@ def main() -> int:
         "plays_snapshot": SNAPSHOT,
         "method": (
             "Session explorer 2.0 tooling, computed from data/sessions.json "
-            "(per-session track plays + dates), api/v1/session-clusters.json "
+            "(per-session track plays + dates), data/v1/session-clusters.json "
             "(era, loudest + deepest-cut tracks, title-credited "
-            "collaborators, deep-dive + journey links), api/v1/eras.json "
-            "(era deep-dive links), and api/v1/codex-families.json "
+            "collaborators, deep-dive + journey links), data/v1/eras.json "
+            "(era deep-dive links), and data/v1/codex-families.json "
             "(key sessions -> family cross-links). Powers session compare, "
             "the deepest-sessions editorial ranking, the track-level "
             "deepest-transmissions ranking, the timeline scrubber, "

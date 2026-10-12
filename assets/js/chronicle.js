@@ -1,5 +1,5 @@
 /* THE CHRONICLE — one merged chronological stream.
-   Renders api/v1/chronicle.json live: 61 sessions, 9 dated milestones,
+   Renders data/v1/chronicle.json live: 61 sessions, 9 dated milestones,
    44 title-credited collaboration appearances. Era / kind / voice filters,
    full-text search, oldest<->newest order, shareable filter state via the
    URL hash, collaborator cross-link buttons on every row.
@@ -301,7 +301,7 @@
   function fail() {
     countEl.textContent = "The chronicle data failed to load.";
     streamEl.innerHTML = '<div class="ch-empty"><p>The stream could not be tuned. ' +
-      'The data lives at <a href="api/v1/chronicle.json">api/v1/chronicle.json</a>.</p></div>';
+      'The data lives at <a href="data/v1/chronicle.json">data/v1/chronicle.json</a>.</p></div>';
     window.ADM.reveal();
   }
 
@@ -309,7 +309,7 @@
     streamEl = $("ch-stream");
     countEl = $("ch-count");
     statsEl = $("ch-stats");
-    loadData("api/v1/chronicle.json").then(function (data) {
+    loadData("data/v1/chronicle.json").then(function (data) {
       DATA = data;
       DATA.collaborators.forEach(function (c) { slugByName[c.name] = c.slug; });
       var h = readHash();

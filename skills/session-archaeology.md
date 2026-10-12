@@ -11,16 +11,16 @@ An agent wants the narrative behind one of the 61 upload sessions: what was happ
 
 ## Inputs
 
-- A session id (`session-01` … `session-61`) from `api/v1/sessions.json`
+- A session id (`session-01` … `session-61`) from `data/v1/sessions.json`
 - Optional: a collaborator slug or codex word to angle the story
 
 ## Procedure
 
-1. Fetch `api/v1/sessions.json`. Find the session by `id`. Read `name`, `start`, `end`, `days`, `track_count`, `total_plays`, and every entry in `tracks[]` (title, date, plays, page).
+1. Fetch `data/v1/sessions.json`. Find the session by `id`. Read `name`, `start`, `end`, `days`, `track_count`, `total_plays`, and every entry in `tracks[]` (title, date, plays, page).
 2. Time-frame it: date span, and how it sits next to neighboring sessions. Sessions cluster by a **7-day upload gap rule** — upload dates, not recording dates (say so).
-3. Who's in the room: scan titles for `ft.` / `w/` / `prod.` fragments, then pull `api/v1/circle.json` for any title-credited collaborator (`shared_transmissions`, `years_active`, `verified_notes`) and `api/v1/scene-figures.json` for producer-only figures (they are excluded from the circle by rule).
-4. What the titles signal: cross each title word against `api/v1/codex.json` families ("The Modes", "The Cold", "Lucid States", …). The decoder page (`decoder.html`) runs this same matching — reuse its logic, don't re-derive it.
-5. Place it in history: match the session dates to an era in `api/v1/artist.json` → `eras[]`.
+3. Who's in the room: scan titles for `ft.` / `w/` / `prod.` fragments, then pull `data/v1/circle.json` for any title-credited collaborator (`shared_transmissions`, `years_active`, `verified_notes`) and `data/v1/scene-figures.json` for producer-only figures (they are excluded from the circle by rule).
+4. What the titles signal: cross each title word against `data/v1/codex.json` families ("The Modes", "The Cold", "Lucid States", …). The decoder page (`decoder.html`) runs this same matching — reuse its logic, don't re-derive it.
+5. Place it in history: match the session dates to an era in `data/v1/artist.json` → `eras[]`.
 6. Write the story in three moves: **when** (dates, gap context), **what** (the tracks, standout plays), **why it matters** (collaborators, codex signals, era position). Every claim must trace to an endpoint field.
 
 ## Worked example
@@ -33,15 +33,15 @@ An agent wants the narrative behind one of the 61 upload sessions: what was happ
 
 ## API references
 
-- `api/v1/sessions.json` — 61 sessions, 7-day gap clustering, per-track plays
-- `api/v1/session-clusters.json` — the same sessions precomputed for
+- `data/v1/sessions.json` — 61 sessions, 7-day gap clustering, per-track plays
+- `data/v1/session-clusters.json` — the same sessions precomputed for
   exploration: per-session enrichment (era, loudest + deepest-cut tracks,
   cross-links), the 60 inter-session gaps, the 9 activity seasons, asserted
   insights (drives `sessions-explorer.html`; see the `session-explorer` skill)
-- `api/v1/circle.json` — 21 title-credited collaborators (`shared_transmissions`, `shared_plays`, `years_active`, `verified_notes`)
-- `api/v1/scene-figures.json` — producer-only scene figures (outside the 21)
-- `api/v1/codex.json` — 16 title-word families with per-family track lists
-- `api/v1/artist.json` — `eras[]` for historical placement; `decoder.html` for the live decoder
+- `data/v1/circle.json` — 21 title-credited collaborators (`shared_transmissions`, `shared_plays`, `years_active`, `verified_notes`)
+- `data/v1/scene-figures.json` — producer-only scene figures (outside the 21)
+- `data/v1/codex.json` — 16 title-word families with per-family track lists
+- `data/v1/artist.json` — `eras[]` for historical placement; `decoder.html` for the live decoder
 
 ## Pitfalls
 

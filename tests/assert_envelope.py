@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """tests/assert_envelope.py — validate a function envelope on stdin against
-api/v1/schema/envelope.json (JSON Schema draft 2020-12).
+data/v1/schema/envelope.json (JSON Schema draft 2020-12).
 
-Usage: curl -sf $BASE/api/health | python3 tests/assert_envelope.py --schema api/v1/schema/envelope.json
+Usage: curl -sf $BASE/api/health | python3 tests/assert_envelope.py --schema data/v1/schema/envelope.json
 Exit 0 on valid, 1 with the violations printed on failure.
 """
 import argparse

@@ -88,7 +88,7 @@
         <div class="section-head reveal">
           <span class="kicker"><span class="numeral">✦</span>The API playground</span>
           <h2 id="pg-h">Touch the archive</h2>
-          <p>Every record on this site is a versioned JSON document. Pick an endpoint, read the live response, copy what you need. Agents start at <code>api/v1/index.json</code>. The operator's manual is <a href="AGENT.md"><code>AGENT.md</code></a> (base URL pattern, key endpoints, end-to-end workflows); the browsable agentic surface is <a href="agents.html"><code>agents.html</code></a>; conventions live in <a href="API.md"><code>API.md</code></a>.</p>
+          <p>Every record on this site is a versioned JSON document. Pick an endpoint, read the live response, copy what you need. Agents start at <code>data/v1/index.json</code>. The operator's manual is <a href="AGENT.md"><code>AGENT.md</code></a> (base URL pattern, key endpoints, end-to-end workflows); the browsable agentic surface is <a href="agents.html"><code>agents.html</code></a>; conventions live in <a href="API.md"><code>API.md</code></a>.</p>
         </div>
 
         <div class="pg-tabs reveal" role="tablist" aria-label="Playground views">
@@ -117,28 +117,28 @@
               <h4 id="rc-deep"><a href="skills/deep-cuts-finder.md">deep-cuts-finder</a></h4>
               <p>Surface the vault's quietest-play tracks for playlists and deep listening.</p>
               <ol class="recipe-seq">
-                <li><code>GET api/v1/sessions.json</code> — flatten <code>sessions[].tracks</code> into one list.</li>
+                <li><code>GET data/v1/sessions.json</code> — flatten <code>sessions[].tracks</code> into one list.</li>
                 <li>Sort ascending by <code>plays</code>; take the bottom N (median vault track ≈ 450 plays).</li>
-                <li><code>GET api/v1/codex.json</code> — match title words to families for a playlist theme.</li>
+                <li><code>GET data/v1/codex.json</code> — match title words to families for a playlist theme.</li>
               </ol>
             </article>
             <article class="recipe-card" aria-labelledby="rc-sess">
               <h4 id="rc-sess"><a href="skills/session-archaeology.md">session-archaeology</a></h4>
               <p>Reconstruct one of the 61 sessions: when it happened, what came out, who was in the room.</p>
               <ol class="recipe-seq">
-                <li><code>GET api/v1/sessions.json</code> — find the session by <code>id</code>; read span, tracks, plays.</li>
-                <li><code>GET api/v1/circle.json</code> / <code>api/v1/scene-figures.json</code> — resolve title credits.</li>
-                <li><code>GET api/v1/codex.json</code> — cross title words against the 16 families.</li>
-                <li><code>GET api/v1/artist.json</code> — place the session in <code>eras[]</code>.</li>
+                <li><code>GET data/v1/sessions.json</code> — find the session by <code>id</code>; read span, tracks, plays.</li>
+                <li><code>GET data/v1/circle.json</code> / <code>data/v1/scene-figures.json</code> — resolve title credits.</li>
+                <li><code>GET data/v1/codex.json</code> — cross title words against the 16 families.</li>
+                <li><code>GET data/v1/artist.json</code> — place the session in <code>eras[]</code>.</li>
               </ol>
             </article>
             <article class="recipe-card" aria-labelledby="rc-se-exp">
               <h4 id="rc-se-exp"><a href="skills/session-explorer.md">session-explorer</a></h4>
               <p>Browse all 61 sessions as a timeline: seasons, silences, deepest cuts, era/year filters.</p>
               <ol class="recipe-seq">
-                <li><code>GET api/v1/session-clusters.json</code> — read <code>method</code>, then <code>insights</code> (most prolific, longest silence, loudest/quietest sessions).</li>
+                <li><code>GET data/v1/session-clusters.json</code> — read <code>method</code>, then <code>insights</code> (most prolific, longest silence, loudest/quietest sessions).</li>
                 <li>Walk <code>clusters[]</code> for the 9 seasons and <code>sessions[]</code> for per-session stories (<code>loudest</code>, <code>deepest_cut</code>, cross-links).</li>
-                <li><code>GET api/v1/sessions.json</code> — per-session track lists for expanded cards.</li>
+                <li><code>GET data/v1/sessions.json</code> — per-session track lists for expanded cards.</li>
                 <li>Mirrors <code>sessions-explorer.html</code> — same data, human page.</li>
               </ol>
             </article>
@@ -146,17 +146,17 @@
               <h4 id="rc-collab"><a href="skills/collaborator-tracer.md">collaborator-tracer</a></h4>
               <p>Map a collaborator's footprint: tracks, plays, years active, verified research notes.</p>
               <ol class="recipe-seq">
-                <li><code>GET api/v1/circle.json</code> — look up the slug; read <code>shared_transmissions</code>, <code>shared_plays</code>, <code>tracks[]</code>.</li>
-                <li>If absent, <code>GET api/v1/scene-figures.json</code> — producers live here by rule.</li>
+                <li><code>GET data/v1/circle.json</code> — look up the slug; read <code>shared_transmissions</code>, <code>shared_plays</code>, <code>tracks[]</code>.</li>
+                <li>If absent, <code>GET data/v1/scene-figures.json</code> — producers live here by rule.</li>
                 <li>Read <code>verified_notes</code> (research pass 2026-10-11) and cite the sources.</li>
-                <li><code>GET api/v1/artist.json</code> — map <code>years_active</code> onto <code>eras[]</code>.</li>
+                <li><code>GET data/v1/artist.json</code> — map <code>years_active</code> onto <code>eras[]</code>.</li>
               </ol>
             </article>
             <article class="recipe-card" aria-labelledby="rc-mile">
               <h4 id="rc-mile"><a href="skills/milestone-watcher.md">milestone-watcher</a></h4>
               <p>Watch vault tracks approaching round-number play counts.</p>
               <ol class="recipe-seq">
-                <li><code>GET api/v1/milestone-watch.json</code> — read <code>summit</code> and each <code>bands[]</code> entry.</li>
+                <li><code>GET data/v1/milestone-watch.json</code> — read <code>summit</code> and each <code>bands[]</code> entry.</li>
                 <li>Sort approaching tracks by <code>needed</code> ascending — smallest <code>needed</code> is closest.</li>
                 <li>State the <code>plays_snapshot</code> date (2026-10-11) in every report.</li>
               </ol>
@@ -165,30 +165,30 @@
               <h4 id="rc-era"><a href="skills/era-briefing.md">era-briefing</a></h4>
               <p>Summarize one of the six eras for a writeup — span, numbers, story.</p>
               <ol class="recipe-seq">
-                <li><code>GET api/v1/eras.json</code> — the deep-dive endpoint: pick the era by <code>id</code>; read <code>summary</code> (ranks, archive-play share, busiest year, loudest/deepest tracks, top codex family), then <code>tracks[]</code>, <code>collaborators[]</code>, <code>codex_families[]</code>.</li>
-                <li><code>GET api/v1/artist.json</code> — read <code>eras[]</code> for <code>scene</code>, <code>releases[]</code>, <code>note</code> if the brief needs era color.</li>
-                <li><code>GET api/v1/years.json</code> — per-year transmissions, plays, <code>top_tracks</code> inside the span (cross-check).</li>
+                <li><code>GET data/v1/eras.json</code> — the deep-dive endpoint: pick the era by <code>id</code>; read <code>summary</code> (ranks, archive-play share, busiest year, loudest/deepest tracks, top codex family), then <code>tracks[]</code>, <code>collaborators[]</code>, <code>codex_families[]</code>.</li>
+                <li><code>GET data/v1/artist.json</code> — read <code>eras[]</code> for <code>scene</code>, <code>releases[]</code>, <code>note</code> if the brief needs era color.</li>
+                <li><code>GET data/v1/years.json</code> — per-year transmissions, plays, <code>top_tracks</code> inside the span (cross-check).</li>
                 <li>Match era releases against <code>discography[]</code> for dates, labels, links.</li>
-                <li><code>GET api/v1/circle.json</code> — collaborator footprints for the era's credits.</li>
+                <li><code>GET data/v1/circle.json</code> — collaborator footprints for the era's credits.</li>
               </ol>
             </article>
             <article class="recipe-card" aria-labelledby="rc-dec">
               <h4 id="rc-dec"><a href="skills/transmission-decoder.md">transmission-decoder</a></h4>
               <p>Interpret a title word through the codex: its family, its transmissions, its read.</p>
               <ol class="recipe-seq">
-                <li><code>GET api/v1/codex.json</code> — match the word against each family's <code>words[]</code>.</li>
+                <li><code>GET data/v1/codex.json</code> — match the word against each family's <code>words[]</code>.</li>
                 <li>Read the family's <code>epithet</code> and its <code>tracks[]</code> (titles, dates, plays).</li>
                 <li>Mirror <code>decoder.html</code> + <code>assets/js/decoder.js</code> matching logic.</li>
-                <li><code>GET api/v1/sessions.json</code> — session context for any decoded track.</li>
+                <li><code>GET data/v1/sessions.json</code> — session context for any decoded track.</li>
               </ol>
             </article>
             <article class="recipe-card" aria-labelledby="rc-net">
               <h4 id="rc-net"><a href="skills/network-graph-reader.md">network-graph-reader</a></h4>
               <p>Read the collaboration network: who works with whom, co-credit links, computed insights.</p>
               <ol class="recipe-seq">
-                <li><code>GET api/v1/network.json</code> — read <code>insights</code> first (most frequent collaborator, busiest year, first-ever).</li>
+                <li><code>GET data/v1/network.json</code> — read <code>insights</code> first (most frequent collaborator, busiest year, first-ever).</li>
                 <li>Filter <code>edges[]</code> on a node id for its neighborhood; <code>kind: "co-credit"</code> edges carry <code>shared_tracks[]</code>.</li>
-                <li><code>GET api/v1/circle.json</code> — per-track detail behind each node.</li>
+                <li><code>GET data/v1/circle.json</code> — per-track detail behind each node.</li>
                 <li>Report shapes, not stories: the graph records that collaborations happened, never how or why.</li>
               </ol>
             </article>
@@ -196,7 +196,7 @@
               <h4 id="rc-codex-r"><a href="skills/codex-reader.md">codex-reader</a></h4>
               <p>Read a codex family's full deep-dive: its decoded reading, era-by-era evolution, key sessions, voices.</p>
               <ol class="recipe-seq">
-                <li><code>GET api/v1/codex-families.json</code> — find the family by <code>slug</code>; read <code>decoded</code> first (status <code>stated</code> or <code>unknown</code> — never supply a meaning the archive doesn't claim).</li>
+                <li><code>GET data/v1/codex-families.json</code> — find the family by <code>slug</code>; read <code>decoded</code> first (status <code>stated</code> or <code>unknown</code> — never supply a meaning the archive doesn't claim).</li>
                 <li>Walk <code>eras[]</code> (era evolution, <code>deep_dive</code> + <code>journey</code> links), <code>transmissions[]</code>, <code>key_sessions[]</code>, <code>collaborators[]</code>.</li>
                 <li>Mirrors <code>codex/&lt;slug&gt;.html</code> — same data, human page.</li>
               </ol>
@@ -205,7 +205,7 @@
               <h4 id="rc-race"><a href="skills/milestone-race-reader.md">milestone-race-reader</a></h4>
               <p>Read the milestone race: approaching milestones ranked by gap-closing proximity, the 30,088-play summit chase, the record book.</p>
               <ol class="recipe-seq">
-                <li><code>GET api/v1/milestone-races.json</code> — read <code>plays_snapshot</code> first (2026-10-11); read <code>pace_definition</code>: <code>pace_per_day</code> is a lifetime average, and <code>days_at_pace</code> is plain division — an estimate, never a prediction.</li>
+                <li><code>GET data/v1/milestone-races.json</code> — read <code>plays_snapshot</code> first (2026-10-11); read <code>pace_definition</code>: <code>pace_per_day</code> is a lifetime average, and <code>days_at_pace</code> is plain division — an estimate, never a prediction.</li>
                 <li>Walk <code>closest_races[]</code> (ids → <code>play_races[]</code>: plays, target, needed, pace), then <code>summit_race.contenders[]</code> (gap, catch time), <code>session_records[]</code>, <code>era_records[]</code>, <code>just_crossed[]</code>.</li>
                 <li>Mirrors <code>milestone-race.html</code> — same data, human page.</li>
               </ol>
@@ -214,7 +214,7 @@
               <h4 id="rc-cmp"><a href="skills/session-compare.md">session-compare</a></h4>
               <p>Compare any two sessions head to head, or read the deepest-sessions ranking.</p>
               <ol class="recipe-seq">
-                <li><code>GET api/v1/session-tools.json</code> — read <code>method</code> + <code>snapshot_history</code> first (one 2026-10-11 snapshot — no play trajectories exist; <code>play_profile</code> is lifetime plays in upload order).</li>
+                <li><code>GET data/v1/session-tools.json</code> — read <code>method</code> + <code>snapshot_history</code> first (one 2026-10-11 snapshot — no play trajectories exist; <code>play_profile</code> is lifetime plays in upload order).</li>
                 <li>Compare: pick two <code>sessions[]</code> profiles — tracks, plays, avg, span, era, loudest/deepest cut, collaborator overlap (only A / both / only B); deltas are B-minus-A.</li>
                 <li>Deepest: quote <code>deepest_cuts.formula</code> (avg plays per transmission, min 2 transmissions — editorial, not an artist fact).</li>
                 <li>Mirrors the compare / deepest-cuts / scrubber sections of <code>sessions-explorer.html</code>.</li>
@@ -224,7 +224,7 @@
               <h4 id="rc-cxnet"><a href="skills/codex-pathfinder.md">codex-pathfinder</a></h4>
               <p>Trace the shortest connection between any two codex figures, or read degrees of separation from Aster.</p>
               <ol class="recipe-seq">
-                <li><code>GET api/v1/codex-network.json</code> — read <code>method</code> first (collaborators = title-credit rule; producers = title-parsed, as credited verbatim).</li>
+                <li><code>GET data/v1/codex-network.json</code> — read <code>method</code> first (collaborators = title-credit rule; producers = title-parsed, as credited verbatim).</li>
                 <li>Path: BFS over <code>edges[]</code> (undirected) between node ids; report each hop with the edge <code>label</code>. The codex-only mode forbids the <code>aster</code> hub — "no path found" is a real answer for isolates.</li>
                 <li>Degrees: read <code>degrees[]</code> — every family is 1 degree, every figure 2 via the listed carrying families; quote the <code>via</code> families.</li>
                 <li>Mirrors the pathfinder / degrees sections of <code>codex-network.html</code>.</li>

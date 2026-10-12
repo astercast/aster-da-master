@@ -5,7 +5,7 @@
 #   1. JS syntax ......... node --check every shipped JS file (assets/js/)
 #   2. JSON parse ........ every JSON file under api/, data/, skills/, scripts/
 #   3. JSON Schema ....... draft-07 validation of all 23 docs under
-#                         api/v1/schema/ (one per endpoint, incl. the index
+#                         data/v1/schema/ (one per endpoint, incl. the index
 #                         manifest, the era deep-dives, session clusters,
 #                         the codex family deep-dives, the milestone races,
 #                         the session tools, the codex network, the
@@ -26,12 +26,12 @@
 #                         session_clusters -> codex_pages).
 #                         A clean re-run must
 #                         produce zero diff outside changelog.html +
-#                         api/v1/changelog.json (rebuilt from git log, so it
+#                         data/v1/changelog.json (rebuilt from git log, so it
 #                         legitimately grows after any new commit; its
 #                         entry_count must equal the commit count).
 #   7. Data version ..... every NEW_VERSION/VERSION constant across the
 #                         version-writing generators agrees, and every
-#                         "version" field in data/ + api/v1/ JSON equals it.
+#                         "version" field in data/ + data/v1/ JSON equals it.
 #   8. llms.txt fresh ... llms.txt's data-version line matches index.json;
 #                         every index.json endpoint key is mentioned in
 #                         llms.txt; the documented generator dependency order
@@ -86,7 +86,7 @@ from pathlib import Path
 from jsonschema import Draft7Validator
 
 ROOT = Path(".")
-SCH = ROOT / "api" / "v1" / "schema"
+SCH = ROOT / "data" / "v1" / "schema"
 failures = []
 
 def schema(name):
@@ -114,7 +114,7 @@ pairs = [("index.json", "index.json"), ("artist.json", "artist.json"),
          ("producer-deepdives.json", "producer-deepdives.json"),
          ("chronicle.json", "chronicle.json")]
 for fname, sname in pairs:
-    doc = json.loads((ROOT / "api" / "v1" / fname).read_text())
+    doc = json.loads((ROOT / "data" / "v1" / fname).read_text())
     for e in schema(sname).iter_errors(doc):
         failures.append(f"{fname}: {e.message}")
 
@@ -292,11 +292,11 @@ for s in $CHAIN; do
   fi
 done
 # changelog.{html,json} legitimately grow after any new commit (built from git log).
-# api/v1/index.json is a pure chain output (scripts/api_manifest.py rebuilds it
+# data/v1/index.json is a pure chain output (scripts/api_manifest.py rebuilds it
 # canonically on every generator run); its changelog `records` count moves with
 # the commit count, so it drifts for the same reason the changelog files do.
 # Everything else must be byte-stable across a re-run.
-DIFF=$(git diff --stat -- . ':!changelog.html' ':!api/v1/changelog.json' ':!api/v1/index.json' 2>/dev/null)
+DIFF=$(git diff --stat -- . ':!changelog.html' ':!data/v1/changelog.json' ':!data/v1/index.json' 2>/dev/null)
 if [ -n "$DIFF" ]; then
   fail "generator re-run produced unexpected diffs:"
   echo "$DIFF" | head -12 | sed 's/^/    /'
@@ -307,7 +307,7 @@ fi
 #   (a) right after a rebuild: entry_count == commit count (HEAD not yet committed
 #       the rebuild), or
 #   (b) at rest: HEAD is the sync commit - it touches changelog.html +
-#       api/v1/changelog.json, and (since wave 17) api/v1/index.json too,
+#       data/v1/changelog.json, and (since wave 17) data/v1/index.json too,
 #       because the manifest's changelog `records` count moves with every
 #       commit. entry_count == commit count of HEAD~1, the top entry's hash
 #       matches HEAD~1, and the manifest's changelog records == entry_count.
@@ -318,22 +318,22 @@ from pathlib import Path
 def git(*a):
     return subprocess.run(["git", *a], capture_output=True, text=True).stdout.strip()
 
-cl = json.loads(Path("api/v1/changelog.json").read_text())
+cl = json.loads(Path("data/v1/changelog.json").read_text())
 n = int(git("rev-list", "--count", "HEAD"))
 if cl["entry_count"] == n:
     print(f"  ok: changelog in sync with git history ({n} commits)")
     sys.exit(0)
 touched = [f for f in git("diff-tree", "--no-commit-id", "--name-only", "-r", "HEAD").splitlines() if f.strip()]
-idx = json.loads(Path("api/v1/index.json").read_text())
-if ({"changelog.html", "api/v1/changelog.json"} <= set(touched)
-        <= {"changelog.html", "api/v1/changelog.json", "api/v1/index.json"}
+idx = json.loads(Path("data/v1/index.json").read_text())
+if ({"changelog.html", "data/v1/changelog.json"} <= set(touched)
+        <= {"changelog.html", "data/v1/changelog.json", "data/v1/index.json"}
         and cl["entry_count"] == n - 1
         and cl["entries"][0]["hash"] == git("rev-parse", "--short", "HEAD~1")
         and idx["endpoints"]["changelog"]["records"] == cl["entry_count"]):
     print(f"  ok: changelog sync commit at HEAD; entries ({cl['entry_count']}) cover all content commits")
     sys.exit(0)
 print(f"  FAIL: changelog entry_count {cl['entry_count']} vs {n} commits "
-      f"(rebuild via the chain and commit changelog.html + api/v1/changelog.json)")
+      f"(rebuild via the chain and commit changelog.html + data/v1/changelog.json)")
 sys.exit(1)
 EOF
 [ $? -eq 0 ] && true || { CHAIN_OK=0; FAIL=$((FAIL+1)); }
@@ -357,9 +357,9 @@ if len(consts) != 1:
     errors.append(f"version constants disagree: {consts}")
 expected = next(iter(consts)) if consts else None
 
-# every "version" field in data/ + api/v1/ JSON must equal it
+# every "version" field in data/ + data/v1/ JSON must equal it
 if expected:
-    for pat in ("data/*.json", "api/v1/*.json"):
+    for pat in ("data/*.json", "data/v1/*.json"):
         for f in sorted(ROOT.glob(pat)):
             d = json.loads(f.read_text())
             if isinstance(d, dict) and "version" in d and d["version"] != expected:
@@ -383,7 +383,7 @@ from pathlib import Path
 ROOT = Path(".")
 errors = []
 
-idx = json.loads((ROOT / "api" / "v1" / "index.json").read_text())
+idx = json.loads((ROOT / "data" / "v1" / "index.json").read_text())
 ver = idx["version"]
 endpoints = idx["endpoints"]
 llms = (ROOT / "llms.txt").read_text()
@@ -409,8 +409,8 @@ if chain_str not in llms:
 # catalog counts: 219 transmissions, 34 distributor releases, 185 SoundCloud tracks,
 # 16 codex families, 21 collaborators, 61 sessions, 15 skills, 113 producers
 artist = json.loads((ROOT / "data" / "artist.json").read_text())
-circle_keys = json.loads((ROOT / "api" / "v1" / "circle.json").read_text())
-prods = json.loads((ROOT / "api" / "v1" / "producer-deepdives.json").read_text())
+circle_keys = json.loads((ROOT / "data" / "v1" / "circle.json").read_text())
+prods = json.loads((ROOT / "data" / "v1" / "producer-deepdives.json").read_text())
 disc = artist["discography"]
 dist = [e for e in disc if e["type"] in ("Album", "Single")]
 vault = [e for e in disc if e["type"] == "SoundCloud-only"]

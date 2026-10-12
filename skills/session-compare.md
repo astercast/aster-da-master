@@ -15,7 +15,7 @@ deepest-cuts / timeline-scrubber sections.
 
 ## Inputs
 
-- `api/v1/session-tools.json` — endpoint #20:
+- `data/v1/session-tools.json` — endpoint #20:
   - `sessions[]` — per-session compare profiles: id, name, span, days,
     `track_count`, `total_plays`, `avg_plays_per_track`, era (with
     `era_deep_dive`), `loudest` + `deepest_cut` tracks (title, plays, date,
@@ -30,7 +30,7 @@ deepest-cuts / timeline-scrubber sections.
 
 ## Procedure
 
-1. Fetch `api/v1/session-tools.json`. Read `method` and `snapshot_history`
+1. Fetch `data/v1/session-tools.json`. Read `method` and `snapshot_history`
    first: the archive holds **one** play-count snapshot (2026-10-11), so no
    per-track play trajectory exists anywhere. `play_profile` is each
    transmission's **lifetime plays in upload order** — never call it a
@@ -57,7 +57,7 @@ deepest-cuts / timeline-scrubber sections.
 
 "Compare the loudest session with the deepest session."
 
-- `GET api/v1/session-tools.json` → session-02 ("The February 4th Session",
+- `GET data/v1/session-tools.json` → session-02 ("The February 4th Session",
   2018-02-04): 1 transmission, 30,088 plays, avg 30,088.0 — loudest =
   deepest cut = "Take Me (prod. Em Klebold)" (30,088). Solo run
   (`collaborators: []`). Era: The First Rite.
@@ -74,13 +74,13 @@ deepest-cuts / timeline-scrubber sections.
 
 ## API references
 
-- `api/v1/session-tools.json` — 61 compare profiles, the deepest-sessions
+- `data/v1/session-tools.json` — 61 compare profiles, the deepest-sessions
   editorial ranking, snapshot-history state (endpoint #20; drives the
   compare / deepest-cuts / scrubber sections of `sessions-explorer.html`)
-- `api/v1/session-clusters.json` — the timeline the profiles enrich
+- `data/v1/session-clusters.json` — the timeline the profiles enrich
   (endpoint #17)
-- `api/v1/sessions.json` — raw per-session track lists (endpoint #9)
-- `api/v1/codex-families.json` — family pages behind `families[].page`
+- `data/v1/sessions.json` — raw per-session track lists (endpoint #9)
+- `data/v1/codex-families.json` — family pages behind `families[].page`
   (endpoint #18)
 
 ## Pitfalls

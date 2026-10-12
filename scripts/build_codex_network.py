@@ -2,7 +2,7 @@
 """Wave 26: codex network explorer.
 
 Computes the codex relationship graph from REAL archive data into
-api/v1/codex-network.json (endpoint #21):
+data/v1/codex-network.json (endpoint #21):
   - nodes: Aster (the speaker of every family), the 16 codex families,
     and every figure named on family transmissions -- title-credited
     collaborators (the circle's title-credit rule, as credited verbatim)
@@ -31,7 +31,7 @@ from collections import defaultdict
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-API = ROOT / "api" / "v1"
+API = ROOT / "data" / "v1"
 NEW_VERSION = "0.18.0"  # wave 35: data version 0.18.0 (verified-data expansion)
 SNAPSHOT = "2026-10-11"
 
@@ -482,7 +482,7 @@ assert g["degrees"][0]["degrees"] == 1  # sorted: families first
 METHOD = (
     "The codex relationship graph, computed from real archive data. Nodes: "
     "Aster da Master (the speaker of every family), the 16 codex families "
-    "(api/v1/codex-families.json), and every figure named on family "
+    "(data/v1/codex-families.json), and every figure named on family "
     "transmissions. Collaborator figures follow the circle's title-credit "
     "rule: parsed from w//ft./feat. fragments in titles, as credited "
     "verbatim (build_years.parse_collabs). Producer figures are parsed "
@@ -490,7 +490,7 @@ METHOD = (
     "verbatim; multi-producer credits split on x / & / + / comma). Edges: "
     "aster-family (Aster speaks every word in the family), family-figure "
     "(weight = shared transmissions), figure-figure co-credit from "
-    "api/v1/network.json title co-occurrences. Degrees of separation are "
+    "data/v1/network.json title co-occurrences. Degrees of separation are "
     "BFS distances from Aster on this graph: every family is 1 degree "
     "(Aster speaks every family directly), every figure is 2 degrees (via "
     "the family or families that carry them). The pathfinder's codex-only "

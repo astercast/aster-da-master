@@ -15,7 +15,7 @@ degrees-table sections.
 
 ## Inputs
 
-- `api/v1/codex-network.json` — endpoint #21:
+- `data/v1/codex-network.json` — endpoint #21:
   - `families[]` — the 16 families (id `fam-<slug>`, name, page, track
     count, plays, words, `decoded_status`)
   - `figures[]` — every figure named on family transmissions: id
@@ -43,7 +43,7 @@ degrees-table sections.
 
 ## Procedure
 
-1. Fetch `api/v1/codex-network.json`. Read `method` first.
+1. Fetch `data/v1/codex-network.json`. Read `method` first.
 2. For "how is X connected to Y": run BFS over `edges[]` (undirected)
    from X's node id to Y's node id. Report each hop with the edge's
    `label` (e.g. "JAX × 2 in The Modes"). The archive route may pass
@@ -65,7 +65,7 @@ degrees-table sections.
 "Connect JAX to the producer runawway — and is there a codex-only route
 from capoxxo to Lil Wintr?"
 
-- `GET api/v1/codex-network.json` → `fig-jax` (collaborator; families:
+- `GET data/v1/codex-network.json` → `fig-jax` (collaborator; families:
   the-modes, dark, journeys), `fig-p-runawway` (producer; family:
   the-modes — "big litemode (prod runawway, ilyagargod & k3nik)").
 - Shortest path (through the archive): JAX → The Modes ("JAX × 2 in
@@ -78,14 +78,14 @@ from capoxxo to Lil Wintr?"
 
 ## API references
 
-- `api/v1/codex-network.json` — the codex relationship graph: 16 family
+- `data/v1/codex-network.json` — the codex relationship graph: 16 family
   nodes, 53 figure nodes, family-overlap pairs, BFS degrees, insights
   (endpoint #21; drives `codex-network.html`)
-- `api/v1/codex-families.json` — family deep dives behind the family
+- `data/v1/codex-families.json` — family deep dives behind the family
   pages (endpoint #18)
-- `api/v1/network.json` — the full collaboration graph; source of the
+- `data/v1/network.json` — the full collaboration graph; source of the
   co-credit edges (endpoint #15)
-- `api/v1/circle.json` — the 21 title-credited collaborators (endpoint #7)
+- `data/v1/circle.json` — the 21 title-credited collaborators (endpoint #7)
 
 ## Pitfalls
 

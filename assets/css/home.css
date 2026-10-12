@@ -1,0 +1,343 @@
+/* ============================================================
+   HOME — Aster da Master homepage, wave 36 (EXTREME MAKEOVER)
+   Hand-maintained. The sign-on: one hero, four rooms, closed drawers.
+   Reads tokens.css + motifs.css only; no new colors, no new fonts.
+   Reduced-motion contract: drawers are native <details> (no animation);
+   room-card hover motion (arrow slide, border glow) becomes a static
+   phosphor underline under prefers-reduced-motion; the dialog opens
+   without transition either way.
+   ============================================================ */
+
+/* ---- compact header: index button ---- */
+.index-btn {
+  font: inherit;
+  font-size: var(--fs-small);
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+  color: var(--ink-dim);
+  background: transparent;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-s);
+  padding: 8px 12px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+}
+.index-btn:hover {
+  color: var(--neon);
+  border-color: var(--neon-dim);
+}
+.index-btn:focus-visible {
+  outline: 2px solid var(--neon);
+  outline-offset: 2px;
+}
+.mnav .index-btn {
+  width: 100%;
+  justify-content: center;
+  margin-top: var(--space-3);
+}
+
+/* ---- station index dialog ---- */
+#station-index {
+  background: var(--panel);
+  color: var(--ink);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-m);
+  padding: 0;
+  max-width: min(880px, calc(100vw - 32px));
+  max-height: calc(100svh - 64px);
+  width: 880px;
+}
+#station-index::backdrop {
+  background: rgba(5, 7, 5, 0.86);
+}
+.index-inner {
+  padding: var(--space-6);
+  max-height: calc(100svh - 64px);
+  overflow: auto;
+}
+.index-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  border-bottom: 1px solid var(--line-soft);
+  padding-bottom: var(--space-4);
+  margin-bottom: var(--space-5);
+}
+.index-groups {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--space-6);
+}
+.index-groups h3 {
+  font-size: var(--fs-small);
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+  color: var(--neon-dim);
+  margin: 0 0 var(--space-3);
+}
+.index-groups ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 2px;
+}
+.index-groups li a {
+  display: block;
+  padding: 7px 10px;
+  margin: 0 -10px;
+  border-radius: var(--radius-s);
+  color: var(--ink);
+  text-decoration: none;
+  font-size: var(--fs-small);
+}
+.index-groups li a span {
+  color: var(--muted);
+  font-size: var(--fs-micro);
+}
+.index-groups li a:hover {
+  color: var(--neon);
+  background: var(--neon-ghost);
+}
+.index-groups li a:hover span {
+  color: var(--ink-dim);
+}
+.index-foot {
+  margin-top: var(--space-6);
+  padding-top: var(--space-4);
+  border-top: 1px dotted var(--line);
+  color: var(--muted);
+  font-size: var(--fs-small);
+}
+
+/* ---- hero sign-on ---- */
+.hero-signon .hero-kicker {
+  color: var(--neon-dim);
+}
+.hero-stats {
+  margin-top: var(--space-5);
+  color: var(--ink-dim);
+  font-size: var(--fs-small);
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+}
+.hero-stats [data-signal="plays"] {
+  color: var(--neon);
+  font-variant-numeric: tabular-nums;
+}
+.btn-hero {
+  font-size: 1.05rem;
+  padding: 14px 28px;
+}
+.hero-alt {
+  margin-top: var(--space-5);
+  color: var(--muted);
+  font-size: var(--fs-small);
+}
+
+/* ---- fresh from the source + keeper's note ---- */
+.fresh-grid {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: var(--space-7);
+  align-items: start;
+}
+@media (max-width: 860px) {
+  .fresh-grid { grid-template-columns: 1fr; }
+}
+.keepers-note {
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--gold);
+  border-radius: var(--radius-s);
+  background: var(--panel);
+  padding: var(--space-5);
+}
+.keepers-note .kicker {
+  color: var(--gold-bright);
+}
+.keepers-note h3 {
+  font-size: var(--fs-3);
+  margin: var(--space-2) 0 var(--space-3);
+  text-wrap: balance;
+}
+.keepers-note p {
+  color: var(--ink-dim);
+  font-size: var(--fs-small);
+  line-height: 1.65;
+}
+.keepers-note .chart-sub {
+  margin-top: var(--space-4);
+}
+
+/* ---- the four rooms ---- */
+.rooms-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--space-4);
+}
+.room-card {
+  position: relative;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-m);
+  background: var(--panel);
+  padding: var(--space-6) var(--space-5);
+  transition: border-color var(--dur-2) var(--ease), transform var(--dur-2) var(--ease);
+}
+.room-card:hover {
+  border-color: var(--neon-dim);
+  transform: translateY(-3px);
+}
+.room-card .kicker {
+  color: var(--neon-dim);
+}
+.room-card h3 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: var(--fs-2);
+  letter-spacing: 0.02em;
+  margin: var(--space-2) 0 var(--space-3);
+  text-wrap: balance;
+}
+.room-card h3 a {
+  color: var(--ink);
+  text-decoration: none;
+}
+.room-card h3 a:hover {
+  color: var(--neon);
+}
+.room-card h3 a::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+.room-card > p {
+  color: var(--ink-dim);
+  font-size: var(--fs-small);
+  line-height: 1.65;
+}
+.room-sub {
+  margin-top: var(--space-4);
+  padding-top: var(--space-3);
+  border-top: 1px dotted var(--line);
+  font-size: var(--fs-micro);
+  color: var(--muted);
+  position: relative;
+  z-index: 1;
+}
+.room-sub a {
+  color: var(--ink-dim);
+}
+.room-sub a:hover {
+  color: var(--neon);
+}
+.room-go {
+  position: absolute;
+  top: var(--space-5);
+  right: var(--space-5);
+  color: var(--neon-dim);
+  font-size: 1.2rem;
+  transition: transform var(--dur-2) var(--ease), color var(--dur-2) var(--ease);
+}
+.room-card:hover .room-go {
+  transform: translateX(6px);
+  color: var(--neon);
+}
+
+/* ---- cast lots strip ---- */
+.lots-strip {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-6);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-m);
+  background: var(--panel);
+  padding: var(--space-6);
+  flex-wrap: wrap;
+}
+.lots-strip h2 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: var(--fs-2);
+  margin: var(--space-2) 0 var(--space-2);
+}
+.lots-strip p {
+  color: var(--ink-dim);
+  font-size: var(--fs-small);
+  margin: 0;
+}
+
+/* ---- the station log: closed drawers ---- */
+.log-drawer {
+  border: 1px solid var(--line);
+  border-radius: var(--radius-m);
+  background: var(--bg-soft);
+  margin-bottom: var(--space-3);
+}
+.log-drawer > summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-5);
+  padding: var(--space-5) var(--space-6);
+  border-radius: var(--radius-m);
+}
+.log-drawer > summary::-webkit-details-marker {
+  display: none;
+}
+.log-drawer > summary:hover {
+  background: var(--neon-ghost);
+}
+.log-drawer > summary:focus-visible {
+  outline: 2px solid var(--neon);
+  outline-offset: 2px;
+}
+.log-drawer > summary .kicker {
+  color: var(--neon-dim);
+  white-space: nowrap;
+}
+.log-drawer > summary .drawer-line {
+  color: var(--ink-dim);
+  font-size: var(--fs-small);
+  margin-left: auto;
+  text-align: right;
+}
+.log-drawer[open] > summary {
+  border-bottom: 1px dotted var(--line);
+  border-radius: var(--radius-m) var(--radius-m) 0 0;
+}
+.log-drawer[open] > summary .kicker {
+  color: var(--neon);
+}
+.drawer-body {
+  padding: var(--space-6);
+}
+.drawer-h {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: var(--fs-2);
+  margin: 0 0 var(--space-3);
+  text-wrap: balance;
+}
+
+/* ---- reduced motion: everything already static by construction,
+   except room hover which degrades to a phosphor underline ---- */
+@media (prefers-reduced-motion: reduce) {
+  .room-card,
+  .room-go {
+    transition: none;
+  }
+  .room-card:hover {
+    transform: none;
+    border-color: var(--neon);
+  }
+  .room-card:hover .room-go {
+    transform: none;
+    text-decoration: underline;
+  }
+}

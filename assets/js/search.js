@@ -52,7 +52,7 @@
   function load() {
     return Promise.all([
       fetch(absUrl("data/artist.json")).then(function (r) { if (!r.ok) throw 0; return r.json(); }),
-      fetch(absUrl("api/v1/release-slugs.json")).then(function (r) { if (!r.ok) throw 0; return r.json(); }),
+      fetch(absUrl("data/v1/release-slugs.json")).then(function (r) { if (!r.ok) throw 0; return r.json(); }),
       fetch(absUrl("data/codex.json")).then(function (r) { if (!r.ok) return null; return r.json(); }).catch(function () { return null; })
     ]).then(function (parts) {
       var d = parts[0], slugs = parts[1], codex = parts[2];

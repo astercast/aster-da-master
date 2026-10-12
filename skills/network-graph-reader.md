@@ -21,7 +21,7 @@ crossover analysis. For a single person's full footprint, use
 
 ## Procedure
 
-1. Read `api/v1/network.json`. Structure: `artist` (center), `nodes[]`
+1. Read `data/v1/network.json`. Structure: `artist` (center), `nodes[]`
    (`id`, `name`, `kind` = artist/collaborator/producer, `track_count`,
    `first_date`, `last_date`, `tracks[]`, layout `x`/`y`), `edges[]`
    (`a`, `b`, `weight`, `kind` = artist/co-credit, optional `shared_tracks[]`),
@@ -62,11 +62,11 @@ crossover analysis. For a single person's full footprint, use
 
 ## API references
 
-- `api/v1/network.json` — the graph: nodes, edges, insights
-  (schema: `api/v1/schema/network.json`)
-- `api/v1/circle.json` — per-collaborator track detail behind each node
-- `api/v1/scene-figures.json` — producer nodes' research backing
-- `api/v1/index.json` — registry; network endpoint `records: 23`
+- `data/v1/network.json` — the graph: nodes, edges, insights
+  (schema: `data/v1/schema/network.json`)
+- `data/v1/circle.json` — per-collaborator track detail behind each node
+- `data/v1/scene-figures.json` — producer nodes' research backing
+- `data/v1/index.json` — registry; network endpoint `records: 23`
 
 ## Pitfalls
 

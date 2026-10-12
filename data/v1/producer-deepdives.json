@@ -258,7 +258,7 @@
             "url": "https://upcomingvinyl.com/record/fish-narc-uncle"
           }
         ],
-        "evidence": "mirrors api/v1/scene-figures.json (archive research pass 2026-10-11, build_circle.py) plus the wave-27 Uncle-LP diligence below. Facts reproduced here so the producer page is self-contained; the canonical copy lives in scene-figures.json."
+        "evidence": "mirrors data/v1/scene-figures.json (archive research pass 2026-10-11, build_circle.py) plus the wave-27 Uncle-LP diligence below. Facts reproduced here so the producer page is self-contained; the canonical copy lives in scene-figures.json."
       },
       "explorer_deep_link": "figure-fish-narc"
     },

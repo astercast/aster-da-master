@@ -192,7 +192,7 @@ check("pinned: outro pace math", approx(65 / 0.33, 197.0, 0.5))
 check("pinned: lucid boi pace math", approx(82 / 0.29, 282.8, 0.5))
 
 # --- the live vault_pace + climb + provenance payloads ---
-DOC = json.load(open(ROOT.parent / "api" / "v1" / "milestone-races.json"))
+DOC = json.load(open(ROOT.parent / "data" / "v1" / "milestone-races.json"))
 _vp = DOC["vault_pace"]
 check("vault_pace: 185 tracks", _vp["count"] == 185 == len(_vp["tracks"]))
 check("vault_pace: ids unique",

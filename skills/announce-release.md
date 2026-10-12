@@ -30,4 +30,4 @@ Release: "Reachhh" (single, 2024-04-08). True detail: Shazam-pop association.
 ## Pitfalls
 
 - Announcing before the platform links are live — always verify the link resolves first.
-- Inventing chart positions, collaborator quotes, or genre labels. If it's not in `api/v1/artist.json`, it doesn't go in the announcement.
+- Inventing chart positions, collaborator quotes, or genre labels. If it's not in `data/v1/artist.json`, it doesn't go in the announcement.

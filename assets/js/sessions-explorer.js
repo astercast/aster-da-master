@@ -1,7 +1,7 @@
 /* Aster da Master — sessions explorer (wave 19).
-   Renders sessions-explorer.html from api/v1/session-clusters.json
+   Renders sessions-explorer.html from data/v1/session-clusters.json
    (the timeline: enriched sessions, gaps, seasons, insights) plus
-   api/v1/sessions.json (per-session track lists, lazy per card).
+   data/v1/sessions.json (per-session track lists, lazy per card).
    The page renders nothing invented: every figure comes from the JSON. */
 (function () {
   "use strict";
@@ -552,9 +552,9 @@
   /* ---------------- boot ---------------- */
   function boot() {
     Promise.all([
-      loadData("api/v1/session-clusters.json"),
-      loadData("api/v1/sessions.json"),
-      loadData("api/v1/session-tools.json")
+      loadData("data/v1/session-clusters.json"),
+      loadData("data/v1/sessions.json"),
+      loadData("data/v1/session-tools.json")
     ]).then(function (res) {
       DATA = res[0];
       res[1].sessions.forEach(function (s) { TRACKS[s.id] = s.tracks; });

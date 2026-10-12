@@ -17,10 +17,10 @@ const FUNCTIONS = ["health", "stats", "uploads", "cron/signal"];
 // static JSON the Signal's functions depend on, with the timestamp field
 // each one carries and the SLA each is judged against.
 const FRESHNESS_FILES = [
-  { file: "api/v1/refresh-status.json", tsField: "snapshot_at", sla_s: SLA_S },
-  { file: "api/v1/uploads.json", tsField: "generated_at", sla_s: SLA_S },
-  { file: "api/v1/stats-snapshots.json", tsField: "generated_at", sla_s: SLA_S },
-  { file: "api/v1/artist.json", tsField: "observed", sla_s: SLA_S * 7 },
+  { file: "data/v1/refresh-status.json", tsField: "snapshot_at", sla_s: SLA_S },
+  { file: "data/v1/uploads.json", tsField: "generated_at", sla_s: SLA_S },
+  { file: "data/v1/stats-snapshots.json", tsField: "generated_at", sla_s: SLA_S },
+  { file: "data/v1/artist.json", tsField: "observed", sla_s: SLA_S * 7 },
 ];
 
 const startedAt = nowIso();

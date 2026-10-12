@@ -1,5 +1,5 @@
 /* Proof: executes the 6 AGENT.md example workflows against the real
-   local api/v1 JSON files and asserts each step returns real data.
+   local data/v1 JSON files and asserts each step returns real data.
    Run: node scripts/verify_agent_workflows.js (from the repo root). */
 "use strict";
 const fs = require("fs");

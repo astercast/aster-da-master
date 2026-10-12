@@ -3,13 +3,13 @@
    chapters rendered as broadcast segments on one long scroll. Traveling
    between segments plays a signal-static flash (pure CSS/SVG, opacity only);
    the station tuner jumps straight to any era. Numbers count up live as each
-   segment enters the viewport — every count target from the real api/v1 JSON,
+   segment enters the viewport — every count target from the real data/v1 JSON,
    never invented:
      era transmissions/plays/sessions/distributor/milestones <- transmission.json
      archive totals <- transmission.json archive_totals; the plays cells also
        carry data-signal="plays" so The Signal repaints them live when
        /api/stats answers (the static snapshot stands otherwise).
-   Data chapters pull LIVE from the real api/v1 JSON (no figures hardcoded, so
+   Data chapters pull LIVE from the real data/v1 JSON (no figures hardcoded, so
    future waves update the broadcast automatically):
      chapter-race    <- milestone-races.json (closest races + summit)
      chapter-record  <- milestone-races.json (records + just crossed)
@@ -1331,14 +1331,14 @@
   }
 
   Promise.all([
-    loadData("api/v1/transmission.json"),
-    loadData("api/v1/milestone-races.json").then(null, function () { return null; }),
-    loadData("api/v1/codex-families.json").then(null, function () { return null; }),
-    loadData("api/v1/eras.json").then(null, function () { return null; }),
-    loadData("api/v1/years.json").then(null, function () { return null; }),
-    loadData("api/v1/session-clusters.json").then(null, function () { return null; }),
-    loadData("api/v1/session-tools.json").then(null, function () { return null; }),
-    loadData("api/v1/producer-deepdives.json").then(null, function () { return null; })
+    loadData("data/v1/transmission.json"),
+    loadData("data/v1/milestone-races.json").then(null, function () { return null; }),
+    loadData("data/v1/codex-families.json").then(null, function () { return null; }),
+    loadData("data/v1/eras.json").then(null, function () { return null; }),
+    loadData("data/v1/years.json").then(null, function () { return null; }),
+    loadData("data/v1/session-clusters.json").then(null, function () { return null; }),
+    loadData("data/v1/session-tools.json").then(null, function () { return null; }),
+    loadData("data/v1/producer-deepdives.json").then(null, function () { return null; })
   ]).then(function (res) {
     RACES = res[1];
     CODEX = res[2];

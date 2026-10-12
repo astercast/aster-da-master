@@ -4,12 +4,12 @@
 Reads data/artist.json (219 entries), computes the career's defining
 firsts — first transmission, first 10k-play track, first collaboration,
 the 100th transmission, most prolific day, longest silence, the 250k-play
-crossing — and emits data/milestones.json + api/v1/milestones.json.
+crossing — and emits data/milestones.json + data/v1/milestones.json.
 
 Every milestone is a computed fact from the data; no narrative is
 invented. Play counts are the 2026-10-11 snapshot.
 
-Also bumps data version to 0.13.0 and mirrors to api/v1/.
+Also bumps data version to 0.13.0 and mirrors to data/v1/.
 """
 import json
 import re
@@ -21,10 +21,10 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data" / "artist.json"
 MS_OUT = ROOT / "data" / "milestones.json"
-API_OUT = ROOT / "api" / "v1" / "milestones.json"
-API_ARTIST = ROOT / "api" / "v1" / "artist.json"
-API_INDEX = ROOT / "api" / "v1" / "index.json"
-SCHEMA_OUT = ROOT / "api" / "v1" / "schema" / "milestones.json"
+API_OUT = ROOT / "data" / "v1" / "milestones.json"
+API_ARTIST = ROOT / "data" / "v1" / "artist.json"
+API_INDEX = ROOT / "data" / "v1" / "index.json"
+SCHEMA_OUT = ROOT / "data" / "v1" / "schema" / "milestones.json"
 NEW_VERSION = "0.18.0"  # wave 35: data version 0.18.0 (verified-data expansion)
 SNAPSHOT = "2026-10-11"
 

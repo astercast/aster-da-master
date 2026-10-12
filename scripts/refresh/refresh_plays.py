@@ -29,7 +29,7 @@ This script refreshes them in three tiers, tried in order:
             from sources that cannot supply real playback_count values.
 
   Tier (c)  Nothing reachable: exits 0 gracefully, writing NEW
-            api/v1/refresh-status.json
+            data/v1/refresh-status.json
               { "last_attempt": "<iso8601>",
                 "status": "skipped",
                 "reason": "no usable SOUNDCLOUD_CLIENT_ID and public-JS extraction failed; use live-browser capture (see GO_LIVE.md)" }
@@ -59,7 +59,7 @@ HARD RULES:
   AFTER --merge, the builder's generators MUST be re-run so every derived
   page/API copy picks up the new counts (per API.md "re-run after data
   changes"):
-      scripts/build_releases.py     # release pages + api/v1/artist.json copy
+      scripts/build_releases.py     # release pages + data/v1/artist.json copy
       scripts/build_years.py        # year archive pages
       scripts/build_circle.py       # circle page
       scripts/build_search_index.py # search index (slugs mirror releases)

@@ -4,8 +4,8 @@
 Output:
   years/2018.html ... years/2026.html  - one page per year
   years/index.html                     - the year-archive index
-  api/v1/years.json                    - machine-readable per-year stats
-                                       (registered in api/v1/index.json)
+  data/v1/years.json                    - machine-readable per-year stats
+                                       (registered in data/v1/index.json)
 
 Per year: transmission count, total plays, top-10 tracks by plays,
 key collaborators (parsed from title credits, never invented),
@@ -29,7 +29,7 @@ from build_releases import slugify  # noqa: E402  (single source of truth)
 DATA = json.loads((ROOT / "data" / "artist.json").read_text())
 YEARS = list(range(2018, 2027))
 OUT = ROOT / "years"
-API = ROOT / "api" / "v1"
+API = ROOT / "data" / "v1"
 
 NAV = """<nav class="site-nav" aria-label="Primary">
         <a href="../#discography">Discography</a>
@@ -384,7 +384,7 @@ def main():
     (API / "years.json").write_text(
         json.dumps(api_years, indent=1, ensure_ascii=False) + "\n", encoding="utf-8"
     )
-    print(f"years: {len(YEARS)} pages + index + api/v1/years.json")
+    print(f"years: {len(YEARS)} pages + index + data/v1/years.json")
 
 if __name__ == "__main__":
     main()

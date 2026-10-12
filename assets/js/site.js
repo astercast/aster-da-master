@@ -24,6 +24,33 @@
     document.querySelectorAll(".reveal").forEach(function (el) { el.classList.add("in"); });
   }
 
+  /* Station-log drawers: a deep link into a closed drawer opens it first,
+     so the 800+ ../#section links across the archive keep landing. */
+  function openHashDrawer() {
+    var id = (location.hash || "").slice(1);
+    if (!id) return;
+    var el = document.getElementById(id);
+    if (!el) return;
+    var d = el.closest ? el.closest("details.log-drawer") : null;
+    if (d && !d.open) d.open = true;
+  }
+  window.addEventListener("hashchange", openHashDrawer);
+  openHashDrawer();
+
+  /* Station index dialog: open buttons + close-on-navigate. */
+  (function () {
+    var dlg = document.getElementById("station-index");
+    if (!dlg || typeof dlg.showModal !== "function") return;
+    ["index-open", "index-open-mobile"].forEach(function (bid) {
+      var b = document.getElementById(bid);
+      if (b) b.addEventListener("click", function () { dlg.showModal(); });
+    });
+    dlg.addEventListener("click", function (ev) {
+      var a = ev.target.closest ? ev.target.closest('a[href^="#"]') : null;
+      if (a) dlg.close();
+    });
+  })();
+
   function artTile(r) {
     var initial = esc((r.title || "?").charAt(0));
     var mono = '<div class="disco-art disco-mono" aria-hidden="true"' + (r.artwork ? " hidden" : "") + ">" + initial + "</div>";
@@ -384,7 +411,7 @@
       }
 
       /* On this day — transmissions that landed on today's month/day,
-         across all years. Powered by api/v1/on-this-day.json. */
+         across all years. Powered by data/v1/on-this-day.json. */
       var otdList = document.getElementById("onthisday-list");
       var otdSub = document.getElementById("onthisday-sub");
       if (otdList) {
@@ -392,7 +419,7 @@
         var mmdd = ("0" + (now.getMonth() + 1)).slice(-2) + "-" + ("0" + now.getDate()).slice(-2);
         var pretty = now.toLocaleDateString("en-US", { month: "long", day: "numeric" });
         if (otdSub) otdSub.textContent = "Transmissions that landed on " + pretty + " — across all nine years.";
-        fetch("api/v1/on-this-day.json")
+        fetch("data/v1/on-this-day.json")
           .then(function (r) { if (!r.ok) throw new Error("on-this-day failed"); return r.json(); })
           .then(function (otd) {
             var todays = otd[mmdd] || [];

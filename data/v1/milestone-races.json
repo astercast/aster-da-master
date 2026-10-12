@@ -2,7 +2,7 @@
   "version": "0.18.0",
   "generated": "2026-10-11",
   "plays_snapshot": "2026-10-11",
-  "method": "The archive's milestones as races, computed from api/v1/milestone-watch.json (bands + summit), data/artist.json (plays and upload dates), api/v1/milestones.json (crossed milestone dates), api/v1/session-clusters.json (session records), and api/v1/eras.json (era records). Race figures are simple snapshot arithmetic: current value, target, gap, and an at-pace figure that is pace-arithmetic, never a prediction.",
+  "method": "The archive's milestones as races, computed from data/v1/milestone-watch.json (bands + summit), data/artist.json (plays and upload dates), data/v1/milestones.json (crossed milestone dates), data/v1/session-clusters.json (session records), and data/v1/eras.json (era records). Race figures are simple snapshot arithmetic: current value, target, gap, and an at-pace figure that is pace-arithmetic, never a prediction.",
   "pace_definition": "pace_per_day = snapshot plays ÷ days from the track's upload date to the 2026-10-11 snapshot. A lifetime average, not a current rate. days_at_pace (plays still needed ÷ pace) and catch_days_at_pace (summit gap ÷ pace) are plain division - an honest arithmetic estimate, never a prediction.",
   "play_races": [
     {
@@ -5055,7 +5055,7 @@
     ]
   },
   "race_history": {
-    "method": "Completed races from the archive's own records. threshold_winners counts vault tracks past each round-number play threshold and names the current leader - crossing dates are not recorded: the archive holds ONE play-count snapshot (2026-10-11), so crossing dates and finish order for these races cannot be recovered and are not claimed. completed_crossings are the dated milestone entries from api/v1/milestones.json (the undated 'Longest silence' entry is excluded, recorded here). The photo finish is the pair of recorded crossings closest together in time.",
+    "method": "Completed races from the archive's own records. threshold_winners counts vault tracks past each round-number play threshold and names the current leader - crossing dates are not recorded: the archive holds ONE play-count snapshot (2026-10-11), so crossing dates and finish order for these races cannot be recovered and are not claimed. completed_crossings are the dated milestone entries from data/v1/milestones.json (the undated 'Longest silence' entry is excluded, recorded here). The photo finish is the pair of recorded crossings closest together in time.",
     "undated_excluded": [
       "Longest silence"
     ],

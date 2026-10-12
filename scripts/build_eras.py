@@ -2,9 +2,9 @@
 """Wave 18: era deep-dives.
 
 Expands the Transmission journey's six eras (2018->2026) into full browsable
-deep-dive pages, plus a new api/v1/eras.json (endpoint #16):
+deep-dive pages, plus a new data/v1/eras.json (endpoint #16):
 
-  - api/v1/eras.json        - per era: everything api/v1/transmission.json
+  - data/v1/eras.json        - per era: everything data/v1/transmission.json
                               carries (stats, top tracks, key sessions,
                               milestones, computed signal line) PLUS the
                               full era transmission list (every entry, with
@@ -14,21 +14,21 @@ deep-dive pages, plus a new api/v1/eras.json (endpoint #16):
                               era, and a computed "summary" of the era's
                               signal (ranks, shares, busiest year, loudest
                               and quietest transmissions, top family)
-  - api/v1/schema/eras.json - draft-07 schema (#16)
+  - data/v1/schema/eras.json - draft-07 schema (#16)
   - eras/<id>.html           - one deep-dive page per era, linking back to
                               the Transmission journey at the matching era
                               node (transmission.html#era-<id>) and forward
                               to glance/timeline
 
 Sources (all real archive data):
-  - api/v1/transmission.json  (era aggregates, built by build_transmission.py)
-  - api/v1/years.json         (per-year transmissions/plays, for re-verifying)
+  - data/v1/transmission.json  (era aggregates, built by build_transmission.py)
+  - data/v1/years.json         (per-year transmissions/plays, for re-verifying)
   - data/sessions.json        (61 sessions, for re-verifying session counts)
   - data/artist.json          (the 219-entry discography -> full era track
                               lists; era scene/note/releases text)
-  - api/v1/release-slugs.json (ordinal -> slug, for release-page links)
-  - api/v1/circle.json        (full in-era collaborator footprints)
-  - api/v1/codex.json         (family track dates -> families active per era)
+  - data/v1/release-slugs.json (ordinal -> slug, for release-page links)
+  - data/v1/circle.json        (full in-era collaborator footprints)
+  - data/v1/codex.json         (family track dates -> families active per era)
 
 Every number is recomputed here and the script exits non-zero on any
 disagreement. No payload shape changes to any existing endpoint; data
@@ -43,7 +43,7 @@ from html import escape
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-API = ROOT / "api" / "v1"
+API = ROOT / "data" / "v1"
 OUT = ROOT / "eras"
 NEW_VERSION = "0.18.0"  # wave 35: data version 0.18.0 (verified-data expansion)
 SNAPSHOT = "2026-10-11"
@@ -691,10 +691,10 @@ def main() -> int:
         "version": NEW_VERSION,
         "generated": SNAPSHOT,
         "plays_snapshot": SNAPSHOT,
-        "method": ("Era deep-dives expanded from api/v1/transmission.json "
-                   "against data/artist.json (discography), api/v1/years.json, "
-                   "data/sessions.json, api/v1/circle.json, and "
-                   "api/v1/codex.json. collaborators[] holds EVERY in-era "
+        "method": ("Era deep-dives expanded from data/v1/transmission.json "
+                   "against data/artist.json (discography), data/v1/years.json, "
+                   "data/sessions.json, data/v1/circle.json, and "
+                   "data/v1/codex.json. collaborators[] holds EVERY in-era "
                    "collaborator (transmission.json keeps only the top 3). "
                    "summary figures are recomputed and asserted in "
                    "scripts/build_eras.py. Titles and metadata only - "

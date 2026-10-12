@@ -304,9 +304,9 @@ module.exports = async (req, res) => {
     // the cron only rewrites it on a real change.
     const [reads, sc] = await Promise.all([
       Promise.all([
-        readState("api/v1/uploads.json", upstream),
-        readState("api/v1/stats-snapshots.json", upstream),
-        readState("api/v1/refresh-status.json", upstream),
+        readState("data/v1/uploads.json", upstream),
+        readState("data/v1/stats-snapshots.json", upstream),
+        readState("data/v1/refresh-status.json", upstream),
         readState("data/playcounts.snapshot.json", upstream),
       ]),
       pullSoundCloud(upstream),
@@ -371,9 +371,9 @@ module.exports = async (req, res) => {
       const msg = "Signal: play-count refresh " + now.slice(0, 10) +
         " (" + tracksCaptured + " tracks" + (newUploads.length ? ", " + newUploads.length + " new upload(s)" : "") + ")";
       const writes = await Promise.all([
-        writeJsonIfChanged("api/v1/uploads.json", uploadsDoc, msg, UA, uploadsR.ok ? uploadsR.obj : undefined),
-        writeJsonIfChanged("api/v1/stats-snapshots.json", snapsDoc, msg, UA, snapsR.ok ? snapsR.obj : undefined),
-        writeJsonIfChanged("api/v1/refresh-status.json", statusDoc, msg, UA, statusR.ok ? statusR.obj : undefined),
+        writeJsonIfChanged("data/v1/uploads.json", uploadsDoc, msg, UA, uploadsR.ok ? uploadsR.obj : undefined),
+        writeJsonIfChanged("data/v1/stats-snapshots.json", snapsDoc, msg, UA, snapsR.ok ? snapsR.obj : undefined),
+        writeJsonIfChanged("data/v1/refresh-status.json", statusDoc, msg, UA, statusR.ok ? statusR.obj : undefined),
         writeJsonIfChanged("data/playcounts.snapshot.json", snapshotDoc, msg, UA, snapFileR.ok ? snapFileR.obj : undefined),
       ]);
       const files = ["uploads.json", "stats-snapshots.json", "refresh-status.json", "playcounts.snapshot.json"];

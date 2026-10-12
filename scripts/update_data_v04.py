@@ -13,7 +13,7 @@
    confidence "single-source", date unknown, upload date/play counts unknown.
    Titles only - no lyrics anywhere.
 3. Adds a top-level `vault` status object. Bumps version to 0.4.0.
-4. Mirrors data/artist.json -> api/v1/artist.json.
+4. Mirrors data/artist.json -> data/v1/artist.json.
 
 Idempotent: safe to re-run (vault titles are matched by title+type).
 """
@@ -22,7 +22,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data" / "artist.json"
-API = ROOT / "api" / "v1" / "artist.json"
+API = ROOT / "data" / "v1" / "artist.json"
 
 DIST_SOURCE = "Apple Music profile 1466301103 (\u201cAster Da Master\u201d) \u00b7 iTunes Search API primary metadata \u00b7 verified 2026-10-11"
 

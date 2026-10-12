@@ -5,20 +5,20 @@
 era-deep-dive treatment.
 
 Reads:
-  api/v1/codex.json            (families: epithet, words, track lists)
-  api/v1/eras.json             (the six eras: years, deep_dive, journey links)
+  data/v1/codex.json            (families: epithet, words, track lists)
+  data/v1/eras.json             (the six eras: years, deep_dive, journey links)
   data/sessions.json           (session -> track lists)
-  api/v1/session-clusters.json (session deep_dive links)
-  api/v1/circle.json           (collaborator -> track lists)
-  api/v1/release-slugs.json    (ordinal -> release page slug)
+  data/v1/session-clusters.json (session deep_dive links)
+  data/v1/circle.json           (collaborator -> track lists)
+  data/v1/release-slugs.json    (ordinal -> release page slug)
   data/artist.json             (discography ordinals)
 
 Emits:
-  api/v1/codex-families.json       (endpoint #18)
-  api/v1/schema/codex-families.json (draft-07 schema #18)
+  data/v1/codex-families.json       (endpoint #18)
+  data/v1/schema/codex-families.json (draft-07 schema #18)
   codex/<slug>.html x16            (family deep-dive pages - this generator
                                    OWNS them; build_codex.py no longer does)
-  api/v1/index.json                (endpoint registered via render_manifest())
+  data/v1/index.json                (endpoint registered via render_manifest())
 
 Per family, every figure recomputed and asserted:
   - every transmission carrying its markers, with plays + release links
@@ -49,7 +49,7 @@ sys.path.insert(0, str(ROOT / "scripts"))
 from build_releases import slugify  # noqa: E402  (single source of truth)
 from api_manifest import render_manifest  # noqa: E402
 
-API = ROOT / "api" / "v1"
+API = ROOT / "data" / "v1"
 CODEX = json.loads((API / "codex.json").read_text())["families"]
 ERAS = json.loads((API / "eras.json").read_text())["eras"]
 SESSIONS = json.loads((ROOT / "data" / "sessions.json").read_text())["sessions"]
@@ -620,9 +620,9 @@ def main():
         "generated": SNAPSHOT,
         "plays_snapshot": SNAPSHOT,
         "method": (
-            "Per-family deep dives computed from api/v1/codex.json against "
-            "api/v1/eras.json, data/sessions.json, api/v1/session-clusters.json, "
-            "api/v1/circle.json, and api/v1/release-slugs.json. Decoded "
+            "Per-family deep dives computed from data/v1/codex.json against "
+            "data/v1/eras.json, data/sessions.json, data/v1/session-clusters.json, "
+            "data/v1/circle.json, and data/v1/release-slugs.json. Decoded "
             "readings are traced verbatim to codex.json's epithets; where the "
             "archive assigns no meaning (the litemode/nitemode words) the "
             "reading is stated as unknown. No meanings invented."),

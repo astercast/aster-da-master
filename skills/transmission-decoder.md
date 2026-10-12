@@ -15,7 +15,7 @@ An agent (or a visitor) types a word — "litemode", "cold", "soul" — and want
 
 ## Procedure
 
-1. Fetch `api/v1/codex.json`. It holds 16 families, each with `name`, `epithet`, `words[]`, `track_count`, and `tracks[]` (title, date, plays, type).
+1. Fetch `data/v1/codex.json`. It holds 16 families, each with `name`, `epithet`, `words[]`, `track_count`, and `tracks[]` (title, date, plays, type).
 2. Match the input against each family's `words[]` (case-insensitive; the decoder page also matches title text — see step 4). Note which family claims it and read the family's `epithet` for the archive's own gloss.
 3. Pull the family's `tracks[]`: titles, dates, plays. That's the word's full transmission footprint.
 4. For the live behavior, mirror `decoder.html` + `assets/js/decoder.js`: it matches the word against family word-lists and returns matching families plus the raw matching tracks. Reuse that logic rather than inventing new matching rules.
@@ -31,10 +31,10 @@ Input: `nitemode`
 
 ## API references
 
-- `api/v1/codex.json` — the 16 families, word lists, per-family track lists
+- `data/v1/codex.json` — the 16 families, word lists, per-family track lists
 - `decoder.html` + `assets/js/decoder.js` — the reference decoder implementation
-- `api/v1/sessions.json` — session context for any decoded track
-- `api/v1/index.json` — registry
+- `data/v1/sessions.json` — session context for any decoded track
+- `data/v1/index.json` — registry
 
 ## Pitfalls
 

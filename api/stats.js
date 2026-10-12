@@ -73,10 +73,10 @@ module.exports = (req, res) => {
 
   const snap = readJson("data/playcounts.snapshot.json");
   upstream.push(upstreamEntry("repo:data/playcounts.snapshot.json", snap, checkedAt));
-  const status = readJson("api/v1/refresh-status.json");
-  upstream.push(upstreamEntry("repo:api/v1/refresh-status.json", status, checkedAt));
-  const hist = readJson("api/v1/stats-snapshots.json");
-  upstream.push(upstreamEntry("repo:api/v1/stats-snapshots.json", hist, checkedAt));
+  const status = readJson("data/v1/refresh-status.json");
+  upstream.push(upstreamEntry("repo:data/v1/refresh-status.json", status, checkedAt));
+  const hist = readJson("data/v1/stats-snapshots.json");
+  upstream.push(upstreamEntry("repo:data/v1/stats-snapshots.json", hist, checkedAt));
 
   if (!snap.ok || !Array.isArray(snap.obj.tracks) || snap.obj.tracks.length === 0) {
     // No usable snapshot at all: honest 502; the frontend falls back to its

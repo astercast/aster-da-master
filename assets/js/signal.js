@@ -34,7 +34,7 @@
 
   /* Normalize the two shapes fetchWithFallback can return:
    *  - live:  envelope data {tracks_captured, total_plays, snapshot_at, top_tracks, ...}
-   *  - static: api/v1/stats-snapshots.json {snapshots:[{snapshot_at,total_plays,tracks_captured,top}]}
+   *  - static: data/v1/stats-snapshots.json {snapshots:[{snapshot_at,total_plays,tracks_captured,top}]}
    * Returns the latest row, or null when neither carries real numbers. */
   function statsPayload(r) {
     var d = (r && r.data) || {};
@@ -84,7 +84,7 @@
   function wireStats(badgeId) {
     var badge = badgeId && document.getElementById(badgeId);
     if (!badge || !window.ApiClient) return;
-    window.ApiClient.fetchWithFallback("/api/stats", "api/v1/stats-snapshots.json", { badgeEl: badge })
+    window.ApiClient.fetchWithFallback("/api/stats", "data/v1/stats-snapshots.json", { badgeEl: badge })
       .then(function (r) {
         if (!r || r.source !== "live") return; /* cached: static numbers stand */
         var d = statsPayload(r);
@@ -94,7 +94,7 @@
 
   /* Normalize uploads payloads:
    *  - live:  envelope data {since, count, uploads:[{title,uploaded_at,url,first_seen_at}]}
-   *  - static: api/v1/uploads.json {generated_at, note, uploads:[...]}
+   *  - static: data/v1/uploads.json {generated_at, note, uploads:[...]}
    * Returns the list newest-first (both shapes already carry newest-first
    * or get sorted), filtered to rows with real titles. */
   function uploadsPayload(r) {
@@ -117,7 +117,7 @@
     var list = listId && document.getElementById(listId);
     if (!badge || !window.ApiClient) return;
     window.ApiClient.fetchWithFallback(
-      "/api/uploads?since=2025-01-01&limit=5", "api/v1/uploads.json", { badgeEl: badge }
+      "/api/uploads?since=2025-01-01&limit=5", "data/v1/uploads.json", { badgeEl: badge }
     ).then(function (r) {
       if (!r || r.source !== "live" || !list) return;
       var ups = uploadsPayload(r).slice(0, 5);

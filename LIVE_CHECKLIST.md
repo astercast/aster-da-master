@@ -12,7 +12,7 @@
   pages, generated dirs (`releases/`, `years/`, `circle/`, `codex/`,
   `sessions/`, `eras/`, `producers/`, `scene/`), `assets/` (incl. self-hosted
   fonts: Anton + IBM Plex Mono WOFF2 in `assets/fonts/`, zero remote font
-  requests), `api/v1/*.json` static endpoints, `data/`, `skills/`,
+  requests), `data/v1/*.json` static endpoints, `data/`, `skills/`,
   `llms.txt` / `llms-full.txt`.
 - **Server functions** (`api/`, zero npm deps, `nodejs22.x`, envelope-only):
   | route | file | purpose |
@@ -20,7 +20,7 @@
   | `GET /api/health` | `api/health.js` | status/degraded, functions roster, data freshness |
   | `GET /api/stats` | `api/stats.js` | live-computed track/play counts + top-10 |
   | `GET /api/uploads` | `api/uploads.js` | newest-first upload log (`?since=`, `?limit=` ≤200) |
-  | `GET /api/cron/signal` | `api/cron/signal.js` | daily refresh: SoundCloud pull → `api/v1/*.json` commit-back |
+  | `GET /api/cron/signal` | `api/cron/signal.js` | daily refresh: SoundCloud pull → `data/v1/*.json` commit-back |
 - **Shared helpers** (never routes): `lib/envelope.js`, `lib/fetchx.js`,
   `lib/ratelimit.js`, `lib/cronauth.js`, `lib/github.js`.
 - **Function count: 4** (Hobby limit is plenty; ≤12/site rule respected).
@@ -44,7 +44,7 @@
 | `CRON_SECRET` | **yes** | 32+ random hex chars; Vercel auto-sends as `Authorization: Bearer` |
 | `GITHUB_REPO_TOKEN` | for commit-back | fine-grained PAT, contents:write on the `-live` repo only. **Without it the cron runs read-only** (fresh data returned in the envelope with `read_only:true`, nothing persisted) |
 | `GITHUB_REPO` | with the token | `astercast/aster-da-master-live` (the repo the cron commits back to) |
-| `REPO_STATIC_PREFIX` | with the token | empty string (`api/v1/*.json` at the root) |
+| `REPO_STATIC_PREFIX` | with the token | empty string (`data/v1/*.json` at the root) |
 | `SOUNDCLOUD_CLIENT_ID` | recommended | public-webapp client_id; skips the ~5.5s key-extraction path |
 
 No secrets in the repo. Ever. Functions degrade gracefully without keys:
@@ -68,5 +68,18 @@ badge when `/api/*` is unreachable.
 **Standard. Never Turbo.** (Sept 2026 Turbo invoice 1ZU1WJJS-0012: $38.64 —
 never repeat it. Static sites = negligible build minutes; Hobby covers them.)
 
-**Function runtime: nodejs20.x, never nodejs22.x.** (Vercel rejects nodejs22.x —
-"use nodejs20.x" — 2026-10-12: all 5 first deploys failed validation on nodejs22.x.)
+**Function runtime: NEVER pin `runtime` for Node functions — omit the key.**
+(Vercel's build validation rejects ANY `"runtime": "nodejsXX.x"` value in the
+`functions` map. Node.js is officially supported: omit `runtime` entirely and
+Vercel auto-detects Node from `api/`.) The `functions` map must list EXPLICIT
+paths (never broad globs), each with at least one valid property — working
+choice: `"api/health.js": {"maxDuration": 10}` (10s = Hobby execution limit).
+Static data files under `api/` (e.g. `data/v1/trends.flat.js` style JSONP twins)
+must NOT live under `api/` — Vercel auto-deploys every `.js` under `api/` as a
+serverless function regardless of the `functions` map.
+
+**Vercel never serves static files under `api/` — all static data lives in
+`data/v1/`; only real function handlers under `api/`.** (2026-10-12: every
+frontend fetch of `api/v1/*.json` 404'd in production — the static JSON was
+moved `api/v1/` → `data/v1/`, all generators/JS/docs rewritten. The ONLY
+things under `api/` are `.js` files with exported handlers.)

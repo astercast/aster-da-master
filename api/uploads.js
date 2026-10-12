@@ -79,9 +79,9 @@ module.exports = (req, res) => {
     limit = Math.min(n, MAX_LIMIT);
   }
 
-  const up = readJson("api/v1/uploads.json");
+  const up = readJson("data/v1/uploads.json");
   const upstream = [{
-    source: "repo:api/v1/uploads.json",
+    source: "repo:data/v1/uploads.json",
     ok: up.ok,
     checked_at: checkedAt,
     latency_ms: up.ms,
@@ -91,7 +91,7 @@ module.exports = (req, res) => {
   if (!up.ok || !Array.isArray(up.obj.uploads)) {
     err(res, SERVICE, VERSION, 502, "UPSTREAM_UNAVAILABLE",
       "The upload log is unavailable right now. The page keeps its last published static data instead.",
-      { sources: ["repo:api/v1/uploads.json"] });
+      { sources: ["repo:data/v1/uploads.json"] });
     return;
   }
 

@@ -112,13 +112,13 @@ check("merge-slug-unique",
       len({p["slug"] for p in prods}) == len(prods))
 
 # --- live data assertions ----------------------------------------------------
-DOC = json.loads((ROOT / "api" / "v1" / "producer-deepdives.json").read_text())
+DOC = json.loads((ROOT / "data" / "v1" / "producer-deepdives.json").read_text())
 SESSIONS = {s["id"]: s for s in
             json.loads((ROOT / "data" / "sessions.json").read_text())["sessions"]}
-NET = json.loads((ROOT / "api" / "v1" / "codex-network.json").read_text())
+NET = json.loads((ROOT / "data" / "v1" / "codex-network.json").read_text())
 NET_NODES = {n["id"]: n for n in NET["nodes"]}
 FAMS = {f["slug"]: f for f in
-        json.loads((ROOT / "api" / "v1" / "codex-families.json").read_text())["families"]}
+        json.loads((ROOT / "data" / "v1" / "codex-families.json").read_text())["families"]}
 
 check("doc-producer-count", DOC["producer_count"] == len(DOC["producers"]) == 113,
       str(DOC["producer_count"]))
@@ -157,7 +157,7 @@ check("every-explorer-producer-node-resolves", not node_gaps,
       str(node_gaps[:5]))
 
 # the explorer JS slug construction lands on a real page for ALL producers
-circle = json.loads((ROOT / "api" / "v1" / "circle.json").read_text())
+circle = json.loads((ROOT / "data" / "v1" / "circle.json").read_text())
 cbn = {c["name"].lower(): {"slug": c["page"].split("/")[-1].replace(".html", "")}
        for c in circle.values()}
 js_gaps = []

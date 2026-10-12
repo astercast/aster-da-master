@@ -8,9 +8,9 @@ Bands (from the 2026-10-11 play-count snapshot):
 
 Output:
   data/milestone-watch.json
-  api/v1/milestone-watch.json
-  api/v1/schema/milestone-watch.json
-  (registers the endpoint in api/v1/index.json; bumps data to 0.11.0)
+  data/v1/milestone-watch.json
+  data/v1/schema/milestone-watch.json
+  (registers the endpoint in data/v1/index.json; bumps data to 0.11.0)
 
 Titles only - no lyrics anywhere. Idempotent: regenerates cleanly.
 Re-run after any discography change.
@@ -25,10 +25,10 @@ from build_releases import slugify  # noqa: E402  (single source of truth)
 
 DATA = ROOT / "data" / "artist.json"
 DATA_OUT = ROOT / "data" / "milestone-watch.json"
-API_OUT = ROOT / "api" / "v1" / "milestone-watch.json"
-API_INDEX = ROOT / "api" / "v1" / "index.json"
-API_ARTIST = ROOT / "api" / "v1" / "artist.json"
-SCHEMA_OUT = ROOT / "api" / "v1" / "schema" / "milestone-watch.json"
+API_OUT = ROOT / "data" / "v1" / "milestone-watch.json"
+API_INDEX = ROOT / "data" / "v1" / "index.json"
+API_ARTIST = ROOT / "data" / "v1" / "artist.json"
+SCHEMA_OUT = ROOT / "data" / "v1" / "schema" / "milestone-watch.json"
 
 NEW_VERSION = "0.18.0"  # wave 35: data version 0.18.0 (verified-data expansion)
 SNAPSHOT = "2026-10-11"

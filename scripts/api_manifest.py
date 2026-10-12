@@ -1,4 +1,4 @@
-"""Canonical api/v1/index.json manifest writer (wave 17).
+"""Canonical data/v1/index.json manifest writer (wave 17).
 
 Every build_*.py generator that touches the manifest keeps its own
 version/provenance logic, then calls render_manifest(idx, ROOT) instead of
@@ -134,17 +134,17 @@ def render_manifest(idx, root):
     """Rebuild the manifest's endpoints/meta/skills/documents blocks
     canonically around the caller's idx dict (which carries
     name/version/observed/repository/for_agents/provenance). Writes
-    api/v1/index.json byte-deterministically."""
+    data/v1/index.json byte-deterministically."""
     root = Path(root)
-    api = root / "api" / "v1"
+    api = root / "data" / "v1"
     ver = idx.get("version", "0.13.0")
 
     endpoints = {}
     for key, desc, schema, notes, counter in ENDPOINT_ORDER:
         endpoints[key] = {
-            "path": "api/v1/%s.json" % key,
+            "path": "data/v1/%s.json" % key,
             "description": desc,
-            "schema": "api/v1/schema/%s" % schema,
+            "schema": "data/v1/schema/%s" % schema,
             "updated": UPDATED,
             "records": counter(api),
             "notes": notes,
@@ -158,12 +158,12 @@ def render_manifest(idx, root):
         "meta": {
             "version": ver,
             "generated": UPDATED,
-            "base": "api/v1/",
+            "base": "data/v1/",
             "auth": "none - static files; no keys, no rate limits",
         },
         "repository": idx.get("repository", "https://github.com/astercast/aster-da-master"),
         "for_agents": idx.get("for_agents",
-                              "Start at api/v1/index.json. The artist record is the source of truth; data/artist.json feeds the site renderer."),
+                              "Start at data/v1/index.json. The artist record is the source of truth; data/artist.json feeds the site renderer."),
         "provenance": idx.get("provenance", ""),
         "skills": {
             "registry": "skills/index.json",
@@ -180,7 +180,7 @@ def render_manifest(idx, root):
 def write_manifest(root, version=None):
     """Read the current manifest, optionally bump version, re-render."""
     root = Path(root)
-    api = root / "api" / "v1"
+    api = root / "data" / "v1"
     idx = json.loads((api / "index.json").read_text())
     if version is not None:
         idx["version"] = version

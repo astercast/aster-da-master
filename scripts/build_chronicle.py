@@ -3,20 +3,20 @@
 
 New scripts/build_chronicle.py (22nd generator, LAST in the chain) merges
 three real archive sources into a single filterable timeline:
-api/v1/chronicle.json (endpoint #23, registered in index.json via
+data/v1/chronicle.json (endpoint #23, registered in index.json via
 render_manifest(), draft-07 schema #23):
 
-  - 61 upload sessions      <- data/sessions.json + api/v1/session-clusters.json
-  - 9 dated milestones      <- api/v1/milestones.json (the longest silence is
+  - 61 upload sessions      <- data/sessions.json + data/v1/session-clusters.json
+  - 9 dated milestones      <- data/v1/milestones.json (the longest silence is
                                a span: dated at its start, end_date carried)
-  - 44 collaboration appearances <- api/v1/circle.json (one event per
+  - 44 collaboration appearances <- data/v1/circle.json (one event per
                                title-credited appearance, release page
                                resolved by exact title+date join)
 
 Every figure is recomputed here and the script exits non-zero on any
 disagreement. Same-date ordering is milestone -> session -> collaboration
 (a stated presentation rule, not an artist fact). Era assignment is by
-calendar year via api/v1/eras.json; the 2017 feature credit predates the
+calendar year via data/v1/eras.json; the 2017 feature credit predates the
 eras and is honestly labeled "Before the vault".
 
 Titles and metadata only - never lyrics, never invented bio facts.
@@ -28,7 +28,7 @@ from datetime import date
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-API = ROOT / "api" / "v1"
+API = ROOT / "data" / "v1"
 NEW_VERSION = "0.18.0"  # wave 35: data version 0.18.0 (verified-data expansion)
 SNAPSHOT = "2026-10-11"
 
@@ -259,16 +259,16 @@ def main() -> int:
         "plays_snapshot": SNAPSHOT,
         "method": (
             "The Chronicle: sessions (data/sessions.json, enriched by "
-            "api/v1/session-clusters.json), dated milestones "
-            "(api/v1/milestones.json - the longest silence is a span, "
+            "data/v1/session-clusters.json), dated milestones "
+            "(data/v1/milestones.json - the longest silence is a span, "
             "dated at its start with end_date carried), and one event per "
-            "title-credited collaboration appearance (api/v1/circle.json, "
+            "title-credited collaboration appearance (data/v1/circle.json, "
             "release page resolved by exact title+date join against "
             "data/sessions.json and data/artist.json). Merged and "
             "sorted chronologically; "
             "same-date order is milestone -> session -> collaboration (a "
             "stated presentation rule). Era by calendar year via "
-            "api/v1/eras.json; the 2017 feature credit predates the eras "
+            "data/v1/eras.json; the 2017 feature credit predates the eras "
             "('Before the vault'). Powers chronicle.html."
         ),
         "kinds": ["milestone", "session", "collaboration"],

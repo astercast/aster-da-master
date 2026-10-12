@@ -10,18 +10,18 @@ Reads:
                                 as credited verbatim - nothing invented)
   data/producer-research.json  (hand-maintained research pass 2026-10-11;
                                 asserted, never silently extended)
-  api/v1/codex-network.json    (family-figure edges -> codex family ties)
-  api/v1/codex-families.json   (family names + pages)
-  api/v1/circle.json           (title-credited voices -> circle pages)
-  api/v1/scene-figures.json    (scene-figure pages, e.g. fish-narc)
+  data/v1/codex-network.json    (family-figure edges -> codex family ties)
+  data/v1/codex-families.json   (family names + pages)
+  data/v1/circle.json           (title-credited voices -> circle pages)
+  data/v1/scene-figures.json    (scene-figure pages, e.g. fish-narc)
 
 Emits:
-  api/v1/producer-deepdives.json        (endpoint #22)
-  api/v1/schema/producer-deepdives.json (draft-07 schema #22)
+  data/v1/producer-deepdives.json        (endpoint #22)
+  data/v1/schema/producer-deepdives.json (draft-07 schema #22)
   producers/<slug>.html                 (one per producer - this generator
                                          OWNS the producers/ directory)
   producers/index.html
-  api/v1/index.json                     (endpoint registered via render_manifest())
+  data/v1/index.json                     (endpoint registered via render_manifest())
 
 Per producer, every credit recomputed and asserted:
   - every as-credited production, with plays + release page + session page
@@ -62,7 +62,7 @@ from build_releases import slugify  # noqa: E402  (single source of truth)
 from build_codex import HEAD, FOOT  # noqa: E402
 from api_manifest import render_manifest  # noqa: E402
 
-API = ROOT / "api" / "v1"
+API = ROOT / "data" / "v1"
 SESSIONS = ROOT / "data" / "sessions.json"
 
 VERSION = "0.18.0"  # wave 35: data version 0.18.0 (verified-data expansion)
@@ -688,7 +688,7 @@ def main():
     render_manifest(idx, ROOT)
     print(f"producer-deepdives: {len(out_producers)} producers, "
           f"{total_credits} credits, {len(researched)} researched; "
-          f"pages + api/v1/producer-deepdives.json + schema #22; "
+          f"pages + data/v1/producer-deepdives.json + schema #22; "
           f"version -> {VERSION}")
 
 

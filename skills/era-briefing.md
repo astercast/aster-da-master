@@ -11,15 +11,15 @@ An agent must write about a period of the catalog: an era chapter, a "the 2020 r
 
 ## Inputs
 
-- An era name from `api/v1/artist.json` → `eras[]` (six eras: The First Rite, The Prolific Year, The Cast It: Years, The SomeLowLifes Era, The Silence, The Return)
+- An era name from `data/v1/artist.json` → `eras[]` (six eras: The First Rite, The Prolific Year, The Cast It: Years, The SomeLowLifes Era, The Silence, The Return)
 - A target length (default ~250 words)
 
 ## Procedure
 
-1. Fetch `api/v1/artist.json`, read `eras[]`. Find your era; capture `name`, `span`, `scene`, `releases`, and `note`.
-2. Fetch `api/v1/years.json`. For each year inside the era's span, pull: transmissions, plays, distributor/vault split, and `top_tracks` (title, plays, date). These are the era's hard numbers.
-3. Gather the era's key releases: distributor entries from `api/v1/artist.json` → `discography` (type, date, label, links) matching the titles in `releases[]`; vault standouts from the year's `top_tracks`.
-4. Check who was around: scan the era's top tracks for collaborator credits, then `api/v1/circle.json` for their footprint.
+1. Fetch `data/v1/artist.json`, read `eras[]`. Find your era; capture `name`, `span`, `scene`, `releases`, and `note`.
+2. Fetch `data/v1/years.json`. For each year inside the era's span, pull: transmissions, plays, distributor/vault split, and `top_tracks` (title, plays, date). These are the era's hard numbers.
+3. Gather the era's key releases: distributor entries from `data/v1/artist.json` → `discography` (type, date, label, links) matching the titles in `releases[]`; vault standouts from the year's `top_tracks`.
+4. Check who was around: scan the era's top tracks for collaborator credits, then `data/v1/circle.json` for their footprint.
 5. Write the briefing in three moves: **the span** (dates + what the era is called and why), **the numbers** (transmissions, plays, top tracks — sourced), **the story** (the `scene`/`note` facts, collaborators, what distinguishes it). Every factual sentence must trace to an endpoint.
 6. Close with the archive's own framing where the era has one (e.g. "The Silence" — no releases found in 2025; the reason is unknown and not speculated here).
 
@@ -31,11 +31,11 @@ The First Rite opens the archive: the earliest trace is a 2017 feature credit on
 
 ## API references
 
-- `api/v1/eras.json` — the deep-dive endpoint: pick the era by `id`; `summary` (ranks, archive-play share, busiest year, loudest/deepest transmissions, top codex family — all recomputed and asserted), full `tracks[]`, every in-era `collaborators[]`, `codex_families[]`, `key_sessions[]`, `milestones[]`. Start here.
-- `api/v1/artist.json` — `eras[]` (name, span, scene, releases, note); `discography` (34 distributor releases with dates/labels/links)
-- `api/v1/years.json` — per-year stats and `top_tracks`, 2018–2026
-- `api/v1/circle.json` — collaborator footprints within the era
-- `api/v1/milestones.json` — career firsts that may fall inside the era
+- `data/v1/eras.json` — the deep-dive endpoint: pick the era by `id`; `summary` (ranks, archive-play share, busiest year, loudest/deepest transmissions, top codex family — all recomputed and asserted), full `tracks[]`, every in-era `collaborators[]`, `codex_families[]`, `key_sessions[]`, `milestones[]`. Start here.
+- `data/v1/artist.json` — `eras[]` (name, span, scene, releases, note); `discography` (34 distributor releases with dates/labels/links)
+- `data/v1/years.json` — per-year stats and `top_tracks`, 2018–2026
+- `data/v1/circle.json` — collaborator footprints within the era
+- `data/v1/milestones.json` — career firsts that may fall inside the era
 
 ## Pitfalls
 

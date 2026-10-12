@@ -6,9 +6,9 @@ changelog entry with date, short hash, message, and files changed.
 
 Output:
   changelog.html             - standalone changelog page (root)
-  api/v1/changelog.json      - machine-readable changelog
-  api/v1/schema/changelog.json - draft-07 schema
-  (registers the endpoint in api/v1/index.json; no version bump here)
+  data/v1/changelog.json      - machine-readable changelog
+  data/v1/schema/changelog.json - draft-07 schema
+  (registers the endpoint in data/v1/index.json; no version bump here)
 
 Idempotent: regenerates cleanly. Re-run after every push.
 """
@@ -19,9 +19,9 @@ from html import escape
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-API_OUT = ROOT / "api" / "v1" / "changelog.json"
-API_INDEX = ROOT / "api" / "v1" / "index.json"
-SCHEMA_OUT = ROOT / "api" / "v1" / "schema" / "changelog.json"
+API_OUT = ROOT / "data" / "v1" / "changelog.json"
+API_INDEX = ROOT / "data" / "v1" / "index.json"
+SCHEMA_OUT = ROOT / "data" / "v1" / "schema" / "changelog.json"
 PAGE_OUT = ROOT / "changelog.html"
 
 SNAPSHOT = "2026-10-11"
@@ -181,7 +181,7 @@ def main() -> int:
         <span class="kicker"><span class="numeral">\u2726</span>The becoming</span>
         <h1>Changelog</h1>
         <p>Every wave of this site's construction, newest first \u2014 generated from the repository's own git history. Nothing summarized, nothing invented.</p>
-        <p class="chart-sub">{len(entries)} entries \u00b7 also at <a href="api/v1/changelog.json">api/v1/changelog.json</a></p>
+        <p class="chart-sub">{len(entries)} entries \u00b7 also at <a href="data/v1/changelog.json">data/v1/changelog.json</a></p>
       </div>
       <ol class="cl-list">{"".join(rows)}</ol>
     </div>

@@ -2,7 +2,7 @@
   "version": "0.18.0",
   "generated": "2026-10-11",
   "plays_snapshot": "2026-10-11",
-  "method": "The Chronicle: sessions (data/sessions.json, enriched by api/v1/session-clusters.json), dated milestones (api/v1/milestones.json - the longest silence is a span, dated at its start with end_date carried), and one event per title-credited collaboration appearance (api/v1/circle.json, release page resolved by exact title+date join against data/sessions.json and data/artist.json). Merged and sorted chronologically; same-date order is milestone -> session -> collaboration (a stated presentation rule). Era by calendar year via api/v1/eras.json; the 2017 feature credit predates the eras ('Before the vault'). Powers chronicle.html.",
+  "method": "The Chronicle: sessions (data/sessions.json, enriched by data/v1/session-clusters.json), dated milestones (data/v1/milestones.json - the longest silence is a span, dated at its start with end_date carried), and one event per title-credited collaboration appearance (data/v1/circle.json, release page resolved by exact title+date join against data/sessions.json and data/artist.json). Merged and sorted chronologically; same-date order is milestone -> session -> collaboration (a stated presentation rule). Era by calendar year via data/v1/eras.json; the 2017 feature credit predates the eras ('Before the vault'). Powers chronicle.html.",
   "kinds": [
     "milestone",
     "session",

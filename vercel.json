@@ -1,1 +1,55 @@
-{"$schema":"https://openapi.vercel.sh/vercel.json","buildCommand":"python3 scripts/api_manifest.py","cleanUrls":true,"crons":[{"path":"/api/cron/signal","schedule":"0 16 * * *"}],"functions":{"api/**/*.js":{"runtime":"nodejs20.x"}},"headers":[{"headers":[{"key":"X-Content-Type-Options","value":"nosniff"},{"key":"Referrer-Policy","value":"no-referrer"}],"source":"/api/(.*)"},{"headers":[{"key":"X-Content-Type-Options","value":"nosniff"},{"key":"Referrer-Policy","value":"strict-origin-when-cross-origin"}],"source":"/(.*)"}],"installCommand":"echo 'no dependencies'","trailingSlash":false}
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "buildCommand": "python3 scripts/api_manifest.py",
+  "cleanUrls": true,
+  "crons": [
+    {
+      "path": "/api/cron/signal",
+      "schedule": "0 16 * * *"
+    }
+  ],
+  "functions": {
+    "api/cron/signal.js": {
+      "maxDuration": 10
+    },
+    "api/health.js": {
+      "maxDuration": 10
+    },
+    "api/stats.js": {
+      "maxDuration": 10
+    },
+    "api/uploads.js": {
+      "maxDuration": 10
+    }
+  },
+  "headers": [
+    {
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "no-referrer"
+        }
+      ],
+      "source": "/api/(.*)"
+    },
+    {
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        }
+      ],
+      "source": "/(.*)"
+    }
+  ],
+  "installCommand": "echo 'no dependencies'",
+  "trailingSlash": false
+}

@@ -6,9 +6,9 @@ ordering of every archive entry by its verified date.
 
 Output:
   data/first-last.json        - machine-readable (site use)
-  api/v1/first-last.json      - machine-readable (public API)
-  api/v1/schema/first-last.json - draft-07 schema
-  (registers the endpoint in api/v1/index.json; no version bump here)
+  data/v1/first-last.json      - machine-readable (public API)
+  data/v1/schema/first-last.json - draft-07 schema
+  (registers the endpoint in data/v1/index.json; no version bump here)
 
 Titles only - no lyrics anywhere. Idempotent: regenerates cleanly.
 Re-run after any discography change.
@@ -23,9 +23,9 @@ from build_releases import slugify  # noqa: E402  (single source of truth)
 
 DATA = ROOT / "data" / "artist.json"
 DATA_OUT = ROOT / "data" / "first-last.json"
-API_OUT = ROOT / "api" / "v1" / "first-last.json"
-API_INDEX = ROOT / "api" / "v1" / "index.json"
-SCHEMA_OUT = ROOT / "api" / "v1" / "schema" / "first-last.json"
+API_OUT = ROOT / "data" / "v1" / "first-last.json"
+API_INDEX = ROOT / "data" / "v1" / "index.json"
+SCHEMA_OUT = ROOT / "data" / "v1" / "schema" / "first-last.json"
 
 SNAPSHOT = "2026-10-11"
 YEARS = list(range(2018, 2027))

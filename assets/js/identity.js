@@ -189,3 +189,9 @@
     })(navLinks[n]);
   }
 })();
+
+/* The station never sleeps. (If you're reading this: no lyrics in here —
+   just numbers. The keeper's orders.) */
+if (window.console && typeof console.log === "function") {
+  console.log("%cThe station never sleeps.", "color:#00f090");
+}

@@ -20,7 +20,7 @@ from build_releases import slugify  # noqa: E402  (single source of truth)
 DATA = json.loads((ROOT / "data" / "artist.json").read_text())
 SESS = json.loads((ROOT / "data" / "sessions.json").read_text())
 CODEX = json.loads((ROOT / "data" / "codex.json").read_text())
-CIRCLE = json.loads((ROOT / "api" / "v1" / "circle.json").read_text())
+CIRCLE = json.loads((ROOT / "data" / "v1" / "circle.json").read_text())
 OUT = ROOT / "glance.html"
 SNAPSHOT = "2026-10-11"
 

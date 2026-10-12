@@ -11,13 +11,13 @@ An agent needs the "race" view of the archive's milestones: which track is close
 
 ## Inputs
 
-- `api/v1/milestone-races.json` (races + records, snapshot 2026-10-11)
-- `api/v1/milestone-watch.json` (the raw bands + summit, if you need the pre-race arithmetic)
+- `data/v1/milestone-races.json` (races + records, snapshot 2026-10-11)
+- `data/v1/milestone-watch.json` (the raw bands + summit, if you need the pre-race arithmetic)
 - `milestone-race.html` (the human-readable race page)
 
 ## Procedure
 
-1. Fetch `api/v1/milestone-races.json`. Read `plays_snapshot` first — this is a snapshot, not a live leaderboard; state the date in every report.
+1. Fetch `data/v1/milestone-races.json`. Read `plays_snapshot` first — this is a snapshot, not a live leaderboard; state the date in every report.
 2. Read `pace_definition` — `pace_per_day` is snapshot plays ÷ days from upload to snapshot (a lifetime average, not a current rate). `days_at_pace` and `catch_days_at_pace` are plain division: **estimates, never predictions. Say so out loud every time.**
 3. Read `closest_races` — race ids sorted by `days_at_pace` ascending. Resolve each id through `play_races[]`: report `title`, `plays`, `milestone`, `needed`, and the pace figure with its "estimate, not a prediction" caveat. Each race also carries `producers[]` (name/slug/page) for producer-deep-dive links.
 4. Read `vault_pace` — the pace database: all 185 vault tracks with lifetime `pace_per_day`, release `page`, and `producers[]`. To race any two tracks at any milestone target (1k/10k/20k/30k): `needed = target − plays`; `days_at_pace = needed ÷ pace_per_day` (round to 1, half-even); the smaller `days_at_pace` crosses first. A track already past the line has no race to run — say so, don't project. Read `head_to_head` for the 6 precomputed featured pairs (active races at their band targets, asserted) — the page's tool mirrors this exact math client-side. `projected_note` carries the uncertainty language — quote it, don't paraphrase it away.
@@ -44,9 +44,9 @@ Snapshot 2026-10-11:
 
 ## API references
 
-- `api/v1/milestone-races.json` — races, closest_races ranking, vault_pace (185-track pace database), head_to_head, the_climb (182-track leaderboard), race_history, race_of_the_week, snapshot_provenance, summit_race, records, just_crossed
-- `api/v1/milestone-watch.json` — raw bands and summit this race is built from
-- `api/v1/index.json` — registry; `plays_snapshot` provenance
+- `data/v1/milestone-races.json` — races, closest_races ranking, vault_pace (185-track pace database), head_to_head, the_climb (182-track leaderboard), race_history, race_of_the_week, snapshot_provenance, summit_race, records, just_crossed
+- `data/v1/milestone-watch.json` — raw bands and summit this race is built from
+- `data/v1/index.json` — registry; `plays_snapshot` provenance
 - `milestone-race.html` — the human-readable race experience
 
 ## Pitfalls

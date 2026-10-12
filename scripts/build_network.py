@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """build_network.py — collaboration network graph, wave 16.
 
-Computes the whole collab universe from REAL data into api/v1/network.json:
+Computes the whole collab universe from REAL data into data/v1/network.json:
   - nodes: the artist (center) -> 21 title-credited collaborators from
-    api/v1/circle.json -> producer scene figures from api/v1/scene-figures.json
+    data/v1/circle.json -> producer scene figures from data/v1/scene-figures.json
   - edges: artist <-> every node (weight = shared tracks);
     collaborator <-> collaborator edges from title co-occurrence (two circle
     entries sharing the same track title, e.g. "NIGHT MODE ft. MAX FERRARI x
@@ -23,7 +23,7 @@ from collections import defaultdict
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-API = ROOT / "api" / "v1"
+API = ROOT / "data" / "v1"
 NEW_VERSION = "0.18.0"  # wave 35: data version 0.18.0 (verified-data expansion)
 SNAPSHOT = "2026-10-11"
 

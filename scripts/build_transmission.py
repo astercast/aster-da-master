@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
-"""Wave 14: build api/v1/transmission.json — the guided-journey era data.
+"""Wave 14: build data/v1/transmission.json — the guided-journey era data.
 
 Aggregates the six eras from the real archive sources:
-  - api/v1/years.json        (per-year transmissions, plays, top tracks, distributor counts)
+  - data/v1/years.json        (per-year transmissions, plays, top tracks, distributor counts)
   - data/sessions.json       (61 sessions; track -> release page links)
-  - api/v1/circle.json       (collaborator footprints, filtered to era years)
-  - api/v1/milestones.json   (career firsts, assigned to eras by date)
+  - data/v1/circle.json       (collaborator footprints, filtered to era years)
+  - data/v1/milestones.json   (career firsts, assigned to eras by date)
   - data/artist.json         (era names, spans, scene lines; discography for the
                               2026 singles; upcoming for the trilogy tease status)
-  - api/v1/scene-figures.json (Fish Narc's Uncle-LP watch block, passed through
+  - data/v1/scene-figures.json (Fish Narc's Uncle-LP watch block, passed through
                               to the 2026 extras — status is research-owned)
 
 Every "signal" one-liner is computed from these numbers — no invented facts.
@@ -28,15 +28,15 @@ SNAPSHOT = "2026-10-11"
 sys.path.insert(0, str(ROOT / "scripts"))
 from build_sessions import slugify  # single source of truth for session slugs
 
-YEARS = json.loads((ROOT / "api/v1/years.json").read_text())
+YEARS = json.loads((ROOT / "data/v1/years.json").read_text())
 SESS = json.loads((ROOT / "data/sessions.json").read_text())["sessions"]
-CIRCLE = json.loads((ROOT / "api/v1/circle.json").read_text())
-MILES = json.loads((ROOT / "api/v1/milestones.json").read_text())["milestones"]
+CIRCLE = json.loads((ROOT / "data/v1/circle.json").read_text())
+MILES = json.loads((ROOT / "data/v1/milestones.json").read_text())["milestones"]
 ARTIST = json.loads((ROOT / "data/artist.json").read_text())
 ERAS_SRC = ARTIST["eras"]
 DISC = ARTIST["discography"]
 UPCOMING = ARTIST["upcoming"]
-SCENE = json.loads((ROOT / "api/v1/scene-figures.json").read_text())
+SCENE = json.loads((ROOT / "data/v1/scene-figures.json").read_text())
 
 # Era -> the archive years that carry its data (spans start 2017, but
 # years.json covers 2018-2026; the 2017 feature credit is a milestone).
@@ -297,20 +297,20 @@ def main() -> int:
         "version": VERSION,
         "generated": "2026-10-11",
         "plays_snapshot": SNAPSHOT,
-        "method": ("Six eras aggregated from api/v1/years.json, data/sessions.json, "
-                   "api/v1/circle.json, api/v1/milestones.json. Signal lines are "
+        "method": ("Six eras aggregated from data/v1/years.json, data/sessions.json, "
+                   "data/v1/circle.json, data/v1/milestones.json. Signal lines are "
                    "computed from the same numbers and asserted in "
                    "scripts/build_transmission.py. The 2026 era carries an extras "
                    "block: the four verified 2026 singles (data/artist.json "
                    "discography) and the Q4 2026 watch (the Uncle-LP status passed "
-                   "through from api/v1/scene-figures.json, the trilogy tease from "
+                   "through from data/v1/scene-figures.json, the trilogy tease from "
                    "data/artist.json upcoming). Titles and metadata only — never lyrics."),
         "archive_totals": {"transmissions": total_tx, "plays": total_plays,
                            "sessions": len(SESS), "years": sorted(YEARS)},
         "longest_gap": LONGEST_GAP,
         "eras": eras,
     }
-    (ROOT / "api/v1/transmission.json").write_text(
+    (ROOT / "data/v1/transmission.json").write_text(
         json.dumps(out, indent=1, ensure_ascii=False) + "\n", encoding="utf-8")
 
     # JSON Schema (draft-07), same pattern as scripts/build_milestones.py
@@ -489,11 +489,11 @@ def main() -> int:
         },
         "required": ["version", "archive_totals", "eras"],
     }
-    (ROOT / "api/v1/schema/transmission.json").write_text(
+    (ROOT / "data/v1/schema/transmission.json").write_text(
         json.dumps(schema, indent=2) + "\n", encoding="utf-8")
 
     # register the endpoint
-    idx_p = ROOT / "api/v1/index.json"
+    idx_p = ROOT / "data/v1/index.json"
     idx = json.loads(idx_p.read_text())
     from api_manifest import render_manifest
     render_manifest(idx, ROOT)

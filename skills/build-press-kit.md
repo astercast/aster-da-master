@@ -9,7 +9,7 @@ Use when press, playlist editors, or venues ask for materials.
 
 ## Inputs
 
-- `api/v1/artist.json` (only verified fields)
+- `data/v1/artist.json` (only verified fields)
 - Booking contact (only if the artist has approved its publication)
 
 ## Procedure

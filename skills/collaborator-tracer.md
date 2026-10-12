@@ -11,15 +11,15 @@ An agent needs everything the archive knows about one person: who they worked wi
 
 ## Inputs
 
-- A collaborator slug (the key in `api/v1/circle.json`, e.g. `capoxxo`, `pvscale`, `lil-yu`) or a scene-figure key from `api/v1/scene-figures.json`
+- A collaborator slug (the key in `data/v1/circle.json`, e.g. `capoxxo`, `pvscale`, `lil-yu`) or a scene-figure key from `data/v1/scene-figures.json`
 - Optional: focus — tracks only, research notes only, network context only
 
 ## Procedure
 
-1. Check `api/v1/circle.json` first. If the slug is there, read: `name`, `page`, `shared_transmissions`, `shared_plays`, `years_active`, and the full `tracks[]` list (title, date, plays, type). The 21 keys are title-credited collaborators only.
-2. If the slug is **not** in `circle.json`, check `api/v1/scene-figures.json` — producers are excluded from the circle by the title-credit rule, so a producer (e.g. Fish Narc) lives here instead, with `kind`, `standing`, `tracks`, `facts`, and `sources`.
+1. Check `data/v1/circle.json` first. If the slug is there, read: `name`, `page`, `shared_transmissions`, `shared_plays`, `years_active`, and the full `tracks[]` list (title, date, plays, type). The 21 keys are title-credited collaborators only.
+2. If the slug is **not** in `circle.json`, check `data/v1/scene-figures.json` — producers are excluded from the circle by the title-credit rule, so a producer (e.g. Fish Narc) lives here instead, with `kind`, `standing`, `tracks`, `facts`, and `sources`.
 3. Read `verified_notes` (circle entries) — `research_pass` date, `facts`, `sources`. These carry the 2026-10-11 research enrichment (Pitchfork canon mentions, tape credits, production histories). Cite sources when using them.
-4. Check `years_active` and map the tracks onto eras (`api/v1/artist.json` → `eras[]`) for the "when in the story" line.
+4. Check `years_active` and map the tracks onto eras (`data/v1/artist.json` → `eras[]`) for the "when in the story" line.
 5. Optional network step: for a title-credited collaborator, open their `circle/<slug>.html` page — it lists every shared track linked to its release page, plus era breakdown.
 6. Summarize as: **who** (name + standing), **footprint** (N tracks, total plays, years), **the tracks** (chronological, with plays), **the research** (verified facts, cited).
 
@@ -34,10 +34,10 @@ An agent needs everything the archive knows about one person: who they worked wi
 
 ## API references
 
-- `api/v1/circle.json` — the 21 title-credited collaborators and their per-track footprint
-- `api/v1/scene-figures.json` — producer/scene figures outside the 21 (`kind`, `standing`, `facts`, `sources`)
-- `api/v1/artist.json` — `eras[]` for era placement; `collaborators` count (22 = 21 circle + scene figures)
-- `api/v1/index.json` — registry; circle/ page paths live under `circle/`
+- `data/v1/circle.json` — the 21 title-credited collaborators and their per-track footprint
+- `data/v1/scene-figures.json` — producer/scene figures outside the 21 (`kind`, `standing`, `facts`, `sources`)
+- `data/v1/artist.json` — `eras[]` for era placement; `collaborators` count (22 = 21 circle + scene figures)
+- `data/v1/index.json` — registry; circle/ page paths live under `circle/`
 
 ## Pitfalls
 

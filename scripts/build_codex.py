@@ -2,14 +2,14 @@
 """Build the Vocabulary Codex from the verified discography.
 
 Reads data/artist.json (219 titles), counts recurring ritual vocabulary
-across titles, and emits data/codex.json + api/v1/codex.json.
+across titles, and emits data/codex.json + data/v1/codex.json.
 
 Also generates:
   codex/index.html    - the codex index
 
 (The 16 codex/<slug>.html family pages are OWNED by scripts/build_codex_pages.py
 (wave 21) - this generator no longer writes them. It still feeds that
-generator via data/codex.json + api/v1/codex.json.)
+generator via data/codex.json + data/v1/codex.json.)
 
 Per family: full track list (dates/plays, linked to release pages),
 matched words, and family stats (total plays, span of years).
@@ -19,7 +19,7 @@ Method: titles are lowercased and leet-normalized (1->l, 0->o, 3->e,
 boundaries, multi-word keywords match as phrases. Every claim the codex
 makes is a count - no meanings are invented.
 
-Also bumps data version to 0.13.0 and mirrors to api/v1/.
+Also bumps data version to 0.13.0 and mirrors to data/v1/.
 """
 import json
 import re
@@ -34,9 +34,9 @@ from build_releases import slugify  # noqa: E402  (single source of truth)
 
 DATA = ROOT / "data" / "artist.json"
 CODEX_OUT = ROOT / "data" / "codex.json"
-API_OUT = ROOT / "api" / "v1" / "codex.json"
-API_ARTIST = ROOT / "api" / "v1" / "artist.json"
-API_INDEX = ROOT / "api" / "v1" / "index.json"
+API_OUT = ROOT / "data" / "v1" / "codex.json"
+API_ARTIST = ROOT / "data" / "v1" / "artist.json"
+API_INDEX = ROOT / "data" / "v1" / "index.json"
 CODEX_PAGES = ROOT / "codex"
 NEW_VERSION = "0.18.0"  # wave 35: data version 0.18.0 (verified-data expansion)
 SNAPSHOT = "2026-10-11"  # play-count snapshot date; pinned so re-runs are byte-stable
@@ -331,7 +331,7 @@ def main():
     idx["version"] = NEW_VERSION
     from api_manifest import render_manifest
     render_manifest(idx, ROOT)
-    print(f"version -> {NEW_VERSION}; api/v1 mirrored")
+    print(f"version -> {NEW_VERSION}; data/v1 mirrored")
 
 if __name__ == "__main__":
     main()

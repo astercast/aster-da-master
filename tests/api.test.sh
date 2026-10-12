@@ -23,7 +23,7 @@ echo "== The Signal — api.test.sh (BASE=$BASE)"
 # 1. health -----------------------------------------------------------------
 chk "health 200" curl -sf "$BASE/api/health"
 chk "health envelope valid" bash -c \
-  "curl -sf '$BASE/api/health' | python3 tests/assert_envelope.py --schema api/v1/schema/envelope.json"
+  "curl -sf '$BASE/api/health' | python3 tests/assert_envelope.py --schema data/v1/schema/envelope.json"
 chk "health status ok|degraded + roster functions" bash -c \
   "curl -sf '$BASE/api/health' | python3 -c \"
 import json,sys
@@ -75,7 +75,7 @@ print('count=%d' % d['count'])
 # 3. envelope schema validation (jsonschema, draft 2020-12) -------------------
 for p in health stats uploads; do
   chk "schema $p" bash -c \
-    "curl -sf '$BASE/api/$p' | python3 tests/assert_envelope.py --schema api/v1/schema/envelope.json"
+    "curl -sf '$BASE/api/$p' | python3 tests/assert_envelope.py --schema data/v1/schema/envelope.json"
 done
 
 # 4. cron without secret -> 401 -----------------------------------------------
@@ -113,7 +113,7 @@ chk "bad input http 400" bash -c \
 
 # 7. static fallback present ----------------------------------------------------
 for f in refresh-status.json uploads.json stats-snapshots.json artist.json release-slugs.json changelog.json; do
-  chk "static fallback $f" curl -sf "$BASE/api/v1/$f"
+  chk "static fallback $f" curl -sf "$BASE/data/v1/$f"
 done
 
 # 8. vercel.json lint: cron not more frequent than daily ------------------------
@@ -128,10 +128,21 @@ for c in crons:
     assert f[0] != '*' and '*/' not in f[0] and '*/' not in f[1], c
     assert c['path'] == '/api/cron/signal', c
 "
-chk "vercel.json functions runtime" python3 -c "
-import json
+chk "vercel.json functions: explicit paths, no runtime pin" python3 -c "
+import json, re
 v = json.load(open('vercel.json'))
-assert v['functions']['api/**/*.js']['runtime'] == 'nodejs22.x'
+fns = v['functions']
+# No broad globs: every key is an explicit api/*.js path that exists on disk.
+import os
+assert fns, 'functions map must not be empty'
+for path, cfg in fns.items():
+    assert '*' not in path, path
+    assert re.fullmatch(r'api(/[a-z-]+)*/[a-z-]+\.js', path), path
+    assert os.path.exists(path), path
+    assert cfg and isinstance(cfg, dict), path
+    assert cfg.get('maxDuration') == 10, (path, cfg)
+# NEVER pin runtime for Node functions (Vercel rejects nodejsXX.x outright).
+assert 'runtime' not in json.dumps(fns), 'runtime key must be omitted'
 assert v['installCommand'] == \"echo 'no dependencies'\"
 assert 'node_modules' not in json.dumps(v)
 "

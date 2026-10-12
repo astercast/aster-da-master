@@ -4,7 +4,7 @@
  *   /api/stats       -> api/stats.js
  *   /api/uploads     -> api/uploads.js
  *   /api/cron/signal -> api/cron/signal.js
- *   /api/v1/*.json   -> static file from api/v1/
+ *   /data/v1/*.json   -> static file from data/v1/
  * Usage: node tests/local_server.js [port]   (default 3000)
  * Env: REPO_ROOT (default: parent of tests/)
  */
@@ -43,12 +43,12 @@ const server = http.createServer((rawReq, rawRes) => {
   const u = new URL(rawReq.url, "http://localhost");
   const pathname = u.pathname;
 
-  // static JSON under /api/v1/
-  if (pathname.startsWith("/api/v1/") && pathname.endsWith(".json")) {
-    const rel = pathname.replace(/^\/api\//, ""); // v1/foo.json
-    const abs = path.join(REPO_ROOT, "api", rel);
+  // static JSON under /data/v1/
+  if (pathname.startsWith("/data/v1/") && pathname.endsWith(".json")) {
+    const rel = pathname.replace(/^\//, ""); // data/v1/foo.json
+    const abs = path.join(REPO_ROOT, rel);
     fs.readFile(abs, (e, data) => {
-      if (e || !abs.startsWith(path.join(REPO_ROOT, "api", "v1"))) {
+      if (e || !abs.startsWith(path.join(REPO_ROOT, "data", "v1"))) {
         rawRes.writeHead(404, { "content-type": "application/json" });
         rawRes.end(JSON.stringify({ ok: false }));
         return;

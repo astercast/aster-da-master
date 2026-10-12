@@ -4,8 +4,8 @@
 Output:
   circle/<slug>.html   - one page per title-credited collaborator (21)
   circle/index.html     - the circle index
-  api/v1/circle.json    - machine-readable collaborator index
-                          (registered in api/v1/index.json)
+  data/v1/circle.json    - machine-readable collaborator index
+                          (registered in data/v1/index.json)
 
 Per collaborator: shared tracks (titles/dates/plays, linked to release
 pages), total shared plays, years active, era breakdown. Credits are
@@ -14,7 +14,7 @@ nothing inferred. Producers are excluded (same rule as network.html).
 
 Titles only - no lyrics anywhere. Idempotent: regenerates cleanly.
 Re-run after any discography change. Also bumps data version to 0.13.0
-and mirrors data/artist.json to api/v1/artist.json.
+and mirrors data/artist.json to data/v1/artist.json.
 
 Wave 12 adds verified research notes to capoxxo/pvscale pages and a
 "scene figures" section (Fish Narc) - public sources only, no lyrics,
@@ -36,7 +36,7 @@ from build_producer_deepdives import (  # noqa: E402  (wave 27 cross-links)
 
 DATA = json.loads((ROOT / "data" / "artist.json").read_text())
 OUT = ROOT / "circle"
-API = ROOT / "api" / "v1"
+API = ROOT / "data" / "v1"
 NEW_VERSION = "0.18.0"  # wave 35: verified-data expansion - collaborator deep-enrichment (rounds 15-16)
 
 # wave 27: producer slugs with as-credited productions (populated in main);
@@ -952,7 +952,7 @@ def main():
     idx["version"] = NEW_VERSION
     from api_manifest import render_manifest
     render_manifest(idx, ROOT)
-    print(f"circle: {len(entries)} pages + {len(SCENE_FIGURES)} scene figures + index + api/v1/circle.json + api/v1/scene-figures.json; version -> {NEW_VERSION}")
+    print(f"circle: {len(entries)} pages + {len(SCENE_FIGURES)} scene figures + index + data/v1/circle.json + data/v1/scene-figures.json; version -> {NEW_VERSION}")
 
 if __name__ == "__main__":
     main()

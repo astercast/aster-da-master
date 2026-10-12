@@ -5,7 +5,7 @@
 into a live "race" experience:
 
   - play_races:   every track approaching a round-number milestone
-                  (from api/v1/milestone-watch.json bands), each with
+                  (from data/v1/milestone-watch.json bands), each with
                   current plays, target, gap, an HONEST at-pace figure,
                   and its as-credited producers (wave 28).
   - closest_races: race ids sorted by days_at_pace ascending - the
@@ -39,16 +39,16 @@ days_at_pace / catch_days_at_pace are plain division, labeled estimates,
 never predictions. The page and the skill say so out loud.
 
 Reads:
-  api/v1/milestone-watch.json  (bands, summit, plays_snapshot)
+  data/v1/milestone-watch.json  (bands, summit, plays_snapshot)
   data/artist.json             (discography: source of truth for plays/dates)
-  api/v1/milestones.json       (crossed milestones + dates)
-  api/v1/session-clusters.json (session record insights)
-  api/v1/eras.json             (era stats)
+  data/v1/milestones.json       (crossed milestones + dates)
+  data/v1/session-clusters.json (session record insights)
+  data/v1/eras.json             (era stats)
 
 Emits:
-  api/v1/milestone-races.json          (endpoint #19)
-  api/v1/schema/milestone-races.json   (draft-07 schema #19)
-  api/v1/index.json                    (endpoint registered via render_manifest())
+  data/v1/milestone-races.json          (endpoint #19)
+  data/v1/schema/milestone-races.json   (draft-07 schema #19)
+  data/v1/index.json                    (endpoint registered via render_manifest())
 
 Every figure is recomputed and asserted; the build fails rather than
 carrying a wrong number. Byte-stable: pinned SNAPSHOT, deterministic
@@ -70,7 +70,7 @@ from build_releases import slugify  # noqa: E402  (single source of truth)
 from build_producer_deepdives import parse_producers, producer_slug  # noqa: E402
 from api_manifest import render_manifest  # noqa: E402
 
-API = ROOT / "api" / "v1"
+API = ROOT / "data" / "v1"
 WATCH = json.loads((API / "milestone-watch.json").read_text())
 SUMMIT = WATCH["summit"]
 DISC = json.loads((ROOT / "data" / "artist.json").read_text())["discography"]
@@ -617,7 +617,7 @@ race_history = {
         "holds ONE play-count snapshot (2026-10-11), so crossing dates and "
         "finish order for these races cannot be recovered and are not "
         "claimed. completed_crossings are the dated "
-        "milestone entries from api/v1/milestones.json (the undated "
+        "milestone entries from data/v1/milestones.json (the undated "
         "'Longest silence' entry is excluded, recorded here). The photo "
         "finish is the pair of recorded crossings closest together in time."
     ),
@@ -815,10 +815,10 @@ def main():
         "plays_snapshot": SNAPSHOT,
         "method": (
             "The archive's milestones as races, computed from "
-            "api/v1/milestone-watch.json (bands + summit), data/artist.json "
-            "(plays and upload dates), api/v1/milestones.json (crossed "
-            "milestone dates), api/v1/session-clusters.json (session "
-            "records), and api/v1/eras.json (era records). Race figures are "
+            "data/v1/milestone-watch.json (bands + summit), data/artist.json "
+            "(plays and upload dates), data/v1/milestones.json (crossed "
+            "milestone dates), data/v1/session-clusters.json (session "
+            "records), and data/v1/eras.json (era records). Race figures are "
             "simple snapshot arithmetic: current value, target, gap, and an "
             "at-pace figure that is pace-arithmetic, never a prediction."
         ),

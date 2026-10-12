@@ -26,7 +26,7 @@ One Vercel project containing two things:
 
 - **Static frontend** — the whole artist site served from the repo root
   (the existing 22-generator build output; `index.html`, `assets/`, section
-  pages, `api/v1/*.json` static files).
+  pages, `data/v1/*.json` static files).
 - **Server functions** (zero npm dependencies, `nodejs22.x`, envelope-only):
   - `api/health.js` → `GET /api/health`
   - `api/stats.js` → `GET /api/stats`
@@ -36,7 +36,7 @@ One Vercel project containing two things:
   `lib/ratelimit.js`, `lib/cronauth.js`, `lib/github.js`.
 
 Spec: `~/workspace/server-program/ARCHITECTURE.md` §7.4 ("The Signal",
-service `aster-signal`). Envelope schema: `api/v1/schema/envelope.json`.
+service `aster-signal`). Envelope schema: `data/v1/schema/envelope.json`.
 
 ## 2. Hookup steps (exact clicks)
 
@@ -63,7 +63,7 @@ service `aster-signal`). Envelope schema: `api/v1/schema/envelope.json`.
 7. **Curl the roster:**
    `curl https://<site>.vercel.app/api/stats`,
    `curl https://<site>.vercel.app/api/uploads`,
-   `curl https://<site>.vercel.app/api/v1/uploads.json` —
+   `curl https://<site>.vercel.app/data/v1/uploads.json` —
    assert the envelope schema on the first two, raw JSON on the third.
 8. **Disable test** (functions-disabled pass): block `/api/*` (or deploy
    with the functions temporarily removed) → reload `index.html`,
@@ -78,7 +78,7 @@ service `aster-signal`). Envelope schema: `api/v1/schema/envelope.json`.
 | `CRON_SECRET` | **yes** | Vercel → Project → Settings → Environment Variables (Production) | 32+ random hex chars. Vercel auto-sends it as `Authorization: Bearer` on cron invocations. Generate: `node -e "console.log(require('crypto').randomBytes(32).toString('hex'))"`. Rotate by replacing the value + redeploying; cron 401s until both match. |
 | `GITHUB_REPO_TOKEN` | required for commit-back | same | Fine-grained PAT, **contents:write on this repo only**, no other scopes. **Pending the user's decision** — until it is set, the cron job runs read-only: it computes fresh data, returns it in its response envelope with `read_only:true`, and does not persist (documented in the Wave A report). |
 | `GITHUB_REPO` | yes (with the token) | same | `owner/aster-da-master` — the repo the cron commits to. |
-| `REPO_STATIC_PREFIX` | yes (with the token) | same | Empty string for this repo (`api/v1/*.json` at the root). |
+| `REPO_STATIC_PREFIX` | yes (with the token) | same | Empty string for this repo (`data/v1/*.json` at the root). |
 | `SOUNDCLOUD_CLIENT_ID` | recommended | same | Public-webapp client_id. Set it and the cron skips the ~5.5s bundle-extraction path (10.6s → ~5s per run on this VM; Vercel datacenter peering is faster). Without it the job extracts + verifies the key from SoundCloud's public webapp itself — no login, no private API. It only reads public track data; it cannot spend anything. |
 
 No secrets in the repo. Ever. Not in code, not in `vercel.json`, not in comments, not in test fixtures.
@@ -181,8 +181,8 @@ Domains; the `api/*` paths move with the domain automatically (same-origin
   implementation, verbatim (7s live timeout; `live`/`waking`/`cached`/`none`
   badge states; never rejects).
 - `assets/js/signal.js` — site-specific wiring: numbers refresh from
-  `/api/stats` → fallback `api/v1/stats-snapshots.json`; newest-uploads
-  refresh from `/api/uploads` → fallback `api/v1/uploads.json`. Repaints only
+  `/api/stats` → fallback `data/v1/stats-snapshots.json`; newest-uploads
+  refresh from `/api/uploads` → fallback `data/v1/uploads.json`. Repaints only
   on live answers; cached results keep the pre-rendered numbers.
 - Wired surfaces (each ships pre-rendered; badge = `<span class="api-badge"
   role="status" aria-live="polite">`):

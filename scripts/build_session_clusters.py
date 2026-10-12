@@ -2,7 +2,7 @@
 """Wave 19: session archaeology interactive.
 
 Turns the `session-archaeology` skill's logic into browsable data:
-api/v1/session-clusters.json (endpoint #17) - the 61 upload sessions as an
+data/v1/session-clusters.json (endpoint #17) - the 61 upload sessions as an
 explorable timeline:
 
   - sessions[]      - per-session enrichment: era, loudest + deepest-cut
@@ -26,9 +26,9 @@ explorable timeline:
 Every figure is recomputed here and the script exits non-zero on any
 disagreement. Sources (all real archive data):
   - data/sessions.json            (61 sessions, 7-day gap rule)
-  - api/v1/sessions.json          (track counts for the records assertion)
-  - api/v1/milestones.json        (longest-silence canonical record)
-  - api/v1/eras.json              (era ids/names/spans/deep_dive/journey)
+  - data/v1/sessions.json          (track counts for the records assertion)
+  - data/v1/milestones.json        (longest-silence canonical record)
+  - data/v1/eras.json              (era ids/names/spans/deep_dive/journey)
   - scripts/build_transmission.py (ERA_YEARS, LONGEST_GAP)
   - scripts/build_years.py        (parse_collabs - shared credit rule)
   - sessions/                     (deep-dive pages that exist on disk)
@@ -45,7 +45,7 @@ from datetime import date
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-API = ROOT / "api" / "v1"
+API = ROOT / "data" / "v1"
 NEW_VERSION = "0.18.0"  # wave 35: data version 0.18.0 (verified-data expansion)
 SNAPSHOT = "2026-10-11"
 

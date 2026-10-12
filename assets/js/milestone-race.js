@@ -1,5 +1,5 @@
 /* Aster da Master — milestone race (wave 22; wave 28: race 2.0).
-   Renders milestone-race.html from api/v1/milestone-races.json.
+   Renders milestone-race.html from data/v1/milestone-races.json.
    Every figure comes from the JSON; nothing is computed client-side
    beyond display formatting and pair lookup. Pace figures are stated as
    estimates, never predictions. */
@@ -393,7 +393,7 @@
   }
 
   /* ---------------- boot ---------------- */
-  loadData("api/v1/milestone-races.json").then(function (data) {
+  loadData("data/v1/milestone-races.json").then(function (data) {
     renderClosest(data);
     renderWatch(data);
     bootH2H(data);

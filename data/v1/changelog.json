@@ -1,8 +1,32 @@
 {
   "generated": "2026-10-11",
   "method": "Parsed from `git log main`: every commit becomes an entry. The site documenting its own becoming.",
-  "entry_count": 96,
+  "entry_count": 100,
   "entries": [
+    {
+      "hash": "c706000",
+      "date": "2026-10-12",
+      "message": "Wave 36 fix: generators used ROOT/'api'/'v1' pathlib joins - now ROOT/'data'/'v1'",
+      "files_changed": 28
+    },
+    {
+      "hash": "4387fa0",
+      "date": "2026-10-12",
+      "message": "Wave 36: EXTREME MAKEOVER homepage + api/v1 -> data/v1 production fix",
+      "files_changed": 181
+    },
+    {
+      "hash": "8f9102d",
+      "date": "2026-10-12",
+      "message": "WAVELOG: wave 35 entry",
+      "files_changed": 1
+    },
+    {
+      "hash": "b2c6398",
+      "date": "2026-10-12",
+      "message": "changelog sync (post-validation)",
+      "files_changed": 3
+    },
     {
       "hash": "23a3377",
       "date": "2026-10-12",
