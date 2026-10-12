@@ -46,7 +46,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 API = ROOT / "api" / "v1"
-NEW_VERSION = "0.13.0"
+NEW_VERSION = "0.14.0"
 SNAPSHOT = "2026-10-11"
 
 sys.path.insert(0, str(ROOT / "scripts"))

@@ -25,7 +25,7 @@ API_OUT = ROOT / "api" / "v1" / "milestones.json"
 API_ARTIST = ROOT / "api" / "v1" / "artist.json"
 API_INDEX = ROOT / "api" / "v1" / "index.json"
 SCHEMA_OUT = ROOT / "api" / "v1" / "schema" / "milestones.json"
-NEW_VERSION = "0.13.0"
+NEW_VERSION = "0.14.0"
 SNAPSHOT = "2026-10-11"
 
 

@@ -35,7 +35,7 @@ from build_years import parse_collabs, era_for_year  # noqa: E402  (same parser 
 DATA = json.loads((ROOT / "data" / "artist.json").read_text())
 OUT = ROOT / "circle"
 API = ROOT / "api" / "v1"
-NEW_VERSION = "0.13.0"
+NEW_VERSION = "0.14.0"  # wave 23: Uncle research enrichment + watch block
 
 NAV = """<nav class="site-nav" aria-label="Primary">
         <a href="../#discography">Discography</a>
@@ -217,8 +217,19 @@ SCENE_FIGURES = {
             "Solo LPs: 'WiLDFiRE' (2020), 'Camouflage' (2022), "
             "'fruiting body' [KLP295] (2023), 'frog song' (2025, K Records).",
             "Fifth solo LP 'Uncle' announced (Stereogum, August 2026): "
-            "11 tracks on K Records, scheduled release 2026-10-16; "
-            "lead singles 'Much Less Me' and 'Big Dumb World'.",
+            "11 tracks on K Records [KLP313], scheduled release 2026-10-16; "
+            "produced by Asheville's Alex Farrar "
+            "(Wednesday, MJ Lenderman, Fiddlehead).",
+            "Tracklist: 'Untitled', 'Much Less Me', 'Emma', 'Student Driver', "
+            "'One Hand On The Sword', 'In The Woods', 'Big Dumb World', "
+            "'Not To Guess', \"Wouldn't You Know\", 'Umtanum', 'Yakima Canyon'.",
+            "Lead singles 'Much Less Me' (Super 8 video by Jolie M-A) and "
+            "'Big Dumb World' (video by James Hyson); fall tour 2026-10-29 "
+            "Los Angeles (Gold Diggers), 2026-11-06 Kingston NY (Tubby's), "
+            "2026-11-07 Ridgewood NY (Stone Circle Theatre).",
+            "Status as of research pass 2026-10-11: announced / pre-release "
+            "— release listings this week still carry 2026-10-16 as upcoming; "
+            "the archive records 'announced' until a release is confirmed.",
         ],
         "sources": [
             ("Fish Narc - Wikipedia", "https://en.wikipedia.org/wiki/Fish_Narc"),
@@ -228,7 +239,23 @@ SCENE_FIGURES = {
              "https://stereogum.com/2508537/fish-narc-announces-new-album-uncle-hear-much-less-me/music"),
             ("Fish Narc announces 'Uncle' on K Records — Faygoluvers",
              "https://www.faygoluvers.net/v5/2026/09/fish-narc-announces-new-album-uncle-on-k-records/"),
+            ("fish narc - 'Big Dumb World' (second single) — Stereogum",
+             "https://stereogum.com/2511545/fish-narc-big-dumb-world/music/"),
+            ("Fish Narc — upcoming releases — upcomingvinyl",
+             "https://upcomingvinyl.com/record/fish-narc-uncle"),
+            ("Fish Narc artist profile — Release Wave",
+             "https://releasewave.com/artists/fish-narc"),
         ],
+        "watch": {
+            "label": "'Uncle' — fifth solo LP",
+            "status": "announced",
+            "expected": "2026-10-16",
+            "as_of": "2026-10-11",
+            "note": ("Pre-release as of this research pass. The archive "
+                     "records a release as 'released' only after a research "
+                     "pass confirms it; the watch never claims the LP is out "
+                     "early."),
+        },
     },
 }
 
@@ -250,6 +277,23 @@ def render_verified_section(info):
         <p class="chart-sub">Research pass 2026-10-11 &mdash; public sources only, no biographical invention, no lyrics.</p>
         <ul class="fact-list">{facts}</ul>
         {render_sources(info["sources"])}
+      </section>
+"""
+
+
+def render_watch_section(info):
+    """The 'Uncle watch': honest release-status widget driven by data.
+    Only rendered when a figure carries a 'watch' block."""
+    w = info["watch"]
+    return f"""
+      <section class="section" aria-labelledby="uw-h">
+        <span class="kicker"><span class="numeral">&#10022;</span>The watch</span>
+        <h3 id="uw-h">{escape(w["label"])} — watch</h3>
+        <p class="chart-sub" id="uncle-watch-status" aria-live="polite"
+           data-status="{escape(w["status"])}"
+           data-expected="{escape(w["expected"])}"
+           data-asof="{escape(w["as_of"])}">Announced — expected {escape(w["expected"])}.</p>
+        <p class="chart-sub">{escape(w["note"])} Status as of research pass {escape(w["as_of"])}.</p>
       </section>
 """
 
@@ -387,6 +431,7 @@ def scene_figure_page(slug, info):
         for t in sorted(tracks, key=lambda t: t["date"])
     )
     facts = "".join(f"<li>{escape(f)}</li>" for f in info["facts"])
+    watch = render_watch_section(info) if info.get("watch") else ""
     body = f"""
       <nav class="crumbs" aria-label="Breadcrumb">
         <a href="../">Home</a> / <a href="../network.html">Network</a>
@@ -417,15 +462,22 @@ def scene_figure_page(slug, info):
         <ul class="fact-list">{facts}</ul>
         {render_sources(info["sources"])}
       </section>
-
+{watch}
       <nav class="year-pager" aria-label="Scene figure navigation">
         <a class="btn btn-sm" href="./">The full circle</a>
       </nav>
 """
-    return HEAD.format(
+    html = HEAD.format(
         title=f"{info['name']} \u2014 {info['kind']}",
         desc=f"{info['name']} in the Aster da Master archive: {len(tracks)} producer credits, {fmt(total_plays)} plays.",
     ) + body + FOOT
+    if info.get("watch"):
+        html = html.replace(
+            "</body>",
+            '  <script src="../assets/js/uncle-watch.js"></script>\n</body>',
+            1,
+        )
+    return html
 
 
 def main():
@@ -526,6 +578,7 @@ def main():
             "tracks": info["tracks"],
             "facts": info["facts"],
             "sources": [{"label": label, "url": url} for label, url in info["sources"]],
+            **({"watch": info["watch"]} if info.get("watch") else {}),
         }
         for s, info in SCENE_FIGURES.items()
     }

@@ -1,5 +1,5 @@
 {
- "version": "0.13.0",
+ "version": "0.14.0",
  "generated": "2026-10-11",
  "plays_snapshot": "2026-10-11",
  "method": "Session archaeology, interactive: the 61 upload sessions from data/sessions.json (7-day upload-gap rule; upload dates are NOT recording dates) as an explorable timeline. gaps[] are the 60 inter-session silences in days; clusters[] are 'activity seasons' - consecutive sessions grouped while the separating silence is <= 90 days, a computed browsing convention, not an artist fact. loudest/deepest_cut are the session's max/min play counts (2026-10-11 snapshot); collaborators are w//ft. title credits parsed by the shared rule (producers excluded). Titles and metadata only - never lyrics, never invented bio facts.",

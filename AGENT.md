@@ -40,7 +40,7 @@ Static files — **no auth, no keys, no rate limits**. Works on any static host.
 | `api/v1/changelog.json` | Site construction history, generated from the git log | 29 entries |
 | `api/v1/first-last.json` | Per year 2018–2026: the opening and closing transmissions | 9 |
 | `api/v1/milestone-watch.json` | Vault tracks near round-number play counts | bands |
-| `api/v1/scene-figures.json` | Producer/scene figures outside the 21 (e.g. Fish Narc), with facts + sources | 1 |
+| `api/v1/scene-figures.json` | Producer/scene figures outside the 21 (e.g. Fish Narc), with facts + sources; figures carrying an announced record add an optional `watch` block (`label`, `status` = `announced`/`released`, `expected`, `as_of`, `note`) — `announced` means not yet confirmed released, never read it as released early | 1 |
 | `api/v1/transmission.json` | The guided journey: six eras with stats, top tracks, key sessions, collaborators, milestones, computed "signal" lines | 6 |
 | `api/v1/network.json` | Collaboration network: 23 nodes, 27 track-weighted edges, co-credit links, computed insights | 23 nodes |
 | `api/v1/eras.json` | Era deep-dives: six eras with full transmission lists (every track + plays), ALL in-era collaborators, active codex families, milestones, computed signal lines and summaries | 6 |
@@ -56,7 +56,7 @@ const J = p => JSON.parse(fs.readFileSync(p, "utf8"));
 
 // manifest first: confirm version before caching anything
 const idx = J("api/v1/index.json");
-console.log(idx.meta.version, idx.endpoints.network.records); // 0.13.0 23
+console.log(idx.meta.version, idx.endpoints.network.records); // 0.14.0 23
 
 // top 5 vault tracks by plays (plays = 2026-10-11 snapshot)
 const artist = J("api/v1/artist.json");
@@ -259,7 +259,7 @@ family: what does it mean, and how did it evolve?"*
 - **Upload dates ≠ recording dates.** Sessions are computed clusters (7-day
   upload-gap rule), not artist-named studio sessions.
 - **Sizes are small.** Largest: `artist.json` (~155 KB). Cache aggressively;
-  check `index.json → meta.version` (currently `0.13.0`) to invalidate.
+  check `index.json → meta.version` (currently `0.14.0`) to invalidate.
 - **The rules of the archive:** titles and metadata only — **never lyrics**;
   never invent biography; unknowns are listed as unknowns (`method.html` →
   "The unknowns register"); the circle is title-credit only (producers live

@@ -1,8 +1,14 @@
 {
   "generated": "2026-10-11",
   "method": "Parsed from `git log main`: every commit becomes an entry. The site documenting its own becoming.",
-  "entry_count": 51,
+  "entry_count": 52,
   "entries": [
+    {
+      "hash": "a81a021",
+      "date": "2026-10-12",
+      "message": "Wave 23: Q4-2026 singles & Uncle-LP watch sweep (research enrichment + Uncle watch widget, data version 0.13.0 -> 0.14.0)",
+      "files_changed": 42
+    },
     {
       "hash": "5672865",
       "date": "2026-10-12",

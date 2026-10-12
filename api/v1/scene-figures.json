@@ -27,7 +27,10 @@
    "Produced Lil Peep's 'Goth Angel Sinner' LP.",
    "Worked with Wicca Phase Springs Eternal, Lil Tracy, Horse Head, and Cold Hart; production noted for live guitar instead of samples.",
    "Solo LPs: 'WiLDFiRE' (2020), 'Camouflage' (2022), 'fruiting body' [KLP295] (2023), 'frog song' (2025, K Records).",
-   "Fifth solo LP 'Uncle' announced (Stereogum, August 2026): 11 tracks on K Records, scheduled release 2026-10-16; lead singles 'Much Less Me' and 'Big Dumb World'."
+   "Fifth solo LP 'Uncle' announced (Stereogum, August 2026): 11 tracks on K Records [KLP313], scheduled release 2026-10-16; produced by Asheville's Alex Farrar (Wednesday, MJ Lenderman, Fiddlehead).",
+   "Tracklist: 'Untitled', 'Much Less Me', 'Emma', 'Student Driver', 'One Hand On The Sword', 'In The Woods', 'Big Dumb World', 'Not To Guess', \"Wouldn't You Know\", 'Umtanum', 'Yakima Canyon'.",
+   "Lead singles 'Much Less Me' (Super 8 video by Jolie M-A) and 'Big Dumb World' (video by James Hyson); fall tour 2026-10-29 Los Angeles (Gold Diggers), 2026-11-06 Kingston NY (Tubby's), 2026-11-07 Ridgewood NY (Stone Circle Theatre).",
+   "Status as of research pass 2026-10-11: announced / pre-release — release listings this week still carry 2026-10-16 as upcoming; the archive records 'announced' until a release is confirmed."
   ],
   "sources": [
    {
@@ -45,7 +48,26 @@
    {
     "label": "Fish Narc announces 'Uncle' on K Records — Faygoluvers",
     "url": "https://www.faygoluvers.net/v5/2026/09/fish-narc-announces-new-album-uncle-on-k-records/"
+   },
+   {
+    "label": "fish narc - 'Big Dumb World' (second single) — Stereogum",
+    "url": "https://stereogum.com/2511545/fish-narc-big-dumb-world/music/"
+   },
+   {
+    "label": "Fish Narc — upcoming releases — upcomingvinyl",
+    "url": "https://upcomingvinyl.com/record/fish-narc-uncle"
+   },
+   {
+    "label": "Fish Narc artist profile — Release Wave",
+    "url": "https://releasewave.com/artists/fish-narc"
    }
-  ]
+  ],
+  "watch": {
+   "label": "'Uncle' — fifth solo LP",
+   "status": "announced",
+   "expected": "2026-10-16",
+   "as_of": "2026-10-11",
+   "note": "Pre-release as of this research pass. The archive records a release as 'released' only after a research pass confirms it; the watch never claims the LP is out early."
+  }
  }
 }

@@ -1,6 +1,6 @@
 # ASTER DA MASTER — artist archive (llms-full.txt)
 
-Private research archive for the underground artist **Aster da Master** (digicore/hyperpop orbit, scene tag "somelowlifes"). Static HTML + JSON API, all generated from `data/artist.json` by `scripts/build_*.py`. Data version: 0.13.0.
+Private research archive for the underground artist **Aster da Master** (digicore/hyperpop orbit, scene tag "somelowlifes"). Static HTML + JSON API, all generated from `data/artist.json` by `scripts/build_*.py`. Data version: 0.14.0.
 
 ## The catalog (219 transmissions)
 
@@ -73,7 +73,7 @@ Agent rules: static JSON, no auth, no rate limits (serve over HTTP — `file://`
 
 ## Generators
 
-`scripts/build_*.py` — dependency order: releases → years → circle → codex → sessions → session_deepdives → milestones → milestone_watch → firstlast → glance → search_index → changelog → transmission → network → eras → session_clusters → codex_pages → milestone_races. Each reads `data/artist.json`; version-writing scripts set `version` (0.13.0) and mirror to `api/v1/artist.json` / `api/v1/index.json`. All manifest writes go through `scripts/api_manifest.py` (canonical endpoints/meta/skills/documents rebuild — the chain is byte-stable regardless of generator order). `scripts/verify_agent_workflows.js` executes the 7 AGENT.md example workflows against the real local api/v1 JSON. Never hand-edit generated pages; edit the script or data and re-run.
+`scripts/build_*.py` — dependency order: releases → years → circle → codex → sessions → session_deepdives → milestones → milestone_watch → firstlast → glance → search_index → changelog → transmission → network → eras → session_clusters → codex_pages → milestone_races. Each reads `data/artist.json`; version-writing scripts set `version` (0.14.0) and mirror to `api/v1/artist.json` / `api/v1/index.json`. All manifest writes go through `scripts/api_manifest.py` (canonical endpoints/meta/skills/documents rebuild — the chain is byte-stable regardless of generator order). `scripts/verify_agent_workflows.js` executes the 7 AGENT.md example workflows against the real local api/v1 JSON. Never hand-edit generated pages; edit the script or data and re-run.
 
 ## Ops
 

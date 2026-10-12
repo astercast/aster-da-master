@@ -59,7 +59,7 @@ MILESTONES = json.loads((API / "milestones.json").read_text())["milestones"]
 SC = json.loads((API / "session-clusters.json").read_text())
 ERAS = json.loads((API / "eras.json").read_text())["eras"]
 
-VERSION = "0.13.0"  # mirror only - no source data changed in wave 22
+VERSION = "0.14.0"  # mirror only - no source data changed in wave 23
 SNAPSHOT = "2026-10-11"
 SNAP = datetime.date(2026, 10, 11)
 

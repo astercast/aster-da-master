@@ -87,7 +87,7 @@
 
         <div class="reveal">
           <h3 id="ag-endpoints">The API</h3>
-          <p>Nineteen versioned JSON endpoints under <code>api/v1/</code>. Current data version: <strong>0.13.0</strong> (see <code>api/v1/index.json</code> → <code>version</code> before caching anything).</p>
+          <p>Nineteen versioned JSON endpoints under <code>api/v1/</code>. Current data version: <strong>0.14.0</strong> (see <code>api/v1/index.json</code> → <code>version</code> before caching anything).</p>
           <div class="table-wrap">
             <table>
               <caption>API endpoint table</caption>
@@ -99,7 +99,7 @@
                 <tr><th scope="row">artist</th><td><code>api/v1/artist.json</code></td><td>Source of truth: artist record, 219-entry discography, platforms, eras, vault</td><td><code>discography[]</code>, <code>eras[]</code>, <code>collaborators</code></td></tr>
                 <tr><th scope="row">sessions</th><td><code>api/v1/sessions.json</code></td><td>61 upload sessions clustered by the 7-day gap rule; per-track plays</td><td><code>sessions[].tracks[]</code> → <code>title, date, plays, page</code></td></tr>
                 <tr><th scope="row">circle</th><td><code>api/v1/circle.json</code></td><td>21 title-credited collaborators and their track footprints</td><td><code>shared_transmissions</code>, <code>shared_plays</code>, <code>years_active</code>, <code>verified_notes</code></td></tr>
-                <tr><th scope="row">scene-figures</th><td><code>api/v1/scene-figures.json</code></td><td>Producer/scene figures excluded from the circle by the title-credit rule</td><td><code>kind</code>, <code>standing</code>, <code>tracks</code>, <code>facts</code>, <code>sources</code></td></tr>
+                <tr><th scope="row">scene-figures</th><td><code>api/v1/scene-figures.json</code></td><td>Producer/scene figures excluded from the circle by the title-credit rule</td><td><code>kind</code>, <code>standing</code>, <code>tracks</code>, <code>facts</code>, <code>sources</code>, optional <code>watch</code> (<code>status</code> <code>announced</code>/<code>released</code> — <code>announced</code> is never released)</td></tr>
                 <tr><th scope="row">codex</th><td><code>api/v1/codex.json</code></td><td>16 title-word families with per-family track lists</td><td><code>families[]</code> → <code>name, words[], tracks[]</code></td></tr>
                 <tr><th scope="row">codex-families</th><td><code>api/v1/codex-families.json</code></td><td>Codex family deep-dives: decoded readings, era-by-era evolution, key sessions, collaborators — drives the <code>codex/&lt;slug&gt;.html</code> pages</td><td><code>families[]</code> → <code>decoded, eras[], transmissions[], key_sessions[], collaborators[]</code></td></tr>
                 <tr><th scope="row">milestones</th><td><code>api/v1/milestones.json</code></td><td>Career firsts computed from the verified discography</td><td>firsts, records, silences</td></tr>
@@ -172,7 +172,7 @@
           <h3 id="ag-expectations">Rates &amp; expectations</h3>
           <ul>
             <li><strong>Static files, no auth, no rate limits.</strong> This is a static site — the whole API is files on disk. Fetch freely, but serve over HTTP: browsers block <code>fetch()</code> from <code>file://</code> pages.</li>
-            <li><strong>Sizes are small.</strong> Largest endpoints: <code>artist.json</code> (~155 KB), <code>sessions.json</code> (~50 KB), <code>on-this-day.json</code> (~40 KB). Everything else is under 16 KB. Cache aggressively; check <code>index.json → version</code> (currently <code>0.13.0</code>) to invalidate.</li>
+            <li><strong>Sizes are small.</strong> Largest endpoints: <code>artist.json</code> (~155 KB), <code>sessions.json</code> (~50 KB), <code>on-this-day.json</code> (~40 KB). Everything else is under 16 KB. Cache aggressively; check <code>index.json → version</code> (currently <code>0.14.0</code>) to invalidate.</li>
             <li><strong>Play counts are a snapshot.</strong> SoundCloud plays were captured read-only on <strong>2026-10-11</strong> (<code>plays_snapshot</code> / <code>observed</code> fields). They drift daily — always state the snapshot date, never present them as live.</li>
             <li><strong>Upload dates ≠ recording dates.</strong> Sessions are computed clusters (7-day upload-gap rule), not artist-named studio sessions.</li>
             <li><strong>The rules of the archive:</strong> titles and metadata only — <strong>never lyrics</strong>; never invent biography; unknowns are listed as unknowns (<code>method.html</code> → "The unknowns register"); the circle is title-credit only (producers live in <code>scene-figures.json</code>).</li>

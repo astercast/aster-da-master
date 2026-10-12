@@ -38,7 +38,7 @@ API_OUT = ROOT / "api" / "v1" / "codex.json"
 API_ARTIST = ROOT / "api" / "v1" / "artist.json"
 API_INDEX = ROOT / "api" / "v1" / "index.json"
 CODEX_PAGES = ROOT / "codex"
-NEW_VERSION = "0.13.0"
+NEW_VERSION = "0.14.0"
 SNAPSHOT = "2026-10-11"  # play-count snapshot date; pinned so re-runs are byte-stable
 
 LEET = str.maketrans({"1": "l", "0": "o", "3": "e", "4": "a", "5": "s", "7": "t"})
