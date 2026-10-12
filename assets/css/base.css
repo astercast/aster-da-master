@@ -10,6 +10,10 @@ html {
 }
 @media (prefers-reduced-motion: no-preference) {
   html { scroll-behavior: smooth; }
+  /* Cross-document view transitions as progressive enhancement (Chromium
+     126+, Safari 18.2+; Firefox ships it later): MPA navigation crossfades
+     instead of flashing. Unsupported browsers ignore the rule. */
+  @view-transition { navigation: auto; }
 }
 
 body {

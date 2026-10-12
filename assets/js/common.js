@@ -3,6 +3,11 @@
 (function () {
   "use strict";
 
+  /* Web-craft failure-mode rule: the finished (revealed) state is the CSS
+     default; the hidden pre-reveal state only applies when this script
+     actually runs. If this file fails to load, content stays visible. */
+  document.documentElement.classList.add("js");
+
   function esc(s) {
     return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) {
       return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];

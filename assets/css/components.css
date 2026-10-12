@@ -1172,9 +1172,12 @@
 .pk-unknowns { border-color: var(--neon-deep); }
 .pk-toolbar { display: flex; gap: var(--space-3); margin: var(--space-5) 0; flex-wrap: wrap; }
 
-/* ---------- Reveal on scroll ---------- */
-.reveal { opacity: 0; transform: translateY(26px); transition: opacity var(--dur-3) var(--ease), transform var(--dur-3) var(--ease); transition-delay: var(--d, 0s); }
-.reveal.in { opacity: 1; transform: none; }
+/* ---------- Reveal on scroll ----------
+   Failure mode is "no animation", never "invisible content": the hidden
+   pre-reveal state only applies when JS runs (html.js is set by common.js).
+   IO fallback in reveal() covers no-IntersectionObserver browsers. */
+html.js .reveal { opacity: 0; transform: translateY(26px); transition: opacity var(--dur-3) var(--ease), transform var(--dur-3) var(--ease); transition-delay: var(--d, 0s); }
+html.js .reveal.in { opacity: 1; transform: none; }
 @media (prefers-reduced-motion: reduce) {
   .reveal { opacity: 1; transform: none; transition: none; }
 }

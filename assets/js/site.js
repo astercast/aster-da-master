@@ -2,6 +2,10 @@
 (function () {
   "use strict";
 
+  /* Web-craft failure-mode rule (see common.js): hidden pre-reveal state
+     only applies when JS runs. */
+  document.documentElement.classList.add("js");
+
   function esc(s) {
     return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) {
       return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];

@@ -1,8 +1,20 @@
 {
   "generated": "2026-10-11",
   "method": "Parsed from `git log main`: every commit becomes an entry. The site documenting its own becoming.",
-  "entry_count": 66,
+  "entry_count": 68,
   "entries": [
+    {
+      "hash": "ebd9e24",
+      "date": "2026-10-12",
+      "message": "Wave 28 follow-up: web-craft round-2 findings (reveal failure-mode fix, cross-document VT, llms.txt links)",
+      "files_changed": 9
+    },
+    {
+      "hash": "8fa9963",
+      "date": "2026-10-12",
+      "message": "Wave 29: changelog sync (3-file convention)",
+      "files_changed": 3
+    },
     {
       "hash": "d0b5576",
       "date": "2026-10-12",
