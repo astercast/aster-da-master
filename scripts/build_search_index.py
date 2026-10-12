@@ -71,11 +71,8 @@ def main():
 
     index = json.loads((API / "index.json").read_text())
     index["version"] = "0.12.0"
-    index["endpoints"]["release-slugs"] = "api/v1/release-slugs.json"
-    index["endpoints"]["on-this-day"] = "api/v1/on-this-day.json"
-    (API / "index.json").write_text(
-        json.dumps(index, indent=1, ensure_ascii=False) + "\n"
-    )
+    from api_manifest import render_manifest
+    render_manifest(index, ROOT)
 
     print(f"release-slugs: {len(slug_map)} entries")
     print(f"on-this-day: {len(otd)} days with transmissions")

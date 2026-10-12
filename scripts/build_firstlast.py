@@ -117,11 +117,11 @@ def main() -> int:
     }, indent=2) + "\n")
 
     idx = json.loads(API_INDEX.read_text())
-    idx["endpoints"]["first-last"] = "api/v1/first-last.json"
     # idempotent: never re-append on re-run
     if "First-and-last endpoint" not in idx["provenance"]:
         idx["provenance"] += " First-and-last endpoint (per-year opening/closing transmissions)."
-    API_INDEX.write_text(json.dumps(idx, indent=2, ensure_ascii=False) + "\n")
+    from api_manifest import render_manifest
+    render_manifest(idx, ROOT)
 
     print(f"first-last: {len(years)} years -> data/first-last.json + JSON")
     return 0

@@ -318,11 +318,8 @@ def main():
     idx_p = API / "index.json"
     idx = json.loads(idx_p.read_text())
     idx["version"] = NEW_VERSION
-    eps = idx.setdefault("endpoints", {})
-    if isinstance(eps, dict):
-        eps["network"] = "api/v1/network.json"
-    idx_p.write_text(
-        json.dumps(idx, indent=1, ensure_ascii=False) + "\n", encoding="utf-8")
+    from api_manifest import render_manifest
+    render_manifest(idx, ROOT)
 
     co = len([e for e in edges if e["kind"] == "co-credit"])
     print(f"network.json: {len(all_nodes)} nodes, {len(edges)} edges "

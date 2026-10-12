@@ -1,5 +1,14 @@
 # Aster da Master — API
 
+## Shared API conventions (all sites)
+- Base: `api/v1/` relative to the site root. Works on any static host; no auth, no keys, no rate limits.
+- Manifest: `api/v1/index.json` lists every endpoint with its schema URL, `updated` timestamp, and notes. Start here.
+- Timestamps: ISO-8601 UTC (`2026-10-11T00:00:00Z`). Date-only fields are `YYYY-MM-DD`.
+- Versions: `meta.version` semver on the manifest; breaking changes get a new `v2/` path, never a silent shape change.
+- Errors: static files can't return error bodies. A missing endpoint means a wrong path — re-read `index.json`. Empty results are `[]`, never `null`. Every record carries its provenance (`source`, `observed`/`updated`).
+- Pagination: not needed — payloads are complete snapshots sized for client-side filtering. If a future endpoint paginates, it will use `?page=` and document it here.
+- Freshness: every payload states when it was generated and from what snapshot. Treat undated numbers as stale.
+
 Base: `api/v1/`. Static JSON, versioned. The artist record is the single source
 of truth; `data/artist.json` feeds the site renderer and mirrors it.
 

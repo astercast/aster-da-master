@@ -213,11 +213,11 @@ def main() -> int:
     PAGE_OUT.write_text(page, encoding="utf-8")
 
     idx = json.loads(API_INDEX.read_text())
-    idx["endpoints"]["changelog"] = "api/v1/changelog.json"
     # idempotent: never re-append on re-run
     if "Changelog endpoint" not in idx["provenance"]:
         idx["provenance"] += " Changelog endpoint (site construction history from git log)."
-    API_INDEX.write_text(json.dumps(idx, indent=2, ensure_ascii=False) + "\n")
+    from api_manifest import render_manifest
+    render_manifest(idx, ROOT)
 
     print(f"changelog: {len(entries)} entries -> changelog.html + JSON")
     return 0

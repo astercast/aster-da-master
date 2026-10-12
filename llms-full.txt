@@ -27,13 +27,13 @@ Wave 12 research enrichment (2026-10-11, public sources only, no lyrics, no inve
 
 ## Pages
 
-Home `index.html` (discography) · `releases/` (219 pages + index) · `years/` (2018–2026 + index) · `circle/` (21 + 1 scene figure) · `codex/` (16 vocabulary families) · `timeline.html` · `network.html` (collaboration universe: interactive SVG graph of the 21 title-credited collaborators + producer scene figures, track-weighted edges, co-credit links, era slider, producers toggle, name search, accessible table, computed insights; data `api/v1/network.json` via `scripts/build_network.py`) · `decoder.html` (transmission decoder) · `api-playground.html` (Explore + Skill recipes tabs) · `agents.html` (agentic surface: API table, llms, skills, search-index usage, 3 worked workflows) · `method.html` (methodology, scene context, unknowns) · `trilogy.html` (Litemode Trilogy watch) · `sessions.html` + `sessions/` (61 upload sessions, 10 deep-dives) · `changelog.html` · `glance.html` · `press-kit.html` · `transmission.html` (flagship guided journey: six eras 2018→2026 with stats, defining tracks, key sessions, collaborators, milestones, computed signal lines; keyboard + auto-play + share text).
+Home `index.html` (discography) · `releases/` (219 pages + index) · `years/` (2018–2026 + index) · `circle/` (21 + 1 scene figure) · `codex/` (16 vocabulary families) · `timeline.html` · `network.html` (collaboration universe: interactive SVG graph of the 21 title-credited collaborators + producer scene figures, track-weighted edges, co-credit links, era slider, producers toggle, name search, accessible table, computed insights; data `api/v1/network.json` via `scripts/build_network.py`) · `decoder.html` (transmission decoder) · `api-playground.html` (Explore + Skill recipes tabs) · `AGENT.md` (agent operator's manual: base URL, key endpoints, 3 end-to-end workflows) · `agents.html` (agentic surface: API table, llms, skills, search-index usage, 3 worked workflows) · `method.html` (methodology, scene context, unknowns) · `trilogy.html` (Litemode Trilogy watch) · `sessions.html` + `sessions/` (61 upload sessions, 10 deep-dives) · `changelog.html` · `glance.html` · `press-kit.html` · `transmission.html` (flagship guided journey: six eras 2018→2026 with stats, defining tracks, key sessions, collaborators, milestones, computed signal lines; keyboard + auto-play + share text).
 
 Design: "UNDERGROUND TRANSMISSION" — semantic HTML, ARIA landmarks, keyboard-accessible, `prefers-reduced-motion` respected, mobile-first.
 
 ## Skills (skills/, registry skills/index.json)
 
-Nine playbooks in Use when / Inputs / Procedure / Worked example / API references / Pitfalls format. Archive-analysis skills and their endpoint sequences:
+Ten playbooks in Use when / Inputs / Procedure / Worked example / API references / Pitfalls format. Archive-analysis skills and their endpoint sequences:
 
 - `deep-cuts-finder` — surfaces the vault's quietest-play tracks for playlists. `sessions.json` → flatten → sort asc by plays → `codex.json` for playlist themes. Deepest: "nitemode2019 w/ Max+Vetty prod. NaXi.wav" (17 plays), median ≈ 450.
 - `session-archaeology` — reconstructs one of the 61 sessions. `sessions.json` → `circle.json`/`scene-figures.json` → `codex.json` → `artist.json` eras. Sessions are upload-date clusters (7-day gap rule), not recording dates.
@@ -41,6 +41,7 @@ Nine playbooks in Use when / Inputs / Procedure / Worked example / API reference
 - `milestone-watcher` — near round-number play counts. `milestone-watch.json` → sort bands by `needed`. Summit: "Take Me (prod. Em Klebold)" 30,088 plays; near-1k: "[outro] Off Beat ft. Yung Vetta (prod. Addy)" 65 needed.
 - `era-briefing` — summarizes one of six eras for a writeup. `artist.json` eras → `years.json` → `discography` → `circle.json`. Example: "The First Rite" (2017–2019), 2018 = 39 transmissions / 104,479 plays.
 - `transmission-decoder` — interprets a title word via the 16 codex families. `codex.json` → `sessions.json`; mirrors `decoder.html`. Example: `nitemode` → family "The Modes" (5 transmissions, 2019 + 2024 clusters).
+- `network-graph-reader` — reads the collaboration network: nodes, track-weighted edges, co-credit links, insights. `network.json` → `insights` → `circle.json`. Example: Max Ferrari ×8 (most frequent); co-credit edges jax↔max-ferrari (2), max-ferrari↔yung-vetta (1).
 - `announce-release`, `build-press-kit`, `verify-platform-links` — publishing helpers.
 
 Agent rules: static JSON, no auth, no rate limits (serve over HTTP — `file://` blocks fetch); play counts are a 2026-10-11 snapshot (always state it); upload dates ≠ recording dates; titles/metadata only — never lyrics, never invent bio facts; producers are outside the circle by rule.
@@ -54,7 +55,7 @@ Agent rules: static JSON, no auth, no rate limits (serve over HTTP — `file://`
 | circle | api/v1/circle.json |
 | codex | api/v1/codex.json |
 | first-last | api/v1/first-last.json |
-| index (registry + version) | api/v1/index.json |
+| index (self-describing manifest: description, schema URL, updated, records, notes per endpoint) | api/v1/index.json |
 | milestone-watch | api/v1/milestone-watch.json |
 | milestones | api/v1/milestones.json |
 | network | api/v1/network.json |
@@ -69,7 +70,7 @@ Agent rules: static JSON, no auth, no rate limits (serve over HTTP — `file://`
 
 ## Generators
 
-`scripts/build_*.py` — dependency order: releases → years → circle → codex → sessions → session_deepdives → milestones → milestone_watch → firstlast → glance → search_index → changelog → transmission → network. Each reads `data/artist.json`; version-writing scripts set `version` (0.12.0) and mirror to `api/v1/artist.json` / `api/v1/index.json`. Never hand-edit generated pages; edit the script or data and re-run.
+`scripts/build_*.py` — dependency order: releases → years → circle → codex → sessions → session_deepdives → milestones → milestone_watch → firstlast → glance → search_index → changelog → transmission → network. Each reads `data/artist.json`; version-writing scripts set `version` (0.12.0) and mirror to `api/v1/artist.json` / `api/v1/index.json`. All manifest writes go through `scripts/api_manifest.py` (canonical endpoints/meta/skills/documents rebuild — the chain is byte-stable regardless of generator order). `scripts/verify_agent_workflows.js` executes the 3 AGENT.md example workflows against the real local api/v1 JSON. Never hand-edit generated pages; edit the script or data and re-run.
 
 ## Ops
 

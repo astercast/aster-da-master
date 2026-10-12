@@ -338,12 +338,12 @@ def main() -> int:
     idx = json.loads(API_INDEX.read_text())
     idx["version"] = NEW_VERSION
     idx["observed"] = SNAPSHOT
-    idx["endpoints"]["sessions"] = "api/v1/sessions.json"
     # idempotent: the upload-sessions endpoint was introduced at v0.10.0; never re-append
     if "upload-sessions endpoint" not in idx["provenance"]:
         idx["provenance"] += (" v0.10.0: upload-sessions endpoint "
                               f"({len(out)} sessions clustered from vault upload dates).")
-    API_INDEX.write_text(json.dumps(idx, indent=2, ensure_ascii=False) + "\n")
+    from api_manifest import render_manifest
+    render_manifest(idx, ROOT)
 
     print(f"sessions: {len(out)} sessions / "
           f"{sum(s['track_count'] for s in out)} tracks -> sessions.html + JSON, "

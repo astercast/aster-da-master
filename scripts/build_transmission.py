@@ -378,8 +378,8 @@ def main() -> int:
     # register the endpoint
     idx_p = ROOT / "api/v1/index.json"
     idx = json.loads(idx_p.read_text())
-    idx["endpoints"]["transmission"] = "api/v1/transmission.json"
-    idx_p.write_text(json.dumps(idx, indent=1) + "\n", encoding="utf-8")
+    from api_manifest import render_manifest
+    render_manifest(idx, ROOT)
 
     print(f"transmission.json: {len(eras)} eras, {total_tx} tx, {fmt(total_plays)} plays")
     return 0

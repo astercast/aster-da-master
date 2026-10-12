@@ -395,10 +395,8 @@ def main():
     shutil.copyfile(DATA, API_ARTIST)
     idx = json.loads(API_INDEX.read_text())
     idx["version"] = NEW_VERSION
-    endpoints = idx.setdefault("endpoints", {})
-    if isinstance(endpoints, dict):
-        endpoints.setdefault("codex", "api/v1/codex.json")
-    API_INDEX.write_text(json.dumps(idx, indent=2, ensure_ascii=False) + "\n")
+    from api_manifest import render_manifest
+    render_manifest(idx, ROOT)
     print(f"version -> {NEW_VERSION}; api/v1 mirrored")
 
 

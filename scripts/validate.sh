@@ -58,7 +58,7 @@ while IFS= read -r f; do
   if ! node --check "$f" >/dev/null 2>&1; then
     fail "$f"; JS_OK=0
   fi
-done < <(find assets/js -name '*.js' 2>/dev/null | sort)
+done < <(find assets/js scripts -name '*.js' 2>/dev/null | grep -v __pycache__ | sort)
 if [ "$JS_OK" = 1 ]; then pass "$JS_N JS files parse"; fi
 
 # ---------------------------------------------------------------- stage 2 ---
@@ -89,13 +89,17 @@ def schema(name):
     Draft7Validator.check_schema(s)  # the schema itself must be valid draft-07
     return Draft7Validator(s)
 
-# all 8 schemas are doc-level
-pairs = [("artist.json", "artist.json"), ("changelog.json", "changelog.json"),
-         ("codex.json", "codex.json"), ("first-last.json", "first-last.json"),
+# all 15 schemas are doc-level (one per endpoint, incl. the index manifest)
+pairs = [("index.json", "index.json"), ("artist.json", "artist.json"),
+         ("codex.json", "codex.json"), ("release-slugs.json", "release-slugs.json"),
+         ("on-this-day.json", "on-this-day.json"), ("years.json", "years.json"),
+         ("circle.json", "circle.json"), ("milestones.json", "milestones.json"),
+         ("sessions.json", "sessions.json"), ("changelog.json", "changelog.json"),
+         ("first-last.json", "first-last.json"),
          ("milestone-watch.json", "milestone-watch.json"),
-         ("milestones.json", "milestones.json"),
-         ("network.json", "network.json"), ("sessions.json", "sessions.json"),
-         ("transmission.json", "transmission.json")]
+         ("scene-figures.json", "scene-figures.json"),
+         ("transmission.json", "transmission.json"),
+         ("network.json", "network.json")]
 for fname, sname in pairs:
     doc = json.loads((ROOT / "api" / "v1" / fname).read_text())
     for e in schema(sname).iter_errors(doc):
@@ -108,7 +112,7 @@ if failures:
     if len(failures) > 20:
         print(f"   ... and {len(failures)-20} more")
     sys.exit(1)
-print("  ok: artist/changelog/codex/first-last/milestone-watch/milestones/network/sessions/transmission validate against draft-07 schemas")
+print("  ok: all 15 endpoints validate against their draft-07 schemas")
 EOF
 [ $? -eq 0 ] && pass "schema validation clean" || FAIL=$((FAIL+1))
 
@@ -218,7 +222,7 @@ SECTIONS = re.compile(
 
 def content_files():
     for pat in ("*.html", "api/**/*.json", "data/**/*.json", "skills/*.md",
-                "llms.txt", "llms-full.txt", "API.md"):
+                "llms.txt", "llms-full.txt", "API.md", "AGENT.md"):
         for f in sorted(ROOT.glob(pat)):
             if f.is_file() and "__pycache__" not in str(f):
                 yield f
@@ -263,9 +267,12 @@ for s in $CHAIN; do
     CHAIN_OK=0
   fi
 done
-# changelog.{html,json} legitimately grow after any new commit (built from git log);
-# everything else must be byte-stable across a re-run
-DIFF=$(git diff --stat -- . ':!changelog.html' ':!api/v1/changelog.json' 2>/dev/null)
+# changelog.{html,json} legitimately grow after any new commit (built from git log).
+# api/v1/index.json is a pure chain output (scripts/api_manifest.py rebuilds it
+# canonically on every generator run); its changelog `records` count moves with
+# the commit count, so it drifts for the same reason the changelog files do.
+# Everything else must be byte-stable across a re-run.
+DIFF=$(git diff --stat -- . ':!changelog.html' ':!api/v1/changelog.json' ':!api/v1/index.json' 2>/dev/null)
 if [ -n "$DIFF" ]; then
   fail "generator re-run produced unexpected diffs:"
   echo "$DIFF" | head -12 | sed 's/^/    /'
@@ -275,9 +282,11 @@ fi
 # its own sync commit, so two commits are the steady state):
 #   (a) right after a rebuild: entry_count == commit count (HEAD not yet committed
 #       the rebuild), or
-#   (b) at rest: HEAD touches ONLY changelog.html + api/v1/changelog.json (the
-#       sync commit) and entry_count == commit count of HEAD~1, with the top
-#       entry's hash matching HEAD~1.
+#   (b) at rest: HEAD is the sync commit - it touches changelog.html +
+#       api/v1/changelog.json, and (since wave 17) api/v1/index.json too,
+#       because the manifest's changelog `records` count moves with every
+#       commit. entry_count == commit count of HEAD~1, the top entry's hash
+#       matches HEAD~1, and the manifest's changelog records == entry_count.
 python3 - <<'EOF'
 import json, subprocess, sys
 from pathlib import Path
@@ -291,9 +300,12 @@ if cl["entry_count"] == n:
     print(f"  ok: changelog in sync with git history ({n} commits)")
     sys.exit(0)
 touched = [f for f in git("diff-tree", "--no-commit-id", "--name-only", "-r", "HEAD").splitlines() if f.strip()]
-if (set(touched) == {"changelog.html", "api/v1/changelog.json"}
+idx = json.loads(Path("api/v1/index.json").read_text())
+if ({"changelog.html", "api/v1/changelog.json"} <= set(touched)
+        <= {"changelog.html", "api/v1/changelog.json", "api/v1/index.json"}
         and cl["entry_count"] == n - 1
-        and cl["entries"][0]["hash"] == git("rev-parse", "--short", "HEAD~1")):
+        and cl["entries"][0]["hash"] == git("rev-parse", "--short", "HEAD~1")
+        and idx["endpoints"]["changelog"]["records"] == cl["entry_count"]):
     print(f"  ok: changelog sync commit at HEAD; entries ({cl['entry_count']}) cover all content commits")
     sys.exit(0)
 print(f"  FAIL: changelog entry_count {cl['entry_count']} vs {n} commits "
@@ -369,7 +381,7 @@ if chain_str not in llms:
     errors.append("llms.txt generator dependency order doesn't match the canonical chain")
 
 # catalog counts: 219 transmissions, 34 distributor releases, 185 SoundCloud tracks,
-# 16 codex families, 21 collaborators, 61 sessions, 9 skills
+# 16 codex families, 21 collaborators, 61 sessions, 10 skills
 artist = json.loads((ROOT / "data" / "artist.json").read_text())
 circle_keys = json.loads((ROOT / "api" / "v1" / "circle.json").read_text())
 disc = artist["discography"]
@@ -380,7 +392,7 @@ sessions = json.loads((ROOT / "data" / "sessions.json").read_text())
 skills = [f for f in (ROOT / "skills").glob("*.md") if f.name != "index.json"]
 checks = [(str(len(disc)), "219"), (str(len(dist)), "34"), (str(len(vault)), "185"),
           (str(len(codex["families"])), "16"), (str(len(sessions["sessions"])), "61"),
-          (str(len(circle_keys)), "21"), (str(len(skills)), "9")]
+          (str(len(circle_keys)), "21"), (str(len(skills)), "10")]
 for actual, want in checks:
     if actual != want:
         errors.append(f"catalog drift: expected {want}, data says {actual}")
@@ -392,7 +404,7 @@ if errors:
     for e in errors:
         print("   -", e)
     sys.exit(1)
-print(f"  ok: llms.txt matches index.json v{ver}, all {len(endpoints)} endpoints, chain order, catalog counts (219/34/185/16/21/61/9)")
+print(f"  ok: llms.txt matches index.json v{ver}, all {len(endpoints)} endpoints, chain order, catalog counts (219/34/185/16/21/61/10)")
 EOF
 [ $? -eq 0 ] && pass "llms.txt freshness" || FAIL=$((FAIL+1))
 

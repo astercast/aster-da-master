@@ -81,7 +81,7 @@
         <div class="section-head reveal">
           <span class="kicker"><span class="numeral">✦</span>The API playground</span>
           <h2 id="pg-h">Touch the archive</h2>
-          <p>Every record on this site is a versioned JSON document. Pick an endpoint, read the live response, copy what you need. Agents start at <code>api/v1/index.json</code>.</p>
+          <p>Every record on this site is a versioned JSON document. Pick an endpoint, read the live response, copy what you need. Agents start at <code>api/v1/index.json</code>. The operator's manual is <a href="AGENT.md"><code>AGENT.md</code></a> (base URL pattern, key endpoints, end-to-end workflows); the browsable agentic surface is <a href="agents.html"><code>agents.html</code></a>; conventions live in <a href="API.md"><code>API.md</code></a>.</p>
         </div>
 
         <div class="pg-tabs reveal" role="tablist" aria-label="Playground views">
@@ -162,6 +162,16 @@
                 <li>Read the family's <code>epithet</code> and its <code>tracks[]</code> (titles, dates, plays).</li>
                 <li>Mirror <code>decoder.html</code> + <code>assets/js/decoder.js</code> matching logic.</li>
                 <li><code>GET api/v1/sessions.json</code> — session context for any decoded track.</li>
+              </ol>
+            </article>
+            <article class="recipe-card" aria-labelledby="rc-net">
+              <h4 id="rc-net"><a href="skills/network-graph-reader.md">network-graph-reader</a></h4>
+              <p>Read the collaboration network: who works with whom, co-credit links, computed insights.</p>
+              <ol class="recipe-seq">
+                <li><code>GET api/v1/network.json</code> — read <code>insights</code> first (most frequent collaborator, busiest year, first-ever).</li>
+                <li>Filter <code>edges[]</code> on a node id for its neighborhood; <code>kind: "co-credit"</code> edges carry <code>shared_tracks[]</code>.</li>
+                <li><code>GET api/v1/circle.json</code> — per-track detail behind each node.</li>
+                <li>Report shapes, not stories: the graph records that collaborations happened, never how or why.</li>
               </ol>
             </article>
           </div>

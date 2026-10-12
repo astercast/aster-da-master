@@ -168,12 +168,12 @@ def main() -> int:
     idx = json.loads(API_INDEX.read_text())
     idx["version"] = NEW_VERSION
     idx["observed"] = SNAPSHOT
-    idx["endpoints"]["milestone-watch"] = "api/v1/milestone-watch.json"
     # idempotent: milestone-watch endpoint was introduced at v0.11.0; never re-append
     if "milestone-watch endpoint" not in idx["provenance"]:
         idx["provenance"] += (" v0.11.0: milestone-watch endpoint "
                               "(vault tracks near round-number play counts).")
-    API_INDEX.write_text(json.dumps(idx, indent=2, ensure_ascii=False) + "\n")
+    from api_manifest import render_manifest
+    render_manifest(idx, ROOT)
 
     counts = ", ".join(f"{b['id']}: {len(b['tracks'])}" for b in bands)
     print(f"milestone-watch: {counts} -> JSON + schema, version {NEW_VERSION}")

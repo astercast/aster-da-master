@@ -1,8 +1,56 @@
 {
   "generated": "2026-10-11",
   "method": "Parsed from `git log main`: every commit becomes an entry. The site documenting its own becoming.",
-  "entry_count": 29,
+  "entry_count": 37,
   "entries": [
+    {
+      "hash": "d792bd3",
+      "date": "2026-10-12",
+      "message": "Wave 17: WAVELOG entry",
+      "files_changed": 1
+    },
+    {
+      "hash": "02779d3",
+      "date": "2026-10-12",
+      "message": "Wave 17 changelog sync",
+      "files_changed": 3
+    },
+    {
+      "hash": "d889256",
+      "date": "2026-10-12",
+      "message": "Wave 17: stage 6 treats index.json as chain-owned output (changelog records move with commit count)",
+      "files_changed": 1
+    },
+    {
+      "hash": "7404509",
+      "date": "2026-10-12",
+      "message": "Wave 17 changelog sync (content commits 12e5370, 8f2a98e)",
+      "files_changed": 3
+    },
+    {
+      "hash": "8f2a98e",
+      "date": "2026-10-12",
+      "message": "Wave 17: validator accepts 3-file changelog sync (index.json manifest records move with every commit)",
+      "files_changed": 1
+    },
+    {
+      "hash": "d54a77b",
+      "date": "2026-10-12",
+      "message": "Wave 17 changelog sync (content commit 12e5370)",
+      "files_changed": 3
+    },
+    {
+      "hash": "12e5370",
+      "date": "2026-10-12",
+      "message": "Wave 17: Agent API excellence pass",
+      "files_changed": 28
+    },
+    {
+      "hash": "3b30467",
+      "date": "2026-10-12",
+      "message": "Wave 16: add commit hashes to WAVELOG",
+      "files_changed": 1
+    },
     {
       "hash": "0f54439",
       "date": "2026-10-12",

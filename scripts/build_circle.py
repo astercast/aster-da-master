@@ -531,13 +531,8 @@ def main():
     shutil.copyfile(ROOT / "data" / "artist.json", API / "artist.json")
     idx = json.loads((API / "index.json").read_text())
     idx["version"] = NEW_VERSION
-    eps = idx.setdefault("endpoints", {})
-    if isinstance(eps, dict):
-        eps["circle"] = "api/v1/circle.json"
-        eps["scene-figures"] = "api/v1/scene-figures.json"
-    (API / "index.json").write_text(
-        json.dumps(idx, indent=1, ensure_ascii=False) + "\n", encoding="utf-8"
-    )
+    from api_manifest import render_manifest
+    render_manifest(idx, ROOT)
     print(f"circle: {len(entries)} pages + {len(SCENE_FIGURES)} scene figures + index + api/v1/circle.json + api/v1/scene-figures.json; version -> {NEW_VERSION}")
 
 

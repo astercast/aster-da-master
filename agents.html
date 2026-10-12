@@ -93,7 +93,7 @@
                 <tr><th scope="col">Endpoint</th><th scope="col">File</th><th scope="col">What it holds</th><th scope="col">Key fields</th></tr>
               </thead>
               <tbody>
-                <tr><th scope="row">index</th><td><code>api/v1/index.json</code></td><td>Registry: endpoint map, version, provenance, agent guidance</td><td><code>version</code>, <code>observed</code>, <code>endpoints</code></td></tr>
+                <tr><th scope="row">index</th><td><code>api/v1/index.json</code></td><td>Self-describing manifest: every endpoint with description, schema URL, <code>updated</code> timestamp, record counts, deprecation notes — plus <code>meta</code>, the skills registry, and the documents map</td><td><code>meta.version</code>, <code>observed</code>, <code>endpoints[].{path,description,schema,updated,records,notes}</code></td></tr>
                 <tr><th scope="row">artist</th><td><code>api/v1/artist.json</code></td><td>Source of truth: artist record, 219-entry discography, platforms, eras, vault</td><td><code>discography[]</code>, <code>eras[]</code>, <code>collaborators</code></td></tr>
                 <tr><th scope="row">sessions</th><td><code>api/v1/sessions.json</code></td><td>61 upload sessions clustered by the 7-day gap rule; per-track plays</td><td><code>sessions[].tracks[]</code> → <code>title, date, plays, page</code></td></tr>
                 <tr><th scope="row">circle</th><td><code>api/v1/circle.json</code></td><td>21 title-credited collaborators and their track footprints</td><td><code>shared_transmissions</code>, <code>shared_plays</code>, <code>years_active</code>, <code>verified_notes</code></td></tr>
@@ -118,6 +118,7 @@
           <h3 id="ag-llms">llms.txt</h3>
           <p>Two machine-readable summaries at the repo root:</p>
           <ul>
+            <li><a href="AGENT.md"><code>AGENT.md</code></a> — the operator's manual: base URL pattern, key endpoints with example requests, end-to-end workflows, rate/expectation notes. Read this first.</li>
             <li><a href="llms.txt"><code>llms.txt</code></a> — the short brief: catalog shape, collaborators, codex, method, API map, key verified facts, ops.</li>
             <li><a href="llms-full.txt"><code>llms-full.txt</code></a> — the full brief: per-era detail, collaborator research notes, unknowns register, page map, generator dependency order.</li>
           </ul>
@@ -125,7 +126,7 @@
 
         <div class="reveal">
           <h3 id="ag-skills">Skills</h3>
-          <p>Nine agent skills in <code>skills/</code> (registry: <code>skills/index.json</code>), each in the playbook format: Use when / Inputs / Procedure / Worked example / API references / Pitfalls. The six archive-analysis skills:</p>
+          <p>Ten agent skills in <code>skills/</code> (registry: <code>skills/index.json</code>), each in the playbook format: Use when / Inputs / Procedure / Worked example / API references / Pitfalls. The seven archive-analysis skills:</p>
           <div class="table-wrap">
             <table>
               <caption>Agent skills</caption>
@@ -139,6 +140,7 @@
                 <tr><th scope="row"><a href="skills/milestone-watcher.md">milestone-watcher</a></th><td>Tracks near round-number play counts</td><td><code>milestone-watch.json</code> → <code>sessions.json</code> for custom bands</td></tr>
                 <tr><th scope="row"><a href="skills/era-briefing.md">era-briefing</a></th><td>Summarizes an era for a writeup</td><td><code>artist.json</code> (eras) → <code>years.json</code> → <code>discography</code> → <code>circle.json</code></td></tr>
                 <tr><th scope="row"><a href="skills/transmission-decoder.md">transmission-decoder</a></th><td>Interprets a title word via the codex families</td><td><code>codex.json</code> → <code>sessions.json</code> (context); mirrors <code>decoder.html</code></td></tr>
+                <tr><th scope="row"><a href="skills/network-graph-reader.md">network-graph-reader</a></th><td>Reads the collaboration network: nodes, edges, co-credit links, insights</td><td><code>network.json</code> → <code>insights</code> → <code>circle.json</code> (per-track detail)</td></tr>
               </tbody>
             </table>
           </div>
