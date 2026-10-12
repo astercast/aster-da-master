@@ -1,0 +1,385 @@
+/* ============================================================
+   MOTIFS — Aster da Master: THE PIRATE BROADCAST (wave 31)
+   The identity layer. Load AFTER components.css; it extends the
+   mr-* component patterns, never replaces them. Static-first: every
+   motif's finished state is the CSS default — motion is layered on
+   top and frozen under prefers-reduced-motion (gate at the end).
+   ------------------------------------------------------------
+   3 PRIMARY motifs:
+     P1 CRT PHOSPHOR FIELD .... scanlines over everything, rolling
+        interference band, phosphor glow on display type, amber
+        night-drive edge on the footer. Usage: global, always on.
+     P2 MANIFEST LEDGER ........ every data list/table reads as a
+        transmission manifest: mono indices, tabular figures, dotted
+        rules, phosphor row-hover. Usage: ol/top-list, ms-list,
+        otd-list, cuts-grid, release/session/year lists, tables.
+     P3 ON AIR STATUS CHROME ... the beacon (irregular gas-tube flicker,
+        never metronome), LIVE chips, tuner marker on the active nav
+        link, ● status grammar. Usage: header (JS-injected), nav.
+   2 SECONDARY motifs:
+     S1 SCRAMBLE/DECODE ....... headlines decode from static; nav links
+        scramble on hover. JS-driven (assets/js/identity.js); body copy
+        stays static. Usage: main h1, .site-nav/.mnav-panel links.
+     S2 STATION SIGN-OFF ...... footer sign-off card: TRANSMISSION ENDS,
+        live station clock, "the station never sleeps". JS-injected.
+        Usage: .site-footer.
+   Intercept-log treatment for the changelog (.cl-*) lives with P2.
+   ============================================================ */
+
+/* ============ P1 — CRT PHOSPHOR FIELD ============ */
+
+/* Scanlines over everything: the air the station breathes.
+   (base.css keeps its faint under-layer; this is the pushed treatment.) */
+body::before {
+  background-image: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, var(--scan-alpha)) 0 1px,
+    transparent 1px 3px
+  );
+  mask-image: linear-gradient(black 72%, transparent 100%);
+  z-index: 61;
+}
+
+/* Rolling interference band — one pass every ~11s, barely there. */
+html::before {
+  content: "";
+  position: fixed;
+  left: 0; right: 0; top: -30%;
+  height: 22vh;
+  z-index: 60;
+  pointer-events: none;
+  background: linear-gradient(
+    transparent,
+    rgba(0, 240, 144, 0.045) 42%,
+    rgba(0, 240, 144, 0.085) 50%,
+    rgba(0, 240, 144, 0.045) 58%,
+    transparent
+  );
+}
+@media (prefers-reduced-motion: no-preference) {
+  html::before { animation: crt-band 11s linear infinite; }
+}
+@keyframes crt-band {
+  to { transform: translateY(165vh); }
+}
+
+/* Phosphor glow on display type — the call-sign burns in. */
+h1, .hero-title {
+  text-shadow: var(--glow-text);
+}
+h2 {
+  text-shadow: 0 0 10px rgba(0, 240, 144, 0.16);
+}
+
+/* Night-drive: the footer's amber horizon line. */
+.site-footer {
+  box-shadow: 0 -1px 0 rgba(245, 165, 36, 0.28),
+              0 -24px 70px -34px rgba(245, 165, 36, 0.4);
+}
+
+/* Brand mark: receiver dial, always faintly lit. */
+.brand-mark {
+  box-shadow: var(--glow-neon), inset 0 0 8px rgba(0, 240, 144, 0.25);
+}
+
+/* ============ P2 — MANIFEST LEDGER ============ */
+
+/* Ranked manifests: mono indices, dotted rules, phosphor hover.
+   Extends the components.css manifest-row pattern. */
+.top-list li::before {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--neon-dim);
+  min-width: 2.4em;
+}
+.top-list li:hover {
+  background: var(--neon-ghost);
+}
+.top-list li:hover::before {
+  color: var(--neon);
+  text-shadow: 0 0 8px rgba(0, 240, 144, 0.6);
+}
+
+/* Milestone + on-this-day + deep-cut manifests share the ledger voice. */
+.ms-list li, .otd-list li, .cuts-grid li, .fl-grid li {
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius-m);
+  background: var(--bg-soft);
+  padding: var(--space-4) var(--space-5);
+  position: relative;
+}
+.ms-list li::before, .otd-list li::before, .cuts-grid li::before, .fl-grid li::before {
+  content: "▸";
+  position: absolute;
+  top: var(--space-4);
+  right: var(--space-4);
+  font-size: 0.7rem;
+  color: var(--line);
+}
+.ms-list li:hover::before, .otd-list li:hover::before,
+.cuts-grid li:hover::before, .fl-grid li:hover::before {
+  color: var(--neon);
+  text-shadow: 0 0 8px rgba(0, 240, 144, 0.6);
+}
+.ms-list li:hover, .otd-list li:hover, .cuts-grid li:hover, .fl-grid li:hover {
+  border-color: var(--line);
+  background: var(--panel);
+}
+
+/* Tables are telemetry: tabular figures, phosphor row states. */
+table {
+  font-variant-numeric: tabular-nums;
+}
+tbody tr {
+  transition: background var(--dur-1) var(--ease);
+}
+tbody tr:hover {
+  background: var(--neon-ghost);
+}
+tbody tr:hover td {
+  color: var(--neon);
+}
+th {
+  border-bottom: 1px solid var(--neon-deep);
+}
+
+/* Intercept log: the changelog as intercepted transmissions.
+   The commit hash is the source codename — real data, never invented. */
+.cl-entry {
+  position: relative;
+  border-color: var(--line);
+  background:
+    linear-gradient(90deg, var(--neon-ghost), transparent 28%),
+    var(--bg-soft);
+}
+.cl-entry::before {
+  content: "▸ INTERCEPTED";
+  position: absolute;
+  top: -10px;
+  right: var(--space-5);
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: var(--track-kicker);
+  color: var(--gold);
+  background: var(--bg);
+  border: 1px solid rgba(245, 165, 36, 0.45);
+  border-radius: var(--radius-s);
+  padding: 2px 10px;
+  transform: rotate(1.2deg);
+}
+.cl-hash {
+  box-shadow: 0 0 12px rgba(0, 240, 144, 0.12);
+}
+
+/* ============ P3 — ON AIR STATUS CHROME ============ */
+
+.onair {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-family: var(--font-mono);
+  font-size: 0.64rem;
+  font-weight: 700;
+  letter-spacing: var(--track-kicker);
+  color: var(--live);
+  border: 1px solid rgba(255, 84, 104, 0.42);
+  border-radius: 999px;
+  padding: 0.4rem 0.85rem;
+  margin-left: var(--space-3);
+  flex-shrink: 0;
+  background: rgba(255, 84, 104, 0.06);
+  white-space: nowrap;
+}
+.onair i {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--live);
+  box-shadow: 0 0 10px var(--live), 0 0 22px rgba(255, 84, 104, 0.5);
+  flex-shrink: 0;
+}
+/* Gas-tube flicker: irregular by design, never a metronome. */
+@media (prefers-reduced-motion: no-preference) {
+  .onair i { animation: beacon-flicker 4.7s linear infinite; }
+}
+@keyframes beacon-flicker {
+  0%, 100% { opacity: 1; }
+  6% { opacity: 0.35; }
+  8% { opacity: 1; }
+  37% { opacity: 1; }
+  40% { opacity: 0.5; }
+  42% { opacity: 1; }
+  71% { opacity: 0.8; }
+  73% { opacity: 1; }
+  88% { opacity: 0.65; }
+  90% { opacity: 1; }
+}
+
+/* Tuner marker: the active nav link is where the dial sits. */
+.site-nav a[aria-current="page"] {
+  color: var(--neon);
+}
+.site-nav a[aria-current="page"]::after {
+  transform: scaleX(1);
+}
+.site-nav a[aria-current="page"]::before {
+  content: "▸";
+  position: absolute;
+  left: -1px;
+  top: 50%;
+  transform: translateY(-56%);
+  font-size: 0.6rem;
+  color: var(--neon);
+  text-shadow: 0 0 8px rgba(0, 240, 144, 0.7);
+}
+.mnav-panel a[aria-current="page"] {
+  color: var(--neon);
+  background: var(--neon-ghost);
+}
+
+/* ============ S1 — SCRAMBLE/DECODE ============ */
+
+/* While decoding, the headline burns brighter. JS adds/removes. */
+.decoding {
+  text-shadow: 0 0 22px rgba(0, 240, 144, 0.65), 0 0 70px rgba(0, 240, 144, 0.25);
+}
+
+/* ============ S2 — STATION SIGN-OFF ============ */
+
+.signoff {
+  flex: 1 1 100%;
+  margin-top: var(--space-6);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-m);
+  background:
+    radial-gradient(420px 120px at 12% 0%, rgba(0, 240, 144, 0.06), transparent 70%),
+    var(--bg-soft);
+  padding: var(--space-5) var(--space-6);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4) var(--space-6);
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+.signoff::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: 6%;
+  right: 6%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  opacity: 0.7;
+}
+.signoff-title {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  letter-spacing: 0.1em;
+  color: var(--ink);
+  text-shadow: var(--glow-text);
+  margin: 0 0 0.3rem;
+}
+.signoff-sub {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: var(--fs-micro);
+  letter-spacing: var(--track-kicker);
+  color: var(--muted);
+}
+.signoff-clock {
+  display: grid;
+  justify-items: end;
+  gap: 0.25rem;
+}
+#station-clock {
+  font-family: var(--font-mono);
+  font-size: 1.35rem;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  color: var(--neon);
+  text-shadow: 0 0 12px rgba(0, 240, 144, 0.5);
+  letter-spacing: 0.06em;
+}
+.signoff-label {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: var(--track-kicker);
+  color: var(--muted);
+}
+
+/* ============ BOOT SEQUENCE ============ */
+
+.boot {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: #020403;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+.boot[hidden] { display: none; }
+.boot.done {
+  opacity: 0;
+  transition: opacity 0.32s var(--ease);
+  pointer-events: none;
+}
+.boot-box {
+  font-family: var(--font-mono);
+  color: var(--neon);
+  text-align: left;
+  padding: var(--space-6);
+  min-width: min(420px, 86vw);
+}
+.boot-freq {
+  font-size: var(--fs-micro);
+  letter-spacing: var(--track-broadcast);
+  color: var(--neon-dim);
+  margin: 0 0 var(--space-5);
+}
+.boot-line {
+  margin: 0 0 0.6rem;
+  font-size: 0.95rem;
+  letter-spacing: 0.08em;
+  min-height: 1.5em;
+  text-shadow: 0 0 10px rgba(0, 240, 144, 0.45);
+}
+.boot-caret {
+  display: inline-block;
+  width: 0.62em;
+  height: 1.05em;
+  background: var(--neon);
+  vertical-align: -0.15em;
+  margin-left: 2px;
+  box-shadow: 0 0 10px rgba(0, 240, 144, 0.7);
+}
+@media (prefers-reduced-motion: no-preference) {
+  .boot-caret { animation: caret-blink 0.9s steps(2, start) infinite; }
+}
+@keyframes caret-blink {
+  to { visibility: hidden; }
+}
+.boot-skip {
+  margin-top: var(--space-5);
+  font-size: var(--fs-micro);
+  letter-spacing: var(--track-kicker);
+  color: var(--muted);
+}
+
+/* ============ MOTION GATE ============ */
+
+@media (prefers-reduced-motion: reduce) {
+  html::before { display: none; }
+  .onair i { animation: none; }
+  h1, h2, .hero-title { text-shadow: none; }
+  .decoding { text-shadow: none; }
+  .boot { display: none; }
+  .signoff-title { text-shadow: none; }
+  #station-clock { text-shadow: none; }
+}
+
+@media (max-width: 900px) {
+  .onair { font-size: 0; gap: 0; padding: 0.5rem; margin-left: var(--space-2); }
+  .onair i { width: 9px; height: 9px; }
+}

@@ -1,8 +1,20 @@
 {
   "generated": "2026-10-11",
   "method": "Parsed from `git log main`: every commit becomes an entry. The site documenting its own becoming.",
-  "entry_count": 71,
+  "entry_count": 73,
   "entries": [
+    {
+      "hash": "f8757cd",
+      "date": "2026-10-12",
+      "message": "Wave 31: The Pirate Broadcast identity rework wave 1",
+      "files_changed": 440
+    },
+    {
+      "hash": "cfb20af",
+      "date": "2026-10-12",
+      "message": "Wave 30 merge: post-validate changelog rebuild sync (3-file convention)",
+      "files_changed": 3
+    },
     {
       "hash": "a4cd25f",
       "date": "2026-10-12",

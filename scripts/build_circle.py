@@ -97,11 +97,12 @@ HEAD = """<!DOCTYPE html>
   <meta name="description" content="{desc}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../assets/css/tokens.css">
   <link rel="stylesheet" href="../assets/css/base.css">
   <link rel="stylesheet" href="../assets/css/layout.css">
   <link rel="stylesheet" href="../assets/css/components.css">
+  <link rel="stylesheet" href="../assets/css/motifs.css">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -145,6 +146,7 @@ FOOT = """    </div>
       </nav>
     </div>
   </footer>
+  <script src="../assets/js/identity.js"></script>
 </body>
 </html>
 """

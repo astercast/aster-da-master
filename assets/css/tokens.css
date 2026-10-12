@@ -1,29 +1,43 @@
 /* ============================================================
-   DESIGN TOKENS — Aster da Master: UNDERGROUND TRANSMISSION
-   Night-drive digicore. Near-black, phosphor signal, amber heat.
-   Monospace labels + one heavy display face. Restraint everywhere.
+   DESIGN TOKENS — Aster da Master: THE PIRATE BROADCAST (wave 31)
+   A pirate station broadcasting from the dark between frequencies.
+   Phosphor green is the signal/voice, amber is the heat, alert red is
+   the ON AIR light and nothing else. Mono is the station's voice;
+   Anton is the call-sign. Restraint everywhere.
+   ------------------------------------------------------------
+   Visual thesis: tuned, not decorated. Every surface should feel like
+   receiver hardware — hairline borders, mono labels, tabular figures.
+   REFUSALS: no generic soft-shadow cards; no pure-neon body text; no
+   metronome blinking; no fake signal data; no purple/blue gradients;
+   no emoji in chrome (glyph set: ● ◆ ▲ ▂▄▆ ✦ + box drawing); never a
+   third font family.
+   Single token layer: components/motifs read these vars, never literals.
    ============================================================ */
 :root {
-  /* Surfaces — the dark between stations */
-  --bg: #060608;
-  --bg-soft: #0a0a0e;
-  --panel: #0e0e14;
-  --panel-2: #14141c;
-  --line: #23232e;
-  --line-soft: #181820;
+  /* Surfaces — the dark between stations, green-tinted black */
+  --bg: #050705;
+  --bg-soft: #090b09;
+  --panel: #0c0f0c;
+  --panel-2: #121612;
+  --line: #20261f;
+  --line-soft: #151a14;
 
-  /* Ink */
-  --ink: #edeae1;
-  --ink-dim: #a8a499;
-  --muted: #6d6b62;
+  /* Ink — phosphor-dim, never pure neon for body */
+  --ink: #e8e6da;
+  --ink-dim: #a3a898;
+  --muted: #62685c;
 
-  /* Signal — phosphor green is the voice, amber is the heat */
+  /* Signal — phosphor green is the voice; amber is the heat */
   --neon: #00f090;
   --neon-deep: #00a862;
   --neon-ink: #04120b;          /* text on phosphor fills */
+  --neon-dim: rgba(0, 240, 144, 0.55);
+  --neon-faint: rgba(0, 240, 144, 0.12);
+  --neon-ghost: rgba(0, 240, 144, 0.05);
   --gold: #f5a524;
   --gold-bright: #ffc95e;
   --gold-ink: #170e02;          /* text on amber fills */
+  --live: #ff5468;              /* ON AIR beacon ONLY (+ errors) */
   --alert: #ff5468;             /* sparse: errors, stale-data markers */
 
   /* Shape */
@@ -31,30 +45,41 @@
   --radius-m: 6px;
   --radius-l: 10px;
 
-  /* Type */
+  /* Type — two families, nothing shared with the other fleet sites.
+     Anton: the call-sign (display). IBM Plex Mono: the station voice
+     (body + mono + numerals — tabular by construction). */
   --font-display: "Anton", "Arial Narrow", Impact, "Helvetica Neue", sans-serif;
-  --font-body: "Inter", "Helvetica Neue", Arial, system-ui, sans-serif;
-  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --font-body: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 
   /* Fluid type scale */
   --fs-hero: clamp(3.4rem, 12vw, 9rem);
   --fs-1: clamp(2.1rem, 5vw, 3.4rem);
   --fs-2: clamp(1.5rem, 3.2vw, 2.15rem);
   --fs-3: clamp(1.15rem, 2.2vw, 1.35rem);
-  --fs-body: 1rem;
-  --fs-small: 0.86rem;
-  --fs-micro: 0.72rem;
+  --fs-body: 0.97rem;
+  --fs-small: 0.84rem;
+  --fs-micro: 0.7rem;
+
+  /* Broadcast tracking */
+  --track-kicker: 0.3em;
+  --track-broadcast: 0.42em;
+  --track-label: 0.14em;
 
   /* Space */
   --space-1: 4px; --space-2: 8px; --space-3: 12px; --space-4: 16px;
   --space-5: 24px; --space-6: 32px; --space-7: 48px; --space-8: 72px;
   --space-9: 110px;
 
-  /* Depth */
+  /* Depth — phosphor glow, night-drive amber */
   --shadow-1: 0 1px 2px rgba(0, 0, 0, 0.55);
   --shadow-2: 0 16px 48px rgba(0, 0, 0, 0.65);
-  --glow-neon: 0 0 22px rgba(0, 240, 144, 0.22);
-  --glow-amber: 0 0 28px rgba(245, 165, 36, 0.16);
+  --glow-neon: 0 0 22px rgba(0, 240, 144, 0.28), 0 0 64px rgba(0, 240, 144, 0.12);
+  --glow-amber: 0 0 28px rgba(245, 165, 36, 0.22);
+  --glow-text: 0 0 14px rgba(0, 240, 144, 0.35), 0 0 46px rgba(0, 240, 144, 0.14);
+
+  /* CRT */
+  --scan-alpha: 0.34;
 
   /* Motion */
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
