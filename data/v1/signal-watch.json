@@ -1,23 +1,24 @@
 {
  "version": "0.19.0",
- "generated_at": "2026-10-12T22:08:04Z",
+ "generated_at": "2026-10-12T23:24:01Z",
  "service": "aster-signal",
  "watch_version": "2.0.0",
  "method": "Each capture of the SoundCloud vault is diffed against the previous one. Tracks are keyed by normalized title (case, apostrophe style and whitespace unified) or permalink when a live refresh captured one — upload dates drift between capture methods and are never used as identity. A track in the new capture with no key in the old is a new upload. per_day is plain division over the real gap between captures and is only reported when that gap is at least 24 hours; below that it is null rather than invented.",
  "baseline": {
-  "previous_capture_at": "2026-10-11",
-  "previous_source": "data/v1/artist.json — 2026-10-11 research capture",
-  "latest_capture_at": "2026-10-11T22:11:31Z",
-  "latest_source": "data/playcounts.snapshot.json — Signal stand-up capture, SoundCloud api-v2",
-  "captures_compared": 2
+  "previous_capture_at": "2026-10-11T22:11:31Z",
+  "previous_source": "data/captures/2026-10-11T221131Z.json — previous Signal capture, SoundCloud api-v2",
+  "latest_capture_at": "2026-10-12T23:22:57Z",
+  "latest_source": "data/playcounts.snapshot.json — Signal capture, SoundCloud api-v2",
+  "elapsed_days": 1.05,
+  "captures_compared": 3
  },
  "summary": {
   "tracks_watched": 185,
-  "total_plays": 257396,
-  "total_delta": 2,
+  "total_plays": 257409,
+  "total_delta": 13,
   "new_uploads": 0,
   "removed": 0,
-  "movers": 2,
+  "movers": 3,
   "crossings": 0,
   "newest_upload": {
    "title": "turn up w me (prod_timmy)",
@@ -28,19 +29,27 @@
  "removed": [],
  "movers": [
   {
-   "title": "Take Me (prod. Em Klebold)",
-   "before": 30088,
-   "after": 30089,
-   "delta": 1,
-   "per_day": null,
+   "title": "candy w/ capoxxo(prod. razorwrist)",
+   "before": 11588,
+   "after": 11599,
+   "delta": 11,
+   "per_day": 10.48,
    "url": null
   },
   {
-   "title": "candy w/ capoxxo(prod. razorwrist)",
-   "before": 11587,
-   "after": 11588,
+   "title": "Soul Shaking (prod. Fish Narc)",
+   "before": 12944,
+   "after": 12945,
    "delta": 1,
-   "per_day": null,
+   "per_day": 0.95,
+   "url": null
+  },
+  {
+   "title": "my fault (prod shinju)",
+   "before": 551,
+   "after": 552,
+   "delta": 1,
+   "per_day": 0.95,
    "url": null
   }
  ],
@@ -79,6 +88,11 @@
   {
    "snapshot_at": "2026-10-11T22:11:31Z",
    "total_plays": 257396,
+   "tracks_captured": 185
+  },
+  {
+   "snapshot_at": "2026-10-12T23:22:57Z",
+   "total_plays": 257409,
    "tracks_captured": 185
   }
  ]

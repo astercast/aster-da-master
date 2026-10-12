@@ -1,0 +1,935 @@
+{
+  "snapshot_at": "2026-10-12T23:22:57Z",
+  "source": "soundcloud api-v2",
+  "profile": "https://soundcloud.com/asterdamaster",
+  "tracks": [
+    {
+      "title": "turn up w me (prod_timmy)",
+      "upload_date": "2026-10-02",
+      "plays": 177
+    },
+    {
+      "title": "the peace of the spirit urn (prod +fiftyzeros)",
+      "upload_date": "2026-07-16",
+      "plays": 178
+    },
+    {
+      "title": "the night ends yeaaa prod wellfed",
+      "upload_date": "2026-03-17",
+      "plays": 208
+    },
+    {
+      "title": "no power prod wellfed",
+      "upload_date": "2026-03-17",
+      "plays": 242
+    },
+    {
+      "title": "life’s made prod wellfed",
+      "upload_date": "2026-03-17",
+      "plays": 151
+    },
+    {
+      "title": "games stop prod branwen",
+      "upload_date": "2025-07-22",
+      "plays": 180
+    },
+    {
+      "title": "all i really need is a text from u 2 (prod astral hp)",
+      "upload_date": "2026-01-17",
+      "plays": 269
+    },
+    {
+      "title": "bound 2 my ways.wav",
+      "upload_date": "2025-12-20",
+      "plays": 638
+    },
+    {
+      "title": "big litemode (prod runawway, ilyagargod & k3nik)",
+      "upload_date": "2025-11-24",
+      "plays": 455
+    },
+    {
+      "title": "go and did (prod runawway + hidy)",
+      "upload_date": "2025-11-24",
+      "plays": 205
+    },
+    {
+      "title": "Cut tha 1ights prod. ohmygon!",
+      "upload_date": "2024-11-10",
+      "plays": 180
+    },
+    {
+      "title": "1otso prod. branwen",
+      "upload_date": "2025-01-15",
+      "plays": 190
+    },
+    {
+      "title": "Sti11 waiting/tunnel freestyle w/ Max Ferrari prod. suli",
+      "upload_date": "2024-11-10",
+      "plays": 300
+    },
+    {
+      "title": "ARCSNOWWW w/ Max Ferrari prod. sustain",
+      "upload_date": "2024-11-07",
+      "plays": 184
+    },
+    {
+      "title": "Phantom Moshpit w/ Griimxo (remastered) prod. scared716",
+      "upload_date": "2024-11-10",
+      "plays": 178
+    },
+    {
+      "title": "No Puppets A11owed prod. xtasane",
+      "upload_date": "2024-11-10",
+      "plays": 24
+    },
+    {
+      "title": "Fa11 LeaVes prod. Gehx",
+      "upload_date": "2024-11-05",
+      "plays": 222
+    },
+    {
+      "title": "Dreamed of U (Hubb1e) prod. Yukio",
+      "upload_date": "2024-11-10",
+      "plays": 175
+    },
+    {
+      "title": "Get Away prod. Gehx",
+      "upload_date": "2024-11-05",
+      "plays": 217
+    },
+    {
+      "title": "Green Wa11s prod. Ocurie",
+      "upload_date": "2024-10-30",
+      "plays": 186
+    },
+    {
+      "title": "my kin (prod xannnn)",
+      "upload_date": "2025-11-04",
+      "plays": 173
+    },
+    {
+      "title": "switch (prod fiftyzeros)",
+      "upload_date": "2025-04-01",
+      "plays": 206
+    },
+    {
+      "title": "water + sun (prod paris pas rigolo)",
+      "upload_date": "2025-09-14",
+      "plays": 178
+    },
+    {
+      "title": "oh We11 (prod Vuksai)",
+      "upload_date": "2025-01-09",
+      "plays": 222
+    },
+    {
+      "title": "nitemode2019 w/ Max+Vetty prod. NaXi.wav",
+      "upload_date": "2024-11-05",
+      "plays": 17
+    },
+    {
+      "title": "ViiXX (prod skrrtur)",
+      "upload_date": "2024-10-04",
+      "plays": 177
+    },
+    {
+      "title": "like my dogs!!! (prod waynn)",
+      "upload_date": "2024-09-14",
+      "plays": 175
+    },
+    {
+      "title": "every nite, blessings (prod meutry)",
+      "upload_date": "2024-08-30",
+      "plays": 206
+    },
+    {
+      "title": "Sipping 1ightning prod. lunarlad",
+      "upload_date": "2024-07-10",
+      "plays": 275
+    },
+    {
+      "title": "SSSolid (prod Kuva) *MUSIC VIDEO IN DESC*",
+      "upload_date": "2024-06-27",
+      "plays": 286
+    },
+    {
+      "title": "Tri:ed (prod ysosexy)",
+      "upload_date": "2024-06-16",
+      "plays": 185
+    },
+    {
+      "title": "End Times Gate Code (prod @1ohmygon)",
+      "upload_date": "2024-05-31",
+      "plays": 308
+    },
+    {
+      "title": "FittedUP/fadedUP prod. xtasane",
+      "upload_date": "2024-05-30",
+      "plays": 358
+    },
+    {
+      "title": "3 Points Pre Game prod. doublemulti x pinkcat #NITEMODE",
+      "upload_date": "2024-05-28",
+      "plays": 170
+    },
+    {
+      "title": "Just so U know prod. Buggy",
+      "upload_date": "2024-05-24",
+      "plays": 347
+    },
+    {
+      "title": "In Trance prod. deadtalks!",
+      "upload_date": "2024-05-23",
+      "plays": 237
+    },
+    {
+      "title": "i Was in Attics prod. Ochoo",
+      "upload_date": "2024-05-03",
+      "plays": 177
+    },
+    {
+      "title": "P1aced a Ward (prodbygus)",
+      "upload_date": "2024-05-03",
+      "plays": 275
+    },
+    {
+      "title": "u Not at the Table (Sunsetzer0) #litemode",
+      "upload_date": "2024-04-19",
+      "plays": 139
+    },
+    {
+      "title": "Im tha Bouncerrr prod. sustain",
+      "upload_date": "2024-04-17",
+      "plays": 28
+    },
+    {
+      "title": "Reachhh (Prawjex x Jordaan)",
+      "upload_date": "2024-04-08",
+      "plays": 189
+    },
+    {
+      "title": "MRari inna Beanstalk w/ Max Ferrari (@mvvi468)",
+      "upload_date": "2024-04-05",
+      "plays": 515
+    },
+    {
+      "title": "Early Morning (Yukiidaruma X Fumiko)",
+      "upload_date": "2024-04-05",
+      "plays": 331
+    },
+    {
+      "title": "Dark City Destiny @dxcember13 @rudey0on10",
+      "upload_date": "2024-03-28",
+      "plays": 408
+    },
+    {
+      "title": "On Our Way (Baseline)",
+      "upload_date": "2023-11-12",
+      "plays": 696
+    },
+    {
+      "title": "Cast OUT!!!",
+      "upload_date": "2023-11-12",
+      "plays": 481
+    },
+    {
+      "title": "One Piece X Sketchers",
+      "upload_date": "2023-11-12",
+      "plays": 437
+    },
+    {
+      "title": "Good Turns Bad Freestyle",
+      "upload_date": "2023-11-12",
+      "plays": 482
+    },
+    {
+      "title": "Playing Pretend :)",
+      "upload_date": "2023-11-12",
+      "plays": 565
+    },
+    {
+      "title": "Attack!!! intro",
+      "upload_date": "2023-11-12",
+      "plays": 501
+    },
+    {
+      "title": "Attack!!! 2",
+      "upload_date": "2023-11-12",
+      "plays": 150
+    },
+    {
+      "title": "12 ÷ 4 (Eckhart's Plea)",
+      "upload_date": "2023-11-12",
+      "plays": 342
+    },
+    {
+      "title": "Fleeting n' Geekinggg",
+      "upload_date": "2023-11-12",
+      "plays": 682
+    },
+    {
+      "title": "i been in tha AIR",
+      "upload_date": "2023-11-12",
+      "plays": 432
+    },
+    {
+      "title": "Day Comes Freestyle",
+      "upload_date": "2023-11-12",
+      "plays": 210
+    },
+    {
+      "title": "I Just Got Lost In The City xD",
+      "upload_date": "2023-11-12",
+      "plays": 206
+    },
+    {
+      "title": "This Is Why I Hate Mirrors",
+      "upload_date": "2023-11-12",
+      "plays": 242
+    },
+    {
+      "title": "6 AM In Da Bay Interlude",
+      "upload_date": "2023-11-12",
+      "plays": 488
+    },
+    {
+      "title": "Do It Againnn",
+      "upload_date": "2023-11-12",
+      "plays": 269
+    },
+    {
+      "title": "No Lullaby :/",
+      "upload_date": "2023-11-12",
+      "plays": 475
+    },
+    {
+      "title": "For Brian (Neck Deep) outro [produced by AWFL]",
+      "upload_date": "2023-11-12",
+      "plays": 43
+    },
+    {
+      "title": "Long Day (End Task) outro [@Staaaas.ily]",
+      "upload_date": "2023-11-10",
+      "plays": 519
+    },
+    {
+      "title": "Hidden Lakes Backpack [@Yurkswag]",
+      "upload_date": "2023-11-03",
+      "plays": 381
+    },
+    {
+      "title": "Warrior Returning Alive [@Melokajj]",
+      "upload_date": "2023-10-21",
+      "plays": 614
+    },
+    {
+      "title": "no WAY!!??",
+      "upload_date": "2023-10-21",
+      "plays": 216
+    },
+    {
+      "title": "Crazy Around The World",
+      "upload_date": "2023-10-09",
+      "plays": 235
+    },
+    {
+      "title": "I Cannot Be Ignored Much Longer U Hurt Me Real Bad",
+      "upload_date": "2023-10-09",
+      "plays": 233
+    },
+    {
+      "title": "Clock In The Benz w/ Lil Yu prod shinju",
+      "upload_date": "2023-08-29",
+      "plays": 725
+    },
+    {
+      "title": "9 Trips",
+      "upload_date": "2023-08-29",
+      "plays": 262
+    },
+    {
+      "title": "Writing Books But I Cant Read Em",
+      "upload_date": "2023-08-29",
+      "plays": 293
+    },
+    {
+      "title": "1 my fault",
+      "upload_date": "2022-02-23",
+      "plays": 216
+    },
+    {
+      "title": "2 menace",
+      "upload_date": "2022-02-23",
+      "plays": 97
+    },
+    {
+      "title": "3 sharpie",
+      "upload_date": "2022-02-23",
+      "plays": 107
+    },
+    {
+      "title": "4 wrong to be",
+      "upload_date": "2022-02-23",
+      "plays": 109
+    },
+    {
+      "title": "5 bad cards",
+      "upload_date": "2022-02-23",
+      "plays": 125
+    },
+    {
+      "title": "6 stop telling myself i'm not",
+      "upload_date": "2022-02-23",
+      "plays": 46
+    },
+    {
+      "title": "7 don't say u love me",
+      "upload_date": "2022-02-23",
+      "plays": 69
+    },
+    {
+      "title": "8 i would do mine",
+      "upload_date": "2022-02-23",
+      "plays": 104
+    },
+    {
+      "title": "9 we grew up",
+      "upload_date": "2022-02-23",
+      "plays": 126
+    },
+    {
+      "title": "10 stuck in the mix v2",
+      "upload_date": "2022-02-23",
+      "plays": 58
+    },
+    {
+      "title": "11 dismissed",
+      "upload_date": "2022-02-23",
+      "plays": 98
+    },
+    {
+      "title": "12 is it working?",
+      "upload_date": "2022-02-23",
+      "plays": 277
+    },
+    {
+      "title": "Intro (prod. astral_hp)",
+      "upload_date": "2021-07-15",
+      "plays": 178
+    },
+    {
+      "title": "When the World Gets Colder 3 (prod. phantasie)",
+      "upload_date": "2021-07-15",
+      "plays": 222
+    },
+    {
+      "title": "Wandavision (prod. cadence)",
+      "upload_date": "2021-07-15",
+      "plays": 177
+    },
+    {
+      "title": "This Feeling’s Newer ft. Max Ferrari (prod. odece)",
+      "upload_date": "2021-07-15",
+      "plays": 211
+    },
+    {
+      "title": "Got Knots ft. Max Ferrari (prod. lil biscuit)",
+      "upload_date": "2021-07-15",
+      "plays": 174
+    },
+    {
+      "title": "Only Human Pilot (prod. shinju x forty)",
+      "upload_date": "2021-07-15",
+      "plays": 184
+    },
+    {
+      "title": "Like the Cup (prod. ice trouble)",
+      "upload_date": "2021-07-15",
+      "plays": 189
+    },
+    {
+      "title": "Mix Up Substances ft. Max Ferrari",
+      "upload_date": "2021-07-15",
+      "plays": 151
+    },
+    {
+      "title": "Sunvalley Rally ft. Lilrareboy (prod. phantasie)",
+      "upload_date": "2021-07-15",
+      "plays": 319
+    },
+    {
+      "title": "I Can't Get Myself to Cast (prod. lil biscuit)",
+      "upload_date": "2021-07-15",
+      "plays": 212
+    },
+    {
+      "title": "Beacon (prod. johnnyfriend)",
+      "upload_date": "2021-07-15",
+      "plays": 253
+    },
+    {
+      "title": "Memory Complete (prod. odece)",
+      "upload_date": "2021-07-15",
+      "plays": 224
+    },
+    {
+      "title": "Asterisms Shine (prod. lil biscuit)",
+      "upload_date": "2021-07-15",
+      "plays": 210
+    },
+    {
+      "title": "Lunch Break (prod wetgropes)",
+      "upload_date": "2020-12-22",
+      "plays": 677
+    },
+    {
+      "title": "Decent (prod. venus)",
+      "upload_date": "2020-12-22",
+      "plays": 355
+    },
+    {
+      "title": "'Til Ur Sad Again (prod. wetgropes)",
+      "upload_date": "2020-12-22",
+      "plays": 345
+    },
+    {
+      "title": "They Talk (prod. wetgropes)",
+      "upload_date": "2020-12-22",
+      "plays": 176
+    },
+    {
+      "title": "Elf Anthem Interlude (prod. capsctrl)",
+      "upload_date": "2020-12-22",
+      "plays": 232
+    },
+    {
+      "title": "Added Up (prod. pink)",
+      "upload_date": "2020-12-22",
+      "plays": 292
+    },
+    {
+      "title": "I'm Not Looking For Love Anyway",
+      "upload_date": "2020-12-22",
+      "plays": 349
+    },
+    {
+      "title": "my fault (prod shinju)",
+      "upload_date": "2020-11-12",
+      "plays": 552
+    },
+    {
+      "title": "white fire (prod. odece)",
+      "upload_date": "2020-10-07",
+      "plays": 450
+    },
+    {
+      "title": "playin' by the book w/ lil yu (prod. dxsh)",
+      "upload_date": "2020-10-07",
+      "plays": 861
+    },
+    {
+      "title": "keep w/ phil is lonely (prod. uniquate)",
+      "upload_date": "2020-10-07",
+      "plays": 244
+    },
+    {
+      "title": "never pick it up (prod. fearbanquo)",
+      "upload_date": "2020-10-07",
+      "plays": 336
+    },
+    {
+      "title": "fleeting [prod. AURA]",
+      "upload_date": "2020-06-18",
+      "plays": 706
+    },
+    {
+      "title": "used to be messy prod. DeepHartt",
+      "upload_date": "2020-05-03",
+      "plays": 5008
+    },
+    {
+      "title": "I HATE IT prod. Taurs",
+      "upload_date": "2020-04-09",
+      "plays": 1668
+    },
+    {
+      "title": "Best Friend ft. lil soda boi (prod. lil soda boi)",
+      "upload_date": "2019-12-30",
+      "plays": 3075
+    },
+    {
+      "title": "Costs Of Life (prod. aster)",
+      "upload_date": "2019-12-30",
+      "plays": 2721
+    },
+    {
+      "title": "Soulless Soldiers (prod. Born Hero)",
+      "upload_date": "2019-12-30",
+      "plays": 5878
+    },
+    {
+      "title": "All Alone ft. Yung Cortex (prod. Yung Cortex)",
+      "upload_date": "2019-12-30",
+      "plays": 1115
+    },
+    {
+      "title": "Pavement (prod. Fish Narc)",
+      "upload_date": "2019-12-30",
+      "plays": 733
+    },
+    {
+      "title": "White Noise ft. Keyblayde808 (prod. Keyblayde808)",
+      "upload_date": "2019-12-30",
+      "plays": 2650
+    },
+    {
+      "title": "getting colder w/ capoxxo (prod. pvscale x asa41)",
+      "upload_date": "2019-12-10",
+      "plays": 4587
+    },
+    {
+      "title": "I'd rather be w/ lil yu (prod. razorwrist)",
+      "upload_date": "2019-12-10",
+      "plays": 1343
+    },
+    {
+      "title": "snow caps w/ LILVICBXI (prod. LILVICBXI x spliff08_)",
+      "upload_date": "2019-12-10",
+      "plays": 1579
+    },
+    {
+      "title": "my friends (prod. deephartt)",
+      "upload_date": "2019-12-10",
+      "plays": 1582
+    },
+    {
+      "title": "fly like me w/ pvscale(prod. pvscale)",
+      "upload_date": "2019-12-10",
+      "plays": 7786
+    },
+    {
+      "title": "same amount w/ LILVICBXI (prod. LILVICBXI)",
+      "upload_date": "2019-12-10",
+      "plays": 2991
+    },
+    {
+      "title": "attempt to be (prod. uniquate)",
+      "upload_date": "2019-12-10",
+      "plays": 1909
+    },
+    {
+      "title": "master key ft. Lil Wintr x Marcelo (prod. ginseng)",
+      "upload_date": "2019-12-06",
+      "plays": 9615
+    },
+    {
+      "title": "candy w/ capoxxo(prod. razorwrist)",
+      "upload_date": "2019-10-04",
+      "plays": 11599
+    },
+    {
+      "title": "outro ~ I RLLY DID THT(prod. itami リネン)",
+      "upload_date": "2019-07-06",
+      "plays": 3940
+    },
+    {
+      "title": "I'M WEAKENING ft. AMMI $AGE",
+      "upload_date": "2019-07-06",
+      "plays": 2490
+    },
+    {
+      "title": "SUN SET FOR U ft. JO$E DRIPP (prod. y axis)",
+      "upload_date": "2019-07-06",
+      "plays": 1771
+    },
+    {
+      "title": "NECK DEEP (prod. AWFL)",
+      "upload_date": "2019-06-26",
+      "plays": 5276
+    },
+    {
+      "title": "GARDEN ft. Offline_hp (prod. QB)",
+      "upload_date": "2019-06-26",
+      "plays": 1311
+    },
+    {
+      "title": "NIGHT MODE ft. MAX FERRARI x YUNG VETTA x JAX",
+      "upload_date": "2019-06-13",
+      "plays": 10083
+    },
+    {
+      "title": "SIGNS POINT UP! (prod Jayy Praax)",
+      "upload_date": "2019-06-26",
+      "plays": 3389
+    },
+    {
+      "title": "You Don't Wanna Miss Tonight(prod. Luca Malaspina)",
+      "upload_date": "2019-06-26",
+      "plays": 347
+    },
+    {
+      "title": "GOLD 💛💔💛 ~ (prod. Antropolita)",
+      "upload_date": "2019-04-28",
+      "plays": 4362
+    },
+    {
+      "title": "CONTACT! ~(prod Born Hero) [NOW ON ALL PLATFORMS!]",
+      "upload_date": "2019-04-07",
+      "plays": 10646
+    },
+    {
+      "title": "Face Down Freestyle ~(prod. WeDreaming)",
+      "upload_date": "2019-03-27",
+      "plays": 1229
+    },
+    {
+      "title": "Gadgets(prod.Trap)",
+      "upload_date": "2019-03-20",
+      "plays": 1509
+    },
+    {
+      "title": "POWER~! (brb)(prod. Apostle)",
+      "upload_date": "2019-03-20",
+      "plays": 1815
+    },
+    {
+      "title": "Day Comes Freestyle ~(prod. Discent)",
+      "upload_date": "2019-03-15",
+      "plays": 579
+    },
+    {
+      "title": "Stay Away Freestyle ~",
+      "upload_date": "2019-03-04",
+      "plays": 719
+    },
+    {
+      "title": "[outro] Off Beat ft. Yung Vetta (prod. Addy)",
+      "upload_date": "2019-01-29",
+      "plays": 935
+    },
+    {
+      "title": "STOP IT! ft. Yung Vetta (prod.  okthxbb)",
+      "upload_date": "2019-01-29",
+      "plays": 455
+    },
+    {
+      "title": "Hard To Keep ft. Yung Vetta (prod. Dead Spyro X Scarlet)",
+      "upload_date": "2019-01-29",
+      "plays": 2415
+    },
+    {
+      "title": "Nothing ft. Yung Vetta(prod Xtravulous)",
+      "upload_date": "2019-01-29",
+      "plays": 724
+    },
+    {
+      "title": "Ima Be There ft. Yung Vetta(prod. Why Loner)",
+      "upload_date": "2019-01-21",
+      "plays": 1913
+    },
+    {
+      "title": "Soul Shines ~ [prod Josh the Samurai]",
+      "upload_date": "2019-01-08",
+      "plays": 1150
+    },
+    {
+      "title": "Understand (prod 5AMTruly)",
+      "upload_date": "2018-12-16",
+      "plays": 1169
+    },
+    {
+      "title": "Hurts Sometimes 2 (prod. FELD)",
+      "upload_date": "2018-12-16",
+      "plays": 511
+    },
+    {
+      "title": "Mid (prod. FELD)",
+      "upload_date": "2018-12-16",
+      "plays": 428
+    },
+    {
+      "title": "All Kinds Of Trips (prod. YungSkah) <ON ALL PLATFORMS NOW!>",
+      "upload_date": "2018-12-16",
+      "plays": 5805
+    },
+    {
+      "title": "Time to Grow (prod. Ridicholas)",
+      "upload_date": "2018-12-13",
+      "plays": 801
+    },
+    {
+      "title": "When the World Gets Colder 2 (prod. Yung Skah)",
+      "upload_date": "2018-12-05",
+      "plays": 854
+    },
+    {
+      "title": "Hip On My Blade (ft. Yung Vetta) ~ [prod. Skel]",
+      "upload_date": "2018-12-03",
+      "plays": 1368
+    },
+    {
+      "title": "XLR8 (prod. lil sora)",
+      "upload_date": "2018-11-27",
+      "plays": 677
+    },
+    {
+      "title": "Input (prod. Luca Malaspina)",
+      "upload_date": "2018-11-27",
+      "plays": 1226
+    },
+    {
+      "title": "Y u Gotta (prod. Yoos)",
+      "upload_date": "2018-11-27",
+      "plays": 526
+    },
+    {
+      "title": "Throwing Signs (prod. HideousPittius)",
+      "upload_date": "2018-11-27",
+      "plays": 241
+    },
+    {
+      "title": "Fuck Time 3 (outro) [Prod. DIX2]",
+      "upload_date": "2018-11-08",
+      "plays": 697
+    },
+    {
+      "title": "I See U 2 (prod. Zed Miller)",
+      "upload_date": "2018-11-08",
+      "plays": 1838
+    },
+    {
+      "title": "Far From Me (ft. Shola) ~ [prod. HideousPittius]",
+      "upload_date": "2018-11-08",
+      "plays": 1443
+    },
+    {
+      "title": "Past Life (prod. Charlie Shuffler)",
+      "upload_date": "2018-11-08",
+      "plays": 4494
+    },
+    {
+      "title": "Taught Me(prod. ℝ꒐꒯꒐꒝Ʉ꒒o̲ʊꍛ)",
+      "upload_date": "2018-10-26",
+      "plays": 1001
+    },
+    {
+      "title": "Pills By My Lonely(prod. Discent)",
+      "upload_date": "2018-10-18",
+      "plays": 2760
+    },
+    {
+      "title": "Inside My Dome (prod. Karattt)",
+      "upload_date": "2018-10-07",
+      "plays": 2149
+    },
+    {
+      "title": "Autumn (prod. Tundra Beats)",
+      "upload_date": "2018-09-07",
+      "plays": 1485
+    },
+    {
+      "title": "I Don't Rlly (prod. FELD)",
+      "upload_date": "2018-08-28",
+      "plays": 587
+    },
+    {
+      "title": "Hit This (prod. Tyzen)",
+      "upload_date": "2018-08-28",
+      "plays": 1167
+    },
+    {
+      "title": "Walk With Me w/ JAX (Prod. Rawman)",
+      "upload_date": "2018-08-28",
+      "plays": 700
+    },
+    {
+      "title": "Just Wanted U to Shine (prod. Xtravulous x Tundra Beats)",
+      "upload_date": "2018-08-27",
+      "plays": 3096
+    },
+    {
+      "title": "Share Ur Thoughts (prod. Mont Beats)",
+      "upload_date": "2018-08-22",
+      "plays": 1728
+    },
+    {
+      "title": "DESTINY (ft. JAX & Max Ferrari) ~ [prod. louky]",
+      "upload_date": "2018-08-20",
+      "plays": 2000
+    },
+    {
+      "title": "stay out of the dark (prod. Rizi)",
+      "upload_date": "2018-08-14",
+      "plays": 1293
+    },
+    {
+      "title": "all i really need is a text from u (prod. benizjaminn)",
+      "upload_date": "2018-08-05",
+      "plays": 1602
+    },
+    {
+      "title": "As Above [So Below] (prod. Xtravulous x Young Taylor)",
+      "upload_date": "2018-07-20",
+      "plays": 757
+    },
+    {
+      "title": "Talk 2 U (prod. Whiz)",
+      "upload_date": "2018-07-20",
+      "plays": 1090
+    },
+    {
+      "title": "Hurts Sometimes (prod. 8ROKEBOY)",
+      "upload_date": "2018-07-20",
+      "plays": 781
+    },
+    {
+      "title": "When the World Gets Colder (prod. Brokn)",
+      "upload_date": "2018-07-18",
+      "plays": 9535
+    },
+    {
+      "title": "Take Me Back to the City (prod. RainyBaby)",
+      "upload_date": "2018-07-01",
+      "plays": 1282
+    },
+    {
+      "title": "Place For Me(prod. Born Hero)",
+      "upload_date": "2018-06-15",
+      "plays": 1508
+    },
+    {
+      "title": "That's a Lie (prod. Xtravulous x WhyLoner)",
+      "upload_date": "2018-06-08",
+      "plays": 1522
+    },
+    {
+      "title": "Mistakes Ft. JO$E DRIPP (prod. Tec)",
+      "upload_date": "2018-04-29",
+      "plays": 1400
+    },
+    {
+      "title": "I See U (prod. Haruhi)",
+      "upload_date": "2018-03-17",
+      "plays": 1008
+    },
+    {
+      "title": "Take Me (prod. Em Klebold)",
+      "upload_date": "2018-02-05",
+      "plays": 30089
+    },
+    {
+      "title": "Lucid Boi (prod. $ T.N.C $)",
+      "upload_date": "2018-01-09",
+      "plays": 918
+    },
+    {
+      "title": "Soul Shaking (prod. Fish Narc)",
+      "upload_date": "2018-01-04",
+      "plays": 12945
+    }
+  ],
+  "tracks_captured": 185,
+  "tracks_skipped_no_count": 0,
+  "client_id_source": "public-webapp-js"
+}

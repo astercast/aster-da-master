@@ -1,5 +1,5 @@
 {
-  "snapshot_at": "2026-10-11T22:11:31Z",
+  "snapshot_at": "2026-10-12T23:22:57Z",
   "source": "soundcloud api-v2",
   "profile": "https://soundcloud.com/asterdamaster",
   "tracks": [
@@ -516,7 +516,7 @@
     {
       "title": "my fault (prod shinju)",
       "upload_date": "2020-11-12",
-      "plays": 551
+      "plays": 552
     },
     {
       "title": "white fire (prod. odece)",
@@ -626,7 +626,7 @@
     {
       "title": "candy w/ capoxxo(prod. razorwrist)",
       "upload_date": "2019-10-04",
-      "plays": 11588
+      "plays": 11599
     },
     {
       "title": "outro ~ I RLLY DID THT(prod. itami リネン)",
@@ -926,7 +926,7 @@
     {
       "title": "Soul Shaking (prod. Fish Narc)",
       "upload_date": "2018-01-04",
-      "plays": 12944
+      "plays": 12945
     }
   ],
   "tracks_captured": 185,

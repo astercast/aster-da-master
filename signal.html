@@ -101,7 +101,7 @@
         <p class="chart-sub" id="watch-fresh">Static watch file — the last published captures stand below.</p>
         <div class="stat-grid">
           <div class="stat"><div class="stat-value" data-watch="tracks">185</div><div class="stat-label">vault tracks watched</div></div>
-          <div class="stat"><div class="stat-value" data-watch="plays">257,396</div><div class="stat-label">plays at latest capture</div></div>
+          <div class="stat"><div class="stat-value" data-watch="plays">257,409</div><div class="stat-label">plays at latest capture</div></div>
           <div class="stat"><div class="stat-value" data-watch="new">0</div><div class="stat-label">new uploads between captures</div></div>
           <div class="stat"><div class="stat-value" data-watch="newest">2026-10-02</div><div class="stat-label">newest upload on record</div></div>
         </div>
@@ -115,7 +115,7 @@
       <section class="section" aria-labelledby="wl-h" id="watch-log">
         <span class="kicker"><span class="numeral">&#10022;</span>the watch log</span>
         <h3 id="wl-h">Between the last two captures</h3>
-        <p class="chart-sub">Previous capture: the 2026-10-11 research pass behind <code>data/v1/artist.json</code>. Latest capture: the Signal stand-up pull, 2026-10-11 22:11 UTC, via SoundCloud api-v2. Two captures inside one research day — the honest result is a quiet wire and small numbers, stated as they are.</p>
+        <p class="chart-sub">Previous capture: the Signal stand-up pull, 2026-10-11 22:11 UTC. Latest capture: 2026-10-12 23:22 UTC, via SoundCloud api-v2. The gap between them is 25 hours 11 minutes — the first pair far enough apart for the per-day column to say anything honest, so for the first time it does.</p>
 
         <h4>New uploads</h4>
         <div id="watch-new">
@@ -126,11 +126,12 @@
         <table class="watch-table" id="watch-movers">
           <thead><tr><th scope="col">Transmission</th><th scope="col" class="num">Before</th><th scope="col" class="num">After</th><th scope="col" class="num">Change</th><th scope="col" class="num">Per day</th></tr></thead>
           <tbody>
-            <tr><td>Take Me (prod. Em Klebold)</td><td class="num">30,088</td><td class="num">30,089</td><td class="num watch-delta">+1</td><td class="num">—</td></tr>
-            <tr><td>candy w/ capoxxo(prod. razorwrist)</td><td class="num">11,587</td><td class="num">11,588</td><td class="num watch-delta">+1</td><td class="num">—</td></tr>
+            <tr><td>candy w/ capoxxo(prod. razorwrist)</td><td class="num">11,588</td><td class="num">11,599</td><td class="num watch-delta">+11</td><td class="num">10.48</td></tr>
+            <tr><td>Soul Shaking (prod. Fish Narc)</td><td class="num">12,944</td><td class="num">12,945</td><td class="num watch-delta">+1</td><td class="num">0.95</td></tr>
+            <tr><td>my fault (prod shinju)</td><td class="num">551</td><td class="num">552</td><td class="num watch-delta">+1</td><td class="num">0.95</td></tr>
           </tbody>
         </table>
-        <p class="chart-sub">Per-day rates are only reported when two captures sit at least 24 hours apart. These two do not, so the column stays empty rather than inventing a rate from same-day noise. Every other watched track — 183 of 185 — held its count exactly.</p>
+        <p class="chart-sub">Thirteen plays across the whole vault in just over a day, eleven of them on one track. Per-day rates are plain division over the 1.05 days between captures — reported now that the gap clears 24 hours, and left blank whenever it does not. Every other watched track — 182 of 185 — held its count exactly.</p>
 
         <h4>Milestone crossings</h4>
         <p class="chart-sub">None between these captures. The board below is who reaches a round number next, from the standing milestone watch:</p>
@@ -143,6 +144,17 @@
             <tr><td><a href="releases/when-the-world-gets-colder-prod-brokn.html">When the World Gets Colder (prod. Brokn)</a></td><td class="num">9,535</td><td class="num">10,000</td><td class="num">465</td></tr>
           </tbody>
         </table>
+
+        <h4>The capture ledger</h4>
+        <p class="chart-sub">Every capture the watch has taken, newest last. A capture is a photograph, not a feed: the count stood at this number at this minute, and between photographs the wire says nothing.</p>
+        <table class="watch-table" id="watch-history">
+          <thead><tr><th scope="col">Captured (UTC)</th><th scope="col" class="num">Tracks</th><th scope="col" class="num">Total plays</th><th scope="col" class="num">Change</th></tr></thead>
+          <tbody>
+            <tr><td>2026-10-11 22:11</td><td class="num">185</td><td class="num">257,396</td><td class="num">—</td></tr>
+            <tr><td>2026-10-12 23:22</td><td class="num">185</td><td class="num">257,409</td><td class="num watch-delta">+13</td></tr>
+          </tbody>
+        </table>
+        <p class="chart-sub">The ledger as data: <a href="data/v1/stats-snapshots.json"><code>data/v1/stats-snapshots.json</code></a> (30-day retention in the daily cron) · each full capture is archived under <code>data/captures/</code> in the repo, so any row here can be re-diffed against any other.</p>
       </section>
 
       <section class="section" aria-labelledby="ld-h" id="live-dates">
@@ -211,6 +223,7 @@
         <ul class="fact-list">
           <li><strong>Detection is keyed, not string-matched.</strong> Tracks are keyed by normalized title — case, apostrophe style and whitespace unified — or by permalink once a live refresh captures one. The first build of this watcher keyed on title-plus-date and flagged 121 of 185 tracks as new; upload dates drift between capture methods (the research capture runs a day behind api-v2 for most tracks, months for a few), so dates are display data, never identity.</li>
           <li><strong>Counts are captures, not a feed.</strong> Play counts move between captures; nothing here is live. The daily cron (<code>GET /api/cron/signal</code>) pulls a fresh capture, diffs it, and rewrites <code>data/v1/signal-watch.json</code> only when something changed. This page reads that file, or <code>GET /api/watch</code> where the functions are deployed.</li>
+          <li><strong>Every capture is kept whole.</strong> Each pull is archived under <code>data/captures/</code> in the repo, one file per capture, never edited after the fact. The ledger above is the running totals from those files (<code>data/v1/stats-snapshots.json</code>); any two captures can be re-diffed to check the watch&#x27;s arithmetic — the test suite does exactly that on every run.</li>
           <li><strong>Rates need a real gap.</strong> A per-day figure is plain division over the time between two captures, reported only when that gap is at least 24 hours. Estimates, never predictions.</li>
           <li><strong>The date board is research, not a scrape.</strong> A person checks each date against primary listings and independent coverage, and the board keeps the disagreements on the record. It is re-swept by hand; <code>checked_at</code> says when.</li>
           <li><strong>Titles and metadata only.</strong> The watch deals in titles, dates, counts and venues. Nothing else is carried, quoted or inferred.</li>

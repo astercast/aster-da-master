@@ -1,9 +1,14 @@
 /* scripts/test_signal_watch.js — pinned checks for lib/signal-watch.js.
- * Fixtures prove the rules; the real-capture block proves them against the
- * archive's own two 2026-10-11 captures (artist.json vs the Signal stand-up
- * snapshot), where the known truth is: 185 tracks both sides, zero new
- * uploads (three titles differ only by apostrophe/space style), exactly two
- * +1 movers, zero crossings.
+ * Fixtures prove the rules; the real-capture blocks prove them against
+ * the archive's own captures, where the known truth is:
+ *  pair 1 (2026-10-11): artist.json research capture vs the Signal
+ *    stand-up capture (archived at data/captures/2026-10-11T221131Z.json)
+ *    — 185 tracks both sides, zero new uploads (three titles differ only
+ *    by apostrophe/space style), exactly two +1 movers, zero crossings.
+ *  pair 2 (2026-10-11 -> 2026-10-12): stand-up capture vs the next day's
+ *    capture — same 185 tracks, zero new/removed, three movers
+ *    (+11/+1/+1, total +13), and the first per_day rates the watch has
+ *    ever been entitled to print (gap 1.05 days >= 24h gate).
  * Run: node scripts/test_signal_watch.js  (exit 1 on any failure)
  */
 "use strict";
@@ -60,7 +65,7 @@ check("same-day gap yields per_day null, never an invented rate",
 
 console.log("== signal-watch: the real 2026-10-11 capture pair");
 const artist = JSON.parse(fs.readFileSync(path.join(ROOT, "data/v1/artist.json"), "utf8"));
-const snap = JSON.parse(fs.readFileSync(path.join(ROOT, "data/playcounts.snapshot.json"), "utf8"));
+const snap = JSON.parse(fs.readFileSync(path.join(ROOT, "data/captures/2026-10-11T221131Z.json"), "utf8"));
 const prevReal = {
   captured_at: "2026-10-11",
   tracks: artist.discography
@@ -80,6 +85,26 @@ check("movers are candy + Take Me",
   ["Take Me (prod. Em Klebold)", "candy w/ capoxxo(prod. razorwrist)"].sort().join("|"));
 check("no crossings between the captures", r.crossings.length === 0);
 check("total plays match the snapshot file", r.total_plays === 257396);
+
+console.log("== signal-watch: the real 2026-10-11 -> 2026-10-12 capture pair");
+const snap2 = JSON.parse(fs.readFileSync(path.join(ROOT, "data/captures/2026-10-12T232257Z.json"), "utf8"));
+const r2 = diffCaptures(
+  { captured_at: snap.snapshot_at, tracks: snap.tracks },
+  { captured_at: snap2.snapshot_at, tracks: snap2.tracks }
+);
+check("185 tracks watched (pair 2)", r2.tracks_watched === 185);
+check("zero new uploads (pair 2)", r2.new_uploads.length === 0);
+check("zero removals (pair 2)", r2.removed.length === 0);
+check("three movers (pair 2)", r2.movers.length === 3);
+check("total delta is +13 (pair 2)", r2.total_delta === 13);
+check("total plays 257409 (pair 2)", r2.total_plays === 257409);
+check("gap clears the 24h gate: elapsed 1.05 days", r2.elapsed_days === 1.05);
+check("per_day rates are real numbers, not null (pair 2)",
+  r2.movers.every((m) => typeof m.per_day === "number"));
+check("candy leads at +11, 10.48/day",
+  r2.movers[0].title === "candy w/ capoxxo(prod. razorwrist)" &&
+  r2.movers[0].delta === 11 && r2.movers[0].per_day === 10.48);
+check("no crossings (pair 2)", r2.crossings.length === 0);
 
 console.log("\npass=" + pass + " fail=" + fail);
 process.exit(fail ? 1 : 0);

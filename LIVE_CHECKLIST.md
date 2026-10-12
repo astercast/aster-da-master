@@ -59,6 +59,13 @@ badge when `/api/*` is unreachable.
   (Signal 2.0 wave added the `/api/watch` checks + 2 static fallbacks).
 - Live cron rehearsal (read-only): 185 tracks fresh from SoundCloud,
   0 new uploads, 7/7 sources ok.
+- Second Capture wave (2026-10-12): fresh refresh capture
+  2026-10-12T23:22:57Z (185 tracks, 257,409 plays, +13 vs the stand-up
+  capture, 3 movers, first honest per-day rates — gap 1.05 days).
+  Captures archived whole under `data/captures/`; snapshot ledger at
+  2 rows. `scripts/test_signal_watch.js` 27/27 (both real capture pairs
+  pinned; JS/Python diff parity proven). `refresh_plays.py` status path
+  fixed: `data/v1/refresh-status.json`, never `api/v1/` again.
 - Static validation: 19,851 relative links, 0 broken; 23/23 JSON schemas
   in validate.sh's stage-3 list (the 2 Signal 2.0 schemas validate against
   their files separately); lyric-grep clean; chain byte-stable; data

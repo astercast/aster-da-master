@@ -92,7 +92,11 @@ assert os.path.isdir(os.path.join(REPO, "data")), f"repo root misdetected: {REPO
 PROFILE_URL = "https://soundcloud.com/asterdamaster"
 API_V2 = "https://api-v2.soundcloud.com"
 SNAPSHOT_PATH = os.path.join(REPO, "data", "playcounts.snapshot.json")
-STATUS_PATH = os.path.join(REPO, "api", "v1", "refresh-status.json")
+# Static data lives in data/v1/, NEVER under api/ (Vercel does not serve
+# static files from api/ and auto-deploys every .js there as a function).
+# This pointed at api/v1/ until 2026-10-12 — every refresh silently wrote
+# a stray static file into the functions tree.
+STATUS_PATH = os.path.join(REPO, "data", "v1", "refresh-status.json")
 ARTIST_PATH = os.path.join(REPO, "data", "artist.json")
 BAK_PATH = ARTIST_PATH + ".bak"
 ENV_CLIENT_ID = "SOUNDCLOUD_CLIENT_ID"
