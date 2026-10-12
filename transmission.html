@@ -13,6 +13,11 @@
   <link rel="stylesheet" href="assets/css/layout.css">
   <link rel="stylesheet" href="assets/css/components.css">
   <style>
+    /* Cross-document view transitions: progressive enhancement — Chromium/Safari
+       get an instant-feeling MPA nav; everyone else is unaffected. */
+    @view-transition {
+      navigation: auto;
+    }
     /* TRANSMISSION — flagship journey. Phosphor green on near-black, restrained scanlines. */
     .tx-stage {
       position: relative;
@@ -39,6 +44,7 @@
       text-shadow: var(--glow-neon);
       margin: 0 0 var(--space-4);
       line-height: 1;
+      text-wrap: balance;
     }
     .tx-lede { font-size: var(--fs-3); color: var(--ink-dim); max-width: 44ch; }
     .tx-total-strip {
@@ -79,7 +85,7 @@
       100% { opacity: 1; transform: none; }
     }
     .tx-era-kicker { display: flex; align-items: baseline; gap: var(--space-3); flex-wrap: wrap; }
-    .tx-era h2 { font-family: var(--font-display); font-size: var(--fs-1); color: var(--ink); margin: var(--space-2) 0; letter-spacing: 0.01em; }
+    .tx-era h2 { font-family: var(--font-display); font-size: clamp(2.2rem, 6vw, 4rem); line-height: 1.02; color: var(--ink); margin: var(--space-2) 0; letter-spacing: 0.01em; text-wrap: balance; }
     .tx-era h2:focus { outline: none; }
     .tx-era h2:focus-visible { outline: 2px solid var(--neon); outline-offset: 4px; }
     .tx-span { font-family: var(--font-mono); color: var(--gold); font-size: var(--fs-small); letter-spacing: 0.12em; }
@@ -205,7 +211,6 @@
     .tx-rank { font-family: var(--font-mono); font-size: var(--fs-micro); color: var(--neon-deep); margin-right: var(--space-2); }
 
     /* typography & spacing refinements: sharper era hierarchy, tabular stats */
-    .tx-era h2 { font-size: clamp(2.2rem, 6vw, 4rem); line-height: 1.02; }
     .tx-signal { font-size: 1.125rem; border-left-width: 4px; }
     .tx-scene { line-height: 1.65; }
     .stat-grid .stat-value, .tx-plays { font-variant-numeric: tabular-nums; }

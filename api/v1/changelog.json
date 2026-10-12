@@ -1,8 +1,20 @@
 {
   "generated": "2026-10-11",
   "method": "Parsed from `git log main`: every commit becomes an entry. The site documenting its own becoming.",
-  "entry_count": 61,
+  "entry_count": 63,
   "entries": [
+    {
+      "hash": "1060beb",
+      "date": "2026-10-12",
+      "message": "Wave 28: milestone race 2.0 — vault pace database, race-any-two head-to-head, The Climb (182), race history, race of the week, verified snapshot provenance",
+      "files_changed": 1
+    },
+    {
+      "hash": "a31b2d0",
+      "date": "2026-10-12",
+      "message": "Wave 30: verified content expansion — The Scene (8 new pages + 2 data files)",
+      "files_changed": 38
+    },
     {
       "hash": "6156ecd",
       "date": "2026-10-12",
