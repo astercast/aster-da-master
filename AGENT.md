@@ -59,7 +59,7 @@ const J = p => JSON.parse(fs.readFileSync(p, "utf8"));
 
 // manifest first: confirm version before caching anything
 const idx = J("api/v1/index.json");
-console.log(idx.meta.version, idx.endpoints.network.records); // 0.15.0 23
+console.log(idx.meta.version, idx.endpoints.network.records); // 0.16.0 23
 
 // top 5 vault tracks by plays (plays = 2026-10-11 snapshot)
 const artist = J("api/v1/artist.json");
@@ -270,7 +270,7 @@ family: what does it mean, and how did it evolve?"*
 - **Upload dates ≠ recording dates.** Sessions are computed clusters (7-day
   upload-gap rule), not artist-named studio sessions.
 - **Sizes are small.** Largest: `artist.json` (~155 KB). Cache aggressively;
-  check `index.json → meta.version` (currently `0.15.0`) to invalidate.
+  check `index.json → meta.version` (currently `0.16.0`) to invalidate.
 - **The rules of the archive:** titles and metadata only — **never lyrics**;
   never invent biography; unknowns are listed as unknowns (`method.html` →
   "The unknowns register"); the circle is title-credit only (producers live

@@ -34,7 +34,11 @@
    "Real name: Ben Funkhouser (verified — named in the Stereogum announcement interview and the Release Wave artist profile).",
    "On the title 'Uncle': the artist's own framing (Stereogum interview) — saying 'uncle', giving up, as a tongue-in-cheek nod; the record reflects on the last ten years, expectations, and aging, made from a mid-30s vantage point as a best-shot project rather than a youth-lane chase.",
    "Vinyl LP pre-order open through K Records (Faygoluvers).",
-   "Same release-day shelf 2026-10-16 (AltPress October calendar): @ – Autosmile (4AD); The Avalanches – No Bad Memories; Dummy – do you love the color of the sky?; Fontaines D.C. – Dopamine Chamber; N8NOFACE – Tomorrow's World; They Are Gutting a Body of Water – KOOL FAITH/LOOSIES II; Taking Back Sunday – Louder Now (20th Anniversary Edition)."
+   "Same release-day shelf 2026-10-16 (AltPress October calendar): @ – Autosmile (4AD); The Avalanches – No Bad Memories; Dummy – do you love the color of the sky?; Fontaines D.C. – Dopamine Chamber; N8NOFACE – Tomorrow's World; They Are Gutting a Body of Water – KOOL FAITH/LOOSIES II; Taking Back Sunday – Louder Now (20th Anniversary Edition).",
+   "'Big Dumb World' video: posted by its maker James Logan Hyson on Vimeo — corroborating Stereogum's 'James Hyson's video' credit (single-source).",
+   "K Records' label copy (via upcomingvinyl): recently relocated to Los Angeles; tours the US and Europe this autumn with a full band (single-source).",
+   "Release Wave artist profile's comparison line: fans of Gin Blossoms, The Replacements, Yuck, and Superdrag (single-source).",
+   "The August 18, 2026 'new songs out today' roundup (Our Culture Mag) covers 'Much Less Me' as the lead single with Alex Farrar's production (single-source — corroborates the Stereogum announcement)."
   ],
   "sources": [
    {
@@ -72,6 +76,14 @@
    {
     "label": "Upcoming album releases — Consequence",
     "url": "http://consequence.net/upcoming-releases/"
+   },
+   {
+    "label": "'Big Dumb World' — video by James Logan Hyson (Vimeo)",
+    "url": "https://vimeo.com/1229703961"
+   },
+   {
+    "label": "16 New Songs Out Today (Aug 18, 2026) — Our Culture Mag",
+    "url": "https://ourculturemag.com/2026/08/18/16-new-songs-out-today-to-listen-to-gang-of-youths-fontaines-d-c-and-more/"
    }
   ],
   "watch": {
@@ -79,7 +91,7 @@
    "status": "announced",
    "expected": "2026-10-16",
    "as_of": "2026-10-11",
-   "note": "Pre-release as of this research pass. The archive records a release as 'released' only after a research pass confirms it; the watch never claims the LP is out early.",
+   "note": "Pre-release as of this research pass. Same-evening re-verification 2026-10-11 (~22:00 PDT): upcomingvinyl (crawled ~2h before the pass), Faygoluvers (crawled ~4h), and Consequence's upcoming-releases page (crawled ~3d) all still carry 2026-10-16 as upcoming. The archive records a release as 'released' only after a research pass confirms it; the watch never claims the LP is out early.",
    "last_reverified": "2026-10-11",
    "reverify_sources": [
     "https://upcomingvinyl.com/artists/fish-narc",

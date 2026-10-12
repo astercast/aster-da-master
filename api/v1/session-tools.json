@@ -1,5 +1,5 @@
 {
-  "version": "0.15.0",
+  "version": "0.16.0",
   "generated": "2026-10-11",
   "plays_snapshot": "2026-10-11",
   "method": "Session explorer 2.0 tooling, computed from data/sessions.json (per-session track plays + dates), api/v1/session-clusters.json (era, loudest + deepest-cut tracks, title-credited collaborators, deep-dive + journey links), api/v1/eras.json (era deep-dive links), and api/v1/codex-families.json (key sessions -> family cross-links). Powers session compare, the deepest-sessions editorial ranking, the timeline scrubber, and per-session play profiles on sessions-explorer.html. Play counts are the single 2026-10-11 snapshot; no per-track play trajectory exists in the archive, so none is drawn.",

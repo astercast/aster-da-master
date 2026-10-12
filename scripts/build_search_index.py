@@ -70,7 +70,7 @@ def main():
     )
 
     index = json.loads((API / "index.json").read_text())
-    index["version"] = "0.15.0"
+    index["version"] = "0.16.0"
     from api_manifest import render_manifest
     render_manifest(index, ROOT)
 

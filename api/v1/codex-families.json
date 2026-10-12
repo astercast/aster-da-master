@@ -1,5 +1,5 @@
 {
-  "version": "0.15.0",
+  "version": "0.16.0",
   "generated": "2026-10-11",
   "plays_snapshot": "2026-10-11",
   "method": "Per-family deep dives computed from api/v1/codex.json against api/v1/eras.json, data/sessions.json, api/v1/session-clusters.json, api/v1/circle.json, and api/v1/release-slugs.json. Decoded readings are traced verbatim to codex.json's epithets; where the archive assigns no meaning (the litemode/nitemode words) the reading is stated as unknown. No meanings invented.",

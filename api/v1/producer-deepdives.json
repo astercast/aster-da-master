@@ -1,5 +1,5 @@
 {
-  "version": "0.15.0",
+  "version": "0.16.0",
   "generated": "2026-10-11T00:00:00Z",
   "plays_snapshot": "2026-10-11",
   "method": "Every producer credit is parsed from the archive titles' own prod./produced-by fragments (as credited, verbatim); spelling variants that slug identically merge with aliases recorded. Research is hand-maintained in data/producer-research.json (pass 2026-10-11) and asserted, never extended silently.",
@@ -525,6 +525,7 @@
           "Described by Underground Underdogs as a multi-faceted producer with several musical projects (interview 2019-01-28).",
           "Part of the D1 circle alongside Hella Sketchy, Shiro, Marcelo, and Despair, per the same interview; the archive's 'master key' pairs two D1 figures (Lil Wintr x Marcelo) over his production.",
           "Runs the vocal project Lil Wintr, which the interview traces from a joke project to a serious ongoing outlet.",
+          "Raps as Lil Wintr under his birth name Christian Baello; from Lake Elsinore, California; also the guitarist/percussionist in the indie band dream, ivory with his brother Louie Baello (Peso Talk) (The FADER, 2019-06-04).",
           "First video interview (Underground Underdogs, 2020-02-23) covers his musical projects, memories with Hella Sketchy, and how he gets beat placements."
         ],
         "sources": [
@@ -535,6 +536,10 @@
           {
             "label": "Watch Ginseng's New Video Interview (Underground Underdogs, 2020-02-23)",
             "url": "https://undergroundunderdogs.com/2020/02/23/ginseng-producer-video-interview-dream-ivory-lil-winter/"
+          },
+          {
+            "label": "The many faces of Ginseng — The FADER, 2019-06-04",
+            "url": "https://www.thefader.com/2019/06/04/ginseng-lil-wintr-dream-ivory-interview"
           }
         ],
         "evidence": "verified: Underground Underdogs interviews (2019-01-28 text interview; 2020-02-23 first video interview)."

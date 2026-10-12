@@ -37,7 +37,7 @@ from build_producer_deepdives import (  # noqa: E402  (wave 27 cross-links)
 DATA = json.loads((ROOT / "data" / "artist.json").read_text())
 OUT = ROOT / "circle"
 API = ROOT / "api" / "v1"
-NEW_VERSION = "0.15.0"  # wave 30 merge: Uncle re-verified pre-release + 4 new verified facts
+NEW_VERSION = "0.16.0"  # wave 32: circle enrichment + Uncle re-verified pre-release
 
 # wave 27: producer slugs with as-credited productions (populated in main);
 # circle members who also produce get a "Producer deep dive" cross-link.
@@ -196,6 +196,114 @@ ENRICH = {
              "https://sonichits.com/artist/Aster_Da_Master"),
         ],
     },
+    # Wave 32 (2026-10-11) research enrichment: the D1 line, GothBoiClique
+    # orbit, and two thin-but-verified producer credits. Same evidence
+    # standard as wave 12: public sources only, no lyrics, no invented bio.
+    "lil wintr": {
+        "facts": [
+            "Raps as Lil Wintr under his birth name Christian Baello; "
+            "a rapper from Lake Elsinore, California (The FADER, 2019-06-04).",
+            "Produces under the alias Ginseng — the same alias carrying "
+            "the archive's 'master key' production credit (The FADER).",
+            "Guitarist and percussionist in the band dream, ivory, "
+            "alongside his brother Louie Baello (Peso Talk) (The FADER).",
+            "Member of the D1 SoundCloud supergroup with Despair, Shiro, "
+            "Marcelo, and Hella Sketchy (The FADER; NTS).",
+            "Both archive tracks carry Marcelo alongside: 'Master Key "
+            "(feat. Lil Wintr & Marcelo)' and 'master key ft. Lil Wintr x "
+            "Marcelo (prod. ginseng)' (2019-12-06) — the second produced "
+            "under his own producer alias (archive cross-reference).",
+        ],
+        "sources": [
+            ("The many faces of Ginseng - The FADER, 2019-06-04",
+             "https://www.thefader.com/2019/06/04/"
+             "ginseng-lil-wintr-dream-ivory-interview"),
+            ("D1 - NTS artist page",
+             "https://www.nts.live/artists/32421-d1"),
+        ],
+    },
+    "marcelo": {
+        "facts": [
+            "Producer, singer, and rapper; a member of Hollow Squad, a "
+            "sub-collective of Seshollowaterboyz (Underground Underdogs, "
+            "2018-08-27).",
+            "Debut album 'Outta Luck' (Underground Underdogs, 2018).",
+            "Production credits beyond his own work: Lil Wintr, cholopunx, "
+            "and an Xavier Wulf x madeintyo track (Underground Underdogs).",
+            "Member of the D1 SoundCloud supergroup (formed summer 2017) "
+            "with Lil Wintr, Despair, Shiro, and Hella Sketchy (NTS).",
+            "Shares both archive title credits — and the D1 line — with "
+            "Lil Wintr (archive cross-reference).",
+        ],
+        "sources": [
+            ("Marcelo is 'Outta Luck' but Rich in Talent - "
+             "Underground Underdogs, 2018-08-27",
+             "https://undergroundunderdogs.com/2018/08/27/"
+             "marcelo-is-outta-luck-but-rich-in-talent/"),
+            ("D1 - NTS artist page",
+             "https://www.nts.live/artists/32421-d1"),
+        ],
+    },
+    "yung cortex": {
+        "facts": [
+            "Friend and collaborator of Lil Peep ('Gus'); co-produced "
+            "Lil Peep x Lil Tracy's 'Witchblades' with BigHead — the credit "
+            "is carried on the GothBoiClique SoundCloud (Underground "
+            "Underdogs interview, 2018-02-23).",
+            "Makes his own vocal music ('fast car (faster)') alongside "
+            "albums of instrumentals (same interview).",
+            "Both produces and features on his archive track: 'All Alone "
+            "ft. Yung Cortex (prod. Yung Cortex)' (2019-12-30) "
+            "(archive cross-reference).",
+            "The 'Witchblades' credit sits in the GothBoiClique orbit — "
+            "the same collective scene figure Fish Narc belongs to "
+            "(archive cross-reference).",
+        ],
+        "sources": [
+            ("A Conversation with Yung Cortex - Underground Underdogs, "
+             "2018-02-23",
+             "https://undergroundunderdogs.com/2018/02/23/yung-cortex/"),
+        ],
+    },
+    "griimxo": {
+        "facts": [
+            "Shazam's artist page catalogs GriimXO under Hip-Hop/Rap and "
+            "lists related artists MotionPaxk, BabyPlugg, and sal raxkz "
+            "(single-source).",
+            "Videography credit: 'SHOT BY GRiiMXO' on the 'VALENTINE' "
+            "video with WhoisZoha? (YouTube description, single-source).",
+            "The record is thin: no interview, bio, or press coverage "
+            "found as of 2026-10-11 — the catalog entries above are the "
+            "whole public record (flagged, not filled).",
+        ],
+        "sources": [
+            ("GrimXo! - Shazam artist page",
+             "https://www.shazam.com/artist/grimxo/1754777698"),
+            ("VALENTINE - GriimXO & WhoisZoha? - YouTube",
+             "https://www.youtube.com/watch?v=sfOuoaHwDHc"),
+        ],
+    },
+    "keyblayde808": {
+        "facts": [
+            "Producer with an active beat storefront on Traktrain "
+            "(single-source).",
+            "Co-produced capoxxo & dxsh's 'CAPODXSH' with 4am "
+            "(archived video description, single-source).",
+            "Co-produced Nettspend's 'Swish' with 4evr (December 2023) "
+            "(video description, single-source).",
+            "Both produces and features on his archive track: 'White Noise "
+            "ft. Keyblayde808 (prod. Keyblayde808)' (2019-12-30) "
+            "(archive cross-reference).",
+            "Thin record beyond these credits: no interview or press "
+            "coverage found as of 2026-10-11 (flagged, not filled).",
+        ],
+        "sources": [
+            ("Beats by Keyblayde808 - Traktrain",
+             "https://traktrain.com/keyblade808"),
+            ("capoxxo & dxsh - CAPODXSH (music video + extended) - YouTube",
+             "https://www.youtube.com/watch?v=U5qQMf8NwcM"),
+        ],
+    },
 }
 
 # Producers and scene figures are excluded from the 21-collaborator circle by
@@ -257,6 +365,20 @@ SCENE_FIGURES = {
             "Tomorrow's World; They Are Gutting a Body of Water – "
             "KOOL FAITH/LOOSIES II; Taking Back Sunday – Louder Now "
             "(20th Anniversary Edition).",
+            # wave 32 (2026-10-11): same-evening re-verification pass
+            "'Big Dumb World' video: posted by its maker James Logan Hyson "
+            "on Vimeo — corroborating Stereogum's 'James Hyson's video' "
+            "credit (single-source).",
+            "K Records' label copy (via upcomingvinyl): recently relocated "
+            "to Los Angeles; tours the US and Europe this autumn with a "
+            "full band (single-source).",
+            "Release Wave artist profile's comparison line: fans of Gin "
+            "Blossoms, The Replacements, Yuck, and Superdrag "
+            "(single-source).",
+            "The August 18, 2026 'new songs out today' roundup (Our Culture "
+            "Mag) covers 'Much Less Me' as the lead single with Alex "
+            "Farrar's production (single-source — corroborates the "
+            "Stereogum announcement).",
         ],
         "sources": [
             ("Fish Narc - Wikipedia", "https://en.wikipedia.org/wiki/Fish_Narc"),
@@ -277,17 +399,28 @@ SCENE_FIGURES = {
              "https://www.altpress.com/2026-album-releases/"),
             ("Upcoming album releases — Consequence",
              "http://consequence.net/upcoming-releases/"),
+            # wave 32: same-evening re-verification (still pre-release)
+            ("'Big Dumb World' — video by James Logan Hyson (Vimeo)",
+             "https://vimeo.com/1229703961"),
+            ("16 New Songs Out Today (Aug 18, 2026) — Our Culture Mag",
+             "https://ourculturemag.com/2026/08/18/16-new-songs-out-today-"
+             "to-listen-to-gang-of-youths-fontaines-d-c-and-more/"),
         ],
         "watch": {
             "label": "'Uncle' — fifth solo LP",
             "status": "announced",
             "expected": "2026-10-16",
             "as_of": "2026-10-11",
-            "note": ("Pre-release as of this research pass. The archive "
-                     "records a release as 'released' only after a research "
-                     "pass confirms it; the watch never claims the LP is out "
-                     "early."),
+            "note": ("Pre-release as of this research pass. Same-evening "
+                     "re-verification 2026-10-11 (~22:00 PDT): upcomingvinyl "
+                     "(crawled ~2h before the pass), Faygoluvers (crawled "
+                     "~4h), and Consequence's upcoming-releases page "
+                     "(crawled ~3d) all still carry 2026-10-16 as upcoming. "
+                     "The archive records a release as 'released' only after "
+                     "a research pass confirms it; the watch never claims the "
+                     "LP is out early."),
             # wave 30 merge: re-verified pre-release 2026-10-11
+            # wave 32: same-evening pass, still pre-release 2026-10-11
             "last_reverified": "2026-10-11",
             "reverify_sources": [
                 "https://upcomingvinyl.com/artists/fish-narc",
@@ -320,6 +453,41 @@ SCENE_FIGURES = {
         },
     },
 }
+
+
+# Wave 32 (2026-10-11): the honest gaps. Collaborators whose public record
+# ends at the archive's title credits. Stated as-is on the circle index —
+# the archive flags thin records, never fills them with invention.
+GAPS = [
+    "Max Ferrari — 8 shared transmissions, the circle's most frequent voice: "
+    "no public bio, interview, or catalog page found as of 2026-10-11. The "
+    "eight title credits are the whole public record.",
+    "Yung Vetta: no verifiable public record beyond the title credits — "
+    "search returns unrelated same-name artists (Young Vetta, Vetta Borne); "
+    "nothing attributable.",
+    "jax, vetty, lil soda boi, lil yu, lilvicbxi, ammi $age, shola, "
+    "phil is lonely, offline_hp, jo$e dripp, max: no public record found "
+    "beyond the archive's title credits as of 2026-10-11.",
+    "lilrareboy: catalog-level only — Shazam carries the 'World/War/Rare "
+    "Interlude' single (composition & lyrics credited); no bio or press.",
+    "lil koi is a scene-page figure, not a circle member — the "
+    "verified-minimum record lives at scene/lil-koi.html.",
+    "The SomeLowLifes member roster still has no public coverage — see the "
+    "unknowns register in method.html.",
+]
+
+
+def render_gaps_section():
+    """Wave 32: the honest gaps — thin records stated, never filled."""
+    items = "".join(f"<li>{escape(g)}</li>" for g in GAPS)
+    return f"""
+      <section class="section" aria-labelledby="ci-gaps">
+        <span class="kicker"><span class="numeral">&#10022;</span>The honest gaps</span>
+        <h2 id="ci-gaps">Where the record is thin</h2>
+        <p>The archive flags what it could not verify instead of inventing it. Every gap below was searched on 2026-10-11 and came back empty or catalog-level.</p>
+        <ul class="fact-list">{items}</ul>
+      </section>
+"""
 
 
 def render_sources(sources):
@@ -499,6 +667,7 @@ def index_page(entries):
         <p>Producer and scene credits the title-credit rule excludes &mdash; kept visible with the same evidence standard, and outside the collaborator count.</p>
         <div class="year-grid">{sf_cards}</div>
       </section>
+{render_gaps_section()}
 """
     return HEAD.format(
         title="The circle — collaborator archive",

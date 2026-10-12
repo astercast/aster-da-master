@@ -34,7 +34,7 @@ API_ARTIST = ROOT / "api" / "v1" / "artist.json"
 SCHEMA_OUT = ROOT / "api" / "v1" / "schema" / "sessions.json"
 PAGE_OUT = ROOT / "sessions.html"
 
-NEW_VERSION = "0.15.0"  # wave 30 merge: Uncle re-verified + new facts
+NEW_VERSION = "0.16.0"  # wave 32: circle enrichment + Uncle re-verified pre-release
 SNAPSHOT = "2026-10-11"
 GAP_DAYS = 7
 

@@ -90,7 +90,7 @@
 
         <div class="reveal">
           <h3 id="ag-endpoints">The API</h3>
-          <p>Twenty-one versioned JSON endpoints under <code>api/v1/</code>. Current data version: <strong>0.15.0</strong> (see <code>api/v1/index.json</code> → <code>version</code> before caching anything).</p>
+          <p>Twenty-one versioned JSON endpoints under <code>api/v1/</code>. Current data version: <strong>0.16.0</strong> (see <code>api/v1/index.json</code> → <code>version</code> before caching anything).</p>
           <div class="table-wrap">
             <table>
               <caption>API endpoint table</caption>
@@ -180,7 +180,7 @@
           <h3 id="ag-expectations">Rates &amp; expectations</h3>
           <ul>
             <li><strong>Static files, no auth, no rate limits.</strong> This is a static site — the whole API is files on disk. Fetch freely, but serve over HTTP: browsers block <code>fetch()</code> from <code>file://</code> pages.</li>
-            <li><strong>Sizes are small.</strong> Largest endpoints: <code>artist.json</code> (~155 KB), <code>sessions.json</code> (~50 KB), <code>on-this-day.json</code> (~40 KB). Everything else is under 16 KB. Cache aggressively; check <code>index.json → version</code> (currently <code>0.15.0</code>) to invalidate.</li>
+            <li><strong>Sizes are small.</strong> Largest endpoints: <code>artist.json</code> (~155 KB), <code>sessions.json</code> (~50 KB), <code>on-this-day.json</code> (~40 KB). Everything else is under 16 KB. Cache aggressively; check <code>index.json → version</code> (currently <code>0.16.0</code>) to invalidate.</li>
             <li><strong>Play counts are a snapshot.</strong> SoundCloud plays were captured read-only on <strong>2026-10-11</strong> (<code>plays_snapshot</code> / <code>observed</code> fields). They drift daily — always state the snapshot date, never present them as live.</li>
             <li><strong>Upload dates ≠ recording dates.</strong> Sessions are computed clusters (7-day upload-gap rule), not artist-named studio sessions.</li>
             <li><strong>The rules of the archive:</strong> titles and metadata only — <strong>never lyrics</strong>; never invent biography; unknowns are listed as unknowns (<code>method.html</code> → "The unknowns register"); the circle is title-credit only (producers live in <code>scene-figures.json</code>).</li>

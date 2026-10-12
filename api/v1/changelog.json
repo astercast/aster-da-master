@@ -1,8 +1,38 @@
 {
   "generated": "2026-10-11",
   "method": "Parsed from `git log main`: every commit becomes an entry. The site documenting its own becoming.",
-  "entry_count": 73,
+  "entry_count": 78,
   "entries": [
+    {
+      "hash": "b667072",
+      "date": "2026-10-12",
+      "message": "Wave 32 merge: changelog sync 2 (3-file convention)",
+      "files_changed": 3
+    },
+    {
+      "hash": "daa9991",
+      "date": "2026-10-12",
+      "message": "Wave 32 fixup: bump wave-30 hand-maintained data files to 0.16.0 (stage 7 version consistency)",
+      "files_changed": 2
+    },
+    {
+      "hash": "8d7bcb0",
+      "date": "2026-10-12",
+      "message": "Wave 32 merge: changelog sync (3-file convention)",
+      "files_changed": 3
+    },
+    {
+      "hash": "86a8898",
+      "date": "2026-10-12",
+      "message": "Wave 32: collaborator deep-enrichment + Uncle-LP live re-verification + honest-gaps register",
+      "files_changed": 56
+    },
+    {
+      "hash": "199e692",
+      "date": "2026-10-12",
+      "message": "Wave 31 merge: changelog sync (3-file convention)",
+      "files_changed": 3
+    },
     {
       "hash": "f8757cd",
       "date": "2026-10-12",
