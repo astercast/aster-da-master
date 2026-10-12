@@ -185,6 +185,15 @@
                 <li>Report shapes, not stories: the graph records that collaborations happened, never how or why.</li>
               </ol>
             </article>
+            <article class="recipe-card" aria-labelledby="rc-codex-r">
+              <h4 id="rc-codex-r"><a href="skills/codex-reader.md">codex-reader</a></h4>
+              <p>Read a codex family's full deep-dive: its decoded reading, era-by-era evolution, key sessions, voices.</p>
+              <ol class="recipe-seq">
+                <li><code>GET api/v1/codex-families.json</code> — find the family by <code>slug</code>; read <code>decoded</code> first (status <code>stated</code> or <code>unknown</code> — never supply a meaning the archive doesn't claim).</li>
+                <li>Walk <code>eras[]</code> (era evolution, <code>deep_dive</code> + <code>journey</code> links), <code>transmissions[]</code>, <code>key_sessions[]</code>, <code>collaborators[]</code>.</li>
+                <li>Mirrors <code>codex/&lt;slug&gt;.html</code> — same data, human page.</li>
+              </ol>
+            </article>
           </div>
           <p class="chart-sub">Full playbooks live in <code>skills/</code> (registry: <code>skills/index.json</code>). Every skill is: Use when / Inputs / Procedure / Worked example / API references / Pitfalls.</p>
         </div>

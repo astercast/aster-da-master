@@ -85,7 +85,7 @@
 
         <div class="reveal">
           <h3 id="ag-endpoints">The API</h3>
-          <p>Sixteen versioned JSON endpoints under <code>api/v1/</code>. Current data version: <strong>0.13.0</strong> (see <code>api/v1/index.json</code> → <code>version</code> before caching anything).</p>
+          <p>Eighteen versioned JSON endpoints under <code>api/v1/</code>. Current data version: <strong>0.13.0</strong> (see <code>api/v1/index.json</code> → <code>version</code> before caching anything).</p>
           <div class="table-wrap">
             <table>
               <caption>API endpoint table</caption>
@@ -99,6 +99,7 @@
                 <tr><th scope="row">circle</th><td><code>api/v1/circle.json</code></td><td>21 title-credited collaborators and their track footprints</td><td><code>shared_transmissions</code>, <code>shared_plays</code>, <code>years_active</code>, <code>verified_notes</code></td></tr>
                 <tr><th scope="row">scene-figures</th><td><code>api/v1/scene-figures.json</code></td><td>Producer/scene figures excluded from the circle by the title-credit rule</td><td><code>kind</code>, <code>standing</code>, <code>tracks</code>, <code>facts</code>, <code>sources</code></td></tr>
                 <tr><th scope="row">codex</th><td><code>api/v1/codex.json</code></td><td>16 title-word families with per-family track lists</td><td><code>families[]</code> → <code>name, words[], tracks[]</code></td></tr>
+                <tr><th scope="row">codex-families</th><td><code>api/v1/codex-families.json</code></td><td>Codex family deep-dives: decoded readings, era-by-era evolution, key sessions, collaborators — drives the <code>codex/&lt;slug&gt;.html</code> pages</td><td><code>families[]</code> → <code>decoded, eras[], transmissions[], key_sessions[], collaborators[]</code></td></tr>
                 <tr><th scope="row">milestones</th><td><code>api/v1/milestones.json</code></td><td>Career firsts computed from the verified discography</td><td>firsts, records, silences</td></tr>
                 <tr><th scope="row">milestone-watch</th><td><code>api/v1/milestone-watch.json</code></td><td>Vault tracks near round-number play counts (2026-10-11 snapshot)</td><td><code>summit</code>, <code>bands[]</code> → <code>target, tracks[].needed</code></td></tr>
                 <tr><th scope="row">transmission</th><td><code>api/v1/transmission.json</code></td><td>Guided-journey era aggregates: six eras with stats, top tracks, key sessions, collaborators, milestones, computed signal lines</td><td><code>eras[]</code> → <code>signal, top_tracks[], key_sessions[], collaborators[], milestones[]</code></td></tr>
@@ -128,7 +129,7 @@
 
         <div class="reveal">
           <h3 id="ag-skills">Skills</h3>
-          <p>Eleven agent skills in <code>skills/</code> (registry: <code>skills/index.json</code>), each in the playbook format: Use when / Inputs / Procedure / Worked example / API references / Pitfalls. The eight archive-analysis skills:</p>
+          <p>Twelve agent skills in <code>skills/</code> (registry: <code>skills/index.json</code>), each in the playbook format: Use when / Inputs / Procedure / Worked example / API references / Pitfalls. The nine archive-analysis skills:</p>
           <div class="table-wrap">
             <table>
               <caption>Agent skills</caption>
@@ -144,6 +145,7 @@
                 <tr><th scope="row"><a href="skills/era-briefing.md">era-briefing</a></th><td>Summarizes an era for a writeup</td><td><code>eras.json</code> (deep dives) → <code>artist.json</code> (eras) → <code>years.json</code> → <code>discography</code> → <code>circle.json</code></td></tr>
                 <tr><th scope="row"><a href="skills/transmission-decoder.md">transmission-decoder</a></th><td>Interprets a title word via the codex families</td><td><code>codex.json</code> → <code>sessions.json</code> (context); mirrors <code>decoder.html</code></td></tr>
                 <tr><th scope="row"><a href="skills/network-graph-reader.md">network-graph-reader</a></th><td>Reads the collaboration network: nodes, edges, co-credit links, insights</td><td><code>network.json</code> → <code>insights</code> → <code>circle.json</code> (per-track detail)</td></tr>
+                <tr><th scope="row"><a href="skills/codex-reader.md">codex-reader</a></th><td>Reads a codex family's full deep-dive: decoded reading, era evolution, sessions, voices</td><td><code>codex-families.json</code> → <code>decoded</code> → <code>eras[]</code> → <code>transmissions[]</code> → <code>key_sessions[]</code> → <code>collaborators[]</code>; mirrors <code>codex/&lt;slug&gt;.html</code></td></tr>
               </tbody>
             </table>
           </div>

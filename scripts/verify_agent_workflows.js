@@ -1,4 +1,4 @@
-/* Wave 17 proof: executes the 3 AGENT.md example workflows against the real
+/* Proof: executes the 6 AGENT.md example workflows against the real
    local api/v1 JSON files and asserts each step returns real data.
    Run: node scripts/verify_agent_workflows.js (from the repo root). */
 "use strict";
@@ -158,5 +158,41 @@ console.log("[workflow 5] Sessions timeline archaeology");
     sc.sessions.every((s) => s.era_id && s.season && /^transmission\.html#era-/.test(s.journey)));
 }
 
-console.log(failures === 0 ? "\nALL 5 WORKFLOWS PROVE OUT" : `\n${failures} CHECK(S) FAILED`);
+// --- Workflow 6: trace a codex family ---
+console.log("[workflow 6] Codex family trace (The Modes)");
+{
+  const cf = J("codex-families.json");
+  check("16 families", cf.family_count === 16 && cf.families.length === 16,
+    String(cf.families.length));
+  const modes = cf.families.find((f) => f.slug === "the-modes");
+  check("the-modes found, 5 transmissions / 10,864 plays",
+    modes && modes.track_count === 5 && modes.total_plays === 10864,
+    modes && `${modes.track_count} / ${modes.total_plays}`);
+  check("decoded status unknown (litemode/nitemode unassigned)",
+    modes && modes.decoded.status === "unknown" &&
+    /unknowns register/.test(modes.decoded.source));
+  check("every other family's reading is its codex.json epithet verbatim",
+    cf.families.every((f) => f.decoded.status === "unknown" ||
+      f.decoded.reading === J("codex.json").families
+        .find((c) => c.name === f.name).epithet));
+  check("first 2019-07-09 -> latest 2025-11-23",
+    modes && modes.first_appearance.date === "2019-07-09" &&
+    modes.latest.date === "2025-11-23" &&
+    /NIGHT MODE/.test(modes.first_appearance.title) &&
+    /big litemode/.test(modes.latest.title));
+  check("era evolution: 3 eras, transmissions sum to 5",
+    modes && modes.eras.length === 3 &&
+    modes.eras.reduce((a, r) => a + r.transmissions, 0) === 5 &&
+    modes.eras.every((r) => r.deep_dive && /^transmission\.html#era-/.test(r.journey)),
+    modes && modes.eras.map((r) => `${r.name} x${r.transmissions}`).join(", "));
+  check("5 key sessions, 5 collaborators with circle pages",
+    modes && modes.key_sessions.length === 5 && modes.collaborators.length === 5 &&
+    modes.collaborators.every((c) => /^circle\//.test(c.page) && c.page.endsWith(".html")),
+    modes && modes.collaborators.map((c) => c.name).join(", "));
+  check("transmissions carry release pages",
+    modes && modes.transmissions.length === 5 &&
+    modes.transmissions.every((t) => /^releases\//.test(t.page)));
+}
+
+console.log(failures === 0 ? "\nALL 6 WORKFLOWS PROVE OUT" : `\n${failures} CHECK(S) FAILED`);
 process.exit(failures === 0 ? 0 : 1);

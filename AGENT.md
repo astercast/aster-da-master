@@ -28,7 +28,7 @@ Static files — **no auth, no keys, no rate limits**. Works on any static host.
 
 | Endpoint | Contents | Records |
 |---|---|---|
-| `api/v1/index.json` | Manifest — start here | 17 endpoints |
+| `api/v1/index.json` | Manifest — start here | 18 endpoints |
 | `api/v1/artist.json` | The source of truth: bio, facts, discography (219 entries), platforms, eras, vault, upcoming | 219 |
 | `api/v1/codex.json` | The vocabulary codex: 16 word families with per-family track lists | 16 |
 | `api/v1/release-slugs.json` | Slug index: ordinal string → release-page slug (the search overlay's corpus) | 219 |
@@ -45,6 +45,7 @@ Static files — **no auth, no keys, no rate limits**. Works on any static host.
 | `api/v1/network.json` | Collaboration network: 23 nodes, 27 track-weighted edges, co-credit links, computed insights | 23 nodes |
 | `api/v1/eras.json` | Era deep-dives: six eras with full transmission lists (every track + plays), ALL in-era collaborators, active codex families, milestones, computed signal lines and summaries | 6 |
 | `api/v1/session-clusters.json` | Session archaeology, interactive: the 61 sessions as an explorable timeline — per-session enrichment (era, loudest + deepest-cut tracks, cross-links), the 60 inter-session gaps, 9 activity seasons, asserted insights. Drives `sessions-explorer.html` | 9 seasons |
+| `api/v1/codex-families.json` | Codex family deep-dives: 16 vocabulary families with decoded readings, era-by-era evolution, key sessions, title-credited collaborators. Drives the `codex/<slug>.html` pages | 16 |
 
 Example requests (Node; swap `fs` for `fetch` in a browser):
 
@@ -191,6 +192,35 @@ sessions."*
    "clustered" when the distinction matters. Play counts are the 2026-10-11
    snapshot; upload dates ≠ recording dates. Never quote or reproduce lyrics
    — titles and metadata only.
+
+## Example workflow 6 — trace a codex family
+
+*Skill: [`codex-reader`](skills/codex-reader.md). Question → "trace The Modes
+family: what does it mean, and how did it evolve?"*
+
+1. **`GET api/v1/codex-families.json`** — find the family by `slug`
+   (`the-modes`): 5 transmissions, 10,864 plays, words `litemode`,
+   `nitemode`, `night mode`, page `codex/the-modes.html`.
+2. **Read `decoded` FIRST** — `status` is `"unknown"`: the archive assigns no
+   meaning to the mode-words. `litemode`/`nitemode` appear in titles but no
+   index source defines them — tallied, never translated (the unknowns
+   register on `method.html`, re-checked 2026-10-11). **Do not supply a
+   meaning the archive doesn't claim.**
+3. **Walk `eras[]` for the evolution** — first appearance "NIGHT MODE ft.
+   MAX FERRARI x YUNG VETTA x JAX" (2019-07-09, 10,083 plays, The First
+   Rite), latest "big litemode (prod runawway, ilyagargod & k3nik)"
+   (2025-11-23, 455 plays, The Silence); 3 family
+   transmissions sit in The SomeLowLifes Era (326 plays — the word's quiet
+   middle years). `deep_dive` and `journey` links land on the era pages.
+4. **`key_sessions[]`** names the 5 upload sessions carrying the words
+   (session deep-dive link where one exists, e.g. The July 9th Session);
+   **`collaborators[]`** names the voices — JAX, Max Ferrari, Yung Vetta
+   ("NIGHT MODE"), Max, Vetty ("nitemode2019") — with `circle/` page links.
+5. Pitfall check: a `decoded.status` of `"stated"` means the reading is the
+   family's `epithet` quoted verbatim (site framing of title vocabulary,
+   not an artist statement). Distributor releases have no session record
+   and no vault play count. Never quote or reproduce lyrics — titles and
+   metadata only.
 
 ## Rates & expectations
 

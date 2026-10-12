@@ -95,11 +95,15 @@ ENDPOINT_ORDER = [
      "Session archaeology, interactive: the 61 upload sessions as an explorable timeline - per-session enrichment (era, loudest + deepest-cut tracks, title-credited collaborators, deep-dive/era/journey cross-links), the 60 inter-session gaps, activity seasons, and asserted insights. Data source for sessions-explorer.html.",
      "session-clusters.json", "Seasons are a computed browsing convention (silence > 90 days opens a new season), not artist-named eras.",
      lambda api: len(_doc(api, "session-clusters.json")["clusters"])),
+    ("codex-families",
+     "Codex family deep-dives: the 16 vocabulary families with decoded readings (traced verbatim to codex.json epithets; unknown where the archive assigns no meaning), era-by-era evolution, key sessions, and title-credited collaborators. Data source for the codex/<slug>.html deep-dive pages.",
+     "codex-families.json", "",
+     lambda api: len(_doc(api, "codex-families.json")["families"])),
 ]
 
 DOCUMENTS = {
     "AGENT.md": "Agent operator's manual: base URL pattern, key endpoints with example requests, end-to-end workflows, rate/expectation notes.",
-    "agents.html": "Human + agent surface: 16-endpoint table, llms files, skills, search-index usage, rates & expectations, worked workflows.",
+    "agents.html": "Human + agent surface: 18-endpoint table, llms files, skills, search-index usage, rates & expectations, worked workflows.",
     "API.md": "Human-readable API reference incl. the shared cross-site conventions block.",
     "llms.txt": "Short agent brief: catalog shape, method, API map, key verified facts, ops.",
     "llms-full.txt": "Full agent brief: per-era detail, collaborator research notes, unknowns register, page map, generator order.",

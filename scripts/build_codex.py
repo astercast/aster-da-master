@@ -5,8 +5,11 @@ Reads data/artist.json (219 titles), counts recurring ritual vocabulary
 across titles, and emits data/codex.json + api/v1/codex.json.
 
 Also generates:
-  codex/<slug>.html  - one page per vocabulary family (16)
   codex/index.html    - the codex index
+
+(The 16 codex/<slug>.html family pages are OWNED by scripts/build_codex_pages.py
+(wave 21) - this generator no longer writes them. It still feeds that
+generator via data/codex.json + api/v1/codex.json.)
 
 Per family: full track list (dates/plays, linked to release pages),
 matched words, and family stats (total plays, span of years).
@@ -221,59 +224,6 @@ def year_span(tracks):
     return yrs[0] if len(yrs) == 1 else f"{yrs[0]}–{yrs[-1]}"
 
 
-def family_page(fam, slug, slug_of, prev_s, next_s):
-    tracks = fam["tracks"]
-    total_plays = sum(t.get("plays") or 0 for t in tracks)
-    rows = "".join(
-        f'<li><a href="../releases/{slug_of[(t["title"], t.get("date"))]}.html">{escape(t["title"])}</a>'
-        f' <span class="dim">{escape(t.get("date") or "date unknown")}'
-        + (f" &middot; {fmt(t['plays'])} plays" if t.get("plays") else "")
-        + f" &middot; {escape(t.get('type', 'Release'))}</span></li>"
-        for t in tracks
-    )
-    prev_link = (
-        f'<a class="btn btn-sm" href="{prev_s}.html" rel="prev">&larr; Prev</a>'
-        if prev_s else '<span class="btn btn-sm" aria-disabled="true">&larr;</span>'
-    )
-    next_link = (
-        f'<a class="btn btn-sm" href="{next_s}.html" rel="next">Next &rarr;</a>'
-        if next_s else '<span class="btn btn-sm" aria-disabled="true">&rarr;</span>'
-    )
-    body = f"""
-      <nav class="crumbs" aria-label="Breadcrumb">
-        <a href="../">Home</a> / <a href="../#codex">Codex</a> / <a href="./">Families</a> / <span aria-current="page">{escape(fam["name"])}</span>
-      </nav>
-      <section class="section" aria-labelledby="cf-h">
-        <span class="kicker"><span class="numeral">&#10022;</span>The codex</span>
-        <h2 id="cf-h">{escape(fam["name"])}</h2>
-        <p class="codex-epithet">{escape(fam["epithet"])}</p>
-        <p class="codex-words">Matched words: {escape(" · ".join(fam["words"]))}</p>
-        <div class="stat-grid">
-          <div class="stat"><div class="stat-value">{fam["track_count"]}</div><div class="stat-label">Transmissions</div></div>
-          <div class="stat"><div class="stat-value">{fmt(total_plays)}</div><div class="stat-label">Combined plays</div></div>
-          <div class="stat"><div class="stat-value">{escape(year_span(tracks))}</div><div class="stat-label">Span of years</div></div>
-        </div>
-        <p class="chart-sub">Every claim here is a count &mdash; no meanings invented. Play counts are the 2026-10-11 vault snapshot.</p>
-      </section>
-
-      <section class="section" aria-labelledby="ct-h">
-        <span class="kicker"><span class="numeral">&#10022;</span>The family record</span>
-        <h3 id="ct-h">Every {escape(fam["name"]).lower()} transmission, in order</h3>
-        <ol class="year-list">{rows}</ol>
-      </section>
-
-      <nav class="year-pager" aria-label="Family navigation">
-        {prev_link}
-        <a class="btn btn-sm" href="./">All families</a>
-        {next_link}
-      </nav>
-"""
-    return HEAD.format(
-        title=f'{fam["name"]} — codex family',
-        desc=f'{fam["name"]}: {fam["track_count"]} transmissions, {fmt(total_plays)} plays.',
-    ) + body + FOOT
-
-
 def index_page(families):
     cards = "".join(
         f'<a class="year-card" href="{f["slug"]}.html">'
@@ -348,20 +298,8 @@ def main():
     print(f"codex: {len(families)} families, "
           f"{sum(f['track_count'] for f in families)} family-track links")
 
-    # --- Family detail pages ---
-    # Release slugs: identical algorithm to build_search_index.py.
-    used, rslugs = set(), []
-    for r in releases:
-        s = slugify(r["title"])
-        base, n = s, 1
-        while s in used:
-            n += 1
-            s = f"{base}-{n}"
-        used.add(s)
-        rslugs.append(s)
-    assert len(set(rslugs)) == len(releases), "release slug collision"
-    slug_of = {(r["title"], r.get("date")): s for r, s in zip(releases, rslugs)}
-
+    # --- Codex index page ---
+    # (Family detail pages moved to scripts/build_codex_pages.py, wave 21.)
     fams = []
     fused = set()
     for fam in families:
@@ -379,15 +317,8 @@ def main():
         })
 
     CODEX_PAGES.mkdir(exist_ok=True)
-    for i, fam in enumerate(families):
-        prev_s = fams[i - 1]["slug"] if i > 0 else None
-        next_s = fams[i + 1]["slug"] if i < len(families) - 1 else None
-        (CODEX_PAGES / f'{fams[i]["slug"]}.html').write_text(
-            family_page(fam, fams[i]["slug"], slug_of, prev_s, next_s),
-            encoding="utf-8",
-        )
     (CODEX_PAGES / "index.html").write_text(index_page(fams), encoding="utf-8")
-    print(f"codex pages: {len(families)} family pages + index")
+    print(f"codex pages: index (family pages owned by build_codex_pages.py)")
 
     # Bump version + mirror artist.json
     data["version"] = NEW_VERSION

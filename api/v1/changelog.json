@@ -1,8 +1,20 @@
 {
   "generated": "2026-10-11",
   "method": "Parsed from `git log main`: every commit becomes an entry. The site documenting its own becoming.",
-  "entry_count": 46,
+  "entry_count": 48,
   "entries": [
+    {
+      "hash": "efd3ca8",
+      "date": "2026-10-12",
+      "message": "Wave 21: changelog sync",
+      "files_changed": 3
+    },
+    {
+      "hash": "40f2bae",
+      "date": "2026-10-12",
+      "message": "Wave 21: codex family deep-dives",
+      "files_changed": 36
+    },
     {
       "hash": "ccbd55c",
       "date": "2026-10-12",

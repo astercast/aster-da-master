@@ -1,0 +1,2265 @@
+{
+  "version": "0.13.0",
+  "generated": "2026-10-11",
+  "plays_snapshot": "2026-10-11",
+  "method": "Per-family deep dives computed from api/v1/codex.json against api/v1/eras.json, data/sessions.json, api/v1/session-clusters.json, api/v1/circle.json, and api/v1/release-slugs.json. Decoded readings are traced verbatim to codex.json's epithets; where the archive assigns no meaning (the litemode/nitemode words) the reading is stated as unknown. No meanings invented.",
+  "family_count": 16,
+  "families": [
+    {
+      "name": "The Modes",
+      "slug": "the-modes",
+      "epithet": "The mode-words. Five transmissions carry them - lite, nite, and night.",
+      "words": [
+        "litemode",
+        "nitemode",
+        "night mode"
+      ],
+      "page": "codex/the-modes.html",
+      "track_count": 5,
+      "total_plays": 10864,
+      "decoded": {
+        "reading": "The archive assigns no meaning to the mode-words. litemode / nitemode appear in titles, but no index source defines them for this artist or collective - tallied, never translated. (method.html unknowns register, re-checked 2026-10-11.)",
+        "status": "unknown",
+        "source": "method.html unknowns register (2026-10-11)"
+      },
+      "first_appearance": {
+        "title": "NIGHT MODE ft. MAX FERRARI x YUNG VETTA x JAX",
+        "date": "2019-07-09",
+        "plays": 10083,
+        "page": "releases/night-mode-ft-max-ferrari-x-yung-vetta-x-jax.html"
+      },
+      "latest": {
+        "title": "big litemode (prod runawway, ilyagargod & k3nik)",
+        "date": "2025-11-23",
+        "plays": 455,
+        "page": "releases/big-litemode-prod-runawway-ilyagargod-and-k3nik.html"
+      },
+      "eras": [
+        {
+          "id": "the-first-rite",
+          "name": "The First Rite",
+          "span": "2017 – 2019",
+          "transmissions": 1,
+          "plays": 10083,
+          "loudest": {
+            "title": "NIGHT MODE ft. MAX FERRARI x YUNG VETTA x JAX",
+            "date": "2019-07-09",
+            "plays": 10083,
+            "page": "releases/night-mode-ft-max-ferrari-x-yung-vetta-x-jax.html"
+          },
+          "deep_dive": "eras/the-first-rite.html",
+          "journey": "transmission.html#era-the-first-rite"
+        },
+        {
+          "id": "the-somelowlifes-era",
+          "name": "The SomeLowLifes Era",
+          "span": "2023 – 2024",
+          "transmissions": 3,
+          "plays": 326,
+          "loudest": {
+            "title": "3 Points Pre Game prod. doublemulti x pinkcat #NITEMODE",
+            "date": "2024-05-28",
+            "plays": 170,
+            "page": "releases/3-points-pre-game-prod-doublemulti-x-pinkcat-nitemode.html"
+          },
+          "deep_dive": "eras/the-somelowlifes-era.html",
+          "journey": "transmission.html#era-the-somelowlifes-era"
+        },
+        {
+          "id": "the-silence",
+          "name": "The Silence",
+          "span": "2025",
+          "transmissions": 1,
+          "plays": 455,
+          "loudest": {
+            "title": "big litemode (prod runawway, ilyagargod & k3nik)",
+            "date": "2025-11-23",
+            "plays": 455,
+            "page": "releases/big-litemode-prod-runawway-ilyagargod-and-k3nik.html"
+          },
+          "deep_dive": "eras/the-silence.html",
+          "journey": "transmission.html#era-the-silence"
+        }
+      ],
+      "transmissions": [
+        {
+          "title": "NIGHT MODE ft. MAX FERRARI x YUNG VETTA x JAX",
+          "date": "2019-07-09",
+          "plays": 10083,
+          "type": "SoundCloud-only",
+          "page": "releases/night-mode-ft-max-ferrari-x-yung-vetta-x-jax.html"
+        },
+        {
+          "title": "u Not at the Table (Sunsetzer0) #litemode",
+          "date": "2024-04-18",
+          "plays": 139,
+          "type": "SoundCloud-only",
+          "page": "releases/u-not-at-the-table-sunsetzer0-litemode.html"
+        },
+        {
+          "title": "3 Points Pre Game prod. doublemulti x pinkcat #NITEMODE",
+          "date": "2024-05-28",
+          "plays": 170,
+          "type": "SoundCloud-only",
+          "page": "releases/3-points-pre-game-prod-doublemulti-x-pinkcat-nitemode.html"
+        },
+        {
+          "title": "nitemode2019 w/ Max+Vetty prod. NaXi.wav",
+          "date": "2024-11-05",
+          "plays": 17,
+          "type": "SoundCloud-only",
+          "page": "releases/nitemode2019-w-max-vetty-prod-naxi-wav.html"
+        },
+        {
+          "title": "big litemode (prod runawway, ilyagargod & k3nik)",
+          "date": "2025-11-23",
+          "plays": 455,
+          "type": "SoundCloud-only",
+          "page": "releases/big-litemode-prod-runawway-ilyagargod-and-k3nik.html"
+        }
+      ],
+      "key_sessions": [
+        {
+          "id": "session-24",
+          "name": "The July 9th Session",
+          "start": "2019-07-09",
+          "end": "2019-07-09",
+          "family_transmissions": 1,
+          "family_plays": 10083,
+          "deep_dive": "sessions/the-july-9th-session.html",
+          "page": "sessions/the-july-9th-session.html"
+        },
+        {
+          "id": "session-56",
+          "name": "The November 23rd Session",
+          "start": "2025-11-23",
+          "end": "2025-11-23",
+          "family_transmissions": 1,
+          "family_plays": 455,
+          "deep_dive": null,
+          "page": "sessions.html"
+        },
+        {
+          "id": "session-45",
+          "name": "The May 22nd–31st Session",
+          "start": "2024-05-22",
+          "end": "2024-05-31",
+          "family_transmissions": 1,
+          "family_plays": 170,
+          "deep_dive": null,
+          "page": "sessions.html"
+        },
+        {
+          "id": "session-43",
+          "name": "The April 16th–18th Session",
+          "start": "2024-04-16",
+          "end": "2024-04-18",
+          "family_transmissions": 1,
+          "family_plays": 139,
+          "deep_dive": null,
+          "page": "sessions.html"
+        },
+        {
+          "id": "session-52",
+          "name": "The November 5th Session",
+          "start": "2024-11-05",
+          "end": "2024-11-05",
+          "family_transmissions": 1,
+          "family_plays": 17,
+          "deep_dive": null,
+          "page": "sessions.html"
+        }
+      ],
+      "collaborators": [
+        {
+          "slug": "jax",
+          "name": "JAX",
+          "page": "circle/jax.html",
+          "transmissions": 1,
+          "plays": 10083
+        },
+        {
+          "slug": "max-ferrari",
+          "name": "Max Ferrari",
+          "page": "circle/max-ferrari.html",
+          "transmissions": 1,
+          "plays": 10083
+        },
+        {
+          "slug": "yung-vetta",
+          "name": "Yung Vetta",
+          "page": "circle/yung-vetta.html",
+          "transmissions": 1,
+          "plays": 10083
+        },
+        {
+          "slug": "max",
+          "name": "Max",
+          "page": "circle/max.html",
+          "transmissions": 1,
+          "plays": 17
+        },
+        {
+          "slug": "vetty",
+          "name": "Vetty",
+          "page": "circle/vetty.html",
+          "transmissions": 1,
+          "plays": 17
+        }
+      ]
+    },
+    {
+      "name": "The Castings",
+      "slug": "the-castings",
+      "epithet": "Five transmissions bear the word cast - the central verb of the catalog.",
+      "words": [
+        "cast"
+      ],
+      "page": "codex/the-castings.html",
+      "track_count": 5,
+      "total_plays": 693,
+      "decoded": {
+        "reading": "Five transmissions bear the word cast - the central verb of the catalog.",
+        "status": "stated",
+        "source": "codex.json epithet - the archive's own reading of this word family (site framing of title vocabulary, not an artist statement)"
+      },
+      "first_appearance": {
+        "title": "Cast It:, Pt. 1",
+        "date": "2021-07-14",
+        "plays": null,
+        "page": "releases/cast-it-pt-1.html"
+      },
+      "latest": {
+        "title": "Cast OUT!!!",
+        "date": "2023-11-12",
+        "plays": 481,
+        "page": "releases/cast-out-2.html"
+      },
+      "eras": [
+        {
+          "id": "the-cast-it-years",
+          "name": "The Cast It: Years",
+          "span": "2021 – 2022",
+          "transmissions": 3,
+          "plays": 212,
+          "loudest": {
+            "title": "I Can't Get Myself to Cast (prod. lil biscuit)",
+            "date": "2021-07-14",
+            "plays": 212,
+            "page": "releases/i-can-t-get-myself-to-cast-prod-lil-biscuit.html"
+          },
+          "deep_dive": "eras/the-cast-it-years.html",
+          "journey": "transmission.html#era-the-cast-it-years"
+        },
+        {
+          "id": "the-somelowlifes-era",
+          "name": "The SomeLowLifes Era",
+          "span": "2023 – 2024",
+          "transmissions": 2,
+          "plays": 481,
+          "loudest": {
+            "title": "Cast OUT!!!",
+            "date": "2023-11-12",
+            "plays": 481,
+            "page": "releases/cast-out-2.html"
+          },
+          "deep_dive": "eras/the-somelowlifes-era.html",
+          "journey": "transmission.html#era-the-somelowlifes-era"
+        }
+      ],
+      "transmissions": [
+        {
+          "title": "Cast It:, Pt. 1",
+          "date": "2021-07-14",
+          "plays": null,
+          "type": "Album",
+          "page": "releases/cast-it-pt-1.html"
+        },
+        {
+          "title": "I Can't Get Myself to Cast (prod. lil biscuit)",
+          "date": "2021-07-14",
+          "plays": 212,
+          "type": "SoundCloud-only",
+          "page": "releases/i-can-t-get-myself-to-cast-prod-lil-biscuit.html"
+        },
+        {
+          "title": "Cast It:, Pt. 2",
+          "date": "2022-02-22",
+          "plays": null,
+          "type": "Album",
+          "page": "releases/cast-it-pt-2.html"
+        },
+        {
+          "title": "Cast Out",
+          "date": "2023-11-11",
+          "plays": null,
+          "type": "Album",
+          "page": "releases/cast-out.html"
+        },
+        {
+          "title": "Cast OUT!!!",
+          "date": "2023-11-12",
+          "plays": 481,
+          "type": "SoundCloud-only",
+          "page": "releases/cast-out-2.html"
+        }
+      ],
+      "key_sessions": [
+        {
+          "id": "session-40",
+          "name": "The November 3rd–12th Session",
+          "start": "2023-11-03",
+          "end": "2023-11-12",
+          "family_transmissions": 1,
+          "family_plays": 481,
+          "deep_dive": "sessions/the-november-3rd-12th-session.html",
+          "page": "sessions/the-november-3rd-12th-session.html"
+        },
+        {
+          "id": "session-35",
+          "name": "The July 14th Session",
+          "start": "2021-07-14",
+          "end": "2021-07-14",
+          "family_transmissions": 1,
+          "family_plays": 212,
+          "deep_dive": "sessions/the-july-14th-session.html",
+          "page": "sessions/the-july-14th-session.html"
+        }
+      ],
+      "collaborators": []
+    },
+    {
+      "name": "Keys",
+      "slug": "keys",
+      "epithet": "Three transmissions turn on a key.",
+      "words": [
+        "key"
+      ],
+      "page": "codex/keys.html",
+      "track_count": 3,
+      "total_plays": 9615,
+      "decoded": {
+        "reading": "Three transmissions turn on a key.",
+        "status": "stated",
+        "source": "codex.json epithet - the archive's own reading of this word family (site framing of title vocabulary, not an artist statement)"
+      },
+      "first_appearance": {
+        "title": "Master Key (feat. Lil Wintr & Marcelo)",
+        "date": "2019-12-06",
+        "plays": null,
+        "page": "releases/master-key-feat-lil-wintr-and-marcelo.html"
+      },
+      "latest": {
+        "title": "Master Key",
+        "date": "2019-12-23",
+        "plays": null,
+        "page": "releases/master-key.html"
+      },
+      "eras": [
+        {
+          "id": "the-first-rite",
+          "name": "The First Rite",
+          "span": "2017 – 2019",
+          "transmissions": 3,
+          "plays": 9615,
+          "loudest": {
+            "title": "master key ft. Lil Wintr x Marcelo (prod. ginseng)",
+            "date": "2019-12-06",
+            "plays": 9615,
+            "page": "releases/master-key-ft-lil-wintr-x-marcelo-prod-ginseng.html"
+          },
+          "deep_dive": "eras/the-first-rite.html",
+          "journey": "transmission.html#era-the-first-rite"
+        }
+      ],
+      "transmissions": [
+        {
+          "title": "Master Key (feat. Lil Wintr & Marcelo)",
+          "date": "2019-12-06",
+          "plays": null,
+          "type": "Single",
+          "page": "releases/master-key-feat-lil-wintr-and-marcelo.html"
+        },
+        {
+          "title": "master key ft. Lil Wintr x Marcelo (prod. ginseng)",
+          "date": "2019-12-06",
+          "plays": 9615,
+          "type": "SoundCloud-only",
+          "page": "releases/master-key-ft-lil-wintr-x-marcelo-prod-ginseng.html"
+        },
+        {
+          "title": "Master Key",
+          "date": "2019-12-23",
+          "plays": null,
+          "type": "Album",
+          "page": "releases/master-key.html"
+        }
+      ],
+      "key_sessions": [
+        {
+          "id": "session-26",
+          "name": "The December 6th Session",
+          "start": "2019-12-06",
+          "end": "2019-12-06",
+          "family_transmissions": 1,
+          "family_plays": 9615,
+          "deep_dive": null,
+          "page": "sessions.html"
+        }
+      ],
+      "collaborators": [
+        {
+          "slug": "lil-wintr",
+          "name": "Lil Wintr",
+          "page": "circle/lil-wintr.html",
+          "transmissions": 2,
+          "plays": 9615
+        },
+        {
+          "slug": "marcelo",
+          "name": "Marcelo",
+          "page": "circle/marcelo.html",
+          "transmissions": 2,
+          "plays": 9615
+        }
+      ]
+    },
+    {
+      "name": "Vessels",
+      "slug": "vessels",
+      "epithet": "Two transmissions name a vessel to drink from - an urn, a cup.",
+      "words": [
+        "urn",
+        "cup"
+      ],
+      "page": "codex/vessels.html",
+      "track_count": 2,
+      "total_plays": 367,
+      "decoded": {
+        "reading": "Two transmissions name a vessel to drink from - an urn, a cup.",
+        "status": "stated",
+        "source": "codex.json epithet - the archive's own reading of this word family (site framing of title vocabulary, not an artist statement)"
+      },
+      "first_appearance": {
+        "title": "Like the Cup (prod. ice trouble)",
+        "date": "2021-07-14",
+        "plays": 189,
+        "page": "releases/like-the-cup-prod-ice-trouble.html"
+      },
+      "latest": {
+        "title": "the peace of the spirit urn (prod +fiftyzeros)",
+        "date": "2026-07-15",
+        "plays": 178,
+        "page": "releases/the-peace-of-the-spirit-urn-prod-fiftyzeros.html"
+      },
+      "eras": [
+        {
+          "id": "the-cast-it-years",
+          "name": "The Cast It: Years",
+          "span": "2021 – 2022",
+          "transmissions": 1,
+          "plays": 189,
+          "loudest": {
+            "title": "Like the Cup (prod. ice trouble)",
+            "date": "2021-07-14",
+            "plays": 189,
+            "page": "releases/like-the-cup-prod-ice-trouble.html"
+          },
+          "deep_dive": "eras/the-cast-it-years.html",
+          "journey": "transmission.html#era-the-cast-it-years"
+        },
+        {
+          "id": "the-return",
+          "name": "The Return",
+          "span": "2026",
+          "transmissions": 1,
+          "plays": 178,
+          "loudest": {
+            "title": "the peace of the spirit urn (prod +fiftyzeros)",
+            "date": "2026-07-15",
+            "plays": 178,
+            "page": "releases/the-peace-of-the-spirit-urn-prod-fiftyzeros.html"
+          },
+          "deep_dive": "eras/the-return.html",
+          "journey": "transmission.html#era-the-return"
+        }
+      ],
+      "transmissions": [
+        {
+          "title": "Like the Cup (prod. ice trouble)",
+          "date": "2021-07-14",
+          "plays": 189,
+          "type": "SoundCloud-only",
+          "page": "releases/like-the-cup-prod-ice-trouble.html"
+        },
+        {
+          "title": "the peace of the spirit urn (prod +fiftyzeros)",
+          "date": "2026-07-15",
+          "plays": 178,
+          "type": "SoundCloud-only",
+          "page": "releases/the-peace-of-the-spirit-urn-prod-fiftyzeros.html"
+        }
+      ],
+      "key_sessions": [
+        {
+          "id": "session-35",
+          "name": "The July 14th Session",
+          "start": "2021-07-14",
+          "end": "2021-07-14",
+          "family_transmissions": 1,
+          "family_plays": 189,
+          "deep_dive": "sessions/the-july-14th-session.html",
+          "page": "sessions/the-july-14th-session.html"
+        },
+        {
+          "id": "session-60",
+          "name": "The July 15th Session",
+          "start": "2026-07-15",
+          "end": "2026-07-15",
+          "family_transmissions": 1,
+          "family_plays": 178,
+          "deep_dive": null,
+          "page": "sessions.html"
+        }
+      ],
+      "collaborators": []
+    },
+    {
+      "name": "Wards & the Spirit",
+      "slug": "wards-and-the-spirit",
+      "epithet": "A ward placed. A spirit at peace. Two transmissions of protection.",
+      "words": [
+        "ward",
+        "spirit"
+      ],
+      "page": "codex/wards-and-the-spirit.html",
+      "track_count": 2,
+      "total_plays": 453,
+      "decoded": {
+        "reading": "A ward placed. A spirit at peace. Two transmissions of protection.",
+        "status": "stated",
+        "source": "codex.json epithet - the archive's own reading of this word family (site framing of title vocabulary, not an artist statement)"
+      },
+      "first_appearance": {
+        "title": "P1aced a Ward (prodbygus)",
+        "date": "2024-05-02",
+        "plays": 275,
+        "page": "releases/p1aced-a-ward-prodbygus.html"
+      },
+      "latest": {
+        "title": "the peace of the spirit urn (prod +fiftyzeros)",
+        "date": "2026-07-15",
+        "plays": 178,
+        "page": "releases/the-peace-of-the-spirit-urn-prod-fiftyzeros.html"
+      },
+      "eras": [
+        {
+          "id": "the-somelowlifes-era",
+          "name": "The SomeLowLifes Era",
+          "span": "2023 – 2024",
+          "transmissions": 1,
+          "plays": 275,
+          "loudest": {
+            "title": "P1aced a Ward (prodbygus)",
+            "date": "2024-05-02",
+            "plays": 275,
+            "page": "releases/p1aced-a-ward-prodbygus.html"
+          },
+          "deep_dive": "eras/the-somelowlifes-era.html",
+          "journey": "transmission.html#era-the-somelowlifes-era"
+        },
+        {
+          "id": "the-return",
+          "name": "The Return",
+          "span": "2026",
+          "transmissions": 1,
+          "plays": 178,
+          "loudest": {
+            "title": "the peace of the spirit urn (prod +fiftyzeros)",
+            "date": "2026-07-15",
+            "plays": 178,
+            "page": "releases/the-peace-of-the-spirit-urn-prod-fiftyzeros.html"
+          },
+          "deep_dive": "eras/the-return.html",
+          "journey": "transmission.html#era-the-return"
+        }
+      ],
+      "transmissions": [
+        {
+          "title": "P1aced a Ward (prodbygus)",
+          "date": "2024-05-02",
+          "plays": 275,
+          "type": "SoundCloud-only",
+          "page": "releases/p1aced-a-ward-prodbygus.html"
+        },
+        {
+          "title": "the peace of the spirit urn (prod +fiftyzeros)",
+          "date": "2026-07-15",
+          "plays": 178,
+          "type": "SoundCloud-only",
+          "page": "releases/the-peace-of-the-spirit-urn-prod-fiftyzeros.html"
+        }
+      ],
+      "key_sessions": [
+        {
+          "id": "session-44",
+          "name": "The May 2nd–3rd Session",
+          "start": "2024-05-02",
+          "end": "2024-05-03",
+          "family_transmissions": 1,
+          "family_plays": 275,
+          "deep_dive": null,
+          "page": "sessions.html"
+        },
+        {
+          "id": "session-60",
+          "name": "The July 15th Session",
+          "start": "2026-07-15",
+          "end": "2026-07-15",
+          "family_transmissions": 1,
+          "family_plays": 178,
+          "deep_dive": null,
+          "page": "sessions.html"
+        }
+      ],
+      "collaborators": []
+    },
+    {
+      "name": "The Rites",
+      "slug": "the-rites",
+      "epithet": "The ceremonial forms: ritual, solstice, freestyle, anthem, intro, outro, interlude.",
+      "words": [
+        "ritual",
+        "solstice",
+        "freestyle",
+        "anthem",
+        "intro",
+        "outro",
+        "interlude"
+      ],
+      "page": "codex/the-rites.html",
+      "track_count": 17,
+      "total_plays": 11052,
+      "decoded": {
+        "reading": "The ceremonial forms: ritual, solstice, freestyle, anthem, intro, outro, interlude.",
+        "status": "stated",
+        "source": "codex.json epithet - the archive's own reading of this word family (site framing of title vocabulary, not an artist statement)"
+      },
+      "first_appearance": {
+        "title": "Fuck Time 3 (outro) [Prod. DIX2]",
+        "date": "2018-11-08",
+        "plays": 697,
+        "page": "releases/fuck-time-3-outro-prod-dix2.html"
+      },
+      "latest": {
+        "title": "Sti11 waiting/tunnel freestyle w/ Max Ferrari prod. suli",
+        "date": "2025-11-11",
+        "plays": 300,
+        "page": "releases/sti11-waiting-tunnel-freestyle-w-max-ferrari-prod-suli.html"
+      },
+      "eras": [
+        {
+          "id": "the-first-rite",
+          "name": "The First Rite",
+          "span": "2017 – 2019",
+          "transmissions": 6,
+          "plays": 8099,
+          "loudest": {
+            "title": "outro ~ I RLLY DID THT(prod. itami リネン)",
+            "date": "2019-07-09",
+            "plays": 3940,
+            "page": "releases/outro-i-rlly-did-tht-prod-itami.html"
+          },
+          "deep_dive": "eras/the-first-rite.html",
+          "journey": "transmission.html#era-the-first-rite"
+        },
+        {
+          "id": "the-prolific-year",
+          "name": "The Prolific Year",
+          "span": "2020",
+          "transmissions": 2,
+          "plays": 232,
+          "loudest": {
+            "title": "Elf Anthem Interlude (prod. capsctrl)",
+            "date": "2020-12-21",
+            "plays": 232,
+            "page": "releases/elf-anthem-interlude-prod-capsctrl.html"
+          },
+          "deep_dive": "eras/the-prolific-year.html",
+          "journey": "transmission.html#era-the-prolific-year"
+        },
+        {
+          "id": "the-cast-it-years",
+          "name": "The Cast It: Years",
+          "span": "2021 – 2022",
+          "transmissions": 1,
+          "plays": 178,
+          "loudest": {
+            "title": "Intro (prod. astral_hp)",
+            "date": "2021-07-14",
+            "plays": 178,
+            "page": "releases/intro-prod-astral-hp.html"
+          },
+          "deep_dive": "eras/the-cast-it-years.html",
+          "journey": "transmission.html#era-the-cast-it-years"
+        },
+        {
+          "id": "the-somelowlifes-era",
+          "name": "The SomeLowLifes Era",
+          "span": "2023 – 2024",
+          "transmissions": 7,
+          "plays": 2243,
+          "loudest": {
+            "title": "Long Day (End Task) outro [@Staaaas.ily]",
+            "date": "2023-11-10",
+            "plays": 519,
+            "page": "releases/long-day-end-task-outro-staaaas-ily.html"
+          },
+          "deep_dive": "eras/the-somelowlifes-era.html",
+          "journey": "transmission.html#era-the-somelowlifes-era"
+        },
+        {
+          "id": "the-silence",
+          "name": "The Silence",
+          "span": "2025",
+          "transmissions": 1,
+          "plays": 300,
+          "loudest": {
+            "title": "Sti11 waiting/tunnel freestyle w/ Max Ferrari prod. suli",
+            "date": "2025-11-11",
+            "plays": 300,
+            "page": "releases/sti11-waiting-tunnel-freestyle-w-max-ferrari-prod-suli.html"
+          },
+          "deep_dive": "eras/the-silence.html",
+          "journey": "transmission.html#era-the-silence"
+        }
+      ],
+      "transmissions": [
+        {
+          "title": "Fuck Time 3 (outro) [Prod. DIX2]",
+          "date": "2018-11-08",
+          "plays": 697,
+          "type": "SoundCloud-only",
+          "page": "releases/fuck-time-3-outro-prod-dix2.html"
+        },
+        {
+          "title": "[outro] Off Beat ft. Yung Vetta (prod. Addy)",
+          "date": "2019-01-28",
+          "plays": 935,
+          "type": "SoundCloud-only",
+          "page": "releases/outro-off-beat-ft-yung-vetta-prod-addy.html"
+        },
+        {
+          "title": "Stay Away Freestyle ~",
+          "date": "2019-03-03",
+          "plays": 719,
+          "type": "SoundCloud-only",
+          "page": "releases/stay-away-freestyle.html"
+        },
+        {
+          "title": "Day Comes Freestyle ~(prod. Discent)",
+          "date": "2019-03-15",
+          "plays": 579,
+          "type": "SoundCloud-only",
+          "page": "releases/day-comes-freestyle-prod-discent.html"
+        },
+        {
+          "title": "Face Down Freestyle ~(prod. WeDreaming)",
+          "date": "2019-03-27",
+          "plays": 1229,
+          "type": "SoundCloud-only",
+          "page": "releases/face-down-freestyle-prod-wedreaming.html"
+        },
+        {
+          "title": "outro ~ I RLLY DID THT(prod. itami リネン)",
+          "date": "2019-07-09",
+          "plays": 3940,
+          "type": "SoundCloud-only",
+          "page": "releases/outro-i-rlly-did-tht-prod-itami.html"
+        },
+        {
+          "title": "Elf Anthem Interlude (prod. capsctrl)",
+          "date": "2020-12-21",
+          "plays": 232,
+          "type": "SoundCloud-only",
+          "page": "releases/elf-anthem-interlude-prod-capsctrl.html"
+        },
+        {
+          "title": "Solstice",
+          "date": "2020-12-21",
+          "plays": null,
+          "type": "Album",
+          "page": "releases/solstice.html"
+        },
+        {
+          "title": "Intro (prod. astral_hp)",
+          "date": "2021-07-14",
+          "plays": 178,
+          "type": "SoundCloud-only",
+          "page": "releases/intro-prod-astral-hp.html"
+        },
+        {
+          "title": "Long Day (End Task) outro [@Staaaas.ily]",
+          "date": "2023-11-10",
+          "plays": 519,
+          "type": "SoundCloud-only",
+          "page": "releases/long-day-end-task-outro-staaaas-ily.html"
+        },
+        {
+          "title": "B4 the Ritual (2018)",
+          "date": "2023-11-11",
+          "plays": null,
+          "type": "Album",
+          "page": "releases/b4-the-ritual-2018.html"
+        },
+        {
+          "title": "6 AM In Da Bay Interlude",
+          "date": "2023-11-12",
+          "plays": 488,
+          "type": "SoundCloud-only",
+          "page": "releases/6-am-in-da-bay-interlude.html"
+        },
+        {
+          "title": "Attack!!! intro",
+          "date": "2023-11-12",
+          "plays": 501,
+          "type": "SoundCloud-only",
+          "page": "releases/attack-intro.html"
+        },
+        {
+          "title": "Day Comes Freestyle",
+          "date": "2023-11-12",
+          "plays": 210,
+          "type": "SoundCloud-only",
+          "page": "releases/day-comes-freestyle.html"
+        },
+        {
+          "title": "For Brian (Neck Deep) outro [produced by AWFL]",
+          "date": "2023-11-12",
+          "plays": 43,
+          "type": "SoundCloud-only",
+          "page": "releases/for-brian-neck-deep-outro-produced-by-awfl.html"
+        },
+        {
+          "title": "Good Turns Bad Freestyle",
+          "date": "2023-11-12",
+          "plays": 482,
+          "type": "SoundCloud-only",
+          "page": "releases/good-turns-bad-freestyle.html"
+        },
+        {
+          "title": "Sti11 waiting/tunnel freestyle w/ Max Ferrari prod. suli",
+          "date": "2025-11-11",
+          "plays": 300,
+          "type": "SoundCloud-only",
+          "page": "releases/sti11-waiting-tunnel-freestyle-w-max-ferrari-prod-suli.html"
+        }
+      ],
+      "key_sessions": [
+        {
+          "id": "session-40",
+          "name": "The November 3rd–12th Session",
+          "start": "2023-11-03",
+          "end": "2023-11-12",
+          "family_transmissions": 6,
+          "family_plays": 2243,
+          "deep_dive": "sessions/the-november-3rd-12th-session.html",
+          "page": "sessions/the-november-3rd-12th-session.html"
+        },
+        {
+          "id": "session-20",
+          "name": "The March 15th–27th Session",
+          "start": "2019-03-15",
+          "end": "2019-03-27",
+          "family_transmissions": 2,
+          "family_plays": 1808,
+          "deep_dive": null,
+          "page": "sessions.html"
+        },
+        {
+          "id": "session-24",
+          "name": "The July 9th Session",
+          "start": "2019-07-09",
+          "end": "2019-07-09",
+          "family_transmissions": 1,
+          "family_plays": 3940,
+          "deep_dive": "sessions/the-july-9th-session.html",
+          "page": "sessions/the-july-9th-session.html"
+        },
+        {
+          "id": "session-18",
+          "name": "The January 21st–28th Session",
+          "start": "2019-01-21",
+          "end": "2019-01-28",
+          "family_transmissions": 1,
+          "family_plays": 935,
+          "deep_dive": null,
+          "page": "sessions.html"
+        },
+        {
+          "id": "session-19",
+          "name": "The March 3rd Session",
+          "start": "2019-03-03",
+          "end": "2019-03-03",
+          "family_transmissions": 1,
+          "family_plays": 719,
+          "deep_dive": null,
+          "page": "sessions.html"
+        },
+        {
+          "id": "session-14",
+          "name": "The November 7th–8th Session",
+          "start": "2018-11-07",
+          "end": "2018-11-08",
+          "family_transmissions": 1,
+          "family_plays": 697,
+          "deep_dive": null,
+          "page": "sessions.html"
+        },
+        {
+          "id": "session-55",
+          "name": "The November 4th–11th Session",
+          "start": "2025-11-04",
+          "end": "2025-11-11",
+          "family_transmissions": 1,
+          "family_plays": 300,
+          "deep_dive": "sessions/the-november-4th-11th-session.html",
+          "page": "sessions/the-november-4th-11th-session.html"
+        },
+        {
+          "id": "session-34",
+          "name": "The December 21st Session",
+          "start": "2020-12-21",
+          "end": "2020-12-21",
+          "family_transmissions": 1,
+          "family_plays": 232,
+          "deep_dive": "sessions/the-december-21st-session.html",
+          "page": "sessions/the-december-21st-session.html"
+        },
+        {
+          "id": "session-35",
+          "name": "The July 14th Session",
+          "start": "2021-07-14",
+          "end": "2021-07-14",
+          "family_transmissions": 1,
+          "family_plays": 178,
+          "deep_dive": "sessions/the-july-14th-session.html",
+          "page": "sessions/the-july-14th-session.html"
+        }
+      ],
+      "collaborators": [
+        {
+          "slug": "yung-vetta",
+          "name": "Yung Vetta",
+          "page": "circle/yung-vetta.html",
+          "transmissions": 1,
+          "plays": 935
+        },
+        {
+          "slug": "max-ferrari",
+          "name": "Max Ferrari",
+          "page": "circle/max-ferrari.html",
+          "transmissions": 1,
+          "plays": 300
+        }
+      ]
+    },
+    {
+      "name": "Light",
+      "slug": "light",
+      "epithet": "Lightning, white fire, sun, gold, and things that shine.",
+      "words": [
+        "lightning",
+        "white",
+        "sun",
+        "gold",
+        "shine",
+        "shines"
+      ],
+      "page": "codex/light.html",
+      "track_count": 9,
+      "total_plays": 14142,
+      "decoded": {
+        "reading": "Lightning, white fire, sun, gold, and things that shine.",
+        "status": "stated",
+        "source": "codex.json epithet - the archive's own reading of this word family (site framing of title vocabulary, not an artist statement)"
+      },
+      "first_appearance": {
+        "title": "Just Wanted U to Shine (prod. Xtravulous x Tundra Beats)",
+        "date": "2018-08-26",
+        "plays": 3096,
+        "page": "releases/just-wanted-u-to-shine-prod-xtravulous-x-tundra-beats.html"
+      },
+      "latest": {
+        "title": "water + sun (prod paris pas rigolo)",
+        "date": "2025-09-13",
+        "plays": 178,
+        "page": "releases/water-sun-prod-paris-pas-rigolo.html"
+      },
+      "eras": [
+        {
+          "id": "the-first-rite",
+          "name": "The First Rite",
+          "span": "2017 – 2019",
+          "transmissions": 5,
+          "plays": 13029,
+          "loudest": {
+            "title": "GOLD 💛💔💛 ~ (prod. Antropolita)",
+            "date": "2019-04-28",
+            "plays": 4362,
+            "page": "releases/gold-prod-antropolita.html"
+          },
+          "deep_dive": "eras/the-first-rite.html",
+          "journey": "transmission.html#era-the-first-rite"
+        },
+        {
+          "id": "the-prolific-year",
+          "name": "The Prolific Year",
+          "span": "2020",
+          "transmissions": 1,
+          "plays": 450,
+          "loudest": {
+            "title": "white fire (prod. odece)",
+            "date": "2020-10-07",
+            "plays": 450,
+            "page": "releases/white-fire-prod-odece.html"
+          },
+          "deep_dive": "eras/the-prolific-year.html",
+          "journey": "transmission.html#era-the-prolific-year"
+        },
+        {
+          "id": "the-cast-it-years",
+          "name": "The Cast It: Years",
+          "span": "2021 – 2022",
+          "transmissions": 1,
+          "plays": 210,
+          "loudest": {
+            "title": "Asterisms Shine (prod. lil biscuit)",
+            "date": "2021-07-14",
+            "plays": 210,
+            "page": "releases/asterisms-shine-prod-lil-biscuit.html"
+          },
+          "deep_dive": "eras/the-cast-it-years.html",
+          "journey": "transmission.html#era-the-cast-it-years"
+        },
+        {
+          "id": "the-somelowlifes-era",
+          "name": "The SomeLowLifes Era",
+          "span": "2023 – 2024",
+          "transmissions": 1,
+          "plays": 275,
+          "loudest": {
+            "title": "Sipping 1ightning prod. lunarlad",
+            "date": "2024-07-09",
+            "plays": 275,
+            "page": "releases/sipping-1ightning-prod-lunarlad.html"
+          },
+          "deep_dive": "eras/the-somelowlifes-era.html",
+          "journey": "transmission.html#era-the-somelowlifes-era"
+        },
+        {
+          "id": "the-silence",
+          "name": "The Silence",
+          "span": "2025",
+          "transmissions": 1,
+          "plays": 178,
+          "loudest": {
+            "title": "water + sun (prod paris pas rigolo)",
+            "date": "2025-09-13",
+            "plays": 178,
+            "page": "releases/water-sun-prod-paris-pas-rigolo.html"
+          },
+          "deep_dive": "eras/the-silence.html",
+          "journey": "transmission.html#era-the-silence"
+        }
+      ],
+      "transmissions": [
+        {
+          "title": "Just Wanted U to Shine (prod. Xtravulous x Tundra Beats)",
+          "date": "2018-08-26",
+          "plays": 3096,
+          "type": "SoundCloud-only",
+          "page": "releases/just-wanted-u-to-shine-prod-xtravulous-x-tundra-beats.html"
+        },
+        {
+          "title": "Soul Shines ~ [prod Josh the Samurai]",
+          "date": "2019-01-08",
+          "plays": 1150,
+          "type": "SoundCloud-only",
+          "page": "releases/soul-shines-prod-josh-the-samurai.html"
+        },
+        {
+          "title": "GOLD 💛💔💛 ~ (prod. Antropolita)",
+          "date": "2019-04-28",
+          "plays": 4362,
+          "type": "SoundCloud-only",
+          "page": "releases/gold-prod-antropolita.html"
+        },
+        {
+          "title": "SUN SET FOR U ft. JO$E DRIPP (prod. y axis)",
+          "date": "2019-07-09",
+          "plays": 1771,
+          "type": "SoundCloud-only",
+          "page": "releases/sun-set-for-u-ft-jo-e-dripp-prod-y-axis.html"
+        },
+        {
+          "title": "White Noise ft. Keyblayde808 (prod. Keyblayde808)",
+          "date": "2019-12-30",
+          "plays": 2650,
+          "type": "SoundCloud-only",
+          "page": "releases/white-noise-ft-keyblayde808-prod-keyblayde808.html"
+        },
+        {
+          "title": "white fire (prod. odece)",
+          "date": "2020-10-07",
+          "plays": 450,
+          "type": "SoundCloud-only",
+          "page": "releases/white-fire-prod-odece.html"
+        },
+        {
+          "title": "Asterisms Shine (prod. lil biscuit)",
+          "date": "2021-07-14",
+          "plays": 210,
+          "type": "SoundCloud-only",
+          "page": "releases/asterisms-shine-prod-lil-biscuit.html"
+        },
+        {
+          "title": "Sipping 1ightning prod. lunarlad",
+          "date": "2024-07-09",
+          "plays": 275,
+          "type": "SoundCloud-only",
+          "page": "releases/sipping-1ightning-prod-lunarlad.html"
+        },
+        {
+          "title": "water + sun (prod paris pas rigolo)",
+          "date": "2025-09-13",
+          "plays": 178,
+          "type": "SoundCloud-only",
+          "page": "releases/water-sun-prod-paris-pas-rigolo.html"
+        }
+      ],
+      "key_sessions": [
+        {
+          "id": "session-22",
+          "name": "The April 28th Session",
+          "start": "2019-04-28",
+          "end": "2019-04-28",
+          "family_transmissions": 1,
+          "family_plays": 4362,
+          "deep_dive": null,
+          "page": "sessions.html"
+        },
+        {
+          "id": "session-09",
+          "name": "The August 13th–27th Session",
+          "start": "2018-08-13",
+          "end": "2018-08-27",
+          "family_transmissions": 1,
+          "family_plays": 3096,
+          "deep_dive": "sessions/the-august-13th-27th-session.html",
+          "page": "sessions/the-august-13th-27th-session.html"
+        },
+        {
+          "id": "session-28",
+          "name": "The December 30th Session",
+          "start": "2019-12-30",
+          "end": "2019-12-30",
+          "family_transmissions": 1,
+          "family_plays": 2650,
+          "deep_dive": "sessions/the-december-30th-session.html",
+          "page": "sessions/the-december-30th-session.html"
+        },
+        {
+          "id": "session-24",
+          "name": "The July 9th Session",
+          "start": "2019-07-09",
+          "end": "2019-07-09",
+          "family_transmissions": 1,
+          "family_plays": 1771,
+          "deep_dive": "sessions/the-july-9th-session.html",
+          "page": "sessions/the-july-9th-session.html"
+        },
+        {
+          "id": "session-17",
+          "name": "The January 8th Session",
+          "start": "2019-01-08",
+          "end": "2019-01-08",
+          "family_transmissions": 1,
+          "family_plays": 1150,
+          "deep_dive": null,
+          "page": "sessions.html"
+        },
+        {
+          "id": "session-32",
+          "name": "The October 7th Session",
+          "start": "2020-10-07",
+          "end": "2020-10-07",
+          "family_transmissions": 1,
+          "family_plays": 450,
+          "deep_dive": null,
+          "page": "sessions.html"
+        },
+        {
+          "id": "session-48",
+          "name": "The July 9th Session",
+          "start": "2024-07-09",
+          "end": "2024-07-09",
+          "family_transmissions": 1,
+          "family_plays": 275,
+          "deep_dive": null,
+          "page": "sessions.html"
+        },
+        {
+          "id": "session-35",
+          "name": "The July 14th Session",
+          "start": "2021-07-14",
+          "end": "2021-07-14",
+          "family_transmissions": 1,
+          "family_plays": 210,
+          "deep_dive": "sessions/the-july-14th-session.html",
+          "page": "sessions/the-july-14th-session.html"
+        },
+        {
+          "id": "session-54",
+          "name": "The September 13th–14th Session",
+          "start": "2025-09-13",
+          "end": "2025-09-14",
+          "family_transmissions": 1,
+          "family_plays": 178,
+          "deep_dive": null,
+          "page": "sessions.html"
+        }
+      ],
+      "collaborators": [
+        {
+          "slug": "keyblayde808",
+          "name": "Keyblayde808",
+          "page": "circle/keyblayde808.html",
+          "transmissions": 1,
+          "plays": 2650
+        },
+        {
+          "slug": "jo-e-dripp",
+          "name": "JO$E DRIPP",
+          "page": "circle/jo-e-dripp.html",
+          "transmissions": 1,
+          "plays": 1771
+        }
+      ]
+    },
+    {
+      "name": "Dark",
+      "slug": "dark",
+      "epithet": "The night and the dark, named twice over.",
+      "words": [
+        "dark",
+        "night"
+      ],
+      "page": "codex/dark.html",
+      "track_count": 5,
+      "total_plays": 11992,
+      "decoded": {
+        "reading": "The night and the dark, named twice over.",
+        "status": "stated",
+        "source": "codex.json epithet - the archive's own reading of this word family (site framing of title vocabulary, not an artist statement)"
+      },
+      "first_appearance": {
+        "title": "stay out of the dark (prod. Rizi)",
+        "date": "2018-08-13",
+        "plays": 1293,
+        "page": "releases/stay-out-of-the-dark-prod-rizi.html"
+      },
+      "latest": {
+        "title": "the night ends yeaaa prod wellfed",
+        "date": "2026-03-25",
+        "plays": 208,
+        "page": "releases/the-night-ends-yeaaa-prod-wellfed.html"
+      },
+      "eras": [
+        {
+          "id": "the-first-rite",
+          "name": "The First Rite",
+          "span": "2017 – 2019",
+          "transmissions": 2,
+          "plays": 11376,
+          "loudest": {
+            "title": "NIGHT MODE ft. MAX FERRARI x YUNG VETTA x JAX",
+            "date": "2019-07-09",
+            "plays": 10083,
+            "page": "releases/night-mode-ft-max-ferrari-x-yung-vetta-x-jax.html"
+          },
+          "deep_dive": "eras/the-first-rite.html",
+          "journey": "transmission.html#era-the-first-rite"
+        },
+        {
+          "id": "the-somelowlifes-era",
+          "name": "The SomeLowLifes Era",
+          "span": "2023 – 2024",
+          "transmissions": 1,
+          "plays": 408,
+          "loudest": {
+            "title": "Dark City Destiny @dxcember13 @rudey0on10",
+            "date": "2024-03-27",
+            "plays": 408,
+            "page": "releases/dark-city-destiny-dxcember13-rudey0on10.html"
+          },
+          "deep_dive": "eras/the-somelowlifes-era.html",
+          "journey": "transmission.html#era-the-somelowlifes-era"
+        },
+        {
+          "id": "the-return",
+          "name": "The Return",
+          "span": "2026",
+          "transmissions": 2,
+          "plays": 208,
+          "loudest": {
+            "title": "the night ends yeaaa prod wellfed",
+            "date": "2026-03-25",
+            "plays": 208,
+            "page": "releases/the-night-ends-yeaaa-prod-wellfed.html"
+          },
+          "deep_dive": "eras/the-return.html",
+          "journey": "transmission.html#era-the-return"
+        }
+      ],
+      "transmissions": [
+        {
+          "title": "stay out of the dark (prod. Rizi)",
+          "date": "2018-08-13",
+          "plays": 1293,
+          "type": "SoundCloud-only",
+          "page": "releases/stay-out-of-the-dark-prod-rizi.html"
+        },
+        {
+          "title": "NIGHT MODE ft. MAX FERRARI x YUNG VETTA x JAX",
+          "date": "2019-07-09",
+          "plays": 10083,
+          "type": "SoundCloud-only",
+          "page": "releases/night-mode-ft-max-ferrari-x-yung-vetta-x-jax.html"
+        },
+        {
+          "title": "Dark City Destiny @dxcember13 @rudey0on10",
+          "date": "2024-03-27",
+          "plays": 408,
+          "type": "SoundCloud-only",
+          "page": "releases/dark-city-destiny-dxcember13-rudey0on10.html"
+        },
+        {
+          "title": "The Night Ends Yeaaa",
+          "date": "2026-03-25",
+          "plays": null,
+          "type": "Single",
+          "page": "releases/the-night-ends-yeaaa.html"
+        },
+        {
+          "title": "the night ends yeaaa prod wellfed",
+          "date": "2026-03-25",
+          "plays": 208,
+          "type": "SoundCloud-only",
+          "page": "releases/the-night-ends-yeaaa-prod-wellfed.html"
+        }
+      ],
+      "key_sessions": [
+        {
+          "id": "session-24",
+          "name": "The July 9th Session",
+          "start": "2019-07-09",
+          "end": "2019-07-09",
+          "family_transmissions": 1,
+          "family_plays": 10083,
+          "deep_dive": "sessions/the-july-9th-session.html",
+          "page": "sessions/the-july-9th-session.html"
+        },
+        {
+          "id": "session-09",
+          "name": "The August 13th–27th Session",
+          "start": "2018-08-13",
+          "end": "2018-08-27",
+          "family_transmissions": 1,
+          "family_plays": 1293,
+          "deep_dive": "sessions/the-august-13th-27th-session.html",
+          "page": "sessions/the-august-13th-27th-session.html"
+        },
+        {
+          "id": "session-41",
+          "name": "The March 27th Session",
+          "start": "2024-03-27",
+          "end": "2024-03-27",
+          "family_transmissions": 1,
+          "family_plays": 408,
+          "deep_dive": null,
+          "page": "sessions.html"
+        },
+        {
+          "id": "session-59",
+          "name": "The March 17th–25th Session",
+          "start": "2026-03-17",
+          "end": "2026-03-25",
+          "family_transmissions": 1,
+          "family_plays": 208,
+          "deep_dive": null,
+          "page": "sessions.html"
+        }
+      ],
+      "collaborators": [
+        {
+          "slug": "jax",
+          "name": "JAX",
+          "page": "circle/jax.html",
+          "transmissions": 1,
+          "plays": 10083
+        },
+        {
+          "slug": "max-ferrari",
+          "name": "Max Ferrari",
+          "page": "circle/max-ferrari.html",
+          "transmissions": 1,
+          "plays": 10083
+        },
+        {
+          "slug": "yung-vetta",
+          "name": "Yung Vetta",
+          "page": "circle/yung-vetta.html",
+          "transmissions": 1,
+          "plays": 10083
+        }
+      ]
+    },
+    {
+      "name": "Journeys",
+      "slug": "journeys",
+      "epithet": "Trips taken and a walk offered - the road vocabulary.",
+      "words": [
+        "trips",
+        "walk"
+      ],
+      "page": "codex/journeys.html",
+      "track_count": 4,
+      "total_plays": 6767,
+      "decoded": {
+        "reading": "Trips taken and a walk offered - the road vocabulary.",
+        "status": "stated",
+        "source": "codex.json epithet - the archive's own reading of this word family (site framing of title vocabulary, not an artist statement)"
+      },
+      "first_appearance": {
+        "title": "Walk With Me w/ JAX (Prod. Rawman)",
+        "date": "2018-08-27",
+        "plays": 700,
+        "page": "releases/walk-with-me-w-jax-prod-rawman.html"
+      },
+      "latest": {
+        "title": "9 Trips",
+        "date": "2026-05-03",
+        "plays": null,
+        "page": "releases/9-trips.html"
+      },
+      "eras": [
+        {
+          "id": "the-first-rite",
+          "name": "The First Rite",
+          "span": "2017 – 2019",
+          "transmissions": 2,
+          "plays": 6505,
+          "loudest": {
+            "title": "All Kinds Of Trips (prod. YungSkah) <ON ALL PLATFORMS NOW!>",
+            "date": "2018-12-15",
+            "plays": 5805,
+            "page": "releases/all-kinds-of-trips-prod-yungskah-on-all-platforms-now.html"
+          },
+          "deep_dive": "eras/the-first-rite.html",
+          "journey": "transmission.html#era-the-first-rite"
+        },
+        {
+          "id": "the-somelowlifes-era",
+          "name": "The SomeLowLifes Era",
+          "span": "2023 – 2024",
+          "transmissions": 1,
+          "plays": 262,
+          "loudest": {
+            "title": "9 Trips",
+            "date": "2023-08-29",
+            "plays": 262,
+            "page": "releases/9-trips-2.html"
+          },
+          "deep_dive": "eras/the-somelowlifes-era.html",
+          "journey": "transmission.html#era-the-somelowlifes-era"
+        },
+        {
+          "id": "the-return",
+          "name": "The Return",
+          "span": "2026",
+          "transmissions": 1,
+          "plays": 0,
+          "loudest": {
+            "title": "9 Trips",
+            "date": "2026-05-03",
+            "plays": null,
+            "page": "releases/9-trips.html"
+          },
+          "deep_dive": "eras/the-return.html",
+          "journey": "transmission.html#era-the-return"
+        }
+      ],
+      "transmissions": [
+        {
+          "title": "Walk With Me w/ JAX (Prod. Rawman)",
+          "date": "2018-08-27",
+          "plays": 700,
+          "type": "SoundCloud-only",
+          "page": "releases/walk-with-me-w-jax-prod-rawman.html"
+        },
+        {
+          "title": "All Kinds Of Trips (prod. YungSkah) <ON ALL PLATFORMS NOW!>",
+          "date": "2018-12-15",
+          "plays": 5805,
+          "type": "SoundCloud-only",
+          "page": "releases/all-kinds-of-trips-prod-yungskah-on-all-platforms-now.html"
+        },
+        {
+          "title": "9 Trips",
+          "date": "2023-08-29",
+          "plays": 262,
+          "type": "SoundCloud-only",
+          "page": "releases/9-trips-2.html"
+        },
+        {
+          "title": "9 Trips",
+          "date": "2026-05-03",
+          "plays": null,
+          "type": "Single",
+          "page": "releases/9-trips.html"
+        }
+      ],
+      "key_sessions": [
+        {
+          "id": "session-16",
+          "name": "The December 13th–15th Session",
+          "start": "2018-12-13",
+          "end": "2018-12-15",
+          "family_transmissions": 1,
+          "family_plays": 5805,
+          "deep_dive": null,
+          "page": "sessions.html"
+        },
+        {
+          "id": "session-09",
+          "name": "The August 13th–27th Session",
+          "start": "2018-08-13",
+          "end": "2018-08-27",
+          "family_transmissions": 1,
+          "family_plays": 700,
+          "deep_dive": "sessions/the-august-13th-27th-session.html",
+          "page": "sessions/the-august-13th-27th-session.html"
+        },
+        {
+          "id": "session-37",
+          "name": "The August 29th Session",
+          "start": "2023-08-29",
+          "end": "2023-08-29",
+          "family_transmissions": 1,
+          "family_plays": 262,
+          "deep_dive": null,
+          "page": "sessions.html"
+        }
+      ],
+      "collaborators": [
+        {
+          "slug": "jax",
+          "name": "JAX",
+          "page": "circle/jax.html",
+          "transmissions": 1,
+          "plays": 700
+        }
+      ]
+    },
+    {
+      "name": "The Cold",
+      "slug": "the-cold",
+      "epithet": "Four transmissions about the world getting colder - a series unto itself.",
+      "words": [
+        "colder"
+      ],
+      "page": "codex/the-cold.html",
+      "track_count": 4,
+      "total_plays": 15198,
+      "decoded": {
+        "reading": "Four transmissions about the world getting colder - a series unto itself.",
+        "status": "stated",
+        "source": "codex.json epithet - the archive's own reading of this word family (site framing of title vocabulary, not an artist statement)"
+      },
+      "first_appearance": {
+        "title": "When the World Gets Colder (prod. Brokn)",
+        "date": "2018-07-18",
+        "plays": 9535,
+        "page": "releases/when-the-world-gets-colder-prod-brokn.html"
+      },
+      "latest": {
+        "title": "When the World Gets Colder 3 (prod. phantasie)",
+        "date": "2021-07-14",
+        "plays": 222,
+        "page": "releases/when-the-world-gets-colder-3-prod-phantasie.html"
+      },
+      "eras": [
+        {
+          "id": "the-first-rite",
+          "name": "The First Rite",
+          "span": "2017 – 2019",
+          "transmissions": 3,
+          "plays": 14976,
+          "loudest": {
+            "title": "When the World Gets Colder (prod. Brokn)",
+            "date": "2018-07-18",
+            "plays": 9535,
+            "page": "releases/when-the-world-gets-colder-prod-brokn.html"
+          },
+          "deep_dive": "eras/the-first-rite.html",
+          "journey": "transmission.html#era-the-first-rite"
+        },
+        {
+          "id": "the-cast-it-years",
+          "name": "The Cast It: Years",
+          "span": "2021 – 2022",
+          "transmissions": 1,
+          "plays": 222,
+          "loudest": {
+            "title": "When the World Gets Colder 3 (prod. phantasie)",
+            "date": "2021-07-14",
+            "plays": 222,
+            "page": "releases/when-the-world-gets-colder-3-prod-phantasie.html"
+          },
+          "deep_dive": "eras/the-cast-it-years.html",
+          "journey": "transmission.html#era-the-cast-it-years"
+        }
+      ],
+      "transmissions": [
+        {
+          "title": "When the World Gets Colder (prod. Brokn)",
+          "date": "2018-07-18",
+          "plays": 9535,
+          "type": "SoundCloud-only",
+          "page": "releases/when-the-world-gets-colder-prod-brokn.html"
+        },
+        {
+          "title": "When the World Gets Colder 2 (prod. Yung Skah)",
+          "date": "2018-12-04",
+          "plays": 854,
+          "type": "SoundCloud-only",
+          "page": "releases/when-the-world-gets-colder-2-prod-yung-skah.html"
+        },
+        {
+          "title": "getting colder w/ capoxxo (prod. pvscale x asa41)",
+          "date": "2019-12-22",
+          "plays": 4587,
+          "type": "SoundCloud-only",
+          "page": "releases/getting-colder-w-capoxxo-prod-pvscale-x-asa41.html"
+        },
+        {
+          "title": "When the World Gets Colder 3 (prod. phantasie)",
+          "date": "2021-07-14",
+          "plays": 222,
+          "type": "SoundCloud-only",
+          "page": "releases/when-the-world-gets-colder-3-prod-phantasie.html"
+        }
+      ],
+      "key_sessions": [
+        {
+          "id": "session-07",
+          "name": "The July 18th–20th Session",
+          "start": "2018-07-18",
+          "end": "2018-07-20",
+          "family_transmissions": 1,
+          "family_plays": 9535,
+          "deep_dive": null,
+          "page": "sessions.html"
+        },
+        {
+          "id": "session-27",
+          "name": "The December 22nd Session",
+          "start": "2019-12-22",
+          "end": "2019-12-22",
+          "family_transmissions": 1,
+          "family_plays": 4587,
+          "deep_dive": "sessions/the-december-22nd-session.html",
+          "page": "sessions/the-december-22nd-session.html"
+        },
+        {
+          "id": "session-15",
+          "name": "The Nov 27th – Dec 4th Session",
+          "start": "2018-11-27",
+          "end": "2018-12-04",
+          "family_transmissions": 1,
+          "family_plays": 854,
+          "deep_dive": "sessions/the-nov-27th-dec-4th-session.html",
+          "page": "sessions/the-nov-27th-dec-4th-session.html"
+        },
+        {
+          "id": "session-35",
+          "name": "The July 14th Session",
+          "start": "2021-07-14",
+          "end": "2021-07-14",
+          "family_transmissions": 1,
+          "family_plays": 222,
+          "deep_dive": "sessions/the-july-14th-session.html",
+          "page": "sessions/the-july-14th-session.html"
+        }
+      ],
+      "collaborators": [
+        {
+          "slug": "capoxxo",
+          "name": "capoxxo",
+          "page": "circle/capoxxo.html",
+          "transmissions": 1,
+          "plays": 4587
+        }
+      ]
+    },
+    {
+      "name": "Power",
+      "slug": "power",
+      "epithet": "Power claimed, power denied, power gone.",
+      "words": [
+        "power"
+      ],
+      "page": "codex/power.html",
+      "track_count": 3,
+      "total_plays": 2057,
+      "decoded": {
+        "reading": "Power claimed, power denied, power gone.",
+        "status": "stated",
+        "source": "codex.json epithet - the archive's own reading of this word family (site framing of title vocabulary, not an artist statement)"
+      },
+      "first_appearance": {
+        "title": "POWER~! (brb)(prod. Apostle)",
+        "date": "2019-03-20",
+        "plays": 1815,
+        "page": "releases/power-brb-prod-apostle.html"
+      },
+      "latest": {
+        "title": "no power prod wellfed",
+        "date": "2026-03-23",
+        "plays": 242,
+        "page": "releases/no-power-prod-wellfed.html"
+      },
+      "eras": [
+        {
+          "id": "the-first-rite",
+          "name": "The First Rite",
+          "span": "2017 – 2019",
+          "transmissions": 1,
+          "plays": 1815,
+          "loudest": {
+            "title": "POWER~! (brb)(prod. Apostle)",
+            "date": "2019-03-20",
+            "plays": 1815,
+            "page": "releases/power-brb-prod-apostle.html"
+          },
+          "deep_dive": "eras/the-first-rite.html",
+          "journey": "transmission.html#era-the-first-rite"
+        },
+        {
+          "id": "the-return",
+          "name": "The Return",
+          "span": "2026",
+          "transmissions": 2,
+          "plays": 242,
+          "loudest": {
+            "title": "no power prod wellfed",
+            "date": "2026-03-23",
+            "plays": 242,
+            "page": "releases/no-power-prod-wellfed.html"
+          },
+          "deep_dive": "eras/the-return.html",
+          "journey": "transmission.html#era-the-return"
+        }
+      ],
+      "transmissions": [
+        {
+          "title": "POWER~! (brb)(prod. Apostle)",
+          "date": "2019-03-20",
+          "plays": 1815,
+          "type": "SoundCloud-only",
+          "page": "releases/power-brb-prod-apostle.html"
+        },
+        {
+          "title": "No Power",
+          "date": "2026-03-23",
+          "plays": null,
+          "type": "Single",
+          "page": "releases/no-power.html"
+        },
+        {
+          "title": "no power prod wellfed",
+          "date": "2026-03-23",
+          "plays": 242,
+          "type": "SoundCloud-only",
+          "page": "releases/no-power-prod-wellfed.html"
+        }
+      ],
+      "key_sessions": [
+        {
+          "id": "session-20",
+          "name": "The March 15th–27th Session",
+          "start": "2019-03-15",
+          "end": "2019-03-27",
+          "family_transmissions": 1,
+          "family_plays": 1815,
+          "deep_dive": null,
+          "page": "sessions.html"
+        },
+        {
+          "id": "session-59",
+          "name": "The March 17th–25th Session",
+          "start": "2026-03-17",
+          "end": "2026-03-25",
+          "family_transmissions": 1,
+          "family_plays": 242,
+          "deep_dive": null,
+          "page": "sessions.html"
+        }
+      ],
+      "collaborators": []
+    },
+    {
+      "name": "The Pack",
+      "slug": "the-pack",
+      "epithet": "Two transmissions for the dogs.",
+      "words": [
+        "dogs"
+      ],
+      "page": "codex/the-pack.html",
+      "track_count": 2,
+      "total_plays": 175,
+      "decoded": {
+        "reading": "Two transmissions for the dogs.",
+        "status": "stated",
+        "source": "codex.json epithet - the archive's own reading of this word family (site framing of title vocabulary, not an artist statement)"
+      },
+      "first_appearance": {
+        "title": "like my dogs!!!",
+        "date": "2024-09-18",
+        "plays": null,
+        "page": "releases/like-my-dogs.html"
+      },
+      "latest": {
+        "title": "like my dogs!!! (prod waynn)",
+        "date": "2024-09-18",
+        "plays": 175,
+        "page": "releases/like-my-dogs-prod-waynn.html"
+      },
+      "eras": [
+        {
+          "id": "the-somelowlifes-era",
+          "name": "The SomeLowLifes Era",
+          "span": "2023 – 2024",
+          "transmissions": 2,
+          "plays": 175,
+          "loudest": {
+            "title": "like my dogs!!! (prod waynn)",
+            "date": "2024-09-18",
+            "plays": 175,
+            "page": "releases/like-my-dogs-prod-waynn.html"
+          },
+          "deep_dive": "eras/the-somelowlifes-era.html",
+          "journey": "transmission.html#era-the-somelowlifes-era"
+        }
+      ],
+      "transmissions": [
+        {
+          "title": "like my dogs!!!",
+          "date": "2024-09-18",
+          "plays": null,
+          "type": "Single",
+          "page": "releases/like-my-dogs.html"
+        },
+        {
+          "title": "like my dogs!!! (prod waynn)",
+          "date": "2024-09-18",
+          "plays": 175,
+          "type": "SoundCloud-only",
+          "page": "releases/like-my-dogs-prod-waynn.html"
+        }
+      ],
+      "key_sessions": [
+        {
+          "id": "session-50",
+          "name": "The September 18th Session",
+          "start": "2024-09-18",
+          "end": "2024-09-18",
+          "family_transmissions": 1,
+          "family_plays": 175,
+          "deep_dive": null,
+          "page": "sessions.html"
+        }
+      ],
+      "collaborators": []
+    },
+    {
+      "name": "Lucid States",
+      "slug": "lucid-states",
+      "epithet": "A lucid boy and a dreamed-of you - the dream vocabulary.",
+      "words": [
+        "lucid",
+        "dreamed"
+      ],
+      "page": "codex/lucid-states.html",
+      "track_count": 2,
+      "total_plays": 1093,
+      "decoded": {
+        "reading": "A lucid boy and a dreamed-of you - the dream vocabulary.",
+        "status": "stated",
+        "source": "codex.json epithet - the archive's own reading of this word family (site framing of title vocabulary, not an artist statement)"
+      },
+      "first_appearance": {
+        "title": "Lucid Boi (prod. $ T.N.C $)",
+        "date": "2018-01-08",
+        "plays": 918,
+        "page": "releases/lucid-boi-prod-t-n-c.html"
+      },
+      "latest": {
+        "title": "Dreamed of U (Hubb1e) prod. Yukio",
+        "date": "2025-11-10",
+        "plays": 175,
+        "page": "releases/dreamed-of-u-hubb1e-prod-yukio.html"
+      },
+      "eras": [
+        {
+          "id": "the-first-rite",
+          "name": "The First Rite",
+          "span": "2017 – 2019",
+          "transmissions": 1,
+          "plays": 918,
+          "loudest": {
+            "title": "Lucid Boi (prod. $ T.N.C $)",
+            "date": "2018-01-08",
+            "plays": 918,
+            "page": "releases/lucid-boi-prod-t-n-c.html"
+          },
+          "deep_dive": "eras/the-first-rite.html",
+          "journey": "transmission.html#era-the-first-rite"
+        },
+        {
+          "id": "the-silence",
+          "name": "The Silence",
+          "span": "2025",
+          "transmissions": 1,
+          "plays": 175,
+          "loudest": {
+            "title": "Dreamed of U (Hubb1e) prod. Yukio",
+            "date": "2025-11-10",
+            "plays": 175,
+            "page": "releases/dreamed-of-u-hubb1e-prod-yukio.html"
+          },
+          "deep_dive": "eras/the-silence.html",
+          "journey": "transmission.html#era-the-silence"
+        }
+      ],
+      "transmissions": [
+        {
+          "title": "Lucid Boi (prod. $ T.N.C $)",
+          "date": "2018-01-08",
+          "plays": 918,
+          "type": "SoundCloud-only",
+          "page": "releases/lucid-boi-prod-t-n-c.html"
+        },
+        {
+          "title": "Dreamed of U (Hubb1e) prod. Yukio",
+          "date": "2025-11-10",
+          "plays": 175,
+          "type": "SoundCloud-only",
+          "page": "releases/dreamed-of-u-hubb1e-prod-yukio.html"
+        }
+      ],
+      "key_sessions": [
+        {
+          "id": "session-01",
+          "name": "The January 3rd–8th Session",
+          "start": "2018-01-03",
+          "end": "2018-01-08",
+          "family_transmissions": 1,
+          "family_plays": 918,
+          "deep_dive": null,
+          "page": "sessions.html"
+        },
+        {
+          "id": "session-55",
+          "name": "The November 4th–11th Session",
+          "start": "2025-11-04",
+          "end": "2025-11-11",
+          "family_transmissions": 1,
+          "family_plays": 175,
+          "deep_dive": "sessions/the-november-4th-11th-session.html",
+          "page": "sessions/the-november-4th-11th-session.html"
+        }
+      ],
+      "collaborators": []
+    },
+    {
+      "name": "Time",
+      "slug": "time",
+      "epithet": "Time to grow. Time, defied.",
+      "words": [
+        "time"
+      ],
+      "page": "codex/time.html",
+      "track_count": 2,
+      "total_plays": 1498,
+      "decoded": {
+        "reading": "Time to grow. Time, defied.",
+        "status": "stated",
+        "source": "codex.json epithet - the archive's own reading of this word family (site framing of title vocabulary, not an artist statement)"
+      },
+      "first_appearance": {
+        "title": "Fuck Time 3 (outro) [Prod. DIX2]",
+        "date": "2018-11-08",
+        "plays": 697,
+        "page": "releases/fuck-time-3-outro-prod-dix2.html"
+      },
+      "latest": {
+        "title": "Time to Grow (prod. Ridicholas)",
+        "date": "2018-12-13",
+        "plays": 801,
+        "page": "releases/time-to-grow-prod-ridicholas.html"
+      },
+      "eras": [
+        {
+          "id": "the-first-rite",
+          "name": "The First Rite",
+          "span": "2017 – 2019",
+          "transmissions": 2,
+          "plays": 1498,
+          "loudest": {
+            "title": "Time to Grow (prod. Ridicholas)",
+            "date": "2018-12-13",
+            "plays": 801,
+            "page": "releases/time-to-grow-prod-ridicholas.html"
+          },
+          "deep_dive": "eras/the-first-rite.html",
+          "journey": "transmission.html#era-the-first-rite"
+        }
+      ],
+      "transmissions": [
+        {
+          "title": "Fuck Time 3 (outro) [Prod. DIX2]",
+          "date": "2018-11-08",
+          "plays": 697,
+          "type": "SoundCloud-only",
+          "page": "releases/fuck-time-3-outro-prod-dix2.html"
+        },
+        {
+          "title": "Time to Grow (prod. Ridicholas)",
+          "date": "2018-12-13",
+          "plays": 801,
+          "type": "SoundCloud-only",
+          "page": "releases/time-to-grow-prod-ridicholas.html"
+        }
+      ],
+      "key_sessions": [
+        {
+          "id": "session-16",
+          "name": "The December 13th–15th Session",
+          "start": "2018-12-13",
+          "end": "2018-12-15",
+          "family_transmissions": 1,
+          "family_plays": 801,
+          "deep_dive": null,
+          "page": "sessions.html"
+        },
+        {
+          "id": "session-14",
+          "name": "The November 7th–8th Session",
+          "start": "2018-11-07",
+          "end": "2018-11-08",
+          "family_transmissions": 1,
+          "family_plays": 697,
+          "deep_dive": null,
+          "page": "sessions.html"
+        }
+      ],
+      "collaborators": []
+    },
+    {
+      "name": "Soul",
+      "slug": "soul",
+      "epithet": "Two transmissions carry the soul - one shaking, one shining.",
+      "words": [
+        "soul"
+      ],
+      "page": "codex/soul.html",
+      "track_count": 2,
+      "total_plays": 14094,
+      "decoded": {
+        "reading": "Two transmissions carry the soul - one shaking, one shining.",
+        "status": "stated",
+        "source": "codex.json epithet - the archive's own reading of this word family (site framing of title vocabulary, not an artist statement)"
+      },
+      "first_appearance": {
+        "title": "Soul Shaking (prod. Fish Narc)",
+        "date": "2018-01-03",
+        "plays": 12944,
+        "page": "releases/soul-shaking-prod-fish-narc.html"
+      },
+      "latest": {
+        "title": "Soul Shines ~ [prod Josh the Samurai]",
+        "date": "2019-01-08",
+        "plays": 1150,
+        "page": "releases/soul-shines-prod-josh-the-samurai.html"
+      },
+      "eras": [
+        {
+          "id": "the-first-rite",
+          "name": "The First Rite",
+          "span": "2017 – 2019",
+          "transmissions": 2,
+          "plays": 14094,
+          "loudest": {
+            "title": "Soul Shaking (prod. Fish Narc)",
+            "date": "2018-01-03",
+            "plays": 12944,
+            "page": "releases/soul-shaking-prod-fish-narc.html"
+          },
+          "deep_dive": "eras/the-first-rite.html",
+          "journey": "transmission.html#era-the-first-rite"
+        }
+      ],
+      "transmissions": [
+        {
+          "title": "Soul Shaking (prod. Fish Narc)",
+          "date": "2018-01-03",
+          "plays": 12944,
+          "type": "SoundCloud-only",
+          "page": "releases/soul-shaking-prod-fish-narc.html"
+        },
+        {
+          "title": "Soul Shines ~ [prod Josh the Samurai]",
+          "date": "2019-01-08",
+          "plays": 1150,
+          "type": "SoundCloud-only",
+          "page": "releases/soul-shines-prod-josh-the-samurai.html"
+        }
+      ],
+      "key_sessions": [
+        {
+          "id": "session-01",
+          "name": "The January 3rd–8th Session",
+          "start": "2018-01-03",
+          "end": "2018-01-08",
+          "family_transmissions": 1,
+          "family_plays": 12944,
+          "deep_dive": null,
+          "page": "sessions.html"
+        },
+        {
+          "id": "session-17",
+          "name": "The January 8th Session",
+          "start": "2019-01-08",
+          "end": "2019-01-08",
+          "family_transmissions": 1,
+          "family_plays": 1150,
+          "deep_dive": null,
+          "page": "sessions.html"
+        }
+      ],
+      "collaborators": []
+    },
+    {
+      "name": "Fire & Water",
+      "slug": "fire-and-water",
+      "epithet": "White fire. Water and sun. The elements, named once each.",
+      "words": [
+        "fire",
+        "water"
+      ],
+      "page": "codex/fire-and-water.html",
+      "track_count": 2,
+      "total_plays": 628,
+      "decoded": {
+        "reading": "White fire. Water and sun. The elements, named once each.",
+        "status": "stated",
+        "source": "codex.json epithet - the archive's own reading of this word family (site framing of title vocabulary, not an artist statement)"
+      },
+      "first_appearance": {
+        "title": "white fire (prod. odece)",
+        "date": "2020-10-07",
+        "plays": 450,
+        "page": "releases/white-fire-prod-odece.html"
+      },
+      "latest": {
+        "title": "water + sun (prod paris pas rigolo)",
+        "date": "2025-09-13",
+        "plays": 178,
+        "page": "releases/water-sun-prod-paris-pas-rigolo.html"
+      },
+      "eras": [
+        {
+          "id": "the-prolific-year",
+          "name": "The Prolific Year",
+          "span": "2020",
+          "transmissions": 1,
+          "plays": 450,
+          "loudest": {
+            "title": "white fire (prod. odece)",
+            "date": "2020-10-07",
+            "plays": 450,
+            "page": "releases/white-fire-prod-odece.html"
+          },
+          "deep_dive": "eras/the-prolific-year.html",
+          "journey": "transmission.html#era-the-prolific-year"
+        },
+        {
+          "id": "the-silence",
+          "name": "The Silence",
+          "span": "2025",
+          "transmissions": 1,
+          "plays": 178,
+          "loudest": {
+            "title": "water + sun (prod paris pas rigolo)",
+            "date": "2025-09-13",
+            "plays": 178,
+            "page": "releases/water-sun-prod-paris-pas-rigolo.html"
+          },
+          "deep_dive": "eras/the-silence.html",
+          "journey": "transmission.html#era-the-silence"
+        }
+      ],
+      "transmissions": [
+        {
+          "title": "white fire (prod. odece)",
+          "date": "2020-10-07",
+          "plays": 450,
+          "type": "SoundCloud-only",
+          "page": "releases/white-fire-prod-odece.html"
+        },
+        {
+          "title": "water + sun (prod paris pas rigolo)",
+          "date": "2025-09-13",
+          "plays": 178,
+          "type": "SoundCloud-only",
+          "page": "releases/water-sun-prod-paris-pas-rigolo.html"
+        }
+      ],
+      "key_sessions": [
+        {
+          "id": "session-32",
+          "name": "The October 7th Session",
+          "start": "2020-10-07",
+          "end": "2020-10-07",
+          "family_transmissions": 1,
+          "family_plays": 450,
+          "deep_dive": null,
+          "page": "sessions.html"
+        },
+        {
+          "id": "session-54",
+          "name": "The September 13th–14th Session",
+          "start": "2025-09-13",
+          "end": "2025-09-14",
+          "family_transmissions": 1,
+          "family_plays": 178,
+          "deep_dive": null,
+          "page": "sessions.html"
+        }
+      ],
+      "collaborators": []
+    }
+  ]
+}

@@ -37,7 +37,9 @@
     { id: "eras", path: "api/v1/eras.json",
       blurb: "Era deep-dives: six eras with full transmission lists (every track + plays), all in-era collaborators, active codex families, computed signal summaries. Drives the eras/<id>.html pages." },
     { id: "session-clusters", path: "api/v1/session-clusters.json",
-      blurb: "Session archaeology, interactive: the 61 upload sessions as an explorable timeline — per-session enrichment (era, loudest + deepest-cut tracks, cross-links), the 60 inter-session gaps, 9 activity seasons, asserted insights. Drives sessions-explorer.html." }
+      blurb: "Session archaeology, interactive: the 61 upload sessions as an explorable timeline — per-session enrichment (era, loudest + deepest-cut tracks, cross-links), the 60 inter-session gaps, 9 activity seasons, asserted insights. Drives sessions-explorer.html." },
+    { id: "codex-families", path: "api/v1/codex-families.json",
+      blurb: "Codex family deep-dives: 16 vocabulary families with decoded readings, era-by-era evolution, key sessions, and title-credited collaborators. Drives the codex/<slug>.html deep-dive pages." }
   ];
 
   function esc(s) {
