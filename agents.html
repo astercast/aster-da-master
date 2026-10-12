@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Agents — Aster da Master</title>
+  <meta name="description" content="The agent surface of the Aster da Master archive: API endpoints, llms.txt, skills, search index, and worked agent workflows.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-bar">
+      <a class="brand" href="./" aria-label="Aster da Master home">
+        <span class="brand-mark" aria-hidden="true">A✦</span>
+        <span>ASTER DA MASTER</span>
+      </a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="./#discography">Discography</a>
+        <a href="releases/">Releases</a>
+        <a href="timeline.html">Timeline</a>
+        <a href="network.html">Network</a>
+        <a href="decoder.html">Decoder</a>
+        <a href="api-playground.html">API</a>
+        <a href="agents.html" aria-current="page">Agents</a>
+        <a href="years/">Years</a>
+        <a href="method.html">Method</a>
+        <a href="trilogy.html">Trilogy</a>
+        <a href="sessions.html">Sessions</a>
+        <a href="changelog.html">Changelog</a>
+        <a href="glance.html">Glance</a>
+        <a href="press-kit.html">Press kit</a>
+      </nav>
+      <details class="mnav">
+        <summary><span class="bars" aria-hidden="true"><i></i><i></i><i></i></span>Menu</summary>
+        <nav class="mnav-panel" aria-label="Mobile">
+        <a href="./#discography">Discography</a>
+        <a href="releases/">Releases</a>
+        <a href="timeline.html">Timeline</a>
+        <a href="network.html">Network</a>
+        <a href="decoder.html">Decoder</a>
+        <a href="api-playground.html">API</a>
+        <a href="agents.html" aria-current="page">Agents</a>
+        <a href="years/">Years</a>
+        <a href="method.html">Method</a>
+        <a href="trilogy.html">Trilogy</a>
+        <a href="sessions.html">Sessions</a>
+        <a href="changelog.html">Changelog</a>
+        <a href="glance.html">Glance</a>
+        <a href="press-kit.html">Press kit</a>
+        </nav>
+      </details>
+      <button class="search-btn" id="search-open" type="button" aria-label="Search the archive (keyboard shortcut: slash)">
+        <span aria-hidden="true">&#8981;</span><kbd aria-hidden="true">/</kbd>
+      </button>
+    </div>
+  </header>
+
+  <div class="search-overlay" id="search-overlay" hidden>
+    <div class="search-box" role="dialog" aria-modal="true" aria-labelledby="search-title">
+      <p class="kicker" id="search-title"><span class="numeral">✦</span>Search the archive</p>
+      <input id="search-input" type="search" placeholder="Tracks, collaborators, eras, the codex&hellip;" aria-label="Search the archive" role="combobox" aria-expanded="true" aria-controls="search-results" autocomplete="off" spellcheck="false">
+      <div id="search-results" role="listbox" aria-label="Search results"></div>
+      <p class="search-hint"><kbd>/</kbd> to open &middot; <kbd>&uarr;</kbd><kbd>&darr;</kbd> to move &middot; <kbd>Enter</kbd> to go &middot; <kbd>Esc</kbd> to close</p>
+    </div>
+  </div>
+
+  <main id="main">
+    <section class="section" aria-labelledby="ag-h">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="kicker"><span class="numeral">✦</span>For agents</span>
+          <h2 id="ag-h">The agentic surface</h2>
+          <p>This archive is built to be read by machines as well as people. Everything below is stable, versioned, and reachable as plain files — no keys, no sessions, no scraping. Start at <code>api/v1/index.json</code>; it names every endpoint and carries the data version.</p>
+        </div>
+
+        <div class="reveal">
+          <h3 id="ag-endpoints">The API</h3>
+          <p>Thirteen versioned JSON endpoints under <code>api/v1/</code>. Current data version: <strong>0.12.0</strong> (see <code>api/v1/index.json</code> → <code>version</code> before caching anything).</p>
+          <div class="table-wrap">
+            <table>
+              <caption>API endpoint table</caption>
+              <thead>
+                <tr><th scope="col">Endpoint</th><th scope="col">File</th><th scope="col">What it holds</th><th scope="col">Key fields</th></tr>
+              </thead>
+              <tbody>
+                <tr><th scope="row">index</th><td><code>api/v1/index.json</code></td><td>Registry: endpoint map, version, provenance, agent guidance</td><td><code>version</code>, <code>observed</code>, <code>endpoints</code></td></tr>
+                <tr><th scope="row">artist</th><td><code>api/v1/artist.json</code></td><td>Source of truth: artist record, 219-entry discography, platforms, eras, vault</td><td><code>discography[]</code>, <code>eras[]</code>, <code>collaborators</code></td></tr>
+                <tr><th scope="row">sessions</th><td><code>api/v1/sessions.json</code></td><td>61 upload sessions clustered by the 7-day gap rule; per-track plays</td><td><code>sessions[].tracks[]</code> → <code>title, date, plays, page</code></td></tr>
+                <tr><th scope="row">circle</th><td><code>api/v1/circle.json</code></td><td>21 title-credited collaborators and their track footprints</td><td><code>shared_transmissions</code>, <code>shared_plays</code>, <code>years_active</code>, <code>verified_notes</code></td></tr>
+                <tr><th scope="row">scene-figures</th><td><code>api/v1/scene-figures.json</code></td><td>Producer/scene figures excluded from the circle by the title-credit rule</td><td><code>kind</code>, <code>standing</code>, <code>tracks</code>, <code>facts</code>, <code>sources</code></td></tr>
+                <tr><th scope="row">codex</th><td><code>api/v1/codex.json</code></td><td>16 title-word families with per-family track lists</td><td><code>families[]</code> → <code>name, words[], tracks[]</code></td></tr>
+                <tr><th scope="row">milestones</th><td><code>api/v1/milestones.json</code></td><td>Career firsts computed from the verified discography</td><td>firsts, records, silences</td></tr>
+                <tr><th scope="row">milestone-watch</th><td><code>api/v1/milestone-watch.json</code></td><td>Vault tracks near round-number play counts (2026-10-11 snapshot)</td><td><code>summit</code>, <code>bands[]</code> → <code>target, tracks[].needed</code></td></tr>
+                <tr><th scope="row">years</th><td><code>api/v1/years.json</code></td><td>Year-in-review: per-year stats and top tracks, 2018–2026</td><td><code>transmissions, plays, top_tracks[]</code></td></tr>
+                <tr><th scope="row">on-this-day</th><td><code>api/v1/on-this-day.json</code></td><td>Transmissions keyed by MM-DD upload date</td><td>MM-DD keys</td></tr>
+                <tr><th scope="row">release-slugs</th><td><code>api/v1/release-slugs.json</code></td><td>Slug index for the 219 generated release pages</td><td>slug → page mappings</td></tr>
+                <tr><th scope="row">first-last</th><td><code>api/v1/first-last.json</code></td><td>Per year 2018–2026: the opening and closing transmissions</td><td>year → first / last</td></tr>
+                <tr><th scope="row">changelog</th><td><code>api/v1/changelog.json</code></td><td>Site construction history, generated from the git log</td><td>wave entries</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>Touch every response in the browser at <a href="api-playground.html">the API playground</a> before scripting against it.</p>
+        </div>
+
+        <div class="reveal">
+          <h3 id="ag-llms">llms.txt</h3>
+          <p>Two machine-readable summaries at the repo root:</p>
+          <ul>
+            <li><a href="llms.txt"><code>llms.txt</code></a> — the short brief: catalog shape, collaborators, codex, method, API map, key verified facts, ops.</li>
+            <li><a href="llms-full.txt"><code>llms-full.txt</code></a> — the full brief: per-era detail, collaborator research notes, unknowns register, page map, generator dependency order.</li>
+          </ul>
+        </div>
+
+        <div class="reveal">
+          <h3 id="ag-skills">Skills</h3>
+          <p>Nine agent skills in <code>skills/</code> (registry: <code>skills/index.json</code>), each in the playbook format: Use when / Inputs / Procedure / Worked example / API references / Pitfalls. The six archive-analysis skills:</p>
+          <div class="table-wrap">
+            <table>
+              <caption>Agent skills</caption>
+              <thead>
+                <tr><th scope="col">Skill</th><th scope="col">Does</th><th scope="col">Endpoint sequence</th></tr>
+              </thead>
+              <tbody>
+                <tr><th scope="row"><a href="skills/deep-cuts-finder.md">deep-cuts-finder</a></th><td>Surfaces the vault's quietest-play tracks for playlists</td><td><code>sessions.json</code> → flatten → sort asc → <code>codex.json</code> for themes</td></tr>
+                <tr><th scope="row"><a href="skills/session-archaeology.md">session-archaeology</a></th><td>Reconstructs one session's story: when, what, who</td><td><code>sessions.json</code> → <code>circle.json</code> / <code>scene-figures.json</code> → <code>codex.json</code> → <code>artist.json</code> (eras)</td></tr>
+                <tr><th scope="row"><a href="skills/collaborator-tracer.md">collaborator-tracer</a></th><td>Maps a collaborator's footprint across the discography</td><td><code>circle.json</code> → <code>scene-figures.json</code> (producer fallback) → <code>artist.json</code> (eras)</td></tr>
+                <tr><th scope="row"><a href="skills/milestone-watcher.md">milestone-watcher</a></th><td>Tracks near round-number play counts</td><td><code>milestone-watch.json</code> → <code>sessions.json</code> for custom bands</td></tr>
+                <tr><th scope="row"><a href="skills/era-briefing.md">era-briefing</a></th><td>Summarizes an era for a writeup</td><td><code>artist.json</code> (eras) → <code>years.json</code> → <code>discography</code> → <code>circle.json</code></td></tr>
+                <tr><th scope="row"><a href="skills/transmission-decoder.md">transmission-decoder</a></th><td>Interprets a title word via the codex families</td><td><code>codex.json</code> → <code>sessions.json</code> (context); mirrors <code>decoder.html</code></td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>Also in <code>skills/</code>: <a href="skills/announce-release.md">announce-release</a>, <a href="skills/build-press-kit.md">build-press-kit</a>, and <a href="skills/verify-platform-links.md">verify-platform-links</a>. The playground's <strong>skill recipes</strong> tab links each skill to the endpoint sequence it uses.</p>
+        </div>
+
+        <div class="reveal">
+          <h3 id="ag-search">Search index</h3>
+          <p>The site's search overlay (<kbd>/</kbd>) is a client-side fetch over the API — no server, no index build on your side. To replicate it, fetch and filter locally:</p>
+          <ul>
+            <li><code>api/v1/release-slugs.json</code> — every transmission title → its release page (the overlay's primary corpus).</li>
+            <li><code>api/v1/circle.json</code> — collaborator names and pages.</li>
+            <li><code>api/v1/codex.json</code> — the 16 family names and their words.</li>
+            <li><code>api/v1/artist.json</code> → <code>eras[]</code> — era names and spans.</li>
+          </ul>
+          <p>The reference implementation is <code>assets/js/search.js</code> (collaborator parsing included).</p>
+        </div>
+
+        <div class="reveal">
+          <h3 id="ag-expectations">Rates &amp; expectations</h3>
+          <ul>
+            <li><strong>Static files, no auth, no rate limits.</strong> This is a static site — the whole API is files on disk. Fetch freely, but serve over HTTP: browsers block <code>fetch()</code> from <code>file://</code> pages.</li>
+            <li><strong>Sizes are small.</strong> Largest endpoints: <code>artist.json</code> (~155 KB), <code>sessions.json</code> (~50 KB), <code>on-this-day.json</code> (~40 KB). Everything else is under 16 KB. Cache aggressively; check <code>index.json → version</code> (currently <code>0.12.0</code>) to invalidate.</li>
+            <li><strong>Play counts are a snapshot.</strong> SoundCloud plays were captured read-only on <strong>2026-10-11</strong> (<code>plays_snapshot</code> / <code>observed</code> fields). They drift daily — always state the snapshot date, never present them as live.</li>
+            <li><strong>Upload dates ≠ recording dates.</strong> Sessions are computed clusters (7-day upload-gap rule), not artist-named studio sessions.</li>
+            <li><strong>The rules of the archive:</strong> titles and metadata only — <strong>never lyrics</strong>; never invent biography; unknowns are listed as unknowns (<code>method.html</code> → "The unknowns register"); the circle is title-credit only (producers live in <code>scene-figures.json</code>).</li>
+          </ul>
+        </div>
+
+        <div class="reveal">
+          <h3 id="ag-workflows">Three worked agent workflows</h3>
+
+          <h4>1. Write a 500-word era briefing</h4>
+          <p><em>Skill: <a href="skills/era-briefing.md">era-briefing</a></em></p>
+          <ol>
+            <li><code>GET api/v1/index.json</code> — confirm <code>version</code>, note <code>observed</code>.</li>
+            <li><code>GET api/v1/artist.json</code> — read <code>eras[]</code>, pick the era (e.g. "The First Rite", span 2017–2019). Capture <code>scene</code>, <code>releases[]</code>, <code>note</code>.</li>
+            <li><code>GET api/v1/years.json</code> — for each year in the span, pull transmissions, plays, and <code>top_tracks</code> (e.g. 2018: 39 transmissions, 104,479 plays).</li>
+            <li>Match the era's <code>releases[]</code> titles against <code>discography[]</code> for dates, labels, and platform links.</li>
+            <li>Scan the era's top tracks for <code>ft.</code>/<code>w/</code> credits; <code>GET api/v1/circle.json</code> for each collaborator's footprint.</li>
+            <li>Write three moves — the span, the numbers, the story — every sentence tracing to an endpoint field. Close with the archive's own framing ("The Silence": no releases found in 2025; the reason is unknown and not speculated here).</li>
+          </ol>
+
+          <h4>2. Find 10 deep cuts for a playlist</h4>
+          <p><em>Skill: <a href="skills/deep-cuts-finder.md">deep-cuts-finder</a></em></p>
+          <ol>
+            <li><code>GET api/v1/sessions.json</code> — flatten <code>sessions[].tracks</code> into one list of {title, date, plays, page}.</li>
+            <li>Sort ascending by <code>plays</code>. (Median vault track ≈ 450 plays — anything far below is a genuine deep cut.)</li>
+            <li>Take the bottom 10. Example bottom five: "nitemode2019 w/ Max+Vetty prod. NaXi.wav" (17 plays), "No Puppets A11owed prod. xtasane" (24), "Im tha Bouncerrr prod. sustain" (28), "For Brian (Neck Deep) outro [produced by AWFL]" (43), "6 stop telling myself i'm not" (46).</li>
+            <li><code>GET api/v1/codex.json</code> — match title words to families for a playlist theme (e.g. several picks carry "The Modes" words).</li>
+            <li>Present title, plays, date, and one line on why each qualifies. Quote titles verbatim; never quote lyrics.</li>
+          </ol>
+
+          <h4>3. Trace a collaborator</h4>
+          <p><em>Skill: <a href="skills/collaborator-tracer.md">collaborator-tracer</a></em></p>
+          <ol>
+            <li><code>GET api/v1/circle.json</code> — look up the slug (e.g. <code>capoxxo</code>). Read <code>shared_transmissions</code> (2), <code>shared_plays</code> (16,174), <code>years_active</code> ("2019"), and each track's date and plays.</li>
+            <li>If the slug is absent, <code>GET api/v1/scene-figures.json</code> — producers are excluded from the circle by rule (e.g. Fish Narc lives here with <code>facts</code> and <code>sources</code>).</li>
+            <li>Read <code>verified_notes</code> (research pass 2026-10-11): capoxxo — Pitchfork's hyperpop-digicore canon; <em>Persona</em> tape w/ mayh3mp (Cult Love Sound Tapes, 2022).</li>
+            <li><code>GET api/v1/artist.json</code> — map the collaborator's years onto <code>eras[]</code> (capoxxo's 2019 tracks sit in "The First Rite").</li>
+            <li>Summarize: who, footprint, the tracks in order, the verified research (cited), the era position. Never invent how they met.</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <p>© 2026 ASTER DA MASTER — ALL SIGNALS RESERVED</p>
+      <nav aria-label="Footer">
+        <a href="./">Home</a>
+        <a href="./#discography">Discography</a>
+        <a href="releases/">Releases</a>
+        <a href="timeline.html">Timeline</a>
+        <a href="network.html">Network</a>
+        <a href="decoder.html">Decoder</a>
+        <a href="api-playground.html">API</a>
+        <a href="agents.html" aria-current="page">Agents</a>
+        <a href="years/">Years</a>
+        <a href="method.html">Method</a>
+        <a href="trilogy.html">Trilogy</a>
+        <a href="sessions.html">Sessions</a>
+        <a href="changelog.html">Changelog</a>
+        <a href="glance.html">Glance</a>
+        <a href="press-kit.html">Press kit</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="assets/js/common.js"></script>
+  <script src="assets/js/search.js"></script>
+</body>
+</html>
