@@ -34,6 +34,10 @@ An agent wants the narrative behind one of the 61 upload sessions: what was happ
 ## API references
 
 - `api/v1/sessions.json` — 61 sessions, 7-day gap clustering, per-track plays
+- `api/v1/session-clusters.json` — the same sessions precomputed for
+  exploration: per-session enrichment (era, loudest + deepest-cut tracks,
+  cross-links), the 60 inter-session gaps, the 9 activity seasons, asserted
+  insights (drives `sessions-explorer.html`; see the `session-explorer` skill)
 - `api/v1/circle.json` — 21 title-credited collaborators (`shared_transmissions`, `shared_plays`, `years_active`, `verified_notes`)
 - `api/v1/scene-figures.json` — producer-only scene figures (outside the 21)
 - `api/v1/codex.json` — 16 title-word families with per-family track lists

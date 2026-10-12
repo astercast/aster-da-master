@@ -104,6 +104,7 @@
                 <tr><th scope="row">transmission</th><td><code>api/v1/transmission.json</code></td><td>Guided-journey era aggregates: six eras with stats, top tracks, key sessions, collaborators, milestones, computed signal lines</td><td><code>eras[]</code> → <code>signal, top_tracks[], key_sessions[], collaborators[], milestones[]</code></td></tr>
                 <tr><th scope="row">network</th><td><code>api/v1/network.json</code></td><td>Collaboration network: artist-centered graph of the 21 title-credited collaborators + producer scene figures, track-weighted edges, co-credit links from shared titles, computed insights</td><td><code>nodes[]</code> → <code>kind, track_count, tracks[], years[], x, y</code>; <code>edges[]</code> → <code>a, b, weight, kind</code>; <code>insights</code></td></tr>
                 <tr><th scope="row">eras</th><td><code>api/v1/eras.json</code></td><td>Era deep-dives: six eras with full transmission lists (every track + plays), all in-era collaborators, active codex families, milestones, computed signal lines and summaries — drives the <code>eras/&lt;id&gt;.html</code> pages</td><td><code>eras[]</code> → <code>tracks[], collaborators[], codex_families[], summary, deep_dive, journey</code></td></tr>
+                <tr><th scope="row">session-clusters</th><td><code>api/v1/session-clusters.json</code></td><td>Session archaeology, interactive: the 61 upload sessions as an explorable timeline — per-session enrichment (era, loudest + deepest-cut tracks, cross-links), the 60 inter-session gaps, 9 activity seasons, asserted insights. Drives <code>sessions-explorer.html</code></td><td><code>sessions[]</code> → <code>loudest, deepest_cut, collaborators, deep_dive, journey</code>; <code>gaps[], clusters[], insights</code></td></tr>
                 <tr><th scope="row">years</th><td><code>api/v1/years.json</code></td><td>Year-in-review: per-year stats and top tracks, 2018–2026</td><td><code>transmissions, plays, top_tracks[]</code></td></tr>
                 <tr><th scope="row">on-this-day</th><td><code>api/v1/on-this-day.json</code></td><td>Transmissions keyed by MM-DD upload date</td><td>MM-DD keys</td></tr>
                 <tr><th scope="row">release-slugs</th><td><code>api/v1/release-slugs.json</code></td><td>Slug index for the 219 generated release pages</td><td>slug → page mappings</td></tr>
@@ -127,7 +128,7 @@
 
         <div class="reveal">
           <h3 id="ag-skills">Skills</h3>
-          <p>Ten agent skills in <code>skills/</code> (registry: <code>skills/index.json</code>), each in the playbook format: Use when / Inputs / Procedure / Worked example / API references / Pitfalls. The seven archive-analysis skills:</p>
+          <p>Eleven agent skills in <code>skills/</code> (registry: <code>skills/index.json</code>), each in the playbook format: Use when / Inputs / Procedure / Worked example / API references / Pitfalls. The eight archive-analysis skills:</p>
           <div class="table-wrap">
             <table>
               <caption>Agent skills</caption>
@@ -137,6 +138,7 @@
               <tbody>
                 <tr><th scope="row"><a href="skills/deep-cuts-finder.md">deep-cuts-finder</a></th><td>Surfaces the vault's quietest-play tracks for playlists</td><td><code>sessions.json</code> → flatten → sort asc → <code>codex.json</code> for themes</td></tr>
                 <tr><th scope="row"><a href="skills/session-archaeology.md">session-archaeology</a></th><td>Reconstructs one session's story: when, what, who</td><td><code>sessions.json</code> → <code>circle.json</code> / <code>scene-figures.json</code> → <code>codex.json</code> → <code>artist.json</code> (eras)</td></tr>
+                <tr><th scope="row"><a href="skills/session-explorer.md">session-explorer</a></th><td>Browses all 61 sessions: seasons, silences, deepest cuts, era/year filters</td><td><code>session-clusters.json</code> → <code>insights</code> → <code>sessions.json</code> (track lists); mirrors <code>sessions-explorer.html</code></td></tr>
                 <tr><th scope="row"><a href="skills/collaborator-tracer.md">collaborator-tracer</a></th><td>Maps a collaborator's footprint across the discography</td><td><code>circle.json</code> → <code>scene-figures.json</code> (producer fallback) → <code>artist.json</code> (eras)</td></tr>
                 <tr><th scope="row"><a href="skills/milestone-watcher.md">milestone-watcher</a></th><td>Tracks near round-number play counts</td><td><code>milestone-watch.json</code> → <code>sessions.json</code> for custom bands</td></tr>
                 <tr><th scope="row"><a href="skills/era-briefing.md">era-briefing</a></th><td>Summarizes an era for a writeup</td><td><code>eras.json</code> (deep dives) → <code>artist.json</code> (eras) → <code>years.json</code> → <code>discography</code> → <code>circle.json</code></td></tr>

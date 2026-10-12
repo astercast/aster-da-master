@@ -113,5 +113,50 @@ console.log("[workflow 4] SomeLowLifes era deep dive");
     e.journey === "transmission.html#era-the-somelowlifes-era");
 }
 
-console.log(failures === 0 ? "\nALL 4 WORKFLOWS PROVE OUT" : `\n${failures} CHECK(S) FAILED`);
+// --- Workflow 5: explore the sessions timeline (session-clusters.json) ---
+console.log("[workflow 5] Sessions timeline archaeology");
+{
+  const sc = J("session-clusters.json");
+  check("61 sessions, 60 gaps, 9 seasons",
+    sc.sessions.length === 61 && sc.gaps.length === 60 && sc.clusters.length === 9,
+    `${sc.sessions.length}/${sc.gaps.length}/${sc.clusters.length}`);
+  check("seasons partition all 61 sessions in order",
+    sc.clusters.flatMap((c) => c.session_ids).join(",") ===
+    sc.sessions.map((s) => s.id).join(","));
+  const mp = sc.insights.most_prolific;
+  check("most prolific = session-40, 19 tracks, Nov 3-12 2023",
+    mp.id === "session-40" && mp.track_count === 19 &&
+    mp.start === "2023-11-03" && mp.end === "2023-11-12",
+    `${mp.id} x${mp.track_count}`);
+  const ls = sc.insights.longest_silence;
+  check("longest silence 553d session-36->session-37 (2022-02-22->2023-08-29)",
+    ls.days === 553 && ls.from_session === "session-36" && ls.to_session === "session-37" &&
+    ls.from_end === "2022-02-22" && ls.to_start === "2023-08-29");
+  check("longest silence matches the milestones record",
+    J("milestones.json").milestones.find((m) => m.id === "longest-silence").days === ls.days);
+  check("loudest session-02 (30,088) / quietest session-52 (17)",
+    sc.insights.loudest_session.id === "session-02" &&
+    sc.insights.loudest_session.total_plays === 30088 &&
+    sc.insights.quietest_session.id === "session-52" &&
+    sc.insights.quietest_session.total_plays === 17);
+  const s40 = sc.sessions.find((s) => s.id === "session-40");
+  check("session-40 deepest cut = For Brian (43 plays)",
+    s40 && s40.deepest_cut.plays === 43 && /For Brian/.test(s40.deepest_cut.title),
+    s40 && `${s40.deepest_cut.plays} — ${s40.deepest_cut.title}`);
+  check("session-40 loudest = On Our Way (Baseline) (696 plays)",
+    s40 && s40.loudest.plays === 696 && /On Our Way/.test(s40.loudest.title));
+  check("session-40 solo run, era, cross-links",
+    s40 && s40.collaborators.length === 0 &&
+    s40.era_id === "the-somelowlifes-era" &&
+    s40.deep_dive === "sessions/the-november-3rd-12th-session.html" &&
+    s40.journey === "transmission.html#era-the-somelowlifes-era");
+  check("top-5 silences named, longest first",
+    sc.silences.length === 5 && sc.silences[0].days === 553 &&
+    sc.silences.every((g, i) => i === 0 || g.days <= sc.silences[i - 1].days),
+    sc.silences.map((g) => g.days).join(","));
+  check("every session has era + season + journey",
+    sc.sessions.every((s) => s.era_id && s.season && /^transmission\.html#era-/.test(s.journey)));
+}
+
+console.log(failures === 0 ? "\nALL 5 WORKFLOWS PROVE OUT" : `\n${failures} CHECK(S) FAILED`);
 process.exit(failures === 0 ? 0 : 1);

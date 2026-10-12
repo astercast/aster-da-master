@@ -510,6 +510,7 @@ def era_page(e, idx, n_eras, entries, collabs, families, summary):
           <li><a href="../network.html">Network</a> — the collaboration universe as a graph.</li>
           <li><a href="../codex/">Codex</a> — the 16 vocabulary families.</li>
           <li><a href="../sessions.html">Sessions</a> — all 61 upload sessions.</li>
+          <li><a href="../sessions-explorer.html#era-{eid}">Sessions explorer</a> — this era's sessions on the explorable timeline.</li>
         </ul>
       </section>
 """)

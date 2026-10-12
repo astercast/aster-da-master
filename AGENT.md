@@ -28,7 +28,7 @@ Static files — **no auth, no keys, no rate limits**. Works on any static host.
 
 | Endpoint | Contents | Records |
 |---|---|---|
-| `api/v1/index.json` | Manifest — start here | 16 endpoints |
+| `api/v1/index.json` | Manifest — start here | 17 endpoints |
 | `api/v1/artist.json` | The source of truth: bio, facts, discography (219 entries), platforms, eras, vault, upcoming | 219 |
 | `api/v1/codex.json` | The vocabulary codex: 16 word families with per-family track lists | 16 |
 | `api/v1/release-slugs.json` | Slug index: ordinal string → release-page slug (the search overlay's corpus) | 219 |
@@ -44,6 +44,7 @@ Static files — **no auth, no keys, no rate limits**. Works on any static host.
 | `api/v1/transmission.json` | The guided journey: six eras with stats, top tracks, key sessions, collaborators, milestones, computed "signal" lines | 6 |
 | `api/v1/network.json` | Collaboration network: 23 nodes, 27 track-weighted edges, co-credit links, computed insights | 23 nodes |
 | `api/v1/eras.json` | Era deep-dives: six eras with full transmission lists (every track + plays), ALL in-era collaborators, active codex families, milestones, computed signal lines and summaries | 6 |
+| `api/v1/session-clusters.json` | Session archaeology, interactive: the 61 sessions as an explorable timeline — per-session enrichment (era, loudest + deepest-cut tracks, cross-links), the 60 inter-session gaps, 9 activity seasons, asserted insights. Drives `sessions-explorer.html` | 9 seasons |
 
 Example requests (Node; swap `fs` for `fetch` in a browser):
 
@@ -160,6 +161,36 @@ SomeLowLifes era."*
 4. Pitfall check: play counts are the 2026-10-11 snapshot; upload dates ≠
    recording dates. Never quote or reproduce lyrics — titles and metadata
    only.
+
+## Example workflow 5 — explore the sessions timeline
+
+*Skill: [`session-explorer`](skills/session-explorer.md). Question → "walk me
+through the upload sessions: the seasons, the silences, the standout
+sessions."*
+
+1. **`GET api/v1/session-clusters.json`** — the whole timeline in one file.
+   Read `method` first: the 61 sessions come from the 7-day upload-gap rule;
+   the 9 `clusters[]` ("activity seasons") are a *computed browsing
+   convention* — consecutive sessions while the separating silence is ≤ 90
+   days — not artist-named eras.
+2. **`insights`** holds the headline numbers (all recomputed and asserted by
+   `scripts/build_session_clusters.py`): `most_prolific` is session-40, "The
+   November 3rd–12th Session" (2023-11-03 → 2023-11-12, 19 tracks, 7,601
+   plays); `longest_silence` is 553 days, session-36 → session-37
+   (2022-02-22 → 2023-08-29, matches `milestones.json`'s longest-silence
+   record); `loudest_session` is session-02 (30,088 plays), `quietest_session`
+   is session-52 (17 plays).
+3. **Drill into `sessions[]`**: session-40's `deepest_cut` is "For Brian
+   (Neck Deep) outro [produced by AWFL]" (43 plays), its `loudest` is "On Our
+   Way (Baseline)" (696 plays), `collaborators` is empty (solo run — producer
+   credits excluded by rule), `deep_dive` points at
+   `sessions/the-november-3rd-12th-session.html`, and `journey` lands on the
+   SomeLowLifes node of the transmission journey. `silences` names the five
+   longest upload gaps; `gaps[]` carries all 60 for charting.
+4. Pitfall check: sessions and seasons are computed clusters — say
+   "clustered" when the distinction matters. Play counts are the 2026-10-11
+   snapshot; upload dates ≠ recording dates. Never quote or reproduce lyrics
+   — titles and metadata only.
 
 ## Rates & expectations
 

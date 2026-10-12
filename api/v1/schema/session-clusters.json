@@ -1,0 +1,434 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Session clusters",
+  "description": "The 61 upload sessions as an explorable timeline: per-session enrichment, inter-session gaps, activity seasons, insights.",
+  "type": "object",
+  "required": [
+    "sessions",
+    "gaps",
+    "silences",
+    "clusters",
+    "eras",
+    "insights",
+    "gap_rule_days",
+    "season_gap_days"
+  ],
+  "properties": {
+    "version": {
+      "type": "string"
+    },
+    "generated": {
+      "type": "string"
+    },
+    "plays_snapshot": {
+      "type": "string"
+    },
+    "method": {
+      "type": "string"
+    },
+    "gap_rule_days": {
+      "type": "integer"
+    },
+    "season_gap_days": {
+      "type": "integer"
+    },
+    "archive_totals": {
+      "type": "object",
+      "required": [
+        "sessions",
+        "tracks",
+        "total_plays"
+      ],
+      "properties": {
+        "sessions": {
+          "type": "integer"
+        },
+        "tracks": {
+          "type": "integer"
+        },
+        "total_plays": {
+          "type": "integer"
+        }
+      }
+    },
+    "eras": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "span",
+          "deep_dive",
+          "journey"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "span": {
+            "type": "string"
+          },
+          "deep_dive": {
+            "type": "string"
+          },
+          "journey": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "sessions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "start",
+          "end",
+          "days",
+          "track_count",
+          "total_plays",
+          "era_id",
+          "era_name",
+          "loudest",
+          "deepest_cut",
+          "collaborators",
+          "journey",
+          "season"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "start": {
+            "type": "string"
+          },
+          "end": {
+            "type": "string"
+          },
+          "days": {
+            "type": "integer"
+          },
+          "track_count": {
+            "type": "integer"
+          },
+          "total_plays": {
+            "type": "integer"
+          },
+          "era_id": {
+            "type": "string"
+          },
+          "era_name": {
+            "type": "string"
+          },
+          "loudest": {
+            "$ref": "#/definitions/session_track"
+          },
+          "deepest_cut": {
+            "$ref": "#/definitions/session_track"
+          },
+          "collaborators": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "deep_dive": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "journey": {
+            "type": "string"
+          },
+          "season": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "gaps": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "from_session",
+          "to_session",
+          "from_end",
+          "to_start",
+          "days"
+        ],
+        "properties": {
+          "from_session": {
+            "type": "string"
+          },
+          "to_session": {
+            "type": "string"
+          },
+          "from_end": {
+            "type": "string"
+          },
+          "to_start": {
+            "type": "string"
+          },
+          "days": {
+            "type": "integer",
+            "minimum": 8
+          }
+        }
+      }
+    },
+    "silences": {
+      "type": "array",
+      "items": {
+        "$ref": "#/properties/gaps/items"
+      }
+    },
+    "clusters": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "label",
+          "start",
+          "end",
+          "session_count",
+          "track_count",
+          "total_plays",
+          "session_ids"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "label": {
+            "type": "string"
+          },
+          "start": {
+            "type": "string"
+          },
+          "end": {
+            "type": "string"
+          },
+          "session_count": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "track_count": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "total_plays": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "session_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "insights": {
+      "type": "object",
+      "required": [
+        "session_count",
+        "track_count",
+        "season_count",
+        "most_prolific",
+        "longest_silence",
+        "loudest_session",
+        "quietest_session",
+        "first_session",
+        "last_session"
+      ],
+      "properties": {
+        "session_count": {
+          "type": "integer"
+        },
+        "track_count": {
+          "type": "integer"
+        },
+        "season_count": {
+          "type": "integer"
+        },
+        "most_prolific": {
+          "type": "object",
+          "required": [
+            "id",
+            "name",
+            "start",
+            "end",
+            "track_count",
+            "total_plays",
+            "season"
+          ],
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "name": {
+              "type": "string"
+            },
+            "start": {
+              "type": "string"
+            },
+            "end": {
+              "type": "string"
+            },
+            "track_count": {
+              "type": "integer"
+            },
+            "total_plays": {
+              "type": "integer"
+            },
+            "deep_dive": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "season": {
+              "type": "string"
+            }
+          }
+        },
+        "longest_silence": {
+          "type": "object",
+          "required": [
+            "days",
+            "from_session",
+            "to_session",
+            "from_end",
+            "to_start"
+          ],
+          "properties": {
+            "days": {
+              "type": "integer"
+            },
+            "from_session": {
+              "type": "string"
+            },
+            "to_session": {
+              "type": "string"
+            },
+            "from_end": {
+              "type": "string"
+            },
+            "to_start": {
+              "type": "string"
+            }
+          }
+        },
+        "loudest_session": {
+          "type": "object",
+          "required": [
+            "id",
+            "name",
+            "total_plays"
+          ],
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "name": {
+              "type": "string"
+            },
+            "total_plays": {
+              "type": "integer"
+            }
+          }
+        },
+        "quietest_session": {
+          "type": "object",
+          "required": [
+            "id",
+            "name",
+            "total_plays"
+          ],
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "name": {
+              "type": "string"
+            },
+            "total_plays": {
+              "type": "integer"
+            }
+          }
+        },
+        "first_session": {
+          "type": "object",
+          "required": [
+            "id",
+            "start"
+          ],
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "start": {
+              "type": "string"
+            }
+          }
+        },
+        "last_session": {
+          "type": "object",
+          "required": [
+            "id",
+            "end"
+          ],
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "end": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "session_track": {
+      "type": "object",
+      "required": [
+        "title",
+        "plays",
+        "date",
+        "page"
+      ],
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "plays": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "date": {
+          "type": "string"
+        },
+        "page": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

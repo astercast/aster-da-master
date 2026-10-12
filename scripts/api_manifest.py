@@ -91,6 +91,10 @@ ENDPOINT_ORDER = [
      "Era deep-dives: six eras with full transmission lists (every track + plays), ALL in-era collaborators, active codex families, milestones, computed signal lines and summaries. Data source for the eras/<id>.html deep-dive pages.",
      "eras.json", "collaborators[] holds every in-era voice; transmission.json keeps only the top 3.",
      lambda api: len(_doc(api, "eras.json")["eras"])),
+    ("session-clusters",
+     "Session archaeology, interactive: the 61 upload sessions as an explorable timeline - per-session enrichment (era, loudest + deepest-cut tracks, title-credited collaborators, deep-dive/era/journey cross-links), the 60 inter-session gaps, activity seasons, and asserted insights. Data source for sessions-explorer.html.",
+     "session-clusters.json", "Seasons are a computed browsing convention (silence > 90 days opens a new season), not artist-named eras.",
+     lambda api: len(_doc(api, "session-clusters.json")["clusters"])),
 ]
 
 DOCUMENTS = {

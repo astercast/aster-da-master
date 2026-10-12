@@ -266,6 +266,7 @@ def deepdive_page(s, slug, rank, collabs, era_names, prev_s, next_s):
       <nav class="year-pager" aria-label="Session deep-dive navigation">
         {prev_link}
         <a class="btn btn-sm" href="../sessions.html">All sessions</a>
+        <a class="btn btn-sm" href="../sessions-explorer.html">Sessions explorer</a>
         {next_link}
       </nav>
 """

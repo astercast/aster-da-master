@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sessions explorer — Aster da Master</title>
+  <meta name="description" content="All 61 upload sessions as an explorable timeline: activity seasons, the 553-day silence, the most-prolific session, per-session deepest cuts — filterable by era and year.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container header-bar">
+      <a class="brand" href="./" aria-label="Aster da Master home">
+        <span class="brand-mark" aria-hidden="true">A✦</span>
+        <span>ASTER DA MASTER</span>
+      </a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="./#discography">Discography</a>
+        <a href="releases/">Releases</a>
+        <a href="years/">Years</a>
+        <a href="timeline.html">Timeline</a>
+        <a href="transmission.html">Transmission</a>
+        <a href="network.html">Network</a>
+        <a href="decoder.html">Decoder</a>
+        <a href="api-playground.html">API</a>
+        <a href="agents.html">Agents</a>
+        <a href="sessions.html" aria-current="page">Sessions</a>
+        <a href="changelog.html">Changelog</a>
+        <a href="method.html">Method</a>
+        <a href="trilogy.html">Trilogy</a>
+        <a href="glance.html">Glance</a>
+        <a href="press-kit.html">Press kit</a>
+      </nav>
+      <details class="mnav">
+        <summary><span class="bars" aria-hidden="true"><i></i><i></i><i></i></span>Menu</summary>
+        <nav class="mnav-panel" aria-label="Mobile">
+        <a href="./#discography">Discography</a>
+        <a href="releases/">Releases</a>
+        <a href="years/">Years</a>
+        <a href="timeline.html">Timeline</a>
+        <a href="transmission.html">Transmission</a>
+        <a href="network.html">Network</a>
+        <a href="decoder.html">Decoder</a>
+        <a href="api-playground.html">API</a>
+        <a href="agents.html">Agents</a>
+        <a href="sessions.html" aria-current="page">Sessions</a>
+        <a href="changelog.html">Changelog</a>
+        <a href="method.html">Method</a>
+        <a href="trilogy.html">Trilogy</a>
+        <a href="glance.html">Glance</a>
+        <a href="press-kit.html">Press kit</a>
+      
+        </nav>
+      </details>
+      <button class="search-btn" id="search-open" type="button" aria-label="Search the archive (keyboard shortcut: slash)">
+        <span aria-hidden="true">⌕</span><kbd aria-hidden="true">/</kbd>
+      </button>
+    </div>
+  </header>
+
+  <div class="search-overlay" id="search-overlay" hidden>
+    <div class="search-box" role="dialog" aria-modal="true" aria-labelledby="search-title">
+      <p class="kicker" id="search-title"><span class="numeral">✦</span>Search the archive</p>
+      <input id="search-input" type="search" placeholder="Tracks, collaborators, eras, the codex…" aria-label="Search the archive" role="combobox" aria-expanded="true" aria-controls="search-results" autocomplete="off" spellcheck="false">
+      <div id="search-results" role="listbox" aria-label="Search results"></div>
+      <p class="search-hint"><kbd>/</kbd> to open · <kbd>↑</kbd><kbd>↓</kbd> to move · <kbd>Enter</kbd> to go · <kbd>Esc</kbd> to close</p>
+    </div>
+  </div>
+
+  <main id="main">
+    <div class="container">
+      <noscript><p class="se-error">The sessions explorer needs JavaScript — it renders <code>api/v1/session-clusters.json</code> live. The same data sits behind <a href="api/v1/session-clusters.json">the endpoint</a>.</p></noscript>
+
+      <div class="section-head reveal">
+        <span class="kicker"><span class="numeral">✦</span>The sessions explorer</span>
+        <h1>Every session, explorable</h1>
+        <p>61 sessions · 185 vault transmissions · 9 activity seasons. A new session begins whenever the silence between uploads stretches past seven days; a new season opens when a silence stretches past ninety.</p>
+        <p class="chart-sub">Computed from upload dates (not recording dates) · play counts are a 2026-10-11 snapshot · the <a href="sessions.html">studio diary</a> lists every session newest-first</p>
+      </div>
+
+      <section class="section reveal" aria-label="Session insights">
+        <dl class="se-insights" id="se-insights"></dl>
+      </section>
+
+      <section class="section reveal" aria-labelledby="se-spot-h-wrap">
+        <span class="kicker"><span class="numeral">✦</span>The record run</span>
+        <h2 id="se-spot-h-wrap">The most prolific session</h2>
+        <div id="se-spotlight"></div>
+      </section>
+
+      <section class="section reveal" aria-labelledby="se-gaps-h">
+        <span class="kicker"><span class="numeral">✦</span>The silences</span>
+        <h2 id="se-gaps-h">60 silences, one of them 553 days</h2>
+        <div id="se-gaps"></div>
+      </section>
+
+      <section class="section reveal" aria-labelledby="se-seasons-h">
+        <span class="kicker"><span class="numeral">✦</span>Activity seasons</span>
+        <h2 id="se-seasons-h">Nine runs of uploads</h2>
+        <div id="se-seasons"></div>
+      </section>
+
+      <section class="section reveal" aria-labelledby="se-exp-h">
+        <span class="kicker"><span class="numeral">✦</span>The explorer</span>
+        <h2 id="se-exp-h">Dig through the sessions</h2>
+        <fieldset class="se-filters" id="se-filters">
+          <legend>Filter sessions</legend>
+        </fieldset>
+        <p class="chart-sub" id="se-count" role="status" aria-live="polite">Loading sessions…</p>
+        <div class="se-cards" id="se-cards"></div>
+      </section>
+
+      <section class="section reveal" aria-labelledby="se-keep-h">
+        <span class="kicker"><span class="numeral">✦</span>Keep digging</span>
+        <h2 id="se-keep-h">The trail continues</h2>
+        <ul class="story-list">
+          <li><a href="sessions.html">Sessions</a> — the studio diary: all 61 sessions, newest first, with every transmission.</li>
+          <li><a href="transmission.html">Transmission</a> — the guided journey through the six eras.</li>
+          <li><a href="decoder.html">Decoder</a> — the title-word codex; reuse its matching on any session's titles.</li>
+          <li><a href="network.html">Network</a> — the collaboration universe as a graph.</li>
+          <li><a href="skills/session-archaeology.md">session-archaeology</a> — the agent playbook this explorer turns into a page.</li>
+          <li><a href="api/v1/session-clusters.json">api/v1/session-clusters.json</a> — this page's data, endpoint #17; try it in the <a href="api-playground.html">API playground</a>.</li>
+        </ul>
+        <p class="chart-sub">Every figure on this page is computed by <code>scripts/build_session_clusters.py</code>; the page renders it and adds nothing.</p>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <p>© 2026 ASTER DA MASTER — ALL SIGNALS RESERVED</p>
+      <nav aria-label="Footer">
+        <a href="./">Home</a>
+        <a href="./#discography">Discography</a>
+        <a href="releases/">Releases</a>
+        <a href="years/">Years</a>
+        <a href="timeline.html">Timeline</a>
+        <a href="transmission.html">Transmission</a>
+        <a href="network.html">Network</a>
+        <a href="decoder.html">Decoder</a>
+        <a href="api-playground.html">API</a>
+        <a href="agents.html">Agents</a>
+        <a href="sessions.html" aria-current="page">Sessions</a>
+        <a href="changelog.html">Changelog</a>
+        <a href="method.html">Method</a>
+        <a href="trilogy.html">Trilogy</a>
+        <a href="glance.html">Glance</a>
+        <a href="press-kit.html">Press kit</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="assets/js/common.js"></script>
+  <script src="assets/js/sessions-explorer.js"></script>
+  <script src="assets/js/search.js"></script>
+</body>
+</html>

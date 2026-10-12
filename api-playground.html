@@ -125,6 +125,16 @@
                 <li><code>GET api/v1/artist.json</code> — place the session in <code>eras[]</code>.</li>
               </ol>
             </article>
+            <article class="recipe-card" aria-labelledby="rc-se-exp">
+              <h4 id="rc-se-exp"><a href="skills/session-explorer.md">session-explorer</a></h4>
+              <p>Browse all 61 sessions as a timeline: seasons, silences, deepest cuts, era/year filters.</p>
+              <ol class="recipe-seq">
+                <li><code>GET api/v1/session-clusters.json</code> — read <code>method</code>, then <code>insights</code> (most prolific, longest silence, loudest/quietest sessions).</li>
+                <li>Walk <code>clusters[]</code> for the 9 seasons and <code>sessions[]</code> for per-session stories (<code>loudest</code>, <code>deepest_cut</code>, cross-links).</li>
+                <li><code>GET api/v1/sessions.json</code> — per-session track lists for expanded cards.</li>
+                <li>Mirrors <code>sessions-explorer.html</code> — same data, human page.</li>
+              </ol>
+            </article>
             <article class="recipe-card" aria-labelledby="rc-collab">
               <h4 id="rc-collab"><a href="skills/collaborator-tracer.md">collaborator-tracer</a></h4>
               <p>Map a collaborator's footprint: tracks, plays, years active, verified research notes.</p>

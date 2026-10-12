@@ -1,0 +1,2415 @@
+{
+ "version": "0.12.0",
+ "generated": "2026-10-11",
+ "plays_snapshot": "2026-10-11",
+ "method": "Session archaeology, interactive: the 61 upload sessions from data/sessions.json (7-day upload-gap rule; upload dates are NOT recording dates) as an explorable timeline. gaps[] are the 60 inter-session silences in days; clusters[] are 'activity seasons' - consecutive sessions grouped while the separating silence is <= 90 days, a computed browsing convention, not an artist fact. loudest/deepest_cut are the session's max/min play counts (2026-10-11 snapshot); collaborators are w//ft. title credits parsed by the shared rule (producers excluded). Titles and metadata only - never lyrics, never invented bio facts.",
+ "gap_rule_days": 7,
+ "season_gap_days": 90,
+ "archive_totals": {
+  "sessions": 61,
+  "tracks": 185,
+  "total_plays": 257394
+ },
+ "eras": [
+  {
+   "id": "the-first-rite",
+   "name": "The First Rite",
+   "span": "2017 – 2019",
+   "deep_dive": "eras/the-first-rite.html",
+   "journey": "transmission.html#era-the-first-rite"
+  },
+  {
+   "id": "the-prolific-year",
+   "name": "The Prolific Year",
+   "span": "2020",
+   "deep_dive": "eras/the-prolific-year.html",
+   "journey": "transmission.html#era-the-prolific-year"
+  },
+  {
+   "id": "the-cast-it-years",
+   "name": "The Cast It: Years",
+   "span": "2021 – 2022",
+   "deep_dive": "eras/the-cast-it-years.html",
+   "journey": "transmission.html#era-the-cast-it-years"
+  },
+  {
+   "id": "the-somelowlifes-era",
+   "name": "The SomeLowLifes Era",
+   "span": "2023 – 2024",
+   "deep_dive": "eras/the-somelowlifes-era.html",
+   "journey": "transmission.html#era-the-somelowlifes-era"
+  },
+  {
+   "id": "the-silence",
+   "name": "The Silence",
+   "span": "2025",
+   "deep_dive": "eras/the-silence.html",
+   "journey": "transmission.html#era-the-silence"
+  },
+  {
+   "id": "the-return",
+   "name": "The Return",
+   "span": "2026",
+   "deep_dive": "eras/the-return.html",
+   "journey": "transmission.html#era-the-return"
+  }
+ ],
+ "sessions": [
+  {
+   "id": "session-01",
+   "name": "The January 3rd–8th Session",
+   "start": "2018-01-03",
+   "end": "2018-01-08",
+   "days": 6,
+   "track_count": 2,
+   "total_plays": 13862,
+   "era_id": "the-first-rite",
+   "era_name": "The First Rite",
+   "loudest": {
+    "title": "Soul Shaking (prod. Fish Narc)",
+    "plays": 12944,
+    "date": "2018-01-03",
+    "page": "releases/soul-shaking-prod-fish-narc.html"
+   },
+   "deepest_cut": {
+    "title": "Lucid Boi (prod. $ T.N.C $)",
+    "plays": 918,
+    "date": "2018-01-08",
+    "page": "releases/lucid-boi-prod-t-n-c.html"
+   },
+   "collaborators": [],
+   "deep_dive": null,
+   "journey": "transmission.html#era-the-first-rite",
+   "season": "season-01"
+  },
+  {
+   "id": "session-02",
+   "name": "The February 4th Session",
+   "start": "2018-02-04",
+   "end": "2018-02-04",
+   "days": 1,
+   "track_count": 1,
+   "total_plays": 30088,
+   "era_id": "the-first-rite",
+   "era_name": "The First Rite",
+   "loudest": {
+    "title": "Take Me (prod. Em Klebold)",
+    "plays": 30088,
+    "date": "2018-02-04",
+    "page": "releases/take-me-prod-em-klebold.html"
+   },
+   "deepest_cut": {
+    "title": "Take Me (prod. Em Klebold)",
+    "plays": 30088,
+    "date": "2018-02-04",
+    "page": "releases/take-me-prod-em-klebold.html"
+   },
+   "collaborators": [],
+   "deep_dive": null,
+   "journey": "transmission.html#era-the-first-rite",
+   "season": "season-01"
+  },
+  {
+   "id": "session-03",
+   "name": "The March 16th Session",
+   "start": "2018-03-16",
+   "end": "2018-03-16",
+   "days": 1,
+   "track_count": 1,
+   "total_plays": 1008,
+   "era_id": "the-first-rite",
+   "era_name": "The First Rite",
+   "loudest": {
+    "title": "I See U (prod. Haruhi)",
+    "plays": 1008,
+    "date": "2018-03-16",
+    "page": "releases/i-see-u-prod-haruhi.html"
+   },
+   "deepest_cut": {
+    "title": "I See U (prod. Haruhi)",
+    "plays": 1008,
+    "date": "2018-03-16",
+    "page": "releases/i-see-u-prod-haruhi.html"
+   },
+   "collaborators": [],
+   "deep_dive": null,
+   "journey": "transmission.html#era-the-first-rite",
+   "season": "season-01"
+  },
+  {
+   "id": "session-04",
+   "name": "The April 28th Session",
+   "start": "2018-04-28",
+   "end": "2018-04-28",
+   "days": 1,
+   "track_count": 1,
+   "total_plays": 1400,
+   "era_id": "the-first-rite",
+   "era_name": "The First Rite",
+   "loudest": {
+    "title": "Mistakes Ft. JO$E DRIPP (prod. Tec)",
+    "plays": 1400,
+    "date": "2018-04-28",
+    "page": "releases/mistakes-ft-jo-e-dripp-prod-tec.html"
+   },
+   "deepest_cut": {
+    "title": "Mistakes Ft. JO$E DRIPP (prod. Tec)",
+    "plays": 1400,
+    "date": "2018-04-28",
+    "page": "releases/mistakes-ft-jo-e-dripp-prod-tec.html"
+   },
+   "collaborators": [
+    "JO$E DRIPP"
+   ],
+   "deep_dive": null,
+   "journey": "transmission.html#era-the-first-rite",
+   "season": "season-01"
+  },
+  {
+   "id": "session-05",
+   "name": "The June 8th–14th Session",
+   "start": "2018-06-08",
+   "end": "2018-06-14",
+   "days": 7,
+   "track_count": 2,
+   "total_plays": 3030,
+   "era_id": "the-first-rite",
+   "era_name": "The First Rite",
+   "loudest": {
+    "title": "That's a Lie (prod. Xtravulous x WhyLoner)",
+    "plays": 1522,
+    "date": "2018-06-08",
+    "page": "releases/that-s-a-lie-prod-xtravulous-x-whyloner.html"
+   },
+   "deepest_cut": {
+    "title": "Place For Me(prod. Born Hero)",
+    "plays": 1508,
+    "date": "2018-06-14",
+    "page": "releases/place-for-me-prod-born-hero.html"
+   },
+   "collaborators": [],
+   "deep_dive": null,
+   "journey": "transmission.html#era-the-first-rite",
+   "season": "season-01"
+  },
+  {
+   "id": "session-06",
+   "name": "The July 1st Session",
+   "start": "2018-07-01",
+   "end": "2018-07-01",
+   "days": 1,
+   "track_count": 1,
+   "total_plays": 1282,
+   "era_id": "the-first-rite",
+   "era_name": "The First Rite",
+   "loudest": {
+    "title": "Take Me Back to the City (prod. RainyBaby)",
+    "plays": 1282,
+    "date": "2018-07-01",
+    "page": "releases/take-me-back-to-the-city-prod-rainybaby.html"
+   },
+   "deepest_cut": {
+    "title": "Take Me Back to the City (prod. RainyBaby)",
+    "plays": 1282,
+    "date": "2018-07-01",
+    "page": "releases/take-me-back-to-the-city-prod-rainybaby.html"
+   },
+   "collaborators": [],
+   "deep_dive": null,
+   "journey": "transmission.html#era-the-first-rite",
+   "season": "season-01"
+  },
+  {
+   "id": "session-07",
+   "name": "The July 18th–20th Session",
+   "start": "2018-07-18",
+   "end": "2018-07-20",
+   "days": 3,
+   "track_count": 4,
+   "total_plays": 12163,
+   "era_id": "the-first-rite",
+   "era_name": "The First Rite",
+   "loudest": {
+    "title": "When the World Gets Colder (prod. Brokn)",
+    "plays": 9535,
+    "date": "2018-07-18",
+    "page": "releases/when-the-world-gets-colder-prod-brokn.html"
+   },
+   "deepest_cut": {
+    "title": "As Above [So Below] (prod. Xtravulous x Young Taylor)",
+    "plays": 757,
+    "date": "2018-07-20",
+    "page": "releases/as-above-so-below-prod-xtravulous-x-young-taylor.html"
+   },
+   "collaborators": [],
+   "deep_dive": null,
+   "journey": "transmission.html#era-the-first-rite",
+   "season": "season-01"
+  },
+  {
+   "id": "session-08",
+   "name": "The August 4th Session",
+   "start": "2018-08-04",
+   "end": "2018-08-04",
+   "days": 1,
+   "track_count": 1,
+   "total_plays": 1602,
+   "era_id": "the-first-rite",
+   "era_name": "The First Rite",
+   "loudest": {
+    "title": "all i really need is a text from u (prod. benizjaminn)",
+    "plays": 1602,
+    "date": "2018-08-04",
+    "page": "releases/all-i-really-need-is-a-text-from-u-prod-benizjaminn.html"
+   },
+   "deepest_cut": {
+    "title": "all i really need is a text from u (prod. benizjaminn)",
+    "plays": 1602,
+    "date": "2018-08-04",
+    "page": "releases/all-i-really-need-is-a-text-from-u-prod-benizjaminn.html"
+   },
+   "collaborators": [],
+   "deep_dive": null,
+   "journey": "transmission.html#era-the-first-rite",
+   "season": "season-01"
+  },
+  {
+   "id": "session-09",
+   "name": "The August 13th–27th Session",
+   "start": "2018-08-13",
+   "end": "2018-08-27",
+   "days": 15,
+   "track_count": 7,
+   "total_plays": 10571,
+   "era_id": "the-first-rite",
+   "era_name": "The First Rite",
+   "loudest": {
+    "title": "Just Wanted U to Shine (prod. Xtravulous x Tundra Beats)",
+    "plays": 3096,
+    "date": "2018-08-26",
+    "page": "releases/just-wanted-u-to-shine-prod-xtravulous-x-tundra-beats.html"
+   },
+   "deepest_cut": {
+    "title": "I Don't Rlly (prod. FELD)",
+    "plays": 587,
+    "date": "2018-08-27",
+    "page": "releases/i-don-t-rlly-prod-feld.html"
+   },
+   "collaborators": [
+    "JAX",
+    "Max Ferrari"
+   ],
+   "deep_dive": "sessions/the-august-13th-27th-session.html",
+   "journey": "transmission.html#era-the-first-rite",
+   "season": "season-01"
+  },
+  {
+   "id": "session-10",
+   "name": "The September 6th Session",
+   "start": "2018-09-06",
+   "end": "2018-09-06",
+   "days": 1,
+   "track_count": 1,
+   "total_plays": 1485,
+   "era_id": "the-first-rite",
+   "era_name": "The First Rite",
+   "loudest": {
+    "title": "Autumn (prod. Tundra Beats)",
+    "plays": 1485,
+    "date": "2018-09-06",
+    "page": "releases/autumn-prod-tundra-beats.html"
+   },
+   "deepest_cut": {
+    "title": "Autumn (prod. Tundra Beats)",
+    "plays": 1485,
+    "date": "2018-09-06",
+    "page": "releases/autumn-prod-tundra-beats.html"
+   },
+   "collaborators": [],
+   "deep_dive": null,
+   "journey": "transmission.html#era-the-first-rite",
+   "season": "season-01"
+  },
+  {
+   "id": "session-11",
+   "name": "The October 6th Session",
+   "start": "2018-10-06",
+   "end": "2018-10-06",
+   "days": 1,
+   "track_count": 1,
+   "total_plays": 2149,
+   "era_id": "the-first-rite",
+   "era_name": "The First Rite",
+   "loudest": {
+    "title": "Inside My Dome (prod. Karattt)",
+    "plays": 2149,
+    "date": "2018-10-06",
+    "page": "releases/inside-my-dome-prod-karattt.html"
+   },
+   "deepest_cut": {
+    "title": "Inside My Dome (prod. Karattt)",
+    "plays": 2149,
+    "date": "2018-10-06",
+    "page": "releases/inside-my-dome-prod-karattt.html"
+   },
+   "collaborators": [],
+   "deep_dive": null,
+   "journey": "transmission.html#era-the-first-rite",
+   "season": "season-01"
+  },
+  {
+   "id": "session-12",
+   "name": "The October 17th Session",
+   "start": "2018-10-17",
+   "end": "2018-10-17",
+   "days": 1,
+   "track_count": 1,
+   "total_plays": 2760,
+   "era_id": "the-first-rite",
+   "era_name": "The First Rite",
+   "loudest": {
+    "title": "Pills By My Lonely(prod. Discent)",
+    "plays": 2760,
+    "date": "2018-10-17",
+    "page": "releases/pills-by-my-lonely-prod-discent.html"
+   },
+   "deepest_cut": {
+    "title": "Pills By My Lonely(prod. Discent)",
+    "plays": 2760,
+    "date": "2018-10-17",
+    "page": "releases/pills-by-my-lonely-prod-discent.html"
+   },
+   "collaborators": [],
+   "deep_dive": null,
+   "journey": "transmission.html#era-the-first-rite",
+   "season": "season-01"
+  },
+  {
+   "id": "session-13",
+   "name": "The October 25th Session",
+   "start": "2018-10-25",
+   "end": "2018-10-25",
+   "days": 1,
+   "track_count": 1,
+   "total_plays": 1001,
+   "era_id": "the-first-rite",
+   "era_name": "The First Rite",
+   "loudest": {
+    "title": "Taught Me(prod. ℝ꒐꒯꒐꒝Ʉ꒒o̲ʊꍛ)",
+    "plays": 1001,
+    "date": "2018-10-25",
+    "page": "releases/taught-me-prod-o.html"
+   },
+   "deepest_cut": {
+    "title": "Taught Me(prod. ℝ꒐꒯꒐꒝Ʉ꒒o̲ʊꍛ)",
+    "plays": 1001,
+    "date": "2018-10-25",
+    "page": "releases/taught-me-prod-o.html"
+   },
+   "collaborators": [],
+   "deep_dive": null,
+   "journey": "transmission.html#era-the-first-rite",
+   "season": "season-01"
+  },
+  {
+   "id": "session-14",
+   "name": "The November 7th–8th Session",
+   "start": "2018-11-07",
+   "end": "2018-11-08",
+   "days": 2,
+   "track_count": 4,
+   "total_plays": 8472,
+   "era_id": "the-first-rite",
+   "era_name": "The First Rite",
+   "loudest": {
+    "title": "Past Life (prod. Charlie Shuffler)",
+    "plays": 4494,
+    "date": "2018-11-07",
+    "page": "releases/past-life-prod-charlie-shuffler.html"
+   },
+   "deepest_cut": {
+    "title": "Fuck Time 3 (outro) [Prod. DIX2]",
+    "plays": 697,
+    "date": "2018-11-08",
+    "page": "releases/fuck-time-3-outro-prod-dix2.html"
+   },
+   "collaborators": [
+    "Shola"
+   ],
+   "deep_dive": null,
+   "journey": "transmission.html#era-the-first-rite",
+   "season": "season-01"
+  },
+  {
+   "id": "session-15",
+   "name": "The Nov 27th – Dec 4th Session",
+   "start": "2018-11-27",
+   "end": "2018-12-04",
+   "days": 8,
+   "track_count": 6,
+   "total_plays": 4892,
+   "era_id": "the-first-rite",
+   "era_name": "The First Rite",
+   "loudest": {
+    "title": "Hip On My Blade (ft. Yung Vetta) ~ [prod. Skel]",
+    "plays": 1368,
+    "date": "2018-12-02",
+    "page": "releases/hip-on-my-blade-ft-yung-vetta-prod-skel.html"
+   },
+   "deepest_cut": {
+    "title": "Throwing Signs (prod. HideousPittius)",
+    "plays": 241,
+    "date": "2018-11-27",
+    "page": "releases/throwing-signs-prod-hideouspittius.html"
+   },
+   "collaborators": [
+    "Yung Vetta"
+   ],
+   "deep_dive": "sessions/the-nov-27th-dec-4th-session.html",
+   "journey": "transmission.html#era-the-first-rite",
+   "season": "season-01"
+  },
+  {
+   "id": "session-16",
+   "name": "The December 13th–15th Session",
+   "start": "2018-12-13",
+   "end": "2018-12-15",
+   "days": 3,
+   "track_count": 5,
+   "total_plays": 8714,
+   "era_id": "the-first-rite",
+   "era_name": "The First Rite",
+   "loudest": {
+    "title": "All Kinds Of Trips (prod. YungSkah) <ON ALL PLATFORMS NOW!>",
+    "plays": 5805,
+    "date": "2018-12-15",
+    "page": "releases/all-kinds-of-trips-prod-yungskah-on-all-platforms-now.html"
+   },
+   "deepest_cut": {
+    "title": "Mid (prod. FELD)",
+    "plays": 428,
+    "date": "2018-12-15",
+    "page": "releases/mid-prod-feld.html"
+   },
+   "collaborators": [],
+   "deep_dive": null,
+   "journey": "transmission.html#era-the-first-rite",
+   "season": "season-01"
+  },
+  {
+   "id": "session-17",
+   "name": "The January 8th Session",
+   "start": "2019-01-08",
+   "end": "2019-01-08",
+   "days": 1,
+   "track_count": 1,
+   "total_plays": 1150,
+   "era_id": "the-first-rite",
+   "era_name": "The First Rite",
+   "loudest": {
+    "title": "Soul Shines ~ [prod Josh the Samurai]",
+    "plays": 1150,
+    "date": "2019-01-08",
+    "page": "releases/soul-shines-prod-josh-the-samurai.html"
+   },
+   "deepest_cut": {
+    "title": "Soul Shines ~ [prod Josh the Samurai]",
+    "plays": 1150,
+    "date": "2019-01-08",
+    "page": "releases/soul-shines-prod-josh-the-samurai.html"
+   },
+   "collaborators": [],
+   "deep_dive": null,
+   "journey": "transmission.html#era-the-first-rite",
+   "season": "season-01"
+  },
+  {
+   "id": "session-18",
+   "name": "The January 21st–28th Session",
+   "start": "2019-01-21",
+   "end": "2019-01-28",
+   "days": 8,
+   "track_count": 5,
+   "total_plays": 6442,
+   "era_id": "the-first-rite",
+   "era_name": "The First Rite",
+   "loudest": {
+    "title": "Hard To Keep ft. Yung Vetta (prod. Dead Spyro X Scarlet)",
+    "plays": 2415,
+    "date": "2019-01-28",
+    "page": "releases/hard-to-keep-ft-yung-vetta-prod-dead-spyro-x-scarlet.html"
+   },
+   "deepest_cut": {
+    "title": "STOP IT! ft. Yung Vetta (prod. okthxbb)",
+    "plays": 455,
+    "date": "2019-01-28",
+    "page": "releases/stop-it-ft-yung-vetta-prod-okthxbb.html"
+   },
+   "collaborators": [
+    "Yung Vetta"
+   ],
+   "deep_dive": null,
+   "journey": "transmission.html#era-the-first-rite",
+   "season": "season-01"
+  },
+  {
+   "id": "session-19",
+   "name": "The March 3rd Session",
+   "start": "2019-03-03",
+   "end": "2019-03-03",
+   "days": 1,
+   "track_count": 1,
+   "total_plays": 719,
+   "era_id": "the-first-rite",
+   "era_name": "The First Rite",
+   "loudest": {
+    "title": "Stay Away Freestyle ~",
+    "plays": 719,
+    "date": "2019-03-03",
+    "page": "releases/stay-away-freestyle.html"
+   },
+   "deepest_cut": {
+    "title": "Stay Away Freestyle ~",
+    "plays": 719,
+    "date": "2019-03-03",
+    "page": "releases/stay-away-freestyle.html"
+   },
+   "collaborators": [],
+   "deep_dive": null,
+   "journey": "transmission.html#era-the-first-rite",
+   "season": "season-01"
+  },
+  {
+   "id": "session-20",
+   "name": "The March 15th–27th Session",
+   "start": "2019-03-15",
+   "end": "2019-03-27",
+   "days": 13,
+   "track_count": 4,
+   "total_plays": 5132,
+   "era_id": "the-first-rite",
+   "era_name": "The First Rite",
+   "loudest": {
+    "title": "POWER~! (brb)(prod. Apostle)",
+    "plays": 1815,
+    "date": "2019-03-20",
+    "page": "releases/power-brb-prod-apostle.html"
+   },
+   "deepest_cut": {
+    "title": "Day Comes Freestyle ~(prod. Discent)",
+    "plays": 579,
+    "date": "2019-03-15",
+    "page": "releases/day-comes-freestyle-prod-discent.html"
+   },
+   "collaborators": [],
+   "deep_dive": null,
+   "journey": "transmission.html#era-the-first-rite",
+   "season": "season-01"
+  },
+  {
+   "id": "session-21",
+   "name": "The April 7th Session",
+   "start": "2019-04-07",
+   "end": "2019-04-07",
+   "days": 1,
+   "track_count": 1,
+   "total_plays": 10646,
+   "era_id": "the-first-rite",
+   "era_name": "The First Rite",
+   "loudest": {
+    "title": "CONTACT! ~(prod Born Hero) [NOW ON ALL PLATFORMS!]",
+    "plays": 10646,
+    "date": "2019-04-07",
+    "page": "releases/contact-prod-born-hero-now-on-all-platforms.html"
+   },
+   "deepest_cut": {
+    "title": "CONTACT! ~(prod Born Hero) [NOW ON ALL PLATFORMS!]",
+    "plays": 10646,
+    "date": "2019-04-07",
+    "page": "releases/contact-prod-born-hero-now-on-all-platforms.html"
+   },
+   "collaborators": [],
+   "deep_dive": null,
+   "journey": "transmission.html#era-the-first-rite",
+   "season": "season-01"
+  },
+  {
+   "id": "session-22",
+   "name": "The April 28th Session",
+   "start": "2019-04-28",
+   "end": "2019-04-28",
+   "days": 1,
+   "track_count": 1,
+   "total_plays": 4362,
+   "era_id": "the-first-rite",
+   "era_name": "The First Rite",
+   "loudest": {
+    "title": "GOLD 💛💔💛 ~ (prod. Antropolita)",
+    "plays": 4362,
+    "date": "2019-04-28",
+    "page": "releases/gold-prod-antropolita.html"
+   },
+   "deepest_cut": {
+    "title": "GOLD 💛💔💛 ~ (prod. Antropolita)",
+    "plays": 4362,
+    "date": "2019-04-28",
+    "page": "releases/gold-prod-antropolita.html"
+   },
+   "collaborators": [],
+   "deep_dive": null,
+   "journey": "transmission.html#era-the-first-rite",
+   "season": "season-01"
+  },
+  {
+   "id": "session-23",
+   "name": "The June 25th Session",
+   "start": "2019-06-25",
+   "end": "2019-06-25",
+   "days": 1,
+   "track_count": 1,
+   "total_plays": 347,
+   "era_id": "the-first-rite",
+   "era_name": "The First Rite",
+   "loudest": {
+    "title": "You Don't Wanna Miss Tonight(prod. Luca Malaspina)",
+    "plays": 347,
+    "date": "2019-06-25",
+    "page": "releases/you-don-t-wanna-miss-tonight-prod-luca-malaspina.html"
+   },
+   "deepest_cut": {
+    "title": "You Don't Wanna Miss Tonight(prod. Luca Malaspina)",
+    "plays": 347,
+    "date": "2019-06-25",
+    "page": "releases/you-don-t-wanna-miss-tonight-prod-luca-malaspina.html"
+   },
+   "collaborators": [],
+   "deep_dive": null,
+   "journey": "transmission.html#era-the-first-rite",
+   "season": "season-01"
+  },
+  {
+   "id": "session-24",
+   "name": "The July 9th Session",
+   "start": "2019-07-09",
+   "end": "2019-07-09",
+   "days": 1,
+   "track_count": 7,
+   "total_plays": 28260,
+   "era_id": "the-first-rite",
+   "era_name": "The First Rite",
+   "loudest": {
+    "title": "NIGHT MODE ft. MAX FERRARI x YUNG VETTA x JAX",
+    "plays": 10083,
+    "date": "2019-07-09",
+    "page": "releases/night-mode-ft-max-ferrari-x-yung-vetta-x-jax.html"
+   },
+   "deepest_cut": {
+    "title": "GARDEN ft. Offline_hp (prod. QB)",
+    "plays": 1311,
+    "date": "2019-07-09",
+    "page": "releases/garden-ft-offline-hp-prod-qb.html"
+   },
+   "collaborators": [
+    "AMMI $AGE",
+    "JO$E DRIPP",
+    "Offline_hp",
+    "MAX FERRARI",
+    "YUNG VETTA",
+    "JAX"
+   ],
+   "deep_dive": "sessions/the-july-9th-session.html",
+   "journey": "transmission.html#era-the-first-rite",
+   "season": "season-01"
+  },
+  {
+   "id": "session-25",
+   "name": "The October 4th Session",
+   "start": "2019-10-04",
+   "end": "2019-10-04",
+   "days": 1,
+   "track_count": 1,
+   "total_plays": 11587,
+   "era_id": "the-first-rite",
+   "era_name": "The First Rite",
+   "loudest": {
+    "title": "candy w/ capoxxo(prod. razorwrist)",
+    "plays": 11587,
+    "date": "2019-10-04",
+    "page": "releases/candy-w-capoxxo-prod-razorwrist.html"
+   },
+   "deepest_cut": {
+    "title": "candy w/ capoxxo(prod. razorwrist)",
+    "plays": 11587,
+    "date": "2019-10-04",
+    "page": "releases/candy-w-capoxxo-prod-razorwrist.html"
+   },
+   "collaborators": [
+    "capoxxo"
+   ],
+   "deep_dive": null,
+   "journey": "transmission.html#era-the-first-rite",
+   "season": "season-01"
+  },
+  {
+   "id": "session-26",
+   "name": "The December 6th Session",
+   "start": "2019-12-06",
+   "end": "2019-12-06",
+   "days": 1,
+   "track_count": 1,
+   "total_plays": 9615,
+   "era_id": "the-first-rite",
+   "era_name": "The First Rite",
+   "loudest": {
+    "title": "master key ft. Lil Wintr x Marcelo (prod. ginseng)",
+    "plays": 9615,
+    "date": "2019-12-06",
+    "page": "releases/master-key-ft-lil-wintr-x-marcelo-prod-ginseng.html"
+   },
+   "deepest_cut": {
+    "title": "master key ft. Lil Wintr x Marcelo (prod. ginseng)",
+    "plays": 9615,
+    "date": "2019-12-06",
+    "page": "releases/master-key-ft-lil-wintr-x-marcelo-prod-ginseng.html"
+   },
+   "collaborators": [
+    "Lil Wintr",
+    "Marcelo"
+   ],
+   "deep_dive": null,
+   "journey": "transmission.html#era-the-first-rite",
+   "season": "season-01"
+  },
+  {
+   "id": "session-27",
+   "name": "The December 22nd Session",
+   "start": "2019-12-22",
+   "end": "2019-12-22",
+   "days": 1,
+   "track_count": 7,
+   "total_plays": 21777,
+   "era_id": "the-first-rite",
+   "era_name": "The First Rite",
+   "loudest": {
+    "title": "fly like me w/ pvscale(prod. pvscale)",
+    "plays": 7786,
+    "date": "2019-12-22",
+    "page": "releases/fly-like-me-w-pvscale-prod-pvscale.html"
+   },
+   "deepest_cut": {
+    "title": "I'd rather be w/ lil yu (prod. razorwrist)",
+    "plays": 1343,
+    "date": "2019-12-22",
+    "page": "releases/i-d-rather-be-w-lil-yu-prod-razorwrist.html"
+   },
+   "collaborators": [
+    "capoxxo",
+    "lil yu",
+    "LILVICBXI",
+    "pvscale"
+   ],
+   "deep_dive": "sessions/the-december-22nd-session.html",
+   "journey": "transmission.html#era-the-first-rite",
+   "season": "season-01"
+  },
+  {
+   "id": "session-28",
+   "name": "The December 30th Session",
+   "start": "2019-12-30",
+   "end": "2019-12-30",
+   "days": 1,
+   "track_count": 6,
+   "total_plays": 16172,
+   "era_id": "the-first-rite",
+   "era_name": "The First Rite",
+   "loudest": {
+    "title": "Soulless Soldiers (prod. Born Hero)",
+    "plays": 5878,
+    "date": "2019-12-30",
+    "page": "releases/soulless-soldiers-prod-born-hero.html"
+   },
+   "deepest_cut": {
+    "title": "Pavement (prod. Fish Narc)",
+    "plays": 733,
+    "date": "2019-12-30",
+    "page": "releases/pavement-prod-fish-narc.html"
+   },
+   "collaborators": [
+    "lil soda boi",
+    "Yung Cortex",
+    "Keyblayde808"
+   ],
+   "deep_dive": "sessions/the-december-30th-session.html",
+   "journey": "transmission.html#era-the-first-rite",
+   "season": "season-01"
+  },
+  {
+   "id": "session-29",
+   "name": "The April 9th Session",
+   "start": "2020-04-09",
+   "end": "2020-04-09",
+   "days": 1,
+   "track_count": 1,
+   "total_plays": 1668,
+   "era_id": "the-prolific-year",
+   "era_name": "The Prolific Year",
+   "loudest": {
+    "title": "I HATE IT prod. Taurs",
+    "plays": 1668,
+    "date": "2020-04-09",
+    "page": "releases/i-hate-it-prod-taurs.html"
+   },
+   "deepest_cut": {
+    "title": "I HATE IT prod. Taurs",
+    "plays": 1668,
+    "date": "2020-04-09",
+    "page": "releases/i-hate-it-prod-taurs.html"
+   },
+   "collaborators": [],
+   "deep_dive": null,
+   "journey": "transmission.html#era-the-prolific-year",
+   "season": "season-02"
+  },
+  {
+   "id": "session-30",
+   "name": "The May 3rd Session",
+   "start": "2020-05-03",
+   "end": "2020-05-03",
+   "days": 1,
+   "track_count": 1,
+   "total_plays": 5008,
+   "era_id": "the-prolific-year",
+   "era_name": "The Prolific Year",
+   "loudest": {
+    "title": "used to be messy prod. DeepHartt",
+    "plays": 5008,
+    "date": "2020-05-03",
+    "page": "releases/used-to-be-messy-prod-deephartt.html"
+   },
+   "deepest_cut": {
+    "title": "used to be messy prod. DeepHartt",
+    "plays": 5008,
+    "date": "2020-05-03",
+    "page": "releases/used-to-be-messy-prod-deephartt.html"
+   },
+   "collaborators": [],
+   "deep_dive": null,
+   "journey": "transmission.html#era-the-prolific-year",
+   "season": "season-02"
+  },
+  {
+   "id": "session-31",
+   "name": "The June 18th Session",
+   "start": "2020-06-18",
+   "end": "2020-06-18",
+   "days": 1,
+   "track_count": 1,
+   "total_plays": 706,
+   "era_id": "the-prolific-year",
+   "era_name": "The Prolific Year",
+   "loudest": {
+    "title": "fleeting [prod. AURA]",
+    "plays": 706,
+    "date": "2020-06-18",
+    "page": "releases/fleeting-prod-aura.html"
+   },
+   "deepest_cut": {
+    "title": "fleeting [prod. AURA]",
+    "plays": 706,
+    "date": "2020-06-18",
+    "page": "releases/fleeting-prod-aura.html"
+   },
+   "collaborators": [],
+   "deep_dive": null,
+   "journey": "transmission.html#era-the-prolific-year",
+   "season": "season-02"
+  },
+  {
+   "id": "session-32",
+   "name": "The October 7th Session",
+   "start": "2020-10-07",
+   "end": "2020-10-07",
+   "days": 1,
+   "track_count": 4,
+   "total_plays": 1891,
+   "era_id": "the-prolific-year",
+   "era_name": "The Prolific Year",
+   "loudest": {
+    "title": "playin' by the book w/ lil yu (prod. dxsh)",
+    "plays": 861,
+    "date": "2020-10-07",
+    "page": "releases/playin-by-the-book-w-lil-yu-prod-dxsh.html"
+   },
+   "deepest_cut": {
+    "title": "keep w/ phil is lonely (prod. uniquate)",
+    "plays": 244,
+    "date": "2020-10-07",
+    "page": "releases/keep-w-phil-is-lonely-prod-uniquate.html"
+   },
+   "collaborators": [
+    "lil yu",
+    "phil is lonely"
+   ],
+   "deep_dive": null,
+   "journey": "transmission.html#era-the-prolific-year",
+   "season": "season-03"
+  },
+  {
+   "id": "session-33",
+   "name": "The November 11th Session",
+   "start": "2020-11-11",
+   "end": "2020-11-11",
+   "days": 1,
+   "track_count": 1,
+   "total_plays": 551,
+   "era_id": "the-prolific-year",
+   "era_name": "The Prolific Year",
+   "loudest": {
+    "title": "my fault (prod shinju)",
+    "plays": 551,
+    "date": "2020-11-11",
+    "page": "releases/my-fault-prod-shinju.html"
+   },
+   "deepest_cut": {
+    "title": "my fault (prod shinju)",
+    "plays": 551,
+    "date": "2020-11-11",
+    "page": "releases/my-fault-prod-shinju.html"
+   },
+   "collaborators": [],
+   "deep_dive": null,
+   "journey": "transmission.html#era-the-prolific-year",
+   "season": "season-03"
+  },
+  {
+   "id": "session-34",
+   "name": "The December 21st Session",
+   "start": "2020-12-21",
+   "end": "2020-12-21",
+   "days": 1,
+   "track_count": 7,
+   "total_plays": 2426,
+   "era_id": "the-prolific-year",
+   "era_name": "The Prolific Year",
+   "loudest": {
+    "title": "Lunch Break (prod wetgropes)",
+    "plays": 677,
+    "date": "2020-12-21",
+    "page": "releases/lunch-break-prod-wetgropes.html"
+   },
+   "deepest_cut": {
+    "title": "They Talk (prod. wetgropes)",
+    "plays": 176,
+    "date": "2020-12-21",
+    "page": "releases/they-talk-prod-wetgropes.html"
+   },
+   "collaborators": [],
+   "deep_dive": "sessions/the-december-21st-session.html",
+   "journey": "transmission.html#era-the-prolific-year",
+   "season": "season-03"
+  },
+  {
+   "id": "session-35",
+   "name": "The July 14th Session",
+   "start": "2021-07-14",
+   "end": "2021-07-14",
+   "days": 1,
+   "track_count": 13,
+   "total_plays": 2704,
+   "era_id": "the-cast-it-years",
+   "era_name": "The Cast It: Years",
+   "loudest": {
+    "title": "Sunvalley Rally ft. Lilrareboy (prod. phantasie)",
+    "plays": 319,
+    "date": "2021-07-14",
+    "page": "releases/sunvalley-rally-ft-lilrareboy-prod-phantasie.html"
+   },
+   "deepest_cut": {
+    "title": "Mix Up Substances ft. Max Ferrari",
+    "plays": 151,
+    "date": "2021-07-14",
+    "page": "releases/mix-up-substances-ft-max-ferrari.html"
+   },
+   "collaborators": [
+    "Max Ferrari",
+    "Lilrareboy"
+   ],
+   "deep_dive": "sessions/the-july-14th-session.html",
+   "journey": "transmission.html#era-the-cast-it-years",
+   "season": "season-04"
+  },
+  {
+   "id": "session-36",
+   "name": "The February 22nd Session",
+   "start": "2022-02-22",
+   "end": "2022-02-22",
+   "days": 1,
+   "track_count": 12,
+   "total_plays": 1432,
+   "era_id": "the-cast-it-years",
+   "era_name": "The Cast It: Years",
+   "loudest": {
+    "title": "12 is it working?",
+    "plays": 277,
+    "date": "2022-02-22",
+    "page": "releases/12-is-it-working.html"
+   },
+   "deepest_cut": {
+    "title": "6 stop telling myself i'm not",
+    "plays": 46,
+    "date": "2022-02-22",
+    "page": "releases/6-stop-telling-myself-i-m-not.html"
+   },
+   "collaborators": [],
+   "deep_dive": "sessions/the-february-22nd-session.html",
+   "journey": "transmission.html#era-the-cast-it-years",
+   "season": "season-05"
+  },
+  {
+   "id": "session-37",
+   "name": "The August 29th Session",
+   "start": "2023-08-29",
+   "end": "2023-08-29",
+   "days": 1,
+   "track_count": 3,
+   "total_plays": 1280,
+   "era_id": "the-somelowlifes-era",
+   "era_name": "The SomeLowLifes Era",
+   "loudest": {
+    "title": "Clock In The Benz w/ Lil Yu prod shinju",
+    "plays": 725,
+    "date": "2023-08-29",
+    "page": "releases/clock-in-the-benz-w-lil-yu-prod-shinju.html"
+   },
+   "deepest_cut": {
+    "title": "9 Trips",
+    "plays": 262,
+    "date": "2023-08-29",
+    "page": "releases/9-trips-2.html"
+   },
+   "collaborators": [
+    "Lil Yu"
+   ],
+   "deep_dive": null,
+   "journey": "transmission.html#era-the-somelowlifes-era",
+   "season": "season-06"
+  },
+  {
+   "id": "session-38",
+   "name": "The October 8th Session",
+   "start": "2023-10-08",
+   "end": "2023-10-08",
+   "days": 1,
+   "track_count": 2,
+   "total_plays": 468,
+   "era_id": "the-somelowlifes-era",
+   "era_name": "The SomeLowLifes Era",
+   "loudest": {
+    "title": "Crazy Around The World",
+    "plays": 235,
+    "date": "2023-10-08",
+    "page": "releases/crazy-around-the-world.html"
+   },
+   "deepest_cut": {
+    "title": "I Cannot Be Ignored Much Longer U Hurt Me Real Bad",
+    "plays": 233,
+    "date": "2023-10-08",
+    "page": "releases/i-cannot-be-ignored-much-longer-u-hurt-me-real-bad.html"
+   },
+   "collaborators": [],
+   "deep_dive": null,
+   "journey": "transmission.html#era-the-somelowlifes-era",
+   "season": "season-06"
+  },
+  {
+   "id": "session-39",
+   "name": "The October 20th–21st Session",
+   "start": "2023-10-20",
+   "end": "2023-10-21",
+   "days": 2,
+   "track_count": 2,
+   "total_plays": 830,
+   "era_id": "the-somelowlifes-era",
+   "era_name": "The SomeLowLifes Era",
+   "loudest": {
+    "title": "Warrior Returning Alive [@Melokajj]",
+    "plays": 614,
+    "date": "2023-10-21",
+    "page": "releases/warrior-returning-alive-melokajj.html"
+   },
+   "deepest_cut": {
+    "title": "no WAY!!??",
+    "plays": 216,
+    "date": "2023-10-20",
+    "page": "releases/no-way.html"
+   },
+   "collaborators": [],
+   "deep_dive": null,
+   "journey": "transmission.html#era-the-somelowlifes-era",
+   "season": "season-06"
+  },
+  {
+   "id": "session-40",
+   "name": "The November 3rd–12th Session",
+   "start": "2023-11-03",
+   "end": "2023-11-12",
+   "days": 10,
+   "track_count": 19,
+   "total_plays": 7601,
+   "era_id": "the-somelowlifes-era",
+   "era_name": "The SomeLowLifes Era",
+   "loudest": {
+    "title": "On Our Way (Baseline)",
+    "plays": 696,
+    "date": "2023-11-12",
+    "page": "releases/on-our-way-baseline.html"
+   },
+   "deepest_cut": {
+    "title": "For Brian (Neck Deep) outro [produced by AWFL]",
+    "plays": 43,
+    "date": "2023-11-12",
+    "page": "releases/for-brian-neck-deep-outro-produced-by-awfl.html"
+   },
+   "collaborators": [],
+   "deep_dive": "sessions/the-november-3rd-12th-session.html",
+   "journey": "transmission.html#era-the-somelowlifes-era",
+   "season": "season-06"
+  },
+  {
+   "id": "session-41",
+   "name": "The March 27th Session",
+   "start": "2024-03-27",
+   "end": "2024-03-27",
+   "days": 1,
+   "track_count": 1,
+   "total_plays": 408,
+   "era_id": "the-somelowlifes-era",
+   "era_name": "The SomeLowLifes Era",
+   "loudest": {
+    "title": "Dark City Destiny @dxcember13 @rudey0on10",
+    "plays": 408,
+    "date": "2024-03-27",
+    "page": "releases/dark-city-destiny-dxcember13-rudey0on10.html"
+   },
+   "deepest_cut": {
+    "title": "Dark City Destiny @dxcember13 @rudey0on10",
+    "plays": 408,
+    "date": "2024-03-27",
+    "page": "releases/dark-city-destiny-dxcember13-rudey0on10.html"
+   },
+   "collaborators": [],
+   "deep_dive": null,
+   "journey": "transmission.html#era-the-somelowlifes-era",
+   "season": "season-07"
+  },
+  {
+   "id": "session-42",
+   "name": "The April 4th–7th Session",
+   "start": "2024-04-04",
+   "end": "2024-04-07",
+   "days": 4,
+   "track_count": 3,
+   "total_plays": 1035,
+   "era_id": "the-somelowlifes-era",
+   "era_name": "The SomeLowLifes Era",
+   "loudest": {
+    "title": "MRari inna Beanstalk w/ Max Ferrari (@mvvi468)",
+    "plays": 515,
+    "date": "2024-04-05",
+    "page": "releases/mrari-inna-beanstalk-w-max-ferrari-mvvi468.html"
+   },
+   "deepest_cut": {
+    "title": "Reachhh (Prawjex x Jordaan)",
+    "plays": 189,
+    "date": "2024-04-07",
+    "page": "releases/reachhh-prawjex-x-jordaan.html"
+   },
+   "collaborators": [
+    "Max Ferrari"
+   ],
+   "deep_dive": null,
+   "journey": "transmission.html#era-the-somelowlifes-era",
+   "season": "season-07"
+  },
+  {
+   "id": "session-43",
+   "name": "The April 16th–18th Session",
+   "start": "2024-04-16",
+   "end": "2024-04-18",
+   "days": 3,
+   "track_count": 2,
+   "total_plays": 167,
+   "era_id": "the-somelowlifes-era",
+   "era_name": "The SomeLowLifes Era",
+   "loudest": {
+    "title": "u Not at the Table (Sunsetzer0) #litemode",
+    "plays": 139,
+    "date": "2024-04-18",
+    "page": "releases/u-not-at-the-table-sunsetzer0-litemode.html"
+   },
+   "deepest_cut": {
+    "title": "Im tha Bouncerrr prod. sustain",
+    "plays": 28,
+    "date": "2024-04-16",
+    "page": "releases/im-tha-bouncerrr-prod-sustain.html"
+   },
+   "collaborators": [],
+   "deep_dive": null,
+   "journey": "transmission.html#era-the-somelowlifes-era",
+   "season": "season-07"
+  },
+  {
+   "id": "session-44",
+   "name": "The May 2nd–3rd Session",
+   "start": "2024-05-02",
+   "end": "2024-05-03",
+   "days": 2,
+   "track_count": 2,
+   "total_plays": 452,
+   "era_id": "the-somelowlifes-era",
+   "era_name": "The SomeLowLifes Era",
+   "loudest": {
+    "title": "P1aced a Ward (prodbygus)",
+    "plays": 275,
+    "date": "2024-05-02",
+    "page": "releases/p1aced-a-ward-prodbygus.html"
+   },
+   "deepest_cut": {
+    "title": "i Was in Attics prod. Ochoo",
+    "plays": 177,
+    "date": "2024-05-03",
+    "page": "releases/i-was-in-attics-prod-ochoo.html"
+   },
+   "collaborators": [],
+   "deep_dive": null,
+   "journey": "transmission.html#era-the-somelowlifes-era",
+   "season": "season-07"
+  },
+  {
+   "id": "session-45",
+   "name": "The May 22nd–31st Session",
+   "start": "2024-05-22",
+   "end": "2024-05-31",
+   "days": 10,
+   "track_count": 5,
+   "total_plays": 1420,
+   "era_id": "the-somelowlifes-era",
+   "era_name": "The SomeLowLifes Era",
+   "loudest": {
+    "title": "FittedUP/fadedUP prod. xtasane",
+    "plays": 358,
+    "date": "2024-05-29",
+    "page": "releases/fittedup-fadedup-prod-xtasane.html"
+   },
+   "deepest_cut": {
+    "title": "3 Points Pre Game prod. doublemulti x pinkcat #NITEMODE",
+    "plays": 170,
+    "date": "2024-05-28",
+    "page": "releases/3-points-pre-game-prod-doublemulti-x-pinkcat-nitemode.html"
+   },
+   "collaborators": [],
+   "deep_dive": null,
+   "journey": "transmission.html#era-the-somelowlifes-era",
+   "season": "season-07"
+  },
+  {
+   "id": "session-46",
+   "name": "The June 16th Session",
+   "start": "2024-06-16",
+   "end": "2024-06-16",
+   "days": 1,
+   "track_count": 1,
+   "total_plays": 185,
+   "era_id": "the-somelowlifes-era",
+   "era_name": "The SomeLowLifes Era",
+   "loudest": {
+    "title": "Tri:ed (prod ysosexy)",
+    "plays": 185,
+    "date": "2024-06-16",
+    "page": "releases/tri-ed-prod-ysosexy.html"
+   },
+   "deepest_cut": {
+    "title": "Tri:ed (prod ysosexy)",
+    "plays": 185,
+    "date": "2024-06-16",
+    "page": "releases/tri-ed-prod-ysosexy.html"
+   },
+   "collaborators": [],
+   "deep_dive": null,
+   "journey": "transmission.html#era-the-somelowlifes-era",
+   "season": "season-07"
+  },
+  {
+   "id": "session-47",
+   "name": "The June 27th Session",
+   "start": "2024-06-27",
+   "end": "2024-06-27",
+   "days": 1,
+   "track_count": 1,
+   "total_plays": 286,
+   "era_id": "the-somelowlifes-era",
+   "era_name": "The SomeLowLifes Era",
+   "loudest": {
+    "title": "SSSolid (prod Kuva) *MUSIC VIDEO IN DESC*",
+    "plays": 286,
+    "date": "2024-06-27",
+    "page": "releases/sssolid-prod-kuva-music-video-in-desc.html"
+   },
+   "deepest_cut": {
+    "title": "SSSolid (prod Kuva) *MUSIC VIDEO IN DESC*",
+    "plays": 286,
+    "date": "2024-06-27",
+    "page": "releases/sssolid-prod-kuva-music-video-in-desc.html"
+   },
+   "collaborators": [],
+   "deep_dive": null,
+   "journey": "transmission.html#era-the-somelowlifes-era",
+   "season": "season-07"
+  },
+  {
+   "id": "session-48",
+   "name": "The July 9th Session",
+   "start": "2024-07-09",
+   "end": "2024-07-09",
+   "days": 1,
+   "track_count": 1,
+   "total_plays": 275,
+   "era_id": "the-somelowlifes-era",
+   "era_name": "The SomeLowLifes Era",
+   "loudest": {
+    "title": "Sipping 1ightning prod. lunarlad",
+    "plays": 275,
+    "date": "2024-07-09",
+    "page": "releases/sipping-1ightning-prod-lunarlad.html"
+   },
+   "deepest_cut": {
+    "title": "Sipping 1ightning prod. lunarlad",
+    "plays": 275,
+    "date": "2024-07-09",
+    "page": "releases/sipping-1ightning-prod-lunarlad.html"
+   },
+   "collaborators": [],
+   "deep_dive": null,
+   "journey": "transmission.html#era-the-somelowlifes-era",
+   "season": "season-07"
+  },
+  {
+   "id": "session-49",
+   "name": "The August 30th Session",
+   "start": "2024-08-30",
+   "end": "2024-08-30",
+   "days": 1,
+   "track_count": 1,
+   "total_plays": 206,
+   "era_id": "the-somelowlifes-era",
+   "era_name": "The SomeLowLifes Era",
+   "loudest": {
+    "title": "every nite, blessings (prod meutry)",
+    "plays": 206,
+    "date": "2024-08-30",
+    "page": "releases/every-nite-blessings-prod-meutry.html"
+   },
+   "deepest_cut": {
+    "title": "every nite, blessings (prod meutry)",
+    "plays": 206,
+    "date": "2024-08-30",
+    "page": "releases/every-nite-blessings-prod-meutry.html"
+   },
+   "collaborators": [],
+   "deep_dive": null,
+   "journey": "transmission.html#era-the-somelowlifes-era",
+   "season": "season-07"
+  },
+  {
+   "id": "session-50",
+   "name": "The September 18th Session",
+   "start": "2024-09-18",
+   "end": "2024-09-18",
+   "days": 1,
+   "track_count": 1,
+   "total_plays": 175,
+   "era_id": "the-somelowlifes-era",
+   "era_name": "The SomeLowLifes Era",
+   "loudest": {
+    "title": "like my dogs!!! (prod waynn)",
+    "plays": 175,
+    "date": "2024-09-18",
+    "page": "releases/like-my-dogs-prod-waynn.html"
+   },
+   "deepest_cut": {
+    "title": "like my dogs!!! (prod waynn)",
+    "plays": 175,
+    "date": "2024-09-18",
+    "page": "releases/like-my-dogs-prod-waynn.html"
+   },
+   "collaborators": [],
+   "deep_dive": null,
+   "journey": "transmission.html#era-the-somelowlifes-era",
+   "season": "season-07"
+  },
+  {
+   "id": "session-51",
+   "name": "The October 4th Session",
+   "start": "2024-10-04",
+   "end": "2024-10-04",
+   "days": 1,
+   "track_count": 1,
+   "total_plays": 177,
+   "era_id": "the-somelowlifes-era",
+   "era_name": "The SomeLowLifes Era",
+   "loudest": {
+    "title": "ViiXX (prod skrrtur)",
+    "plays": 177,
+    "date": "2024-10-04",
+    "page": "releases/viixx-prod-skrrtur.html"
+   },
+   "deepest_cut": {
+    "title": "ViiXX (prod skrrtur)",
+    "plays": 177,
+    "date": "2024-10-04",
+    "page": "releases/viixx-prod-skrrtur.html"
+   },
+   "collaborators": [],
+   "deep_dive": null,
+   "journey": "transmission.html#era-the-somelowlifes-era",
+   "season": "season-07"
+  },
+  {
+   "id": "session-52",
+   "name": "The November 5th Session",
+   "start": "2024-11-05",
+   "end": "2024-11-05",
+   "days": 1,
+   "track_count": 1,
+   "total_plays": 17,
+   "era_id": "the-somelowlifes-era",
+   "era_name": "The SomeLowLifes Era",
+   "loudest": {
+    "title": "nitemode2019 w/ Max+Vetty prod. NaXi.wav",
+    "plays": 17,
+    "date": "2024-11-05",
+    "page": "releases/nitemode2019-w-max-vetty-prod-naxi-wav.html"
+   },
+   "deepest_cut": {
+    "title": "nitemode2019 w/ Max+Vetty prod. NaXi.wav",
+    "plays": 17,
+    "date": "2024-11-05",
+    "page": "releases/nitemode2019-w-max-vetty-prod-naxi-wav.html"
+   },
+   "collaborators": [
+    "Max",
+    "Vetty"
+   ],
+   "deep_dive": null,
+   "journey": "transmission.html#era-the-somelowlifes-era",
+   "season": "season-07"
+  },
+  {
+   "id": "session-53",
+   "name": "The January 9th Session",
+   "start": "2025-01-09",
+   "end": "2025-01-09",
+   "days": 1,
+   "track_count": 1,
+   "total_plays": 222,
+   "era_id": "the-silence",
+   "era_name": "The Silence",
+   "loudest": {
+    "title": "oh We11 (prod Vuksai)",
+    "plays": 222,
+    "date": "2025-01-09",
+    "page": "releases/oh-we11-prod-vuksai.html"
+   },
+   "deepest_cut": {
+    "title": "oh We11 (prod Vuksai)",
+    "plays": 222,
+    "date": "2025-01-09",
+    "page": "releases/oh-we11-prod-vuksai.html"
+   },
+   "collaborators": [],
+   "deep_dive": null,
+   "journey": "transmission.html#era-the-silence",
+   "season": "season-07"
+  },
+  {
+   "id": "session-54",
+   "name": "The September 13th–14th Session",
+   "start": "2025-09-13",
+   "end": "2025-09-14",
+   "days": 2,
+   "track_count": 2,
+   "total_plays": 384,
+   "era_id": "the-silence",
+   "era_name": "The Silence",
+   "loudest": {
+    "title": "switch (prod fiftyzeros)",
+    "plays": 206,
+    "date": "2025-09-14",
+    "page": "releases/switch-prod-fiftyzeros.html"
+   },
+   "deepest_cut": {
+    "title": "water + sun (prod paris pas rigolo)",
+    "plays": 178,
+    "date": "2025-09-13",
+    "page": "releases/water-sun-prod-paris-pas-rigolo.html"
+   },
+   "collaborators": [],
+   "deep_dive": null,
+   "journey": "transmission.html#era-the-silence",
+   "season": "season-08"
+  },
+  {
+   "id": "session-55",
+   "name": "The November 4th–11th Session",
+   "start": "2025-11-04",
+   "end": "2025-11-11",
+   "days": 8,
+   "track_count": 11,
+   "total_plays": 2029,
+   "era_id": "the-silence",
+   "era_name": "The Silence",
+   "loudest": {
+    "title": "Sti11 waiting/tunnel freestyle w/ Max Ferrari prod. suli",
+    "plays": 300,
+    "date": "2025-11-11",
+    "page": "releases/sti11-waiting-tunnel-freestyle-w-max-ferrari-prod-suli.html"
+   },
+   "deepest_cut": {
+    "title": "No Puppets A11owed prod. xtasane",
+    "plays": 24,
+    "date": "2025-11-10",
+    "page": "releases/no-puppets-a11owed-prod-xtasane.html"
+   },
+   "collaborators": [
+    "Max Ferrari",
+    "Griimxo"
+   ],
+   "deep_dive": "sessions/the-november-4th-11th-session.html",
+   "journey": "transmission.html#era-the-silence",
+   "season": "season-08"
+  },
+  {
+   "id": "session-56",
+   "name": "The November 23rd Session",
+   "start": "2025-11-23",
+   "end": "2025-11-23",
+   "days": 1,
+   "track_count": 2,
+   "total_plays": 660,
+   "era_id": "the-silence",
+   "era_name": "The Silence",
+   "loudest": {
+    "title": "big litemode (prod runawway, ilyagargod & k3nik)",
+    "plays": 455,
+    "date": "2025-11-23",
+    "page": "releases/big-litemode-prod-runawway-ilyagargod-and-k3nik.html"
+   },
+   "deepest_cut": {
+    "title": "go and did (prod runawway + hidy)",
+    "plays": 205,
+    "date": "2025-11-23",
+    "page": "releases/go-and-did-prod-runawway-hidy.html"
+   },
+   "collaborators": [],
+   "deep_dive": null,
+   "journey": "transmission.html#era-the-silence",
+   "season": "season-08"
+  },
+  {
+   "id": "session-57",
+   "name": "The December 19th Session",
+   "start": "2025-12-19",
+   "end": "2025-12-19",
+   "days": 1,
+   "track_count": 1,
+   "total_plays": 638,
+   "era_id": "the-silence",
+   "era_name": "The Silence",
+   "loudest": {
+    "title": "bound 2 my ways.wav",
+    "plays": 638,
+    "date": "2025-12-19",
+    "page": "releases/bound-2-my-ways-wav.html"
+   },
+   "deepest_cut": {
+    "title": "bound 2 my ways.wav",
+    "plays": 638,
+    "date": "2025-12-19",
+    "page": "releases/bound-2-my-ways-wav.html"
+   },
+   "collaborators": [],
+   "deep_dive": null,
+   "journey": "transmission.html#era-the-silence",
+   "season": "season-08"
+  },
+  {
+   "id": "session-58",
+   "name": "The January 16th Session",
+   "start": "2026-01-16",
+   "end": "2026-01-16",
+   "days": 1,
+   "track_count": 1,
+   "total_plays": 269,
+   "era_id": "the-return",
+   "era_name": "The Return",
+   "loudest": {
+    "title": "all i really need is a text from u 2 (prod astral hp)",
+    "plays": 269,
+    "date": "2026-01-16",
+    "page": "releases/all-i-really-need-is-a-text-from-u-2-prod-astral-hp.html"
+   },
+   "deepest_cut": {
+    "title": "all i really need is a text from u 2 (prod astral hp)",
+    "plays": 269,
+    "date": "2026-01-16",
+    "page": "releases/all-i-really-need-is-a-text-from-u-2-prod-astral-hp.html"
+   },
+   "collaborators": [],
+   "deep_dive": null,
+   "journey": "transmission.html#era-the-return",
+   "season": "season-08"
+  },
+  {
+   "id": "session-59",
+   "name": "The March 17th–25th Session",
+   "start": "2026-03-17",
+   "end": "2026-03-25",
+   "days": 9,
+   "track_count": 4,
+   "total_plays": 781,
+   "era_id": "the-return",
+   "era_name": "The Return",
+   "loudest": {
+    "title": "no power prod wellfed",
+    "plays": 242,
+    "date": "2026-03-23",
+    "page": "releases/no-power-prod-wellfed.html"
+   },
+   "deepest_cut": {
+    "title": "life's made prod wellfed",
+    "plays": 151,
+    "date": "2026-03-20",
+    "page": "releases/life-s-made-prod-wellfed.html"
+   },
+   "collaborators": [],
+   "deep_dive": null,
+   "journey": "transmission.html#era-the-return",
+   "season": "season-08"
+  },
+  {
+   "id": "session-60",
+   "name": "The July 15th Session",
+   "start": "2026-07-15",
+   "end": "2026-07-15",
+   "days": 1,
+   "track_count": 1,
+   "total_plays": 178,
+   "era_id": "the-return",
+   "era_name": "The Return",
+   "loudest": {
+    "title": "the peace of the spirit urn (prod +fiftyzeros)",
+    "plays": 178,
+    "date": "2026-07-15",
+    "page": "releases/the-peace-of-the-spirit-urn-prod-fiftyzeros.html"
+   },
+   "deepest_cut": {
+    "title": "the peace of the spirit urn (prod +fiftyzeros)",
+    "plays": 178,
+    "date": "2026-07-15",
+    "page": "releases/the-peace-of-the-spirit-urn-prod-fiftyzeros.html"
+   },
+   "collaborators": [],
+   "deep_dive": null,
+   "journey": "transmission.html#era-the-return",
+   "season": "season-09"
+  },
+  {
+   "id": "session-61",
+   "name": "The October 2nd Session",
+   "start": "2026-10-02",
+   "end": "2026-10-02",
+   "days": 1,
+   "track_count": 1,
+   "total_plays": 177,
+   "era_id": "the-return",
+   "era_name": "The Return",
+   "loudest": {
+    "title": "turn up w me (prod_timmy)",
+    "plays": 177,
+    "date": "2026-10-02",
+    "page": "releases/turn-up-w-me-prod-timmy.html"
+   },
+   "deepest_cut": {
+    "title": "turn up w me (prod_timmy)",
+    "plays": 177,
+    "date": "2026-10-02",
+    "page": "releases/turn-up-w-me-prod-timmy.html"
+   },
+   "collaborators": [],
+   "deep_dive": null,
+   "journey": "transmission.html#era-the-return",
+   "season": "season-09"
+  }
+ ],
+ "gaps": [
+  {
+   "from_session": "session-01",
+   "to_session": "session-02",
+   "from_end": "2018-01-08",
+   "to_start": "2018-02-04",
+   "days": 27
+  },
+  {
+   "from_session": "session-02",
+   "to_session": "session-03",
+   "from_end": "2018-02-04",
+   "to_start": "2018-03-16",
+   "days": 40
+  },
+  {
+   "from_session": "session-03",
+   "to_session": "session-04",
+   "from_end": "2018-03-16",
+   "to_start": "2018-04-28",
+   "days": 43
+  },
+  {
+   "from_session": "session-04",
+   "to_session": "session-05",
+   "from_end": "2018-04-28",
+   "to_start": "2018-06-08",
+   "days": 41
+  },
+  {
+   "from_session": "session-05",
+   "to_session": "session-06",
+   "from_end": "2018-06-14",
+   "to_start": "2018-07-01",
+   "days": 17
+  },
+  {
+   "from_session": "session-06",
+   "to_session": "session-07",
+   "from_end": "2018-07-01",
+   "to_start": "2018-07-18",
+   "days": 17
+  },
+  {
+   "from_session": "session-07",
+   "to_session": "session-08",
+   "from_end": "2018-07-20",
+   "to_start": "2018-08-04",
+   "days": 15
+  },
+  {
+   "from_session": "session-08",
+   "to_session": "session-09",
+   "from_end": "2018-08-04",
+   "to_start": "2018-08-13",
+   "days": 9
+  },
+  {
+   "from_session": "session-09",
+   "to_session": "session-10",
+   "from_end": "2018-08-27",
+   "to_start": "2018-09-06",
+   "days": 10
+  },
+  {
+   "from_session": "session-10",
+   "to_session": "session-11",
+   "from_end": "2018-09-06",
+   "to_start": "2018-10-06",
+   "days": 30
+  },
+  {
+   "from_session": "session-11",
+   "to_session": "session-12",
+   "from_end": "2018-10-06",
+   "to_start": "2018-10-17",
+   "days": 11
+  },
+  {
+   "from_session": "session-12",
+   "to_session": "session-13",
+   "from_end": "2018-10-17",
+   "to_start": "2018-10-25",
+   "days": 8
+  },
+  {
+   "from_session": "session-13",
+   "to_session": "session-14",
+   "from_end": "2018-10-25",
+   "to_start": "2018-11-07",
+   "days": 13
+  },
+  {
+   "from_session": "session-14",
+   "to_session": "session-15",
+   "from_end": "2018-11-08",
+   "to_start": "2018-11-27",
+   "days": 19
+  },
+  {
+   "from_session": "session-15",
+   "to_session": "session-16",
+   "from_end": "2018-12-04",
+   "to_start": "2018-12-13",
+   "days": 9
+  },
+  {
+   "from_session": "session-16",
+   "to_session": "session-17",
+   "from_end": "2018-12-15",
+   "to_start": "2019-01-08",
+   "days": 24
+  },
+  {
+   "from_session": "session-17",
+   "to_session": "session-18",
+   "from_end": "2019-01-08",
+   "to_start": "2019-01-21",
+   "days": 13
+  },
+  {
+   "from_session": "session-18",
+   "to_session": "session-19",
+   "from_end": "2019-01-28",
+   "to_start": "2019-03-03",
+   "days": 34
+  },
+  {
+   "from_session": "session-19",
+   "to_session": "session-20",
+   "from_end": "2019-03-03",
+   "to_start": "2019-03-15",
+   "days": 12
+  },
+  {
+   "from_session": "session-20",
+   "to_session": "session-21",
+   "from_end": "2019-03-27",
+   "to_start": "2019-04-07",
+   "days": 11
+  },
+  {
+   "from_session": "session-21",
+   "to_session": "session-22",
+   "from_end": "2019-04-07",
+   "to_start": "2019-04-28",
+   "days": 21
+  },
+  {
+   "from_session": "session-22",
+   "to_session": "session-23",
+   "from_end": "2019-04-28",
+   "to_start": "2019-06-25",
+   "days": 58
+  },
+  {
+   "from_session": "session-23",
+   "to_session": "session-24",
+   "from_end": "2019-06-25",
+   "to_start": "2019-07-09",
+   "days": 14
+  },
+  {
+   "from_session": "session-24",
+   "to_session": "session-25",
+   "from_end": "2019-07-09",
+   "to_start": "2019-10-04",
+   "days": 87
+  },
+  {
+   "from_session": "session-25",
+   "to_session": "session-26",
+   "from_end": "2019-10-04",
+   "to_start": "2019-12-06",
+   "days": 63
+  },
+  {
+   "from_session": "session-26",
+   "to_session": "session-27",
+   "from_end": "2019-12-06",
+   "to_start": "2019-12-22",
+   "days": 16
+  },
+  {
+   "from_session": "session-27",
+   "to_session": "session-28",
+   "from_end": "2019-12-22",
+   "to_start": "2019-12-30",
+   "days": 8
+  },
+  {
+   "from_session": "session-28",
+   "to_session": "session-29",
+   "from_end": "2019-12-30",
+   "to_start": "2020-04-09",
+   "days": 101
+  },
+  {
+   "from_session": "session-29",
+   "to_session": "session-30",
+   "from_end": "2020-04-09",
+   "to_start": "2020-05-03",
+   "days": 24
+  },
+  {
+   "from_session": "session-30",
+   "to_session": "session-31",
+   "from_end": "2020-05-03",
+   "to_start": "2020-06-18",
+   "days": 46
+  },
+  {
+   "from_session": "session-31",
+   "to_session": "session-32",
+   "from_end": "2020-06-18",
+   "to_start": "2020-10-07",
+   "days": 111
+  },
+  {
+   "from_session": "session-32",
+   "to_session": "session-33",
+   "from_end": "2020-10-07",
+   "to_start": "2020-11-11",
+   "days": 35
+  },
+  {
+   "from_session": "session-33",
+   "to_session": "session-34",
+   "from_end": "2020-11-11",
+   "to_start": "2020-12-21",
+   "days": 40
+  },
+  {
+   "from_session": "session-34",
+   "to_session": "session-35",
+   "from_end": "2020-12-21",
+   "to_start": "2021-07-14",
+   "days": 205
+  },
+  {
+   "from_session": "session-35",
+   "to_session": "session-36",
+   "from_end": "2021-07-14",
+   "to_start": "2022-02-22",
+   "days": 223
+  },
+  {
+   "from_session": "session-36",
+   "to_session": "session-37",
+   "from_end": "2022-02-22",
+   "to_start": "2023-08-29",
+   "days": 553
+  },
+  {
+   "from_session": "session-37",
+   "to_session": "session-38",
+   "from_end": "2023-08-29",
+   "to_start": "2023-10-08",
+   "days": 40
+  },
+  {
+   "from_session": "session-38",
+   "to_session": "session-39",
+   "from_end": "2023-10-08",
+   "to_start": "2023-10-20",
+   "days": 12
+  },
+  {
+   "from_session": "session-39",
+   "to_session": "session-40",
+   "from_end": "2023-10-21",
+   "to_start": "2023-11-03",
+   "days": 13
+  },
+  {
+   "from_session": "session-40",
+   "to_session": "session-41",
+   "from_end": "2023-11-12",
+   "to_start": "2024-03-27",
+   "days": 136
+  },
+  {
+   "from_session": "session-41",
+   "to_session": "session-42",
+   "from_end": "2024-03-27",
+   "to_start": "2024-04-04",
+   "days": 8
+  },
+  {
+   "from_session": "session-42",
+   "to_session": "session-43",
+   "from_end": "2024-04-07",
+   "to_start": "2024-04-16",
+   "days": 9
+  },
+  {
+   "from_session": "session-43",
+   "to_session": "session-44",
+   "from_end": "2024-04-18",
+   "to_start": "2024-05-02",
+   "days": 14
+  },
+  {
+   "from_session": "session-44",
+   "to_session": "session-45",
+   "from_end": "2024-05-03",
+   "to_start": "2024-05-22",
+   "days": 19
+  },
+  {
+   "from_session": "session-45",
+   "to_session": "session-46",
+   "from_end": "2024-05-31",
+   "to_start": "2024-06-16",
+   "days": 16
+  },
+  {
+   "from_session": "session-46",
+   "to_session": "session-47",
+   "from_end": "2024-06-16",
+   "to_start": "2024-06-27",
+   "days": 11
+  },
+  {
+   "from_session": "session-47",
+   "to_session": "session-48",
+   "from_end": "2024-06-27",
+   "to_start": "2024-07-09",
+   "days": 12
+  },
+  {
+   "from_session": "session-48",
+   "to_session": "session-49",
+   "from_end": "2024-07-09",
+   "to_start": "2024-08-30",
+   "days": 52
+  },
+  {
+   "from_session": "session-49",
+   "to_session": "session-50",
+   "from_end": "2024-08-30",
+   "to_start": "2024-09-18",
+   "days": 19
+  },
+  {
+   "from_session": "session-50",
+   "to_session": "session-51",
+   "from_end": "2024-09-18",
+   "to_start": "2024-10-04",
+   "days": 16
+  },
+  {
+   "from_session": "session-51",
+   "to_session": "session-52",
+   "from_end": "2024-10-04",
+   "to_start": "2024-11-05",
+   "days": 32
+  },
+  {
+   "from_session": "session-52",
+   "to_session": "session-53",
+   "from_end": "2024-11-05",
+   "to_start": "2025-01-09",
+   "days": 65
+  },
+  {
+   "from_session": "session-53",
+   "to_session": "session-54",
+   "from_end": "2025-01-09",
+   "to_start": "2025-09-13",
+   "days": 247
+  },
+  {
+   "from_session": "session-54",
+   "to_session": "session-55",
+   "from_end": "2025-09-14",
+   "to_start": "2025-11-04",
+   "days": 51
+  },
+  {
+   "from_session": "session-55",
+   "to_session": "session-56",
+   "from_end": "2025-11-11",
+   "to_start": "2025-11-23",
+   "days": 12
+  },
+  {
+   "from_session": "session-56",
+   "to_session": "session-57",
+   "from_end": "2025-11-23",
+   "to_start": "2025-12-19",
+   "days": 26
+  },
+  {
+   "from_session": "session-57",
+   "to_session": "session-58",
+   "from_end": "2025-12-19",
+   "to_start": "2026-01-16",
+   "days": 28
+  },
+  {
+   "from_session": "session-58",
+   "to_session": "session-59",
+   "from_end": "2026-01-16",
+   "to_start": "2026-03-17",
+   "days": 60
+  },
+  {
+   "from_session": "session-59",
+   "to_session": "session-60",
+   "from_end": "2026-03-25",
+   "to_start": "2026-07-15",
+   "days": 112
+  },
+  {
+   "from_session": "session-60",
+   "to_session": "session-61",
+   "from_end": "2026-07-15",
+   "to_start": "2026-10-02",
+   "days": 79
+  }
+ ],
+ "silences": [
+  {
+   "from_session": "session-36",
+   "to_session": "session-37",
+   "from_end": "2022-02-22",
+   "to_start": "2023-08-29",
+   "days": 553
+  },
+  {
+   "from_session": "session-53",
+   "to_session": "session-54",
+   "from_end": "2025-01-09",
+   "to_start": "2025-09-13",
+   "days": 247
+  },
+  {
+   "from_session": "session-35",
+   "to_session": "session-36",
+   "from_end": "2021-07-14",
+   "to_start": "2022-02-22",
+   "days": 223
+  },
+  {
+   "from_session": "session-34",
+   "to_session": "session-35",
+   "from_end": "2020-12-21",
+   "to_start": "2021-07-14",
+   "days": 205
+  },
+  {
+   "from_session": "session-40",
+   "to_session": "session-41",
+   "from_end": "2023-11-12",
+   "to_start": "2024-03-27",
+   "days": 136
+  }
+ ],
+ "clusters": [
+  {
+   "id": "season-01",
+   "label": "Season 1",
+   "start": "2018-01-03",
+   "end": "2019-12-30",
+   "session_count": 28,
+   "track_count": 75,
+   "total_plays": 220688,
+   "session_ids": [
+    "session-01",
+    "session-02",
+    "session-03",
+    "session-04",
+    "session-05",
+    "session-06",
+    "session-07",
+    "session-08",
+    "session-09",
+    "session-10",
+    "session-11",
+    "session-12",
+    "session-13",
+    "session-14",
+    "session-15",
+    "session-16",
+    "session-17",
+    "session-18",
+    "session-19",
+    "session-20",
+    "session-21",
+    "session-22",
+    "session-23",
+    "session-24",
+    "session-25",
+    "session-26",
+    "session-27",
+    "session-28"
+   ]
+  },
+  {
+   "id": "season-02",
+   "label": "Season 2",
+   "start": "2020-04-09",
+   "end": "2020-06-18",
+   "session_count": 3,
+   "track_count": 3,
+   "total_plays": 7382,
+   "session_ids": [
+    "session-29",
+    "session-30",
+    "session-31"
+   ]
+  },
+  {
+   "id": "season-03",
+   "label": "Season 3",
+   "start": "2020-10-07",
+   "end": "2020-12-21",
+   "session_count": 3,
+   "track_count": 12,
+   "total_plays": 4868,
+   "session_ids": [
+    "session-32",
+    "session-33",
+    "session-34"
+   ]
+  },
+  {
+   "id": "season-04",
+   "label": "Season 4",
+   "start": "2021-07-14",
+   "end": "2021-07-14",
+   "session_count": 1,
+   "track_count": 13,
+   "total_plays": 2704,
+   "session_ids": [
+    "session-35"
+   ]
+  },
+  {
+   "id": "season-05",
+   "label": "Season 5",
+   "start": "2022-02-22",
+   "end": "2022-02-22",
+   "session_count": 1,
+   "track_count": 12,
+   "total_plays": 1432,
+   "session_ids": [
+    "session-36"
+   ]
+  },
+  {
+   "id": "season-06",
+   "label": "Season 6",
+   "start": "2023-08-29",
+   "end": "2023-11-12",
+   "session_count": 4,
+   "track_count": 26,
+   "total_plays": 10179,
+   "session_ids": [
+    "session-37",
+    "session-38",
+    "session-39",
+    "session-40"
+   ]
+  },
+  {
+   "id": "season-07",
+   "label": "Season 7",
+   "start": "2024-03-27",
+   "end": "2025-01-09",
+   "session_count": 13,
+   "track_count": 21,
+   "total_plays": 5025,
+   "session_ids": [
+    "session-41",
+    "session-42",
+    "session-43",
+    "session-44",
+    "session-45",
+    "session-46",
+    "session-47",
+    "session-48",
+    "session-49",
+    "session-50",
+    "session-51",
+    "session-52",
+    "session-53"
+   ]
+  },
+  {
+   "id": "season-08",
+   "label": "Season 8",
+   "start": "2025-09-13",
+   "end": "2026-03-25",
+   "session_count": 6,
+   "track_count": 21,
+   "total_plays": 4761,
+   "session_ids": [
+    "session-54",
+    "session-55",
+    "session-56",
+    "session-57",
+    "session-58",
+    "session-59"
+   ]
+  },
+  {
+   "id": "season-09",
+   "label": "Season 9",
+   "start": "2026-07-15",
+   "end": "2026-10-02",
+   "session_count": 2,
+   "track_count": 2,
+   "total_plays": 355,
+   "session_ids": [
+    "session-60",
+    "session-61"
+   ]
+  }
+ ],
+ "insights": {
+  "session_count": 61,
+  "track_count": 185,
+  "season_count": 9,
+  "most_prolific": {
+   "id": "session-40",
+   "name": "The November 3rd–12th Session",
+   "start": "2023-11-03",
+   "end": "2023-11-12",
+   "track_count": 19,
+   "total_plays": 7601,
+   "deep_dive": "sessions/the-november-3rd-12th-session.html",
+   "season": "season-06"
+  },
+  "longest_silence": {
+   "days": 553,
+   "from_session": "session-36",
+   "to_session": "session-37",
+   "from_end": "2022-02-22",
+   "to_start": "2023-08-29"
+  },
+  "loudest_session": {
+   "id": "session-02",
+   "name": "The February 4th Session",
+   "total_plays": 30088
+  },
+  "quietest_session": {
+   "id": "session-52",
+   "name": "The November 5th Session",
+   "total_plays": 17
+  },
+  "first_session": {
+   "id": "session-01",
+   "start": "2018-01-03"
+  },
+  "last_session": {
+   "id": "session-61",
+   "end": "2026-10-02"
+  }
+ }
+}

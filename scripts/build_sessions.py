@@ -293,6 +293,7 @@ def main() -> int:
         <h1>Upload sessions</h1>
         <p>{len(out)} sessions \u00b7 {sum(s["track_count"] for s in out)} vault transmissions. A new session begins whenever the silence between uploads stretches past seven days. Newest first.</p>
         <p class="chart-sub">Computed from upload dates \u00b7 play counts are a {SNAPSHOT} snapshot \u00b7 also at <a href="api/v1/sessions.json">api/v1/sessions.json</a></p>
+        <p><a class="btn btn-sm" href="sessions-explorer.html">Sessions explorer &rarr;</a> <span class="chart-sub">the 61 sessions as an explorable timeline: activity seasons, the silences, per-session deepest cuts.</span></p>
       </div>
       {"".join(cards)}
     </div>
