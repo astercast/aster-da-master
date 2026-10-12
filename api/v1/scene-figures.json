@@ -30,7 +30,11 @@
    "Fifth solo LP 'Uncle' announced (Stereogum, August 2026): 11 tracks on K Records [KLP313], scheduled release 2026-10-16; produced by Asheville's Alex Farrar (Wednesday, MJ Lenderman, Fiddlehead).",
    "Tracklist: 'Untitled', 'Much Less Me', 'Emma', 'Student Driver', 'One Hand On The Sword', 'In The Woods', 'Big Dumb World', 'Not To Guess', \"Wouldn't You Know\", 'Umtanum', 'Yakima Canyon'.",
    "Lead singles 'Much Less Me' (Super 8 video by Jolie M-A) and 'Big Dumb World' (video by James Hyson); fall tour 2026-10-29 Los Angeles (Gold Diggers), 2026-11-06 Kingston NY (Tubby's), 2026-11-07 Ridgewood NY (Stone Circle Theatre).",
-   "Status as of research pass 2026-10-11: announced / pre-release — release listings this week still carry 2026-10-16 as upcoming; the archive records 'announced' until a release is confirmed."
+   "Status as of research pass 2026-10-11: announced / pre-release — release listings this week still carry 2026-10-16 as upcoming; the archive records 'announced' until a release is confirmed.",
+   "Real name: Ben Funkhouser (verified — named in the Stereogum announcement interview and the Release Wave artist profile).",
+   "On the title 'Uncle': the artist's own framing (Stereogum interview) — saying 'uncle', giving up, as a tongue-in-cheek nod; the record reflects on the last ten years, expectations, and aging, made from a mid-30s vantage point as a best-shot project rather than a youth-lane chase.",
+   "Vinyl LP pre-order open through K Records (Faygoluvers).",
+   "Same release-day shelf 2026-10-16 (AltPress October calendar): @ – Autosmile (4AD); The Avalanches – No Bad Memories; Dummy – do you love the color of the sky?; Fontaines D.C. – Dopamine Chamber; N8NOFACE – Tomorrow's World; They Are Gutting a Body of Water – KOOL FAITH/LOOSIES II; Taking Back Sunday – Louder Now (20th Anniversary Edition)."
   ],
   "sources": [
    {
@@ -60,6 +64,14 @@
    {
     "label": "Fish Narc artist profile — Release Wave",
     "url": "https://releasewave.com/artists/fish-narc"
+   },
+   {
+    "label": "2026 album releases (October calendar) — AltPress",
+    "url": "https://www.altpress.com/2026-album-releases/"
+   },
+   {
+    "label": "Upcoming album releases — Consequence",
+    "url": "http://consequence.net/upcoming-releases/"
    }
   ],
   "watch": {
@@ -67,7 +79,14 @@
    "status": "announced",
    "expected": "2026-10-16",
    "as_of": "2026-10-11",
-   "note": "Pre-release as of this research pass. The archive records a release as 'released' only after a research pass confirms it; the watch never claims the LP is out early."
+   "note": "Pre-release as of this research pass. The archive records a release as 'released' only after a research pass confirms it; the watch never claims the LP is out early.",
+   "last_reverified": "2026-10-11",
+   "reverify_sources": [
+    "https://upcomingvinyl.com/artists/fish-narc",
+    "https://www.faygoluvers.net/v5/2026/09/fish-narc-announces-new-album-uncle-on-k-records/",
+    "http://consequence.net/upcoming-releases/",
+    "https://www.altpress.com/2026-album-releases/"
+   ]
   }
  }
 }

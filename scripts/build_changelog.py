@@ -121,6 +121,7 @@ def main() -> int:
         <a href="./#discography">Discography</a>
         <a href="releases/">Releases</a>
         <a href="years/">Years</a>
+        <a href="scene/">Scene</a>
         <a href="timeline.html">Timeline</a>
         <a href="transmission.html">Transmission</a>
         <a href="network.html">Network</a>
@@ -141,6 +142,7 @@ def main() -> int:
         <a href="./#discography">Discography</a>
         <a href="releases/">Releases</a>
         <a href="years/">Years</a>
+        <a href="scene/">Scene</a>
         <a href="timeline.html">Timeline</a>
         <a href="transmission.html">Transmission</a>
         <a href="network.html">Network</a>
@@ -192,6 +194,7 @@ def main() -> int:
         <a href="./#discography">Discography</a>
         <a href="releases/">Releases</a>
         <a href="years/">Years</a>
+        <a href="scene/">Scene</a>
         <a href="timeline.html">Timeline</a>
         <a href="transmission.html">Transmission</a>
         <a href="network.html">Network</a>

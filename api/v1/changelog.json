@@ -1,8 +1,26 @@
 {
   "generated": "2026-10-11",
   "method": "Parsed from `git log main`: every commit becomes an entry. The site documenting its own becoming.",
-  "entry_count": 68,
+  "entry_count": 71,
   "entries": [
+    {
+      "hash": "a4cd25f",
+      "date": "2026-10-12",
+      "message": "Wave 30 merge: changelog sync (3-file convention)",
+      "files_changed": 3
+    },
+    {
+      "hash": "16c68b9",
+      "date": "2026-10-12",
+      "message": "Wave 30 merge: fold waves 28–30, Scene nav, Uncle facts, v0.15.0",
+      "files_changed": 472
+    },
+    {
+      "hash": "061b0fb",
+      "date": "2026-10-12",
+      "message": "Wave 28: changelog sync (3-file convention)",
+      "files_changed": 3
+    },
     {
       "hash": "ebd9e24",
       "date": "2026-10-12",

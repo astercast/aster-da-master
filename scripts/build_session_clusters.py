@@ -46,7 +46,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 API = ROOT / "api" / "v1"
-NEW_VERSION = "0.14.0"
+NEW_VERSION = "0.15.0"  # wave 30 merge: Uncle re-verified + new facts
 SNAPSHOT = "2026-10-11"
 
 sys.path.insert(0, str(ROOT / "scripts"))

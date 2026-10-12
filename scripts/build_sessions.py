@@ -34,7 +34,7 @@ API_ARTIST = ROOT / "api" / "v1" / "artist.json"
 SCHEMA_OUT = ROOT / "api" / "v1" / "schema" / "sessions.json"
 PAGE_OUT = ROOT / "sessions.html"
 
-NEW_VERSION = "0.14.0"
+NEW_VERSION = "0.15.0"  # wave 30 merge: Uncle re-verified + new facts
 SNAPSHOT = "2026-10-11"
 GAP_DAYS = 7
 
@@ -237,6 +237,7 @@ def main() -> int:
         <a href="./#discography">Discography</a>
         <a href="releases/">Releases</a>
         <a href="years/">Years</a>
+        <a href="scene/">Scene</a>
         <a href="timeline.html">Timeline</a>
         <a href="transmission.html">Transmission</a>
         <a href="network.html">Network</a>
@@ -257,6 +258,7 @@ def main() -> int:
         <a href="./#discography">Discography</a>
         <a href="releases/">Releases</a>
         <a href="years/">Years</a>
+        <a href="scene/">Scene</a>
         <a href="timeline.html">Timeline</a>
         <a href="transmission.html">Transmission</a>
         <a href="network.html">Network</a>
@@ -309,6 +311,7 @@ def main() -> int:
         <a href="./#discography">Discography</a>
         <a href="releases/">Releases</a>
         <a href="years/">Years</a>
+        <a href="scene/">Scene</a>
         <a href="timeline.html">Timeline</a>
         <a href="transmission.html">Transmission</a>
         <a href="network.html">Network</a>

@@ -1,5 +1,5 @@
 {
-  "version": "0.14.0",
+  "version": "0.15.0",
   "generated": "2026-10-11T00:00:00Z",
   "plays_snapshot": "2026-10-11",
   "method": "Every producer credit is parsed from the archive titles' own prod./produced-by fragments (as credited, verbatim); spelling variants that slug identically merge with aliases recorded. Research is hand-maintained in data/producer-research.json (pass 2026-10-11) and asserted, never extended silently.",

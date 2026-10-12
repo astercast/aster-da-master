@@ -25,6 +25,7 @@
       <nav class="site-nav" aria-label="Primary">
         <a href="./#discography">Discography</a>
         <a href="releases/">Releases</a>
+        <a href="scene/">Scene</a>
         <a href="timeline.html">Timeline</a>
         <a href="transmission.html">Transmission</a>
         <a href="network.html">Network</a>
@@ -45,6 +46,7 @@
         <nav class="mnav-panel" aria-label="Mobile">
         <a href="./#discography">Discography</a>
         <a href="releases/">Releases</a>
+        <a href="scene/">Scene</a>
         <a href="timeline.html">Timeline</a>
         <a href="transmission.html">Transmission</a>
         <a href="network.html">Network</a>
@@ -87,7 +89,7 @@
 
         <div class="reveal">
           <h3 id="ag-endpoints">The API</h3>
-          <p>Twenty-one versioned JSON endpoints under <code>api/v1/</code>. Current data version: <strong>0.14.0</strong> (see <code>api/v1/index.json</code> → <code>version</code> before caching anything).</p>
+          <p>Twenty-one versioned JSON endpoints under <code>api/v1/</code>. Current data version: <strong>0.15.0</strong> (see <code>api/v1/index.json</code> → <code>version</code> before caching anything).</p>
           <div class="table-wrap">
             <table>
               <caption>API endpoint table</caption>
@@ -104,7 +106,7 @@
                 <tr><th scope="row">codex-families</th><td><code>api/v1/codex-families.json</code></td><td>Codex family deep-dives: decoded readings, era-by-era evolution, key sessions, collaborators — drives the <code>codex/&lt;slug&gt;.html</code> pages</td><td><code>families[]</code> → <code>decoded, eras[], transmissions[], key_sessions[], collaborators[]</code></td></tr>
                 <tr><th scope="row">milestones</th><td><code>api/v1/milestones.json</code></td><td>Career firsts computed from the verified discography</td><td>firsts, records, silences</td></tr>
                 <tr><th scope="row">milestone-watch</th><td><code>api/v1/milestone-watch.json</code></td><td>Vault tracks near round-number play counts (2026-10-11 snapshot)</td><td><code>summit</code>, <code>bands[]</code> → <code>target, tracks[].needed</code></td></tr>
-                <tr><th scope="row">transmission</th><td><code>api/v1/transmission.json</code></td><td>Guided-journey era aggregates: six eras with stats, top tracks, key sessions, collaborators, milestones, computed signal lines; the 2026 era carries an <code>extras</code> block (verified 2026 singles, Q4 2026 Uncle-LP/trilogy watch, play-count snapshot)</td><td><code>eras[]</code> → <code>signal, top_tracks[], key_sessions[], collaborators[], milestones[], extras</code> (extras on the 2026 era only)</td></tr>
+                <tr><th scope="row">transmission</th><td><code>api/v1/transmission.json</code></td><td>Guided journey: 13 stops — six eras with stats, top tracks, key sessions, collaborators, milestones, computed signal lines, plus seven live data chapters (The Race, The Record Book, The Codex, The Architects, The Seasons, The Deep Cuts, The Horizon); the 2026 era carries an <code>extras</code> block (verified 2026 singles, Q4 2026 Uncle-LP/trilogy watch, play-count snapshot)</td><td><code>eras[]</code> → <code>signal, top_tracks[], key_sessions[], collaborators[], milestones[], extras</code> (extras on the 2026 era only)</td></tr>
                 <tr><th scope="row">network</th><td><code>api/v1/network.json</code></td><td>Collaboration network: artist-centered graph of the 21 title-credited collaborators + producer scene figures, track-weighted edges, co-credit links from shared titles, computed insights</td><td><code>nodes[]</code> → <code>kind, track_count, tracks[], years[], x, y</code>; <code>edges[]</code> → <code>a, b, weight, kind</code>; <code>insights</code></td></tr>
                 <tr><th scope="row">eras</th><td><code>api/v1/eras.json</code></td><td>Era deep-dives: six eras with full transmission lists (every track + plays), all in-era collaborators, active codex families, milestones, computed signal lines and summaries — drives the <code>eras/&lt;id&gt;.html</code> pages</td><td><code>eras[]</code> → <code>tracks[], collaborators[], codex_families[], summary, deep_dive, journey</code></td></tr>
                 <tr><th scope="row">session-clusters</th><td><code>api/v1/session-clusters.json</code></td><td>Session archaeology, interactive: the 61 upload sessions as an explorable timeline — per-session enrichment (era, loudest + deepest-cut tracks, cross-links), the 60 inter-session gaps, 9 activity seasons, asserted insights. Drives <code>sessions-explorer.html</code></td><td><code>sessions[]</code> → <code>loudest, deepest_cut, collaborators, deep_dive, journey</code>; <code>gaps[], clusters[], insights</code></td></tr>
@@ -177,7 +179,7 @@
           <h3 id="ag-expectations">Rates &amp; expectations</h3>
           <ul>
             <li><strong>Static files, no auth, no rate limits.</strong> This is a static site — the whole API is files on disk. Fetch freely, but serve over HTTP: browsers block <code>fetch()</code> from <code>file://</code> pages.</li>
-            <li><strong>Sizes are small.</strong> Largest endpoints: <code>artist.json</code> (~155 KB), <code>sessions.json</code> (~50 KB), <code>on-this-day.json</code> (~40 KB). Everything else is under 16 KB. Cache aggressively; check <code>index.json → version</code> (currently <code>0.14.0</code>) to invalidate.</li>
+            <li><strong>Sizes are small.</strong> Largest endpoints: <code>artist.json</code> (~155 KB), <code>sessions.json</code> (~50 KB), <code>on-this-day.json</code> (~40 KB). Everything else is under 16 KB. Cache aggressively; check <code>index.json → version</code> (currently <code>0.15.0</code>) to invalidate.</li>
             <li><strong>Play counts are a snapshot.</strong> SoundCloud plays were captured read-only on <strong>2026-10-11</strong> (<code>plays_snapshot</code> / <code>observed</code> fields). They drift daily — always state the snapshot date, never present them as live.</li>
             <li><strong>Upload dates ≠ recording dates.</strong> Sessions are computed clusters (7-day upload-gap rule), not artist-named studio sessions.</li>
             <li><strong>The rules of the archive:</strong> titles and metadata only — <strong>never lyrics</strong>; never invent biography; unknowns are listed as unknowns (<code>method.html</code> → "The unknowns register"); the circle is title-credit only (producers live in <code>scene-figures.json</code>).</li>
@@ -239,6 +241,7 @@
         <a href="./">Home</a>
         <a href="./#discography">Discography</a>
         <a href="releases/">Releases</a>
+        <a href="scene/">Scene</a>
         <a href="timeline.html">Timeline</a>
         <a href="transmission.html">Transmission</a>
         <a href="network.html">Network</a>

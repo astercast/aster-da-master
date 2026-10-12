@@ -22,7 +22,7 @@ from datetime import date
 from pathlib import Path
 
 ROOT = Path("/home/hatch/workspace/aster-da-master")
-VERSION = "0.14.0"
+VERSION = "0.15.0"  # wave 30 merge: Uncle re-verified + new facts
 SNAPSHOT = "2026-10-11"
 
 sys.path.insert(0, str(ROOT / "scripts"))

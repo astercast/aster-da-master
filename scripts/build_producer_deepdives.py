@@ -65,7 +65,7 @@ from api_manifest import render_manifest  # noqa: E402
 API = ROOT / "api" / "v1"
 SESSIONS = ROOT / "data" / "sessions.json"
 
-VERSION = "0.14.0"  # mirror only - no source data changed in wave 27
+VERSION = "0.15.0"  # wave 30 merge: Uncle re-verified + new facts
 SNAPSHOT = "2026-10-11"
 GENERATED = "2026-10-11T00:00:00Z"
 

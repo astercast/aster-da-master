@@ -37,7 +37,7 @@ from build_producer_deepdives import (  # noqa: E402  (wave 27 cross-links)
 DATA = json.loads((ROOT / "data" / "artist.json").read_text())
 OUT = ROOT / "circle"
 API = ROOT / "api" / "v1"
-NEW_VERSION = "0.14.0"  # wave 23: Uncle research enrichment + watch block
+NEW_VERSION = "0.15.0"  # wave 30 merge: Uncle re-verified pre-release + 4 new verified facts
 
 # wave 27: producer slugs with as-credited productions (populated in main);
 # circle members who also produce get a "Producer deep dive" cross-link.
@@ -48,6 +48,7 @@ NAV = """<nav class="site-nav" aria-label="Primary">
         <a href="../releases/">Releases</a>
         <a href="../years/">Years</a>
         <a href="./">Circle</a>
+        <a href="../scene/">Scene</a>
         <a href="../timeline.html">Timeline</a>
         <a href="../transmission.html">Transmission</a>
         <a href="../network.html">Network</a>
@@ -69,6 +70,7 @@ NAV = """<nav class="site-nav" aria-label="Primary">
         <a href="../releases/">Releases</a>
         <a href="../years/">Years</a>
         <a href="./">Circle</a>
+        <a href="../scene/">Scene</a>
         <a href="../timeline.html">Timeline</a>
         <a href="../transmission.html">Transmission</a>
         <a href="../network.html">Network</a>
@@ -126,6 +128,7 @@ FOOT = """    </div>
         <a href="../releases/">Releases</a>
         <a href="../years/">Years</a>
         <a href="./">Circle</a>
+        <a href="../scene/">Scene</a>
         <a href="../timeline.html">Timeline</a>
         <a href="../transmission.html">Transmission</a>
         <a href="../network.html">Network</a>
@@ -236,6 +239,22 @@ SCENE_FIGURES = {
             "Status as of research pass 2026-10-11: announced / pre-release "
             "— release listings this week still carry 2026-10-16 as upcoming; "
             "the archive records 'announced' until a release is confirmed.",
+            # wave 30 merge: new verified facts (2026-10-11 pass)
+            "Real name: Ben Funkhouser (verified — named in the Stereogum "
+            "announcement interview and the Release Wave artist profile).",
+            "On the title 'Uncle': the artist's own framing (Stereogum "
+            "interview) — saying 'uncle', giving up, as a tongue-in-cheek "
+            "nod; the record reflects on the last ten years, expectations, "
+            "and aging, made from a mid-30s vantage point as a best-shot "
+            "project rather than a youth-lane chase.",
+            "Vinyl LP pre-order open through K Records (Faygoluvers).",
+            "Same release-day shelf 2026-10-16 (AltPress October calendar): "
+            "@ – Autosmile (4AD); The Avalanches – No Bad Memories; "
+            "Dummy – do you love the color of the sky?; "
+            "Fontaines D.C. – Dopamine Chamber; N8NOFACE – "
+            "Tomorrow's World; They Are Gutting a Body of Water – "
+            "KOOL FAITH/LOOSIES II; Taking Back Sunday – Louder Now "
+            "(20th Anniversary Edition).",
         ],
         "sources": [
             ("Fish Narc - Wikipedia", "https://en.wikipedia.org/wiki/Fish_Narc"),
@@ -251,6 +270,11 @@ SCENE_FIGURES = {
              "https://upcomingvinyl.com/record/fish-narc-uncle"),
             ("Fish Narc artist profile — Release Wave",
              "https://releasewave.com/artists/fish-narc"),
+            # wave 30 merge: new sources for the same-day shelf + re-verification
+            ("2026 album releases (October calendar) — AltPress",
+             "https://www.altpress.com/2026-album-releases/"),
+            ("Upcoming album releases — Consequence",
+             "http://consequence.net/upcoming-releases/"),
         ],
         "watch": {
             "label": "'Uncle' — fifth solo LP",
@@ -261,6 +285,36 @@ SCENE_FIGURES = {
                      "records a release as 'released' only after a research "
                      "pass confirms it; the watch never claims the LP is out "
                      "early."),
+            # wave 30 merge: re-verified pre-release 2026-10-11
+            "last_reverified": "2026-10-11",
+            "reverify_sources": [
+                "https://upcomingvinyl.com/artists/fish-narc",
+                "https://www.faygoluvers.net/v5/2026/09/"
+                "fish-narc-announces-new-album-uncle-on-k-records/",
+                "http://consequence.net/upcoming-releases/",
+                "https://www.altpress.com/2026-album-releases/",
+            ],
+        },
+        # wave 30 merge: highlighted scene section on the fish-narc page
+        "scene_section": {
+            "kicker": "the scene record \u2014 wave 30",
+            "heading": "New verified facts (2026-10-11 pass)",
+            "facts": [
+                "Real name: Ben Funkhouser (verified \u2014 Stereogum "
+                "announcement interview + Release Wave artist profile).",
+                "On the title 'Uncle': the artist's own framing \u2014 "
+                "saying 'uncle', giving up, as a tongue-in-cheek nod; the "
+                "record reflects on the last ten years, expectations, and "
+                "aging, made from a mid-30s vantage point.",
+                "Vinyl LP pre-order open through K Records.",
+                "Same release-day shelf 2026-10-16 (AltPress): @, "
+                "The Avalanches, Dummy, Fontaines D.C., N8NOFACE, They Are "
+                "Gutting a Body of Water, Taking Back Sunday.",
+            ],
+            "link_href": "../scene/fish-narc-uncle.html",
+            "link_text": "'Uncle' \u2014 the full fact-block \u2192",
+            "link_sub": "the dedicated scene page with tracklist, "
+                        "singles, tour dates, and the live watch.",
         },
     },
 }
@@ -283,6 +337,23 @@ def render_verified_section(info):
         <p class="chart-sub">Research pass 2026-10-11 &mdash; public sources only, no biographical invention, no lyrics.</p>
         <ul class="fact-list">{facts}</ul>
         {render_sources(info["sources"])}
+      </section>
+"""
+
+
+def render_scene_section(info):
+    """Wave-30 merge: highlighted "new verified facts" section for a scene
+    figure. Only rendered when the figure carries a 'scene_section' block."""
+    s = info.get("scene_section")
+    if not s:
+        return ""
+    facts = "".join(f"<li>{escape(f)}</li>" for f in s["facts"])
+    return f"""
+      <section class="section" aria-labelledby="sn-h">
+        <span class="kicker"><span class="numeral">&#10022;</span>{escape(s["kicker"])}</span>
+        <h3 id="sn-h">{escape(s["heading"])}</h3>
+        <ul class="fact-list">{facts}</ul>
+        <p class="chart-sub"><a href="{escape(s["link_href"])}">{escape(s["link_text"])}</a> {escape(s["link_sub"])}</p>
       </section>
 """
 
@@ -446,6 +517,7 @@ def scene_figure_page(slug, info):
     )
     facts = "".join(f"<li>{escape(f)}</li>" for f in info["facts"])
     watch = render_watch_section(info) if info.get("watch") else ""
+    scene = render_scene_section(info)
     body = f"""
       <nav class="crumbs" aria-label="Breadcrumb">
         <a href="../">Home</a> / <a href="../network.html">Network</a>
@@ -477,6 +549,7 @@ def scene_figure_page(slug, info):
         {render_sources(info["sources"])}
       </section>
 {watch}
+{scene}
       <p class="chart-sub"><a href="../producers/{slug}.html">Producer deep dive &rarr;</a> {escape(info["name"])}&rsquo;s as-credited productions, fingerprint, and scene context.</p>
       <nav class="year-pager" aria-label="Scene figure navigation">
         <a class="btn btn-sm" href="./">The full circle</a>
