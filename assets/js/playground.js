@@ -29,7 +29,9 @@
     { id: "first-last", path: "api/v1/first-last.json",
       blurb: "Per year 2018–2026: the opening and closing transmissions." },
     { id: "milestone-watch", path: "api/v1/milestone-watch.json",
-      blurb: "Milestone watch: vault tracks near round-number play counts (2026-10-11 snapshot)." }
+      blurb: "Milestone watch: vault tracks near round-number play counts (2026-10-11 snapshot)." },
+    { id: "transmission", path: "api/v1/transmission.json",
+      blurb: "The guided journey: six eras with stats, top tracks, key sessions, collaborators, milestones, computed signal lines." }
   ];
 
   function esc(s) {

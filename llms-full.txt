@@ -27,7 +27,7 @@ Wave 12 research enrichment (2026-10-11, public sources only, no lyrics, no inve
 
 ## Pages
 
-Home `index.html` (discography) · `releases/` (219 pages + index) · `years/` (2018–2026 + index) · `circle/` (21 + 1 scene figure) · `codex/` (16 vocabulary families) · `timeline.html` · `network.html` · `decoder.html` (transmission decoder) · `api-playground.html` (Explore + Skill recipes tabs) · `agents.html` (agentic surface: API table, llms, skills, search-index usage, 3 worked workflows) · `method.html` (methodology, scene context, unknowns) · `trilogy.html` (Litemode Trilogy watch) · `sessions.html` + `sessions/` (61 upload sessions, 10 deep-dives) · `changelog.html` · `glance.html` · `press-kit.html`.
+Home `index.html` (discography) · `releases/` (219 pages + index) · `years/` (2018–2026 + index) · `circle/` (21 + 1 scene figure) · `codex/` (16 vocabulary families) · `timeline.html` · `network.html` · `decoder.html` (transmission decoder) · `api-playground.html` (Explore + Skill recipes tabs) · `agents.html` (agentic surface: API table, llms, skills, search-index usage, 3 worked workflows) · `method.html` (methodology, scene context, unknowns) · `trilogy.html` (Litemode Trilogy watch) · `sessions.html` + `sessions/` (61 upload sessions, 10 deep-dives) · `changelog.html` · `glance.html` · `press-kit.html` · `transmission.html` (flagship guided journey: six eras 2018→2026 with stats, defining tracks, key sessions, collaborators, milestones, computed signal lines; keyboard + auto-play + share text).
 
 Design: "UNDERGROUND TRANSMISSION" — semantic HTML, ARIA landmarks, keyboard-accessible, `prefers-reduced-motion` respected, mobile-first.
 

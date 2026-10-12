@@ -26,6 +26,7 @@
         <a href="./#discography">Discography</a>
         <a href="releases/">Releases</a>
         <a href="timeline.html">Timeline</a>
+        <a href="transmission.html">Transmission</a>
         <a href="network.html">Network</a>
         <a href="decoder.html">Decoder</a>
         <a href="api-playground.html">API</a>
@@ -44,6 +45,7 @@
         <a href="./#discography">Discography</a>
         <a href="releases/">Releases</a>
         <a href="timeline.html">Timeline</a>
+        <a href="transmission.html">Transmission</a>
         <a href="network.html">Network</a>
         <a href="decoder.html">Decoder</a>
         <a href="api-playground.html">API</a>
@@ -83,7 +85,7 @@
 
         <div class="reveal">
           <h3 id="ag-endpoints">The API</h3>
-          <p>Thirteen versioned JSON endpoints under <code>api/v1/</code>. Current data version: <strong>0.12.0</strong> (see <code>api/v1/index.json</code> → <code>version</code> before caching anything).</p>
+          <p>Fourteen versioned JSON endpoints under <code>api/v1/</code>. Current data version: <strong>0.12.0</strong> (see <code>api/v1/index.json</code> → <code>version</code> before caching anything).</p>
           <div class="table-wrap">
             <table>
               <caption>API endpoint table</caption>
@@ -99,6 +101,7 @@
                 <tr><th scope="row">codex</th><td><code>api/v1/codex.json</code></td><td>16 title-word families with per-family track lists</td><td><code>families[]</code> → <code>name, words[], tracks[]</code></td></tr>
                 <tr><th scope="row">milestones</th><td><code>api/v1/milestones.json</code></td><td>Career firsts computed from the verified discography</td><td>firsts, records, silences</td></tr>
                 <tr><th scope="row">milestone-watch</th><td><code>api/v1/milestone-watch.json</code></td><td>Vault tracks near round-number play counts (2026-10-11 snapshot)</td><td><code>summit</code>, <code>bands[]</code> → <code>target, tracks[].needed</code></td></tr>
+                <tr><th scope="row">transmission</th><td><code>api/v1/transmission.json</code></td><td>Guided-journey era aggregates: six eras with stats, top tracks, key sessions, collaborators, milestones, computed signal lines</td><td><code>eras[]</code> → <code>signal, top_tracks[], key_sessions[], collaborators[], milestones[]</code></td></tr>
                 <tr><th scope="row">years</th><td><code>api/v1/years.json</code></td><td>Year-in-review: per-year stats and top tracks, 2018–2026</td><td><code>transmissions, plays, top_tracks[]</code></td></tr>
                 <tr><th scope="row">on-this-day</th><td><code>api/v1/on-this-day.json</code></td><td>Transmissions keyed by MM-DD upload date</td><td>MM-DD keys</td></tr>
                 <tr><th scope="row">release-slugs</th><td><code>api/v1/release-slugs.json</code></td><td>Slug index for the 219 generated release pages</td><td>slug → page mappings</td></tr>
@@ -210,6 +213,7 @@
         <a href="./#discography">Discography</a>
         <a href="releases/">Releases</a>
         <a href="timeline.html">Timeline</a>
+        <a href="transmission.html">Transmission</a>
         <a href="network.html">Network</a>
         <a href="decoder.html">Decoder</a>
         <a href="api-playground.html">API</a>

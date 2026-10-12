@@ -4,6 +4,7 @@ Base: `api/v1/`. Static JSON, versioned. The artist record is the single source
 of truth; `data/artist.json` feeds the site renderer and mirrors it.
 
 - `api/v1/index.json` — manifest: version, endpoints, observation date, provenance, agent routing
+- `api/v1/transmission.json` — the guided-journey aggregates: six eras (2018→2026) with transmissions, plays, sessions, distributor counts, top 3 tracks (with release pages), key sessions (deep-dive links where they exist), in-era collaborators, milestones, and computed "signal" one-liners; drives `transmission.html` (schema: `api/v1/schema/transmission.json`)
 - `api/v1/artist.json` — the canonical artist record: bio, facts, discography, platforms, socials, featured release, booking
 - `api/v1/codex.json` — the vocabulary codex: recurring title words grouped into 16 named families, with per-track lists (computed at build time by `scripts/build_codex.py` from `data/artist.json`)
 - `api/v1/schema/artist.json` — JSON Schema (draft-07) for the artist record
@@ -207,6 +208,6 @@ Task procedures in `skills/` (registry: `skills/index.json`; playbook format: Us
 
 ## Agents surface (wave 13)
 
-- `agents.html` — the agentic surface doc: 13-endpoint table (incl. `scene-figures.json`), llms.txt/llms-full.txt, skills table with endpoint sequences, search-index usage (replicate the `/` overlay via `release-slugs.json` + `circle.json` + `codex.json` + `artist.json` eras), rate/expectation notes (static JSON, no auth; plays are a 2026-10-11 snapshot; upload dates ≠ recording dates; titles/metadata only, never lyrics, never invented bio), 3 worked workflows (500-word era briefing, 10 deep cuts, collaborator trace). Linked from primary nav + footer site-wide.
+- `agents.html` — the agentic surface doc: 14-endpoint table (incl. `scene-figures.json`), llms.txt/llms-full.txt, skills table with endpoint sequences, search-index usage (replicate the `/` overlay via `release-slugs.json` + `circle.json` + `codex.json` + `artist.json` eras), rate/expectation notes (static JSON, no auth; plays are a 2026-10-11 snapshot; upload dates ≠ recording dates; titles/metadata only, never lyrics, never invented bio), 3 worked workflows (500-word era briefing, 10 deep cuts, collaborator trace). Linked from primary nav + footer site-wide.
 - `api-playground.html` — second tab: **Skill recipes**, linking each skill to its endpoint sequence.
 - Agent rules: serve over HTTP (`file://` blocks `fetch()`); check `index.json → version` before caching (0.12.0).

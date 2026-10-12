@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Transmission — Aster da Master</title>
+  <meta name="description" content="Press play on his career: a guided journey through six eras of Aster da Master, 2018 to 2026 — the numbers, the defining tracks, the sessions, the collaborators.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <style>
+    /* TRANSMISSION — flagship journey. Phosphor green on near-black, restrained scanlines. */
+    .tx-stage {
+      position: relative;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-l);
+      background: var(--bg-soft);
+      padding: var(--space-7) var(--space-6);
+      margin: var(--space-7) 0;
+      overflow: hidden;
+    }
+    /* scanlines, restrained: faint, static */
+    .tx-stage::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background: repeating-linear-gradient(to bottom, transparent 0 3px, rgba(0, 240, 144, 0.028) 3px 4px);
+    }
+    .tx-hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(3rem, 11vw, 8rem);
+      letter-spacing: 0.02em;
+      color: var(--neon);
+      text-shadow: var(--glow-neon);
+      margin: 0 0 var(--space-4);
+      line-height: 1;
+    }
+    .tx-lede { font-size: var(--fs-3); color: var(--ink-dim); max-width: 44ch; }
+    .tx-total-strip {
+      display: flex; flex-wrap: wrap; gap: var(--space-5);
+      margin: var(--space-6) 0; padding: var(--space-5) 0;
+      border-top: 1px solid var(--line-soft); border-bottom: 1px solid var(--line-soft);
+    }
+    .tx-total-strip .t-num { font-family: var(--font-mono); font-size: 1.6rem; color: var(--neon); font-weight: 700; }
+    .tx-total-strip .t-lab { font-family: var(--font-mono); font-size: var(--fs-micro); text-transform: uppercase; letter-spacing: 0.14em; color: var(--muted); }
+
+    /* progress rail */
+    .tx-rail { list-style: none; display: flex; gap: var(--space-2); padding: 0; margin: 0 0 var(--space-6); overflow-x: auto; }
+    .tx-rail li { flex: 1 0 auto; min-width: 120px; }
+    .tx-node {
+      width: 100%; display: flex; flex-direction: column; gap: 2px; align-items: flex-start;
+      background: transparent; border: 1px solid var(--line); border-radius: var(--radius-s);
+      color: var(--ink-dim); font-family: var(--font-mono); font-size: var(--fs-micro);
+      padding: var(--space-3); cursor: pointer; text-align: left;
+    }
+    .tx-node .n-num { color: var(--muted); letter-spacing: 0.2em; }
+    .tx-node .n-name { font-weight: 700; font-size: 0.8rem; color: var(--ink-dim); }
+    .tx-node:hover { border-color: var(--neon-deep); }
+    .tx-node[aria-current="step"] { border-color: var(--neon); background: rgba(0, 240, 144, 0.07); }
+    .tx-node[aria-current="step"] .n-name { color: var(--neon); }
+    .tx-node[aria-current="step"] .n-num { color: var(--neon); }
+    .tx-node:focus-visible, .tx-era a:focus-visible, .tx-controls .btn:focus-visible,
+    .tx-map-card:focus-visible, .tx-copy:focus-visible {
+      outline: 2px solid var(--neon); outline-offset: 2px;
+    }
+
+    /* era panel + tuning transition */
+    .tx-era { position: relative; }
+    .tx-era.tuning .tx-era-inner { animation: tx-tune 0.5s var(--ease); }
+    @keyframes tx-tune {
+      0% { opacity: 0; transform: translateY(14px); filter: saturate(2); }
+      35% { opacity: 1; filter: none; }
+      55% { opacity: 0.55; }
+      100% { opacity: 1; transform: none; }
+    }
+    .tx-era-kicker { display: flex; align-items: baseline; gap: var(--space-3); flex-wrap: wrap; }
+    .tx-era h2 { font-family: var(--font-display); font-size: var(--fs-1); color: var(--ink); margin: var(--space-2) 0; letter-spacing: 0.01em; }
+    .tx-era h2:focus { outline: none; }
+    .tx-era h2:focus-visible { outline: 2px solid var(--neon); outline-offset: 4px; }
+    .tx-span { font-family: var(--font-mono); color: var(--gold); font-size: var(--fs-small); letter-spacing: 0.12em; }
+    .tx-scene { color: var(--ink-dim); font-style: italic; max-width: 60ch; }
+    .tx-signal {
+      border-left: 3px solid var(--neon);
+      padding: var(--space-4) var(--space-5);
+      margin: var(--space-6) 0;
+      background: rgba(0, 240, 144, 0.05);
+      font-size: 1.05rem; color: var(--ink);
+    }
+    .tx-signal .sig-lab {
+      display: block; font-family: var(--font-mono); font-size: var(--fs-micro);
+      text-transform: uppercase; letter-spacing: 0.2em; color: var(--neon); margin-bottom: var(--space-2);
+    }
+    .tx-cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: var(--space-6); }
+    .tx-block h3 {
+      font-family: var(--font-mono); font-size: var(--fs-small); text-transform: uppercase;
+      letter-spacing: 0.18em; color: var(--muted); margin: 0 0 var(--space-3);
+      border-bottom: 1px solid var(--line-soft); padding-bottom: var(--space-2);
+    }
+    .tx-block ol, .tx-block ul { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-3); }
+    .tx-track a, .tx-sess a, .tx-collab a { color: var(--ink); text-decoration: none; }
+    .tx-track a:hover, .tx-sess a:hover, .tx-collab a:hover { color: var(--neon); }
+    .tx-meta { display: block; font-family: var(--font-mono); font-size: var(--fs-micro); color: var(--muted); margin-top: 2px; }
+    .tx-plays { font-family: var(--font-mono); color: var(--gold); font-size: var(--fs-small); white-space: nowrap; }
+    .tx-track { display: flex; justify-content: space-between; gap: var(--space-3); align-items: baseline; }
+    .tx-dd { font-family: var(--font-mono); font-size: var(--fs-micro); color: var(--neon-deep); text-transform: uppercase; letter-spacing: 0.1em; }
+    .tx-mile { border: 1px solid var(--line-soft); border-radius: var(--radius-s); padding: var(--space-3) var(--space-4); }
+    .tx-mile .m-name { font-weight: 600; color: var(--ink); }
+    .tx-mile .m-fact { color: var(--ink-dim); font-size: var(--fs-small); margin: var(--space-2) 0 0; }
+    .tx-empty { color: var(--muted); font-size: var(--fs-small); font-style: italic; }
+
+    .tx-controls { display: flex; flex-wrap: wrap; gap: var(--space-3); margin-top: var(--space-7); padding-top: var(--space-5); border-top: 1px solid var(--line-soft); align-items: center; }
+    .tx-controls .spacer { flex: 1; }
+    .tx-autoplay[aria-pressed="true"] { background: var(--neon); color: var(--neon-ink); }
+
+    /* journey map */
+    .tx-map-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: var(--space-4); margin-top: var(--space-6); }
+    .tx-map-card {
+      display: block; text-align: left; background: var(--panel); border: 1px solid var(--line);
+      border-radius: var(--radius-m); padding: var(--space-5); cursor: pointer; color: var(--ink);
+      font-family: var(--font-body); width: 100%;
+    }
+    .tx-map-card:hover { border-color: var(--neon); }
+    .tx-map-card .c-num { font-family: var(--font-mono); font-size: var(--fs-micro); color: var(--muted); letter-spacing: 0.2em; }
+    .tx-map-card .c-name { font-family: var(--font-display); font-size: 1.4rem; margin: var(--space-2) 0; letter-spacing: 0.01em; }
+    .tx-map-card .c-stats { font-family: var(--font-mono); font-size: var(--fs-small); color: var(--neon); }
+
+    .tx-end-stats { margin: var(--space-6) 0; }
+    .tx-share-out {
+      font-family: var(--font-mono); font-size: var(--fs-small); white-space: pre-wrap;
+      background: var(--neon-ink); border: 1px solid var(--neon-deep); border-radius: var(--radius-s);
+      color: var(--neon); padding: var(--space-5); margin-top: var(--space-5);
+    }
+
+    @media (max-width: 640px) {
+      .tx-stage { padding: var(--space-5) var(--space-4); }
+      .tx-rail li { min-width: 104px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .tx-stage::after { display: none; }
+      .tx-era.tuning .tx-era-inner { animation: none; }
+      .tx-hero-title { text-shadow: none; }
+      *, *::before, *::after { transition-duration: 0.01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-bar">
+      <a class="brand" href="./" aria-label="Aster da Master home">
+        <span class="brand-mark" aria-hidden="true">A✦</span>
+        <span>ASTER DA MASTER</span>
+      </a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="./#discography">Discography</a>
+        <a href="releases/">Releases</a>
+        <a href="timeline.html">Timeline</a>
+        <a href="transmission.html" aria-current="page">Transmission</a>
+        <a href="network.html">Network</a>
+        <a href="decoder.html">Decoder</a>
+        <a href="api-playground.html">API</a>
+        <a href="agents.html">Agents</a>
+        <a href="years/">Years</a>
+        <a href="method.html">Method</a>
+        <a href="trilogy.html">Trilogy</a>
+        <a href="sessions.html">Sessions</a>
+        <a href="changelog.html">Changelog</a>
+        <a href="glance.html">Glance</a>
+        <a href="press-kit.html">Press kit</a>
+      </nav>
+      <details class="mnav">
+        <summary><span class="bars" aria-hidden="true"><i></i><i></i><i></i></span>Menu</summary>
+        <nav class="mnav-panel" aria-label="Mobile">
+        <a href="./#discography">Discography</a>
+        <a href="releases/">Releases</a>
+        <a href="timeline.html">Timeline</a>
+        <a href="transmission.html" aria-current="page">Transmission</a>
+        <a href="network.html">Network</a>
+        <a href="decoder.html">Decoder</a>
+        <a href="api-playground.html">API</a>
+        <a href="agents.html">Agents</a>
+        <a href="years/">Years</a>
+        <a href="method.html">Method</a>
+        <a href="trilogy.html">Trilogy</a>
+        <a href="sessions.html">Sessions</a>
+        <a href="changelog.html">Changelog</a>
+        <a href="glance.html">Glance</a>
+        <a href="press-kit.html">Press kit</a>
+        </nav>
+      </details>
+      <button class="search-btn" id="search-open" type="button" aria-label="Search the archive (keyboard shortcut: slash)">
+        <span aria-hidden="true">&#8981;</span><kbd aria-hidden="true">/</kbd>
+      </button>
+    </div>
+  </header>
+
+  <div class="search-overlay" id="search-overlay" hidden>
+    <div class="search-box" role="dialog" aria-modal="true" aria-labelledby="search-title">
+      <p class="kicker" id="search-title"><span class="numeral">✦</span>Search the archive</p>
+      <input id="search-input" type="search" placeholder="Tracks, collaborators, eras, the codex&hellip;" aria-label="Search the archive" role="combobox" aria-expanded="true" aria-controls="search-results" autocomplete="off" spellcheck="false">
+      <div id="search-results" role="listbox" aria-label="Search results"></div>
+      <p class="search-hint"><kbd>/</kbd> to open &middot; <kbd>&uarr;</kbd><kbd>&darr;</kbd> to move &middot; <kbd>Enter</kbd> to go &middot; <kbd>Esc</kbd> to close</p>
+    </div>
+  </div>
+
+  <main id="main">
+    <div class="container">
+
+      <!-- ENTRY -->
+      <section class="tx-stage" id="tx-entry" aria-labelledby="tx-title">
+        <p class="kicker"><span class="numeral">✦</span>The flagship journey</p>
+        <h1 class="tx-hero-title" id="tx-title" tabindex="-1">TRANSMISSION</h1>
+        <p class="tx-lede">Six eras. Nine years. 2018&nbsp;&rarr;&nbsp;2026. Press play on his career — the numbers, the defining tracks, the sessions, the summoned voices, and the one line each era&rsquo;s data tells.</p>
+        <div class="tx-total-strip" id="tx-totals" aria-label="Archive totals">
+          <div><div class="t-num" data-tx-total="transmissions">218</div><div class="t-lab">Transmissions</div></div>
+          <div><div class="t-num" data-tx-total="plays">257,394</div><div class="t-lab">Plays</div></div>
+          <div><div class="t-num" data-tx-total="sessions">61</div><div class="t-lab">Sessions</div></div>
+          <div><div class="t-num">6</div><div class="t-lab">Eras</div></div>
+        </div>
+        <div class="btn-row">
+          <button class="btn btn-neon" id="tx-begin" type="button">&#9654; Begin transmission</button>
+          <button class="btn btn-ghost" id="tx-open-map" type="button">Journey map</button>
+        </div>
+        <p class="chart-sub" style="margin-top:var(--space-5)">Play counts are the 2026-10-11 vault snapshot. Titles and metadata only — never lyrics. <noscript>The journey needs JavaScript; the archive itself is all static pages.</noscript></p>
+      </section>
+
+      <!-- JOURNEY -->
+      <section class="tx-stage" id="tx-journey" aria-labelledby="tx-era-heading" hidden>
+        <ol class="tx-rail" id="tx-rail" aria-label="Era progress"></ol>
+        <article class="tx-era" id="tx-era">
+          <div class="tx-era-inner" id="tx-era-inner"><!-- rendered by transmission.js --></div>
+        </article>
+        <div class="tx-controls">
+          <button class="btn btn-sm btn-ghost" id="tx-prev" type="button">&larr; Prev era</button>
+          <button class="btn btn-sm btn-ghost" id="tx-next" type="button">Next era &rarr;</button>
+          <button class="btn btn-sm btn-ghost tx-autoplay" id="tx-autoplay" type="button" aria-pressed="false">&#9654; Press play</button>
+          <span class="spacer" aria-hidden="true"></span>
+          <button class="btn btn-sm btn-ghost" id="tx-map-btn" type="button">Journey map</button>
+          <button class="btn btn-sm btn-neon tx-copy" id="tx-copy" type="button">Copy my transmission</button>
+        </div>
+        <p class="visually-hidden" aria-live="polite" id="tx-live"></p>
+      </section>
+
+      <!-- MAP -->
+      <section class="tx-stage" id="tx-map" aria-labelledby="tx-map-heading" hidden>
+        <p class="kicker"><span class="numeral">✦</span>Journey map</p>
+        <h2 id="tx-map-heading" tabindex="-1" style="font-family:var(--font-display);font-size:var(--fs-2)">PICK YOUR FREQUENCY</h2>
+        <p class="tx-lede">Jump straight to any era. The journey keeps your place.</p>
+        <div class="tx-map-grid" id="tx-map-grid"></div>
+        <div class="btn-row">
+          <button class="btn btn-sm btn-ghost" id="tx-map-back" type="button">&larr; Back to the journey</button>
+        </div>
+      </section>
+
+      <!-- END -->
+      <section class="tx-stage" id="tx-end" aria-labelledby="tx-end-heading" hidden>
+        <p class="kicker"><span class="numeral">✦</span>Signal received</p>
+        <h2 id="tx-end-heading" tabindex="-1" style="font-family:var(--font-display);font-size:var(--fs-1)">THE VAULT AT A GLANCE</h2>
+        <p class="tx-lede">You rode all six eras, 2018 to 2026. Here is the whole signal in one frame — and the full vault, if you want to keep digging.</p>
+        <div class="stat-grid tx-end-stats" id="tx-end-stats"></div>
+        <div class="btn-row">
+          <a class="btn btn-neon" href="glance.html">Open the vault at a glance</a>
+          <button class="btn btn-ghost tx-copy" id="tx-copy-end" type="button">Copy my transmission</button>
+          <button class="btn btn-ghost" id="tx-replay" type="button">&#8635; Replay the journey</button>
+        </div>
+        <div class="tx-share-out" id="tx-share-out" hidden></div>
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <p>© 2026 ASTER DA MASTER — ALL SIGNALS RESERVED</p>
+      <nav aria-label="Footer">
+        <a href="./">Home</a>
+        <a href="./#discography">Discography</a>
+        <a href="releases/">Releases</a>
+        <a href="timeline.html">Timeline</a>
+        <a href="transmission.html" aria-current="page">Transmission</a>
+        <a href="network.html">Network</a>
+        <a href="decoder.html">Decoder</a>
+        <a href="api-playground.html">API</a>
+        <a href="agents.html">Agents</a>
+        <a href="years/">Years</a>
+        <a href="method.html">Method</a>
+        <a href="trilogy.html">Trilogy</a>
+        <a href="sessions.html">Sessions</a>
+        <a href="changelog.html">Changelog</a>
+        <a href="glance.html">Glance</a>
+        <a href="press-kit.html">Press kit</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="assets/js/common.js"></script>
+  <script src="assets/js/search.js"></script>
+  <script src="assets/js/transmission.js"></script>
+</body>
+</html>

@@ -36,6 +36,7 @@ NAV = """<nav class="site-nav" aria-label="Primary">
         <a href="../releases/">Releases</a>
         <a href="./">Years</a>
         <a href="../timeline.html">Timeline</a>
+        <a href="../transmission.html">Transmission</a>
         <a href="../network.html">Network</a>
         <a href="../decoder.html">Decoder</a>
         <a href="../api-playground.html">API</a>
@@ -54,6 +55,7 @@ NAV = """<nav class="site-nav" aria-label="Primary">
         <a href="../releases/">Releases</a>
         <a href="./">Years</a>
         <a href="../timeline.html">Timeline</a>
+        <a href="../transmission.html">Transmission</a>
         <a href="../network.html">Network</a>
         <a href="../decoder.html">Decoder</a>
         <a href="../api-playground.html">API</a>
@@ -108,6 +110,7 @@ FOOT = """    </div>
         <a href="../releases/">Releases</a>
         <a href="./">Years</a>
         <a href="../timeline.html">Timeline</a>
+        <a href="../transmission.html">Transmission</a>
         <a href="../network.html">Network</a>
         <a href="../decoder.html">Decoder</a>
         <a href="../api-playground.html">API</a>
