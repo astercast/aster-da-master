@@ -1,8 +1,14 @@
 {
   "generated": "2026-10-11",
   "method": "Parsed from `git log main`: every commit becomes an entry. The site documenting its own becoming.",
-  "entry_count": 143,
+  "entry_count": 144,
   "entries": [
+    {
+      "hash": "c27bcc1",
+      "date": "2026-10-13",
+      "message": "Rotation 13: nav-fork retirement — nine one-off nav scripts (645 lines) replaced by canonical nav_data.py + update_nav.py (Fleet Commons nav-injection v1.0.0); 8 generators rewired onto the data file; producer pages' Codex door fixed (./ -> ../codex/, 114 pages x 3 navs); anchored hand pages' column-0 Trilogy links indented; mobile framing artifact normalized on 401 pages; validate.sh stage 6 now runs update_nav --check; api/health.js aligned to Commons health canonical (BAD_INPUT envelope, rate limit, s-maxage=60, cron-secret gating, never-5xx) + envelope cacheMaxAge opt; last 2 unstyled flagship classes ruled (.nw-table-note, .pg-panel); capture #3 gate check recorded on signal.html (pre-gate, ledger stays 2 rows / 257,409); .gitattributes LF pin",
+      "files_changed": 434
+    },
     {
       "hash": "21fc3e4",
       "date": "2026-10-13",
