@@ -201,5 +201,21 @@ check("excluded-have-no-pages",
           for s in ("capoxxo", "lil-koi", "lil-yu")),
       "exclusion rule violated")
 
+# producers/index.html: ids unique site-wide class (Rotation 18) — the
+# plays-ordered table must carry each letter anchor exactly once, on the
+# first row with that initial, and every jump-nav target must exist.
+INDEX_HTML = (ROOT / "producers" / "index.html").read_text()
+all_ids = re.findall(r'\bid="([^"]+)"', INDEX_HTML)
+check("index-ids-unique", len(all_ids) == len(set(all_ids)),
+      str(sorted({i for i in all_ids if all_ids.count(i) > 1})[:5]))
+letter_ids = [i[len("letter-"):] for i in all_ids if i.startswith("letter-")]
+expected_letters = sorted({p["name"][0].upper() for p in DOC["producers"] if p["name"]})
+check("index-letter-anchors-exactly-once", sorted(letter_ids) == expected_letters,
+      f"{len(letter_ids)} anchors for {len(expected_letters)} letters")
+nav_targets = re.findall(r'href="#letter-([^"]+)"', INDEX_HTML)
+check("index-jump-nav-targets-resolve-once",
+      sorted(nav_targets) == expected_letters
+      and all(all_ids.count("letter-" + t) == 1 for t in nav_targets))
+
 print(f"\ntest_producer_deepdives: {PASS} passed, {FAIL} failed")
 sys.exit(1 if FAIL else 0)

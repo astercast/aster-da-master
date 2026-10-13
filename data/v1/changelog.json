@@ -1,8 +1,20 @@
 {
   "generated": "2026-10-11",
   "method": "Parsed from `git log main`: every commit becomes an entry. The site documenting its own becoming.",
-  "entry_count": 152,
+  "entry_count": 154,
   "entries": [
+    {
+      "hash": "841b13f",
+      "date": "2026-10-13",
+      "message": "Rotation 18: producers index duplicate letter ids retired at source (first-occurrence anchors in build_producer_deepdives, generator assert + 3 test checks; 110 letter ids -> 31, landing rows unchanged); capture #3 gate clock-checked 19:52Z + re-checked 19:56Z — gate 2026-10-13T23:22:57Z still ahead, ledger stays 2 rows / 257,409, gate ARMED (Rotation 18 check on signal.html); release-week flips stay armed",
+      "files_changed": 5
+    },
+    {
+      "hash": "c2ad627",
+      "date": "2026-10-13",
+      "message": "changelog sync (post-validation)",
+      "files_changed": 3
+    },
     {
       "hash": "0c2d60d",
       "date": "2026-10-13",

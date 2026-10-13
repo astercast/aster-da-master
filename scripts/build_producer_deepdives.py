@@ -322,11 +322,18 @@ def index_page_html(producers, insights):
     letters = sorted({p["name"][0].upper() for p in producers if p["name"]})
     jump = " ".join(f'<a href="#letter-{l}">{l}</a>' for l in letters)
     rows = []
-    last_letter = None
+    # The table is ordered by plays (see the caption), NOT alphabetically,
+    # so a letter recurs in separated runs down the page. The jump anchor
+    # belongs on the FIRST row carrying each letter only — the row a
+    # browser already lands on, since a duplicated id resolves to its
+    # first match. Tracking only the previous row's letter (the old rule)
+    # re-stamped the id on every later run: 110 letter ids for 31 letters
+    # on the shipped page, 79 of them duplicates. Rotation 18.
+    seen_letters = set()
     for p in producers:
         letter = p["name"][0].upper()
-        anchor = f' id="letter-{letter}"' if letter != last_letter else ""
-        last_letter = letter
+        anchor = f' id="letter-{letter}"' if letter not in seen_letters else ""
+        seen_letters.add(letter)
         res = "yes" if p["research"] else "—"
         rows.append(
             f'<tr{anchor}><th scope="row"><a href="{escape(p["slug"])}.html">{escape(p["name"])}</a></th>'
@@ -361,7 +368,17 @@ def index_page_html(producers, insights):
     title = "Producer deep dives"
     desc = (f"{insights['producer_count']} as-credited producers behind the Aster da Master sound, "
             "every credit verbatim from the archive's titles.")
-    return HEAD.format(title=escape(title), desc=escape(desc), canonical="/producers/index.html") + body + FOOT
+    page = HEAD.format(title=escape(title), desc=escape(desc), canonical="/producers/index.html") + body + FOOT
+    # A duplicated id is invalid HTML and makes the alphabet jump land
+    # wherever the parser feels like — unshippable from this generator.
+    all_ids = re.findall(r'\bid="([^"]+)"', page)
+    assert len(all_ids) == len(set(all_ids)), (
+        f"producers/index.html would carry duplicate id attributes: "
+        f"{sorted({i for i in all_ids if all_ids.count(i) > 1})}")
+    letter_ids = [i for i in all_ids if i.startswith("letter-")]
+    assert sorted(i[len("letter-"):] for i in letter_ids) == letters, (
+        "letter anchors must cover each jump-nav letter exactly once")
+    return page
 
 
 # --- main -------------------------------------------------------------------
