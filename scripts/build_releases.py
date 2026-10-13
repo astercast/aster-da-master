@@ -159,6 +159,29 @@ def build():
         slug_list.append(s)
     assert len(set(slug_list)) == len(releases), "slug collision"
 
+    # Page titles must be unique site-wide: two different releases can share
+    # a catalog title (e.g. "9 Trips", a 2023 SoundCloud-only track and a
+    # 2026 Single). A shared title gets its year as a qualifier in the page
+    # title only — the record's own title (h1, JSON-LD name) stays untouched.
+    title_counts = {}
+    for r in releases:
+        title_counts[r["title"]] = title_counts.get(r["title"], 0) + 1
+    page_titles = []
+    for r in releases:
+        if title_counts[r["title"]] > 1:
+            year = (r.get("date") or "")[:4] or "undated"
+            page_titles.append(f'{r["title"]} ({year})')
+        else:
+            page_titles.append(r["title"])
+    if len(set(page_titles)) != len(page_titles):
+        # Same title AND same year: fall back to the record's type.
+        page_titles = [
+            f'{r["title"]} ({r["type"]}, {(r.get("date") or "")[:4] or "undated"})'
+            if title_counts[r["title"]] > 1 else r["title"]
+            for r in releases
+        ]
+    assert len(set(page_titles)) == len(page_titles), "page title collision"
+
     OUT.mkdir(exist_ok=True)
 
     for i, r in enumerate(releases):
@@ -229,7 +252,7 @@ def build():
       <nav class="release-nav" aria-label="More releases">{prev_link}{next_link}</nav>
 """
         (OUT / f"{slug}.html").write_text(
-            HEAD.format(title=escape(r["title"]), desc=escape(f'{r["title"]} — {r["type"]} by Aster da Master'), canonical=f"/releases/{slug}.html", ldjson=release_ld(r, slug), navchunk=nav_data.nav_chunk("../", "compact"))
+            HEAD.format(title=escape(page_titles[i]), desc=escape(f'{r["title"]} — {r["type"]} by Aster da Master'), canonical=f"/releases/{slug}.html", ldjson=release_ld(r, slug), navchunk=nav_data.nav_chunk("../", "compact"))
             + body
             + FOOT,
             encoding="utf-8",

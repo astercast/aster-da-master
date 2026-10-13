@@ -1,8 +1,20 @@
 {
   "generated": "2026-10-11",
   "method": "Parsed from `git log main`: every commit becomes an entry. The site documenting its own becoming.",
-  "entry_count": 148,
+  "entry_count": 150,
   "entries": [
+    {
+      "hash": "d944b88",
+      "date": "2026-10-13",
+      "message": "Rotation 16: duplicate release title retired at generator source (build_releases qualifies shared catalog titles with year — '9 Trips (2023)' SoundCloud-only vs '9 Trips (2026)' Single — plus uniqueness assert); site-wide title census 0 duplicates on 430 pages; capture #3 gate clock-checked at 17:39Z — gate 2026-10-13T23:22:57Z still ahead, ledger stays 2 rows / 257,409, gate stays ARMED (Rotation 16 check on signal.html); release-week flips stay armed",
+      "files_changed": 5
+    },
+    {
+      "hash": "270e723",
+      "date": "2026-10-13",
+      "message": "changelog sync (post-validation)",
+      "files_changed": 3
+    },
     {
       "hash": "e2e5819",
       "date": "2026-10-13",

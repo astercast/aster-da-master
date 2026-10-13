@@ -94,7 +94,7 @@
    "description": "Site construction history, generated from the git log.",
    "schema": "data/v1/schema/changelog.json",
    "updated": "2026-10-11T00:00:00Z",
-   "records": 148,
+   "records": 150,
    "notes": "A changelog built from git log cannot record its own sync commit (wave-15 convention, WAVELOG.md)."
   },
   "first-last": {
