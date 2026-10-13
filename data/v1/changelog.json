@@ -1,8 +1,20 @@
 {
   "generated": "2026-10-11",
   "method": "Parsed from `git log main`: every commit becomes an entry. The site documenting its own becoming.",
-  "entry_count": 134,
+  "entry_count": 136,
   "entries": [
+    {
+      "hash": "7dea131",
+      "date": "2026-10-13",
+      "message": "changelog sync (post-validation)",
+      "files_changed": 3
+    },
+    {
+      "hash": "4853a0f",
+      "date": "2026-10-13",
+      "message": "Rotation 12: Layer-2, Lit — deep pages to the Tuner/Atlas standard (new layer2.css scoped to 400 generated pages via 6 generator HEAD templates: 18 previously-unstyled classes get their first rules, receiver-readout stats, numbered ledger lists, editorial pull-quotes, ruled 48px section rhythm, fixed-header clip fixed at the container), free-tier/best-pattern audit in LIVE_CHECKLIST (5 functions, ~6.5k-17.3k est. invocations vs 100k cap, handlers 17-123ms vs 10s, cron no-env-key path named first degradation point) + vercel.json SWR cache header for data/v1, release-week spot-check from site data only (party in 2 days, Uncle in 3, both flips armed), capture #3 gate still armed (ledger stays 2 rows)",
+      "files_changed": 414
+    },
     {
       "hash": "c99241f",
       "date": "2026-10-13",
