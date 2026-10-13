@@ -152,7 +152,7 @@ Domains; the `api/*` paths move with the domain automatically (same-origin
 `fetch("/api/stats")` needs no changes); update absolute URLs in `llms.txt`
 / sitemap if the domain changes.
 
-**OG absolutizing (deploy-time, blocking for social sharing):** every page
+**Absolutize at deploy (deploy-time checklist — blocking for social sharing and canonical resolution):** every page
 on the site carries `og:image` / `twitter:image` meta pointing at the shared
 card, `assets/og-card.png` (Foundry round 2) — but the wiring is
 **relative** (`assets/og-card.png` at the root, `../assets/og-card.png` in
@@ -165,6 +165,18 @@ every `og:image` / `twitter:image` value against it (a root-relative
 meta lives in the generator HEAD templates and the hand-maintained heads,
 so the change is made once per template/head, then the site is rebuilt
 and re-grepped for `og:image` to confirm no relative value survives).
+**Canonical links (Commons round 10) absolutize in the same pass:** every
+page also carries a self-referential `<link rel="canonical">` in the
+repo's own canonical path form — a root-relative absolute path
+(`/releases/<slug>.html`, `/circle/<slug>.html`, `/index.html`, …) with
+no domain, for the same reason. In the `-live` pass, prefix each
+canonical's path with the deployment's domain so it becomes a full
+absolute URL; a canonical left root-relative is treated as relative by
+crawlers and does not consolidate. The canonical lives in the same
+generator HEAD templates and hand-maintained heads as the OG meta, so
+one edit per template/head covers both; rebuild, then re-grep for
+`rel="canonical"` and confirm every value is absolute and each page's
+canonical still names itself.
 
 ## 8. Rollback
 

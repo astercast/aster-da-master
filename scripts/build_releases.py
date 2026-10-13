@@ -27,6 +27,7 @@ HEAD = """<!DOCTYPE html>
   <meta property="og:type" content="website">
   <meta property="og:title" content="{title} — Aster da Master">
   <meta property="og:description" content="{desc}">
+  <link rel="canonical" href="{canonical}">
   <meta property="og:image" content="../assets/og-card.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -43,6 +44,7 @@ HEAD = """<!DOCTYPE html>
   <link rel="stylesheet" href="../assets/css/components.css">
   <link rel="stylesheet" href="../assets/css/motifs.css">
   <link rel="stylesheet" href="../assets/css/layer2.css">
+  {ldjson}
 </head>
 <body class="layer2">
   <a class="skip-link" href="#main">Skip to content</a>
@@ -138,6 +140,63 @@ def credits_from_title(title: str):
     keep = [f.strip() for f in frags if re.search(r"(?i)feat|ft\.|prod|w/|with", f)]
     return keep
 
+
+RELEASE_TYPE_MAP = {"Album": "AlbumRelease", "EP": "EPRelease", "Single": "SingleRelease"}
+
+
+def ld_script(obj):
+    payload = json.dumps(obj, ensure_ascii=False).replace("</", "<\\/")
+    return '<script type="application/ld+json">' + payload + "</script>"
+
+
+def release_ld(r, slug):
+    """Honest JSON-LD for one release page: only fields the catalog record
+    itself carries (title/type/date/track count/artwork). No ratings, no
+    offers, no play counts. SoundCloud-only entries are single tracks, so
+    they type as MusicRecording, never MusicAlbum."""
+    if r.get("type") == "SoundCloud-only":
+        rec = {
+            "@context": "https://schema.org",
+            "@type": "MusicRecording",
+            "name": r["title"],
+            "byArtist": {"@type": "MusicGroup", "name": "Aster da Master"},
+            "url": f"/releases/{slug}.html",
+        }
+        if r.get("date"):
+            rec["datePublished"] = r["date"]
+        return ld_script(rec)
+    ld = {
+        "@context": "https://schema.org",
+        "@type": "MusicAlbum",
+        "name": r["title"],
+        "byArtist": {"@type": "MusicGroup", "name": "Aster da Master"},
+        "url": f"/releases/{slug}.html",
+    }
+    rt = RELEASE_TYPE_MAP.get(r.get("type"))
+    if rt:
+        ld["albumReleaseType"] = rt
+    if r.get("date"):
+        ld["datePublished"] = r["date"]
+    if r.get("tracks"):
+        ld["numTracks"] = r["tracks"]
+    if r.get("artwork"):
+        ld["image"] = r["artwork"]
+    return ld_script(ld)
+
+
+def index_ld(releases, slug_list):
+    items = [
+        {"@type": "ListItem", "position": i + 1, "name": r["title"],
+         "url": f"/releases/{s}.html"}
+        for i, (r, s) in enumerate(zip(releases, slug_list))
+    ]
+    return ld_script({
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "numberOfItems": len(items),
+        "itemListElement": items,
+    })
+
 def build():
     releases = DATA["discography"]
     used_slugs = set()
@@ -222,7 +281,7 @@ def build():
       <nav class="release-nav" aria-label="More releases">{prev_link}{next_link}</nav>
 """
         (OUT / f"{slug}.html").write_text(
-            HEAD.format(title=escape(r["title"]), desc=escape(f'{r["title"]} — {r["type"]} by Aster da Master'))
+            HEAD.format(title=escape(r["title"]), desc=escape(f'{r["title"]} — {r["type"]} by Aster da Master'), canonical=f"/releases/{slug}.html", ldjson=release_ld(r, slug))
             + body
             + FOOT,
             encoding="utf-8",
@@ -290,7 +349,7 @@ def build():
       </script>
 """
     (OUT / "index.html").write_text(
-        HEAD.format(title="Every release", desc="The complete Aster da Master release archive") + index_body + FOOT,
+        HEAD.format(title="Every release", desc="The complete Aster da Master release archive", canonical="/releases/index.html", ldjson=index_ld(releases, slug_list)) + index_body + FOOT,
         encoding="utf-8",
     )
     print(f"Built {len(releases)} release pages + index in {OUT}/")

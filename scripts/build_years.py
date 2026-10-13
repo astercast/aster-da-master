@@ -90,6 +90,7 @@ HEAD = """<!DOCTYPE html>
   <meta property="og:type" content="website">
   <meta property="og:title" content="{title} — Aster da Master">
   <meta property="og:description" content="{desc}">
+  <link rel="canonical" href="{canonical}">
   <meta property="og:image" content="../assets/og-card.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -316,6 +317,7 @@ def year_page(year, entries, slug_of, era):
     return HEAD.format(
         title=f"{year} — Year in review",
         desc=f"Aster da Master in {year}: {len(entries)} transmissions, {fmt(plays)} vault plays, top tracks and collaborators.",
+        canonical=f"/years/{year}.html",
     ) + body + FOOT
 
 def index_page(summaries):
@@ -342,6 +344,7 @@ def index_page(summaries):
     return HEAD.format(
         title="Year in review — the yearly archive",
         desc="Aster da Master year by year, 2018–2026: transmissions, plays, defining tracks, collaborators.",
+        canonical="/years/index.html",
     ) + body + FOOT
 
 def main():

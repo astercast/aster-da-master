@@ -305,7 +305,7 @@ def producer_page_html(p, racing=()):
     title = f"{p['name']} — producer deep dive"
     desc = (f"{p['name']}: {p['production_count']} as-credited productions, "
             f"{fmt(p['total_plays'])} plays. The producer deep dive, from the archive.")
-    return HEAD.format(title=escape(title), desc=escape(desc)) + "".join(parts) + FOOT
+    return HEAD.format(title=escape(title), desc=escape(desc), canonical=f"/{producer_page(p['slug'])}") + "".join(parts) + FOOT
 
 
 def index_page_html(producers, insights):
@@ -351,7 +351,7 @@ def index_page_html(producers, insights):
     title = "Producer deep dives"
     desc = (f"{insights['producer_count']} as-credited producers behind the Aster da Master sound, "
             "every credit verbatim from the archive's titles.")
-    return HEAD.format(title=escape(title), desc=escape(desc)) + body + FOOT
+    return HEAD.format(title=escape(title), desc=escape(desc), canonical="/producers/index.html") + body + FOOT
 
 
 # --- main -------------------------------------------------------------------

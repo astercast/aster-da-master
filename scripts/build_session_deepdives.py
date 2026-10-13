@@ -86,6 +86,7 @@ HEAD = """<!DOCTYPE html>
   <meta property="og:type" content="website">
   <meta property="og:title" content="{title} — Aster da Master">
   <meta property="og:description" content="{desc}">
+  <link rel="canonical" href="{canonical}">
   <meta property="og:image" content="../assets/og-card.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -295,6 +296,7 @@ def deepdive_page(s, slug, rank, collabs, era_names, prev_s, next_s):
     return HEAD.format(
         title=f"{s['name']} — session deep dive",
         desc=f"{s['name']}: {s['track_count']} transmissions, {fmt(s['total_plays'])} plays. The studio diary, up close.",
+        canonical=f"/sessions/{slug}.html",
     ) + body + FOOT
 
 def main() -> int:

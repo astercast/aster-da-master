@@ -102,6 +102,7 @@ def main() -> int:
   <meta property="og:type" content="website">
   <meta property="og:title" content="Changelog \u2014 Aster da Master">
   <meta property="og:description" content="The construction history of the Aster da Master archive, generated from the site's own git log.">
+  <link rel="canonical" href="/changelog.html">
   <meta property="og:image" content="assets/og-card.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">

@@ -104,6 +104,7 @@ HEAD = """<!DOCTYPE html>
   <meta property="og:type" content="website">
   <meta property="og:title" content="{title} — Aster da Master">
   <meta property="og:description" content="{desc}">
+  <link rel="canonical" href="{canonical}">
   <meta property="og:image" content="../assets/og-card.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -748,6 +749,7 @@ def collab_page(name, slug, tracks, slug_of, eras, prev_s, next_s, ckey=None):
     return HEAD.format(
         title=f"{name} — collaborator",
         desc=f"{name} and Aster da Master: {len(tracks)} shared transmissions, {fmt(total_plays)} plays.",
+        canonical=f"/circle/{slug}.html",
     ) + body + FOOT
 
 def index_page(entries):
@@ -790,6 +792,7 @@ def index_page(entries):
     return HEAD.format(
         title="The circle — collaborator archive",
         desc="Every Aster da Master collaborator: shared tracks, plays, years active.",
+        canonical="/circle/index.html",
     ) + body + FOOT
 
 def scene_figure_page(slug, info):
@@ -846,6 +849,7 @@ def scene_figure_page(slug, info):
     html = HEAD.format(
         title=f"{info['name']} \u2014 {info['kind']}",
         desc=f"{info['name']} in the Aster da Master archive: {len(tracks)} producer credits, {fmt(total_plays)} plays.",
+        canonical=f"/circle/{slug}.html",
     ) + body + FOOT
     if info.get("watch"):
         html = html.replace(

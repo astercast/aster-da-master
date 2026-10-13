@@ -462,7 +462,7 @@ def family_page(d, prev_s, next_s):
     desc = (f"{d['name']}: {d['track_count']} transmissions, "
             f"{fmt(d['total_plays'])} plays, {len(d['eras'])} eras active. "
             f"The codex family deep dive, from the archive.")
-    return HEAD.format(title=escape(title), desc=escape(desc)
+    return HEAD.format(title=escape(title), desc=escape(desc), canonical=f"/codex/{d['slug']}.html"
                        ) + "".join(parts) + FOOT
 
 

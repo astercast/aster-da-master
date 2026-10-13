@@ -1,8 +1,20 @@
 {
   "generated": "2026-10-11",
   "method": "Parsed from `git log main`: every commit becomes an entry. The site documenting its own becoming.",
-  "entry_count": 140,
+  "entry_count": 142,
   "entries": [
+    {
+      "hash": "e361c6d",
+      "date": "2026-10-13",
+      "message": "Rotation 12 addendum cycle 3 (Commons round 10): rel=canonical on all 430 pages — self-referential root-relative paths, generator templates + 26 hand heads, census-verified 430/430 exact; honest JSON-LD on the releases family only — MusicAlbum x34 (Album/Single records), MusicRecording x185 (SoundCloud-only tracks), ItemList x219 on the releases index, fields strictly from data/artist.json records (no ratings/offers/play counts); GO_LIVE s7 is now a combined absolutize-at-deploy checklist (OG + canonical); no service worker (out of scope per round 10)",
+      "files_changed": 446
+    },
+    {
+      "hash": "5e3c7b2",
+      "date": "2026-10-13",
+      "message": "changelog sync (post-validation)",
+      "files_changed": 3
+    },
     {
       "hash": "6d8f603",
       "date": "2026-10-13",

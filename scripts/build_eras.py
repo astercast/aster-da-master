@@ -271,6 +271,7 @@ HEAD = """<!DOCTYPE html>
   <meta property="og:type" content="website">
   <meta property="og:title" content="{title} — era deep dive — Aster da Master">
   <meta property="og:description" content="{desc}">
+  <link rel="canonical" href="{canonical}">
   <meta property="og:image" content="../assets/og-card.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -536,7 +537,7 @@ def era_page(e, idx, n_eras, entries, collabs, families, summary):
     title = f"{e['name']} — era deep dive"
     desc = (f"{e['name']} ({e['span']}): {e['transmissions']} transmissions, "
             f"{fmt(e['plays'])} plays. The era deep dive, from the archive.")
-    return (HEAD.format(title=escape(title), desc=escape(desc))
+    return (HEAD.format(title=escape(title), desc=escape(desc), canonical=f"/eras/{e['id']}.html")
             + "".join(parts) + FOOT)
 
 SCHEMA = {
