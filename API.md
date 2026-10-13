@@ -114,7 +114,8 @@ snapshot (play counts drift over time; the capture date is stated on every
 page). Per-track SoundCloud URLs are not published (slugs not resolved by the
 capture); every vault entry links the official profile. The top-level
 `vault` object carries the profile facts (display name, followers, location,
-bio) and capture date. The bio line "somelowlifes / Litemode Trilogy OTW" is
+bio) and capture date. The bio — two lines, "somelowlifes" /
+" Litemode Trilogy OTW", re-verified verbatim 2026-10-13 — is
 recorded under top-level `upcoming` as teased-not-confirmed. Vault entries
 never carry lyrics — titles only.
 Research notes: `~/workspace/research_notes/aster-soundcloud-20261011/report.md`

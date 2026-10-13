@@ -1,7 +1,7 @@
 {
   "version": "0.19.0",
   "observed": "2026-10-11",
-  "research_status": "VERIFIED-2026-10-11 — identity resolved per research report; Spotify artist-linked via official SoundCloud bio; SoundCloud full catalog (185 tracks) verified via read-only live-browser pass 2026-10-11",
+  "research_status": "VERIFIED-2026-10-11 — identity resolved per research report; Spotify artist-linked via official SoundCloud profile links; SoundCloud full catalog (185 tracks) verified via read-only live-browser pass 2026-10-11",
   "artist": {
     "name": "Aster da Master",
     "tagline": "He transcends music.",
@@ -3456,23 +3456,23 @@
       "name": "Spotify — Aster",
       "url": "https://open.spotify.com/artist/7y7xi5nDLdQX2zWpUItMoz",
       "verified": true,
-      "note": "Linked from the artist's own official SoundCloud bio (2026-10-11) — identity artist-linked; track-level catalog match still pending"
+      "note": "Linked from the artist's own official SoundCloud profile links (2026-10-11) — identity artist-linked; track-level catalog match still pending"
     },
     {
       "name": "SoundCloud",
       "url": "https://soundcloud.com/asterdamaster",
       "verified": true,
-      "note": "Official profile — 185-track full catalog verified 2026-10-11; bio: “somelowlifes / Litemode Trilogy OTW”"
+      "note": "Official profile — 185-track full catalog verified 2026-10-11; bio re-verified verbatim 2026-10-13 (plain profile fetch, HTTP 200) — two lines, see vault.bio"
     },
     {
       "name": "Instagram",
       "verified": true,
-      "note": "Linked from the official SoundCloud bio (2026-10-11); direct URL not captured in the pass"
+      "note": "Linked from the official SoundCloud profile links (2026-10-11); direct URL not captured in the pass"
     },
     {
       "name": "Official site",
-      "verified": true,
-      "note": "Listed as “astredamaster.com” in the official SoundCloud bio (2026-10-11); direct URL not captured in the pass"
+      "verified": false,
+      "note": "Recorded 2026-10-11 with the spelling “astredamaster.com”, said to be listed in the official SoundCloud profile's links; direct URL not captured in that pass. Re-checked 2026-10-13: a plain fetch of the profile page (HTTP 200) contains no occurrence of that domain — and no external link of any kind — anywhere in the page served, and the bio text itself carries no link, so the spelling stands UNVERIFIED: recorded as previously reported, not endorsed as a real site, and no guessed domain was visited."
     }
   ],
   "socials": [],
@@ -3566,7 +3566,7 @@
     "display_name": "ASTER DA MASTER",
     "followers": 1562,
     "location": "sf, United States",
-    "bio": "somelowlifes / Litemode Trilogy OTW",
+    "bio": "somelowlifes\n Litemode Trilogy OTW",
     "tracks_on_record": 185,
     "confidence": "verified",
     "full_catalog": "complete as of 2026-10-11 (profile reported 185 tracks; capture matched 185)",
@@ -3576,7 +3576,7 @@
     {
       "title": "Litemode Trilogy",
       "status": "teased in the official SoundCloud bio — not confirmed",
-      "source": "Official SoundCloud profile bio (asterdamaster), observed 2026-10-11"
+      "source": "Official SoundCloud profile bio (asterdamaster), observed 2026-10-11; re-verified verbatim 2026-10-13"
     }
   ]
 }

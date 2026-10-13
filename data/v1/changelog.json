@@ -1,8 +1,20 @@
 {
   "generated": "2026-10-11",
   "method": "Parsed from `git log main`: every commit becomes an entry. The site documenting its own becoming.",
-  "entry_count": 129,
+  "entry_count": 131,
   "entries": [
+    {
+      "hash": "3214b5d",
+      "date": "2026-10-13",
+      "message": "Rotation 9: The Tuner flagship — full 219-entry catalog as a broadcast dial (era + format sweep, transmission card per stop, 219-stop dial log, nav wiring across 436 files), SoundCloud bio verified verbatim (two-line Litemode Trilogy tease confirmed; 'astredamaster.com' not found on the profile — official-site entry marked unverified), release-week dates held a sixth time, Underground Underdogs recheck cadence to weekly, capture #3 gate still armed (ledger stays 2 rows)",
+      "files_changed": 452
+    },
+    {
+      "hash": "b32adbb",
+      "date": "2026-10-13",
+      "message": "changelog sync (post-validation)",
+      "files_changed": 3
+    },
     {
       "hash": "d3ac275",
       "date": "2026-10-13",

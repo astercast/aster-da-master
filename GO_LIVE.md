@@ -143,9 +143,11 @@ without the user's explicit word.
 
 ## 7. Custom domain notes
 
-No custom domain is assigned yet (the SoundCloud bio link spelling
-`astredamaster.com` vs `asterdamaster.com` is still unverified — do not
-invent a domain). When one is assigned: add it in Vercel dashboard →
+No custom domain is assigned yet (the SoundCloud profile's recorded
+site-link spelling `astredamaster.com` was re-checked 2026-10-13: a plain
+fetch of the profile page, HTTP 200, contains no occurrence of that domain
+and no external link of any kind, so the spelling remains unverified — do
+not invent a domain, and do not visit a guessed one). When one is assigned: add it in Vercel dashboard →
 Domains; the `api/*` paths move with the domain automatically (same-origin
 `fetch("/api/stats")` needs no changes); update absolute URLs in `llms.txt`
 / sitemap if the domain changes.
