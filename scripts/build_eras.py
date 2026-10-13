@@ -354,7 +354,7 @@ def era_page(e, idx, n_eras, entries, collabs, families, summary):
       </nav>
       <section class="section" aria-labelledby="era-h">
         <span class="kicker"><span class="numeral">&#10022;</span>Era deep dive &middot; era {idx + 1} of {n_eras}</span>
-        <h2 id="era-h">{escape(e['name'])}</h2>
+        <h1 id="era-h">{escape(e['name'])}</h1>
         <p class="lede">{escape(e['span'])} &middot; {escape(e['scene'] or '')}</p>
         <div class="stat-grid">
           <div class="stat"><div class="stat-value">{fmt(e['transmissions'])}</div><div class="stat-label">Transmissions</div></div>
@@ -392,7 +392,7 @@ def era_page(e, idx, n_eras, entries, collabs, families, summary):
     parts.append(f"""
       <section class="section" aria-labelledby="sig-h">
         <span class="kicker"><span class="numeral">&#10022;</span>The signal</span>
-        <h3 id="sig-h">The signal, decoded</h3>
+        <h2 id="sig-h">The signal, decoded</h2>
         <blockquote class="quote"><span class="sig-lab">The signal</span>{escape(e['signal'])}</blockquote>
         <ul class="story-list">
           {''.join('<li>' + i + '</li>' for i in sig_items)}
@@ -408,7 +408,7 @@ def era_page(e, idx, n_eras, entries, collabs, families, summary):
     parts.append(f"""
       <section class="section" aria-labelledby="dt-h">
         <span class="kicker"><span class="numeral">&#10022;</span>The canon</span>
-        <h3 id="dt-h">Defining tracks</h3>
+        <h2 id="dt-h">Defining tracks</h2>
         <ol class="year-list">{tt}</ol>
       </section>
 """)
@@ -426,7 +426,7 @@ def era_page(e, idx, n_eras, entries, collabs, families, summary):
     parts.append(f"""
       <section class="section" aria-labelledby="all-h">
         <span class="kicker"><span class="numeral">&#10022;</span>The record</span>
-        <h3 id="all-h">Every transmission in this era ({len(rows)})</h3>
+        <h2 id="all-h">Every transmission in this era ({len(rows)})</h2>
         <ol class="year-list">{''.join(rows)}</ol>
         <p class="chart-sub">Distributor releases carry no vault play count — only SoundCloud uploads do.</p>
       </section>
@@ -444,7 +444,7 @@ def era_page(e, idx, n_eras, entries, collabs, families, summary):
     parts.append(f"""
       <section class="section" aria-labelledby="ks-h">
         <span class="kicker"><span class="numeral">&#10022;</span>The sessions</span>
-        <h3 id="ks-h">Key sessions</h3>
+        <h2 id="ks-h">Key sessions</h2>
         <ul class="year-list">{''.join(ss)}</ul>
       </section>
 """)
@@ -462,7 +462,7 @@ def era_page(e, idx, n_eras, entries, collabs, families, summary):
     parts.append(f"""
       <section class="section" aria-labelledby="co-h">
         <span class="kicker"><span class="numeral">&#10022;</span>The summoned</span>
-        <h3 id="co-h">Every voice in this era ({len(collabs)})</h3>
+        <h2 id="co-h">Every voice in this era ({len(collabs)})</h2>
         {collab_html}
         <p class="chart-sub">Credits parsed from <em>w/</em> and <em>ft.</em> fragments in titles &mdash; as credited, verbatim; producers excluded.</p>
       </section>
@@ -481,7 +481,7 @@ def era_page(e, idx, n_eras, entries, collabs, families, summary):
     parts.append(f"""
       <section class="section" aria-labelledby="mi-h">
         <span class="kicker"><span class="numeral">&#10022;</span>The marks</span>
-        <h3 id="mi-h">Milestones ({len(e['milestones'])})</h3>
+        <h2 id="mi-h">Milestones ({len(e['milestones'])})</h2>
         {mile_html}
       </section>
 """)
@@ -500,7 +500,7 @@ def era_page(e, idx, n_eras, entries, collabs, families, summary):
     parts.append(f"""
       <section class="section" aria-labelledby="fa-h">
         <span class="kicker"><span class="numeral">&#10022;</span>The language</span>
-        <h3 id="fa-h">Codex families active in this era ({len(families)})</h3>
+        <h2 id="fa-h">Codex families active in this era ({len(families)})</h2>
         {fam_html}
       </section>
 """)
@@ -517,7 +517,7 @@ def era_page(e, idx, n_eras, entries, collabs, families, summary):
     parts.append(f"""
       <section class="section" aria-labelledby="keep-h">
         <span class="kicker"><span class="numeral">&#10022;</span>Keep digging</span>
-        <h3 id="keep-h">The journey continues</h3>
+        <h2 id="keep-h">The journey continues</h2>
         <nav class="year-pager" aria-label="Era navigation">
           {' '.join(pager)}
         </nav>

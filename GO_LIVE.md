@@ -152,6 +152,20 @@ Domains; the `api/*` paths move with the domain automatically (same-origin
 `fetch("/api/stats")` needs no changes); update absolute URLs in `llms.txt`
 / sitemap if the domain changes.
 
+**OG absolutizing (deploy-time, blocking for social sharing):** every page
+on the site carries `og:image` / `twitter:image` meta pointing at the shared
+card, `assets/og-card.png` (Foundry round 2) — but the wiring is
+**relative** (`assets/og-card.png` at the root, `../assets/og-card.png` in
+subdirectories), because this deployment has no domain yet and none may be
+invented. Social crawlers require **absolute** image URLs and do not
+resolve relative ones: shared links will render card-less until this is
+done. In the `-live` pass, once the deployment's domain exists, absolutize
+every `og:image` / `twitter:image` value against it (a root-relative
+`/assets/og-card.png` rewrite plus the domain is the minimal form; the
+meta lives in the generator HEAD templates and the hand-maintained heads,
+so the change is made once per template/head, then the site is rebuilt
+and re-grepped for `og:image` to confirm no relative value survives).
+
 ## 8. Rollback
 
 - **Frontend/functions:** `git revert` the offending commit → push → Vercel

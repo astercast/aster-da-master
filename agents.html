@@ -23,6 +23,7 @@
   <link rel="stylesheet" href="assets/css/layout.css">
   <link rel="stylesheet" href="assets/css/components.css">
   <link rel="stylesheet" href="assets/css/motifs.css">
+<style>/* QA-008: heading ladder promoted to a single h1; sizes pinned to the pre-promotion scale */ #ag-h{font-size:var(--fs-2)} main h2{font-size:var(--fs-3)} main h3{font-size:1rem}</style>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -100,12 +101,12 @@
       <div class="container">
         <div class="section-head reveal">
           <span class="kicker"><span class="numeral">✦</span>For agents</span>
-          <h2 id="ag-h">The agentic surface</h2>
+          <h1 id="ag-h">The agentic surface</h1>
           <p>This archive is built to be read by machines as well as people. Everything below is stable, versioned, and reachable as plain files — no keys, no sessions, no scraping. Start at <code>data/v1/index.json</code>; it names every endpoint and carries the data version.</p>
         </div>
 
         <div class="reveal">
-          <h3 id="ag-endpoints">The API</h3>
+          <h2 id="ag-endpoints">The API</h2>
           <p>Twenty-five versioned JSON endpoints under <code>data/v1/</code>. Current data version: <strong>0.19.0</strong> (see <code>data/v1/index.json</code> → <code>version</code> before caching anything).</p>
           <div class="table-wrap">
             <table>
@@ -146,7 +147,7 @@
         </div>
 
         <div class="reveal">
-          <h3 id="ag-llms">llms.txt</h3>
+          <h2 id="ag-llms">llms.txt</h2>
           <p>Two machine-readable summaries at the repo root:</p>
           <ul>
             <li><a href="AGENT.md"><code>AGENT.md</code></a> — the operator's manual: base URL pattern, key endpoints with example requests, end-to-end workflows, rate/expectation notes. Read this first.</li>
@@ -156,7 +157,7 @@
         </div>
 
         <div class="reveal">
-          <h3 id="ag-skills">Skills</h3>
+          <h2 id="ag-skills">Skills</h2>
           <p>Fourteen agent skills in <code>skills/</code> (registry: <code>skills/index.json</code>), each in the playbook format: Use when / Inputs / Procedure / Worked example / API references / Pitfalls. The eleven archive-analysis skills:</p>
           <div class="table-wrap">
             <table>
@@ -184,7 +185,7 @@
         </div>
 
         <div class="reveal">
-          <h3 id="ag-search">Search index</h3>
+          <h2 id="ag-search">Search index</h2>
           <p>The site's search overlay (<kbd>/</kbd>) is a client-side fetch over the API — no server, no index build on your side. To replicate it, fetch and filter locally:</p>
           <ul>
             <li><code>data/v1/release-slugs.json</code> — every transmission title → its release page (the overlay's primary corpus).</li>
@@ -196,7 +197,7 @@
         </div>
 
         <div class="reveal">
-          <h3 id="ag-expectations">Rates &amp; expectations</h3>
+          <h2 id="ag-expectations">Rates &amp; expectations</h2>
           <ul>
             <li><strong>Static files, no auth, no rate limits.</strong> This is a static site — the whole API is files on disk. Fetch freely, but serve over HTTP: browsers block <code>fetch()</code> from <code>file://</code> pages.</li>
             <li><strong>Sizes are small.</strong> Largest endpoints: <code>artist.json</code> (~155 KB), <code>sessions.json</code> (~50 KB), <code>on-this-day.json</code> (~40 KB). Everything else is under 16 KB. Cache aggressively; check <code>index.json → version</code> (currently <code>0.19.0</code>) to invalidate.</li>
@@ -207,9 +208,9 @@
         </div>
 
         <div class="reveal">
-          <h3 id="ag-workflows">Four worked agent workflows</h3>
+          <h2 id="ag-workflows">Four worked agent workflows</h2>
 
-          <h4>1. Write a 500-word era briefing</h4>
+          <h2>1. Write a 500-word era briefing</h2>
           <p><em>Skill: <a href="skills/era-briefing.md">era-briefing</a></em></p>
           <ol>
             <li><code>GET data/v1/index.json</code> — confirm <code>version</code>, note <code>observed</code>.</li>
@@ -221,7 +222,7 @@
             <li>Write three moves — the span, the numbers, the story — every sentence tracing to an endpoint field. Close with the archive's own framing ("The Silence": no releases found in 2025; the reason is unknown and not speculated here).</li>
           </ol>
 
-          <h4>2. Find 10 deep cuts for a playlist</h4>
+          <h2>2. Find 10 deep cuts for a playlist</h2>
           <p><em>Skill: <a href="skills/deep-cuts-finder.md">deep-cuts-finder</a></em></p>
           <ol>
             <li><code>GET data/v1/sessions.json</code> — flatten <code>sessions[].tracks</code> into one list of {title, date, plays, page}.</li>
@@ -231,7 +232,7 @@
             <li>Present title, plays, date, and one line on why each qualifies. Quote titles verbatim; never quote lyrics.</li>
           </ol>
 
-          <h4>3. Trace a collaborator</h4>
+          <h2>3. Trace a collaborator</h2>
           <p><em>Skill: <a href="skills/collaborator-tracer.md">collaborator-tracer</a></em></p>
           <ol>
             <li><code>GET data/v1/circle.json</code> — look up the slug (e.g. <code>capoxxo</code>). Read <code>shared_transmissions</code> (2), <code>shared_plays</code> (16,174), <code>years_active</code> ("2019"), and each track's date and plays.</li>
@@ -241,7 +242,7 @@
             <li>Summarize: who, footprint, the tracks in order, the verified research (cited), the era position. Never invent how they met.</li>
           </ol>
 
-          <h4>4. Deep-dive one era</h4>
+          <h2>4. Deep-dive one era</h2>
           <p><em>Skill: <a href="skills/era-briefing.md">era-briefing</a></em></p>
           <ol>
             <li><code>GET data/v1/eras.json</code> — pick the era by <code>id</code> (e.g. <code>the-somelowlifes-era</code>). One file answers the whole brief: <code>summary</code>, <code>tracks[]</code>, <code>collaborators[]</code> (every in-era voice — <code>transmission.json</code> keeps only the top 3), <code>codex_families[]</code>, <code>key_sessions[]</code>, <code>milestones[]</code>.</li>

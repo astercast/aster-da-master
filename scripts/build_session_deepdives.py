@@ -225,7 +225,7 @@ def deepdive_page(s, slug, rank, collabs, era_names, prev_s, next_s):
         collab_sec = f"""
       <section class="section" aria-labelledby="sc-h">
         <span class="kicker"><span class="numeral">&#10022;</span>The summoned</span>
-        <h3 id="sc-h">Key collaborators in this session</h3>
+        <h2 id="sc-h">Key collaborators in this session</h2>
         <ol class="top-list">{collab_html}</ol>
         <p class="chart-sub">Credits parsed from <em>w/</em> and <em>ft.</em> fragments in titles &mdash; as credited, verbatim; producers excluded.</p>
       </section>"""
@@ -233,7 +233,7 @@ def deepdive_page(s, slug, rank, collabs, era_names, prev_s, next_s):
         collab_sec = """
       <section class="section" aria-labelledby="sc-h">
         <span class="kicker"><span class="numeral">&#10022;</span>The summoned</span>
-        <h3 id="sc-h">A solo run</h3>
+        <h2 id="sc-h">A solo run</h2>
         <p>No collaborator credits in this session's titles — every transmission stands alone.</p>
       </section>"""
     era_line = (
@@ -261,7 +261,7 @@ def deepdive_page(s, slug, rank, collabs, era_names, prev_s, next_s):
       </nav>
       <section class="section" aria-labelledby="ss-h">
         <span class="kicker"><span class="numeral">&#10022;</span>Session deep dive · {rank_word(rank)} by volume</span>
-        <h2 id="ss-h">{escape(s["name"])}</h2>
+        <h1 id="ss-h">{escape(s["name"])}</h1>
         <div class="stat-grid">
           <div class="stat"><div class="stat-value">{s["track_count"]}</div><div class="stat-label">Transmissions</div></div>
           <div class="stat"><div class="stat-value">{fmt(s["total_plays"])}</div><div class="stat-label">Total plays</div></div>
@@ -272,7 +272,7 @@ def deepdive_page(s, slug, rank, collabs, era_names, prev_s, next_s):
 
       <section class="section" aria-labelledby="st-h">
         <span class="kicker"><span class="numeral">&#10022;</span>What the dates say</span>
-        <h3 id="st-h">The story, told by the calendar</h3>
+        <h2 id="st-h">The story, told by the calendar</h2>
         <ul class="story-list">{story}</ul>
         <p>{era_line}</p>
       </section>
@@ -280,7 +280,7 @@ def deepdive_page(s, slug, rank, collabs, era_names, prev_s, next_s):
 
       <section class="section" aria-labelledby="sl-h">
         <span class="kicker"><span class="numeral">&#10022;</span>The record</span>
-        <h3 id="sl-h">Every transmission in this session</h3>
+        <h2 id="sl-h">Every transmission in this session</h2>
         <ol class="year-list">{rows}</ol>
       </section>
 

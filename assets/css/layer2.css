@@ -40,6 +40,7 @@ body.layer2 .container > .section + .section { border-top: 1px solid var(--line-
 body.layer2 .container > .section:last-of-type { padding-bottom: var(--space-8); }
 
 /* ---- masthead: 3-second comprehension ---- */
+body.layer2 .container > .section:first-of-type h1,
 body.layer2 .container > .section:first-of-type h2,
 body.layer2 .page-title {
   font-size: clamp(2.7rem, 6.5vw, 4.6rem);
@@ -50,6 +51,12 @@ body.layer2 .page-title {
 /* producer pages carry their masthead as a loose h1.page-title above the
    sections, so their section titles stay at standard section size */
 body.layer2 .container > .page-title ~ .section h2 { font-size: var(--fs-2); }
+/* QA-008: circle / codex / eras / years / session pages promoted their
+   masthead h2 to h1 and their section h3s to h2 — pin those section h2s to
+   the former h3 scale so the ladder shift changes semantics, not sizes.
+   Scoped with :has() to pages whose first section carries the promoted h1,
+   so producer / release pages (h1.page-title mastheads) are untouched. */
+body.layer2:has(.container > .section:first-of-type h1) .section h2 { font-size: clamp(1.3rem, 2.6vw, 1.7rem); }
 body.layer2 .container > .section:first-of-type .lede {
   font-size: var(--fs-3); line-height: 1.5; color: var(--ink-dim); max-width: 62ch;
 }

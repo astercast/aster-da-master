@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# ASTER DA MASTER — pirate-broadcast archive. Crawl everything.
+# No sitemap is published by this site (none exists in the repo), so no
+# Sitemap: pointer is declared; when the -live deployment gains a domain
+# and a sitemap, add the absolute Sitemap: URL in the -live pass
+# (see GO_LIVE.md §7 — the same pass that absolutizes og:image).

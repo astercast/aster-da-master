@@ -626,7 +626,7 @@ def render_verified_section(info):
     return f"""
       <section class="section" aria-labelledby="cv-h">
         <span class="kicker"><span class="numeral">&#10022;</span>The scene record</span>
-        <h3 id="cv-h">Verified beyond the titles</h3>
+        <h2 id="cv-h">Verified beyond the titles</h2>
         <p class="chart-sub">Research pass 2026-10-12 &mdash; public sources only, no biographical invention, no lyrics.</p>
         <ul class="fact-list">{facts}</ul>
         {render_sources(info["sources"])}
@@ -643,7 +643,7 @@ def render_scene_section(info):
     return f"""
       <section class="section" aria-labelledby="sn-h">
         <span class="kicker"><span class="numeral">&#10022;</span>{escape(s["kicker"])}</span>
-        <h3 id="sn-h">{escape(s["heading"])}</h3>
+        <h2 id="sn-h">{escape(s["heading"])}</h2>
         <ul class="fact-list">{facts}</ul>
         <p class="chart-sub"><a href="{escape(s["link_href"])}">{escape(s["link_text"])}</a> {escape(s["link_sub"])}</p>
       </section>
@@ -656,7 +656,7 @@ def render_watch_section(info):
     return f"""
       <section class="section" aria-labelledby="uw-h">
         <span class="kicker"><span class="numeral">&#10022;</span>The watch</span>
-        <h3 id="uw-h">{escape(w["label"])} — watch</h3>
+        <h2 id="uw-h">{escape(w["label"])} — watch</h2>
         <p class="chart-sub" id="uncle-watch-status" aria-live="polite"
            data-status="{escape(w["status"])}"
            data-expected="{escape(w["expected"])}"
@@ -717,7 +717,7 @@ def collab_page(name, slug, tracks, slug_of, eras, prev_s, next_s, ckey=None):
       </nav>
       <section class="section" aria-labelledby="cc-h">
         <span class="kicker"><span class="numeral">&#10022;</span>The circle</span>
-        <h2 id="cc-h">{escape(name)}</h2>
+        <h1 id="cc-h">{escape(name)}</h1>
         <div class="stat-grid">
           <div class="stat"><div class="stat-value">{len(tracks)}</div><div class="stat-label">Shared transmissions</div></div>
           <div class="stat"><div class="stat-value">{fmt(total_plays)}</div><div class="stat-label">Shared plays</div></div>
@@ -728,13 +728,13 @@ def collab_page(name, slug, tracks, slug_of, eras, prev_s, next_s, ckey=None):
 
       <section class="section" aria-labelledby="ce-h">
         <span class="kicker"><span class="numeral">&#10022;</span>Era breakdown</span>
-        <h3 id="ce-h">Where the collaborations landed</h3>
+        <h2 id="ce-h">Where the collaborations landed</h2>
         <ol class="top-list">{era_html}</ol>
       </section>
 
       <section class="section" aria-labelledby="ct-h">
         <span class="kicker"><span class="numeral">&#10022;</span>The shared record</span>
-        <h3 id="ct-h">Every shared transmission, in order</h3>
+        <h2 id="ct-h">Every shared transmission, in order</h2>
         <ol class="year-list">{rows}</ol>
       </section>
 {enrich_html}
@@ -774,7 +774,7 @@ def index_page(entries):
       </nav>
       <section class="section" aria-labelledby="ci-h">
         <span class="kicker"><span class="numeral">&#10022;</span>The circle</span>
-        <h2 id="ci-h">Everyone he summoned, one page each</h2>
+        <h1 id="ci-h">Everyone he summoned, one page each</h1>
         <p>Every collaborator credited in a title across 219 transmissions. Counts and plays are data, not editorial. Producers are excluded by rule &mdash; the documented scene figures below are kept separately.</p>
         <div class="year-grid">{cards}</div>
       </section>
@@ -814,7 +814,7 @@ def scene_figure_page(slug, info):
       </nav>
       <section class="section" aria-labelledby="cc-h">
         <span class="kicker"><span class="numeral">&#10022;</span>{escape(info["kind"])}</span>
-        <h2 id="cc-h">{escape(info["name"])}</h2>
+        <h1 id="cc-h">{escape(info["name"])}</h1>
         <div class="stat-grid">
           <div class="stat"><div class="stat-value">{len(tracks)}</div><div class="stat-label">Producer-credited tracks</div></div>
           <div class="stat"><div class="stat-value">{fmt(total_plays)}</div><div class="stat-label">Shared plays</div></div>
@@ -825,13 +825,13 @@ def scene_figure_page(slug, info):
 
       <section class="section" aria-labelledby="ct-h">
         <span class="kicker"><span class="numeral">&#10022;</span>The shared record</span>
-        <h3 id="ct-h">Producer credits in the archive, in order</h3>
+        <h2 id="ct-h">Producer credits in the archive, in order</h2>
         <ol class="year-list">{rows}</ol>
       </section>
 
       <section class="section" aria-labelledby="cv-h">
         <span class="kicker"><span class="numeral">&#10022;</span>The scene record</span>
-        <h3 id="cv-h">Verified beyond the titles</h3>
+        <h2 id="cv-h">Verified beyond the titles</h2>
         <p class="chart-sub">Research pass 2026-10-12 &mdash; public sources only, no biographical invention, no lyrics.</p>
         <ul class="fact-list">{facts}</ul>
         {render_sources(info["sources"])}

@@ -293,7 +293,7 @@ def family_page(d, prev_s, next_s):
       </nav>
       <section class="section" aria-labelledby="cf-h">
         <span class="kicker"><span class="numeral">&#10022;</span>The codex &middot; family deep dive</span>
-        <h2 id="cf-h">{escape(d['name'])}</h2>
+        <h1 id="cf-h">{escape(d['name'])}</h1>
         <p class="codex-epithet">{escape(d['epithet'])}</p>
         <p class="codex-words">Matched words: {escape(words)}</p>
         <div class="stat-grid">
@@ -318,7 +318,7 @@ def family_page(d, prev_s, next_s):
     parts.append(f"""
       <section class="section" aria-labelledby="rd-h">
         <span class="kicker"><span class="numeral">&#10022;</span>The cipher</span>
-        <h3 id="rd-h">The reading</h3>
+        <h2 id="rd-h">The reading</h2>
         {read_body}
       </section>
 """)
@@ -343,7 +343,7 @@ def family_page(d, prev_s, next_s):
     parts.append(f"""
       <section class="section" aria-labelledby="ev-h">
         <span class="kicker"><span class="numeral">&#10022;</span>The eras</span>
-        <h3 id="ev-h">Evolution across the eras ({len(d['eras'])})</h3>
+        <h2 id="ev-h">Evolution across the eras ({len(d['eras'])})</h2>
         <p>{evo_intro}</p>
         <ul class="story-list">{erows}</ul>
       </section>
@@ -360,7 +360,7 @@ def family_page(d, prev_s, next_s):
     parts.append(f"""
       <section class="section" aria-labelledby="all-h">
         <span class="kicker"><span class="numeral">&#10022;</span>The record</span>
-        <h3 id="all-h">Every transmission ({len(d['transmissions'])})</h3>
+        <h2 id="all-h">Every transmission ({len(d['transmissions'])})</h2>
         <ol class="year-list">{rows}</ol>
         <p class="chart-sub">Distributor releases carry no vault play count &mdash; only SoundCloud uploads do.</p>
       </section>
@@ -383,7 +383,7 @@ def family_page(d, prev_s, next_s):
     parts.append(f"""
       <section class="section" aria-labelledby="ks-h">
         <span class="kicker"><span class="numeral">&#10022;</span>The sessions</span>
-        <h3 id="ks-h">Key sessions ({len(d['key_sessions'])})</h3>
+        <h2 id="ks-h">Key sessions ({len(d['key_sessions'])})</h2>
         {sess_html}
         <p class="chart-sub">Distributor releases are not upload sessions &mdash; they carry no session record.</p>
       </section>
@@ -403,7 +403,7 @@ def family_page(d, prev_s, next_s):
     parts.append(f"""
       <section class="section" aria-labelledby="co-h">
         <span class="kicker"><span class="numeral">&#10022;</span>The voices</span>
-        <h3 id="co-h">Voices on this family's transmissions ({len(d['collaborators'])})</h3>
+        <h2 id="co-h">Voices on this family's transmissions ({len(d['collaborators'])})</h2>
         {collab_html}
         <p class="chart-sub">Credits parsed from <em>w/</em> and <em>ft.</em> fragments in titles &mdash; as credited, verbatim; producers excluded. Public profiles for some voices could not be verified (see the <a href="../method.html#m-unknowns">unknowns register</a>) &mdash; nothing more is claimed.</p>
       </section>
@@ -422,7 +422,7 @@ def family_page(d, prev_s, next_s):
     parts.append(f"""
       <section class="section" aria-labelledby="pr-h">
         <span class="kicker"><span class="numeral">&#10022;</span>The architects</span>
-        <h3 id="pr-h">Producers on this family's transmissions ({len(d['producers'])})</h3>
+        <h2 id="pr-h">Producers on this family's transmissions ({len(d['producers'])})</h2>
         {prod_html}
         <p class="chart-sub">Credits parsed from <em>prod.</em> fragments in titles &mdash; as credited, verbatim. Full deep dives live in the <a href="../producers/">producer index</a>.</p>
       </section>
@@ -440,7 +440,7 @@ def family_page(d, prev_s, next_s):
     parts.append(f"""
       <section class="section" aria-labelledby="keep-h">
         <span class="kicker"><span class="numeral">&#10022;</span>Keep digging</span>
-        <h3 id="keep-h">The journey continues</h3>
+        <h2 id="keep-h">The journey continues</h2>
         <nav class="year-pager" aria-label="Family navigation">
           {prev_link}
           <a class="btn btn-sm" href="./">All families</a>

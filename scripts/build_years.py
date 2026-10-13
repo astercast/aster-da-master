@@ -254,7 +254,7 @@ def year_page(year, entries, slug_of, era):
         era_html = (
             f'<section class="section" aria-labelledby="era-h">'
             f'<span class="kicker"><span class="numeral">&#10022;</span>The era</span>'
-            f'<h3 id="era-h">{escape(era["name"])}</h3>'
+            f'<h2 id="era-h">{escape(era["name"])}</h2>'
             f'<p>{escape(era.get("scene", ""))}</p>'
             f'<p class="dim">{escape(era.get("note", ""))} '
             f'<a href="../#eras">All eras &rarr;</a></p></section>'
@@ -266,7 +266,7 @@ def year_page(year, entries, slug_of, era):
       </nav>
       <section class="section" aria-labelledby="yr-h">
         <span class="kicker"><span class="numeral">&#10022;</span>The yearly archive</span>
-        <h2 id="yr-h">{year}</h2>
+        <h1 id="yr-h">{year}</h1>
         <div class="stat-grid">
           <div class="stat"><div class="stat-value">{len(entries)}</div><div class="stat-label">Transmissions</div></div>
           <div class="stat"><div class="stat-value">{fmt(plays)}</div><div class="stat-label">Vault plays</div></div>
@@ -278,14 +278,14 @@ def year_page(year, entries, slug_of, era):
 
       <section class="section" aria-labelledby="def-h">
         <span class="kicker"><span class="numeral">&#10022;</span>Defining tracks</span>
-        <h3 id="def-h">The three highest-play transmissions of {year}</h3>
+        <h2 id="def-h">The three highest-play transmissions of {year}</h2>
         <ol class="def-list">{defining_html}</ol>
         <p class="chart-sub">A data pick, not an editorial one &mdash; ranked by play count alone.</p>
       </section>
 
       <section class="section" aria-labelledby="top-h">
         <span class="kicker"><span class="numeral">&#10022;</span>Top ten</span>
-        <h3 id="top-h">Top 10 by plays</h3>
+        <h2 id="top-h">Top 10 by plays</h2>
         <div class="table-wrap"><table>
           <thead><tr><th scope="col">#</th><th scope="col">Title</th><th scope="col" class="num">Plays</th><th scope="col">Uploaded</th></tr></thead>
           <tbody>{''.join(rows)}</tbody>
@@ -294,7 +294,7 @@ def year_page(year, entries, slug_of, era):
 
       <section class="section" aria-labelledby="col-h">
         <span class="kicker"><span class="numeral">&#10022;</span>The circle that year</span>
-        <h3 id="col-h">Key collaborators</h3>
+        <h2 id="col-h">Key collaborators</h2>
         <ul class="tag-list">{collab_html}</ul>
         <p class="chart-sub">Parsed from w/ and ft. credits in the titles themselves &mdash; nothing inferred.</p>
       </section>
@@ -303,7 +303,7 @@ def year_page(year, entries, slug_of, era):
 
       <section class="section" aria-labelledby="all-h">
         <span class="kicker"><span class="numeral">&#10022;</span>The full record</span>
-        <h3 id="all-h">Every {year} transmission, in order</h3>
+        <h2 id="all-h">Every {year} transmission, in order</h2>
         <ol class="year-list">{full_list}</ol>
       </section>
 
@@ -334,7 +334,7 @@ def index_page(summaries):
       </nav>
       <section class="section" aria-labelledby="yi-h">
         <span class="kicker"><span class="numeral">&#10022;</span>The yearly archive</span>
-        <h2 id="yi-h">Nine years, one page each</h2>
+        <h1 id="yi-h">Nine years, one page each</h1>
         <p>Every year on record, distilled: transmissions, plays, defining tracks, collaborators, the era it belongs to.</p>
         <div class="year-grid">{cards}</div>
       </section>

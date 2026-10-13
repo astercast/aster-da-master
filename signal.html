@@ -42,6 +42,7 @@
     .date-note { margin: .45rem 0 0; }
     .date-disc { margin: .45rem 0 0; color: var(--gold-bright); }
   </style>
+<style>/* QA-008: heading ladder promoted to a single h1; sizes pinned to the pre-promotion scale */ #sig-h{font-size:var(--fs-2)} main h2{font-size:var(--fs-3)} main h3{font-size:1rem}</style>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -109,7 +110,7 @@
 
       <section class="section" aria-labelledby="sig-h">
         <span class="kicker"><span class="numeral">&#10022;</span>the signal 2.0 — upload watcher</span>
-        <h2 id="sig-h">The Signal</h2>
+        <h1 id="sig-h">The Signal</h1>
         <p class="chart-sub">The station keeps a watch on its own frequency. Every capture of the SoundCloud vault is diffed against the one before it: a title that was not there is a new upload, a count that moved is a mover, a round number crossed is a crossing. The same sweep checks the scene's live dates by hand — what is verified, what rests on one source, and what could not be confirmed, each labeled as exactly that.</p>
         <p class="signal-row"><span class="api-badge" id="watch-badge" data-api-state="waking" role="status" aria-live="polite"></span></p>
         <p class="chart-sub" id="watch-fresh">Static watch file — the last published captures stand below.</p>
@@ -128,15 +129,15 @@
 
       <section class="section" aria-labelledby="wl-h" id="watch-log">
         <span class="kicker"><span class="numeral">&#10022;</span>the watch log</span>
-        <h3 id="wl-h">Between the last two captures</h3>
+        <h2 id="wl-h">Between the last two captures</h2>
         <p class="chart-sub">Previous capture: the Signal stand-up pull, 2026-10-11 22:11 UTC. Latest capture: 2026-10-12 23:22 UTC, via SoundCloud api-v2. The gap between them is 25 hours 11 minutes — the first pair far enough apart for the per-day column to say anything honest, so for the first time it does.</p>
 
-        <h4>New uploads</h4>
+        <h2>New uploads</h2>
         <div id="watch-new">
           <p class="chart-sub">None. No title appears in the latest capture that was not in the previous one — and none vanished. The newest upload on record is &#x27;turn up w me (prod_timmy)&#x27;, uploaded 2026-10-02. The next new title the vault produces will surface here on the following capture.</p>
         </div>
 
-        <h4>Play-count movers</h4>
+        <h2>Play-count movers</h2>
         <table class="watch-table" id="watch-movers">
           <thead><tr><th scope="col">Transmission</th><th scope="col" class="num">Before</th><th scope="col" class="num">After</th><th scope="col" class="num">Change</th><th scope="col" class="num">Per day</th></tr></thead>
           <tbody>
@@ -147,7 +148,7 @@
         </table>
         <p class="chart-sub">Thirteen plays across the whole vault in just over a day, eleven of them on one track. Per-day rates are plain division over the 1.05 days between captures — reported now that the gap clears 24 hours, and left blank whenever it does not. Every other watched track — 182 of 185 — held its count exactly.</p>
 
-        <h4>Milestone crossings</h4>
+        <h2>Milestone crossings</h2>
         <p class="chart-sub">None between these captures. The board below is who reaches a round number next, from the standing milestone watch:</p>
         <table class="watch-table" id="watch-nextup">
           <thead><tr><th scope="col">Transmission</th><th scope="col" class="num">Plays</th><th scope="col" class="num">Target</th><th scope="col" class="num">Needed</th></tr></thead>
@@ -159,7 +160,7 @@
           </tbody>
         </table>
 
-        <h4>The capture ledger</h4>
+        <h2>The capture ledger</h2>
         <p class="chart-sub">Every capture the watch has taken, newest last. A capture is a photograph, not a feed: the count stood at this number at this minute, and between photographs the wire says nothing.</p>
         <table class="watch-table" id="watch-history">
           <thead><tr><th scope="col">Captured (UTC)</th><th scope="col" class="num">Tracks</th><th scope="col" class="num">Total plays</th><th scope="col" class="num">Change</th></tr></thead>
@@ -174,49 +175,49 @@
 
       <section class="section" aria-labelledby="ld-h" id="live-dates">
         <span class="kicker"><span class="numeral">&#10022;</span>live-date verification — swept 2026-10-12, re-swept + readiness pass 2026-10-13</span>
-        <h3 id="ld-h">The date board</h3>
+        <h2 id="ld-h">The date board</h2>
         <p class="chart-sub">Release week for Fish Narc&#x27;s <em>Uncle</em> and capoxxo&#x27;s first verifiable live appearances, each checked against the web on 2026-10-12 and re-checked on 2026-10-13. Every date below held; one listing gained detail (the Gold Diggers start time and address). A release-week readiness pass later on 2026-10-13 opened the venue calendar, Bandsintown, Stereogum, upcomingvinyl, JamBase and both Eventbrite listings a second time — every date held again, and the JamBase Gold Diggers listing now also shows a $15 ticket line (aggregator, not a primary listing, so the price stays unrecorded here). A final pre-event check in Rotation 6 (2026-10-13 02:29 UTC) opened the same eight sources a third time — every date held again and the JamBase conflict still stands. A site health-audit pass in Rotation 7 (2026-10-13) read the venue calendar, Stereogum and both Eventbrite listings a fourth time — every date held again; JamBase answered a plain request with a 403 bot-block this pass and was not chased, so the conflict is carried unresolved without a fresh JamBase reading. A release-week eve pass in Rotation 8 (2026-10-13) read the venue calendar in full and opened Bandsintown, Stereogum, upcomingvinyl and both Eventbrite listings a fifth time — every date held again; JamBase was not opened under the standing skip rule, so the conflict is carried unresolved and unverified without a fresh JamBase reading. A Tuner flagship pass in Rotation 9 (2026-10-13) read the venue calendar in full and opened Bandsintown, Stereogum, upcomingvinyl and both Eventbrite listings a sixth time — every date held again; JamBase was not opened under the standing skip rule, so the conflict is carried unresolved and unverified without a fresh JamBase reading. A Scene Atlas flagship pass in Rotation 10 (2026-10-13) read the venue calendar in full and opened Bandsintown, Stereogum, upcomingvinyl and both Eventbrite listings a seventh time — every date held again; JamBase was not opened under the standing skip rule, so the conflict is carried unresolved and unverified without a fresh JamBase reading. <strong>Verified</strong> means a primary listing (venue or ticketing) or two independent sources carry the same date, venue and time. <strong>Single-source</strong> means exactly one source carries it. Discrepancies are printed, not smoothed over.</p>
         <div id="date-board">
           <article class="date-card">
-            <h4>Fish Narc — &#x27;Uncle&#x27; listening party <span class="watch-chip is-verified">Verified</span> <span class="watch-chip is-when" data-when="2026-10-15"></span></h4>
+            <h2>Fish Narc — &#x27;Uncle&#x27; listening party <span class="watch-chip is-verified">Verified</span> <span class="watch-chip is-when" data-when="2026-10-15"></span></h2>
             <p class="date-meta">Thursday, Oct 15, 2026 · 7:00 PM PDT · Permanent Records Roadhouse, 1906 Cypress Avenue, Los Angeles, CA · Free, RSVP</p>
             <p class="date-note">Bandsintown independently corroborates the date, venue and start time first recorded from the venue calendar. The night before the <em>Uncle</em> release. Re-checked 2026-10-13: Bandsintown still carries the date, venue and 7:00 PM start, and the JamBase conflict below still stands. Readiness pass, later 2026-10-13: the venue calendar itself was opened directly — it still lists the Fish Narc Listening Party at 7 PM, free, with an RSVP link, and JamBase&#x27;s own Sam Buck listing (Oct 15, 9:00 PM, this venue) was opened directly too. Both listings are live at once. Final pre-event check, Rotation 6 (2026-10-13 02:29 UTC): both opened a third time — nothing moved.</p>
             <p class="date-disc">Open conflict: JamBase&#x27;s schedule for the same venue and evening lists Sam Buck (9:00 PM) and does not list Fish Narc. A shared bill or a listing lag would explain it; the sweep records the conflict instead of resolving it. The free/RSVP detail rests on the venue calendar alone.</p>
             <p class="date-meta">Sources: <a href="https://roadhouse.permanentrecordsla.com/" target="_blank" rel="noopener">venue calendar</a> · <a href="https://www.bandsintown.com/e/1040142530-fish-narc-at-permanent-records-roadhouse?came_from=253&amp;utm_medium=web&amp;utm_source=city_page&amp;utm_campaign=just_announced" target="_blank" rel="noopener">Bandsintown listing</a></p>
           </article>
           <article class="date-card">
-            <h4>Fish Narc — &#x27;Uncle&#x27;, fifth solo LP (K Records, KLP313) <span class="watch-chip is-verified">Verified</span> <span class="watch-chip is-when" data-when="2026-10-16"></span></h4>
+            <h2>Fish Narc — &#x27;Uncle&#x27;, fifth solo LP (K Records, KLP313) <span class="watch-chip is-verified">Verified</span> <span class="watch-chip is-when" data-when="2026-10-16"></span></h2>
             <p class="date-meta">Friday, Oct 16, 2026 · release date</p>
             <p class="date-note">Independent listings still carry Oct 16 as upcoming. Re-checked 2026-10-13: Faygoluvers, crawled hours before the re-sweep, still gives October 16, 2026 as the release date. No early release, no date change, no third single found. The archive&#x27;s watch stays &#x27;announced&#x27; until a post-release pass confirms it is out. Readiness pass, later 2026-10-13: Stereogum and upcomingvinyl opened again — Oct 16 via K Records still stands in both. Final pre-event check, Rotation 6: opened a third time — still announced, not out early.</p>
             <p class="date-meta">Sources: <a href="https://stereogum.com/2508537/fish-narc-announces-new-album-uncle-hear-much-less-me/music" target="_blank" rel="noopener">Stereogum</a> · <a href="https://www.altpress.com/2026-album-releases/" target="_blank" rel="noopener">AltPress</a> · <a href="http://consequence.net/upcoming-releases/" target="_blank" rel="noopener">Consequence</a> · <a href="https://upcomingvinyl.com/artists/fish-narc" target="_blank" rel="noopener">upcomingvinyl</a> · <a href="https://releasewave.com/artists/fish-narc" target="_blank" rel="noopener">Release Wave</a> · <a href="https://www.faygoluvers.net/v5/2026/09/fish-narc-announces-new-album-uncle-on-k-records/" target="_blank" rel="noopener">Faygoluvers</a></p>
           </article>
           <article class="date-card">
-            <h4>Korpsebunny — Seattle (w/ Capoxxo and mayh3mp) <span class="watch-chip is-verified">Verified</span> <span class="watch-chip is-when" data-when="2026-10-28"></span></h4>
+            <h2>Korpsebunny — Seattle (w/ Capoxxo and mayh3mp) <span class="watch-chip is-verified">Verified</span> <span class="watch-chip is-when" data-when="2026-10-28"></span></h2>
             <p class="date-meta">Wednesday, Oct 28, 2026 · doors 7:30 PM, show 7:30–11:30 PM · Arch Rivals Studios, 116 S Washington St, Seattle, WA · $25.63 · all ages</p>
             <p class="date-note">Primary listing opened directly in this sweep. Bill: Korpsebunny, capoxxo, mayh3mp, Scarly — hosted by Heady Presents. capoxxo plays a support slot; he is not the headliner. Re-checked 2026-10-13 against the same listing: date, doors, price and bill unchanged. Readiness pass, later 2026-10-13: opened a second time — Wed Oct 28, 7:30–11:30 PM, $25.63, unchanged.</p>
             <p class="date-meta">Source: <a href="https://www.eventbrite.com/e/korpsebunny-seattle-w-capoxxo-and-mayh3mp-tickets-2002391650329" target="_blank" rel="noopener">Eventbrite listing</a></p>
           </article>
           <article class="date-card">
-            <h4>Korpsebunny — PDX (w/ Capoxxo, mayh3mp) <span class="watch-chip is-verified">Verified</span> <span class="watch-chip is-when" data-when="2026-10-29"></span></h4>
+            <h2>Korpsebunny — PDX (w/ Capoxxo, mayh3mp) <span class="watch-chip is-verified">Verified</span> <span class="watch-chip is-when" data-when="2026-10-29"></span></h2>
             <p class="date-meta">Thursday, Oct 29, 2026 · doors 7:00 PM, show 7:30–11:30 PM · 211 SE Madison St, Portland, OR · $28.52 · all ages</p>
             <p class="date-note">Primary listing opened directly in this sweep. Bill adds Eunhae, plus DJ sets from B3xtac33, DJ Shortstop and Sora Boyd. The room is listed by street address only — no venue name on the listing. Re-checked 2026-10-13 against the same listing: date, doors, price and bill unchanged. Readiness pass, later 2026-10-13: opened a second time — Thu Oct 29, doors 7:00 PM, $28.52, unchanged.</p>
             <p class="date-disc">Standing discrepancy: Songkick still reads &#x27;off tour — no upcoming concerts&#x27; for capoxxo. Headliner trackers do not carry support slots; the Eventbrite listing is the primary source and stands.</p>
             <p class="date-meta">Sources: <a href="https://www.eventbrite.com/e/korpsebunny-pdx-w-capoxxo-mayh3mp-tickets-2002981653043" target="_blank" rel="noopener">Eventbrite listing</a> · <a href="https://www.songkick.com/artists/9749264-capoxxo" target="_blank" rel="noopener">Songkick</a></p>
           </article>
           <article class="date-card">
-            <h4>Fish Narc — Los Angeles, Gold Diggers <span class="watch-chip is-verified">Verified</span> <span class="watch-chip is-when" data-when="2026-10-29"></span></h4>
+            <h2>Fish Narc — Los Angeles, Gold Diggers <span class="watch-chip is-verified">Verified</span> <span class="watch-chip is-when" data-when="2026-10-29"></span></h2>
             <p class="date-meta">Thursday, Oct 29, 2026 · 7:00 PM · Gold Diggers, 5632 Santa Monica Blvd, Los Angeles, CA · with Sepe</p>
             <p class="date-note">Three independent sources now carry the date and venue: a dedicated JamBase show listing (new in the 2026-10-13 re-sweep) adds the 7:00 PM start and the venue&#x27;s street address. No primary ticket listing has been opened, so the price stays unrecorded rather than guessed. Same night capoxxo plays Portland — two archive orbits, one evening. Readiness pass, later 2026-10-13: the JamBase listing now also shows a $15 ticket line in its event footer — noted here, not moved into the price line, because JamBase is an aggregator.</p>
             <p class="date-meta">Sources: <a href="https://stereogum.com/2508537/fish-narc-announces-new-album-uncle-hear-much-less-me/music" target="_blank" rel="noopener">Stereogum tour list</a> · <a href="https://riffmagazine.com/tuesday-tracks/the-hails-20260922/" target="_blank" rel="noopener">RIFF Magazine</a> · <a href="https://www.jambase.com/show/fish-narc-gold-diggers-20261029" target="_blank" rel="noopener">JamBase listing</a></p>
           </article>
           <article class="date-card">
-            <h4>Fish Narc — Kingston, Tubby&#x27;s <span class="watch-chip is-single">Single-source</span> <span class="watch-chip is-when" data-when="2026-11-06"></span></h4>
+            <h2>Fish Narc — Kingston, Tubby&#x27;s <span class="watch-chip is-single">Single-source</span> <span class="watch-chip is-when" data-when="2026-11-06"></span></h2>
             <p class="date-meta">Friday, Nov 6, 2026 · Tubby&#x27;s, Kingston, NY</p>
             <p class="date-note">Carried by the Stereogum announcement&#x27;s tour list only, in every pass so far. No venue listing opened yet.</p>
             <p class="date-meta">Source: <a href="https://stereogum.com/2508537/fish-narc-announces-new-album-uncle-hear-much-less-me/music" target="_blank" rel="noopener">Stereogum tour list</a></p>
           </article>
           <article class="date-card">
-            <h4>Fish Narc — Ridgewood, Stone Circle Theatre <span class="watch-chip is-single">Single-source</span> <span class="watch-chip is-when" data-when="2026-11-07"></span></h4>
+            <h2>Fish Narc — Ridgewood, Stone Circle Theatre <span class="watch-chip is-single">Single-source</span> <span class="watch-chip is-when" data-when="2026-11-07"></span></h2>
             <p class="date-meta">Saturday, Nov 7, 2026 · Stone Circle Theatre, Ridgewood, NY · with Loosey</p>
             <p class="date-note">Carried by the Stereogum announcement&#x27;s tour list only, in every pass so far. No venue listing opened yet.</p>
             <p class="date-meta">Source: <a href="https://stereogum.com/2508537/fish-narc-announces-new-album-uncle-hear-much-less-me/music" target="_blank" rel="noopener">Stereogum tour list</a></p>
@@ -234,7 +235,7 @@
 
       <section class="section" aria-labelledby="wm-h" id="method">
         <span class="kicker"><span class="numeral">&#10022;</span>method</span>
-        <h3 id="wm-h">How the watch works</h3>
+        <h2 id="wm-h">How the watch works</h2>
         <ul class="fact-list">
           <li><strong>Detection is keyed, not string-matched.</strong> Tracks are keyed by normalized title — case, apostrophe style and whitespace unified — or by permalink once a live refresh captures one. The first build of this watcher keyed on title-plus-date and flagged 121 of 185 tracks as new; upload dates drift between capture methods (the research capture runs a day behind api-v2 for most tracks, months for a few), so dates are display data, never identity.</li>
           <li><strong>Counts are captures, not a feed.</strong> Play counts move between captures; nothing here is live. The daily cron (<code>GET /api/cron/signal</code>) pulls a fresh capture, diffs it, and rewrites <code>data/v1/signal-watch.json</code> only when something changed. This page reads that file, or <code>GET /api/watch</code> where the functions are deployed.</li>

@@ -1,8 +1,20 @@
 {
   "generated": "2026-10-11",
   "method": "Parsed from `git log main`: every commit becomes an entry. The site documenting its own becoming.",
-  "entry_count": 138,
+  "entry_count": 140,
   "entries": [
+    {
+      "hash": "6d8f603",
+      "date": "2026-10-13",
+      "message": "Rotation 12 addendum cycle 2: QA-008 closed as a class — all 83 zero-h1 pages fixed (6 generators: circle/codex/codex-pages/eras/years/session-deepdives titles promoted + sections shifted, layer2.css masthead + :has() size pins; 17 hand pages incl. the named decoder/api-playground/agents/trilogy/method + signal/codex-network/network/timeline + 8 scene subpages, QA-007 pin-block pattern) — full sweep verifies exactly one h1 on all 430 pages; Commons round 8: robots.txt added as preserved root file, allow-all, no Sitemap pointer (repo publishes no sitemap; no invented domain); Foundry round 6 GO_LIVE absolutizing note + Commons round 7 llms.txt canonical restructure (checker PASS) folded in",
+      "files_changed": 97
+    },
+    {
+      "hash": "e6f106d",
+      "date": "2026-10-13",
+      "message": "changelog sync (post-validation)",
+      "files_changed": 3
+    },
     {
       "hash": "50a6c6c",
       "date": "2026-10-13",
