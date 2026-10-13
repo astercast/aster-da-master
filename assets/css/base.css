@@ -29,48 +29,57 @@ body {
   overflow-x: clip;
 }
 
-/* --- Atmosphere: faint scanlines + vignette, barely there --- */
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  background-image: repeating-linear-gradient(
-    0deg,
-    rgba(255, 255, 255, 0.022) 0 1px,
-    transparent 1px 4px
-  );
-  mask-image: linear-gradient(black 55%, transparent 100%);
+/* --- No atmosphere layer. Paper is flat (rotation 20). --- */
+
+/* --- Scroll-driven reading progress (Fleet Commons canonical
+   v1.0.0, scroll-driven-animations #13): a 2px ink rule at the
+   top of the viewport, scrubbed by scroll position on the
+   compositor. Gated twice, exactly as the canonical pattern
+   nests them — no-preference outside, @supports inside.
+   Declared fallback posture: hide on no-support — the bar is
+   meaningless unscrubbed, so where the timeline API is absent
+   it simply never renders and the page is exactly as before.
+   No JS driver touches this property, so nothing yields. --- */
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: scroll()) {
+    body::after {
+      content: "";
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 2px;
+      background: var(--ink);
+      transform-origin: 0 50%;
+      transform: scaleX(0);
+      animation: adm-progress linear both;
+      animation-timeline: scroll(root);
+      z-index: 200;
+      pointer-events: none;
+    }
+  }
 }
-body::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  background: radial-gradient(120% 90% at 50% 0%, transparent 55%, rgba(0, 0, 0, 0.5) 100%);
+@keyframes adm-progress {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
 }
 
 /* --- Type --- */
 h1, h2, h3, h4 {
   font-family: var(--font-display);
-  font-weight: 400;
-  text-transform: uppercase;
-  letter-spacing: 0.015em;
-  line-height: 1.04;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 1.18;
   margin: 0 0 var(--space-4);
   color: var(--ink);
 }
 h1 { font-size: var(--fs-1); }
 h2 { font-size: var(--fs-2); }
-h3 { font-size: var(--fs-3); letter-spacing: 0.02em; }
-h4 { font-size: 1rem; letter-spacing: 0.06em; }
+h3 { font-size: var(--fs-3); }
+h4 { font-size: 1rem; }
 
 p { margin: 0 0 var(--space-4); }
 
-a { color: var(--neon); text-decoration: none; }
-a:hover { color: var(--ink); text-decoration: underline; text-decoration-color: var(--neon); text-underline-offset: 3px; }
+a { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
+a:hover { text-decoration-thickness: 2px; }
 
 strong, b { color: var(--ink); }
 em { color: var(--ink-dim); }
@@ -100,7 +109,7 @@ th, td { text-align: left; padding: var(--space-2) var(--space-3); border-bottom
 th {
   font-family: var(--font-mono);
   font-size: var(--fs-micro);
-  letter-spacing: 0.18em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--muted);
   font-weight: 500;

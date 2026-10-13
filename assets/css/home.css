@@ -51,7 +51,7 @@
   width: 880px;
 }
 #station-index::backdrop {
-  background: rgba(5, 7, 5, 0.86);
+  background: rgba(0, 0, 0, 0.45);
 }
 .index-inner {
   padding: var(--space-6);
@@ -188,8 +188,7 @@
   transition: border-color var(--dur-2) var(--ease), transform var(--dur-2) var(--ease);
 }
 .room-card:hover {
-  border-color: var(--neon-dim);
-  transform: translateY(-3px);
+  border-color: var(--ink-dim);
 }
 .room-card .kicker {
   color: var(--neon-dim);
@@ -243,8 +242,7 @@
   transition: transform var(--dur-2) var(--ease), color var(--dur-2) var(--ease);
 }
 .room-card:hover .room-go {
-  transform: translateX(6px);
-  color: var(--neon);
+  color: var(--ink);
 }
 
 /* ---- cast lots strip ---- */

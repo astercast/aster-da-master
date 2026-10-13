@@ -597,7 +597,8 @@
         }).join("");
       }
 
-      /* Transmission wire — latest 8, duplicated for the seamless loop */
+      /* Wire — latest 8, printed once as a static strip (rotation 20:
+         the seamless-loop duplication retired with the ticker roll) */
       var wire = document.getElementById("wire-track");
       if (wire && Array.isArray(d.discography)) {
         var latest = d.discography.slice().sort(function (x, y) {
@@ -606,7 +607,7 @@
         var items = latest.map(function (r) {
           return '<span class="w-item"><b>' + esc(r.title || "") + "</b> · " + esc(r.date || "") + "</span>";
         }).join('<span class="w-sep">///</span>');
-        wire.innerHTML = items + '<span class="w-sep">///</span>' + items + '<span class="w-sep">///</span>';
+        wire.innerHTML = items;
       }
 
       var book = document.getElementById("booking");

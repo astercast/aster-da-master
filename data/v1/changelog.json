@@ -1,8 +1,20 @@
 {
   "generated": "2026-10-11",
   "method": "Parsed from `git log main`: every commit becomes an entry. The site documenting its own becoming.",
-  "entry_count": 156,
+  "entry_count": 158,
   "entries": [
+    {
+      "hash": "63367fa",
+      "date": "2026-10-13",
+      "message": "Rotation 20: the JackZebra-register pass — the whole site re-presented as a plain text-first catalogue (paper white, near-black ink, hairline rules, square corners, one quiet mono voice) at the presentation layer only: tokens re-valued not renamed, CRT scanlines/phosphor glow/beacon flicker/scramble/boot overlay/ticker roll retired, boot overlay removed from identity.js, release pages become one-column catalogue entries (title, facts list, stream links out, cover demoted to a 160px plate), Signal gate history folded behind a disclosure complete and unedited; scroll-driven reading progress adopted site-wide (Commons #13 canonical gates, hide-on-no-support), cross-document view transitions (#12) re-verified; counts at/above the e3273cd baseline everywhere (430 pages, 219 catalogue, 430 h1/420 distinct, 2197 ids 0 dup, 220 JSON-LD, 25 endpoints); capture #3 gate clock-checked 22:24Z — gate 2026-10-13T23:22:57Z still ahead and Oct 14 16:00 UTC cron source not run, ledger stays 2 rows / 257,409, gate ARMED (Rotation 20 check on signal.html); release-week flips stay armed",
+      "files_changed": 15
+    },
+    {
+      "hash": "e3273cd",
+      "date": "2026-10-13",
+      "message": "changelog sync (post-validation)",
+      "files_changed": 3
+    },
     {
       "hash": "42494a9",
       "date": "2026-10-13",

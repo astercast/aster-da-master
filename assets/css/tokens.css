@@ -1,85 +1,85 @@
 /* ============================================================
-   DESIGN TOKENS — Aster da Master: THE PIRATE BROADCAST (wave 31)
-   A pirate station broadcasting from the dark between frequencies.
-   Phosphor green is the signal/voice, amber is the heat, alert red is
-   the ON AIR light and nothing else. Mono is the station's voice;
-   Anton is the call-sign. Restraint everywhere.
-   ------------------------------------------------------------
-   Visual thesis: tuned, not decorated. Every surface should feel like
-   receiver hardware — hairline borders, mono labels, tabular figures.
-   REFUSALS: no generic soft-shadow cards; no pure-neon body text; no
-   metronome blinking; no fake signal data; no purple/blue gradients;
-   no emoji in chrome (glyph set: ● ◆ ▲ ▂▄▆ ✦ + box drawing); never a
-   third font family.
-   Single token layer: components/motifs read these vars, never literals.
+   DESIGN TOKENS — Aster da Master: THE CATALOGUE (rotation 20)
+   The JackZebra register: a plain text-first catalogue. Paper
+   white, near-black ink, hairline gray rules, square corners,
+   no glow, no gradient, no decoration. One typeface — the mono
+   the archive already speaks — set quieter. The accent is ink
+   itself; the only color left is a functional error red.
+   Rotation 20 re-presents; it removes no content. Every token
+   name is unchanged from the pirate-broadcast layer, so all
+   components/motifs read the new register without markup edits.
    ============================================================ */
 :root {
-  /* Surfaces — the dark between stations, green-tinted black */
-  --bg: #050705;
-  --bg-soft: #090b09;
-  --panel: #0c0f0c;
-  --panel-2: #121612;
-  --line: #20261f;
-  --line-soft: #151a14;
+  /* Surfaces — paper */
+  --bg: #ffffff;
+  --bg-soft: #fafafa;
+  --panel: #ffffff;
+  --panel-2: #f4f4f4;
+  --line: #d8d8d8;
+  --line-soft: #e8e8e8;
 
-  /* Ink — phosphor-dim, never pure neon for body */
-  --ink: #e8e6da;
-  --ink-dim: #a3a898;
-  --muted: #62685c;
+  /* Ink — near-black on paper, gray for the second voice */
+  --ink: #141414;
+  --ink-dim: #454545;
+  --muted: #767676;
 
-  /* Signal — phosphor green is the voice; amber is the heat */
-  --neon: #00f090;
-  --neon-deep: #00a862;
-  --neon-ink: #04120b;          /* text on phosphor fills */
-  --neon-dim: rgba(0, 240, 144, 0.55);
-  --neon-faint: rgba(0, 240, 144, 0.12);
-  --neon-ghost: rgba(0, 240, 144, 0.05);
-  --gold: #f5a524;
-  --gold-bright: #ffc95e;
-  --gold-ink: #170e02;          /* text on amber fills */
-  --live: #ff5468;              /* ON AIR beacon ONLY (+ errors) */
-  --alert: #ff5468;             /* sparse: errors, stale-data markers */
+  /* Accent — ink itself. The old signal colors now resolve to
+     plain ink/grays so every component that asked for "neon"
+     or "gold" gets the catalogue register, not a tint. */
+  --neon: #141414;
+  --neon-deep: #141414;
+  --neon-ink: #ffffff;          /* text on ink fills */
+  --neon-dim: rgba(20, 20, 20, 0.62);
+  --neon-faint: rgba(20, 20, 20, 0.07);
+  --neon-ghost: rgba(20, 20, 20, 0.035);
+  --gold: #767676;
+  --gold-bright: #454545;
+  --gold-ink: #ffffff;          /* text on gray fills */
+  --live: #141414;              /* the status dot, plain ink now */
+  --alert: #b00020;             /* functional only: errors, stale-data markers */
 
-  /* Shape */
-  --radius-s: 3px;
-  --radius-m: 6px;
-  --radius-l: 10px;
+  /* Shape — square */
+  --radius-s: 0;
+  --radius-m: 0;
+  --radius-l: 0;
 
-  /* Type — two families, nothing shared with the other fleet sites.
-     Anton: the call-sign (display). IBM Plex Mono: the station voice
-     (body + mono + numerals — tabular by construction). */
-  --font-display: "Anton", "Arial Narrow", Impact, "Helvetica Neue", sans-serif;
+  /* Type — one family. The display face is the body face set
+     larger and semibold; no separate call-sign font on the
+     surface (Anton stays self-hosted, used by the og-card). */
+  --font-display: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
   --font-body: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
   --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 
-  /* Fluid type scale */
-  --fs-hero: clamp(3.4rem, 12vw, 9rem);
-  --fs-1: clamp(2.1rem, 5vw, 3.4rem);
-  --fs-2: clamp(1.5rem, 3.2vw, 2.15rem);
-  --fs-3: clamp(1.15rem, 2.2vw, 1.35rem);
+  /* Fluid type scale — calmer: the hero is a title, not a shout */
+  --fs-hero: clamp(2.1rem, 6vw, 3.3rem);
+  --fs-1: clamp(1.65rem, 4vw, 2.3rem);
+  --fs-2: clamp(1.3rem, 2.8vw, 1.75rem);
+  --fs-3: clamp(1.05rem, 2vw, 1.2rem);
   --fs-body: 0.97rem;
   --fs-small: 0.84rem;
   --fs-micro: 0.7rem;
 
-  /* Broadcast tracking */
-  --track-kicker: 0.3em;
-  --track-broadcast: 0.42em;
-  --track-label: 0.14em;
+  /* Tracking — set like type, not like a broadcast */
+  --track-kicker: 0.12em;
+  --track-broadcast: 0.12em;
+  --track-label: 0.06em;
 
   /* Space */
   --space-1: 4px; --space-2: 8px; --space-3: 12px; --space-4: 16px;
   --space-5: 24px; --space-6: 32px; --space-7: 48px; --space-8: 72px;
   --space-9: 110px;
 
-  /* Depth — phosphor glow, night-drive amber */
-  --shadow-1: 0 1px 2px rgba(0, 0, 0, 0.55);
-  --shadow-2: 0 16px 48px rgba(0, 0, 0, 0.65);
-  --glow-neon: 0 0 22px rgba(0, 240, 144, 0.28), 0 0 64px rgba(0, 240, 144, 0.12);
-  --glow-amber: 0 0 28px rgba(245, 165, 36, 0.22);
-  --glow-text: 0 0 14px rgba(0, 240, 144, 0.35), 0 0 46px rgba(0, 240, 144, 0.14);
+  /* Depth — flat. One soft shadow survives for dialogs/menus,
+     the only elements that float above the page. */
+  --shadow-1: none;
+  --shadow-2: 0 12px 32px rgba(0, 0, 0, 0.16);
+  --glow-neon: none;
+  --glow-amber: none;
+  --glow-text: none;
 
-  /* CRT */
-  --scan-alpha: 0.34;
+  /* CRT — retired in rotation 20; the token remains at 0 so
+     any leftover scanline rule paints nothing. */
+  --scan-alpha: 0;
 
   /* Motion */
   --ease: cubic-bezier(0.22, 1, 0.36, 1);

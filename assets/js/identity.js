@@ -1,9 +1,14 @@
-/* Aster da Master — THE PIRATE BROADCAST identity chrome (wave 31).
-   Injected, JS-only: boot sequence, ON AIR beacon, scramble/decode
-   reveals, nav tuner marker, station sign-off + clock.
-   Failure-safe: every feature guards on its DOM hooks — no match, no
-   touch, page works. No-JS visitors get the full site, just no chrome.
-   All motion gated on prefers-reduced-motion. Vanilla, no dependencies. */
+/* Aster da Master — site chrome (rotation 20, the catalogue register).
+   Injected, JS-only: the status beacon, the current-page nav marker,
+   the footer sign-off line + UTC clock, and the reveal gap-close.
+   Retired in rotation 20 (presentation only): the boot overlay
+   ("TUNING 87.9…" — the page now opens directly on the catalogue)
+   and the scramble/decode text effects (headlines and nav links
+   now sit still and read as printed). Every feature kept here is
+   functional: it marks state or tells the time.
+   Failure-safe: every feature guards on its DOM hooks — no match,
+   no touch, page works. No-JS visitors get the full site, just no
+   chrome. Vanilla, no dependencies. */
 (function () {
   "use strict";
 
@@ -11,102 +16,10 @@
   document.documentElement.classList.add("js");
 
   var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  var GLYPHS = "\u2588\u2593\u2592\u2591<>/\\|[]#+*01";
 
-  /* ---- boot sequence: 3 typed lines, ~1.2s, once per session, skippable ---- */
-  function boot() {
-    if (reduced) return false;
-    try {
-      if (window.sessionStorage.getItem("adm-boot") === "1") return false;
-    } catch (e) { return false; }
-    var lines = ["TUNING 87.9 \u2026", "SIGNAL FOUND", "DECRYPTING ARCHIVE"];
-    var ov = document.createElement("div");
-    ov.className = "boot";
-    ov.setAttribute("aria-hidden", "true");
-    ov.innerHTML =
-      '<div class="boot-box">' +
-      '<p class="boot-freq">ASTER DA MASTER // PIRATE SIGNAL</p>' +
-      '<div class="boot-lines"></div>' +
-      '<p class="boot-skip">CLICK OR ANY KEY TO SKIP</p>' +
-      "</div>";
-    var box = ov.querySelector(".boot-lines");
-    var done = false;
-    function finish() {
-      if (done) return;
-      done = true;
-      document.removeEventListener("keydown", onKey);
-      try { window.sessionStorage.setItem("adm-boot", "1"); } catch (e) {}
-      ov.classList.add("done");
-      window.setTimeout(function () { if (ov.parentNode) ov.parentNode.removeChild(ov); }, 360);
-    }
-    function onKey() { finish(); }
-    ov.addEventListener("click", finish);
-    document.addEventListener("keydown", onKey);
-    if (!document.body) return false;
-    document.body.appendChild(ov);
-    var li = 0;
-    function typeLine() {
-      if (done) return;
-      if (li >= lines.length) { window.setTimeout(finish, 240); return; }
-      var p = document.createElement("p");
-      p.className = "boot-line";
-      var caret = document.createElement("span");
-      caret.className = "boot-caret";
-      var stale = box.querySelector(".boot-caret");
-      if (stale && stale.parentNode) stale.parentNode.removeChild(stale);
-      box.appendChild(p);
-      var text = lines[li++];
-      var ci = 0;
-      (function tick() {
-        if (done) return;
-        p.textContent = text.slice(0, ++ci);
-        p.appendChild(caret);
-        if (ci < text.length) window.setTimeout(tick, 22);
-        else window.setTimeout(typeLine, 110);
-      })();
-    }
-    typeLine();
-    window.setTimeout(finish, 4000); /* hard cap: never trap the page */
-    return true;
-  }
-
-  /* ---- scramble/decode: text-node walker, restores originals ---- */
-  function scrambleText(el, dur) {
-    if (reduced || !window.requestAnimationFrame) return;
-    var nodes = [];
-    (function walk(n) {
-      for (var c = n.firstChild; c; c = c.nextSibling) {
-        if (c.nodeType === 3) nodes.push(c);
-        else if (c.nodeType === 1) walk(c);
-      }
-    })(el);
-    if (!nodes.length) return;
-    var orig = nodes.map(function (n) { return n.nodeValue; });
-    if (!orig.join("").replace(/\s/g, "")) return;
-    var start = window.performance.now();
-    el.classList.add("decoding");
-    function frame(now) {
-      var t = Math.min(1, (now - start) / dur);
-      for (var i = 0; i < nodes.length; i++) {
-        var o = orig[i], out = "";
-        for (var k = 0; k < o.length; k++) {
-          var ch = o[k];
-          out += (/\s/.test(ch) || Math.random() < t)
-            ? ch
-            : GLYPHS[(Math.random() * GLYPHS.length) | 0];
-        }
-        nodes[i].nodeValue = out;
-      }
-      if (t < 1) window.requestAnimationFrame(frame);
-      else {
-        for (var j = 0; j < nodes.length; j++) nodes[j].nodeValue = orig[j];
-        el.classList.remove("decoding");
-      }
-    }
-    window.requestAnimationFrame(frame);
-  }
-
-  /* ---- ON AIR beacon, injected after the brand ---- */
+  /* ---- status beacon, injected after the brand: a plain text
+     label with a static ink dot (motifs.css carries the register;
+     no flicker since rotation 20) ---- */
   function beacon() {
     var brand = document.querySelector(".header-bar .brand");
     if (!brand || document.querySelector(".onair")) return;
@@ -117,7 +30,7 @@
     brand.insertAdjacentElement("afterend", s);
   }
 
-  /* ---- tuner marker: aria-current on the nav link for this page ---- */
+  /* ---- current-page marker: aria-current on the nav link for this page ---- */
   function markCurrent() {
     var path = window.location.pathname.replace(/\/index\.html$/, "/");
     var links = document.querySelectorAll(".site-nav a, .mnav-panel a");
@@ -132,7 +45,7 @@
     }
   }
 
-  /* ---- station sign-off footer card + live UTC clock ---- */
+  /* ---- footer sign-off line + live UTC clock ---- */
   function signoff() {
     var foot = document.querySelector(".site-footer .container");
     if (!foot || foot.querySelector(".signoff")) return;
@@ -155,7 +68,6 @@
   }
 
   /* ---- run ---- */
-  var booted = boot();
   beacon();
   markCurrent();
   signoff();
@@ -168,30 +80,10 @@
   if (window.ADM && typeof window.ADM.reveal === "function") {
     try { window.ADM.reveal(); } catch (e) {}
   }
-
-  /* Headline decode: the call-sign tunes in. Body copy stays static. */
-  var h1 = document.querySelector("main h1");
-  if (h1 && !reduced) {
-    window.setTimeout(function () { scrambleText(h1, 650); }, booted ? 1450 : 350);
-  }
-
-  /* Nav hover scramble: quick static burst on the link. */
-  var navLinks = document.querySelectorAll(".site-nav a, .mnav-panel a");
-  for (var n = 0; n < navLinks.length; n++) {
-    (function (a) {
-      var busy = false;
-      a.addEventListener("mouseenter", function () {
-        if (reduced || busy) return;
-        busy = true;
-        scrambleText(a, 240);
-        window.setTimeout(function () { busy = false; }, 320);
-      });
-    })(navLinks[n]);
-  }
 })();
 
 /* The station never sleeps. (If you're reading this: no lyrics in here —
    just numbers. The keeper's orders.) */
 if (window.console && typeof console.log === "function") {
-  console.log("%cThe station never sleeps.", "color:#00f090");
+  console.log("The station never sleeps.");
 }

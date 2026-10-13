@@ -48,11 +48,11 @@
       position: absolute;
       inset: 0;
       pointer-events: none;
-      background: repeating-linear-gradient(to bottom, transparent 0 3px, rgba(0, 240, 144, 0.028) 3px 4px);
+      background: transparent;
     }
     .tx-hero-title {
       font-family: var(--font-display);
-      font-size: clamp(3rem, 11vw, 8rem);
+      font-size: clamp(2rem, 6vw, 3.2rem);
       letter-spacing: 0.02em;
       color: var(--neon);
       text-shadow: var(--glow-neon);
@@ -117,7 +117,7 @@
     .tx-station .st-years { font-size: var(--fs-micro); color: var(--muted); }
     .tx-station:hover { border-color: var(--line); }
     .tx-station:hover .st-freq { color: var(--neon); }
-    .tx-station.is-on { background: rgba(0, 240, 144, 0.07); border-color: var(--neon-deep); }
+    .tx-station.is-on { background: rgba(20, 20, 20, 0.05); border-color: var(--neon-deep); }
     .tx-station.is-on .st-freq { color: var(--neon); text-shadow: var(--glow-neon); }
     .tx-station.is-on .st-name { color: var(--ink); }
     .tx-station:focus-visible { outline: 2px solid var(--neon); outline-offset: 2px; }
@@ -140,7 +140,7 @@
     .tx-seg-freq span { font-size: var(--fs-micro); color: var(--muted); letter-spacing: 0.1em; }
     .tx-seg-freq.tx-seg-data { color: var(--muted); }
     .tx-seg h2 {
-      font-family: var(--font-display); font-size: clamp(2.2rem, 6vw, 4rem); line-height: 1.02;
+      font-family: var(--font-display); font-size: clamp(1.6rem, 4vw, 2.4rem); line-height: 1.1;
       color: var(--ink); margin: var(--space-2) 0; letter-spacing: 0.01em; text-wrap: balance;
     }
     .tx-seg h2:focus { outline: none; }
@@ -161,7 +161,7 @@
       border-left: 4px solid var(--neon);
       padding: var(--space-4) var(--space-5);
       margin: var(--space-6) 0;
-      background: rgba(0, 240, 144, 0.05);
+      background: rgba(20, 20, 20, 0.04);
       font-size: 1.125rem; color: var(--ink);
     }
     .tx-signal .sig-lab {
@@ -283,9 +283,9 @@
     /* LAYER 2 — the summit set piece. Gold on the phosphor field: the one
        track that owns more than a tenth of every play in the archive. */
     .tx-summit {
-      border: 1px solid rgba(245, 165, 36, 0.45);
+      border: 1px solid rgba(20, 20, 20, 0.35);
       border-radius: var(--radius-m);
-      background: rgba(245, 165, 36, 0.04);
+      background: rgba(20, 20, 20, 0.03);
       padding: var(--space-6) var(--space-5);
       margin-bottom: var(--space-6);
     }
@@ -294,7 +294,7 @@
       font-size: clamp(3rem, 9vw, 5.5rem);
       line-height: 1;
       color: var(--gold-bright);
-      text-shadow: 0 0 24px rgba(245, 165, 36, 0.35);
+      text-shadow: none;
       font-variant-numeric: tabular-nums;
     }
     .tx-summit-title { font-size: 1.05rem; color: var(--ink); margin: var(--space-3) 0 var(--space-5); max-width: 52ch; }
@@ -318,7 +318,7 @@
        only, 60fps-friendly). Reduced motion: the card is simply there. */
     .tx-cameo {
       border-left: 4px solid var(--gold);
-      background: rgba(245, 165, 36, 0.05);
+      background: rgba(20, 20, 20, 0.04);
       padding: var(--space-4) var(--space-5);
       margin: var(--space-6) 0;
       border-radius: 0 var(--radius-s) var(--radius-s) 0;
