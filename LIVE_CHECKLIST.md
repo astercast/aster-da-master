@@ -76,6 +76,20 @@ badge when `/api/*` is unreachable.
   Sam Buck conflict for Oct 15 still stands. `tests/api.test.sh` 37/37
   (start `tests/local_server.js` first or every check fails
   environmentally); release-week tests 20/20.
+- Rotation 6 final pre-event check (2026-10-13 02:29 UTC):
+  capture #3 NOT taken — the ledger was checked first and still holds
+  2 rows / 2 archive files, so the daily cron has not produced a
+  post-gate capture to adopt; the gate opens 2026-10-13T23:22:57Z
+  (20h 54m after this pass) and the Rotation 5 six-step procedure
+  stays armed. All eight focus sources were opened a third time —
+  venue calendar, Bandsintown, JamBase (Sam Buck + Gold Diggers),
+  Stereogum, upcomingvinyl, both Eventbrite listings — and every
+  date held again; the JamBase Sam Buck conflict still stands and
+  the Gold Diggers $15 line stays noted, not priced. Post-event
+  steps confirmed armed in `data/release-week-uncle.json`
+  (`post_party_recheck` + the five-step release flip, capture slot
+  honestly null). Tests: signal-watch 27/27, release-week 20/20,
+  api 37/37; screenshots clean.
 - Rotation 5 readiness pass (2026-10-13, later the same UTC day):
   capture #3 NOT taken — gate opens 2026-10-13T23:22:57Z and is armed
   in WAVELOG with the exact six-step procedure. All focus dates held a

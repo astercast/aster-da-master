@@ -1,8 +1,32 @@
 {
   "generated": "2026-10-11",
   "method": "Parsed from `git log main`: every commit becomes an entry. The site documenting its own becoming.",
-  "entry_count": 119,
+  "entry_count": 123,
   "entries": [
+    {
+      "hash": "be276a5",
+      "date": "2026-10-13",
+      "message": "changelog sync (post-validation)",
+      "files_changed": 3
+    },
+    {
+      "hash": "4636ab7",
+      "date": "2026-10-13",
+      "message": "changelog sync (post-validation)",
+      "files_changed": 3
+    },
+    {
+      "hash": "fea4277",
+      "date": "2026-10-13",
+      "message": "Rotation 6: final pre-event check (all dates held a third time, JamBase conflict stands), capture #3 gate still armed — cron checked first, ledger stays at 2 rows",
+      "files_changed": 10
+    },
+    {
+      "hash": "14f79d4",
+      "date": "2026-10-13",
+      "message": "changelog sync (post-validation)",
+      "files_changed": 3
+    },
     {
       "hash": "068155a",
       "date": "2026-10-13",
