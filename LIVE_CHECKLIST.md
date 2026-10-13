@@ -66,6 +66,16 @@ badge when `/api/*` is unreachable.
   2 rows. `scripts/test_signal_watch.js` 27/27 (both real capture pairs
   pinned; JS/Python diff parity proven). `refresh_plays.py` status path
   fixed: `data/v1/refresh-status.json`, never `api/v1/` again.
+- Signal 2.1 wave (2026-10-13): capture #3 NOT taken — the 24h gate from
+  capture #2 opens 2026-10-13T23:22:57Z; the ledger honestly stays at
+  2 rows / 257,409 plays and `signal.html` prints the gate. Live-date
+  board re-swept 2026-10-13 (`checked_at` 2026-10-13): Oct 15 party,
+  Oct 16 release, Oct 28 Seattle and Oct 29 Portland all held; the
+  Oct 29 Gold Diggers card gained a JamBase listing (7:00 PM start +
+  5632 Santa Monica Blvd address, price still unrecorded); the JamBase
+  Sam Buck conflict for Oct 15 still stands. `tests/api.test.sh` 37/37
+  (start `tests/local_server.js` first or every check fails
+  environmentally); release-week tests 20/20.
 - Static validation: 19,851 relative links, 0 broken; 23/23 JSON schemas
   in validate.sh's stage-3 list (the 2 Signal 2.0 schemas validate against
   their files separately); lyric-grep clean; chain byte-stable; data

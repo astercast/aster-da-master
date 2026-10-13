@@ -74,7 +74,7 @@ assert isinstance(d['crossings'], list) and isinstance(d['next_up'], list)
 for m in d['movers']:
     assert m['after']-m['before']==m['delta']
     assert m['per_day'] is None or isinstance(m['per_day'], (int,float))
-assert d['live_dates']['checked_at']=='2026-10-12'
+assert d['live_dates']['checked_at']=='2026-10-13'
 assert len(d['live_dates']['events'])>=5
 print('watch tracks=%d movers=%d dates=%d' % (s['tracks_watched'], len(d['movers']), len(d['live_dates']['events'])))
 \""

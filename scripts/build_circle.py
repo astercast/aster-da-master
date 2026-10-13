@@ -504,8 +504,11 @@ SCENE_FIGURES = {
             "label": "'Uncle' — fifth solo LP",
             "status": "announced",
             "expected": "2026-10-16",
-            "as_of": "2026-10-12",
-            "note": ("Pre-release as of this research pass (2026-10-12). "
+            "as_of": "2026-10-13",
+            "note": ("Pre-release as of this research pass (2026-10-12; "
+                     "re-verified 2026-10-13 — the Oct 16 date stands, "
+                     "Faygoluvers still carries it, and the Oct 15 listening "
+                     "party and Oct 29 Gold Diggers date held). "
                      "No third single, no advance reviews, no interviews "
                      "(normal 4 days out). A listening party is listed for "
                      "Thu Oct 15, 7 PM at Permanent Records Roadhouse "
@@ -519,7 +522,8 @@ SCENE_FIGURES = {
             # wave 32: same-evening pass, still pre-release 2026-10-11
             # wave 35: re-verified pre-release 2026-10-12 (listening party
             # added; Europe leg one notch up, still uncertain)
-            "last_reverified": "2026-10-12",
+            # signal 2.1: re-verified pre-release 2026-10-13 (all dates held)
+            "last_reverified": "2026-10-13",
             "reverify_sources": [
                 "https://upcomingvinyl.com/artists/fish-narc",
                 "https://www.faygoluvers.net/v5/2026/09/"

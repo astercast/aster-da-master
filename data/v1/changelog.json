@@ -1,8 +1,26 @@
 {
   "generated": "2026-10-11",
   "method": "Parsed from `git log main`: every commit becomes an entry. The site documenting its own becoming.",
-  "entry_count": 113,
+  "entry_count": 116,
   "entries": [
+    {
+      "hash": "9fd02b2",
+      "date": "2026-10-13",
+      "message": "changelog sync (post-validation)",
+      "files_changed": 3
+    },
+    {
+      "hash": "8741ed3",
+      "date": "2026-10-13",
+      "message": "Signal 2.1: live-date re-sweep 2026-10-13 (all dates held, Gold Diggers gains JamBase 7PM + address, JamBase conflict stands), capture #3 gate printed on signal.html (opens 2026-10-13T23:22Z), scene watch re-verified",
+      "files_changed": 15
+    },
+    {
+      "hash": "0885b43",
+      "date": "2026-10-12",
+      "message": "changelog sync (post-validation)",
+      "files_changed": 3
+    },
     {
       "hash": "0e8bc3d",
       "date": "2026-10-12",
