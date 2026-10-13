@@ -469,7 +469,7 @@ SCENE_FIGURES = {
         "sources": [
             ("Fish Narc - Wikipedia", "https://en.wikipedia.org/wiki/Fish_Narc"),
             ("'frog song' - Darkside Records",
-             "https://shop.darksiderecords.com/en-jp/products/fish-narc-frog-song"),
+             "https://shop.darksiderecords.com/products/fish-narc-frog-song"),
             ("fish narc announces new album 'Uncle' — Stereogum",
              "https://stereogum.com/2508537/fish-narc-announces-new-album-uncle-hear-much-less-me/music"),
             ("Fish Narc announces 'Uncle' on K Records — Faygoluvers",

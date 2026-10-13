@@ -1,8 +1,26 @@
 {
   "generated": "2026-10-11",
   "method": "Parsed from `git log main`: every commit becomes an entry. The site documenting its own becoming.",
-  "entry_count": 126,
+  "entry_count": 129,
   "entries": [
+    {
+      "hash": "d3ac275",
+      "date": "2026-10-13",
+      "message": "changelog sync (post-validation)",
+      "files_changed": 3
+    },
+    {
+      "hash": "3628cce",
+      "date": "2026-10-13",
+      "message": "Rotation 8: release-week eve — Underground Underdogs still 500 x4 (links retained, still-down noted), Darkside frog-song link updated to canonical URL from retailer's own search, release-week dates held a fifth time, capture #3 gate still armed (ledger stays 2 rows)",
+      "files_changed": 12
+    },
+    {
+      "hash": "ab2f2f9",
+      "date": "2026-10-13",
+      "message": "changelog sync (post-validation)",
+      "files_changed": 3
+    },
     {
       "hash": "0ea7ee4",
       "date": "2026-10-13",
