@@ -1,8 +1,26 @@
 {
   "generated": "2026-10-11",
   "method": "Parsed from `git log main`: every commit becomes an entry. The site documenting its own becoming.",
-  "entry_count": 123,
+  "entry_count": 126,
   "entries": [
+    {
+      "hash": "0ea7ee4",
+      "date": "2026-10-13",
+      "message": "changelog sync (post-validation)",
+      "files_changed": 3
+    },
+    {
+      "hash": "f4f801b",
+      "date": "2026-10-13",
+      "message": "Rotation 7: site health audit — outbound-link sweep (Darkside frog-song 404 + Underground Underdogs 500s recorded, JamBase skipped per no-approval rule), 32 distributor Apple Music links filled from iTunes primary record (distributor links 2/34 -> 34/34), release-week dates held a fourth time, capture #3 gate still armed (ledger stays 2 rows)",
+      "files_changed": 43
+    },
+    {
+      "hash": "d667e6d",
+      "date": "2026-10-13",
+      "message": "changelog sync (post-validation)",
+      "files_changed": 3
+    },
     {
       "hash": "be276a5",
       "date": "2026-10-13",

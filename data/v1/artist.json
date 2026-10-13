@@ -193,7 +193,12 @@
       "date": "2019-12-30",
       "type": "Album",
       "tracks": 9,
-      "links": [],
+      "links": [
+        {
+          "label": "Apple Music",
+          "url": "https://music.apple.com/us/album/soulless-soldiers/1492422826"
+        }
+      ],
       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music123/v4/1a/78/aa/1a78aa1f-dfa4-b92f-45b6-2b3f6bcdf4d0/artwork.jpg/600x600bb.jpg",
       "source": "Apple Music profile 1466301103 (“Aster Da Master”) · iTunes Search API primary metadata · verified 2026-10-11"
     },
@@ -202,7 +207,12 @@
       "date": "2020-06-07",
       "type": "Album",
       "tracks": 7,
-      "links": [],
+      "links": [
+        {
+          "label": "Apple Music",
+          "url": "https://music.apple.com/us/album/imagine-all-of-this-without-pain/1514910113"
+        }
+      ],
       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music113/v4/78/6e/cc/786ecc73-4dfe-7177-76d6-acbeea4c9af6/artwork.jpg/600x600bb.jpg",
       "source": "Apple Music profile 1466301103 (“Aster Da Master”) · iTunes Search API primary metadata · verified 2026-10-11"
     },
@@ -211,7 +221,12 @@
       "date": "2020-10-07",
       "type": "Album",
       "tracks": 11,
-      "links": [],
+      "links": [
+        {
+          "label": "Apple Music",
+          "url": "https://music.apple.com/us/album/bright/1534887780"
+        }
+      ],
       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/f5/08/b8/f508b835-5329-0caf-3eac-7d6e45a7a6ca/artwork.jpg/600x600bb.jpg",
       "source": "Apple Music profile 1466301103 (“Aster Da Master”) · iTunes Search API primary metadata · verified 2026-10-11"
     },
@@ -220,7 +235,12 @@
       "date": "2020-12-21",
       "type": "Album",
       "tracks": 8,
-      "links": [],
+      "links": [
+        {
+          "label": "Apple Music",
+          "url": "https://music.apple.com/us/album/solstice/1546296414"
+        }
+      ],
       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/09/28/99/092899dc-ebcc-c0e6-8011-f8cfd3b7aab2/artwork.jpg/600x600bb.jpg",
       "source": "Apple Music profile 1466301103 (“Aster Da Master”) · iTunes Search API primary metadata · verified 2026-10-11"
     },
@@ -229,7 +249,12 @@
       "date": "2021-07-14",
       "type": "Album",
       "tracks": 16,
-      "links": [],
+      "links": [
+        {
+          "label": "Apple Music",
+          "url": "https://music.apple.com/us/album/cast-it-pt-1/1577097701"
+        }
+      ],
       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/ce/9a/68/ce9a6888-aa70-fcb2-6895-d5f4d09a942a/artwork.jpg/600x600bb.jpg",
       "source": "Apple Music profile 1466301103 (“Aster Da Master”) · iTunes Search API primary metadata · verified 2026-10-11"
     },
@@ -238,7 +263,12 @@
       "date": "2022-02-22",
       "type": "Album",
       "tracks": 12,
-      "links": [],
+      "links": [
+        {
+          "label": "Apple Music",
+          "url": "https://music.apple.com/us/album/cast-it-pt-2/1611679670"
+        }
+      ],
       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/3b/ed/ba/3bedba20-6340-0e4d-28e7-22893ec81e94/artwork.jpg/600x600bb.jpg",
       "source": "Apple Music profile 1466301103 (“Aster Da Master”) · iTunes Search API primary metadata · verified 2026-10-11"
     },
@@ -247,7 +277,12 @@
       "date": "2023-11-11",
       "type": "Album",
       "tracks": 12,
-      "links": [],
+      "links": [
+        {
+          "label": "Apple Music",
+          "url": "https://music.apple.com/us/album/b4-the-ritual-2018/1716623252"
+        }
+      ],
       "label": "somelowlifes",
       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/1f/48/9a/1f489af1-ab4d-aefe-a9d9-310f23694d15/artwork.jpg/600x600bb.jpg",
       "source": "Apple Music profile 1466301103 (“Aster Da Master”) · iTunes Search API primary metadata · verified 2026-10-11"
@@ -257,7 +292,12 @@
       "date": "2023-11-11",
       "type": "Album",
       "tracks": 11,
-      "links": [],
+      "links": [
+        {
+          "label": "Apple Music",
+          "url": "https://music.apple.com/us/album/cast-out/1716251914"
+        }
+      ],
       "label": "somelowlifes",
       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/3e/aa/0c/3eaa0ce4-dd4f-0b09-b72b-152e536e38e2/artwork.jpg/600x600bb.jpg",
       "source": "Apple Music profile 1466301103 (“Aster Da Master”) · iTunes Search API primary metadata · verified 2026-10-11"
@@ -266,7 +306,12 @@
       "title": "lost memories (feat. Aster Da Master)",
       "date": "2017-04-20",
       "type": "Single",
-      "links": [],
+      "links": [
+        {
+          "label": "Apple Music",
+          "url": "https://music.apple.com/us/album/lost-memories-feat-aster-da-master-single/1683657063"
+        }
+      ],
       "note": "Feature credit on another artist's single; earliest trace found.",
       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/cd/ba/ef/cdbaefbd-a605-78e9-1c73-3195c2e9a38a/artwork.jpg/600x600bb.jpg",
       "source": "Apple Music profile 1466301103 (“Aster Da Master”) · iTunes Search API primary metadata · verified 2026-10-11"
@@ -275,7 +320,12 @@
       "title": "Contact!",
       "date": "2019-09-21",
       "type": "Single",
-      "links": [],
+      "links": [
+        {
+          "label": "Apple Music",
+          "url": "https://music.apple.com/us/album/contact-single/1480136445"
+        }
+      ],
       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music123/v4/e3/b5/89/e3b589db-189c-5c26-1ed0-1856088e1c47/artwork.jpg/600x600bb.jpg",
       "source": "Apple Music profile 1466301103 (“Aster Da Master”) · iTunes Search API primary metadata · verified 2026-10-11"
     },
@@ -283,7 +333,12 @@
       "title": "Master Key (feat. Lil Wintr & Marcelo)",
       "date": "2019-12-06",
       "type": "Single",
-      "links": [],
+      "links": [
+        {
+          "label": "Apple Music",
+          "url": "https://music.apple.com/us/album/master-key-feat-lil-wintr-marcelo-single/1488386250"
+        }
+      ],
       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music123/v4/52/ab/b1/52abb105-b53c-7ee4-7f17-aa1f844e3c83/artwork.jpg/600x600bb.jpg",
       "source": "Apple Music profile 1466301103 (“Aster Da Master”) · iTunes Search API primary metadata · verified 2026-10-11"
     },
@@ -291,7 +346,12 @@
       "title": "I Hate It",
       "date": "2020-04-09",
       "type": "Single",
-      "links": [],
+      "links": [
+        {
+          "label": "Apple Music",
+          "url": "https://music.apple.com/us/album/i-hate-it-single/1504543461"
+        }
+      ],
       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music113/v4/3b/ba/83/3bba834b-9aa3-8fe6-6b35-6586ddf87ac2/artwork.jpg/600x600bb.jpg",
       "source": "Apple Music profile 1466301103 (“Aster Da Master”) · iTunes Search API primary metadata · verified 2026-10-11"
     },
@@ -299,7 +359,12 @@
       "title": "Crystals by My Bed",
       "date": "2020-04-16",
       "type": "Single",
-      "links": [],
+      "links": [
+        {
+          "label": "Apple Music",
+          "url": "https://music.apple.com/us/album/crystals-by-my-bed-single/1504625674"
+        }
+      ],
       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music113/v4/b0/58/0b/b0580bf0-178f-d472-86b4-0622c15c4eda/artwork.jpg/600x600bb.jpg",
       "source": "Apple Music profile 1466301103 (“Aster Da Master”) · iTunes Search API primary metadata · verified 2026-10-11"
     },
@@ -307,7 +372,12 @@
       "title": "Born from Stars",
       "date": "2020-07-21",
       "type": "Single",
-      "links": [],
+      "links": [
+        {
+          "label": "Apple Music",
+          "url": "https://music.apple.com/us/album/born-from-stars-single/1523440755"
+        }
+      ],
       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/1a/56/74/1a5674a6-b08b-d918-e180-8bb94fd7c5b4/artwork.jpg/600x600bb.jpg",
       "source": "Apple Music profile 1466301103 (“Aster Da Master”) · iTunes Search API primary metadata · verified 2026-10-11"
     },
@@ -315,7 +385,12 @@
       "title": "More Than Letters",
       "date": "2020-08-12",
       "type": "Single",
-      "links": [],
+      "links": [
+        {
+          "label": "Apple Music",
+          "url": "https://music.apple.com/us/album/more-than-letters-single/1526030935"
+        }
+      ],
       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/e0/8a/f1/e08af1ad-1827-fb2b-ce5b-725d6606d703/artwork.jpg/600x600bb.jpg",
       "source": "Apple Music profile 1466301103 (“Aster Da Master”) · iTunes Search API primary metadata · verified 2026-10-11"
     },
@@ -323,7 +398,12 @@
       "title": "My Fault",
       "date": "2020-11-11",
       "type": "Single",
-      "links": [],
+      "links": [
+        {
+          "label": "Apple Music",
+          "url": "https://music.apple.com/us/album/my-fault-single/1539537738"
+        }
+      ],
       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/99/59/2c/99592ca1-aa4f-ea30-5207-ef55492ad49c/artwork.jpg/600x600bb.jpg",
       "source": "Apple Music profile 1466301103 (“Aster Da Master”) · iTunes Search API primary metadata · verified 2026-10-11"
     },
@@ -331,7 +411,12 @@
       "title": "My Fault 2",
       "date": "2021-04-13",
       "type": "Single",
-      "links": [],
+      "links": [
+        {
+          "label": "Apple Music",
+          "url": "https://music.apple.com/us/album/my-fault-2-single/1563106712"
+        }
+      ],
       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/09/b4/9d/09b49d7a-8641-0781-198f-fc3d25e89efd/artwork.jpg/600x600bb.jpg",
       "source": "Apple Music profile 1466301103 (“Aster Da Master”) · iTunes Search API primary metadata · verified 2026-10-11"
     },
@@ -339,7 +424,12 @@
       "title": "Warrior Returning Alive",
       "date": "2023-10-29",
       "type": "Single",
-      "links": [],
+      "links": [
+        {
+          "label": "Apple Music",
+          "url": "https://music.apple.com/us/album/warrior-returning-alive-single/1713640249"
+        }
+      ],
       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/c9/d5/cf/c9d5cfc8-2510-d27f-2391-343f2bb54a0d/artwork.jpg/600x600bb.jpg",
       "source": "Apple Music profile 1466301103 (“Aster Da Master”) · iTunes Search API primary metadata · verified 2026-10-11"
     },
@@ -347,7 +437,12 @@
       "title": "Hidden Lakes Backpack",
       "date": "2023-11-03",
       "type": "Single",
-      "links": [],
+      "links": [
+        {
+          "label": "Apple Music",
+          "url": "https://music.apple.com/us/album/hidden-lakes-backpack-single/1714840074"
+        }
+      ],
       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/36/9f/3b/369f3bcc-ed1e-2a4b-9fe7-fb56f679a31f/artwork.jpg/600x600bb.jpg",
       "source": "Apple Music profile 1466301103 (“Aster Da Master”) · iTunes Search API primary metadata · verified 2026-10-11"
     },
@@ -355,7 +450,12 @@
       "title": "Long Day (End Task)",
       "date": "2023-11-09",
       "type": "Single",
-      "links": [],
+      "links": [
+        {
+          "label": "Apple Music",
+          "url": "https://music.apple.com/us/album/long-day-end-task-single/1716110059"
+        }
+      ],
       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/6f/74/09/6f740979-6bbc-0a31-7217-9921afb0e930/artwork.jpg/600x600bb.jpg",
       "source": "Apple Music profile 1466301103 (“Aster Da Master”) · iTunes Search API primary metadata · verified 2026-10-11"
     },
@@ -377,7 +477,12 @@
       "title": "u Not at the Table",
       "date": "2024-04-19",
       "type": "Single",
-      "links": [],
+      "links": [
+        {
+          "label": "Apple Music",
+          "url": "https://music.apple.com/us/album/u-not-at-the-table-single/1742257276"
+        }
+      ],
       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/e4/a7/7f/e4a77ffd-0659-0264-c06b-f254e0b13805/artwork.jpg/600x600bb.jpg",
       "source": "Apple Music profile 1466301103 (“Aster Da Master”) · iTunes Search API primary metadata · verified 2026-10-11"
     },
@@ -385,7 +490,12 @@
       "title": "Tri:Ed",
       "date": "2024-06-16",
       "type": "Single",
-      "links": [],
+      "links": [
+        {
+          "label": "Apple Music",
+          "url": "https://music.apple.com/us/album/tri-ed-single/1752517859"
+        }
+      ],
       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/f3/cf/96/f3cf961d-e278-b7b7-8dd6-3a05dcba64ab/artwork.jpg/600x600bb.jpg",
       "source": "Apple Music profile 1466301103 (“Aster Da Master”) · iTunes Search API primary metadata · verified 2026-10-11"
     },
@@ -393,7 +503,12 @@
       "title": "SSSolid",
       "date": "2024-06-27",
       "type": "Single",
-      "links": [],
+      "links": [
+        {
+          "label": "Apple Music",
+          "url": "https://music.apple.com/us/album/sssolid-single/1754529693"
+        }
+      ],
       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/b6/6f/da/b66fda93-aa6d-f278-c7ca-70e5a75c080a/artwork.jpg/600x600bb.jpg",
       "source": "Apple Music profile 1466301103 (“Aster Da Master”) · iTunes Search API primary metadata · verified 2026-10-11"
     },
@@ -401,7 +516,12 @@
       "title": "Phantom Moshpit (feat. GRiiMXO)",
       "date": "2024-08-24",
       "type": "Single",
-      "links": [],
+      "links": [
+        {
+          "label": "Apple Music",
+          "url": "https://music.apple.com/us/album/phantom-moshpit-feat-griimxo-single/1765131750"
+        }
+      ],
       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/25/e8/9c/25e89cfb-7eff-a994-0d11-33193ded1546/artwork.jpg/600x600bb.jpg",
       "source": "Apple Music profile 1466301103 (“Aster Da Master”) · iTunes Search API primary metadata · verified 2026-10-11"
     },
@@ -409,7 +529,12 @@
       "title": "like my dogs!!!",
       "date": "2024-09-18",
       "type": "Single",
-      "links": [],
+      "links": [
+        {
+          "label": "Apple Music",
+          "url": "https://music.apple.com/us/album/like-my-dogs-single/1768664608"
+        }
+      ],
       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/1b/05/18/1b051806-25a4-badd-f6f3-48f7576a1f0b/artwork.jpg/600x600bb.jpg",
       "source": "Apple Music profile 1466301103 (“Aster Da Master”) · iTunes Search API primary metadata · verified 2026-10-11"
     },
@@ -417,7 +542,12 @@
       "title": "ViiXX",
       "date": "2024-10-04",
       "type": "Single",
-      "links": [],
+      "links": [
+        {
+          "label": "Apple Music",
+          "url": "https://music.apple.com/us/album/viixx-single/1772408403"
+        }
+      ],
       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/ce/c9/44/cec944a8-81ee-5550-fea0-989d05b0943a/artwork.jpg/600x600bb.jpg",
       "source": "Apple Music profile 1466301103 (“Aster Da Master”) · iTunes Search API primary metadata · verified 2026-10-11"
     },
@@ -425,7 +555,12 @@
       "title": "Life's Made",
       "date": "2026-03-21",
       "type": "Single",
-      "links": [],
+      "links": [
+        {
+          "label": "Apple Music",
+          "url": "https://music.apple.com/us/album/lifes-made-single/1886066006"
+        }
+      ],
       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/45/d0/40/45d04086-538a-b9a5-507b-677a9fe194a6/artwork.jpg/600x600bb.jpg",
       "source": "Apple Music profile 1466301103 (“Aster Da Master”) · iTunes Search API primary metadata · verified 2026-10-11"
     },
@@ -433,7 +568,12 @@
       "title": "No Power",
       "date": "2026-03-23",
       "type": "Single",
-      "links": [],
+      "links": [
+        {
+          "label": "Apple Music",
+          "url": "https://music.apple.com/us/album/no-power-single/1886012185"
+        }
+      ],
       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/74/6c/c6/746cc631-4671-ea89-df4c-4a035e92589a/artwork.jpg/600x600bb.jpg",
       "source": "Apple Music profile 1466301103 (“Aster Da Master”) · iTunes Search API primary metadata · verified 2026-10-11"
     },
@@ -441,7 +581,12 @@
       "title": "The Night Ends Yeaaa",
       "date": "2026-03-25",
       "type": "Single",
-      "links": [],
+      "links": [
+        {
+          "label": "Apple Music",
+          "url": "https://music.apple.com/us/album/the-night-ends-yeaaa-single/1886012254"
+        }
+      ],
       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/76/c3/ef/76c3efc0-2bcc-127f-8ad5-ae1ac131b945/artwork.jpg/600x600bb.jpg",
       "source": "Apple Music profile 1466301103 (“Aster Da Master”) · iTunes Search API primary metadata · verified 2026-10-11"
     },
@@ -449,7 +594,12 @@
       "title": "Writing Books",
       "date": "2026-05-02",
       "type": "Single",
-      "links": [],
+      "links": [
+        {
+          "label": "Apple Music",
+          "url": "https://music.apple.com/us/album/writing-books-single/6765592982"
+        }
+      ],
       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/08/6e/0c/086e0cc4-7505-ddde-2f95-21d7f8bbe775/artwork.jpg/600x600bb.jpg",
       "source": "Apple Music profile 1466301103 (“Aster Da Master”) · iTunes Search API primary metadata · verified 2026-10-11"
     },
@@ -457,7 +607,12 @@
       "title": "9 Trips",
       "date": "2026-05-03",
       "type": "Single",
-      "links": [],
+      "links": [
+        {
+          "label": "Apple Music",
+          "url": "https://music.apple.com/us/album/9-trips-single/1896006731"
+        }
+      ],
       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/60/7a/5f/607a5f32-9815-909b-a56b-b334e686ae1c/artwork.jpg/600x600bb.jpg",
       "source": "Apple Music profile 1466301103 (“Aster Da Master”) · iTunes Search API primary metadata · verified 2026-10-11"
     },
@@ -465,7 +620,12 @@
       "title": "Living With The Big Shots",
       "date": "2026-05-05",
       "type": "Single",
-      "links": [],
+      "links": [
+        {
+          "label": "Apple Music",
+          "url": "https://music.apple.com/us/album/living-with-the-big-shots-single/6766252690"
+        }
+      ],
       "note": "Latest verified release; all 2026 singles marked explicit on iHeart",
       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/fb/30/5f/fb305f1d-06b6-c893-3f82-e43535ce9541/artwork.jpg/600x600bb.jpg",
       "source": "Apple Music profile 1466301103 (“Aster Da Master”) · iTunes Search API primary metadata · verified 2026-10-11"
