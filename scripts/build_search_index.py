@@ -8,6 +8,14 @@ Outputs (committed):
                                month-day across all years (titles + metadata)
 
 Both are registered in data/v1/index.json. Re-run after any discography change.
+
+This generator does not own the data version: it preserves whatever
+version data/v1/index.json already carries (the version-writing
+generators own it), exactly as build_changelog / build_firstlast /
+build_transmission do. It must never stamp its own version constant —
+a standalone run once wrote a stale hand-kept version back over the
+chain's current one (retired Rotation 17); the assert in main() keeps
+that class from returning silently.
 """
 import json
 import re
@@ -70,9 +78,20 @@ def main():
     )
 
     index = json.loads((API / "index.json").read_text())
-    index["version"] = "0.16.0"
+    # Preserve the current data version — never stamp a second,
+    # hand-kept constant here (see module docstring). The version is
+    # derived from the manifest on disk, so a standalone run produces
+    # exactly what the validate.sh chain produces.
+    version_before = index.get("version")
+    assert version_before, "data/v1/index.json carries no version to preserve"
     from api_manifest import render_manifest
     render_manifest(index, ROOT)
+    version_after = json.loads((API / "index.json").read_text()).get("version")
+    assert version_after == version_before, (
+        f"search-index build changed the data version "
+        f"({version_before} -> {version_after}); this generator does "
+        f"not own the version and must preserve it"
+    )
 
     print(f"release-slugs: {len(slug_map)} entries")
     print(f"on-this-day: {len(otd)} days with transmissions")

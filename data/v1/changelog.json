@@ -1,8 +1,20 @@
 {
   "generated": "2026-10-11",
   "method": "Parsed from `git log main`: every commit becomes an entry. The site documenting its own becoming.",
-  "entry_count": 150,
+  "entry_count": 152,
   "entries": [
+    {
+      "hash": "0c2d60d",
+      "date": "2026-10-13",
+      "message": "Rotation 17: search-index stale standalone stamp retired at source (build_search_index preserves the current data version — house pattern of build_changelog/firstlast/transmission — with round-trip assert; validate.sh stage 7 bans bare-literal version stamps); standalone run now byte-identical to chain output (index sha256 0c4d242f in all three states); title census 0 duplicates/doubled on 430 pages; capture #3 gate clock-checked at 18:40Z — gate 2026-10-13T23:22:57Z still ahead, ledger stays 2 rows / 257,409, gate stays ARMED (Rotation 17 check on signal.html); release-week flips stay armed",
+      "files_changed": 4
+    },
+    {
+      "hash": "45a26ef",
+      "date": "2026-10-13",
+      "message": "changelog sync (post-validation)",
+      "files_changed": 3
+    },
     {
       "hash": "d944b88",
       "date": "2026-10-13",

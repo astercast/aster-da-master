@@ -365,6 +365,18 @@ if len(consts) != 1:
     errors.append(f"version constants disagree: {consts}")
 expected = next(iter(consts)) if consts else None
 
+# no generator may stamp the manifest version from a bare literal
+# (index["version"] = "x.y.z" / idx["version"] = "x.y.z"): version-writing
+# generators assign their named NEW_VERSION/VERSION constant, and the
+# rest preserve the version already on disk. A bare literal is a second
+# hand-kept constant that drifts silently — build_search_index.py's
+# stale standalone stamp survived this way until Rotation 17.
+for f in sorted((ROOT / "scripts").glob("build_*.py")):
+    for m in re.finditer(r'\[\s*"version"\s*\]\s*=\s*"([^"]+)"', f.read_text()):
+        errors.append(f"{f.name}: bare-literal version stamp {m.group(1)!r} "
+                      f"(use the named version constant, or preserve the "
+                      f"version already in data/v1/index.json)")
+
 # every "version" field in data/ + data/v1/ JSON must equal it
 if expected:
     for pat in ("data/*.json", "data/v1/*.json"):
