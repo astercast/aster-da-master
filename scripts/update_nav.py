@@ -20,10 +20,13 @@ The contract:
   - index.html and press-kit.html are bespoke (registered in nav_data
     as HOME_* / PRESSKIT_*): their link sequences are verified, their
     markup is never rewritten. 404.html carries no nav and is skipped.
-  - Generator-owned pages are rebuilt here too, and the generators
-    render from the same nav_data, so a rebuild and a regeneration
-    agree. (Generators not yet rewired onto nav_data keep their
-    framing; their link output is still verified by --check.)
+  - Generator-owned pages are rebuilt here too, and every generator
+    that embeds nav markup renders it from the same nav_data, so a
+    rebuild and a regeneration agree. (Rotation 14 completed the
+    rewiring: build_changelog, build_sessions and build_scene_atlas
+    joined the set; the remaining generators in the chain are
+    data-only and own no nav markup — their pages are hand pages
+    whose blocks this injector rebuilds and --check verifies.)
 
 Usage:
   python3 scripts/update_nav.py           rewrite stale pages in place

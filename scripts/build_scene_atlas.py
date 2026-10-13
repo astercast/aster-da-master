@@ -12,9 +12,15 @@ generator chain.
 """
 import html
 import json
+import sys
 from pathlib import Path
 
 ROOT = Path("/home/hatch/workspace/aster-da-master")
+sys.path.insert(0, str(ROOT / "scripts"))
+import nav_data  # noqa: E402  (canonical nav data — scripts/nav_data.py)
+
+NAV = "      " + nav_data.nav_chunk("", "standard", "scene-atlas.html")
+FOOTNAV = "      " + nav_data.footer_block("", "standard", "scene-atlas.html")
 
 
 def esc(s):
@@ -61,7 +67,9 @@ def main():
         f'<td class="n">{f["plays"]:,}</td><td>{esc(f["years"])}</td>'
         f'<td>{len(f["facts"])} recorded</td></tr>\n'
         for i, f in enumerate(figs, 1))
-    page = TEMPLATE.replace("%%FIRST_TRACKS%%", tracks_html)
+    page = TEMPLATE.replace("%%NAV%%", NAV)
+    page = page.replace("%%FOOTNAV%%", FOOTNAV)
+    page = page.replace("%%FIRST_TRACKS%%", tracks_html)
     page = page.replace("%%LOG_ROWS%%", log_rows)
     (ROOT / "scene-atlas.html").write_text(page, encoding="utf-8")
     print(f"scene-atlas.html written: {len(figs)} figures, "
@@ -104,53 +112,7 @@ TEMPLATE = r"""<!DOCTYPE html>
         <span class="brand-mark" aria-hidden="true">A&#10022;</span>
         <span>ASTER DA MASTER</span>
       </a>
-      <nav class="site-nav" aria-label="Primary">
-        <a href="./#discography">Discography</a>
-        <a href="releases/">Releases</a>
-        <a href="years/">Years</a>
-        <a href="scene/">Scene</a>
-        <a href="timeline.html">Timeline</a>
-        <a href="chronicle.html">Chronicle</a>
-        <a href="transmission.html">Transmission</a>
-        <a href="tuner.html">Tuner</a>
-        <a href="scene-atlas.html" aria-current="page">Atlas</a>
-        <a href="network.html">Network</a>
-        <a href="milestone-race.html">Race</a>
-        <a href="decoder.html">Decoder</a>
-        <a href="api-playground.html">API</a>
-        <a href="agents.html">Agents</a>
-        <a href="method.html">Method</a>
-        <a href="trilogy.html">Trilogy</a>
-        <a href="sessions.html">Sessions</a>
-        <a href="changelog.html">Changelog</a>
-        <a href="glance.html">Glance</a>
-        <a href="press-kit.html">Press kit</a>
-      </nav>
-      <details class="mnav">
-        <summary><span class="bars" aria-hidden="true"><i></i><i></i><i></i></span>Menu</summary>
-        <nav class="mnav-panel" aria-label="Mobile">
-        <a href="./#discography">Discography</a>
-        <a href="releases/">Releases</a>
-        <a href="years/">Years</a>
-        <a href="scene/">Scene</a>
-        <a href="timeline.html">Timeline</a>
-        <a href="chronicle.html">Chronicle</a>
-        <a href="transmission.html">Transmission</a>
-        <a href="tuner.html">Tuner</a>
-        <a href="scene-atlas.html" aria-current="page">Atlas</a>
-        <a href="network.html">Network</a>
-        <a href="milestone-race.html">Race</a>
-        <a href="decoder.html">Decoder</a>
-        <a href="api-playground.html">API</a>
-        <a href="agents.html">Agents</a>
-        <a href="method.html">Method</a>
-        <a href="trilogy.html">Trilogy</a>
-        <a href="sessions.html">Sessions</a>
-        <a href="changelog.html">Changelog</a>
-        <a href="glance.html">Glance</a>
-        <a href="press-kit.html">Press kit</a>
-        </nav>
-      </details>
+%%NAV%%
       <button class="search-btn" id="search-open" type="button" aria-label="Search the archive (keyboard shortcut: slash)">
         <span aria-hidden="true">&#8981;</span><kbd aria-hidden="true">/</kbd>
       </button>
@@ -267,29 +229,7 @@ TEMPLATE = r"""<!DOCTYPE html>
   <footer class="site-footer">
     <div class="container footer-grid">
       <p>&copy; 2026 ASTER DA MASTER &mdash; ALL SIGNALS RESERVED</p>
-      <nav aria-label="Footer">
-        <a href="./">Home</a>
-        <a href="./#discography">Discography</a>
-        <a href="releases/">Releases</a>
-        <a href="years/">Years</a>
-        <a href="scene/">Scene</a>
-        <a href="timeline.html">Timeline</a>
-        <a href="chronicle.html">Chronicle</a>
-        <a href="transmission.html">Transmission</a>
-        <a href="tuner.html">Tuner</a>
-        <a href="scene-atlas.html" aria-current="page">Atlas</a>
-        <a href="network.html">Network</a>
-        <a href="milestone-race.html">Race</a>
-        <a href="decoder.html">Decoder</a>
-        <a href="api-playground.html">API</a>
-        <a href="agents.html">Agents</a>
-        <a href="method.html">Method</a>
-        <a href="trilogy.html">Trilogy</a>
-        <a href="sessions.html">Sessions</a>
-        <a href="changelog.html">Changelog</a>
-        <a href="glance.html">Glance</a>
-        <a href="press-kit.html">Press kit</a>
-      </nav>
+%%FOOTNAV%%
     </div>
   </footer>
   <script src="assets/js/common.js"></script>

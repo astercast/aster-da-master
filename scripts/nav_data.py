@@ -6,9 +6,12 @@ THE single source of truth for every nav surface on the site. Imported by:
                                Footer nav blocks on every page)
   - the page generators       (build_circle, build_codex, build_eras,
                                build_years, build_session_deepdives,
-                               build_glance, build_releases and, through
-                               build_codex's HEAD/FOOT, the producer deep
-                               dives render their nav from here)
+                               build_glance, build_releases,
+                               build_changelog, build_sessions and
+                               build_scene_atlas — Rotation 14 completed
+                               the set — and, through build_codex's
+                               HEAD/FOOT, the producer deep dives render
+                               their nav from here)
 
 Never redefine these lists anywhere else. Adding a page to the nav is a
 one-line data edit here — never a new script. This module retires the nine

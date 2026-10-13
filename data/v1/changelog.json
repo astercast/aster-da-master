@@ -1,8 +1,20 @@
 {
   "generated": "2026-10-11",
   "method": "Parsed from `git log main`: every commit becomes an entry. The site documenting its own becoming.",
-  "entry_count": 144,
+  "entry_count": 146,
   "entries": [
+    {
+      "hash": "ca1fba9",
+      "date": "2026-10-13",
+      "message": "Rotation 14: last nav generators rewired onto nav_data (build_changelog, build_sessions, build_scene_atlas — the other four named generators are data-only and own no nav markup); mobile-panel framing normalized on the last 12 pages (1 line each, 0 link changes); update_nav/nav_data docstrings record the completed set; capture #3 checked first — gate opens 2026-10-13T23:22:57Z and had not yet arrived at the 14:07Z check, ledger stays 2 rows / 257,409, gate stays ARMED (Rotation 14 check recorded on signal.html); release-week flips stay armed",
+      "files_changed": 18
+    },
+    {
+      "hash": "f45b9fe",
+      "date": "2026-10-13",
+      "message": "changelog sync (post-validation)",
+      "files_changed": 3
+    },
     {
       "hash": "c27bcc1",
       "date": "2026-10-13",
