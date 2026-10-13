@@ -846,6 +846,17 @@ def main():
             "years": years_active(tracks),
         })
     assert len({e["slug"] for e in entries}) == len(entries), "collaborator slug collision"
+    # Rotation 19 (duplicate-<h1>-text census): every page this generator
+    # writes into circle/ carries its person's name as the <h1> — the
+    # collaborator pages plus the scene-figure page — so two pages of
+    # this family sharing a name would share an <h1> text: unshippable
+    # from this generator. (The same name as an <h1> in producers/ or
+    # scene/ is the same person from a different section; that cross-
+    # family set is pinned by scripts/test_h1_census.py.)
+    circle_h1_names = [e["name"] for e in entries] + \
+        [info["name"] for info in SCENE_FIGURES.values()]
+    assert len(set(circle_h1_names)) == len(circle_h1_names), \
+        "circle name collision: two circle pages would share an <h1>"
 
     OUT.mkdir(exist_ok=True)
     for i, e in enumerate(entries):

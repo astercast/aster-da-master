@@ -499,6 +499,15 @@ def main():
     producers = canonical_producers(sessions)
     assert len({p["slug"] for p in producers}) == len(producers), \
         "producer slug collision survived the merge"
+    # Rotation 19 (duplicate-<h1>-text census): a producer page's <h1> is
+    # the producer's name verbatim, so two producers sharing a name would
+    # put the same <h1> text on two different pages of this family —
+    # unshippable from this generator. (The same name appearing as an <h1>
+    # in ANOTHER family — circle/ or scene/ — is the same person seen
+    # from a different section and is pinned as legitimate by
+    # scripts/test_h1_census.py, never by renaming anyone here.)
+    assert len({p["name"] for p in producers}) == len(producers), \
+        "producer name collision: two producers would share an <h1>"
     total_credits = sum(len(p["credits"]) for p in producers)
 
     # family ties from the codex network's family-figure edges

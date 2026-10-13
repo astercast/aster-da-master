@@ -1,8 +1,20 @@
 {
   "generated": "2026-10-11",
   "method": "Parsed from `git log main`: every commit becomes an entry. The site documenting its own becoming.",
-  "entry_count": 154,
+  "entry_count": 156,
   "entries": [
+    {
+      "hash": "42494a9",
+      "date": "2026-10-13",
+      "message": "Rotation 19: duplicate <h1>-text census — first site-wide count of h1 texts (430 pages, 420 distinct, 9 duplicated texts on 19 pages, all legitimate: 8 same-person cross-section groups + Rotation 16's 9 Trips pair) — pinned as a standing battery (scripts/test_h1_census.py, 17 checks, groups pinned page-for-page, mutation-verified) with <h1>-name uniqueness asserts in build_circle + build_producer_deepdives (standalone re-runs zero-diff); capture #3 gate clock-checked 20:56Z + re-checked 20:59Z — gate 2026-10-13T23:22:57Z still ahead and expected Oct 14 16:00 UTC cron source not run, ledger stays 2 rows / 257,409, gate ARMED (Rotation 19 check on signal.html); release-week flips stay armed; minimal-pass scoping for Rotation 20 recorded",
+      "files_changed": 5
+    },
+    {
+      "hash": "ea47e5c",
+      "date": "2026-10-13",
+      "message": "changelog sync (post-validation)",
+      "files_changed": 3
+    },
     {
       "hash": "841b13f",
       "date": "2026-10-13",
