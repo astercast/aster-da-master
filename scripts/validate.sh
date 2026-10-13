@@ -302,6 +302,14 @@ if [ -n "$DIFF" ]; then
   echo "$DIFF" | head -12 | sed 's/^/    /'
   CHAIN_OK=0
 fi
+# Nav sync (Rotation 13): every page's Primary/Mobile/Footer blocks must
+# match scripts/nav_data.py — the canonical injector's --check writes
+# nothing and names any stale page.
+if ! python3 scripts/update_nav.py --check >/tmp/adm_validate_nav.log 2>&1; then
+  fail "nav out of sync with scripts/nav_data.py:"
+  cat /tmp/adm_validate_nav.log | head -3 | sed 's/^/    /'
+  CHAIN_OK=0
+fi
 # Changelog sync convention (a changelog built from `git log` can never record
 # its own sync commit, so two commits are the steady state):
 #   (a) right after a rebuild: entry_count == commit count (HEAD not yet committed

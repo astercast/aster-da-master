@@ -49,6 +49,7 @@ NEW_VERSION = "0.19.0"  # wave 35: data version 0.18.0 (verified-data expansion)
 SNAPSHOT = "2026-10-11"
 
 sys.path.insert(0, str(ROOT / "scripts"))
+import nav_data  # noqa: E402  (canonical nav data — scripts/nav_data.py)
 from build_releases import slugify  # noqa: E402 (single source of truth)
 from build_transmission import (  # noqa: E402 (reuse its verified mappings)
     ERA_YEARS, DEEPDIVE, LONGEST_GAP)
@@ -212,54 +213,7 @@ def verify(e, ys, entries, collabs, families, summary):
     for f in families:
         assert (ROOT / f["page"]).exists(), f["page"]
 
-NAV = """<nav class="site-nav" aria-label="Primary">
-        <a href="../#discography">Discography</a>
-        <a href="../releases/">Releases</a>
-        <a href="../years/">Years</a>
-        <a href="../sessions.html">Sessions</a>
-        <a href="../scene/">Scene</a>
-        <a href="../timeline.html">Timeline</a>
-        <a href="../chronicle.html">Chronicle</a>
-        <a href="../transmission.html">Transmission</a>
-        <a href="../tuner.html">Tuner</a>
-        <a href="../scene-atlas.html">Atlas</a>
-        <a href="../network.html">Network</a>
-        <a href="../milestone-race.html">Race</a>
-        <a href="../decoder.html">Decoder</a>
-        <a href="../api-playground.html">API</a>
-        <a href="../agents.html">Agents</a>
-        <a href="../method.html">Method</a>
-        <a href="../trilogy.html">Trilogy</a>
-        <a href="../glance.html">Glance</a>
-        <a href="../changelog.html">Changelog</a>
-        <a href="../press-kit.html">Press kit</a>
-      </nav>
-      <details class="mnav">
-        <summary><span class="bars" aria-hidden="true"><i></i><i></i><i></i></span>Menu</summary>
-        <nav class="mnav-panel" aria-label="Mobile">
-        <a href="../#discography">Discography</a>
-        <a href="../releases/">Releases</a>
-        <a href="../years/">Years</a>
-        <a href="../sessions.html">Sessions</a>
-        <a href="../scene/">Scene</a>
-        <a href="../timeline.html">Timeline</a>
-        <a href="../chronicle.html">Chronicle</a>
-        <a href="../transmission.html">Transmission</a>
-        <a href="../tuner.html">Tuner</a>
-        <a href="../scene-atlas.html">Atlas</a>
-        <a href="../network.html">Network</a>
-        <a href="../milestone-race.html">Race</a>
-        <a href="../decoder.html">Decoder</a>
-        <a href="../api-playground.html">API</a>
-        <a href="../agents.html">Agents</a>
-        <a href="../method.html">Method</a>
-        <a href="../trilogy.html">Trilogy</a>
-        <a href="../glance.html">Glance</a>
-        <a href="../changelog.html">Changelog</a>
-        <a href="../press-kit.html">Press kit</a>
-      
-        </nav>
-      </details>"""
+NAV = nav_data.nav_chunk("../", "eras")
 
 HEAD = """<!DOCTYPE html>
 <html lang="en">
@@ -309,28 +263,7 @@ FOOT = """    </div>
   <footer class="site-footer">
     <div class="container footer-grid">
       <p>&copy; 2026 ASTER DA MASTER &mdash; ALL SIGNALS RESERVED</p>
-      <nav aria-label="Footer">
-        <a href="../">Home</a>
-        <a href="../releases/">Releases</a>
-        <a href="../years/">Years</a>
-        <a href="../sessions.html">Sessions</a>
-        <a href="../scene/">Scene</a>
-        <a href="../timeline.html">Timeline</a>
-        <a href="../chronicle.html">Chronicle</a>
-        <a href="../transmission.html">Transmission</a>
-        <a href="../tuner.html">Tuner</a>
-        <a href="../scene-atlas.html">Atlas</a>
-        <a href="../network.html">Network</a>
-        <a href="../milestone-race.html">Race</a>
-        <a href="../decoder.html">Decoder</a>
-        <a href="../api-playground.html">API</a>
-        <a href="../agents.html">Agents</a>
-        <a href="../method.html">Method</a>
-        <a href="../trilogy.html">Trilogy</a>
-        <a href="../glance.html">Glance</a>
-        <a href="../changelog.html">Changelog</a>
-        <a href="../press-kit.html">Press kit</a>
-      </nav>
+      """ + nav_data.footer_block("../", "eras") + """
     </div>
   </footer>
   <script src="../assets/js/identity.js"></script>

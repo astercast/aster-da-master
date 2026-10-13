@@ -891,6 +891,10 @@
 .nw-check input { accent-color: var(--neon); }
 #nw-era-label { font-family: var(--font-mono); font-size: 0.85rem; color: var(--neon); min-width: 4.5rem; }
 .nw-kb-hint { margin-top: var(--space-2); }
+/* Rotation 13 — the table readout line (aria-live) under the network
+   table's heading: a receiver readout, one line reserved before the
+   script fills it, so the table never jumps when the count lands. */
+.nw-table-note { font-family: var(--font-mono); min-height: 1.4em; margin: 0 0 var(--space-2); }
 
 /* graph nodes — collaborators are circles, producers are squares */
 .nw-shape { fill: var(--panel-2); stroke: var(--neon); stroke-width: 1.5; transition: stroke-width var(--dur-1) var(--ease); }
@@ -1246,6 +1250,11 @@ html.js .reveal.in { opacity: 1; transform: none; }
 .pg-tab:hover { border-color: var(--neon-deep); }
 .pg-tab:focus-visible { outline: 2px solid var(--neon); outline-offset: 2px; }
 .pg-tab[aria-selected="true"] { border-color: var(--neon); color: var(--gold-bright); }
+/* Rotation 13 — the tab panels themselves: no layout of their own
+   (their contents own it), and the hidden panel stays hidden by rule,
+   not by UA default — a future display rule on panels cannot leak it. */
+.pg-panel { min-width: 0; }
+.pg-panel[hidden] { display: none; }
 .pg-recipes { display: grid; gap: var(--space-3); }
 .recipe-card { border: 1px solid var(--line); padding: var(--space-4); border-radius: 4px; }
 .recipe-card h4 { margin: 0 0 0.4rem; font-size: 1rem; }

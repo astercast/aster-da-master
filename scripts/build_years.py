@@ -24,6 +24,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "scripts"))
+import nav_data  # noqa: E402  (canonical nav data — scripts/nav_data.py)
 from build_releases import slugify  # noqa: E402  (single source of truth)
 
 DATA = json.loads((ROOT / "data" / "artist.json").read_text())
@@ -31,54 +32,7 @@ YEARS = list(range(2018, 2027))
 OUT = ROOT / "years"
 API = ROOT / "data" / "v1"
 
-NAV = """<nav class="site-nav" aria-label="Primary">
-        <a href="../#discography">Discography</a>
-        <a href="../releases/">Releases</a>
-        <a href="./">Years</a>
-        <a href="../scene/">Scene</a>
-        <a href="../timeline.html">Timeline</a>
-        <a href="../chronicle.html">Chronicle</a>
-        <a href="../transmission.html">Transmission</a>
-        <a href="../tuner.html">Tuner</a>
-        <a href="../scene-atlas.html">Atlas</a>
-        <a href="../network.html">Network</a>
-        <a href="../milestone-race.html">Race</a>
-        <a href="../decoder.html">Decoder</a>
-        <a href="../api-playground.html">API</a>
-        <a href="../agents.html">Agents</a>
-        <a href="../method.html">Method</a>
-        <a href="../trilogy.html">Trilogy</a>
-        <a href="../sessions.html">Sessions</a>
-        <a href="../changelog.html">Changelog</a>
-        <a href="../glance.html">Glance</a>
-        <a href="../press-kit.html">Press kit</a>
-      </nav>
-      <details class="mnav">
-        <summary><span class="bars" aria-hidden="true"><i></i><i></i><i></i></span>Menu</summary>
-        <nav class="mnav-panel" aria-label="Mobile">
-        <a href="../#discography">Discography</a>
-        <a href="../releases/">Releases</a>
-        <a href="./">Years</a>
-        <a href="../scene/">Scene</a>
-        <a href="../timeline.html">Timeline</a>
-        <a href="../chronicle.html">Chronicle</a>
-        <a href="../transmission.html">Transmission</a>
-        <a href="../tuner.html">Tuner</a>
-        <a href="../scene-atlas.html">Atlas</a>
-        <a href="../network.html">Network</a>
-        <a href="../milestone-race.html">Race</a>
-        <a href="../decoder.html">Decoder</a>
-        <a href="../api-playground.html">API</a>
-        <a href="../agents.html">Agents</a>
-        <a href="../method.html">Method</a>
-        <a href="../trilogy.html">Trilogy</a>
-        <a href="../sessions.html">Sessions</a>
-        <a href="../changelog.html">Changelog</a>
-        <a href="../glance.html">Glance</a>
-        <a href="../press-kit.html">Press kit</a>
-      
-        </nav>
-      </details>"""
+NAV = nav_data.nav_chunk("../", "years")
 
 HEAD = """<!DOCTYPE html>
 <html lang="en">
@@ -128,28 +82,7 @@ FOOT = """    </div>
   <footer class="site-footer">
     <div class="container footer-grid">
       <p>&copy; 2026 ASTER DA MASTER &mdash; ALL SIGNALS RESERVED</p>
-      <nav aria-label="Footer">
-        <a href="../">Home</a>
-        <a href="../releases/">Releases</a>
-        <a href="./">Years</a>
-        <a href="../scene/">Scene</a>
-        <a href="../timeline.html">Timeline</a>
-        <a href="../chronicle.html">Chronicle</a>
-        <a href="../transmission.html">Transmission</a>
-        <a href="../tuner.html">Tuner</a>
-        <a href="../scene-atlas.html">Atlas</a>
-        <a href="../network.html">Network</a>
-        <a href="../milestone-race.html">Race</a>
-        <a href="../decoder.html">Decoder</a>
-        <a href="../api-playground.html">API</a>
-        <a href="../agents.html">Agents</a>
-        <a href="../method.html">Method</a>
-        <a href="../trilogy.html">Trilogy</a>
-        <a href="../sessions.html">Sessions</a>
-        <a href="../changelog.html">Changelog</a>
-        <a href="../glance.html">Glance</a>
-        <a href="../press-kit.html">Press kit</a>
-      </nav>
+      """ + nav_data.footer_block("../", "years") + """
     </div>
   </footer>
   <script src="../assets/js/identity.js"></script>

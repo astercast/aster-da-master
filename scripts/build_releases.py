@@ -13,6 +13,7 @@ import re
 from html import escape
 from pathlib import Path
 
+import nav_data  # noqa: E402  (canonical nav data — scripts/nav_data.py)
 ROOT = Path(__file__).resolve().parent.parent
 DATA = json.loads((ROOT / "data" / "artist.json").read_text())
 OUT = ROOT / "releases"
@@ -54,50 +55,7 @@ HEAD = """<!DOCTYPE html>
         <span class="brand-mark" aria-hidden="true">A&#10022;</span>
         <span>ASTER DA MASTER</span>
       </a>
-      <nav class="site-nav" aria-label="Primary">
-        <a href="../#discography">Discography</a>
-        <a href="./">All releases</a>
-        <a href="../years/">Years</a>
-        <a href="../decoder.html">Decoder</a>
-        <a href="../api-playground.html">API</a>
-        <a href="../scene/">Scene</a>
-        <a href="../chronicle.html">Chronicle</a>
-        <a href="../transmission.html">Transmission</a>
-        <a href="../tuner.html">Tuner</a>
-        <a href="../scene-atlas.html">Atlas</a>
-        <a href="../milestone-race.html">Race</a>
-        <a href="../agents.html">Agents</a>
-        <a href="../method.html">Method</a>
-        <a href="../trilogy.html">Trilogy</a>
-        <a href="../sessions.html">Sessions</a>
-        <a href="../changelog.html">Changelog</a>
-        <a href="../glance.html">Glance</a>
-        <a href="../press-kit.html">Press kit</a>
-      </nav>
-      <details class="mnav">
-        <summary><span class="bars" aria-hidden="true"><i></i><i></i><i></i></span>Menu</summary>
-        <nav class="mnav-panel" aria-label="Mobile">
-        <a href="../#discography">Discography</a>
-        <a href="./">All releases</a>
-        <a href="../years/">Years</a>
-        <a href="../decoder.html">Decoder</a>
-        <a href="../api-playground.html">API</a>
-        <a href="../scene/">Scene</a>
-        <a href="../chronicle.html">Chronicle</a>
-        <a href="../transmission.html">Transmission</a>
-        <a href="../tuner.html">Tuner</a>
-        <a href="../scene-atlas.html">Atlas</a>
-        <a href="../milestone-race.html">Race</a>
-        <a href="../agents.html">Agents</a>
-        <a href="../method.html">Method</a>
-        <a href="../trilogy.html">Trilogy</a>
-        <a href="../sessions.html">Sessions</a>
-        <a href="../changelog.html">Changelog</a>
-        <a href="../glance.html">Glance</a>
-        <a href="../press-kit.html">Press kit</a>
-      
-        </nav>
-      </details>
+      {navchunk}
     </div>
   </header>
   <main id="main">
@@ -109,17 +67,7 @@ FOOT = """    </div>
   <footer class="site-footer">
     <div class="container footer-grid">
       <p>&copy; 2026 ASTER DA MASTER &mdash; ALL SIGNALS RESERVED</p>
-      <nav aria-label="Footer">
-        <a href="../">Home</a>
-        <a href="./">All releases</a>
-        <a href="../years/">Years</a>
-        <a href="../method.html">Method</a>
-        <a href="../trilogy.html">Trilogy</a>
-        <a href="../sessions.html">Sessions</a>
-        <a href="../changelog.html">Changelog</a>
-        <a href="../glance.html">Glance</a>
-        <a href="../press-kit.html">Press kit</a>
-      </nav>
+      """ + nav_data.footer_block("../", "compact") + """
     </div>
   </footer>
   <script src="../assets/js/identity.js"></script>
@@ -281,7 +229,7 @@ def build():
       <nav class="release-nav" aria-label="More releases">{prev_link}{next_link}</nav>
 """
         (OUT / f"{slug}.html").write_text(
-            HEAD.format(title=escape(r["title"]), desc=escape(f'{r["title"]} — {r["type"]} by Aster da Master'), canonical=f"/releases/{slug}.html", ldjson=release_ld(r, slug))
+            HEAD.format(title=escape(r["title"]), desc=escape(f'{r["title"]} — {r["type"]} by Aster da Master'), canonical=f"/releases/{slug}.html", ldjson=release_ld(r, slug), navchunk=nav_data.nav_chunk("../", "compact"))
             + body
             + FOOT,
             encoding="utf-8",
@@ -349,7 +297,7 @@ def build():
       </script>
 """
     (OUT / "index.html").write_text(
-        HEAD.format(title="Every release", desc="The complete Aster da Master release archive", canonical="/releases/index.html", ldjson=index_ld(releases, slug_list)) + index_body + FOOT,
+        HEAD.format(title="Every release", desc="The complete Aster da Master release archive", canonical="/releases/index.html", ldjson=index_ld(releases, slug_list), navchunk=nav_data.nav_chunk("../", "compact")) + index_body + FOOT,
         encoding="utf-8",
     )
     print(f"Built {len(releases)} release pages + index in {OUT}/")

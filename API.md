@@ -339,8 +339,9 @@ and `tracks.json` (the captured catalog).
   257,394 plays, 9 years, 61 sessions, 21 collaborators, 16 codex families,
   top-5 tracks, the eras strip, heaviest sessions, bookends
   (`scripts/build_glance.py`). Linked from the hero, primary + footer navs
-  on all pages (`scripts/update_nav_wave11.py`; generator NAV constants
-  updated for future regenerations).
+  on all pages (nav lives in `scripts/nav_data.py` since Rotation 13 —
+  one data file, one injector `scripts/update_nav.py`; the wave-era
+  one-off nav scripts are retired).
 
 ## Skills
 

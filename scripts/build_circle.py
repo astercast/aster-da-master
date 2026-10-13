@@ -29,6 +29,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "scripts"))
+import nav_data  # noqa: E402  (canonical nav data — scripts/nav_data.py)
 from build_releases import slugify  # noqa: E402  (single source of truth)
 from build_years import parse_collabs, era_for_year  # noqa: E402  (same parser as network.js)
 from build_producer_deepdives import (  # noqa: E402  (wave 27 cross-links)
@@ -43,56 +44,7 @@ NEW_VERSION = "0.19.0"  # wave 35: verified-data expansion - collaborator deep-e
 # circle members who also produce get a "Producer deep dive" cross-link.
 PRODUCER_SLUGS = set()
 
-NAV = """<nav class="site-nav" aria-label="Primary">
-        <a href="../#discography">Discography</a>
-        <a href="../releases/">Releases</a>
-        <a href="../years/">Years</a>
-        <a href="./">Circle</a>
-        <a href="../scene/">Scene</a>
-        <a href="../timeline.html">Timeline</a>
-        <a href="../chronicle.html">Chronicle</a>
-        <a href="../transmission.html">Transmission</a>
-        <a href="../tuner.html">Tuner</a>
-        <a href="../scene-atlas.html">Atlas</a>
-        <a href="../network.html">Network</a>
-        <a href="../milestone-race.html">Race</a>
-        <a href="../decoder.html">Decoder</a>
-        <a href="../api-playground.html">API</a>
-        <a href="../agents.html">Agents</a>
-        <a href="../method.html">Method</a>
-        <a href="../trilogy.html">Trilogy</a>
-        <a href="../sessions.html">Sessions</a>
-        <a href="../changelog.html">Changelog</a>
-        <a href="../glance.html">Glance</a>
-        <a href="../press-kit.html">Press kit</a>
-      </nav>
-      <details class="mnav">
-        <summary><span class="bars" aria-hidden="true"><i></i><i></i><i></i></span>Menu</summary>
-        <nav class="mnav-panel" aria-label="Mobile">
-        <a href="../#discography">Discography</a>
-        <a href="../releases/">Releases</a>
-        <a href="../years/">Years</a>
-        <a href="./">Circle</a>
-        <a href="../scene/">Scene</a>
-        <a href="../timeline.html">Timeline</a>
-        <a href="../chronicle.html">Chronicle</a>
-        <a href="../transmission.html">Transmission</a>
-        <a href="../tuner.html">Tuner</a>
-        <a href="../scene-atlas.html">Atlas</a>
-        <a href="../network.html">Network</a>
-        <a href="../milestone-race.html">Race</a>
-        <a href="../decoder.html">Decoder</a>
-        <a href="../api-playground.html">API</a>
-        <a href="../agents.html">Agents</a>
-        <a href="../method.html">Method</a>
-        <a href="../trilogy.html">Trilogy</a>
-        <a href="../sessions.html">Sessions</a>
-        <a href="../changelog.html">Changelog</a>
-        <a href="../glance.html">Glance</a>
-        <a href="../press-kit.html">Press kit</a>
-      
-        </nav>
-      </details>"""
+NAV = nav_data.nav_chunk("../", "circle")
 
 HEAD = """<!DOCTYPE html>
 <html lang="en">
@@ -142,29 +94,7 @@ FOOT = """    </div>
   <footer class="site-footer">
     <div class="container footer-grid">
       <p>&copy; 2026 ASTER DA MASTER &mdash; ALL SIGNALS RESERVED</p>
-      <nav aria-label="Footer">
-        <a href="../">Home</a>
-        <a href="../releases/">Releases</a>
-        <a href="../years/">Years</a>
-        <a href="./">Circle</a>
-        <a href="../scene/">Scene</a>
-        <a href="../timeline.html">Timeline</a>
-        <a href="../chronicle.html">Chronicle</a>
-        <a href="../transmission.html">Transmission</a>
-        <a href="../tuner.html">Tuner</a>
-        <a href="../scene-atlas.html">Atlas</a>
-        <a href="../network.html">Network</a>
-        <a href="../milestone-race.html">Race</a>
-        <a href="../decoder.html">Decoder</a>
-        <a href="../api-playground.html">API</a>
-        <a href="../agents.html">Agents</a>
-        <a href="../method.html">Method</a>
-        <a href="../trilogy.html">Trilogy</a>
-        <a href="../sessions.html">Sessions</a>
-        <a href="../changelog.html">Changelog</a>
-        <a href="../glance.html">Glance</a>
-        <a href="../press-kit.html">Press kit</a>
-      </nav>
+      """ + nav_data.footer_block("../", "circle") + """
     </div>
   </footer>
   <script src="../assets/js/identity.js"></script>

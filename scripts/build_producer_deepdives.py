@@ -60,6 +60,16 @@ ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "scripts"))
 from build_releases import slugify  # noqa: E402  (single source of truth)
 from build_codex import HEAD, FOOT  # noqa: E402
+
+import nav_data  # noqa: E402  (canonical nav data — scripts/nav_data.py)
+# Producer pages inherit build_codex's HEAD/FOOT; swap its codex nav
+# chunk for the producers variant from the canonical data (whose Codex
+# door points at ../codex/ — the inherited chunk's "./" door resolved
+# to the producers index).
+HEAD = HEAD.replace(nav_data.nav_chunk("../", "codex"),
+                    nav_data.nav_chunk("../", "producers"))
+FOOT = FOOT.replace(nav_data.footer_block("../", "codex"),
+                    nav_data.footer_block("../", "producers"))
 from api_manifest import render_manifest  # noqa: E402
 
 API = ROOT / "data" / "v1"
