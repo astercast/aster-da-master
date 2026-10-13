@@ -509,6 +509,10 @@ SCENE_FIGURES = {
                      "re-verified 2026-10-13 — the Oct 16 date stands, "
                      "Faygoluvers still carries it, and the Oct 15 listening "
                      "party and Oct 29 Gold Diggers date held). "
+                     "A release-week readiness pass later on 2026-10-13 "
+                     "opened the venue calendar, Bandsintown, Stereogum, "
+                     "upcomingvinyl and both capoxxo Eventbrite listings "
+                     "again — every date held a second time. "
                      "No third single, no advance reviews, no interviews "
                      "(normal 4 days out). A listening party is listed for "
                      "Thu Oct 15, 7 PM at Permanent Records Roadhouse "
@@ -523,6 +527,7 @@ SCENE_FIGURES = {
             # wave 35: re-verified pre-release 2026-10-12 (listening party
             # added; Europe leg one notch up, still uncertain)
             # signal 2.1: re-verified pre-release 2026-10-13 (all dates held)
+            # rotation 5: readiness pass later 2026-10-13 (held a 2nd time)
             "last_reverified": "2026-10-13",
             "reverify_sources": [
                 "https://upcomingvinyl.com/artists/fish-narc",

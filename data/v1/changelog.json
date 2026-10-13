@@ -1,8 +1,26 @@
 {
   "generated": "2026-10-11",
   "method": "Parsed from `git log main`: every commit becomes an entry. The site documenting its own becoming.",
-  "entry_count": 116,
+  "entry_count": 119,
   "entries": [
+    {
+      "hash": "068155a",
+      "date": "2026-10-13",
+      "message": "changelog sync (post-validation)",
+      "files_changed": 3
+    },
+    {
+      "hash": "bd69380",
+      "date": "2026-10-13",
+      "message": "Rotation 5: release-week readiness (all dates held a second time, JamBase conflict stands, Gold Diggers $15 ticket line noted not priced), capture #3 gate armed, post-party re-check armed",
+      "files_changed": 14
+    },
+    {
+      "hash": "ad3f95d",
+      "date": "2026-10-13",
+      "message": "changelog sync (post-validation)",
+      "files_changed": 3
+    },
     {
       "hash": "9fd02b2",
       "date": "2026-10-13",

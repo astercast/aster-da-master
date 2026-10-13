@@ -76,6 +76,18 @@ badge when `/api/*` is unreachable.
   Sam Buck conflict for Oct 15 still stands. `tests/api.test.sh` 37/37
   (start `tests/local_server.js` first or every check fails
   environmentally); release-week tests 20/20.
+- Rotation 5 readiness pass (2026-10-13, later the same UTC day):
+  capture #3 NOT taken — gate opens 2026-10-13T23:22:57Z and is armed
+  in WAVELOG with the exact six-step procedure. All focus dates held a
+  second time against live sources opened directly (venue calendar,
+  Bandsintown, JamBase's own Sam Buck listing, Stereogum, upcomingvinyl,
+  Faygoluvers, AltPress, both Eventbrite listings); the JamBase Sam Buck
+  conflict still stands. JamBase's Gold Diggers listing now shows a $15
+  ticket line — noted in the event note, price field still unrecorded
+  (aggregator, not primary). Post-event work armed in
+  `data/release-week-uncle.json`: `post_party_recheck` (post–Oct 15)
+  alongside the five-step post–Oct 16 release flip. Tests: signal-watch
+  27/27, release-week 20/20, api 37/37; screenshots clean.
 - Static validation: 19,851 relative links, 0 broken; 23/23 JSON schemas
   in validate.sh's stage-3 list (the 2 Signal 2.0 schemas validate against
   their files separately); lyric-grep clean; chain byte-stable; data
