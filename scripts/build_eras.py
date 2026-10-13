@@ -222,6 +222,7 @@ NAV = """<nav class="site-nav" aria-label="Primary">
         <a href="../chronicle.html">Chronicle</a>
         <a href="../transmission.html">Transmission</a>
         <a href="../tuner.html">Tuner</a>
+        <a href="../scene-atlas.html">Atlas</a>
         <a href="../network.html">Network</a>
         <a href="../milestone-race.html">Race</a>
         <a href="../decoder.html">Decoder</a>
@@ -245,6 +246,7 @@ NAV = """<nav class="site-nav" aria-label="Primary">
         <a href="../chronicle.html">Chronicle</a>
         <a href="../transmission.html">Transmission</a>
         <a href="../tuner.html">Tuner</a>
+        <a href="../scene-atlas.html">Atlas</a>
         <a href="../network.html">Network</a>
         <a href="../milestone-race.html">Race</a>
         <a href="../decoder.html">Decoder</a>
@@ -305,6 +307,7 @@ FOOT = """    </div>
         <a href="../chronicle.html">Chronicle</a>
         <a href="../transmission.html">Transmission</a>
         <a href="../tuner.html">Tuner</a>
+        <a href="../scene-atlas.html">Atlas</a>
         <a href="../network.html">Network</a>
         <a href="../milestone-race.html">Race</a>
         <a href="../decoder.html">Decoder</a>

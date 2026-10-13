@@ -1,0 +1,137 @@
+/* ============================================================
+   SCENE ATLAS — scene-atlas.html only.
+   A pirate cartographer's chart of the scene around the music:
+   one drawn route, twenty-two soundings, one chart card per
+   figure. Hairline chart rules, mono soundings, dashed route
+   line — cartography, not decoration.
+   ============================================================ */
+
+.atlas-hero { position: relative; overflow: hidden; }
+.atlas-hero::before {
+  content: ""; position: absolute; inset: 0; pointer-events: none; opacity: .05;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='0.9'/%3E%3C/svg%3E");
+}
+.atlas-hero::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none; opacity: .35;
+  background:
+    repeating-linear-gradient(0deg, transparent 0 47px, var(--line-soft) 47px 48px),
+    repeating-linear-gradient(90deg, transparent 0 47px, var(--line-soft) 47px 48px);
+}
+.atlas-hero > .container { position: relative; z-index: 1; }
+.atlas-title {
+  font-family: var(--font-display); font-weight: 400; letter-spacing: .01em;
+  font-size: var(--fs-hero); line-height: .92; margin: var(--space-3) 0 var(--space-4);
+  text-transform: uppercase;
+}
+.atlas-title-dim { color: var(--muted); }
+.atlas-lede { max-width: 58ch; color: var(--ink-dim); font-size: var(--fs-3); line-height: 1.5; }
+.atlas-lede strong { color: var(--ink); font-weight: 600; }
+.atlas-stats { display: flex; flex-wrap: wrap; gap: var(--space-2) var(--space-6); margin-top: var(--space-6);
+  padding-top: var(--space-4); border-top: 1px solid var(--line); }
+.atlas-stats div { display: flex; flex-direction: column; gap: 2px; }
+.atlas-stats b { font-family: var(--font-display); font-weight: 400; font-size: var(--fs-2); color: var(--neon); }
+.atlas-stats span { font-size: var(--fs-micro); letter-spacing: var(--track-label);
+  text-transform: uppercase; color: var(--muted); }
+
+.ctl-label { font-size: var(--fs-micro); letter-spacing: var(--track-broadcast);
+  text-transform: uppercase; color: var(--muted); margin-bottom: var(--space-2); }
+.chip-row { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-bottom: var(--space-5); }
+.chip { font: inherit; font-size: var(--fs-small); color: var(--ink-dim); background: var(--panel-2);
+  border: 1px solid var(--line); border-radius: var(--radius-s); padding: var(--space-2) var(--space-3);
+  cursor: pointer; }
+.chip small { color: var(--muted); margin-left: var(--space-1); }
+.chip:hover { border-color: var(--neon-deep); color: var(--ink); }
+.chip[aria-pressed="true"] { border-color: var(--neon); color: var(--neon); background: var(--neon-ghost); }
+
+/* ---- the deck: route + card side by side ---- */
+.atlas-deck { display: grid; grid-template-columns: minmax(280px, 5fr) 7fr; gap: var(--space-5); align-items: start; }
+
+/* ---- the drawn route ---- */
+.atlas-route { list-style: none; margin: 0; padding: 0; position: relative; }
+.atlas-route::before {
+  content: ""; position: absolute; left: 15px; top: 18px; bottom: 18px; width: 0;
+  border-left: 2px dashed var(--neon-deep); opacity: .55;
+}
+.atlas-stop { position: relative; }
+.atlas-stop-btn {
+  font: inherit; text-align: left; width: 100%; cursor: pointer;
+  display: grid; grid-template-columns: 32px 1fr auto; gap: var(--space-3); align-items: center;
+  background: transparent; border: 1px solid transparent; border-radius: var(--radius-s);
+  padding: var(--space-2) var(--space-3) var(--space-2) 0; color: var(--ink-dim);
+}
+.atlas-stop-btn:hover { border-color: var(--line); color: var(--ink); }
+.atlas-stop.is-active .atlas-stop-btn { border-color: var(--neon); background: var(--neon-ghost); color: var(--ink); }
+.atlas-dot {
+  width: 32px; height: 32px; border-radius: 50%; position: relative; z-index: 1;
+  border: 2px solid var(--neon-deep); background: var(--panel);
+  display: flex; align-items: center; justify-content: center;
+  font-size: var(--fs-micro); color: var(--neon); letter-spacing: .02em;
+}
+.atlas-stop.is-active .atlas-dot { background: var(--neon); color: var(--neon-ink); border-color: var(--neon);
+  box-shadow: var(--glow-neon); }
+.atlas-stop.is-thin .atlas-dot { border-style: dashed; }
+.atlas-stop-main { display: flex; flex-direction: column; gap: 1px; min-width: 0; }
+.atlas-stop-name { font-weight: 600; color: var(--ink); overflow-wrap: anywhere; }
+.atlas-stop.is-active .atlas-stop-name { color: var(--neon); }
+.atlas-stop-sub { font-size: var(--fs-micro); letter-spacing: var(--track-label);
+  text-transform: uppercase; color: var(--muted); }
+.atlas-stop-depth { display: flex; flex-direction: column; align-items: flex-end; gap: 3px; }
+.atlas-stop-depth b { font-size: var(--fs-small); color: var(--ink); font-weight: 600; }
+.atlas-stop-bar { width: 64px; height: 3px; background: var(--line-soft); }
+.atlas-stop-bar i { display: block; height: 100%; background: var(--neon-deep); }
+.atlas-stop.is-active .atlas-stop-bar i { background: var(--neon); }
+.atlas-stop[hidden] { display: none; }
+
+/* ---- the chart card ---- */
+.atlas-card-slot { position: sticky; top: var(--space-4); }
+.atlas-card { border: 1px solid var(--line); background: var(--panel); padding: var(--space-5); }
+.atlas-card-head { display: flex; flex-wrap: wrap; gap: var(--space-2) var(--space-4); align-items: center;
+  font-size: var(--fs-micro); letter-spacing: var(--track-label); text-transform: uppercase; color: var(--muted); }
+.atlas-card-head .atlas-rank { font-family: var(--font-display); font-size: var(--fs-3); color: var(--ink);
+  letter-spacing: .01em; }
+.atlas-kind { color: var(--gold); border: 1px solid var(--gold); border-radius: var(--radius-s);
+  padding: 2px var(--space-2); }
+.atlas-card-name { font-family: var(--font-display); font-weight: 400; text-transform: uppercase;
+  font-size: var(--fs-1); line-height: 1.02; margin: var(--space-3) 0; overflow-wrap: anywhere; }
+.atlas-card-facts { display: flex; flex-wrap: wrap; gap: var(--space-2) var(--space-6);
+  padding: var(--space-3) 0; border-top: 1px solid var(--line-soft); border-bottom: 1px solid var(--line-soft); }
+.atlas-card-facts div { display: flex; flex-direction: column; gap: 1px; }
+.atlas-card-facts b { font-size: var(--fs-3); color: var(--ink); font-weight: 600; }
+.atlas-card-facts span { font-size: var(--fs-micro); letter-spacing: var(--track-label);
+  text-transform: uppercase; color: var(--muted); }
+.atlas-card-note { color: var(--ink-dim); font-size: var(--fs-small); line-height: 1.55; max-width: 62ch; }
+.atlas-sub { font-size: var(--fs-micro); letter-spacing: var(--track-broadcast);
+  text-transform: uppercase; color: var(--muted); margin: var(--space-4) 0 var(--space-2); }
+.atlas-card .fact-list { margin: 0; }
+.atlas-sources { font-size: var(--fs-small); color: var(--muted); line-height: 1.6; }
+.atlas-card-actions { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-top: var(--space-4); }
+.atlas-status { color: var(--muted); font-size: var(--fs-small); margin-top: var(--space-3); }
+.atlas-status.is-lost { color: var(--alert); }
+.atlas-watch { border: 1px dashed var(--gold); border-radius: var(--radius-s);
+  padding: var(--space-3) var(--space-4); margin-top: var(--space-4); }
+.atlas-watch b { color: var(--gold); }
+
+/* ---- crossings ---- */
+.atlas-routes { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-2); }
+.atlas-routes li { border: 1px solid var(--line); background: var(--panel); padding: var(--space-3) var(--space-4);
+  font-size: var(--fs-small); line-height: 1.55; }
+.atlas-routes strong { color: var(--ink); }
+.atlas-routes .dim { color: var(--muted); }
+
+/* ---- chart log ---- */
+.chart-log table { width: 100%; border-collapse: collapse; font-size: var(--fs-small); }
+.chart-log th, .chart-log td { text-align: left; padding: var(--space-2) var(--space-3);
+  border-bottom: 1px solid var(--line-soft); }
+.chart-log th { font-size: var(--fs-micro); letter-spacing: var(--track-label);
+  text-transform: uppercase; color: var(--muted); }
+.chart-log td.n, .chart-log th.n { text-align: right; font-variant-numeric: tabular-nums; }
+.chart-log tbody tr { cursor: pointer; }
+.chart-log tbody tr:hover td { background: var(--neon-ghost); }
+.chart-log tbody tr.is-active td { background: var(--neon-ghost); color: var(--ink); }
+
+@media (max-width: 860px) {
+  .atlas-deck { grid-template-columns: 1fr; }
+  .atlas-card-slot { position: static; }
+  .atlas-stop-bar { width: 44px; }
+  .chart-log { overflow-x: auto; }
+}

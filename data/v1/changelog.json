@@ -1,8 +1,20 @@
 {
   "generated": "2026-10-11",
   "method": "Parsed from `git log main`: every commit becomes an entry. The site documenting its own becoming.",
-  "entry_count": 131,
+  "entry_count": 133,
   "entries": [
+    {
+      "hash": "bd59e0e",
+      "date": "2026-10-13",
+      "message": "Rotation 10: The Scene Atlas flagship — all 22 recorded scene figures as charted points on one pirate cartographer's route (deepest-first by shared plays, chart card per figure with its real role/shared record/verified notes, honestly-thin render for the 14 without notes, 5 literal-title crossings, static 22-row chart log, nav wiring across 437 files), release-week dates held a seventh time, capture #3 gate still armed (ledger stays 2 rows)",
+      "files_changed": 448
+    },
+    {
+      "hash": "5e89790",
+      "date": "2026-10-13",
+      "message": "changelog sync (post-validation)",
+      "files_changed": 3
+    },
     {
       "hash": "3214b5d",
       "date": "2026-10-13",
