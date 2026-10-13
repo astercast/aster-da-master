@@ -1,8 +1,20 @@
 {
   "generated": "2026-10-11",
   "method": "Parsed from `git log main`: every commit becomes an entry. The site documenting its own becoming.",
-  "entry_count": 146,
+  "entry_count": 148,
   "entries": [
+    {
+      "hash": "e2e5819",
+      "date": "2026-10-13",
+      "message": "Rotation 15: doubled era title retired at generator source (build_eras HEAD aligned to sibling pattern, 6 pages x 3 title tags, generator guard against recurrence); site-wide title census 0 doubled; capture #3 gate clock-checked at 15:40Z — gate 2026-10-13T23:22:57Z still ahead, ledger stays 2 rows / 257,409, gate stays ARMED (Rotation 15 check on signal.html); release-week flips stay armed; Progress Archive capture rotation (10 shots in progress-archive rotation-015)",
+      "files_changed": 12
+    },
+    {
+      "hash": "f995244",
+      "date": "2026-10-13",
+      "message": "changelog sync (post-validation)",
+      "files_changed": 3
+    },
     {
       "hash": "ca1fba9",
       "date": "2026-10-13",
