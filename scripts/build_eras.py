@@ -276,8 +276,9 @@ HEAD = """<!DOCTYPE html>
   <link rel="stylesheet" href="../assets/css/layout.css">
   <link rel="stylesheet" href="../assets/css/components.css">
   <link rel="stylesheet" href="../assets/css/motifs.css">
+  <link rel="stylesheet" href="../assets/css/layer2.css">
 </head>
-<body>
+<body class="layer2">
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
     <div class="container header-bar">

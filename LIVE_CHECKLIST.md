@@ -110,6 +110,68 @@ badge when `/api/*` is unreachable.
   `-live` (`vercel --prod`), then run the GO_LIVE.md §2 checklist
   (health assert, cron assert, curl roster, functions-disabled pass).
 
+## Free-tier / best-pattern audit (Rotation 12, 2026-10-13)
+
+Measured in the working repo; the `-live` snapshot inherits all of it on
+the next user-ordered sync.
+
+- **Function count: 5 of the ≤12/site cap** (Hobby allows 100k
+  invocations/mo). All explicit paths in `vercel.json`, each
+  `{"maxDuration": 10}`, no `runtime` keys, zero npm dependencies.
+  Handler sizes: health 115 lines, stats 167, uploads 142, watch 119,
+  cron/signal 488 (the only non-trivial handler; it is cron-only).
+- **Estimated monthly invocations.** Assumption, stated: a niche archive
+  at **5,000 visits/month**. Pages are static-first and pre-rendered;
+  the only client-side function calls are `/api/watch` (Signal page),
+  `/api/stats` + `/api/uploads` (glance / transmission / signal) —
+  ≈1.3 calls per visit before caching. Every GET envelope already
+  ships `Cache-Control: public, s-maxage=600,
+  stale-while-revalidate=86400`, so the edge collapses repeat hits:
+  realistic origin invocations ≈ **6,500/month** (every visit a cache
+  miss), hard worst case ≈ **17,300/month** (4 public endpoints ×
+  4,320 ten-minute windows) — **6–17% of the Hobby cap**. Cron adds
+  30/month (one daily job). Nothing bills: no paid APIs anywhere
+  (SoundCloud public api-v2 + GitHub Contents API only), static
+  bandwidth is pre-built HTML + JSON (largest data file 220 KB).
+- **Worst-case duration vs the 10s ceiling.** Public handlers measured
+  against the local emulator: health 17 ms, watch 47 ms, stats 55 ms
+  (its per-source reads report 1–14 ms), uploads 123 ms — three
+  orders of magnitude under the ceiling, cold starts included at this
+  payload size. The cron is the only handler that can approach it:
+  with `SOUNDCLOUD_CLIENT_ID` set (the recommended configuration) it
+  is one 4 s-bounded resolve + one tracks page (185 tracks ≤ the
+  200/page limit) with state reads and commit-back writes in
+  parallel — a few seconds typical.
+- **First degradation point: the cron's no-env-key path.** Without
+  `SOUNDCLOUD_CLIENT_ID`, client-id extraction runs up to three
+  sequential 3 s-bounded phases (≈9 s) before the tracks pull
+  (up to 3 sequential 4 s pages) — that stack can exceed 10 s and
+  Vercel will kill the run. The failure is bounded and honest by
+  construction: writes happen only after a successful pull, so
+  nothing is half-written, the next daily run retries, and the
+  public site never notices (static JSON + honest "cached" badges).
+  Mitigation is configuration, not code: keep
+  `SOUNDCLOUD_CLIENT_ID` set in Production. Second degradation
+  point: the per-instance in-memory rate limiter (60 req/min/IP)
+  resets on cold start — best-effort by design, backstopped by the
+  edge cache.
+- **Pattern alignment.** Static-first (every page reads correctly
+  with no JS and no functions); precomputed JSON for everything
+  (`data/v1/*.json`, 25 manifest endpoints); SWR caching on function
+  GETs via the shared envelope; **fixed this rotation:** `data/v1/*`
+  static JSON previously had no explicit cache header in
+  `vercel.json` — it now carries the same
+  `public, max-age=0, s-maxage=600, stale-while-revalidate=86400`
+  rule as the envelope, so precomputed data gets identical edge
+  treatment. Honest upstream-failure fallbacks everywhere: handlers
+  return a degraded envelope or a plain 502 and the frontend falls
+  back to the static file with a "cached · updated HH:MM" badge
+  (`ApiClient.fetchWithFallback`); `/api/health` surfaces the
+  function roster + per-file freshness against a 24 h SLA and never
+  returns 5xx (degraded ≠ down). The Signal ledger's printed state
+  (2 captures, gate armed) is this site's health surface in public:
+  what is stale says so, in plain words, on the page.
+
 ## Build machine
 
 **Standard. Never Turbo.** (Sept 2026 Turbo invoice 1ZU1WJJS-0012: $38.64 —
