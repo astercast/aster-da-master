@@ -17,6 +17,12 @@
     repeating-linear-gradient(0deg, transparent 0 47px, var(--line-soft) 47px 48px),
     repeating-linear-gradient(90deg, transparent 0 47px, var(--line-soft) 47px 48px);
 }
+/* QA-007: heading ladder promoted (title h2->h1, section headings
+   h3->h2, card subheads h4->h3). Class-sized headings (.atlas-title,
+   .atlas-card-name, .atlas-sub) are unaffected; this pins the
+   unclassed section headings to their pre-promotion h3 scale. */
+h2 { font-size: var(--fs-3); letter-spacing: .02em; }
+
 .atlas-hero > .container { position: relative; z-index: 1; }
 .atlas-title {
   font-family: var(--font-display); font-weight: 400; letter-spacing: .01em;

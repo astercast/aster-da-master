@@ -104,7 +104,7 @@
       '<div class="tx-body">' +
         '<div class="tx-meta"><span class="tx-type">' + esc(f.chip) + "</span>" +
           "<span>" + esc(e.date) + "</span><span>Stop " + pad(e.stop, 3) + " of " + ALL.length + "</span></div>" +
-        '<h3 class="tx-title">' + esc(e.title) + "</h3>" +
+        '<h2 class="tx-title">' + esc(e.title) + "</h2>" +
         '<div class="tx-facts">' + facts + "</div>" +
         note +
         '<div class="tx-actions">' + actions + "</div>" +

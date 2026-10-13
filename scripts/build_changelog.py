@@ -99,6 +99,16 @@ def main() -> int:
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Changelog \u2014 Aster da Master</title>
   <meta name="description" content="The construction history of the Aster da Master archive, generated from the site's own git log.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Changelog \u2014 Aster da Master">
+  <meta property="og:description" content="The construction history of the Aster da Master archive, generated from the site's own git log.">
+  <meta property="og:image" content="assets/og-card.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Changelog \u2014 Aster da Master">
+  <meta name="twitter:description" content="The construction history of the Aster da Master archive, generated from the site's own git log.">
+  <meta name="twitter:image" content="assets/og-card.png">
   <link rel="preload" href="assets/fonts/anton-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/css/fonts.css">
 

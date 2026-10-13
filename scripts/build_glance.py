@@ -189,6 +189,16 @@ def main() -> int:
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>At a glance — Aster da Master</title>
   <meta name="description" content="Aster da Master in 60 seconds: 219 transmissions, 257,394 plays, nine years, sixty-one sessions — every headline number from the verified archive.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="At a glance — Aster da Master">
+  <meta property="og:description" content="Aster da Master in 60 seconds: 219 transmissions, 257,394 plays, nine years, sixty-one sessions — every headline number from the verified archive.">
+  <meta property="og:image" content="assets/og-card.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="At a glance — Aster da Master">
+  <meta name="twitter:description" content="Aster da Master in 60 seconds: 219 transmissions, 257,394 plays, nine years, sixty-one sessions — every headline number from the verified archive.">
+  <meta name="twitter:image" content="assets/og-card.png">
   <link rel="preload" href="assets/fonts/anton-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/css/fonts.css">
 

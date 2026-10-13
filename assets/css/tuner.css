@@ -36,6 +36,12 @@
 .tuner-stats span { font-size: var(--fs-micro); letter-spacing: var(--track-label);
   text-transform: uppercase; color: var(--muted); }
 
+/* QA-007: the heading ladder was promoted (title h2->h1, section
+   headings h3->h2, transmission card title h3->h2). Class-sized
+   headings (.tuner-title, .tx-title) are unaffected; this pins the
+   unclassed section headings to their pre-promotion h3 scale. */
+h2 { font-size: var(--fs-3); letter-spacing: .02em; }
+
 /* ---- the deck ---- */
 .tuner-deck { border: 1px solid var(--line); background: var(--panel); }
 .tuner-band { position: relative; padding: var(--space-5) var(--space-5) var(--space-3);

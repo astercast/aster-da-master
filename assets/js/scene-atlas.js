@@ -127,11 +127,11 @@
         : '<p class="atlas-card-note">The archive carries no verified notes for ' + esc(f.name) +
           " yet \u2014 only the shared record below. Plotted honestly thin: the sounding is real, the coastline beyond it is not drawn.</p>");
     var factsHtml = f.facts.length
-      ? '<h4 class="atlas-sub">Verified notes the archive carries</h4><ul class="fact-list">' +
+      ? '<h3 class="atlas-sub">Verified notes the archive carries</h3><ul class="fact-list">' +
         f.facts.map(function (x) { return "<li>" + esc(x) + "</li>"; }).join("") + "</ul>"
       : "";
     var sourcesHtml = f.sources.length
-      ? '<h4 class="atlas-sub">Sources on record</h4><p class="atlas-sources">' +
+      ? '<h3 class="atlas-sub">Sources on record</h3><p class="atlas-sources">' +
         f.sources.map(function (s) {
           return '<a href="' + esc(s.url) + '" target="_blank" rel="noopener">' + esc(s.label) + "</a>";
         }).join(" \u00b7 ") + "</p>"
@@ -144,14 +144,14 @@
     els.card.innerHTML =
       '<div class="atlas-card-head"><span class="atlas-rank">SOUNDING ' + pad(f.rank, 2) + " / " + ALL.length +
       '</span><span class="atlas-kind">' + esc(f.kind) + "</span></div>" +
-      '<h3 class="atlas-card-name">' + esc(f.name) + "</h3>" +
+      '<h2 class="atlas-card-name">' + esc(f.name) + "</h2>" +
       '<div class="atlas-card-facts">' +
       "<div><b>" + f.n + "</b><span>shared transmissions</span></div>" +
       "<div><b>" + fmt(f.plays) + "</b><span>shared plays</span></div>" +
       "<div><b>" + esc(f.years) + "</b><span>years on the chart</span></div>" +
       "<div><b>" + f.facts.length + "</b><span>verified notes recorded</span></div></div>" +
       note + factsHtml +
-      '<h4 class="atlas-sub">The shared record, in order</h4>' +
+      '<h3 class="atlas-sub">The shared record, in order</h3>' +
       '<ol class="year-list">' + trackHtml + "</ol>" +
       sourcesHtml + watchHtml +
       '<div class="atlas-card-actions"><a class="btn btn-neon" href="' + esc(f.page) + '">Full circle page &rarr;</a></div>';

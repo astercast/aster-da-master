@@ -75,6 +75,16 @@ TEMPLATE = r"""<!DOCTYPE html>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Scene Atlas — Aster da Master</title>
   <meta name="description" content="The Scene Atlas: every figure around the Aster da Master archive charted as a point on one pirate cartographer's chart — the 21 title-credited collaborators plus the producer-credit scene figure, plotted only from data the archive already carries.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Scene Atlas — Aster da Master">
+  <meta property="og:description" content="The Scene Atlas: every figure around the Aster da Master archive charted as a point on one pirate cartographer's chart — the 21 title-credited collaborators plus the producer-credit scene figure, plotted only from data the archive already carries.">
+  <meta property="og:image" content="assets/og-card.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Scene Atlas — Aster da Master">
+  <meta name="twitter:description" content="The Scene Atlas: every figure around the Aster da Master archive charted as a point on one pirate cartographer's chart — the 21 title-credited collaborators plus the producer-credit scene figure, plotted only from data the archive already carries.">
+  <meta name="twitter:image" content="assets/og-card.png">
   <link rel="preload" href="assets/fonts/anton-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/css/fonts.css">
   <link rel="stylesheet" href="assets/css/tokens.css">
@@ -159,7 +169,7 @@ TEMPLATE = r"""<!DOCTYPE html>
     <section class="section atlas-hero" aria-labelledby="atlas-h">
       <div class="container">
         <span class="onair"><i aria-hidden="true"></i>Charting the waters around the broadcast</span>
-        <h2 class="atlas-title" id="atlas-h">Scene <span class="atlas-title-dim">Atlas</span></h2>
+        <h1 class="atlas-title" id="atlas-h">Scene <span class="atlas-title-dim">Atlas</span></h1>
         <p class="atlas-lede">A pirate cartographer&rsquo;s chart of the scene around the music. <strong>Every figure the archive actually records is a plotted point</strong> — their real role, their shared transmissions, and only the connections the data itself states. Where the record is thin, the chart says so and plots them thin. Nothing is filled in from the fog.</p>
         <div class="btn-row">
           <a class="btn btn-neon" href="#chart">Start charting &darr;</a>
@@ -179,7 +189,7 @@ TEMPLATE = r"""<!DOCTYPE html>
     <section class="section" id="chart" aria-labelledby="chart-h">
       <div class="container">
         <span class="kicker"><span class="numeral">&#10022;</span>The chart</span>
-        <h3 id="chart-h">One route, twenty-two soundings</h3>
+        <h2 id="chart-h">One route, twenty-two soundings</h2>
         <p class="chart-sub">The route runs deepest first: figures are charted in order of shared plays, exactly as the two source files record them (a shared track counts once per figure credited on it, so soundings overlap where a track carries several names). Select any sounding to open its chart card.</p>
 
         <div>
@@ -201,7 +211,7 @@ TEMPLATE = r"""<!DOCTYPE html>
                 <span class="atlas-rank">SOUNDING 01 / 22</span>
                 <span class="atlas-kind">Title-credited collaborator</span>
               </div>
-              <h3 class="atlas-card-name">Yung Vetta</h3>
+              <h2 class="atlas-card-name">Yung Vetta</h2>
               <div class="atlas-card-facts">
                 <div><b>7</b><span>shared transmissions</span></div>
                 <div><b>17,893</b><span>shared plays</span></div>
@@ -209,7 +219,7 @@ TEMPLATE = r"""<!DOCTYPE html>
                 <div><b>0</b><span>verified notes recorded</span></div>
               </div>
               <p class="atlas-card-note">The archive carries no verified notes for Yung Vetta yet — only the shared record below. Plotted honestly thin: the sounding is real, the coastline beyond it is not drawn.</p>
-              <h4 class="atlas-sub">The shared record, in order</h4>
+              <h3 class="atlas-sub">The shared record, in order</h3>
               <ol class="year-list">%%FIRST_TRACKS%%</ol>
               <div class="atlas-card-actions">
                 <a class="btn btn-neon" href="circle/yung-vetta.html">Full circle page &rarr;</a>
@@ -224,7 +234,7 @@ TEMPLATE = r"""<!DOCTYPE html>
     <section class="section" aria-labelledby="routes-h">
       <div class="container">
         <span class="kicker"><span class="numeral">&#10022;</span>Crossings</span>
-        <h3 id="routes-h">Routes the data itself draws</h3>
+        <h2 id="routes-h">Routes the data itself draws</h2>
         <p class="chart-sub">A crossing exists only where the <em>same track title</em> appears in two figures&rsquo; own shared records — the archive&rsquo;s title lists, compared literally. Five titles cross. No other routes are drawn, because the data states no others.</p>
         <ul class="atlas-routes" id="atlas-routes">
           <li><strong>NIGHT MODE ft. MAX FERRARI x YUNG VETTA x JAX</strong> <span class="dim">— Max Ferrari &times; Yung Vetta &times; JAX (2019-07-09 &middot; 10,083 plays)</span></li>
@@ -239,7 +249,7 @@ TEMPLATE = r"""<!DOCTYPE html>
     <section class="section" id="chart-log" aria-labelledby="chart-log-h">
       <div class="container">
         <span class="kicker"><span class="numeral">&#10022;</span>The printed chart</span>
-        <h3 id="chart-log-h">The full chart log</h3>
+        <h2 id="chart-log-h">The full chart log</h2>
         <details class="chart-log" open>
           <summary>All 22 figures, deepest first — <span id="chart-log-count">22 soundings</span>. Select any row to open its chart card.</summary>
           <table>

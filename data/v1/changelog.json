@@ -1,8 +1,20 @@
 {
   "generated": "2026-10-11",
   "method": "Parsed from `git log main`: every commit becomes an entry. The site documenting its own becoming.",
-  "entry_count": 136,
+  "entry_count": 138,
   "entries": [
+    {
+      "hash": "50a6c6c",
+      "date": "2026-10-13",
+      "message": "Rotation 12 addendum: Foundry round 2 OG card wired across all 430 pages (generator templates for 403 incl. layer-2 deep pages + scene-atlas; Release round-16 catch: 27 pages outside those templates hand-wired with their own title/description — homepage included — and changelog/glance/sessions wired at their own generators; 430/430 verified, zero exceptions), Foundry batch-1 doctrine test: all 4 atmospheric assets UNPLACED on the record (typographic designs fail no test; dial close-up reaches the site inside og-card.png; no generated cover art rule untouched), QA-007: h1 ladders fixed on tuner.html, scene-atlas.html and scene/index.html with sizes pinned to pre-promotion scale (incl. JS template strings)",
+      "files_changed": 448
+    },
+    {
+      "hash": "628b44b",
+      "date": "2026-10-13",
+      "message": "changelog sync (post-validation)",
+      "files_changed": 3
+    },
     {
       "hash": "7dea131",
       "date": "2026-10-13",
