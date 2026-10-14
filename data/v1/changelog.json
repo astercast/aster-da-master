@@ -1,8 +1,32 @@
 {
   "generated": "2026-10-11",
   "method": "Parsed from `git log main`: every commit becomes an entry. The site documenting its own becoming.",
-  "entry_count": 161,
+  "entry_count": 165,
   "entries": [
+    {
+      "hash": "94bb8f6",
+      "date": "2026-10-14",
+      "message": "Rotation 22 fix pass: era prose em dashes swept at the source (build_milestones facts, build_transmission signals, artist era scenes; eras.json 21 to 0), home 320px overflow closed (log-drawer summaries stack, drawer stat columns stack, mobile header tightened at 520px and under), Take Me figure aligned to the Signal store (30,089, capture 1) on the home",
+      "files_changed": 19
+    },
+    {
+      "hash": "215656e",
+      "date": "2026-10-14",
+      "message": "Validation fix: glance links use the folded circle URLs at the generator; releases index regenerated clean (no empty label option)",
+      "files_changed": 3
+    },
+    {
+      "hash": "dc2e4cd",
+      "date": "2026-10-14",
+      "message": "Presented-string sweep: JS-rendered strings on the pass surfaces (sign-off, era/on-this-day/milestone renders, badge titles, search overlay, API fallback) lose their em dashes",
+      "files_changed": 5
+    },
+    {
+      "hash": "ea34ad6",
+      "date": "2026-10-14",
+      "message": "Rotation 22 identity pass: stream-first home, poster release pages, Signal as a log, one-line nav (AZ-6), catalog mark (AZ-4); consolidation: producers and circle folded to single pages, years retired (430 to 285 pages)",
+      "files_changed": 469
+    },
     {
       "hash": "0a4e289",
       "date": "2026-10-14",

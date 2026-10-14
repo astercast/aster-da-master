@@ -33,7 +33,7 @@
     "2018",
     "2019"
    ],
-   "scene": "The first casting — a guest verse in 2017, then the WoT seal pressed onto Master Key.",
+   "scene": "The first casting: a guest verse in 2017, then the WoT seal pressed onto Master Key.",
    "transmissions": 79,
    "plays": 220688,
    "sessions": 28,
@@ -113,14 +113,14 @@
      "name": "First distributor transmission",
      "date": "2017-04-20",
      "title": "lost memories (feat. Aster Da Master)",
-     "fact": "The catalog's first appearance on streaming platforms — as a featured artist, two years before the first vault upload."
+     "fact": "The catalog's first appearance on streaming platforms: as a featured artist, two years before the first vault upload."
     },
     {
      "id": "first-vault",
      "name": "First vault transmission",
      "date": "2018-01-03",
      "title": "Soul Shaking (prod. Fish Narc)",
-     "fact": "The first upload to the official SoundCloud — and it arrived already carrying five figures of plays. The opening shot was not a warm-up."
+     "fact": "The first upload to the official SoundCloud, and it arrived already carrying five figures of plays. The opening shot was not a warm-up."
     },
     {
      "id": "first-collab",
@@ -130,7 +130,7 @@
      "fact": "The first transmission to summon another voice. The circle starts here and grows to twenty-one collaborators."
     }
    ],
-   "signal": "79 transmissions, 220,688 plays — 85.7% of every play in the archive. Two years carried the whole catalog."
+   "signal": "79 transmissions, 220,688 plays: 85.7% of every play in the archive. Two years carried the whole catalog."
   },
   {
    "id": "the-prolific-year",
@@ -139,7 +139,7 @@
    "years": [
     "2020"
    ],
-   "scene": "Three albums in six months — the forge at full heat, eight transmissions in twelve.",
+   "scene": "Three albums in six months: the forge at full heat, eight transmissions in twelve.",
    "transmissions": 23,
    "plays": 12250,
    "sessions": 6,
@@ -213,10 +213,10 @@
      "name": "100th transmission on record",
      "date": "2020-12-21",
      "title": "I'm Not Looking For Love Anyway",
-     "fact": "The catalog's 100th entry in chronological order — reached before the end of 2020."
+     "fact": "The catalog's 100th entry in chronological order, reached before the end of 2020."
     }
    ],
-   "signal": "8 distributor releases — the most of any single year — against 23 vault transmissions. (2018 ran 39 vault transmissions with 0 distributor releases.) The catalog's center had moved."
+   "signal": "8 distributor releases, the most of any single year, against 23 vault transmissions. (2018 ran 39 vault transmissions with 0 distributor releases.) The catalog's center had moved."
   },
   {
    "id": "the-cast-it-years",
@@ -226,7 +226,7 @@
     "2021",
     "2022"
    ],
-   "scene": "Two volumes of the same spell, cast a year apart — sixteen tracks, then twelve.",
+   "scene": "Two volumes of the same spell, cast a year apart: sixteen tracks, then twelve.",
    "transmissions": 28,
    "plays": 4136,
    "sessions": 2,
@@ -291,10 +291,10 @@
      "name": "100th vault transmission",
      "date": "2021-07-14",
      "title": "I Can't Get Myself to Cast (prod. lil biscuit)",
-     "fact": "The SoundCloud vault's own 100th upload — mid-2021, deep in the Cast It: years."
+     "fact": "The SoundCloud vault's own 100th upload, mid-2021, deep in the Cast It: years."
     }
    ],
-   "signal": "28 transmissions across 2 sessions in two years — the leanest run on record: one transmission about every 26 days."
+   "signal": "28 transmissions across 2 sessions in two years, the leanest run on record: one transmission about every 26 days."
   },
   {
    "id": "the-somelowlifes-era",
@@ -304,7 +304,7 @@
     "2023",
     "2024"
    ],
-   "scene": "The collective's mark — old rituals re-released, new singles through the year.",
+   "scene": "The collective's mark: old rituals re-released, new singles through the year.",
    "transmissions": 58,
    "plays": 14982,
    "sessions": 16,
@@ -384,24 +384,24 @@
      "name": "Most prolific day",
      "date": "2023-11-12",
      "title": null,
-     "fact": "17 transmissions uploaded in a single day — the densest outpouring on record."
+     "fact": "17 transmissions uploaded in a single day: the densest outpouring on record."
     },
     {
      "id": "longest-silence",
      "name": "Longest silence",
      "date": null,
      "title": null,
-     "fact": "553 days between uploads, 2022-02-22 to 2023-08-29 — the longest gap on record. The vault went quiet, then returned."
+     "fact": "553 days between uploads, 2022-02-22 to 2023-08-29: the longest gap on record. The vault went quiet, then returned."
     },
     {
      "id": "plays-250k",
      "name": "250,000 plays crossed",
      "date": "2024-05-28",
      "title": "3 Points Pre Game prod. doublemulti x pinkcat #NITEMODE",
-     "fact": "Cumulative vault plays crossed a quarter-million with this upload — counted in upload order from the play-count snapshot."
+     "fact": "Cumulative vault plays crossed a quarter-million with this upload, counted in upload order from the play-count snapshot."
     }
    ],
-   "signal": "After a 553-day silence — the longest gap on record — the vault returned with 58 transmissions, the second-biggest output of any era: 19 transmissions across 10 days, the most prolific session on record."
+   "signal": "After a 553-day silence, the longest gap on record, the vault returned with 58 transmissions, the second-biggest output of any era: 19 transmissions across 10 days, the most prolific session on record."
   },
   {
    "id": "the-silence",
@@ -410,7 +410,7 @@
    "years": [
     "2025"
    ],
-   "scene": "No transmissions. The archive records the silence — it does not explain it.",
+   "scene": "No transmissions. The archive records the silence; it does not explain it.",
    "transmissions": 17,
    "plays": 3933,
    "sessions": 5,
@@ -479,7 +479,7 @@
     }
    ],
    "milestones": [],
-   "signal": "17 transmissions, 0 distributor releases — the first fully dark distributor year since 2018. The reason is unknown and not speculated here."
+   "signal": "17 transmissions, 0 distributor releases; the first fully dark distributor year since 2018. The reason is unknown and not speculated here."
   },
   {
    "id": "the-return",
@@ -488,7 +488,7 @@
    "years": [
     "2026"
    ],
-   "scene": "Six signals in ten weeks — the ritual resumes, every one marked explicit.",
+   "scene": "Six signals in ten weeks: the ritual resumes, every one marked explicit.",
    "transmissions": 13,
    "plays": 1405,
    "sessions": 4,
@@ -552,7 +552,7 @@
      "fact": "The most recent upload on record. The archive is alive."
     }
    ],
-   "signal": "Six singles, March–May 2026, all marked explicit on iHeart — the ritual resumes. Latest transmission on record: “turn up w me (prod_timmy)”, 2026-10-02.",
+   "signal": "Six singles, March–May 2026, all marked explicit on iHeart: the ritual resumes. Latest transmission on record: “turn up w me (prod_timmy)”, 2026-10-02.",
    "extras": {
     "singles_2026": [
      {

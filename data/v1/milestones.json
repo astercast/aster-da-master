@@ -7,7 +7,7 @@
     {
       "id": "first-distributor",
       "name": "First distributor transmission",
-      "fact": "The catalog's first appearance on streaming platforms — as a featured artist, two years before the first vault upload.",
+      "fact": "The catalog's first appearance on streaming platforms: as a featured artist, two years before the first vault upload.",
       "title": "lost memories (feat. Aster Da Master)",
       "date": "2017-04-20",
       "type": "Single",
@@ -16,7 +16,7 @@
     {
       "id": "first-vault",
       "name": "First vault transmission",
-      "fact": "The first upload to the official SoundCloud — and it arrived already carrying five figures of plays. The opening shot was not a warm-up.",
+      "fact": "The first upload to the official SoundCloud, and it arrived already carrying five figures of plays. The opening shot was not a warm-up.",
       "title": "Soul Shaking (prod. Fish Narc)",
       "date": "2018-01-03",
       "type": "SoundCloud-only",
@@ -34,7 +34,7 @@
     {
       "id": "hundredth-entry",
       "name": "100th transmission on record",
-      "fact": "The catalog's 100th entry in chronological order — reached before the end of 2020.",
+      "fact": "The catalog's 100th entry in chronological order, reached before the end of 2020.",
       "title": "I'm Not Looking For Love Anyway",
       "date": "2020-12-21",
       "type": "SoundCloud-only",
@@ -43,7 +43,7 @@
     {
       "id": "hundredth-vault",
       "name": "100th vault transmission",
-      "fact": "The SoundCloud vault's own 100th upload — mid-2021, deep in the Cast It: years.",
+      "fact": "The SoundCloud vault's own 100th upload, mid-2021, deep in the Cast It: years.",
       "title": "I Can't Get Myself to Cast (prod. lil biscuit)",
       "date": "2021-07-14",
       "type": "SoundCloud-only",
@@ -52,7 +52,7 @@
     {
       "id": "prolific-day",
       "name": "Most prolific day",
-      "fact": "17 transmissions uploaded in a single day — the densest outpouring on record.",
+      "fact": "17 transmissions uploaded in a single day: the densest outpouring on record.",
       "date": "2023-11-12",
       "count": 17,
       "title": null,
@@ -62,7 +62,7 @@
     {
       "id": "longest-silence",
       "name": "Longest silence",
-      "fact": "The longest gap between uploads on record — the vault went quiet, then returned.",
+      "fact": "The longest gap between uploads on record: the vault went quiet, then returned.",
       "date": null,
       "from": "2022-02-22",
       "to": "2023-08-29",
@@ -74,7 +74,7 @@
     {
       "id": "plays-250k",
       "name": "250,000 plays crossed",
-      "fact": "Cumulative vault plays crossed a quarter-million with this upload — counted in upload order from the play-count snapshot.",
+      "fact": "Cumulative vault plays crossed a quarter-million with this upload, counted in upload order from the play-count snapshot.",
       "title": "3 Points Pre Game prod. doublemulti x pinkcat #NITEMODE",
       "date": "2024-05-28",
       "type": "SoundCloud-only",

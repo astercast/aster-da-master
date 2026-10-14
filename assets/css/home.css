@@ -441,3 +441,27 @@
 
 /* ---- reduced motion: the page is static by construction; the
    sign-on's one settle is disabled in the sign-on block above ---- */
+
+/* Rotation 22 fix (Panel 127): at phone widths the log-drawer
+   summary's single flex row (nowrap kicker + gap + the line's
+   min-content + 64px of padding) measured 396px wide at a 320px
+   viewport, 76px of horizontal overflow on the home. The row now
+   stacks at small widths: the kicker keeps its own line and the
+   drawer line follows under it, left-aligned, wrapping normally.
+   Desktop composition unchanged; no motion added. */
+@media (max-width: 640px) {
+  .log-drawer > summary {
+    flex-wrap: wrap;
+    row-gap: var(--space-2);
+    padding: var(--space-4) var(--space-5);
+  }
+  .log-drawer > summary .drawer-line {
+    margin-left: 0;
+    text-align: left;
+  }
+  /* the numbers drawer's chart columns carry a 300px minimum
+     (components.css .stat-cols); inside a phone-width drawer
+     they stack to one column instead of forcing the page wide
+     when the drawer is opened. */
+  .log-drawer .stat-cols { grid-template-columns: 1fr; }
+}

@@ -238,3 +238,22 @@
   .section { padding-block: var(--space-7); }
   .header-bar { height: 62px; gap: var(--space-3); }
 }
+
+/* Rotation 22 fix (Panel 127): the mobile header row (brand +
+   Menu + search) laid out at its natural 438px at phone widths,
+   pushing the search button off-screen at 320px and 390px alike
+   (the fixed header never counted toward scrollWidth, but the
+   overflow was real). At 520px and under the row tightens: the
+   keyboard hint leaves the search button (the button and its
+   aria-label stand), the Menu summary sheds its word and keeps
+   its bars, and the brand steps down one size. The one-line
+   desktop nav is untouched. */
+@media (max-width: 520px) {
+  .header-bar { gap: var(--space-1); }
+  .brand { font-size: 0.92rem; gap: var(--space-2); }
+  .brand-mark { width: 28px; height: 28px; }
+  .header-bar .onair { padding: 0; border: 0; margin-left: 0; }
+  .mnav summary { padding: var(--space-2) var(--space-3); font-size: 0; gap: 0; }
+  .search-btn { padding: 0.45rem 0.55rem; }
+  .search-btn kbd { display: none; }
+}

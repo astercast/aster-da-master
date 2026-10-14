@@ -71,14 +71,14 @@ def main():
         {
             "id": "first-distributor",
             "name": "First distributor transmission",
-            "fact": "The catalog's first appearance on streaming platforms — "
+            "fact": "The catalog's first appearance on streaming platforms: "
                     "as a featured artist, two years before the first vault upload.",
             **entry(dist[0]),
         },
         {
             "id": "first-vault",
             "name": "First vault transmission",
-            "fact": "The first upload to the official SoundCloud — and it arrived "
+            "fact": "The first upload to the official SoundCloud, and it arrived "
                     "already carrying five figures of plays. The opening shot was not a warm-up.",
             **entry(vault[0]),
         },
@@ -92,21 +92,21 @@ def main():
         {
             "id": "hundredth-entry",
             "name": "100th transmission on record",
-            "fact": "The catalog's 100th entry in chronological order — "
+            "fact": "The catalog's 100th entry in chronological order, "
                     "reached before the end of 2020.",
             **entry(chrono[99]),
         },
         {
             "id": "hundredth-vault",
             "name": "100th vault transmission",
-            "fact": "The SoundCloud vault's own 100th upload — mid-2021, "
+            "fact": "The SoundCloud vault's own 100th upload, mid-2021, "
                     "deep in the Cast It: years.",
             **entry(vault[99]),
         },
         {
             "id": "prolific-day",
             "name": "Most prolific day",
-            "fact": f"{top_n} transmissions uploaded in a single day — the densest "
+            "fact": f"{top_n} transmissions uploaded in a single day: the densest "
                     "outpouring on record.",
             "date": top_day,
             "count": top_n,
@@ -117,7 +117,7 @@ def main():
         {
             "id": "longest-silence",
             "name": "Longest silence",
-            "fact": "The longest gap between uploads on record — the vault went "
+            "fact": "The longest gap between uploads on record: the vault went "
                     "quiet, then returned.",
             "date": None,
             "from": g0.isoformat(),
@@ -131,7 +131,7 @@ def main():
             "id": "plays-250k",
             "name": "250,000 plays crossed",
             "fact": "Cumulative vault plays crossed a quarter-million with this "
-                    "upload — counted in upload order from the play-count snapshot.",
+                    "upload, counted in upload order from the play-count snapshot.",
             **entry(cross[0]),
             "cumulative_plays": cross[1],
         },

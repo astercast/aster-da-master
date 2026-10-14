@@ -137,7 +137,7 @@ def era_milestones(name, ys):
                         "date": None,
                         "title": None,
                         "fact": (f"{g['days']} days between uploads, "
-                                 f"{g['from']} to {g['to']} — the longest "
+                                 f"{g['from']} to {g['to']}: the longest "
                                  f"gap on record. The vault went quiet, "
                                  f"then returned.")})
     return out
@@ -146,15 +146,15 @@ def era_milestones(name, ys):
 # ---- signal lines: every number recomputed from the stats above ----
 def signal_first_rite(st, total_plays):
     share = st["plays"] / total_plays
-    return (f"{st['tx']} transmissions, {fmt(st['plays'])} plays — "
+    return (f"{st['tx']} transmissions, {fmt(st['plays'])} plays: "
             f"{share:.1%} of every play in the archive. "
             f"Two years carried the whole catalog.")
 
 
 def signal_prolific(st, per_year_dist):
     # most distributor releases of any single year, verified below
-    return (f"{st['dist']} distributor releases — the most of any single year "
-            f"— against {st['tx']} vault transmissions. (2018 ran "
+    return (f"{st['dist']} distributor releases, the most of any single year, "
+            f"against {st['tx']} vault transmissions. (2018 ran "
             f"{per_year_dist['2018']['tx']} vault transmissions with "
             f"{per_year_dist['2018']['dist']} distributor releases.) "
             f"The catalog's center had moved.")
@@ -163,13 +163,13 @@ def signal_prolific(st, per_year_dist):
 def signal_castit(st):
     per_day = round(730 / st["tx"])
     return (f"{st['tx']} transmissions across {st['session_count']} sessions "
-            f"in two years — the leanest run on record: one transmission "
+            f"in two years, the leanest run on record: one transmission "
             f"about every {per_day} days.")
 
 
 def signal_somelowlifes(st, big_session):
     g = LONGEST_GAP
-    return (f"After a {g['days']}-day silence — the longest gap on record — "
+    return (f"After a {g['days']}-day silence, the longest gap on record, "
             f"the vault returned with {st['tx']} transmissions, the "
             f"second-biggest output of any era: {big_session['track_count']} "
             f"transmissions across {big_session['days']} days, the most "
@@ -177,13 +177,13 @@ def signal_somelowlifes(st, big_session):
 
 
 def signal_silence(st):
-    return (f"{st['tx']} transmissions, {st['dist']} distributor releases — "
+    return (f"{st['tx']} transmissions, {st['dist']} distributor releases; "
             f"the first fully dark distributor year since 2018. "
             f"The reason is unknown and not speculated here.")
 
 
 def signal_return(st, latest):
-    return (f"Six singles, March–May 2026, all marked explicit on iHeart — "
+    return (f"Six singles, March–May 2026, all marked explicit on iHeart: "
             f"the ritual resumes. Latest transmission on record: "
             f"\u201c{latest['title']}\u201d, {latest['date']}.")
 
