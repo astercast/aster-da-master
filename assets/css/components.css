@@ -50,10 +50,11 @@
   display: inline-block;
   width: 7px; height: 7px;
   border-radius: 50%;
+  /* The one accent, as a signal light: only a live dot is red. */
   background: var(--neon);
-  box-shadow: 0 0 8px var(--neon);
   flex-shrink: 0;
 }
+.signal-dot.is-live { background: var(--live); }
 @media (prefers-reduced-motion: no-preference) {
   .signal-dot.is-live { animation: pulse-dot 2.2s ease-in-out infinite; }
 }
@@ -142,44 +143,34 @@
   margin: var(--space-5) 0 var(--space-6);
 }
 .hero-cta { display: flex; gap: var(--space-4); justify-content: flex-start; flex-wrap: wrap; }
-.hero-scroll {
-  position: absolute;
-  bottom: var(--space-6);
-  left: 50%;
-  transform: translateX(-50%);
-  font-family: var(--font-mono);
-  font-size: 0.66rem;
-  letter-spacing: 0.12em;
-  color: var(--muted);
-  text-transform: uppercase;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: var(--space-2);
-}
-
-/* ---------- Wire — the headline strip, static (rotation 20).
-   The ticker roll is retired; every item prints in one wrapped
-   text line, readable at rest. ---------- */
+/* ---------- Wire — the latest transmissions as ONE quiet set
+   line (rotation 21). Rotation 20 retired the ticker roll but
+   left the items wrapping in ragged rows with /// separators —
+   raw data presented as design. Now: a single line, one
+   separator, titles in the data register, no field of its own —
+   the line sits in whitespace under the hero, unbordered. The
+   full latest list lives in the Fresh section below; the wire
+   is its one-line index, and overflow simply ends the line. -- */
 .wire {
-  border-block: 1px solid var(--line-soft);
-  background: var(--bg-soft);
   position: relative;
   z-index: 1;
 }
 .wire-track {
   display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-3) var(--space-6);
+  flex-wrap: nowrap;
+  gap: var(--space-3) var(--space-4);
   width: min(1180px, 100% - var(--space-5) * 2);
   margin-inline: auto;
   padding: var(--space-3) 0;
   font-family: var(--font-mono);
   font-size: 0.76rem;
   letter-spacing: 0.02em;
-  color: var(--ink-dim);
+  color: var(--muted);
+  white-space: nowrap;
+  overflow: hidden;
 }
-.wire-track b { color: var(--ink); font-weight: 600; }
+.wire-track .w-item { overflow: hidden; text-overflow: ellipsis; }
+.wire-track b { color: var(--ink-dim); font-weight: 500; }
 .wire-track .w-sep { color: var(--muted); }
 
 /* ---------- Release feature ---------- */
@@ -1192,7 +1183,7 @@ html.js .reveal.in { opacity: 1; transform: none; }
 
 /* ---------- Print ---------- */
 @media print {
-  .site-header, .site-footer, .pk-toolbar, .skip-link, .hero-scroll, .wire, .mnav { display: none !important; }
+  .site-header, .site-footer, .pk-toolbar, .skip-link, .wire, .mnav { display: none !important; }
   body { background: #fff; color: #111; }
   body::before, body::after { display: none; }
   h1, h2, h3, h4 { color: #111; }

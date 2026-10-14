@@ -35,7 +35,11 @@
   --gold: #767676;
   --gold-bright: #454545;
   --gold-ink: #ffffff;          /* text on gray fills */
-  --live: #141414;              /* the status dot, plain ink now */
+  /* Rotation 21: the site's ONE accent — a quiet signal red,
+     spent like a signal light and nowhere else: the on-air dot
+     and the live signal dot. Nothing else may take this colour;
+     every other emphasis on the site is ink, weight, or space. */
+  --live: #b3402a;
   --alert: #b00020;             /* functional only: errors, stale-data markers */
 
   /* Shape — square */
@@ -50,10 +54,13 @@
   --font-body: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
   --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 
-  /* Fluid type scale — calmer: the hero is a title, not a shout */
-  --fs-hero: clamp(2.1rem, 6vw, 3.3rem);
-  --fs-1: clamp(1.65rem, 4vw, 2.3rem);
-  --fs-2: clamp(1.3rem, 2.8vw, 1.75rem);
+  /* Fluid type scale — Rotation 21: the steps are pulled apart
+     so the scale itself carries the hierarchy (display / section /
+     body / data are unmistakable at a glance) instead of hairline
+     rules doing that work. One family throughout: the mono. */
+  --fs-hero: clamp(2.6rem, 6.5vw, 4rem);
+  --fs-1: clamp(1.9rem, 4.2vw, 2.75rem);
+  --fs-2: clamp(1.35rem, 2.8vw, 1.8rem);
   --fs-3: clamp(1.05rem, 2vw, 1.2rem);
   --fs-body: 0.97rem;
   --fs-small: 0.84rem;

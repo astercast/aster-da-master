@@ -115,8 +115,10 @@
 }
 
 /* ---- hero sign-on ---- */
-.hero-signon .hero-kicker {
-  color: var(--neon-dim);
+/* Rotation 21: headline + subline + one action + the evidence
+   line, and nothing else — the rest is whitespace. */
+.hero-signon {
+  padding-bottom: var(--space-9);
 }
 .hero-stats {
   margin-top: var(--space-5);
@@ -181,14 +183,16 @@
 }
 .room-card {
   position: relative;
-  border: 1px solid var(--line);
+  /* Rotation 21: rooms are fields of space on the page, not
+     boxes — the tint carries the grouping, no border does. */
+  border: 0;
   border-radius: var(--radius-m);
-  background: var(--panel);
+  background: var(--bg-soft);
   padding: var(--space-6) var(--space-5);
-  transition: border-color var(--dur-2) var(--ease), transform var(--dur-2) var(--ease);
+  transition: background var(--dur-2) var(--ease), transform var(--dur-2) var(--ease);
 }
 .room-card:hover {
-  border-color: var(--ink-dim);
+  background: var(--panel-2);
 }
 .room-card .kicker {
   color: var(--neon-dim);
@@ -251,9 +255,9 @@
   align-items: center;
   justify-content: space-between;
   gap: var(--space-6);
-  border: 1px solid var(--line);
+  border: 0;
   border-radius: var(--radius-m);
-  background: var(--panel);
+  background: var(--bg-soft);
   padding: var(--space-6);
   flex-wrap: wrap;
 }
@@ -271,9 +275,12 @@
 
 /* ---- the station log: closed drawers ---- */
 .log-drawer {
-  border: 1px solid var(--line);
-  border-radius: var(--radius-m);
-  background: var(--bg-soft);
+  /* Rotation 21: the station log reads as a set index — one
+     hairline above each entry, space between entries, no box. */
+  border: 0;
+  border-top: 1px solid var(--line);
+  border-radius: 0;
+  background: transparent;
   margin-bottom: var(--space-3);
 }
 .log-drawer > summary {
@@ -307,7 +314,7 @@
 }
 .log-drawer[open] > summary {
   border-bottom: 1px dotted var(--line);
-  border-radius: var(--radius-m) var(--radius-m) 0 0;
+  border-radius: 0;
 }
 .log-drawer[open] > summary .kicker {
   color: var(--neon);

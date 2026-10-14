@@ -66,8 +66,14 @@ NAV = [
 ]
 
 # The front-desk doors: the few links a first-time visitor reads at a
-# glance (the homepage renders its own short form of these — see
-# HOME_NAV). Must be a subset of NAV (asserted below).
+# glance. Rotation 21: these five are now THE primary nav on every
+# page — primary_nav_html renders this list, never the full variant
+# registry. The full registry survives intact as the FOOTER nav on
+# every page (footer_entries derives from VARIANTS below), so no
+# destination is delisted: every door removed from the header
+# remains reachable by a labelled path in the footer, and the
+# homepage's station-index dialog keeps its own full grouping.
+# Must be a subset of NAV (asserted below).
 PRIMARY_NAV = [
     ("transmission.html", "Transmission"),
     ("tuner.html", "Tuner"),
@@ -251,9 +257,12 @@ HOME_NAV = [
     ("scene-atlas.html", "Atlas"),
     ("releases/", "Archive"),
     ("scene/", "Scene"),
-    ("#rooms", "Rooms"),
 ]
-HOME_MOBILE_EXTRA = [("#log", "Station log")]
+# Rotation 21: the mobile panel mirrors the primary five exactly —
+# no extra doors in the small viewport. The Rooms and Station log
+# sections themselves stay on the homepage, one scroll away, and
+# every header door they carried remains in the footer below.
+HOME_MOBILE_EXTRA = []
 HOME_FOOTER = [
     ("#top", "Top"),
     ("transmission.html", "Transmission"),
@@ -278,16 +287,11 @@ HOME_FOOTER = [
     ("method.html", "Method"),
     ("changelog.html", "Changelog"),
 ]
-PRESSKIT_NAV = _seq(
-    "Discography", "Releases", "Scene", "Timeline", "Chronicle",
-    "Transmission", "Tuner", "Atlas", "Network", "Race", "Decoder",
-    "API", "Agents", "Years", "Method", "Trilogy", "Sessions",
-    "Changelog", "Glance",
-)
-# the Home door sits mid-list in the shipped press-kit nav, after
-# Trilogy and before Sessions:
-PRESSKIT_NAV = (PRESSKIT_NAV[:16] + [("@home", "Home")]
-                + PRESSKIT_NAV[16:])
+# Rotation 21: the press kit's header carries the same five
+# front-desk doors as every other page; its footer (below) keeps
+# the kit's own short list, and the full registry stays in the
+# footer of every other page.
+PRESSKIT_NAV = list(PRIMARY_NAV)
 PRESSKIT_FOOTER = [
     ("@home", "Home"),
     ("years/", "Years"),
@@ -390,10 +394,13 @@ def footer_entries(variant, drop_extra=()):
 
 
 def primary_nav_html(current, prefix="", variant="standard"):
-    """The primary nav's inner HTML. `current` is the page's own logical
-    href (e.g. "transmission.html") or None; `prefix` is "../" per
-    directory depth."""
-    return _render(VARIANTS[variant], prefix, current, "        ")
+    """The primary nav's inner HTML: the five front-desk doors
+    (PRIMARY_NAV) on every page, whatever the variant. `current` is
+    the page's own logical href (e.g. "tuner.html") or None;
+    `prefix` is "../" per directory depth. The variant registry
+    still drives the FOOTER (footer_nav_html), where the full set
+    of doors remains — header economy, never delisting."""
+    return _render(PRIMARY_NAV, prefix, current, "        ")
 
 
 def footer_nav_html(current="", prefix="", variant="standard",

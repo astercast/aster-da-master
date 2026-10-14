@@ -6,41 +6,30 @@
    Static texture lives on the hero band only, and stays faint.
    ============================================================ */
 
-.tuner-hero { position: relative; overflow: hidden; }
-.tuner-hero::before {
-  content: ""; position: absolute; inset: 0; pointer-events: none; opacity: .05;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='0.9'/%3E%3C/svg%3E");
-}
-.tuner-hero::after {
-  content: ""; position: absolute; inset: 0; pointer-events: none;
-  background: repeating-linear-gradient(0deg, transparent 0 3px, rgba(0,0,0,var(--scan-alpha)) 3px 4px);
-  opacity: .18;
-}
-.tuner-hero > .container { position: relative; z-index: 1; }
+/* Rotation 21: the hero is a title and one line, then the tool.
+   The noise texture and scanline field are gone — the surface
+   is paper and space. The deck section starts immediately. */
+.tuner-hero { position: relative; padding-top: calc(68px + var(--space-7)); padding-bottom: 0; }
+.tuner-deck-section { padding-top: var(--space-6); }
 .tuner-title {
   font-family: var(--font-display); font-weight: 400; letter-spacing: .01em;
   font-size: var(--fs-hero); line-height: .92; margin: var(--space-3) 0 var(--space-4);
   text-transform: uppercase;
 }
 .tuner-title .tuner-title-dim { color: var(--muted); }
-.onair { display: inline-flex; align-items: center; gap: var(--space-2); color: var(--live);
+.onair { display: inline-flex; align-items: center; gap: var(--space-2); color: var(--ink-dim);
   letter-spacing: var(--track-broadcast); font-size: var(--fs-micro); text-transform: uppercase; }
-.onair i { width: 8px; height: 8px; border-radius: 50%; background: var(--live);
-  box-shadow: 0 0 12px rgba(255,84,104,.8); }
-.tuner-lede { max-width: 56ch; color: var(--ink-dim); font-size: var(--fs-3); line-height: 1.5; }
-.tuner-lede strong { color: var(--ink); font-weight: 600; }
-.tuner-stats { display: flex; flex-wrap: wrap; gap: var(--space-2) var(--space-6); margin-top: var(--space-6);
-  padding-top: var(--space-4); border-top: 1px solid var(--line); }
-.tuner-stats div { display: flex; flex-direction: column; gap: 2px; }
-.tuner-stats b { font-family: var(--font-display); font-weight: 400; font-size: var(--fs-2); color: var(--neon); }
-.tuner-stats span { font-size: var(--fs-micro); letter-spacing: var(--track-label);
-  text-transform: uppercase; color: var(--muted); }
+.onair i { width: 8px; height: 8px; border-radius: 50%; background: var(--live); }
+.tuner-lede { max-width: 56ch; color: var(--ink-dim); font-size: var(--fs-3); line-height: 1.5; margin-bottom: 0; }
+/* The catalog totals as one quiet data line — the manifest
+   register, not five display blocks above the tool. */
+.tuner-stats-line { margin-top: var(--space-5); color: var(--muted); font-size: var(--fs-small);
+  letter-spacing: var(--track-label); }
 
-/* QA-007: the heading ladder was promoted (title h2->h1, section
-   headings h3->h2, transmission card title h3->h2). Class-sized
-   headings (.tuner-title, .tx-title) are unaffected; this pins the
-   unclassed section headings to their pre-promotion h3 scale. */
-h2 { font-size: var(--fs-3); letter-spacing: .02em; }
+/* Rotation 21: section headings take their true scale step
+   (the old rule pinned every h2 on this page to the h3 step,
+   flattening the ladder the tokens now separate). */
+h2 { font-size: var(--fs-2); letter-spacing: .02em; }
 
 /* ---- the deck ---- */
 .tuner-deck { border: 1px solid var(--line); background: var(--panel); }

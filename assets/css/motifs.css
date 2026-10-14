@@ -88,7 +88,8 @@ th {
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background: var(--ink);
+  /* The one accent on the site, spent here: the signal light. */
+  background: var(--live);
   flex-shrink: 0;
 }
 

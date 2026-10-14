@@ -606,7 +606,7 @@
         }).slice(0, 8);
         var items = latest.map(function (r) {
           return '<span class="w-item"><b>' + esc(r.title || "") + "</b> · " + esc(r.date || "") + "</span>";
-        }).join('<span class="w-sep">///</span>');
+        }).join('<span class="w-sep" aria-hidden="true">·</span>');
         wire.innerHTML = items;
       }
 
