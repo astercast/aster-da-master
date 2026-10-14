@@ -278,3 +278,22 @@ body.layer2 .data-table td.num { text-align: right; font-variant-numeric: tabula
 @media (prefers-reduced-motion: reduce) {
   body.layer2 .stat, body.layer2 .year-card { transition: none; }
 }
+
+/* Rotation 28 (VP-0034), phone widths only: layout.css now carries
+   the fixed-header clearance on main (63px at <=900px), so the
+   68px container offset above is handed back here to avoid a
+   double offset. The masthead also steps down at phone widths:
+   at the desktop step (2.7rem floor) a long single word
+   (SomeLowLifes, 12 mono glyphs) was wider than the phone
+   container and its ink spilled 40px past its box. */
+@media (max-width: 900px) {
+  body.layer2 main > .container { padding-top: 0; }
+}
+@media (max-width: 760px) {
+  body.layer2 .container > .section:first-of-type h1,
+  body.layer2 .container > .section:first-of-type h2,
+  body.layer2 .page-title {
+    font-size: clamp(1.9rem, 9vw, 2.7rem);
+    overflow-wrap: anywhere;
+  }
+}

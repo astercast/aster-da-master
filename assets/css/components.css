@@ -1308,10 +1308,60 @@
   .disco-grid { grid-template-columns: 1fr 1fr; gap: var(--space-3); }
   .disco-card { padding: var(--space-4); }
   .disco-card h3 { font-size: 1rem; }
-  .stat-grid { grid-template-columns: 1fr 1fr; }
+  /* Rotation 28 (VP-0034): plain 1fr tracks are minmax(auto, 1fr) —
+     their minimum is the widest stat's min-content, so the two
+     tracks measured 170px each (352px of grid in a 272px column)
+     and the second column painted past the viewport on glance and
+     chronicle. The tracks may now shrink below min-content; the
+     stat values already wrap anywhere. */
+  .stat-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  /* …and the stat labels follow the tracks down: at 0.2em tracking
+     a long label word (TRANSMISSIONS, COLLABORATIONS) is wider
+     than the halved card and spilled its ink past the card edge.
+     Tracking tightens and the label may wrap mid-word rather than
+     paint outside its box. */
+  .stat-label { letter-spacing: 0.08em; overflow-wrap: anywhere; }
   .hero-cta .btn { width: 100%; }
   .nw-insights { grid-template-columns: 1fr 1fr; }
   .nw-control input[type="range"] { width: 7rem; }
+}
+
+/* ---------- Rotation 28 (VP-0034): phone-width overflow repairs ----------
+   Every rule below is inside a max-width query: desktop rendering
+   is untouched. The shared defect: grid tracks and flex rows whose
+   minimum was a long unbreakable token's min-content (file paths
+   and URLs set in prose), which expanded the phone layout viewport
+   and pushed whole columns past the right edge. */
+@media (max-width: 860px) {
+  /* changelog: the list's single implicit track measured 448px —
+     the widest entry's min-content — so all 871 entries painted
+     +152px past a 320px viewport. The track is capped at the
+     column, entries shrink, and path tokens may break anywhere. */
+  .cl-list { grid-template-columns: minmax(0, 1fr); }
+  .cl-entry { grid-template-columns: minmax(0, 1fr); overflow-wrap: anywhere; }
+  .cl-entry > div { min-width: 0; }
+  /* method + circle: fact-list rows carried the same min-content
+     defect (a records URL set the track at 351px / 330px). */
+  .fact-list { grid-template-columns: minmax(0, 1fr); }
+  .fact-list li { min-width: 0; overflow-wrap: anywhere; }
+  /* network: the controls fieldset is sized by its widest control
+     (label + range + era readout on one unwrapped line, 351px). */
+  .nw-controls { min-width: 0; }
+  .nw-control { min-width: 0; flex-wrap: wrap; }
+  .nw-control input[type="range"] { max-width: 100%; }
+  #nw-era-label { min-width: 0; }
+}
+@media (max-width: 720px) {
+  /* milestone race: the methodology line's formula tokens
+     (pace_per_day …) spilled 38px of ink past their box. */
+  #mr-method { overflow-wrap: anywhere; }
+  /* release tracklists: a slash-joined title token
+     (waiting/tunnel) would not shrink, and pushed the timing
+     span past the right edge. Rows may wrap; the timing drops
+     under the title, right-aligned, whole. */
+  .tracks li { flex-wrap: wrap; }
+  .tracks .t-title { min-width: 0; overflow-wrap: anywhere; }
+  .tracks .t-time { margin-left: auto; }
 }
 
 /* ---------- Reduced motion: kill the rest ---------- */
@@ -1470,7 +1520,20 @@
 
 @media (max-width: 720px) {
   .se-insights { grid-template-columns: 1fr 1fr; }
-  .se-gap a { grid-template-columns: minmax(7rem, 9rem) 1fr auto; }
+  /* Rotation 28 (VP-0034): the gap row restacks at phone widths.
+     The old three-column row capped the label track at 9rem
+     (144px) while the label is 161px of nowrap text in a hidden-
+     overflow box — all 60 labels were clipped mid-string at both
+     phone widths. Now the label takes the full row (and may wrap),
+     and the bar + day count share the row under it. */
+  .se-gap a {
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-areas: "label label" "bar days";
+    row-gap: 2px;
+  }
+  .se-gap-label { grid-area: label; white-space: normal; overflow: visible; text-overflow: clip; }
+  .se-gap-barwrap { grid-area: bar; }
+  .se-gap-days { grid-area: days; }
   .se-cards { grid-template-columns: 1fr; }
 }
 @media (max-width: 560px) {
@@ -1516,8 +1579,17 @@
 .se-scrub-card { max-width: 44rem; }
 
 @media (max-width: 720px) {
-  .se-deep-row { grid-template-columns: 2.4rem 1fr; gap: var(--space-3); }
+  /* Rotation 28 (VP-0034): the rank column steps up from 2.4rem —
+     a two-digit rank ("#10", ~46px of display type) spilled 10px
+     past the 38px column. 3rem holds it whole. */
+  .se-deep-row { grid-template-columns: 3rem minmax(0, 1fr); gap: var(--space-3); }
   .se-compare-controls .se-control select { min-width: 0; width: 100%; }
+  /* compare profiles: the minmax(300px, 1fr) track could not
+     shrink to a 272px column; the cards painted +4px past it.
+     This rule sits in this block because the profiles' base rule
+     lives in the 2.0 section above — an earlier media block with
+     the same specificity would lose to it. */
+  .se-cmp-profiles { grid-template-columns: minmax(0, 1fr); }
 }
 
 @media (prefers-reduced-motion: reduce) {

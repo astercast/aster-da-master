@@ -256,6 +256,20 @@
   .mnav { display: block; }
   .section { padding-block: var(--space-7); }
   .header-bar { height: 62px; gap: var(--space-3); }
+  /* Rotation 28 (VP-0034): the fixed header (62px bar + 1px border
+     at this width) painted over the first content of every page
+     that did not carry its own offset — page h1s, breadcrumbs and
+     toolbars started at the top of the document, underneath it
+     (60 painted overlaps at 320 and at 390). The clearance now
+     lives once, on main, at phone widths only; the desktop
+     header/content relationship is untouched. The two surfaces
+     that already carried the 68px desktop offset in their own
+     padding (the home hero, the Tuner hero) hand it back here so
+     nothing is offset twice; layer 2 pages do the same in
+     layer2.css, which owns their container rule. */
+  main { padding-top: 63px; }
+  main .hero { padding-top: var(--space-8); }
+  main .tuner-hero { padding-top: var(--space-7); }
 }
 
 /* Rotation 22 fix (Panel 127): the mobile header row (brand +

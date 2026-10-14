@@ -138,6 +138,51 @@ input[type="range"].dial::-moz-range-thumb { width: 18px; height: 34px; backgrou
   .dial-log th, .dial-log td { padding: var(--space-2) var(--space-3); }
   .dial-log td.src, .dial-log th.src { display: none; }
 }
+/* Rotation 28 (VP-0034): the dial log as a stacked phone form.
+   The desktop table rendered 431px wide at 320px and the root
+   clipped it — the right ~111px, Plays included, was invisible,
+   not scrolled. At 560px and under each stop becomes one stacked
+   entry: the title on its own line, then stop, date, format,
+   plays and the page link as one data line under it. Every
+   column's data is present and reachable; nothing is cut. (The
+   760px rule above hides the Page column — this form restores it
+   as part of the stacked data line.) */
+@media (max-width: 560px) {
+  .dial-log thead { display: none; }
+  .dial-log table, .dial-log tbody { display: block; width: 100%; }
+  .dial-log tbody tr {
+    display: block;
+    padding: var(--space-3);
+    border-top: 1px solid var(--line-soft);
+  }
+  .dial-log td {
+    display: inline;
+    padding: 0;
+    border: 0;
+    font-size: var(--fs-micro);
+    letter-spacing: var(--track-label);
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .dial-log td + td { margin-left: var(--space-3); }
+  .dial-log td.n, .dial-log td.p { text-align: left; }
+  .dial-log td:nth-child(2) {
+    display: block;
+    margin: 2px 0;
+    font-size: var(--fs-small);
+    letter-spacing: 0;
+    text-transform: none;
+    color: var(--ink-dim);
+  }
+  .dial-log td.src, .dial-log th.src { display: inline; }
+  .dial-log td[colspan] {
+    display: block;
+    font-size: var(--fs-small);
+    letter-spacing: 0;
+    text-transform: none;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .tuner-needle, .tuner-progress i { transition: none; }
 }
