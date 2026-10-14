@@ -220,17 +220,17 @@ HEAD = """<!DOCTYPE html>
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{title} — Aster da Master</title>
+  <title>{title} · Aster da Master</title>
   <meta name="description" content="{desc}">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="{title} — Aster da Master">
+  <meta property="og:title" content="{title} · Aster da Master">
   <meta property="og:description" content="{desc}">
   <link rel="canonical" href="{canonical}">
   <meta property="og:image" content="../assets/og-card.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="{title} — Aster da Master">
+  <meta name="twitter:title" content="{title} · Aster da Master">
   <meta name="twitter:description" content="{desc}">
   <meta name="twitter:image" content="../assets/og-card.png">
   <link rel="preload" href="../assets/fonts/anton-latin.woff2" as="font" type="font/woff2" crossorigin>
@@ -467,7 +467,14 @@ def era_page(e, idx, n_eras, entries, collabs, families, summary):
       </section>
 """)
 
-    title = f"{e['name']} — era deep dive"
+    # Rotation 23 fittings (§5.7 repair 5, QA r72): the era pages' last
+    # U+2014 lived in the title apparatus — this string plus the HEAD
+    # template's "{title} — Aster da Master" (3 slots × 2 dashes = the
+    # 6 per page QA counted). Both are authored, so both are swept at
+    # the source to the site's own middot title grammar (cf. release
+    # pages: "1 my fault · Aster da Master"). Presented copy: zero em
+    # dashes on the era pages after this.
+    title = f"{e['name']} · era deep dive"
     desc = (f"{e['name']} ({e['span']}): {e['transmissions']} transmissions, "
             f"{fmt(e['plays'])} plays. The era deep dive, from the archive.")
     # Rotation 15 guard: the suffix lives in `title` alone (the sibling
@@ -475,7 +482,8 @@ def era_page(e, idx, n_eras, entries, collabs, families, summary):
     # the site name, so a doubled suffix can never ship again.
     page = (HEAD.format(title=escape(title), desc=escape(desc), canonical=f"/eras/{e['id']}.html")
             + "".join(parts) + FOOT)
-    assert "era deep dive — era deep dive" not in page, "doubled era title suffix"
+    assert "era deep dive · era deep dive" not in page, "doubled era title suffix"
+    assert "—" not in page.split("</head>")[0], "em dash in era page head"
     return page
 
 SCHEMA = {

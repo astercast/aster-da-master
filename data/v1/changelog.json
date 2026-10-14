@@ -1,8 +1,20 @@
 {
   "generated": "2026-10-11",
   "method": "Parsed from `git log main`: every commit becomes an entry. The site documenting its own becoming.",
-  "entry_count": 167,
+  "entry_count": 169,
   "entries": [
+    {
+      "hash": "eb14d56",
+      "date": "2026-10-14",
+      "message": "Rotation 23 fittings, dash sweep completed (ASTER §5.7 repair 5, QA r72): the era pages' last U+2014 stood in the title apparatus, not the body — build_eras title string plus the HEAD template's site-name separator, 3 slots x 2 dashes = the 6 per page QA counted; swept at the source to the site's middot title grammar (era titles now 'The First Rite · era deep dive · Aster da Master'), with a generator assert barring em dashes from era page heads; era pages scan 0 U+2014 (was 6 per page, 36 total)",
+      "files_changed": 7
+    },
+    {
+      "hash": "3d4ab09",
+      "date": "2026-10-14",
+      "message": "changelog sync (post-validation)",
+      "files_changed": 3
+    },
     {
       "hash": "7854be7",
       "date": "2026-10-14",
