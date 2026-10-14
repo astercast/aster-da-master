@@ -288,6 +288,14 @@ body.layer2 .data-table td.num { text-align: right; font-variant-numeric: tabula
    container and its ink spilled 40px past its box. */
 @media (max-width: 900px) {
   body.layer2 main > .container { padding-top: 0; }
+  /* Rotation 29 (S6): the producers' alphabetical index links
+     measured 27 x 32px (31 in the measured set) — a navigation
+     strip, not prose. Each letter now stands 44px square,
+     centred, inside the strip's existing bordered cell form. */
+  body.layer2 .alpha-nav a {
+    min-height: 44px; min-width: 44px;
+    display: flex; align-items: center; justify-content: center;
+  }
 }
 @media (max-width: 760px) {
   body.layer2 .container > .section:first-of-type h1,

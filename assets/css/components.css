@@ -1745,3 +1745,74 @@
 @media (max-width: 720px) {
   .api-badge { font-size: 0.62rem; }
 }
+
+/* ---------- Rotation 29 (S6): sub-44 phone tap floors ----------
+   Phone widths only (max-width: 900px); no base rule is edited and
+   no desktop geometry changes. The classes fixed here are the
+   measured worst offenders that are controls, navigation, or
+   structured list rows — never inline prose links, never table
+   cell links, never the dense ledger lines (named in the landing
+   record, not forced). Growth is padding/min-height on the
+   existing elements only: no new chrome, no new visual weight.
+   For the flex list rows the padding moves from the row to the
+   link itself (the row keeps its exact pitch; the link fills it). */
+@media (max-width: 900px) {
+  /* small buttons everywhere (year pagers, explorer toggles,
+     filter and copy actions): 36.5px tall at base. The disco
+     filter row already carried this floor from rotation 24. */
+  .btn-sm { min-height: 44px; }
+  /* segmented chips (Tuner, scene atlas): 40.2px tall at base. */
+  .chip { min-height: 44px; }
+  /* chronicle voice cross-link buttons: 27.9px tall pills in a
+     discrete control row; they stand square-centred at 44. */
+  .ch-xlink { min-height: 44px; min-width: 44px; display: inline-flex; align-items: center; justify-content: center; }
+  /* playground tabs: 43.6px at base. */
+  .pg-tab { min-height: 44px; }
+  /* every summary is a full-row toggle (producer folds, era
+     deep-dives, network folds): 42.9px at base on the folds. */
+  summary { min-height: 44px; }
+  /* sessions-explorer season chips: the session-number links
+     inside the bordered chips measured 21 x 20px; the link now
+     fills a 44px square inside its chip. */
+  .se-chips li a { display: inline-flex; min-width: 44px; min-height: 44px; align-items: center; justify-content: center; }
+  /* in-page jump navigation + era pagers: standalone nav links
+     on their own ruled rows. */
+  .mr-jumpnav a { min-height: 44px; display: flex; align-items: center; }
+  .year-pager a { min-height: 44px; display: flex; align-items: center; }
+  /* chronicle row link lines: a flex row of standalone links
+     under each stream entry (202 in the measured set). */
+  .ch-links a { min-height: 44px; min-width: 44px; display: flex; align-items: center; }
+  /* form fields: text/search inputs and selects measured
+     29–43.6px tall (head-to-head selects 29px, explorer fields
+     39.8px, chronicle fields 41.8–43px). Native checkboxes,
+     radios and range sliders are excluded on purpose: their
+     labels are the operative surface and a 44px native control
+     would distort the inline label rows they sit in. */
+  input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="hidden"]),
+  select, textarea { min-height: 44px; }
+  /* structured list rows: the row's own vertical padding moves
+     onto its link, so the link fills the row it already owned
+     and the row pitch does not change (release/year/top lists),
+     or grows by the 3px the floor needs (session tracks). The
+     links keep their natural display, and carry no min-width:
+     an explicit min-width on a flex item replaces its automatic
+     content minimum, so the row shrank long titles under their
+     own text and spilled the ink over the row's date span
+     (caught by the full instrument's first after-run: 66
+     painted overlaps and 86 ink spills at 320, all in these
+     rows; both attempts are recorded in the landing record).
+     The few list links whose word itself is under 44px wide
+     stay counted and are named there. */
+  .release-list li, .year-list li, .top-list li { padding-block: 0; }
+  .release-list li > a, .year-list li > a, .top-list li > a {
+    min-height: 44px; padding-block: var(--space-3);
+  }
+  .session-tracks li { padding-block: 0; }
+  .session-tracks li > a {
+    min-height: 44px; padding-block: var(--space-2);
+  }
+  .tl-years li { padding-block: 0; }
+  .tl-years li > a {
+    min-height: 44px; min-width: 44px; padding-block: var(--space-2);
+  }
+}

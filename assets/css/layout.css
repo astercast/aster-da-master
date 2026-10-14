@@ -270,6 +270,17 @@
   main { padding-top: 63px; }
   main .hero { padding-top: var(--space-8); }
   main .tuner-hero { padding-top: var(--space-7); }
+  /* Rotation 29 (S6): sub-44 phone tap floors for the site's two
+     standing navigation rows. The footer map is the complete
+     registry (the header carries five doors only); its links
+     measured 29 x 21px as flex items, 1,135 sub-44 targets across
+     the 64-page measured set. Breadcrumb links measured the same
+     way (72). Both rows are navigation, not prose: each link now
+     stands 44px tall inside its own row, centred on its text.
+     No desktop rule is touched; the desktop primary nav is not
+     selected here or anywhere in this pass. */
+  .footer-grid nav a { min-height: 44px; min-width: 44px; display: flex; align-items: center; justify-content: center; }
+  .crumbs a { min-height: 44px; min-width: 44px; display: flex; align-items: center; justify-content: center; }
 }
 
 /* Rotation 22 fix (Panel 127): the mobile header row (brand +

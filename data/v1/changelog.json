@@ -1,8 +1,20 @@
 {
   "generated": "2026-10-11",
   "method": "Parsed from `git log main`: every commit becomes an entry. The site documenting its own becoming.",
-  "entry_count": 174,
+  "entry_count": 176,
   "entries": [
+    {
+      "hash": "c628217",
+      "date": "2026-10-14",
+      "message": "Rotation 29 (S6): sub-44 phone tap-target pass — 44px floors for footer map, breadcrumbs, skip link, small buttons, chips, chronicle cross-links, summaries, form fields, season chips, jump/pagers, alpha index, and structured list rows via padding transfer; phone widths only (max-width 900px), desktop untouched",
+      "files_changed": 5
+    },
+    {
+      "hash": "7f87a07",
+      "date": "2026-10-14",
+      "message": "changelog sync (post-validation)",
+      "files_changed": 3
+    },
     {
       "hash": "34d2bbd",
       "date": "2026-10-14",

@@ -162,6 +162,14 @@ tr:hover td { color: var(--ink); }
 ::-webkit-scrollbar-thumb { background: var(--line); border-radius: 5px; border: 2px solid var(--bg); }
 ::-webkit-scrollbar-thumb:hover { background: var(--neon-deep); }
 
+/* Rotation 29 (S6): the skip link measured 168 x 37.7px at phone
+   widths (one per page, 64 in the measured set). At phone widths
+   it stands 44px tall when it lands on focus; its off-canvas
+   resting place (top: -56px) still clears the taller box. */
+@media (max-width: 900px) {
+  .skip-link { min-height: 44px; display: inline-flex; align-items: center; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after {

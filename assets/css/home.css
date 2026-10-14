@@ -530,3 +530,12 @@
   .log-drawer .top-list li { flex-wrap: wrap; }
   .log-drawer .top-list li > span { min-width: 0; }
 }
+
+/* Rotation 29 (S6): phone tap floors for the home page's two
+   standalone controls — the station-index button (40.2px tall at
+   base) and the session unit titles (27.7px, each on its own
+   head line). Phone widths only. */
+@media (max-width: 900px) {
+  .index-btn { min-height: 44px; }
+  .unit-title { min-height: 44px; display: inline-flex; align-items: center; }
+}
