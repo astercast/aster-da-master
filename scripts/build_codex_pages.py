@@ -200,7 +200,7 @@ def family_collaborators(fam):
     for slug, c in CIRCLE.items():
         tr = [t for t in c["tracks"] if (t["title"], t["date"]) in keys]
         if tr:
-            assert (ROOT / c["page"]).exists(), f"missing circle page {c['page']}"
+            assert (ROOT / c["page"].split("#")[0]).exists(), f"missing circle page {c['page']}"
             rows.append({"slug": slug, "name": c["name"], "page": c["page"],
                          "transmissions": len(tr),
                          "plays": sum(t.get("plays") or 0 for t in tr)})

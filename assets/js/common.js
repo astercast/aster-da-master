@@ -3,9 +3,8 @@
 (function () {
   "use strict";
 
-  /* Web-craft failure-mode rule: the finished (revealed) state is the CSS
-     default; the hidden pre-reveal state only applies when this script
-     actually runs. If this file fails to load, content stays visible. */
+  /* Rotation 22: no pre-reveal state exists anymore (see reveal()
+     below); content is visible whether or not this script runs. */
   document.documentElement.classList.add("js");
 
   function esc(s) {
@@ -59,20 +58,13 @@
       .replace(/^-+|-+$/g, "") || "page";
   }
 
-  /* Reveal on scroll (same pattern as site.js) */
-  function reveal() {
-    var els = document.querySelectorAll(".reveal");
-    if ("IntersectionObserver" in window) {
-      var obs = new IntersectionObserver(function (entries) {
-        entries.forEach(function (e) {
-          if (e.isIntersecting) { e.target.classList.add("in"); obs.unobserve(e.target); }
-        });
-      }, { threshold: 0.12 });
-      els.forEach(function (el) { obs.observe(el); });
-    } else {
-      els.forEach(function (el) { el.classList.add("in"); });
-    }
-  }
+  /* Reveal on scroll: REMOVED (rotation 22, ASTER-STUDY §8.5). The
+     uniform reveal system is abolished, not retimed: every surface is
+     present in residence at its resting values, so there is nothing
+     to reveal. ADM.reveal stays as a no-op because older page scripts
+     still call it; it now does exactly what the pages need, which is
+     nothing. */
+  function reveal() {}
 
   window.ADM = { esc: esc, parseCollabs: parseCollabs, loadData: loadData, spanYears: spanYears, fmt: fmt, reveal: reveal, slugify: slugify };
 })();

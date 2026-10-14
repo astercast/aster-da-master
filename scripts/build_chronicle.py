@@ -54,7 +54,7 @@ def event_sort_key(e):
 MILESTONE_LINKS = {
     "first-distributor": [("Release page",
                             "releases/lost-memories-feat-aster-da-master.html")],
-    "first-collab": [("Circle page", "circle/jo-e-dripp.html")],
+    "first-collab": [("Circle record", "circle/index.html#c-jo-e-dripp")],
     "prolific-day": [("Session deep dive",
                       "sessions/the-november-3rd-12th-session.html")],
     "longest-silence": [("Gap visualization", "sessions-explorer.html")],

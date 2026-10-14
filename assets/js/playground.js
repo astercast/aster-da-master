@@ -47,7 +47,7 @@
     { id: "codex-network", path: "data/v1/codex-network.json",
       blurb: "The codex relationship graph: 16 word families as nodes, shared title-credited collaborators and title-parsed producers as edges, BFS degrees of separation from Aster, the family-overlap graph, and connect-the-dots shortest-path data. Drives codex-network.html." },
     { id: "producer-deepdives", path: "data/v1/producer-deepdives.json",
-      blurb: "Producer deep-dives: every as-credited producer (113) with credited productions (release/session links, co-producers, voices), codex family ties, a computed production fingerprint, and sourced research where a research pass exists. Drives producers/<slug>.html." },
+      blurb: "Producer records: every as-credited producer (113) with credited productions (release/session links, co-producers, voices), codex family ties, a computed production fingerprint, and sourced research where a research pass exists. Drives producers/, one page with a fold per producer." },
     { id: "chronicle", path: "data/v1/chronicle.json",
       blurb: "The Chronicle: one merged chronological stream — 61 upload sessions, 9 dated milestones, 44 title-credited collaboration appearances — with era assignment, release/circle/session cross-links, and collaborator tags. Drives chronicle.html." },
     { id: "signal-watch", path: "data/v1/signal-watch.json",

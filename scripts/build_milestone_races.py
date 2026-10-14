@@ -108,12 +108,12 @@ def release_page(page):
 
 
 def race_producers(title):
-    """As-credited producers of a racing track, each with its deep-dive page."""
+    """As-credited producers of a racing track, each with its record fold."""
     prods = []
     for name in parse_producers(title):
         slug = producer_slug(name)
-        page = f"producers/{slug}.html"
-        assert (ROOT / page).exists(), f"missing producer page {page}"
+        page = f"producers/index.html#p-{slug}"
+        assert (ROOT / page.split("#")[0]).exists(), f"missing producer page {page}"
         prods.append({"name": name, "slug": slug, "page": page})
     return prods
 

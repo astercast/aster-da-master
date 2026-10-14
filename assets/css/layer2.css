@@ -95,17 +95,9 @@ body.layer2 .stat-label, body.layer2 .stat-l {
   letter-spacing: var(--track-label); text-transform: uppercase; color: var(--muted);
 }
 
-/* ---- release hero: the transmission plate ---- */
-body.layer2 .release-hero {
-  grid-template-columns: 264px 1fr;
-  gap: var(--space-7);
-  padding-top: var(--space-5);
-  margin-top: 0;
-}
-body.layer2 .release-hero h1 {
-  font-size: clamp(2.4rem, 5.5vw, 4rem); line-height: .98; text-wrap: balance;
-}
-body.layer2 .release-hero .disco-art, body.layer2 .release-hero img {
+/* ---- the release poster (rotation 22): the artwork as a plate ---- */
+body.layer2 .poster { padding-top: var(--space-5); }
+body.layer2 .poster-art .disco-art, body.layer2 .poster-art img {
   border: 1px solid var(--line);
   outline: 1px solid var(--line-soft); outline-offset: 6px;
   border-radius: var(--radius-s);
@@ -274,7 +266,6 @@ body.layer2 .data-table td.num { text-align: right; font-variant-numeric: tabula
   body.layer2 .stat:nth-child(even), body.layer2 .stat-cell:nth-child(even) {
     border-left: 1px solid var(--line-soft);
   }
-  body.layer2 .release-hero { grid-template-columns: 1fr; gap: var(--space-5); }
   body.layer2 .release-meta { grid-template-columns: 1fr; gap: var(--space-1); }
   body.layer2 .release-meta dd { margin-bottom: var(--space-2); }
   body.layer2 dl.fact-list { grid-template-columns: 1fr; }

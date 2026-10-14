@@ -344,9 +344,11 @@ for f in families:
 CIRCLE_BY_NAME = {c["name"].lower(): (slug, c["page"])
                   for slug, c in CIRCLE.items()}
 
-# scene-figure page for Fish Narc (producer credit on "Soul Shaking")
-FISH_NARC_PAGE = "circle/fish-narc.html"
-assert (ROOT / FISH_NARC_PAGE).exists(), "missing fish-narc page"
+# scene-figure record for Fish Narc (producer credit on "Soul Shaking").
+# Rotation 22: the circle's per-person pages folded into the index;
+# the record lives at the fold anchor.
+FISH_NARC_PAGE = "circle/index.html#c-fish-narc"
+assert (ROOT / FISH_NARC_PAGE.split("#")[0]).exists(), "missing fish-narc page"
 
 # figure_defs: {fig_id: {name, kind, page, links: {fam_slug: [titles]}}}
 figure_defs = {}
@@ -356,7 +358,7 @@ collab_slugs = set()  # circle slugs title-credited on family tracks
 def ensure_figure(fig_id, name, kind, page):
     if fig_id not in figure_defs:
         if page is not None:
-            assert (ROOT / page).exists(), f"missing figure page {page}"
+            assert (ROOT / page.split("#")[0]).exists(), f"missing figure page {page}"
         figure_defs[fig_id] = {"name": name, "kind": kind, "page": page,
                                "links": defaultdict(list)}
     return figure_defs[fig_id]

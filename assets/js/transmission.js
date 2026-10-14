@@ -715,7 +715,7 @@
       srcLink("https://stereogum.com/2511545/fish-narc-big-dumb-world/music", "Stereogum (\u201cBig Dumb World\u201d)") + ", " +
       srcLink("https://consequence.net/music-albums-released-2026/", "Consequence") + ", " +
       srcLink("https://www.faygoluvers.net/v5/2026/09/fish-narc-announces-new-album-uncle-on-k-records/", "Faygoluvers") +
-      ". " + srcLink("circle/fish-narc.html", "The Uncle watch \u2192") + "</p></div></div>" +
+      ". " + srcLink("circle/index.html#c-fish-narc", "The Uncle watch \u2192") + "</p></div></div>" +
       '<div class="tx-block"><h3>capoxxo &mdash; active this fall</h3>' +
       '<div class="tx-mile"><span class="m-name">New activity off the vault\u2019s edge</span>' +
       '<p class="m-fact">\u201csmoke one right now\u201d ft. mayh3mp \u2014 official video ~Sept 13, 2026 (ASTARI EXCLUSIVE; video by mikester; prod. credited luvpurp &amp; nyli). ' +
@@ -727,7 +727,7 @@
       srcLink("https://cultlovesoundtapes.bandcamp.com/album/persona", "Cult Love Sound Tapes") + ", " +
       srcLink("https://www.songkick.com/artists/9749264-capoxxo", "Songkick") + ", " +
       srcLink("https://www.setlist.fm/setlists/capoxxo-53f3e735.html", "setlist.fm") +
-      ". " + srcLink("circle/capoxxo.html", "capoxxo\u2019s circle page \u2192") + "</p></div></div>" +
+      ". " + srcLink("circle/index.html#c-capoxxo", "capoxxo\u2019s circle record \u2192") + "</p></div></div>" +
       "</div>" +
       '<div class="tx-cols" style="margin-top:var(--space-6)">' +
       '<div class="tx-block"><h3>The Litemode Trilogy &mdash; still unconfirmed</h3>' +
@@ -816,7 +816,7 @@
     list.push({
       kind: "chapter", id: "chapter-horizon", hash: "chapter-horizon",
       label: "Data chapter", name: "The Horizon", span: "beyond the vault \u00b7 2026-10-11 research pass",
-      deepDive: { href: "circle/fish-narc.html", text: "Deep dive: the Uncle watch" },
+      deepDive: { href: "circle/index.html#c-fish-narc", text: "The record: the Uncle watch" },
       render: renderHorizon, brief: horizonBrief
     });
     return list;

@@ -28,7 +28,7 @@
         badgeEl.title = "Fresh from the server · " + fmtTime(generatedAt);
       } else if (state === "cached") {
         badgeEl.textContent = "cached · updated " + fmtTime(generatedAt);
-        badgeEl.title = (note || "Server unreachable — showing last published data.") +
+        badgeEl.title = (note || "Server unreachable: showing last published data.") +
           " · " + fmtTime(generatedAt);
       } else if (state === "waking") {
         badgeEl.textContent = "waking server…";

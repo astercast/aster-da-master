@@ -58,7 +58,14 @@ const fish = figs.find(f => f.id === "fish-narc");
 ok(fish.watch && fish.watch.status === "announced" && fish.watch.expected === "2026-10-16",
    "fish-narc watch still reads announced / 2026-10-16 (no early flip)");
 ok(fish.standing.includes("outside the circle count"), "fish-narc standing keeps him outside the 21 count");
-ok(figs.every(f => fs.existsSync(path.join(ROOT, f.page))), "every figure's circle page exists on disk");
+ok(figs.every(f => {
+  // rotation 22: figure pages are folds (circle/index.html#c-<slug>);
+  // the file must exist and carry the anchor id.
+  const [file, frag] = f.page.split("#");
+  const p = path.join(ROOT, file);
+  if (!fs.existsSync(p)) return false;
+  return !frag || fs.readFileSync(p, "utf8").includes(`id="${frag}"`);
+}), "every figure's circle page exists on disk");
 ok(figs.every(f => f.tracks.every(t => t.title && t.date && t.type)), "every plotted track carries title, date and type");
 
 // crossings: literal normalized-title match across figures

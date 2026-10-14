@@ -1,11 +1,12 @@
 /* ============================================================
-   HOME — Aster da Master homepage, wave 36 (EXTREME MAKEOVER)
-   Hand-maintained. The sign-on: one hero, four rooms, closed drawers.
-   Reads tokens.css + motifs.css only; no new colors, no new fonts.
-   Reduced-motion contract: drawers are native <details> (no animation);
-   room-card hover motion (arrow slide, border glow) becomes a static
-   phosphor underline under prefers-reduced-motion; the dialog opens
-   without transition either way.
+   HOME — Aster da Master homepage.
+   Rotation 22 (ASTER-STUDY §8.1): the sign-on, the stream as the
+   body with the transmission log in the margin, the interruption
+   band, the rooms as series lines, the station log drawers, the
+   eras closing the page as the archive list. No stat cards, no
+   room cards, no reveal system. The only new face is Anton, the
+   estate's self-hosted poster grotesque, rationed to the sign-on
+   and feature/poster titles (§8.6).
    ============================================================ */
 
 /* ---- compact header: index button ---- */
@@ -114,22 +115,35 @@
   font-size: var(--fs-small);
 }
 
-/* ---- hero sign-on ---- */
-/* Rotation 21: headline + subline + one action + the evidence
-   line, and nothing else — the rest is whitespace. */
+/* ---- the sign-on (rotation 22, ASTER-STUDY §8.1) ---- */
+/* The station ident: the name in the display grotesque (Anton, the
+   estate's self-hosted poster face), the claim, one action, one
+   word-only line. The figures that used to stand in the evidence
+   line live in the transmission log margin now (§8.4). The sign-on
+   is the only element that may move on arrival: one settle, once. */
 .hero-signon {
-  padding-bottom: var(--space-9);
+  padding-bottom: var(--space-8);
 }
-.hero-stats {
+.hero-signon .hero-title {
+  font-family: "Anton", "Arial Narrow", sans-serif;
+  font-size: clamp(3rem, 9vw, 6.2rem);
+  line-height: .96;
+  letter-spacing: .01em;
+}
+@keyframes signon-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: none; }
+}
+.hero-signon .hero-inner { animation: signon-in .7s var(--ease) 1 both; }
+@media (prefers-reduced-motion: reduce) {
+  .hero-signon .hero-inner { animation: none; }
+}
+.signon-line {
   margin-top: var(--space-5);
   color: var(--ink-dim);
   font-size: var(--fs-small);
   letter-spacing: var(--track-label);
   text-transform: uppercase;
-}
-.hero-stats [data-signal="plays"] {
-  color: var(--neon);
-  font-variant-numeric: tabular-nums;
 }
 .btn-hero {
   font-size: 1.05rem;
@@ -141,113 +155,208 @@
   font-size: var(--fs-small);
 }
 
-/* ---- fresh from the source + keeper's note ---- */
-.fresh-grid {
+/* ---- the stream + the transmission log margin (rotation 22, §8.1/§8.4) ----
+   The stream is the body; the log rides in the margin beside it. On
+   narrow screens the margin stacks directly under the sign-on, its
+   latest line first, so the page still reads sign-on, log, stream. */
+.home-grid {
   display: grid;
-  grid-template-columns: 1.6fr 1fr;
+  grid-template-columns: minmax(0, 1fr) 330px;
   gap: var(--space-7);
   align-items: start;
 }
-@media (max-width: 860px) {
-  .fresh-grid { grid-template-columns: 1fr; }
+.home-grid .section { padding-top: 0; }
+@media (max-width: 1020px) {
+  .home-grid { display: flex; flex-direction: column; }
+  .home-grid .txlog { order: -1; }
 }
-.keepers-note {
-  border: 1px solid var(--line);
-  border-left: 3px solid var(--gold);
-  border-radius: var(--radius-s);
-  background: var(--panel);
-  padding: var(--space-5);
+.txlog {
+  border-top: 2px solid var(--ink);
+  padding-top: var(--space-4);
 }
-.keepers-note .kicker {
-  color: var(--gold-bright);
-}
-.keepers-note h3 {
-  font-size: var(--fs-3);
-  margin: var(--space-2) 0 var(--space-3);
-  text-wrap: balance;
-}
-.keepers-note p {
-  color: var(--ink-dim);
+.txlog .kicker { color: var(--ink); }
+.txlog-more {
+  font-family: var(--font-mono);
   font-size: var(--fs-small);
-  line-height: 1.65;
-}
-.keepers-note .chart-sub {
-  margin-top: var(--space-4);
+  color: var(--ink-dim);
 }
 
-/* ---- the four rooms ---- */
-.rooms-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: var(--space-4);
+/* ---- stream units: NTS's anatomy (§8.1) ----
+   The listing line opens with the state word, the title follows in
+   its own setting, the catalog mark closes the line; then one plain
+   metadata line; then one written sentence. Features take the caps
+   setting (the display grotesque); the state word shares the
+   title's setting, per the listing law (§8.3). */
+.unit {
+  padding: var(--space-5) 0;
+  border-bottom: 1px dotted var(--line);
 }
-.room-card {
-  position: relative;
-  /* Rotation 21: rooms are fields of space on the page, not
-     boxes — the tint carries the grouping, no border does. */
-  border: 0;
-  border-radius: var(--radius-m);
-  background: var(--bg-soft);
-  padding: var(--space-6) var(--space-5);
-  transition: background var(--dur-2) var(--ease), transform var(--dur-2) var(--ease);
+.unit-head {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+  margin: 0 0 var(--space-2);
 }
-.room-card:hover {
-  background: var(--panel-2);
+.unit-head .state {
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.12em;
+  min-width: 9.5em;
 }
-.room-card .kicker {
-  color: var(--neon-dim);
-}
-.room-card h3 {
-  font-family: var(--font-display);
-  font-weight: 400;
-  font-size: var(--fs-2);
-  letter-spacing: 0.02em;
-  margin: var(--space-2) 0 var(--space-3);
-  text-wrap: balance;
-}
-.room-card h3 a {
+.unit-title {
+  font-size: var(--fs-3);
+  font-weight: 600;
   color: var(--ink);
   text-decoration: none;
 }
-.room-card h3 a:hover {
-  color: var(--neon);
-}
-.room-card h3 a::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-}
-.room-card > p {
-  color: var(--ink-dim);
+.unit-title:hover { text-decoration: underline; text-underline-offset: 3px; }
+.unit-head .cat-mark { margin-left: auto; font-family: var(--font-mono); font-size: 0.72rem; }
+.unit-meta {
+  font-family: var(--font-mono);
   font-size: var(--fs-small);
-  line-height: 1.65;
+  color: var(--ink-dim);
+  margin: 0 0 var(--space-2);
 }
-.room-sub {
-  margin-top: var(--space-4);
-  padding-top: var(--space-3);
-  border-top: 1px dotted var(--line);
+.unit-line { color: var(--ink-dim); margin: 0; max-width: 62ch; line-height: 1.6; }
+.unit-links {
+  font-family: var(--font-mono);
+  font-size: var(--fs-small);
+  margin: var(--space-3) 0 0;
+}
+.unit-feature {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 190px;
+  column-gap: var(--space-6);
+}
+.unit-feature .unit-head { grid-column: 1 / -1; }
+.unit-feature .unit-head .state {
+  font-family: "Anton", "Arial Narrow", sans-serif;
+  font-size: 1.05rem;
+  letter-spacing: 0.05em;
+  min-width: 0;
+}
+.unit-title.is-feature {
+  font-family: "Anton", "Arial Narrow", sans-serif;
+  font-size: clamp(1.9rem, 4vw, 2.8rem);
+  line-height: 1;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+}
+.unit-feature .unit-art { grid-column: 2; grid-row: 2 / span 3; }
+.unit-art img {
+  width: 100%;
+  border: 1px solid var(--line);
+  display: block;
+}
+.unit-feature .unit-meta, .unit-feature .unit-line, .unit-feature .unit-links { grid-column: 1; }
+@media (max-width: 640px) {
+  .unit-feature { grid-template-columns: 1fr; }
+  .unit-feature .unit-art { grid-column: 1; grid-row: auto; max-width: 220px; margin-bottom: var(--space-4); }
+  .unit-head .state { min-width: 0; }
+}
+.stream-more {
+  font-family: var(--font-mono);
+  font-size: var(--fs-small);
+  color: var(--ink-dim);
+  padding-top: var(--space-5);
+}
+
+/* ---- the interruption band (rotation 22, §8.1) ----
+   The release of the week breaks the stream as a full-width band;
+   inside it the featured release takes the prose treatment: plain
+   sentences, the contents as a plain list, dates as sentences. */
+.band {
+  background: var(--bg-soft);
+  border-block: 1px solid var(--line);
+  padding: var(--space-7) 0;
+  margin: var(--space-6) 0;
+}
+.band-kicker {
+  font-family: var(--font-mono);
   font-size: var(--fs-micro);
+  letter-spacing: var(--track-kicker);
+  text-transform: uppercase;
   color: var(--muted);
-  position: relative;
-  z-index: 1;
+  margin: 0 0 var(--space-3);
 }
-.room-sub a {
+.band h2 {
+  font-family: "Anton", "Arial Narrow", sans-serif;
+  font-size: clamp(1.7rem, 3.6vw, 2.5rem);
+  line-height: 1.05;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  margin: 0 0 var(--space-4);
+}
+.band-prose { color: var(--ink-dim); line-height: 1.65; max-width: 72ch; margin: 0 0 var(--space-5); }
+.band-contents {
+  list-style: none;
+  margin: 0 0 var(--space-5);
+  padding: 0;
+  display: grid;
+  gap: var(--space-2);
+  font-family: var(--font-mono);
+  font-size: var(--fs-small);
   color: var(--ink-dim);
 }
-.room-sub a:hover {
-  color: var(--neon);
+.band-contents li { padding-bottom: var(--space-2); border-bottom: 1px dotted var(--line); }
+.band-links { font-family: var(--font-mono); font-size: var(--fs-small); margin: 0; }
+
+/* ---- the rooms as series lines (rotation 22, §8.1: Rinse's form) ----
+   A name and one written line each; the room's count rides at the
+   end of its name line as bracketed marginalia; its secondary doors
+   print as a plain also-line. No cards. */
+.series-lines { list-style: none; margin: 0; padding: 0; }
+.series-line { padding: var(--space-5) 0; border-bottom: 1px dotted var(--line); }
+.series-line:first-child { border-top: 1px dotted var(--line); }
+.series-head {
+  font-family: var(--font-display);
+  font-size: var(--fs-2);
+  margin: 0;
 }
-.room-go {
-  position: absolute;
-  top: var(--space-5);
-  right: var(--space-5);
-  color: var(--neon-dim);
-  font-size: 1.2rem;
-  transition: transform var(--dur-2) var(--ease), color var(--dur-2) var(--ease);
+.series-head a { color: var(--ink); text-decoration: none; }
+.series-head a:hover { text-decoration: underline; text-underline-offset: 3px; }
+.series-count {
+  font-family: var(--font-mono);
+  font-size: var(--fs-small);
+  color: var(--muted);
 }
-.room-card:hover .room-go {
-  color: var(--ink);
+.series-text { color: var(--ink-dim); margin: var(--space-2) 0 0; max-width: 68ch; line-height: 1.6; }
+.series-also {
+  font-family: var(--font-mono);
+  font-size: var(--fs-small);
+  color: var(--muted);
+  margin: var(--space-2) 0 0;
 }
+
+/* ---- the discography as listing lines (rotation 22, §8.3) ---- */
+.disco-lines { list-style: none; margin: 0; padding: 0; }
+.disco-line { padding: var(--space-3) var(--space-2); border-bottom: 1px dotted var(--line); }
+.disco-line:first-child { border-top: 1px dotted var(--line); }
+.disco-head { display: flex; align-items: baseline; gap: var(--space-3); flex-wrap: wrap; }
+.disco-head a { color: var(--ink); text-decoration: none; font-weight: 600; }
+.disco-head a:hover { text-decoration: underline; text-underline-offset: 3px; }
+.disco-sub {
+  display: flex; gap: var(--space-4); flex-wrap: wrap;
+  font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.08em;
+  text-transform: uppercase; margin-top: var(--space-1);
+}
+.disco-sub a { color: var(--ink-dim); }
+.disco-src { font-size: 0.72rem; color: var(--muted); margin: var(--space-1) 0 0; line-height: 1.5; }
+.disco-fallback { color: var(--muted); padding: var(--space-3) var(--space-2); }
+
+/* ---- the eras as the archive list (rotation 22, §8.1: the Lot's form) ----
+   Fixed-order fact lines: era name, span, count; then the era's one
+   written line; then its releases as one inline list. */
+.era-line { padding: var(--space-5) 0; border-bottom: 1px dotted var(--line); }
+.era-line:first-child { border-top: 1px dotted var(--line); }
+.era-head { display: flex; align-items: baseline; gap: var(--space-4); flex-wrap: wrap; margin: 0; }
+.era-name { font-family: var(--font-display); font-size: var(--fs-2); font-weight: 600; }
+.era-span, .era-count { font-family: var(--font-mono); font-size: var(--fs-small); color: var(--muted); white-space: nowrap; }
+.era-scene { color: var(--ink-dim); margin: var(--space-2) 0 0; max-width: 68ch; line-height: 1.6; }
+.era-line .era-releases { list-style: none; margin: var(--space-3) 0 0; padding: 0; font-size: var(--fs-small); color: var(--ink-dim); line-height: 1.7; }
+.era-line .era-releases li { display: inline; }
+.era-line .era-releases li + li::before { content: " · "; color: var(--muted); }
 
 /* ---- cast lots strip ---- */
 .lots-strip {
@@ -330,19 +439,5 @@
   text-wrap: balance;
 }
 
-/* ---- reduced motion: everything already static by construction,
-   except room hover which degrades to a phosphor underline ---- */
-@media (prefers-reduced-motion: reduce) {
-  .room-card,
-  .room-go {
-    transition: none;
-  }
-  .room-card:hover {
-    transform: none;
-    border-color: var(--neon);
-  }
-  .room-card:hover .room-go {
-    transform: none;
-    text-decoration: underline;
-  }
-}
+/* ---- reduced motion: the page is static by construction; the
+   sign-on's one settle is disabled in the sign-on block above ---- */

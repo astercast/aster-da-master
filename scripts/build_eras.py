@@ -108,7 +108,7 @@ def era_all_collabs(ys):
                          "transmissions": len(tr),
                          "plays": sum((t["plays"] or 0) for t in tr),
                          "page": c["page"]})
-            assert (ROOT / c["page"]).exists(), f"missing circle page {c['page']}"
+            assert (ROOT / c["page"].split("#")[0]).exists(), f"missing circle page {c['page']}"
     rows.sort(key=lambda r: (-r["plays"], r["name"]))
     return rows
 

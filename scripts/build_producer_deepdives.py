@@ -18,9 +18,12 @@ Reads:
 Emits:
   data/v1/producer-deepdives.json        (endpoint #22)
   data/v1/schema/producer-deepdives.json (draft-07 schema #22)
-  producers/<slug>.html                 (one per producer - this generator
-                                         OWNS the producers/ directory)
-  producers/index.html
+  producers/index.html                  (ONE page: the summary table plus
+                                         every producer's full record as a
+                                         fold on the same page, anchored
+                                         #p-<slug> - rotation 22 page
+                                         consolidation; this generator OWNS
+                                         the producers/ directory)
   data/v1/index.json                     (endpoint registered via render_manifest())
 
 Per producer, every credit recomputed and asserted:
@@ -70,6 +73,11 @@ HEAD = HEAD.replace(nav_data.nav_chunk("../", "codex"),
                     nav_data.nav_chunk("../", "producers"))
 FOOT = FOOT.replace(nav_data.footer_block("../", "codex"),
                     nav_data.footer_block("../", "producers"))
+# Rotation 22 sweep: this generator's pages carry the middot form in
+# the title separator and the footer line (display rule, fleet-wide).
+HEAD = HEAD.replace("{title} — Aster da Master", "{title} · Aster da Master")
+FOOT = FOOT.replace("ASTER DA MASTER &mdash; ALL SIGNALS RESERVED",
+                    "ASTER DA MASTER · ALL SIGNALS RESERVED")
 from api_manifest import render_manifest  # noqa: E402
 
 API = ROOT / "data" / "v1"
@@ -133,7 +141,9 @@ def producer_slug(name):
 
 
 def producer_page(slug):
-    return f"producers/{slug}.html"
+    # Rotation 22 consolidation: a producer's record is a fold on the
+    # index page, not a page of its own.
+    return f"producers/index.html#p-{slug}"
 
 
 def network_fig_id(name, circle_by_name):
@@ -194,45 +204,42 @@ def breadcrumb(name):
             f'<span aria-current="page">{escape(name)}</span></nav>')
 
 
-def producer_page_html(p, racing=()):
-    """Deep-dive page for one producer.
+def producer_fold_html(p, racing=()):
+    """One producer's full record as a fold on the index page.
 
-    racing: slugs of producers with a track in an active milestone race -
-    they get a race-watch keep-digging link (wave 28).
+    Rotation 22 consolidation (user order 2026-10-14: fewer pages):
+    the 113 per-producer pages fold into producers/index.html. The
+    record itself is unchanged: the stat line, researched scene
+    context where a research pass exists, the credited productions
+    table, the codex ties, the computed fingerprint. Co-producer
+    links land on the co-producer's own fold on this page.
+
+    racing: slugs of producers with a track in an active milestone
+    race; they carry the race-watch link (wave 28).
     """
-    parts = [breadcrumb(p["name"])]
-    parts.append(f"""
-      <p class="kicker"><span class="numeral">&#10022;</span>Producer deep dive</p>
-      <h1 class="page-title">{escape(p["name"])}</h1>
-      <p class="chart-sub">{"Also credited as " + ", ".join(escape(a) for a in p["aliases"]) + ". " if p["aliases"] else ""}"""
-               f"""Every production below is as credited in the archive's own titles &mdash; nothing invented, nothing added.</p>
-      <div class="stat-grid">
-        <div class="stat-cell"><span class="stat-n">{p["production_count"]}</span><span class="stat-l">Productions</span></div>
-        <div class="stat-cell"><span class="stat-n">{fmt(p["total_plays"])}</span><span class="stat-l">Total plays</span></div>
-        <div class="stat-cell"><span class="stat-n">{escape(p["years_active"])}</span><span class="stat-l">Years active</span></div>
-        <div class="stat-cell"><span class="stat-n">{len(p["codex_families"])}</span><span class="stat-l">Codex families</span></div>
-      </div>
-""")
+    stats = (f'{p["production_count"]} productions &middot; {fmt(p["total_plays"])} plays &middot; '
+             f'{escape(p["years_active"])} &middot; {len(p["codex_families"])} codex families')
+    parts = [f"""
+      <details class="prod-fold" id="p-{escape(p["slug"])}">
+        <summary><span class="prod-fold-name">{escape(p["name"])}</span> <span class="prod-fold-stats">{stats}</span></summary>
+        <p class="chart-sub">{"Also credited as " + ", ".join(escape(a) for a in p["aliases"]) + ". " if p["aliases"] else ""}"""
+             f"""Every production below is as credited in the archive's own titles: nothing invented, nothing added.</p>"""]
     if p["research"]:
         r = p["research"]
         facts = "".join(f"<li>{escape(f)}</li>" for f in r["facts"])
         srcs = "".join(
-            f'<li><a href="{escape(s["url"])}" rel="noopener">{escape(s["label"])}</a></li>'
+            f'<li><a href="{escape(s["url"])}" rel="noopener">{escape(s["label"].replace(" — ", ", "))}</a></li>'
             for s in r["sources"])
         parts.append(f"""
-      <section class="section" aria-labelledby="res-h">
-        <span class="kicker"><span class="numeral">&#10022;</span>Research</span>
-        <h2 id="res-h">Scene context</h2>
+        <h3>Scene context</h3>
         <p class="chart-sub">Evidence: {escape(r["evidence"])}</p>
         <ul class="story-list">{facts}</ul>
         <p class="chart-sub">Sources:</p>
-        <ul class="src-list">{srcs}</ul>
-      </section>
-""")
+        <ul class="src-list">{srcs}</ul>""")
     rows = []
     for pr in p["productions"]:
         co = "".join(
-            f' <a href="{escape(c["page"].split("/")[-1])}">{escape(c["name"])}</a>'
+            f' <a href="#p-{escape(c["page"].split("#p-")[-1])}">{escape(c["name"])}</a>'
             for c in pr["co_producers"])
         co_html = f"<br>co-produced with:{co}" if co else ""
         voices = "".join(
@@ -245,28 +252,20 @@ def producer_page_html(p, racing=()):
             f'<td class="num">{fmt(pr["plays"])}</td>'
             f'<td><a href="../{escape(pr["session_page"])}">{escape(pr["session_name"])}</a>{co_html}{voices_html}</td></tr>')
     parts.append(f"""
-      <section class="section" aria-labelledby="prod-h">
-        <span class="kicker"><span class="numeral">&#10022;</span>Credited productions</span>
-        <h2 id="prod-h">Where to hear them</h2>
+        <h3>Credited productions</h3>
         <div class="table-wrap"><table class="data-table">
           <caption class="visually-hidden">Every as-credited {escape(p["name"])} production, with plays, session, co-producers, and voices</caption>
           <thead><tr><th scope="col">Transmission</th><th scope="col">Date</th><th scope="col">Plays</th><th scope="col">Session &amp; credits</th></tr></thead>
           <tbody>{"".join(rows)}</tbody>
-        </table></div>
-      </section>
-""")
+        </table></div>""")
     if p["codex_families"]:
         fam_rows = "".join(
             f'<li><a href="../{escape(f["family_page"])}">{escape(f["family_name"])}</a> '
-            f'&mdash; &times;{f["transmissions"]}: {escape("; ".join(f["titles"]))}</li>'
+            f'&times;{f["transmissions"]}: {escape("; ".join(f["titles"]))}</li>'
             for f in p["codex_families"])
         parts.append(f"""
-      <section class="section" aria-labelledby="fam-h">
-        <span class="kicker"><span class="numeral">&#10022;</span>Codex ties</span>
-        <h2 id="fam-h">Carrying families</h2>
-        <ul class="story-list">{fam_rows}</ul>
-      </section>
-""")
+        <h3>Codex ties</h3>
+        <ul class="story-list">{fam_rows}</ul>""")
     fp = p["fingerprint"]
     fp_rows = [
         ("Most-played production",
@@ -283,42 +282,28 @@ def producer_page_html(p, racing=()):
     fp_html = "".join(
         f"<dt>{escape(k)}</dt><dd>{escape(v)}</dd>" for k, v in fp_rows)
     parts.append(f"""
-      <section class="section" aria-labelledby="fp-h">
-        <span class="kicker"><span class="numeral">&#10022;</span>Fingerprint</span>
-        <h2 id="fp-h">The archive's read</h2>
-        <p class="chart-sub">Computed from the archive's own credits &mdash; a production fingerprint, not a biography. No style claims the titles don't make.</p>
-        <dl class="fact-list">{fp_html}</dl>
-      </section>
-""")
-    keep = [f'<li><a href="./">All producers</a> &mdash; the full index of as-credited producers.</li>']
+        <h3>The archive's read</h3>
+        <p class="chart-sub">Computed from the archive's own credits: a production fingerprint, not a biography. No style claims the titles don't make.</p>
+        <dl class="fact-list">{fp_html}</dl>""")
+    also = []
     if p["slug"] in racing:
-        keep.append(
-            '<li><a href="../milestone-race.html#watch">Milestone race &mdash; race to watch</a> '
-            '&mdash; a track produced by this producer is in an active '
-            'play-count race.</li>')
+        also.append(
+            '<li><a href="../milestone-race.html#watch">Milestone race, race to watch</a>: '
+            'a track produced by this producer is in an active play-count race.</li>')
     if p["explorer_deep_link"]:
-        keep.append(
-            f'<li><a href="../codex-network.html#{escape(p["explorer_deep_link"])}">Codex network</a> '
-            f'&mdash; this producer on the family graph, with degrees of separation from Aster.</li>')
-    for f in p["codex_families"]:
-        keep.append(
-            f'<li><a href="../{escape(f["family_page"])}">{escape(f["family_name"])}</a> '
-            f'&mdash; the codex family carrying this producer.</li>')
-    keep.append('<li><a href="../sessions-explorer.html">Sessions explorer</a> &mdash; the 61 upload sessions on one timeline.</li>')
-    parts.append(f"""
-      <section class="section" aria-labelledby="keep-h">
-        <span class="kicker"><span class="numeral">&#10022;</span>Keep digging</span>
-        <h3 id="keep-h">The journey continues</h3>
-        <ul class="story-list">{"".join(keep)}</ul>
-      </section>
-""")
-    title = f"{p['name']} — producer deep dive"
-    desc = (f"{p['name']}: {p['production_count']} as-credited productions, "
-            f"{fmt(p['total_plays'])} plays. The producer deep dive, from the archive.")
-    return HEAD.format(title=escape(title), desc=escape(desc), canonical=f"/{producer_page(p['slug'])}") + "".join(parts) + FOOT
+        also.append(
+            f'<li><a href="../codex-network.html#{escape(p["explorer_deep_link"])}">Codex network</a>: '
+            f'this producer on the family graph, with degrees of separation from Aster.</li>')
+    if also:
+        parts.append(f"""
+        <h3>Also</h3>
+        <ul class="story-list">{"".join(also)}</ul>""")
+    parts.append("""
+      </details>""")
+    return "".join(parts)
 
 
-def index_page_html(producers, insights):
+def index_page_html(producers, insights, racing=()):
     letters = sorted({p["name"][0].upper() for p in producers if p["name"]})
     jump = " ".join(f'<a href="#letter-{l}">{l}</a>' for l in letters)
     rows = []
@@ -334,20 +319,22 @@ def index_page_html(producers, insights):
         letter = p["name"][0].upper()
         anchor = f' id="letter-{letter}"' if letter not in seen_letters else ""
         seen_letters.add(letter)
-        res = "yes" if p["research"] else "—"
+        res = "yes" if p["research"] else "no"
         rows.append(
-            f'<tr{anchor}><th scope="row"><a href="{escape(p["slug"])}.html">{escape(p["name"])}</a></th>'
+            f'<tr{anchor}><th scope="row"><a href="#p-{escape(p["slug"])}">{escape(p["name"])}</a></th>'
             f'<td class="num">{p["production_count"]}</td>'
             f'<td class="num">{fmt(p["total_plays"])}</td>'
             f'<td>{escape(p["years_active"])}</td>'
             f'<td class="num">{len(p["codex_families"])}</td>'
             f'<td>{res}</td></tr>')
     lede = (f'{insights["producer_count"]} producers, as credited in the archive\'s own titles. '
-            'Every credit is verbatim from a prod./produced-by fragment &mdash; the archive\'s rule, kept. '
-            f'{insights["researched_count"]} carry researched scene context; the rest are credits-only, nothing more claimed.')
+            'Every credit is verbatim from a prod./produced-by fragment: the archive\'s rule, kept. '
+            f'{insights["researched_count"]} carry researched scene context; the rest are credits-only, nothing more claimed. '
+            'Each name in the table opens that producer\'s full record on this page.')
+    folds = "".join(producer_fold_html(p, racing=racing) for p in producers)
     body = f"""
       <p class="kicker"><span class="numeral">&#10022;</span>The architects</p>
-      <h1 class="page-title">Producer deep dives</h1>
+      <h1 class="page-title">Producers</h1>
       <p class="chart-sub">{lede}</p>
       <nav class="alpha-nav" aria-label="Alphabetical index">{jump}</nav>
       <div class="table-wrap"><table class="data-table">
@@ -355,19 +342,24 @@ def index_page_html(producers, insights):
         <thead><tr><th scope="col">Producer</th><th scope="col">Productions</th><th scope="col">Plays</th><th scope="col">Years</th><th scope="col">Families</th><th scope="col">Researched</th></tr></thead>
         <tbody>{"".join(rows)}</tbody>
       </table></div>
+      <section class="section" aria-labelledby="records-h">
+        <span class="kicker"><span class="numeral">&#10022;</span>Full records</span>
+        <h2 id="records-h">Every producer, in full</h2>
+        {folds}
+      </section>
       <section class="section" aria-labelledby="keep-h">
         <span class="kicker"><span class="numeral">&#10022;</span>Keep digging</span>
         <h3 id="keep-h">The journey continues</h3>
         <ul class="story-list">
-          <li><a href="../codex-network.html">Codex network</a> &mdash; producers as nodes on the family graph, with a connect-the-dots pathfinder.</li>
-          <li><a href="../sessions-explorer.html">Sessions explorer</a> &mdash; the 61 upload sessions on one timeline.</li>
-          <li><a href="../codex/">Codex</a> &mdash; the 16 vocabulary families.</li>
+          <li><a href="../codex-network.html">Codex network</a>: producers as nodes on the family graph, with a connect-the-dots pathfinder.</li>
+          <li><a href="../sessions-explorer.html">Sessions explorer</a>: the 61 upload sessions on one timeline.</li>
+          <li><a href="../codex/">Codex</a>: the 16 vocabulary families.</li>
         </ul>
       </section>
 """
-    title = "Producer deep dives"
+    title = "Producers"
     desc = (f"{insights['producer_count']} as-credited producers behind the Aster da Master sound, "
-            "every credit verbatim from the archive's titles.")
+            "every credit verbatim from the archive's titles, each full record on one page.")
     page = HEAD.format(title=escape(title), desc=escape(desc), canonical="/producers/index.html") + body + FOOT
     # A duplicated id is invalid HTML and makes the alphabet jump land
     # wherever the parser feels like — unshippable from this generator.
@@ -514,10 +506,12 @@ def main():
     fam_nodes = {n["id"]: n for n in network["nodes"] if n["kind"] == "family"}
     net_figs = {n["id"]: n for n in network["nodes"]
                 if n["kind"] in ("producer", "both")}
+    # circle.json is keyed by slug; the page field carries the folded
+    # anchor form since rotation 22 (circle/index.html#c-<slug>), so
+    # the slug comes from the key, never parsed out of the page path.
     circle_by_name = {c["name"].lower():
-                      {"slug": c["page"].split("/")[-1].replace(".html", ""),
-                       **c}
-                      for c in circle.values()}
+                      {"slug": cslug, **c}
+                      for cslug, c in circle.items()}
     fig_to_slug = {}
     for p in producers:
         fid = network_fig_id(p["name"], circle_by_name)
@@ -622,7 +616,7 @@ def main():
         if cpage is None and p["slug"] in scene_by_slug:
             cpage = scene_by_slug[p["slug"]]["page"]
         if cpage:
-            assert (ROOT / cpage).exists(), f"missing circle page {cpage}"
+            assert (ROOT / cpage.split("#")[0]).exists(), f"missing circle page {cpage}"
         explorer_link = None
         fid = network_fig_id(p["name"], circle_by_name)
         if fid in net_figs:
@@ -712,12 +706,12 @@ def main():
         f"racing slug has no producer page: {racing - slug_set}"
     for f in PROD_DIR.glob("*.html"):
         f.unlink()
-    for p in out_producers:
-        (PROD_DIR / (p["slug"] + ".html")).write_text(
-            producer_page_html(p, racing=racing), encoding="utf-8")
-        assert (ROOT / p["page"]).exists()
+    # Rotation 22 consolidation: ONE page. The unlink above clears the
+    # directory (this generator owns it), so no stub page survives.
     (PROD_DIR / "index.html").write_text(
-        index_page_html(out_producers, insights), encoding="utf-8")
+        index_page_html(out_producers, insights, racing=racing),
+        encoding="utf-8")
+    assert (PROD_DIR / "index.html").exists()
 
     idx = json.loads((API / "index.json").read_text())
     idx["version"] = VERSION

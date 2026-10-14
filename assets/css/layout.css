@@ -52,8 +52,18 @@
 .site-nav {
   margin-left: auto;
   display: flex;
-  gap: var(--space-1);
+  gap: 0;
+  align-items: baseline;
   flex-shrink: 0;
+}
+/* Rotation 22 (AZ-6): the doors print as one punctuated line, a
+   sentence of single words — semicolons between, a full stop to
+   close. The separators are text in the nav's own register. */
+.nav-sep {
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  white-space: nowrap;
 }
 .site-nav a {
   color: var(--ink-dim);
@@ -61,7 +71,7 @@
   font-size: 0.78rem;
   letter-spacing: 0.02em;
   text-decoration: none;
-  padding: var(--space-2) var(--space-3);
+  padding: var(--space-2) 6px;
   white-space: nowrap;
   border-radius: var(--radius-s);
   position: relative;
@@ -69,7 +79,7 @@
 .site-nav a::after {
   content: "";
   position: absolute;
-  left: var(--space-3); right: var(--space-3); bottom: 4px;
+  left: 6px; right: 6px; bottom: 4px;
   height: 1px;
   background: var(--ink);
   transform: scaleX(0);
@@ -110,8 +120,8 @@
   border: 1px solid var(--line);
   border-radius: var(--radius-m);
   box-shadow: var(--shadow-2);
-  padding: var(--space-2);
-  display: grid;
+  padding: var(--space-4) var(--space-5);
+  line-height: 2.1;
 }
 .mnav-panel a {
   font-family: var(--font-mono);
@@ -119,9 +129,11 @@
   letter-spacing: 0.02em;
   text-decoration: none;
   color: var(--ink-dim);
-  padding: var(--space-3) var(--space-4);
+  padding: 2px 4px;
   border-radius: var(--radius-s);
+  white-space: nowrap;
 }
+.mnav-panel .nav-sep { font-size: 0.82rem; }
 .mnav-panel a:hover { color: var(--ink); background: var(--panel-2); text-decoration: none; }
 
 /* --- Sections --- */

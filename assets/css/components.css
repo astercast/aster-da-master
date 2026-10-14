@@ -338,6 +338,32 @@
   color: var(--muted);
   min-width: 2.2em;
 }
+.rl-state {
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink);
+  min-width: 9.5em;
+  white-space: nowrap;
+}
+.rl-state.state-current { color: var(--live); }
+.rl-when {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  color: var(--muted);
+  white-space: nowrap;
+}
+.rl-mark {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--ink);
+  margin-left: auto;
+  white-space: nowrap;
+}
 .rl-date {
   font-family: var(--font-mono);
   font-size: 0.74rem;
@@ -361,6 +387,48 @@
   white-space: nowrap;
 }
 .chart-sub { color: var(--muted); font-size: 0.85em; }
+
+/* ---------- Transmission log lines (rotation 22, ASTER-STUDY §8.4) ----------
+   The only place numbers live: inside lines. Time first, then the
+   entry, state as a word inside the line, source named in the line.
+   Shared by the home margin and the Signal page. */
+.txlog-lines {
+  list-style: none;
+  margin: var(--space-4) 0;
+  padding: 0;
+  display: grid;
+  gap: var(--space-4);
+  font-size: var(--fs-small);
+  line-height: 1.6;
+  color: var(--ink-dim);
+}
+.txlog-time {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: var(--fs-micro);
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  margin-bottom: 2px;
+}
+.log-lines { list-style: none; margin: var(--space-4) 0; padding: 0; display: grid; }
+.log-lines li {
+  padding: var(--space-3) var(--space-2);
+  border-bottom: 1px dotted var(--line);
+  font-size: 0.95rem;
+  color: var(--ink-dim);
+  line-height: 1.6;
+}
+.log-lines li:first-child { border-top: 1px dotted var(--line); }
+.log-lines a { color: var(--ink); text-decoration: none; }
+.log-lines a:hover { text-decoration: underline; text-underline-offset: 3px; }
+.line-state {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--ink);
+  white-space: nowrap;
+}
 
 .session-tracks { gap: 0.35rem; margin-top: var(--space-4); }
 .session-tracks li {
@@ -1083,17 +1151,80 @@
 .fl-title a { color: var(--ink); text-decoration: none; }
 .fl-title a:hover { color: var(--neon); }
 
-/* ---------- Release pages — the catalogue entry (rotation 20):
-   text first, in one column. Title, then the facts as a plain
-   definition list, stream links out; the cover is a small plate
-   under the entry, never the layout's driver. ---------- */
-.release-hero { display: flex; flex-direction: column; margin: var(--space-6) 0 var(--space-7); max-width: 720px; }
-.release-hero > div:first-child { order: 2; }
-.release-hero img {
-  width: 160px; border-radius: 0; border: 1px solid var(--line);
-  box-shadow: none; margin-top: var(--space-5);
+/* ---------- Release pages: THE POSTER (rotation 22, ASTER-STUDY §8.3).
+   Title at poster size, one plain metadata line under it (state word
+   first, catalog mark closing the line), the tracklist as a numbered
+   list with timings in the mono, the exits, then provenance printed
+   as the record. No card chrome anywhere in the sequence. The state
+   word and the catalog mark are set once here and used in all three
+   of their positions: the listing line, the release page, the log. */
+.poster { margin: var(--space-6) 0 var(--space-6); max-width: 760px; }
+.poster-title {
+  font-family: "Anton", "Arial Narrow", sans-serif;
+  font-size: clamp(2.6rem, 7vw, 4.6rem);
+  line-height: .98; letter-spacing: .01em; text-transform: uppercase;
+  margin: 0; text-wrap: balance; overflow-wrap: anywhere;
 }
-.release-hero h1 { font-size: var(--fs-2); text-wrap: balance; }
+.poster-meta {
+  font-family: var(--font-mono); font-size: var(--fs-small);
+  color: var(--ink-dim); line-height: 1.7;
+  margin: var(--space-4) 0 var(--space-5);
+}
+.state { font-weight: 600; text-transform: uppercase; letter-spacing: .1em; color: var(--ink); }
+.state-current { color: var(--live); }
+.cat-mark { font-weight: 600; letter-spacing: .08em; color: var(--ink); white-space: nowrap; }
+.poster-art { margin: 0 0 var(--space-6); }
+.poster-art img { width: 220px; max-width: 60vw; border: 1px solid var(--line); display: block; }
+.poster-art .disco-art { width: 120px; height: 120px; font-size: 2.4rem; display: grid; place-items: center; }
+.tracklist { margin: 0 0 var(--space-5); }
+.tracklist h2 { font-size: .95rem; letter-spacing: .14em; text-transform: uppercase; font-family: var(--font-mono); font-weight: 600; color: var(--ink); margin: 0 0 var(--space-3); }
+.tracks { list-style: none; counter-reset: trk; padding: 0; margin: 0; }
+.tracks li {
+  counter-increment: trk; display: flex; align-items: baseline; gap: var(--space-3);
+  padding: var(--space-2); border-bottom: 1px dotted var(--line-soft);
+  font-family: var(--font-mono); font-size: .93rem;
+}
+.tracks li::before { content: counter(trk, decimal-leading-zero); font-size: .7rem; color: var(--muted); min-width: 2em; }
+.tracks .t-time { margin-left: auto; color: var(--muted); font-size: var(--fs-small); white-space: nowrap; }
+.tracks-note { color: var(--ink-dim); font-size: .93rem; margin: 0; }
+/* The provenance record closes the poster folded (simplification
+   steer, 2026-10-14): one quiet summary line under the exits; the
+   record stands whole inside. */
+.provenance-fold { margin-top: var(--space-6); border-top: 1px solid var(--line); padding-top: var(--space-3); }
+.provenance-fold > summary {
+  cursor: pointer;
+  font-family: var(--font-mono);
+  font-size: var(--fs-micro);
+  font-weight: 600;
+  letter-spacing: var(--track-kicker);
+  text-transform: uppercase;
+  color: var(--ink-dim);
+  padding: var(--space-2) 0;
+}
+.provenance-fold > summary:hover { color: var(--ink); }
+.provenance-fold .release-meta { margin-top: var(--space-3); }
+
+/* ---------- Person-record folds (rotation 22 consolidation) ----------
+   The producers' and circle's per-person pages folded into their
+   index pages (user order 2026-10-14: fewer pages). One fold per
+   person: a summary line (name + the record's headline figures),
+   the full record inside. */
+.prod-fold { border-bottom: 1px dotted var(--line); padding: var(--space-2) 0; }
+.prod-fold > summary {
+  cursor: pointer;
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+  padding: var(--space-2) 0;
+  list-style: none;
+}
+.prod-fold > summary::-webkit-details-marker { display: none; }
+.prod-fold-name { font-weight: 600; color: var(--ink); font-size: 1.02rem; }
+.prod-fold-stats { font-family: var(--font-mono); font-size: var(--fs-small); color: var(--muted); }
+.prod-fold > summary:hover .prod-fold-name { text-decoration: underline; text-underline-offset: 3px; }
+.prod-fold h3 { font-size: 1rem; margin: var(--space-5) 0 var(--space-2); }
+.prod-fold .section { padding: var(--space-4) 0; }
 .release-meta { display: grid; grid-template-columns: 150px 1fr; gap: var(--space-2) var(--space-4); margin: var(--space-5) 0; font-size: 0.94rem; }
 .release-meta dt { font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); padding-top: 0.25em; }
 .release-meta dd { margin: 0; color: var(--ink-dim); }
@@ -1131,15 +1262,14 @@
 .pk-unknowns { border-color: var(--neon-deep); }
 .pk-toolbar { display: flex; gap: var(--space-3); margin: var(--space-5) 0; flex-wrap: wrap; }
 
-/* ---------- Reveal on scroll ----------
-   Failure mode is "no animation", never "invisible content": the hidden
-   pre-reveal state only applies when JS runs (html.js is set by common.js).
-   IO fallback in reveal() covers no-IntersectionObserver browsers. */
-html.js .reveal { opacity: 0; transform: translateY(26px); transition: opacity var(--dur-3) var(--ease), transform var(--dur-3) var(--ease); transition-delay: var(--d, 0s); }
-html.js .reveal.in { opacity: 1; transform: none; }
-@media (prefers-reduced-motion: reduce) {
-  .reveal { opacity: 1; transform: none; transition: none; }
-}
+/* ---------- Reveal on scroll: REMOVED (rotation 22, ASTER-STUDY §8.5).
+   Broadcast furniture is already on air: the stream, the schedule, the
+   log and every listing are present in residence at their resting
+   values. The uniform reveal system (the html.js pre-reveal state, the
+   .in transition, the --d stagger) is abolished as a system, not
+   retimed. Legacy .reveal classes in older markup are inert hooks
+   with no rules behind them; content is never hidden awaiting a
+   scroll. The sign-on is the only element that may move on arrival. */
 
 /* ---------- Responsive ---------- */
 @media (max-width: 900px) {
@@ -1150,8 +1280,7 @@ html.js .reveal.in { opacity: 1; transform: none; }
 @media (max-width: 860px) {
   .feature, .about-grid { grid-template-columns: 1fr; }
   .feature { padding: var(--space-5); }
-  .release-hero { display: flex; }
-  .release-hero img { max-width: 160px; }
+  .poster-art img { max-width: 160px; }
   .pk-grid { grid-template-columns: 1fr; }
   .cl-entry { grid-template-columns: 1fr; }
   .fact-list li { grid-template-columns: 1fr; gap: var(--space-1); }

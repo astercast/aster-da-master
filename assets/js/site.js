@@ -1,27 +1,15 @@
-/* Aster da Master site — renders discography/platforms/socials from data/artist.json; reveal on scroll. */
+/* Aster da Master site — renders discography/platforms/socials from data/artist.json.
+   Rotation 22: the reveal-on-scroll system is removed (ASTER-STUDY §8.5);
+   everything renders in residence at its resting values. */
 (function () {
   "use strict";
 
-  /* Web-craft failure-mode rule (see common.js): hidden pre-reveal state
-     only applies when JS runs. */
   document.documentElement.classList.add("js");
 
   function esc(s) {
     return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) {
       return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
     });
-  }
-
-  /* Reveal on scroll */
-  if ("IntersectionObserver" in window) {
-    var obs = new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) {
-        if (e.isIntersecting) { e.target.classList.add("in"); obs.unobserve(e.target); }
-      });
-    }, { threshold: 0.12 });
-    document.querySelectorAll(".reveal").forEach(function (el) { obs.observe(el); });
-  } else {
-    document.querySelectorAll(".reveal").forEach(function (el) { el.classList.add("in"); });
   }
 
   /* Station-log drawers: a deep link into a closed drawer opens it first,
@@ -51,20 +39,6 @@
     });
   })();
 
-  function artTile(r) {
-    var initial = esc((r.title || "?").charAt(0));
-    var mono = '<div class="disco-art disco-mono" aria-hidden="true"' + (r.artwork ? " hidden" : "") + ">" + initial + "</div>";
-    if (!r.artwork) return mono;
-    return '<img class="disco-art" src="' + esc(r.artwork) + '" alt="' + esc(r.title) + ' cover art" loading="lazy" ' +
-      'onerror="this.hidden=true;this.nextElementSibling.hidden=false;">' + mono;
-  }
-
-  function linkList(links) {
-    return (links || []).map(function (l) {
-      return '<a href="' + esc(l.url) + '" target="_blank" rel="noopener">' + esc(l.label) + "</a>";
-    }).join("");
-  }
-
   fetch("data/artist.json")
     .then(function (r) { if (!r.ok) throw new Error("data failed"); return r.json(); })
     .then(function (d) {
@@ -77,50 +51,67 @@
       if (d.research_status && d.research_status.indexOf("PENDING") === 0) return; /* don't render placeholders */
       var a = d.artist || {};
 
-      /* Featured release */
-      var f = d.featured_release;
-      var feat = document.getElementById("feature");
-      if (f && feat) {
-        feat.innerHTML =
-          '<div class="feature-art" aria-hidden="true">' + esc((f.title || "?").charAt(0)) + "</div>" +
-          "<div>" +
-          '<p class="feature-meta">Latest transmission · ' + esc(f.date || "") + "</p>" +
-          "<h3>" + esc(f.title || "") + "</h3>" +
-          "<p>" + esc(f.blurb || "") + "</p>" +
-          '<div class="btn-row">' + linkList(f.links).replace(/<a /g, '<a class="btn btn-sm" ') + "</div>" +
-          "</div>";
+      /* Featured release: pre-rendered in the HTML as the stream's
+         feature unit (rotation 22), authored from d.featured_release.
+         There is no repaint for it: the record is static either way,
+         so the authored unit stands as shipped. */
+
+      /* Catalog order helpers, identical to scripts/build_releases.py:
+         the archive order is the discography array order; the catalog
+         mark is the entry's position in it; state words derive from
+         the entry's own record (§8.3); slugs dedupe the same way. */
+      var newestDate = (d.discography || []).reduce(function (m, r) {
+        return (r.date || "") > m ? (r.date || "") : m;
+      }, "");
+      function relState(r) {
+        if (r.type === "SoundCloud-only") return (r.date || "") === newestDate ? "Current" : "Live capture";
+        return "Archive";
       }
+      function relStateCls(r) { return relState(r).toLowerCase().replace(" ", "-"); }
+      function relMark(i) { return "ADM " + String(i + 1).padStart(4, "0"); }
+      var slugList = (function () {
+        var used = {}, out = [];
+        (d.discography || []).forEach(function (r) {
+          var s = slugify(r.title), base = s, n = 1;
+          while (used[s]) { n += 1; s = base + "-" + n; }
+          used[s] = 1; out.push(s);
+        });
+        return out;
+      })();
 
       /* The Signal (Vercel Wave B): the newest-upload log goes live-first with
-         an honest cached fallback. The pre-rendered list in the HTML stands
+         an honest cached fallback. The pre-rendered units in the HTML stand
          until the function answers. */
       if (window.Signal) window.Signal.wireUploads("feature-signal-badge", "feature-uploads");
 
-      /* Discography — with provenance lines and a vault filter */
+      /* Discography — listing lines with provenance and a vault filter
+         (rotation 22, §8.3: state word first, catalog mark closing) */
       var grid = document.getElementById("disco-grid");
       var discoMeta = document.getElementById("disco-meta");
       var vaultNote = document.getElementById("vault-note");
-      function discoCard(r) {
+      function discoLine(r, i) {
         var isVault = r.type === "SoundCloud-only";
         var conf = (r.confidence === "single-source")
-          ? '<span class="src-tag" title="Single-source record \u2014 verified once, awaiting a second confirmation">single-source</span>'
+          ? ' <span class="src-tag" title="Single-source record: verified once, awaiting a second confirmation">single-source</span>'
+          : "";
+        var meta = [r.date || "date unknown", r.type || "Release"];
+        if (r.label) meta.push(r.label);
+        if (isVault && r.plays != null) meta.push(Number(r.plays).toLocaleString("en-US") + " plays (snapshot 2026-10-11)");
+        var linksLine = (r.links && r.links.length)
+          ? '<p class="disco-sub">Listen: ' + r.links.map(function (l) {
+              return '<a href="' + esc(l.url) + '" target="_blank" rel="noopener">' + esc(l.label) + "</a>";
+            }).join(" · ") + "</p>"
           : "";
         var srcLine = r.source
-          ? '<p class="src" title="Data provenance">' + esc(r.source) + "</p>"
+          ? '<p class="disco-src">' + esc(r.source) + "</p>"
           : "";
-        var dateLine = r.date ? esc(r.date) : "date unknown";
-        var playsLine = (isVault && r.plays != null)
-          ? '<p class="plays">' + Number(r.plays).toLocaleString("en-US") +
-            ' plays <span class="chart-sub">(snapshot 2026-10-11)</span></p>'
-          : "";
-        var typeLine = '<span class="type">' + esc(r.type || "Release") + "</span>" + conf;
-        return '<article class="disco-card' + (isVault ? " is-vault" : "") + '" data-dtype="' + esc(r.type) + '">' +
-          artTile(r) + typeLine +
-          "<h3>" + esc(r.title) + "</h3>" +
-          '<p class="date">' + dateLine + "</p>" + playsLine +
-          '<div class="links">' + linkList(r.links) + "</div>" +
-          srcLine +
-          "</article>";
+        return '<li class="disco-line" data-dtype="' + esc(r.type) + '">' +
+          '<p class="disco-head"><span class="rl-state state-' + relStateCls(r) + '">' + relState(r) + "</span>" +
+          '<a href="releases/' + slugList[i] + '.html">' + esc(r.title) + "</a>" +
+          '<span class="rl-mark">' + relMark(i) + "</span></p>" +
+          '<p class="unit-meta">' + esc(meta.join(" · ")) + conf + "</p>" +
+          linksLine + srcLine +
+          "</li>";
       }
       function discoFilterFn(filter) {
         return function (r) {
@@ -130,8 +121,9 @@
         };
       }
       function renderDisco(filter) {
-        var items = (d.discography || []).filter(discoFilterFn(filter));
-        grid.innerHTML = items.map(discoCard).join("");
+        var items = (d.discography || []).map(function (r, i) { return [r, i]; })
+          .filter(function (p) { return discoFilterFn(filter)(p[0]); });
+        grid.innerHTML = items.map(function (p) { return discoLine(p[0], p[1]); }).join("");
         var nAll = (d.discography || []).length;
         var nVault = (d.discography || []).filter(function (r) { return r.type === "SoundCloud-only"; }).length;
         var nDist = nAll - nVault;
@@ -166,7 +158,7 @@
       if (horizon && horizonList && Array.isArray(d.upcoming) && d.upcoming.length) {
         horizon.hidden = false;
         horizonList.innerHTML = d.upcoming.map(function (u) {
-          return "<li><strong>" + esc(u.title) + "</strong> &mdash; " + esc(u.status) + "</li>";
+          return '<li><span class="rl-state state-forthcoming">Forthcoming</span> <strong>' + esc(u.title) + "</strong> · " + esc(u.status) + "</li>";
         }).join("") + "<li><a href=\"trilogy.html\">Open the trilogy watch &rarr;</a></li>";
       }
 
@@ -189,12 +181,14 @@
 
           /* Era intelligence — computed from the archive, not written by hand */
           var deep = "";
+          var eraCount = (e.releases || []).length;
           var yr = spanYears(e.span);
           if (yr) {
             var inEra = discAll.filter(function (r) {
               var y = parseInt((r.date || "").slice(0, 4), 10);
               return y >= yr.start && y <= yr.end;
             });
+            eraCount = inEra.length;
             var eraPlays = inEra.reduce(function (s, r) { return s + (r.plays || 0); }, 0);
             var eraTop = inEra
               .filter(function (r) { return (r.plays || 0) > 0; })
@@ -220,8 +214,8 @@
               ? '<ul class="era-collabs">' + eraKeys.map(function (k) {
                   return "<li>" + esc(eraDisplay[k]) + ' <span class="top-n">&times;' + eraCollabs[k] + "</span></li>";
                 }).join("") + "</ul>"
-              : '<p class="chart-sub">Solo transmissions — no credited collaborators in this span.</p>';
-            deep = '<details class="era-deep"><summary>Era intelligence &mdash; ' +
+              : '<p class="chart-sub">Solo transmissions: no credited collaborators in this span.</p>';
+            deep = '<details class="era-deep"><summary>Era intelligence: ' +
               inEra.length + " transmissions &middot; " +
               Number(eraPlays).toLocaleString("en-US") + " plays</summary>" +
               '<div class="era-deep-body">' +
@@ -232,9 +226,10 @@
               "</div></details>";
           }
 
-          return '<article class="era-card">' +
-            '<p class="era-span">' + esc(e.span) + "</p>" +
-            "<h3>" + esc(e.name) + "</h3>" +
+          return '<article class="era-line">' +
+            '<p class="era-head"><span class="era-name">' + esc(e.name) + "</span>" +
+            '<span class="era-span">' + esc(e.span) + "</span>" +
+            '<span class="era-count">' + eraCount + " transmissions</span></p>" +
             '<p class="era-scene">' + esc(e.scene) + "</p>" +
             body + deep +
             "</article>";
@@ -259,7 +254,7 @@
         return names;
       }
       var statCards = document.getElementById("stat-cards");
-      if (statCards && Array.isArray(d.discography)) {
+      if (Array.isArray(d.discography)) {
         var disc = d.discography;
         var vault = disc.filter(function (r) { return r.type === "SoundCloud-only"; });
         var dist = disc.filter(function (r) { return r.type !== "SoundCloud-only"; });
@@ -297,31 +292,12 @@
           .sort(function (a, b) { return b.v - a.v; })
           .slice(0, 15);
 
-        statCards.innerHTML = [
-          { v: fmt(totalPlays), l: "SoundCloud plays", s: "across " + vault.length + " vault tracks · snapshot 2026-10-11" },
-          { v: fmt(disc.length), l: "Transmissions on record", s: dist.length + " distributor + " + vault.length + " vault" },
-          { v: yearKeys.length, l: "Years of output", s: yearKeys[0] + " – " + yearKeys[yearKeys.length - 1] },
-          { v: esc(topTracks[0] ? topTracks[0].title : "—"), l: "Most played transmission", s: topTracks[0] ? fmt(topTracks[0].plays) + " plays" : "" }
-        ].map(function (c) {
-          return '<article class="stat-card"><p class="stat-num">' + c.v + '</p>' +
-            '<p class="stat-label">' + esc(c.l) + '</p><p class="chart-sub">' + esc(c.s) + "</p></article>";
-        }).join("");
-        /* Keep the pre-rendered data-signal hooks on the live re-render, so a
-           later Signal refresh can repaint the fresh numbers in place. */
-        (function () {
-          var cards = statCards.querySelectorAll(".stat-card");
-          if (cards[0]) {
-            var num = cards[0].querySelector(".stat-num");
-            var sub = cards[0].querySelector(".chart-sub");
-            if (num) num.setAttribute("data-signal", "plays");
-            if (sub) sub.innerHTML = "across " + '<span data-signal="tracks">' + esc(String(vault.length)) + "</span>" +
-              ' vault tracks · snapshot <span data-signal="snapshot">2026-10-11</span>';
-          }
-        })();
-
-        /* The Signal (Vercel Wave B): live numbers first, honest fallback.
-           Pre-rendered cards above stand on their own; the wire only repaints
-           when the live function answers. */
+        /* Rotation 22 (§8.1/§8.4): the stat cards are abolished as
+           blocks. The figures stand pre-rendered in the transmission
+           log margin as log lines with their times and sources; the
+           Signal's live repaint lands on the margin's data-signal
+           hooks (plays, tracks) in place. The charts and leaderboards
+           below keep their drawer. */
         if (window.Signal) window.Signal.wireStats("index-stats-badge");
 
         var playsBars = document.getElementById("plays-bars");
@@ -418,14 +394,14 @@
         var now = new Date();
         var mmdd = ("0" + (now.getMonth() + 1)).slice(-2) + "-" + ("0" + now.getDate()).slice(-2);
         var pretty = now.toLocaleDateString("en-US", { month: "long", day: "numeric" });
-        if (otdSub) otdSub.textContent = "Transmissions that landed on " + pretty + " — across all nine years.";
+        if (otdSub) otdSub.textContent = "Transmissions that landed on " + pretty + ", across all nine years.";
         fetch("data/v1/on-this-day.json")
           .then(function (r) { if (!r.ok) throw new Error("on-this-day failed"); return r.json(); })
           .then(function (otd) {
             var todays = otd[mmdd] || [];
             if (!todays.length) {
               otdList.innerHTML = '<li class="otd-empty"><p>No transmissions landed on ' + esc(pretty) +
-                " &mdash; the silence keeps its own counsel.</p></li>";
+                ", the silence keeps its own counsel.</p></li>";
               return;
             }
             otdList.innerHTML = todays.map(function (t) {
@@ -481,9 +457,9 @@
                 detail = "<p class=\"ms-track\">&#10022; " + esc(ms.title) + "</p>" +
                   '<p class=\"chart-sub\">' + esc(ms.date || "date unknown") + " · " + esc(ms.type || "") + esc(plays) + esc(cum) + "</p>";
               } else if (ms.id === "prolific-day") {
-                detail = "<p class=\"ms-track\">&#10022; " + esc(ms.date) + " — " + ms.count + " uploads</p>";
+                detail = "<p class=\"ms-track\">&#10022; " + esc(ms.date) + ", " + ms.count + " uploads</p>";
               } else if (ms.id === "longest-silence") {
-                detail = "<p class=\"ms-track\">&#10022; " + esc(ms.from) + " &rarr; " + esc(ms.to) + " — " + ms.days + " days</p>";
+                detail = "<p class=\"ms-track\">&#10022; " + esc(ms.from) + " &rarr; " + esc(ms.to) + ", " + ms.days + " days</p>";
               }
               return '<li class="ms-card"><h3>' + esc(ms.name) + "</h3>" +
                 '<p class="ms-fact">' + esc(ms.fact) + "</p>" + detail + "</li>";
@@ -502,7 +478,7 @@
             var fmt = function (n) { return Number(n).toLocaleString("en-US"); };
             if (watchSummit && m.summit) {
               watchSummit.innerHTML =
-                '<article class="ms-card reveal"><h3>The summit</h3>' +
+                '<article class="ms-card"><h3>The summit</h3>' +
                 '<p class="ms-track">&#10022; <a href="' + esc(m.summit.page) + '">' + esc(m.summit.title) + "</a></p>" +
                 '<p class="chart-sub">' + fmt(m.summit.plays) + " plays · " + esc(m.summit.date || "date unknown") + "</p>" +
                 '<p class="ms-fact">' + esc(m.summit.note || "") + "</p></article>";
@@ -515,8 +491,8 @@
               }).join("");
               var body = rows
                 ? '<ol class="year-list">' + rows + "</ol>"
-                : '<p class="chart-sub">Nothing in range — the summit stands alone.</p>';
-              return '<section class="watch-band reveal" aria-label="' + esc(b.name) + '">' +
+                : '<p class="chart-sub">Nothing in range: the summit stands alone.</p>';
+              return '<section class="watch-band" aria-label="' + esc(b.name) + '">' +
                 "<h3>" + esc(b.name) + "</h3>" +
                 '<p class="chart-sub">' + esc(b.blurb || "") + "</p>" + body + "</section>";
             }).join("");

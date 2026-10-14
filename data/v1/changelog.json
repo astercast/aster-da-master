@@ -1,8 +1,14 @@
 {
   "generated": "2026-10-11",
   "method": "Parsed from `git log main`: every commit becomes an entry. The site documenting its own becoming.",
-  "entry_count": 160,
+  "entry_count": 161,
   "entries": [
+    {
+      "hash": "0a4e289",
+      "date": "2026-10-14",
+      "message": "changelog sync (post-validation)",
+      "files_changed": 3
+    },
     {
       "hash": "1e14d29",
       "date": "2026-10-14",

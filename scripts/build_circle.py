@@ -2,8 +2,11 @@
 """Generate collaborator archive pages for the Aster da Master site.
 
 Output:
-  circle/<slug>.html   - one page per title-credited collaborator (21)
-  circle/index.html     - the circle index
+  circle/index.html     - ONE page: the collaborator lines plus every
+                          collaborator's and scene figure's full record
+                          as a fold on the same page, anchored #c-<slug>
+                          (rotation 22 page consolidation; the 22
+                          per-person pages folded in)
   data/v1/circle.json    - machine-readable collaborator index
                           (registered in data/v1/index.json)
 
@@ -51,17 +54,17 @@ HEAD = """<!DOCTYPE html>
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{title} — Aster da Master</title>
+  <title>{title} · Aster da Master</title>
   <meta name="description" content="{desc}">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="{title} — Aster da Master">
+  <meta property="og:title" content="{title} · Aster da Master">
   <meta property="og:description" content="{desc}">
   <link rel="canonical" href="{canonical}">
   <meta property="og:image" content="../assets/og-card.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="{title} — Aster da Master">
+  <meta name="twitter:title" content="{title} · Aster da Master">
   <meta name="twitter:description" content="{desc}">
   <meta name="twitter:image" content="../assets/og-card.png">
   <link rel="preload" href="../assets/fonts/anton-latin.woff2" as="font" type="font/woff2" crossorigin>
@@ -93,7 +96,7 @@ FOOT = """    </div>
   </main>
   <footer class="site-footer">
     <div class="container footer-grid">
-      <p>&copy; 2026 ASTER DA MASTER &mdash; ALL SIGNALS RESERVED</p>
+      <p>&copy; 2026 ASTER DA MASTER · ALL SIGNALS RESERVED</p>
       """ + nav_data.footer_block("../", "circle") + """
     </div>
   </footer>
@@ -535,7 +538,7 @@ GAPS = [
 
 def render_gaps_section():
     """Wave 32: the honest gaps — thin records stated, never filled."""
-    items = "".join(f"<li>{escape(g)}</li>" for g in GAPS)
+    items = "".join(f"<li>{escape(disp(g))}</li>" for g in GAPS)
     return f"""
       <section class="section" aria-labelledby="ci-gaps">
         <span class="kicker"><span class="numeral">&#10022;</span>The honest gaps</span>
@@ -545,38 +548,46 @@ def render_gaps_section():
       </section>
 """
 
+def disp(t):
+    """Display normalization (rotation 22): research strings carried in
+    this module's data are shown with commas where the record uses an
+    em dash. The stored records (and the JSON mirrors) are untouched;
+    this applies at render only."""
+    return str(t).replace(" — ", ", ")
+
+
 def render_sources(sources):
     links = " &middot; ".join(
-        f'<a href="{escape(u)}" target="_blank" rel="noopener">{escape(label)}</a>'
+        f'<a href="{escape(u)}" target="_blank" rel="noopener">{escape(disp(label))}</a>'
         for label, u in sources
     )
     return f'<p class="chart-sub">Sources: {links}</p>'
 
-def render_verified_section(info):
-    facts = "".join(f"<li>{escape(f)}</li>" for f in info["facts"])
+def render_verified_section(info, ns=""):
+    facts = "".join(f"<li>{escape(disp(f))}</li>" for f in info["facts"])
     return f"""
-      <section class="section" aria-labelledby="cv-h">
+      <section class="section" aria-labelledby="cv-h{ns}">
         <span class="kicker"><span class="numeral">&#10022;</span>The scene record</span>
-        <h2 id="cv-h">Verified beyond the titles</h2>
-        <p class="chart-sub">Research pass 2026-10-12 &mdash; public sources only, no biographical invention, no lyrics.</p>
+        <h2 id="cv-h{ns}">Verified beyond the titles</h2>
+        <p class="chart-sub">Research pass 2026-10-12: public sources only, no biographical invention, no lyrics.</p>
         <ul class="fact-list">{facts}</ul>
         {render_sources(info["sources"])}
       </section>
 """
 
-def render_scene_section(info):
+def render_scene_section(info, ns=""):
     """Wave-30 merge: highlighted "new verified facts" section for a scene
     figure. Only rendered when the figure carries a 'scene_section' block."""
     s = info.get("scene_section")
     if not s:
         return ""
-    facts = "".join(f"<li>{escape(f)}</li>" for f in s["facts"])
+    facts = "".join(f"<li>{escape(disp(f))}</li>" for f in s["facts"])
     return f"""
-      <section class="section" aria-labelledby="sn-h">
-        <span class="kicker"><span class="numeral">&#10022;</span>{escape(s["kicker"])}</span>
-        <h2 id="sn-h">{escape(s["heading"])}</h2>
+      <section class="section" aria-labelledby="sn-h{ns}">
+        <span class="kicker"><span class="numeral">&#10022;</span>{escape(disp(s["kicker"]))}</span>
+        <h2 id="sn-h{ns}">{escape(disp(s["heading"]))}</h2>
         <ul class="fact-list">{facts}</ul>
-        <p class="chart-sub"><a href="{escape(s["link_href"])}">{escape(s["link_text"])}</a> {escape(s["link_sub"])}</p>
+        <p class="chart-sub"><a href="{escape(s["link_href"])}">{escape(disp(s["link_text"]))}</a> {escape(disp(s["link_sub"]))}</p>
       </section>
 """
 
@@ -587,12 +598,12 @@ def render_watch_section(info):
     return f"""
       <section class="section" aria-labelledby="uw-h">
         <span class="kicker"><span class="numeral">&#10022;</span>The watch</span>
-        <h2 id="uw-h">{escape(w["label"])} — watch</h2>
+        <h2 id="uw-h">{escape(disp(w["label"]))}: watch</h2>
         <p class="chart-sub" id="uncle-watch-status" aria-live="polite"
            data-status="{escape(w["status"])}"
            data-expected="{escape(w["expected"])}"
-           data-asof="{escape(w["as_of"])}">Announced — expected {escape(w["expected"])}.</p>
-        <p class="chart-sub">{escape(w["note"])} Status as of research pass {escape(w["as_of"])}.</p>
+           data-asof="{escape(w["as_of"])}">Announced, expected {escape(w["expected"])}.</p>
+        <p class="chart-sub">{escape(disp(w["note"]))} Status as of research pass {escape(w["as_of"])}.</p>
       </section>
 """
 
@@ -602,9 +613,18 @@ def years_active(tracks):
         return "dates unknown"
     return yrs[0] if len(yrs) == 1 else f"{yrs[0]}–{yrs[-1]}"
 
-def collab_page(name, slug, tracks, slug_of, eras, prev_s, next_s, ckey=None):
+def collab_fold(name, slug, tracks, slug_of, eras, ckey=None):
+    """One collaborator's full record as a fold on the index page.
+
+    Rotation 22 consolidation: the per-collaborator pages fold into
+    circle/index.html. The record is unchanged: the stat line, the
+    era breakdown, every shared transmission in order, the verified
+    scene record where a research pass exists. The prev/next pager
+    dies with the fold (it was chrome between stubs); the producer
+    cross-link lands on the producer's fold on the Producers page.
+    """
     total_plays = sum(t.get("plays") or 0 for t in tracks)
-    enrich_html = render_verified_section(ENRICH[ckey]) if ckey in ENRICH else ""
+    enrich_html = render_verified_section(ENRICH[ckey], ns=f"-{slug}") if ckey in ENRICH else ""
     era_counts = {}
     for t in tracks:
         y = (t.get("date") or "")[:4]
@@ -624,80 +644,38 @@ def collab_page(name, slug, tracks, slug_of, eras, prev_s, next_s, ckey=None):
         for t in sorted(tracks, key=lambda t: t.get("date") or "")
     )
 
-    prev_link = (
-        f'<a class="btn btn-sm" href="{prev_s}.html" rel="prev">&larr; Prev</a>'
-        if prev_s else '<span class="btn btn-sm" aria-disabled="true">&larr;</span>'
-    )
-    next_link = (
-        f'<a class="btn btn-sm" href="{next_s}.html" rel="next">Next &rarr;</a>'
-        if next_s else '<span class="btn btn-sm" aria-disabled="true">&rarr;</span>'
-    )
-    # wave 27: circle members who also produce link to their deep dive
+    # circle members who also produce link to their record's fold
     pd_slug = producer_slug(name)
     pd_link = (
-        f'<p class="chart-sub"><a href="../producers/{pd_slug}.html">Producer deep dive &rarr;</a> '
+        f'<p class="chart-sub"><a href="../producers/index.html#p-{pd_slug}">Producer record &rarr;</a> '
         f'{escape(name)}\u2019s as-credited productions, fingerprint, and scene context.</p>'
         if pd_slug in PRODUCER_SLUGS else ""
     )
 
-    body = f"""
-      <nav class="crumbs" aria-label="Breadcrumb">
-        <a href="../">Home</a> / <a href="../network.html">Network</a>
-        <a href="../decoder.html">Decoder</a>
-        <a href="../api-playground.html">API</a> / <a href="./">Circle</a> / <span aria-current="page">{escape(name)}</span>
-      </nav>
-      <section class="section" aria-labelledby="cc-h">
-        <span class="kicker"><span class="numeral">&#10022;</span>The circle</span>
-        <h1 id="cc-h">{escape(name)}</h1>
-        <div class="stat-grid">
-          <div class="stat"><div class="stat-value">{len(tracks)}</div><div class="stat-label">Shared transmissions</div></div>
-          <div class="stat"><div class="stat-value">{fmt(total_plays)}</div><div class="stat-label">Shared plays</div></div>
-          <div class="stat"><div class="stat-value">{escape(years_active(tracks))}</div><div class="stat-label">Years active</div></div>
-        </div>
-        <p class="chart-sub">Play counts are the 2026-10-11 vault snapshot. Credits parsed from <em>w/</em> and <em>ft.</em> fragments in titles &mdash; as credited, verbatim; producers excluded.</p>
-      </section>
-
-      <section class="section" aria-labelledby="ce-h">
-        <span class="kicker"><span class="numeral">&#10022;</span>Era breakdown</span>
-        <h2 id="ce-h">Where the collaborations landed</h2>
+    stats = (f'{len(tracks)} shared &middot; {fmt(total_plays)} plays &middot; '
+             f'{escape(years_active(tracks))}')
+    return f"""
+      <details class="prod-fold" id="c-{escape(slug)}">
+        <summary><span class="prod-fold-name">{escape(name)}</span> <span class="prod-fold-stats">{stats}</span></summary>
+        <p class="chart-sub">Play counts are the 2026-10-11 vault snapshot. Credits parsed from <em>w/</em> and <em>ft.</em> fragments in titles: as credited, verbatim; producers excluded.</p>
+        <h3>Where the collaborations landed</h3>
         <ol class="top-list">{era_html}</ol>
-      </section>
-
-      <section class="section" aria-labelledby="ct-h">
-        <span class="kicker"><span class="numeral">&#10022;</span>The shared record</span>
-        <h2 id="ct-h">Every shared transmission, in order</h2>
+        <h3>Every shared transmission, in order</h3>
         <ol class="year-list">{rows}</ol>
-      </section>
 {enrich_html}
 {pd_link}
-      <nav class="year-pager" aria-label="Collaborator navigation">
-        {prev_link}
-        <a class="btn btn-sm" href="./">The full circle</a>
-        {next_link}
-      </nav>
-"""
-    return HEAD.format(
-        title=f"{name} — collaborator",
-        desc=f"{name} and Aster da Master: {len(tracks)} shared transmissions, {fmt(total_plays)} plays.",
-        canonical=f"/circle/{slug}.html",
-    ) + body + FOOT
+      </details>"""
 
-def index_page(entries):
-    cards = "".join(
-        f'<a class="year-card" href="{e["slug"]}.html">'
-        f'<span class="year-card-y">{escape(e["name"])}</span>'
-        f'<span class="year-card-n">{e["n"]} shared &middot; {fmt(e["plays"])} plays</span>'
-        f'<span class="year-card-e">{escape(e["years"])}</span>'
-        f"</a>"
+def index_page(entries, folds, sf_folds, has_watch=False):
+    lines = "".join(
+        f'<li><a href="#c-{e["slug"]}">{escape(e["name"])}</a> &middot; '
+        f'{e["n"]} shared &middot; {fmt(e["plays"])} plays &middot; {escape(e["years"])}</li>'
         for e in entries
     )
-    sf_cards = "".join(
-        f'<a class="year-card" href="{s}.html">'
-        f'<span class="year-card-y">{escape(info["name"])}</span>'
-        f'<span class="year-card-n">{len(info["tracks"])} producer credits'
-        f" &middot; {fmt(sum(t.get('plays') or 0 for t in info['tracks']))} plays</span>"
-        f'<span class="year-card-e">{escape(info["kind"])}</span>'
-        f"</a>"
+    sf_lines = "".join(
+        f'<li><a href="#c-{s}">{escape(info["name"])}</a> &middot; '
+        f'{len(info["tracks"])} producer credits &middot; '
+        f'{fmt(sum(t.get("plays") or 0 for t in info["tracks"]))} plays &middot; {escape(disp(info["kind"]))}</li>'
         for s, info in SCENE_FIGURES.items()
     )
     body = f"""
@@ -706,26 +684,47 @@ def index_page(entries):
       </nav>
       <section class="section" aria-labelledby="ci-h">
         <span class="kicker"><span class="numeral">&#10022;</span>The circle</span>
-        <h1 id="ci-h">Everyone he summoned, one page each</h1>
-        <p>Every collaborator credited in a title across 219 transmissions. Counts and plays are data, not editorial. Producers are excluded by rule &mdash; the documented scene figures below are kept separately.</p>
-        <div class="year-grid">{cards}</div>
+        <h1 id="ci-h">The circle</h1>
+        <p>Every collaborator credited in a title across 219 transmissions, each full record on this page. Counts and plays are data, not editorial. Producers are excluded by rule: the documented scene figures below are kept separately.</p>
+        <ul class="log-lines">{lines}</ul>
+      </section>
+
+      <section class="section" aria-labelledby="ci-records">
+        <span class="kicker"><span class="numeral">&#10022;</span>Full records</span>
+        <h2 id="ci-records">Every collaborator, in full</h2>
+        {folds}
       </section>
 
       <section class="section" aria-labelledby="ci-beyond">
         <span class="kicker"><span class="numeral">&#10022;</span>Beyond the circle</span>
         <h2 id="ci-beyond">Scene figures, not collaborators</h2>
-        <p>Producer and scene credits the title-credit rule excludes &mdash; kept visible with the same evidence standard, and outside the collaborator count.</p>
-        <div class="year-grid">{sf_cards}</div>
+        <p>Producer and scene credits the title-credit rule excludes, kept visible with the same evidence standard, and outside the collaborator count.</p>
+        <ul class="log-lines">{sf_lines}</ul>
+        {sf_folds}
       </section>
 {render_gaps_section()}
 """
-    return HEAD.format(
-        title="The circle — collaborator archive",
-        desc="Every Aster da Master collaborator: shared tracks, plays, years active.",
+    html = HEAD.format(
+        title="The circle",
+        desc="Every Aster da Master collaborator: shared tracks, plays, years active, each full record on one page.",
         canonical="/circle/index.html",
     ) + body + FOOT
+    if has_watch:
+        html = html.replace(
+            "</body>",
+            '  <script src="../assets/js/uncle-watch.js"></script>\n</body>',
+            1,
+        )
+    return html
 
-def scene_figure_page(slug, info):
+def scene_figure_fold(slug, info):
+    """One scene figure's full record as a fold on the index page.
+
+    Rotation 22 consolidation: same move as the collaborators. The
+    record is unchanged: the stat line, the standing line, producer
+    credits in order, the verified scene record, the watch and scene
+    sections where the figure carries them.
+    """
     tracks = info["tracks"]
     total_plays = sum(t.get("plays") or 0 for t in tracks)
     yrs = sorted({t["date"][:4] for t in tracks if t.get("date")})
@@ -736,58 +735,25 @@ def scene_figure_page(slug, info):
         f" &middot; {escape(t['type'])}</span></li>"
         for t in sorted(tracks, key=lambda t: t["date"])
     )
-    facts = "".join(f"<li>{escape(f)}</li>" for f in info["facts"])
+    facts = "".join(f"<li>{escape(disp(f))}</li>" for f in info["facts"])
     watch = render_watch_section(info) if info.get("watch") else ""
-    scene = render_scene_section(info)
-    body = f"""
-      <nav class="crumbs" aria-label="Breadcrumb">
-        <a href="../">Home</a> / <a href="../network.html">Network</a>
-        <a href="../decoder.html">Decoder</a>
-        <a href="../api-playground.html">API</a> / <a href="./">Circle</a> / <span aria-current="page">{escape(info["name"])}</span>
-      </nav>
-      <section class="section" aria-labelledby="cc-h">
-        <span class="kicker"><span class="numeral">&#10022;</span>{escape(info["kind"])}</span>
-        <h1 id="cc-h">{escape(info["name"])}</h1>
-        <div class="stat-grid">
-          <div class="stat"><div class="stat-value">{len(tracks)}</div><div class="stat-label">Producer-credited tracks</div></div>
-          <div class="stat"><div class="stat-value">{fmt(total_plays)}</div><div class="stat-label">Shared plays</div></div>
-          <div class="stat"><div class="stat-value">{escape(span)}</div><div class="stat-label">Years active</div></div>
-        </div>
-        <p class="chart-sub">{escape(info["standing"])}</p>
-      </section>
-
-      <section class="section" aria-labelledby="ct-h">
-        <span class="kicker"><span class="numeral">&#10022;</span>The shared record</span>
-        <h2 id="ct-h">Producer credits in the archive, in order</h2>
+    scene = render_scene_section(info, ns=f"-{slug}")
+    stats = (f'{len(tracks)} producer-credited tracks &middot; {fmt(total_plays)} plays &middot; '
+             f'{escape(span)} &middot; {escape(disp(info["kind"]))}')
+    return f"""
+      <details class="prod-fold" id="c-{escape(slug)}">
+        <summary><span class="prod-fold-name">{escape(info["name"])}</span> <span class="prod-fold-stats">{stats}</span></summary>
+        <p class="chart-sub">{escape(disp(info["standing"]))}</p>
+        <h3>Producer credits in the archive, in order</h3>
         <ol class="year-list">{rows}</ol>
-      </section>
-
-      <section class="section" aria-labelledby="cv-h">
-        <span class="kicker"><span class="numeral">&#10022;</span>The scene record</span>
-        <h2 id="cv-h">Verified beyond the titles</h2>
-        <p class="chart-sub">Research pass 2026-10-12 &mdash; public sources only, no biographical invention, no lyrics.</p>
+        <h3>Verified beyond the titles</h3>
+        <p class="chart-sub">Research pass 2026-10-12: public sources only, no biographical invention, no lyrics.</p>
         <ul class="fact-list">{facts}</ul>
         {render_sources(info["sources"])}
-      </section>
 {watch}
 {scene}
-      <p class="chart-sub"><a href="../producers/{slug}.html">Producer deep dive &rarr;</a> {escape(info["name"])}&rsquo;s as-credited productions, fingerprint, and scene context.</p>
-      <nav class="year-pager" aria-label="Scene figure navigation">
-        <a class="btn btn-sm" href="./">The full circle</a>
-      </nav>
-"""
-    html = HEAD.format(
-        title=f"{info['name']} \u2014 {info['kind']}",
-        desc=f"{info['name']} in the Aster da Master archive: {len(tracks)} producer credits, {fmt(total_plays)} plays.",
-        canonical=f"/circle/{slug}.html",
-    ) + body + FOOT
-    if info.get("watch"):
-        html = html.replace(
-            "</body>",
-            '  <script src="../assets/js/uncle-watch.js"></script>\n</body>',
-            1,
-        )
-    return html
+        <p class="chart-sub"><a href="../producers/index.html#p-{slug}">Producer record &rarr;</a> {escape(info["name"])}&rsquo;s as-credited productions, fingerprint, and scene context.</p>
+      </details>"""
 
 def main():
     releases = DATA["discography"]
@@ -859,23 +825,28 @@ def main():
         "circle name collision: two circle pages would share an <h1>"
 
     OUT.mkdir(exist_ok=True)
-    for i, e in enumerate(entries):
-        prev_s = entries[i - 1]["slug"] if i > 0 else None
-        next_s = entries[i + 1]["slug"] if i < len(entries) - 1 else None
-        (OUT / f'{e["slug"]}.html').write_text(
-            collab_page(e["name"], e["slug"], e["tracks"], slug_of, eras, prev_s, next_s,
-                        ckey=e["key"]),
-            encoding="utf-8",
-        )
-
-    for s, info in SCENE_FIGURES.items():
-        (OUT / f"{s}.html").write_text(scene_figure_page(s, info), encoding="utf-8")
-
-    (OUT / "index.html").write_text(index_page(entries), encoding="utf-8")
+    # Rotation 22 consolidation: ONE page. Clear the per-person pages
+    # first so no stub survives, then write the single index carrying
+    # every record as a fold.
+    for f in OUT.glob("*.html"):
+        if f.name != "index.html":
+            f.unlink()
+    folds = "".join(
+        collab_fold(e["name"], e["slug"], e["tracks"], slug_of, eras,
+                    ckey=e["key"])
+        for e in entries
+    )
+    sf_folds = "".join(
+        scene_figure_fold(s, info) for s, info in SCENE_FIGURES.items()
+    )
+    has_watch = any(info.get("watch") for info in SCENE_FIGURES.values())
+    (OUT / "index.html").write_text(
+        index_page(entries, folds, sf_folds, has_watch=has_watch),
+        encoding="utf-8")
 
     api_circle = {
         e["slug"]: {
-            "name": e["name"], "page": f"circle/{e['slug']}.html",
+            "name": e["name"], "page": f"circle/index.html#c-{e['slug']}",
             "shared_transmissions": e["n"], "shared_plays": e["plays"],
             "years_active": e["years"],
             "tracks": [
@@ -899,7 +870,7 @@ def main():
 
     api_figures = {
         s: {
-            "name": info["name"], "kind": info["kind"], "page": f"circle/{s}.html",
+            "name": info["name"], "kind": info["kind"], "page": f"circle/index.html#c-{s}",
             "standing": info["standing"],
             "research_pass": "2026-10-12",
             "tracks": info["tracks"],

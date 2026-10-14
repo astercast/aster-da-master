@@ -378,7 +378,7 @@
    "id": "fig-capoxxo",
    "name": "capoxxo",
    "kind": "collaborator",
-   "page": "circle/capoxxo.html",
+   "page": "circle/index.html#c-capoxxo",
    "family_count": 1,
    "families": [
     {
@@ -512,7 +512,7 @@
    "id": "fig-fish-narc",
    "name": "Fish Narc",
    "kind": "producer",
-   "page": "circle/fish-narc.html",
+   "page": "circle/index.html#c-fish-narc",
    "family_count": 1,
    "families": [
     {
@@ -607,7 +607,7 @@
    "id": "fig-jax",
    "name": "JAX",
    "kind": "collaborator",
-   "page": "circle/jax.html",
+   "page": "circle/index.html#c-jax",
    "family_count": 3,
    "families": [
     {
@@ -646,7 +646,7 @@
    "id": "fig-jo-e-dripp",
    "name": "JO$E DRIPP",
    "kind": "collaborator",
-   "page": "circle/jo-e-dripp.html",
+   "page": "circle/index.html#c-jo-e-dripp",
    "family_count": 1,
    "families": [
     {
@@ -713,7 +713,7 @@
    "id": "fig-keyblayde808",
    "name": "Keyblayde808",
    "kind": "both",
-   "page": "circle/keyblayde808.html",
+   "page": "circle/index.html#c-keyblayde808",
    "family_count": 1,
    "families": [
     {
@@ -761,7 +761,7 @@
    "id": "fig-lil-wintr",
    "name": "Lil Wintr",
    "kind": "collaborator",
-   "page": "circle/lil-wintr.html",
+   "page": "circle/index.html#c-lil-wintr",
    "family_count": 1,
    "families": [
     {
@@ -800,7 +800,7 @@
    "id": "fig-marcelo",
    "name": "Marcelo",
    "kind": "collaborator",
-   "page": "circle/marcelo.html",
+   "page": "circle/index.html#c-marcelo",
    "family_count": 1,
    "families": [
     {
@@ -820,7 +820,7 @@
    "id": "fig-max",
    "name": "Max",
    "kind": "collaborator",
-   "page": "circle/max.html",
+   "page": "circle/index.html#c-max",
    "family_count": 1,
    "families": [
     {
@@ -839,7 +839,7 @@
    "id": "fig-max-ferrari",
    "name": "Max Ferrari",
    "kind": "collaborator",
-   "page": "circle/max-ferrari.html",
+   "page": "circle/index.html#c-max-ferrari",
    "family_count": 3,
    "families": [
     {
@@ -993,7 +993,7 @@
    "id": "fig-pvscale",
    "name": "pvscale",
    "kind": "producer",
-   "page": "circle/pvscale.html",
+   "page": "circle/index.html#c-pvscale",
    "family_count": 1,
    "families": [
     {
@@ -1145,7 +1145,7 @@
    "id": "fig-vetty",
    "name": "Vetty",
    "kind": "collaborator",
-   "page": "circle/vetty.html",
+   "page": "circle/index.html#c-vetty",
    "family_count": 1,
    "families": [
     {
@@ -1307,7 +1307,7 @@
    "id": "fig-yung-vetta",
    "name": "Yung Vetta",
    "kind": "collaborator",
-   "page": "circle/yung-vetta.html",
+   "page": "circle/index.html#c-yung-vetta",
    "family_count": 3,
    "families": [
     {
@@ -1617,7 +1617,7 @@
    "id": "fig-capoxxo",
    "kind": "collaborator",
    "name": "capoxxo",
-   "page": "circle/capoxxo.html",
+   "page": "circle/index.html#c-capoxxo",
    "x": 242.3,
    "y": 460.6,
    "r": 11.0,
@@ -1677,7 +1677,7 @@
    "id": "fig-fish-narc",
    "kind": "producer",
    "name": "Fish Narc",
-   "page": "circle/fish-narc.html",
+   "page": "circle/index.html#c-fish-narc",
    "x": 193.1,
    "y": 298.6,
    "r": 11.0,
@@ -1727,7 +1727,7 @@
    "id": "fig-jax",
    "kind": "collaborator",
    "name": "JAX",
-   "page": "circle/jax.html",
+   "page": "circle/index.html#c-jax",
    "x": 251.9,
    "y": 168.0,
    "r": 17.0,
@@ -1737,7 +1737,7 @@
    "id": "fig-jo-e-dripp",
    "kind": "collaborator",
    "name": "JO$E DRIPP",
-   "page": "circle/jo-e-dripp.html",
+   "page": "circle/index.html#c-jo-e-dripp",
    "x": 273.3,
    "y": 146.9,
    "r": 11.0,
@@ -1767,7 +1767,7 @@
    "id": "fig-keyblayde808",
    "kind": "both",
    "name": "Keyblayde808",
-   "page": "circle/keyblayde808.html",
+   "page": "circle/index.html#c-keyblayde808",
    "x": 352.0,
    "y": 99.3,
    "r": 11.0,
@@ -1787,7 +1787,7 @@
    "id": "fig-lil-wintr",
    "kind": "collaborator",
    "name": "Lil Wintr",
-   "page": "circle/lil-wintr.html",
+   "page": "circle/index.html#c-lil-wintr",
    "x": 412.6,
    "y": 82.6,
    "r": 11.0,
@@ -1807,7 +1807,7 @@
    "id": "fig-marcelo",
    "kind": "collaborator",
    "name": "Marcelo",
-   "page": "circle/marcelo.html",
+   "page": "circle/index.html#c-marcelo",
    "x": 475.9,
    "y": 79.2,
    "r": 11.0,
@@ -1817,7 +1817,7 @@
    "id": "fig-max",
    "kind": "collaborator",
    "name": "Max",
-   "page": "circle/max.html",
+   "page": "circle/index.html#c-max",
    "x": 507.4,
    "y": 82.6,
    "r": 11.0,
@@ -1827,7 +1827,7 @@
    "id": "fig-max-ferrari",
    "kind": "collaborator",
    "name": "Max Ferrari",
-   "page": "circle/max-ferrari.html",
+   "page": "circle/index.html#c-max-ferrari",
    "x": 538.3,
    "y": 89.3,
    "r": 17.0,
@@ -1887,7 +1887,7 @@
    "id": "fig-pvscale",
    "kind": "producer",
    "name": "pvscale",
-   "page": "circle/pvscale.html",
+   "page": "circle/index.html#c-pvscale",
    "x": 686.6,
    "y": 191.2,
    "r": 11.0,
@@ -1967,7 +1967,7 @@
    "id": "fig-vetty",
    "kind": "collaborator",
    "name": "Vetty",
-   "page": "circle/vetty.html",
+   "page": "circle/index.html#c-vetty",
    "x": 708.4,
    "y": 410.6,
    "r": 11.0,
@@ -2047,7 +2047,7 @@
    "id": "fig-yung-vetta",
    "kind": "collaborator",
    "name": "Yung Vetta",
-   "page": "circle/yung-vetta.html",
+   "page": "circle/index.html#c-yung-vetta",
    "x": 522.9,
    "y": 554.5,
    "r": 17.0,
@@ -3749,7 +3749,7 @@
    "id": "fig-yung-vetta",
    "name": "Yung Vetta",
    "kind": "collaborator",
-   "page": "circle/yung-vetta.html",
+   "page": "circle/index.html#c-yung-vetta",
    "family_count": 3,
    "families": [
     "dark",

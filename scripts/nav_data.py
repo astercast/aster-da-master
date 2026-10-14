@@ -44,7 +44,6 @@ from html import escape
 NAV = [
     ("#discography", "Discography"),
     ("releases/", "Releases"),
-    ("years/", "Years"),
     ("circle/", "Circle"),
     ("scene/", "Scene"),
     ("timeline.html", "Timeline"),
@@ -113,13 +112,13 @@ def _seq(*labels, **kw):
 # The root form files no Circle door; the scene form adds it back (the
 # scene variant table in update_nav.py assigns the subdir pages).
 STANDARD = _seq(
-    "Discography", "Releases", "Years", "Scene", "Timeline", "Chronicle",
+    "Discography", "Releases", "Scene", "Timeline", "Chronicle",
     "Transmission", "Tuner", "Atlas", "Network", "Race", "Decoder",
     "API", "Agents", "Method", "Trilogy", "Sessions", "Changelog",
     "Glance", "Press kit",
 )
 STANDARD_SCENE = _seq(
-    "Discography", "Releases", "Years", "Circle", "Scene", "Timeline",
+    "Discography", "Releases", "Circle", "Scene", "Timeline",
     "Chronicle", "Transmission", "Tuner", "Atlas", "Network", "Race",
     "Decoder", "API", "Agents", "Method", "Trilogy", "Sessions",
     "Changelog", "Glance", "Press kit",
@@ -130,14 +129,14 @@ STANDARD_SCENE = _seq(
 AGENTS = _seq(
     "Discography", "Releases", "Scene", "Timeline", "Chronicle",
     "Transmission", "Tuner", "Atlas", "Network", "Race", "Decoder",
-    "API", "Agents", "Years", "Method", "Trilogy", "Sessions",
+    "API", "Agents", "Method", "Trilogy", "Sessions",
     "Changelog", "Glance", "Press kit",
 )
 
 # Ledger root pages (changelog, chronicle, glance, milestone-race,
 # sessions, sessions-explorer): Sessions/Changelog ahead of Method.
 LEDGER = _seq(
-    "Discography", "Releases", "Years", "Scene", "Timeline", "Chronicle",
+    "Discography", "Releases", "Scene", "Timeline", "Chronicle",
     "Transmission", "Tuner", "Atlas", "Network", "Race", "Decoder",
     "API", "Agents", "Sessions", "Changelog", "Method", "Trilogy",
     "Glance", "Press kit",
@@ -145,14 +144,14 @@ LEDGER = _seq(
 
 # Section variants: the section's own door replaces its registry slot.
 CIRCLE = _seq(
-    "Discography", "Releases", "Years", "Circle", "Scene", "Timeline",
+    "Discography", "Releases", "Circle", "Scene", "Timeline",
     "Chronicle", "Transmission", "Tuner", "Atlas", "Network", "Race",
     "Decoder", "API", "Agents", "Method", "Trilogy", "Sessions",
     "Changelog", "Glance", "Press kit",
     Circle=("@self", "Circle"),
 )
 CODEX = _seq(
-    "Discography", "Releases", "Years", "Circle", "Scene", "Timeline",
+    "Discography", "Releases", "Circle", "Scene", "Timeline",
     "Chronicle", "Transmission", "Tuner", "Atlas", "Network", "Race",
     "Decoder", "API", "Agents", "Method", "Trilogy", "Sessions",
     "Changelog", "Glance", "Press kit",
@@ -162,24 +161,20 @@ CODEX = _seq(
 # "Codex" door pointed at "./", the producers index. The canonical data
 # gives the door its real target. (Rotation 13 fix; see WAVELOG.)
 PRODUCERS = _seq(
-    "Discography", "Releases", "Years", "Circle", "Scene", "Timeline",
+    "Discography", "Releases", "Circle", "Scene", "Timeline",
     "Chronicle", "Transmission", "Tuner", "Atlas", "Network", "Race",
     "Decoder", "API", "Agents", "Method", "Trilogy", "Sessions",
     "Changelog", "Glance", "Press kit",
     Circle=("codex/", "Codex"),
 )
-YEARS = _seq(
-    "Discography", "Releases", "Years", "Scene", "Timeline", "Chronicle",
-    "Transmission", "Tuner", "Atlas", "Network", "Race", "Decoder",
-    "API", "Agents", "Method", "Trilogy", "Sessions", "Changelog",
-    "Glance", "Press kit",
-    Years=("@self", "Years"),
-)
+# Rotation 22: the YEARS variant is retired with the years/ family
+# itself (page consolidation). The year listings live in the Archive
+# now; no page resolves to a years variant.
 
 # Era deep dives and session deep dives share one curation: Sessions
 # filed with the archive doors, Glance ahead of Changelog, no Circle.
 ERAS = _seq(
-    "Discography", "Releases", "Years", "Sessions", "Scene", "Timeline",
+    "Discography", "Releases", "Sessions", "Scene", "Timeline",
     "Chronicle", "Transmission", "Tuner", "Atlas", "Network", "Race",
     "Decoder", "API", "Agents", "Method", "Trilogy", "Glance",
     "Changelog", "Press kit",
@@ -188,7 +183,7 @@ ERAS = _seq(
 # Scene subpages and the Signal board: the full boat minus the Scene
 # door itself (the reader is already inside the section's pages).
 SCENE = _seq(
-    "Discography", "Releases", "Years", "Circle", "Timeline",
+    "Discography", "Releases", "Circle", "Timeline",
     "Chronicle", "Transmission", "Tuner", "Atlas", "Network", "Race",
     "Decoder", "API", "Agents", "Method", "Trilogy", "Sessions",
     "Changelog", "Glance", "Press kit",
@@ -210,7 +205,7 @@ ANCHORED_PRELUDE = [
 ]
 ANCHORED_TAIL = _seq(
     "Scene", "Timeline", "Chronicle", "Transmission", "Tuner", "Atlas",
-    "Network", "Race", "Decoder", "API", "Agents", "Years", "Method",
+    "Network", "Race", "Decoder", "API", "Agents", "Method",
     "Trilogy", "Sessions", "Changelog", "Glance", "Press kit",
 )
 ANCHORED = ANCHORED_PRELUDE + ANCHORED_TAIL
@@ -219,7 +214,6 @@ ANCHORED = ANCHORED_PRELUDE + ANCHORED_TAIL
 COMPACT = [
     ("#discography", "Discography"),
     ("@self", "All releases"),
-    ("years/", "Years"),
     ("decoder.html", "Decoder"),
     ("api-playground.html", "API"),
     ("scene/", "Scene"),
@@ -239,7 +233,6 @@ COMPACT = [
 COMPACT_FOOTER = [
     ("@home", "Home"),
     ("@self", "All releases"),
-    ("years/", "Years"),
     ("method.html", "Method"),
     ("trilogy.html", "Trilogy"),
     ("sessions.html", "Sessions"),
@@ -255,7 +248,7 @@ HOME_NAV = [
     ("transmission.html", "Transmission"),
     ("tuner.html", "Tuner"),
     ("scene-atlas.html", "Atlas"),
-    ("releases/", "Archive"),
+    ("releases/", "Releases"),
     ("scene/", "Scene"),
 ]
 # Rotation 21: the mobile panel mirrors the primary five exactly —
@@ -294,7 +287,6 @@ HOME_FOOTER = [
 PRESSKIT_NAV = list(PRIMARY_NAV)
 PRESSKIT_FOOTER = [
     ("@home", "Home"),
-    ("years/", "Years"),
     ("method.html", "Method"),
     ("trilogy.html", "Trilogy"),
     ("decoder.html", "Decoder"),
@@ -312,7 +304,6 @@ VARIANTS = {
     "circle": CIRCLE,
     "codex": CODEX,
     "producers": PRODUCERS,
-    "years": YEARS,
     "eras": ERAS,
     "scene": SCENE,
     "anchored": ANCHORED,
@@ -332,7 +323,6 @@ _FOOTER_DROP = {
     "circle": ("#discography",),
     "codex": ("#discography",),
     "producers": ("#discography",),
-    "years": ("#discography",),
     "eras": ("#discography",),
     "scene": ("#discography", "scene/"),
 }
@@ -393,6 +383,23 @@ def footer_entries(variant, drop_extra=()):
         e for e in VARIANTS[variant] if e[0] not in drop]
 
 
+def _render_primary(entries, prefix, current):
+    """Rotation 22 (AZ-6, filed form): the primary nav as ONE LINE of
+    single words, punctuated as a sentence — the doors joined by
+    semicolons and closed by a full stop. Same five destinations, same
+    link count as the list form it replaces; the punctuation is text,
+    not chrome, and no destination is added or removed."""
+    parts = []
+    for href, label in entries:
+        resolved = _resolve(href, prefix)
+        cur = ' aria-current="page"' if current and href == current else ""
+        parts.append(
+            f'<a href="{escape(resolved, quote=True)}"{cur}>'
+            f"{escape(label)}</a>")
+    return ('<span class="nav-sep" aria-hidden="true">; </span>'.join(parts)
+            + '<span class="nav-sep" aria-hidden="true">.</span>')
+
+
 def primary_nav_html(current, prefix="", variant="standard"):
     """The primary nav's inner HTML: the five front-desk doors
     (PRIMARY_NAV) on every page, whatever the variant. `current` is
@@ -400,7 +407,7 @@ def primary_nav_html(current, prefix="", variant="standard"):
     `prefix` is "../" per directory depth. The variant registry
     still drives the FOOTER (footer_nav_html), where the full set
     of doors remains — header economy, never delisting."""
-    return _render(PRIMARY_NAV, prefix, current, "        ")
+    return _render_primary(PRIMARY_NAV, prefix, current)
 
 
 def footer_nav_html(current="", prefix="", variant="standard",

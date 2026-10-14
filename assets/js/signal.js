@@ -22,7 +22,7 @@
 
   function fmt(n) {
     var v = Number(n);
-    return Number.isFinite(v) ? v.toLocaleString("en-US") : "—";
+    return Number.isFinite(v) ? v.toLocaleString("en-US") : "n/a";
   }
 
   /* "2026-10-11T22:11:31Z" → "2026-10-11". Honest data timestamp, never "now". */
@@ -54,7 +54,7 @@
     if (!nodes.length) return;
     var text;
     if (!r || r.source === "none") {
-      text = "Signal lost — the archive stands on its static numbers.";
+      text = "Signal lost: the archive stands on its static numbers.";
     } else {
       var d = r.data || {};
       var f = d.freshness || {};
@@ -63,7 +63,7 @@
       if (kind === "stats") {
         var snap = fmtDay(f.snapshot_at) || fmtDay(r.generatedAt);
         text = checkedTxt + " · play counts from " + (snap || "the last snapshot") +
-          (f.status === "stale" ? " (stale — latest verified capture)" : "");
+          (f.status === "stale" ? " (stale: latest verified capture)" : "");
       } else {
         var newest = fmtDay(d.newest_upload_at);
         text = checkedTxt + (newest ? " · newest upload on record " + newest : "");
@@ -132,7 +132,7 @@
         if (!r) { paintFreshness("stats", null); return; }
         if (r.source === "none") {
           badge.textContent = "signal lost";
-          badge.title = "The live server and the static file both failed — the page keeps its pre-rendered numbers.";
+          badge.title = "The live server and the static file both failed: the page keeps its pre-rendered numbers.";
         } else if (r.source === "live") {
           var d = statsPayload(r);
           if (d) paintStats(d);
@@ -171,15 +171,25 @@
       if (!r) { paintFreshness("uploads", null); return; }
       if (r.source === "none") {
         badge.textContent = "signal lost";
-        badge.title = "The live server and the static file both failed — the pre-rendered list stands.";
+        badge.title = "The live server and the static file both failed: the pre-rendered list stands.";
       } else if (r.source === "live" && list) {
         var ups = uploadsPayload(r).slice(0, 5);
         if (ups.length) {
-          list.innerHTML = ups.map(function (u) {
+          /* Rotation 22: the live repaint keeps the stream's unit
+             anatomy (state word first, then the title, then the
+             metadata line). The payload carries no session, plays or
+             catalog position, so repainted units carry what the wire
+             actually knows. */
+          list.innerHTML = ups.map(function (u, ix) {
             var date = u.uploaded_at || fmtDay(u.first_seen_at);
-            var inner = '<span class="dim">' + esc(date) + '</span> ' + esc(u.title);
-            if (u.url) inner = '<a href="' + esc(u.url) + '" target="_blank" rel="noopener">' + inner + "</a>";
-            return "<li>" + inner + "</li>";
+            var st = ix === 0 ? "Current" : "Live capture";
+            var stCls = ix === 0 ? "state-current" : "state-live-capture";
+            var title = esc(u.title);
+            title = u.url
+              ? '<a class="unit-title" href="' + esc(u.url) + '" target="_blank" rel="noopener">' + title + "</a>"
+              : '<span class="unit-title">' + title + "</span>";
+            return '<article class="unit"><p class="unit-head"><span class="state ' + stCls + '">' + st + "</span> " + title + "</p>" +
+              '<p class="unit-meta">SoundCloud vault &middot; Uploaded ' + esc(date || "date unrecorded") + "</p></article>";
           }).join("");
         }
         /* nothing new — the featured release stands */

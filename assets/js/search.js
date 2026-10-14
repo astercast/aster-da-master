@@ -122,7 +122,7 @@
     q = q.trim().toLowerCase();
     activeIdx = -1;
     if (q.length < 2) {
-      results.innerHTML = '<p class="search-empty">Type at least two characters — tracks, collaborators, eras, the codex.</p>';
+      results.innerHTML = '<p class="search-empty">Type at least two characters: tracks, collaborators, eras, the codex.</p>';
       input.removeAttribute("aria-activedescendant");
       return;
     }

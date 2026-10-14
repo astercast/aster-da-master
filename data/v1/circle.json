@@ -1,7 +1,7 @@
 {
  "max-ferrari": {
   "name": "Max Ferrari",
-  "page": "circle/max-ferrari.html",
+  "page": "circle/index.html#c-max-ferrari",
   "shared_transmissions": 8,
   "shared_plays": 13618,
   "years_active": "2018–2025",
@@ -58,7 +58,7 @@
  },
  "yung-vetta": {
   "name": "Yung Vetta",
-  "page": "circle/yung-vetta.html",
+  "page": "circle/index.html#c-yung-vetta",
   "shared_transmissions": 7,
   "shared_plays": 17893,
   "years_active": "2018–2019",
@@ -109,7 +109,7 @@
  },
  "jax": {
   "name": "JAX",
-  "page": "circle/jax.html",
+  "page": "circle/index.html#c-jax",
   "shared_transmissions": 3,
   "shared_plays": 12783,
   "years_active": "2018–2019",
@@ -136,7 +136,7 @@
  },
  "lil-yu": {
   "name": "lil yu",
-  "page": "circle/lil-yu.html",
+  "page": "circle/index.html#c-lil-yu",
   "shared_transmissions": 3,
   "shared_plays": 2929,
   "years_active": "2019–2023",
@@ -163,7 +163,7 @@
  },
  "capoxxo": {
   "name": "capoxxo",
-  "page": "circle/capoxxo.html",
+  "page": "circle/index.html#c-capoxxo",
   "shared_transmissions": 2,
   "shared_plays": 16174,
   "years_active": "2019",
@@ -227,7 +227,7 @@
  },
  "griimxo": {
   "name": "Griimxo",
-  "page": "circle/griimxo.html",
+  "page": "circle/index.html#c-griimxo",
   "shared_transmissions": 2,
   "shared_plays": 178,
   "years_active": "2024–2025",
@@ -266,7 +266,7 @@
  },
  "jo-e-dripp": {
   "name": "JO$E DRIPP",
-  "page": "circle/jo-e-dripp.html",
+  "page": "circle/index.html#c-jo-e-dripp",
   "shared_transmissions": 2,
   "shared_plays": 3171,
   "years_active": "2018–2019",
@@ -287,7 +287,7 @@
  },
  "lil-wintr": {
   "name": "Lil Wintr",
-  "page": "circle/lil-wintr.html",
+  "page": "circle/index.html#c-lil-wintr",
   "shared_transmissions": 2,
   "shared_plays": 9615,
   "years_active": "2019",
@@ -328,7 +328,7 @@
  },
  "lilvicbxi": {
   "name": "LILVICBXI",
-  "page": "circle/lilvicbxi.html",
+  "page": "circle/index.html#c-lilvicbxi",
   "shared_transmissions": 2,
   "shared_plays": 4570,
   "years_active": "2019",
@@ -349,7 +349,7 @@
  },
  "marcelo": {
   "name": "Marcelo",
-  "page": "circle/marcelo.html",
+  "page": "circle/index.html#c-marcelo",
   "shared_transmissions": 2,
   "shared_plays": 9615,
   "years_active": "2019",
@@ -390,7 +390,7 @@
  },
  "ammi-age": {
   "name": "AMMI $AGE",
-  "page": "circle/ammi-age.html",
+  "page": "circle/index.html#c-ammi-age",
   "shared_transmissions": 1,
   "shared_plays": 2490,
   "years_active": "2019",
@@ -405,7 +405,7 @@
  },
  "keyblayde808": {
   "name": "Keyblayde808",
-  "page": "circle/keyblayde808.html",
+  "page": "circle/index.html#c-keyblayde808",
   "shared_transmissions": 1,
   "shared_plays": 2650,
   "years_active": "2019",
@@ -440,7 +440,7 @@
  },
  "lil-soda-boi": {
   "name": "lil soda boi",
-  "page": "circle/lil-soda-boi.html",
+  "page": "circle/index.html#c-lil-soda-boi",
   "shared_transmissions": 1,
   "shared_plays": 3075,
   "years_active": "2019",
@@ -455,7 +455,7 @@
  },
  "lilrareboy": {
   "name": "Lilrareboy",
-  "page": "circle/lilrareboy.html",
+  "page": "circle/index.html#c-lilrareboy",
   "shared_transmissions": 1,
   "shared_plays": 319,
   "years_active": "2021",
@@ -470,7 +470,7 @@
  },
  "max": {
   "name": "Max",
-  "page": "circle/max.html",
+  "page": "circle/index.html#c-max",
   "shared_transmissions": 1,
   "shared_plays": 17,
   "years_active": "2024",
@@ -485,7 +485,7 @@
  },
  "offline-hp": {
   "name": "Offline_hp",
-  "page": "circle/offline-hp.html",
+  "page": "circle/index.html#c-offline-hp",
   "shared_transmissions": 1,
   "shared_plays": 1311,
   "years_active": "2019",
@@ -500,7 +500,7 @@
  },
  "phil-is-lonely": {
   "name": "phil is lonely",
-  "page": "circle/phil-is-lonely.html",
+  "page": "circle/index.html#c-phil-is-lonely",
   "shared_transmissions": 1,
   "shared_plays": 244,
   "years_active": "2020",
@@ -515,7 +515,7 @@
  },
  "pvscale": {
   "name": "pvscale",
-  "page": "circle/pvscale.html",
+  "page": "circle/index.html#c-pvscale",
   "shared_transmissions": 1,
   "shared_plays": 7786,
   "years_active": "2019",
@@ -548,7 +548,7 @@
  },
  "shola": {
   "name": "Shola",
-  "page": "circle/shola.html",
+  "page": "circle/index.html#c-shola",
   "shared_transmissions": 1,
   "shared_plays": 1443,
   "years_active": "2018",
@@ -563,7 +563,7 @@
  },
  "vetty": {
   "name": "Vetty",
-  "page": "circle/vetty.html",
+  "page": "circle/index.html#c-vetty",
   "shared_transmissions": 1,
   "shared_plays": 17,
   "years_active": "2024",
@@ -578,7 +578,7 @@
  },
  "yung-cortex": {
   "name": "Yung Cortex",
-  "page": "circle/yung-cortex.html",
+  "page": "circle/index.html#c-yung-cortex",
   "shared_transmissions": 1,
   "shared_plays": 1115,
   "years_active": "2019",

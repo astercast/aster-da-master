@@ -23,17 +23,17 @@ HEAD = """<!DOCTYPE html>
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{title} — Aster da Master</title>
+  <title>{title} · Aster da Master</title>
   <meta name="description" content="{desc}">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="{title} — Aster da Master">
+  <meta property="og:title" content="{title} · Aster da Master">
   <meta property="og:description" content="{desc}">
   <link rel="canonical" href="{canonical}">
   <meta property="og:image" content="../assets/og-card.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="{title} — Aster da Master">
+  <meta name="twitter:title" content="{title} · Aster da Master">
   <meta name="twitter:description" content="{desc}">
   <meta name="twitter:image" content="../assets/og-card.png">
   <link rel="preload" href="../assets/fonts/anton-latin.woff2" as="font" type="font/woff2" crossorigin>
@@ -66,7 +66,7 @@ FOOT = """    </div>
   </main>
   <footer class="site-footer">
     <div class="container footer-grid">
-      <p>&copy; 2026 ASTER DA MASTER &mdash; ALL SIGNALS RESERVED</p>
+      <p>&copy; 2026 ASTER DA MASTER &middot; ALL SIGNALS RESERVED</p>
       """ + nav_data.footer_block("../", "compact") + """
     </div>
   </footer>
@@ -90,6 +90,32 @@ def credits_from_title(title: str):
 
 
 RELEASE_TYPE_MAP = {"Album": "AlbumRelease", "EP": "EPRelease", "Single": "SingleRelease"}
+
+
+# --- Rotation 22 (Aster identity pass, ASTER-STUDY §8.3 + AZ-4) -------------
+# The catalog mark, minted from the archive's own record: ADM + the entry's
+# position in the archive order (this array's order, the same order the
+# index prints as ItemList positions), zero-padded to four. Numbering is
+# added structure only; no slug, URL or title changes.
+def catalog_mark(i):
+    return f"ADM {i + 1:04d}"
+
+
+_NEWEST_DATE = max((r.get("date") or "") for r in DATA["discography"])
+
+
+def state_word(r):
+    """The release's state word, from the catalog as it stands (§8.3):
+    Current = the newest entry on record; Live capture = the SoundCloud
+    vault (the Signal's live captures of the living catalog); Archive =
+    the distributor entries (fixed records). Nothing invented."""
+    if r.get("type") == "SoundCloud-only":
+        return "Current" if (r.get("date") or "") == _NEWEST_DATE else "Live capture"
+    return "Archive"
+
+
+def state_cls(r):
+    return state_word(r).lower().replace(" ", "-")
 
 
 def ld_script(obj):
@@ -219,40 +245,75 @@ def build():
             n = releases[i + 1]
             next_link = f'<a class="btn" href="{slug_list[i + 1]}.html">{escape(n["title"])} &rarr;</a>'
 
+        # Rotation 22 poster form (§8.3): title at poster size, one plain
+        # metadata line (state word first, catalog mark closing), the
+        # tracklist, the exits, then provenance as the record. The old
+        # hero meta table's fields all survive: type/date/label/tracks in
+        # the metadata line, plays in the metadata line, the title credits
+        # in the provenance record.
+        is_vault = r["type"] == "SoundCloud-only"
+        meta_bits = [
+            f'<span class="state state-{state_cls(r)}">{escape(state_word(r))}</span>',
+            escape(r["type"]),
+            f'{"Uploaded" if is_vault else "Released"} {escape(r["date"]) if r.get("date") else "date unknown"}',
+        ]
+        if r.get("label"):
+            meta_bits.append(escape(r["label"]))
+        if r.get("tracks"):
+            meta_bits.append(f'{r["tracks"]} tracks')
+        if r.get("plays") is not None:
+            meta_bits.append(f'{r["plays"]:,} plays <span class="chart-sub">(snapshot 2026-10-11)</span>')
+        meta_line = " &middot; ".join(meta_bits) + f' &middot; <span class="cat-mark">{catalog_mark(i)}</span>'
+
+        # The tracklist prints what the record carries. Single-track
+        # records: the one track, numbered, its timing slot honest (the
+        # catalog carries no durations anywhere). Multi-track records:
+        # titles were never captured, so the position carries the count
+        # and says so. Nothing is invented to fill the form.
+        if r.get("tracks") and isinstance(r.get("tracks"), int) and r["tracks"] > 1:
+            tracklist = (
+                f'<p class="tracks-note">{r["tracks"]} tracks. Track titles are not in the '
+                'verified record; the catalog carries the count from the distributor listing.</p>'
+            )
+        else:
+            tracklist = (
+                f'<ol class="tracks"><li><span class="t-title">{escape(r["title"])}</span>'
+                '<span class="t-time">timing unrecorded</span></li></ol>'
+            )
+
+        # Simplification steer (2026-10-14): the provenance record closes
+        # the poster folded, one tap from the surface. Nothing is removed:
+        # the full record (source, confidence, research line, title credits,
+        # cited indexes, note) stands inside the fold, in the same order.
         prov = f"""
-        <section class="provenance" aria-labelledby="prov-h">
-          <h2 id="prov-h">Provenance</h2>
+        <details class="provenance-fold">
+          <summary>Provenance</summary>
           <dl class="release-meta">
             <dt>Source</dt><dd>{escape(r.get("source", "Not recorded"))}</dd>
             <dt>Confidence</dt><dd>{escape(r.get("confidence", "verified"))}</dd>
-            <dt>Research</dt><dd>2026-10-11 artist research pass; titles and credits only &mdash; no lyrics reproduced.</dd>
+            <dt>Research</dt><dd>2026-10-11 artist research pass; titles and credits only; no lyrics reproduced.</dd>
+            {credit_html}
           </dl>
           {"<p>Cited indexes:</p><ul>" + citations + "</ul>" if citations else ""}
           {f'<p>{escape(r["note"])}</p>' if r.get("note") else ""}
-        </section>"""
+        </details>"""
 
         body = f"""
-      <article class="release-hero" aria-labelledby="rel-title">
-        <div>{art}</div>
-        <div>
-          <p class="kicker"><span class="numeral">&#10022;</span>{escape(r["type"])}</p>
-          <h1 id="rel-title">{escape(r["title"])}</h1>
-          <dl class="release-meta">
-            <dt>Type</dt><dd>{escape(r["type"])}</dd>
-            <dt>{'Uploaded' if r['type'] == 'SoundCloud-only' else 'Released'}</dt><dd>{escape(r["date"]) if r.get("date") else "Unknown"}</dd>
-            {f'<dt>Label</dt><dd>{escape(r["label"])}</dd>' if r.get("label") else ""}
-            {f'<dt>Tracks</dt><dd>{r["tracks"]}</dd>' if r.get("tracks") else ""}
-            {f'<dt>Plays</dt><dd>{r["plays"]:,} <span class="chart-sub">(snapshot 2026-10-11)</span></dd>' if r.get("plays") is not None else ""}
-            {credit_html}
-          </dl>
-          <div class="btn-row">{links or '<p class="chart-sub">No distributor platform links on record for this entry.</p>'}</div>
-        </div>
+      <article class="poster" aria-labelledby="rel-title">
+        <h1 class="poster-title" id="rel-title">{escape(r["title"])}</h1>
+        <p class="poster-meta">{meta_line}</p>
+        <div class="poster-art">{art}</div>
+        <section class="tracklist" aria-labelledby="tl-h">
+          <h2 id="tl-h">Tracklist</h2>
+          {tracklist}
+        </section>
+        <div class="btn-row">{links or '<p class="chart-sub">No distributor platform links on record for this entry.</p>'}</div>
       </article>
       {prov}
       <nav class="release-nav" aria-label="More releases">{prev_link}{next_link}</nav>
 """
         (OUT / f"{slug}.html").write_text(
-            HEAD.format(title=escape(page_titles[i]), desc=escape(f'{r["title"]} — {r["type"]} by Aster da Master'), canonical=f"/releases/{slug}.html", ldjson=release_ld(r, slug), navchunk=nav_data.nav_chunk("../", "compact"))
+            HEAD.format(title=escape(page_titles[i]), desc=escape(f'{r["title"]} · {r["type"]} by Aster da Master'), canonical=f"/releases/{slug}.html", ldjson=release_ld(r, slug), navchunk=nav_data.nav_chunk("../", "compact"))
             + body
             + FOOT,
             encoding="utf-8",
@@ -270,13 +331,16 @@ def build():
                 "date": r.get("date"),
                 "year": (r["date"] or "")[:4] if r.get("date") else "Unknown",
                 "type": r["type"],
-                "label": r.get("label") or "—",
+                "label": r.get("label") or "",
                 "plays": r.get("plays"),
+                "state": state_word(r),
+                "stateCls": state_cls(r),
+                "mark": catalog_mark(i),
             }
         )
     years = sorted({i["year"] for i in index_items}, reverse=True)
     types = sorted({i["type"] for i in index_items})
-    labels = sorted({i["label"] for i in index_items if i["label"] != "—"})
+    labels = sorted({i["label"] for i in index_items if i["label"]})
 
     def opts(vals):
         return "".join(f'<option value="{escape(v)}">{escape(v)}</option>' for v in vals)
@@ -285,7 +349,7 @@ def build():
       <section class="section" aria-labelledby="idx-h">
         <p class="kicker"><span class="numeral">&#10022;</span>The full archive</p>
         <h1 id="idx-h">Every release</h1>
-        <p>{len(releases)} transmissions on record &mdash; {n_dist} distributor releases and {n_vault} from the SoundCloud vault.</p>
+        <p>{len(releases)} transmissions on record: {n_dist} distributor releases and {n_vault} from the SoundCloud vault.</p>
         <div class="filter-row" role="group" aria-label="Filter releases">
           <label>Year <select id="f-year"><option value="">All years</option>{opts(years)}</select></label>
           <label>Type <select id="f-type"><option value="">All types</option>{opts(types)}</select></label>
@@ -309,9 +373,11 @@ def build():
             var plays = (i.plays != null)
               ? ' <span class="rl-plays">' + Number(i.plays).toLocaleString("en-US") + " plays</span>"
               : "";
-            return '<li><span><a href="' + esc(i.slug) + '.html">' + esc(i.title) + "</a>" +
+            return '<li><span class="rl-state state-' + i.stateCls + '">' + esc(i.state) + "</span>" +
+              '<span><a href="' + esc(i.slug) + '.html">' + esc(i.title) + "</a>" +
               '<span class="rl-type">' + esc(i.type) + "</span>" + plays + "</span>" +
-              '<span class="rl-date">' + esc(i.date || "date unknown") + "</span></li>";
+              '<span class="rl-when">' + esc(i.date || "date unknown") + "</span>" +
+              '<span class="rl-mark">' + esc(i.mark) + "</span></li>";
           }}).join("") || "<li>No releases match those filters.</li>";
         }}
         [fy, ft, fl].forEach(function (s) {{ s.addEventListener("change", render); }});

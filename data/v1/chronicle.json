@@ -64,127 +64,127 @@
     {
       "slug": "max-ferrari",
       "name": "Max Ferrari",
-      "page": "circle/max-ferrari.html",
+      "page": "circle/index.html#c-max-ferrari",
       "appearances": 8
     },
     {
       "slug": "yung-vetta",
       "name": "Yung Vetta",
-      "page": "circle/yung-vetta.html",
+      "page": "circle/index.html#c-yung-vetta",
       "appearances": 7
     },
     {
       "slug": "jax",
       "name": "JAX",
-      "page": "circle/jax.html",
+      "page": "circle/index.html#c-jax",
       "appearances": 3
     },
     {
       "slug": "lil-yu",
       "name": "lil yu",
-      "page": "circle/lil-yu.html",
+      "page": "circle/index.html#c-lil-yu",
       "appearances": 3
     },
     {
       "slug": "griimxo",
       "name": "Griimxo",
-      "page": "circle/griimxo.html",
+      "page": "circle/index.html#c-griimxo",
       "appearances": 2
     },
     {
       "slug": "jo-e-dripp",
       "name": "JO$E DRIPP",
-      "page": "circle/jo-e-dripp.html",
+      "page": "circle/index.html#c-jo-e-dripp",
       "appearances": 2
     },
     {
       "slug": "lilvicbxi",
       "name": "LILVICBXI",
-      "page": "circle/lilvicbxi.html",
+      "page": "circle/index.html#c-lilvicbxi",
       "appearances": 2
     },
     {
       "slug": "lil-wintr",
       "name": "Lil Wintr",
-      "page": "circle/lil-wintr.html",
+      "page": "circle/index.html#c-lil-wintr",
       "appearances": 2
     },
     {
       "slug": "marcelo",
       "name": "Marcelo",
-      "page": "circle/marcelo.html",
+      "page": "circle/index.html#c-marcelo",
       "appearances": 2
     },
     {
       "slug": "capoxxo",
       "name": "capoxxo",
-      "page": "circle/capoxxo.html",
+      "page": "circle/index.html#c-capoxxo",
       "appearances": 2
     },
     {
       "slug": "ammi-age",
       "name": "AMMI $AGE",
-      "page": "circle/ammi-age.html",
+      "page": "circle/index.html#c-ammi-age",
       "appearances": 1
     },
     {
       "slug": "keyblayde808",
       "name": "Keyblayde808",
-      "page": "circle/keyblayde808.html",
+      "page": "circle/index.html#c-keyblayde808",
       "appearances": 1
     },
     {
       "slug": "lilrareboy",
       "name": "Lilrareboy",
-      "page": "circle/lilrareboy.html",
+      "page": "circle/index.html#c-lilrareboy",
       "appearances": 1
     },
     {
       "slug": "max",
       "name": "Max",
-      "page": "circle/max.html",
+      "page": "circle/index.html#c-max",
       "appearances": 1
     },
     {
       "slug": "offline-hp",
       "name": "Offline_hp",
-      "page": "circle/offline-hp.html",
+      "page": "circle/index.html#c-offline-hp",
       "appearances": 1
     },
     {
       "slug": "shola",
       "name": "Shola",
-      "page": "circle/shola.html",
+      "page": "circle/index.html#c-shola",
       "appearances": 1
     },
     {
       "slug": "vetty",
       "name": "Vetty",
-      "page": "circle/vetty.html",
+      "page": "circle/index.html#c-vetty",
       "appearances": 1
     },
     {
       "slug": "yung-cortex",
       "name": "Yung Cortex",
-      "page": "circle/yung-cortex.html",
+      "page": "circle/index.html#c-yung-cortex",
       "appearances": 1
     },
     {
       "slug": "lil-soda-boi",
       "name": "lil soda boi",
-      "page": "circle/lil-soda-boi.html",
+      "page": "circle/index.html#c-lil-soda-boi",
       "appearances": 1
     },
     {
       "slug": "phil-is-lonely",
       "name": "phil is lonely",
-      "page": "circle/phil-is-lonely.html",
+      "page": "circle/index.html#c-phil-is-lonely",
       "appearances": 1
     },
     {
       "slug": "pvscale",
       "name": "pvscale",
-      "page": "circle/pvscale.html",
+      "page": "circle/index.html#c-pvscale",
       "appearances": 1
     }
   ],
@@ -295,8 +295,8 @@
           "href": "releases/mistakes-ft-jo-e-dripp-prod-tec.html"
         },
         {
-          "label": "Circle page",
-          "href": "circle/jo-e-dripp.html"
+          "label": "Circle record",
+          "href": "circle/index.html#c-jo-e-dripp"
         }
       ],
       "collaborators": [
@@ -339,7 +339,7 @@
         },
         {
           "label": "Circle page",
-          "href": "circle/jo-e-dripp.html"
+          "href": "circle/index.html#c-jo-e-dripp"
         },
         {
           "label": "Session",
@@ -455,7 +455,7 @@
         },
         {
           "label": "Circle page",
-          "href": "circle/jax.html"
+          "href": "circle/index.html#c-jax"
         },
         {
           "label": "Session",
@@ -483,7 +483,7 @@
         },
         {
           "label": "Circle page",
-          "href": "circle/max-ferrari.html"
+          "href": "circle/index.html#c-max-ferrari"
         },
         {
           "label": "Session",
@@ -511,7 +511,7 @@
         },
         {
           "label": "Circle page",
-          "href": "circle/jax.html"
+          "href": "circle/index.html#c-jax"
         },
         {
           "label": "Session",
@@ -626,7 +626,7 @@
         },
         {
           "label": "Circle page",
-          "href": "circle/shola.html"
+          "href": "circle/index.html#c-shola"
         },
         {
           "label": "Session",
@@ -673,7 +673,7 @@
         },
         {
           "label": "Circle page",
-          "href": "circle/yung-vetta.html"
+          "href": "circle/index.html#c-yung-vetta"
         },
         {
           "label": "Session",
@@ -754,7 +754,7 @@
         },
         {
           "label": "Circle page",
-          "href": "circle/yung-vetta.html"
+          "href": "circle/index.html#c-yung-vetta"
         },
         {
           "label": "Session",
@@ -782,7 +782,7 @@
         },
         {
           "label": "Circle page",
-          "href": "circle/yung-vetta.html"
+          "href": "circle/index.html#c-yung-vetta"
         },
         {
           "label": "Session",
@@ -810,7 +810,7 @@
         },
         {
           "label": "Circle page",
-          "href": "circle/yung-vetta.html"
+          "href": "circle/index.html#c-yung-vetta"
         },
         {
           "label": "Session",
@@ -838,7 +838,7 @@
         },
         {
           "label": "Circle page",
-          "href": "circle/yung-vetta.html"
+          "href": "circle/index.html#c-yung-vetta"
         },
         {
           "label": "Session",
@@ -866,7 +866,7 @@
         },
         {
           "label": "Circle page",
-          "href": "circle/yung-vetta.html"
+          "href": "circle/index.html#c-yung-vetta"
         },
         {
           "label": "Session",
@@ -1003,7 +1003,7 @@
         },
         {
           "label": "Circle page",
-          "href": "circle/offline-hp.html"
+          "href": "circle/index.html#c-offline-hp"
         },
         {
           "label": "Session",
@@ -1031,7 +1031,7 @@
         },
         {
           "label": "Circle page",
-          "href": "circle/ammi-age.html"
+          "href": "circle/index.html#c-ammi-age"
         },
         {
           "label": "Session",
@@ -1059,7 +1059,7 @@
         },
         {
           "label": "Circle page",
-          "href": "circle/jax.html"
+          "href": "circle/index.html#c-jax"
         },
         {
           "label": "Session",
@@ -1087,7 +1087,7 @@
         },
         {
           "label": "Circle page",
-          "href": "circle/max-ferrari.html"
+          "href": "circle/index.html#c-max-ferrari"
         },
         {
           "label": "Session",
@@ -1115,7 +1115,7 @@
         },
         {
           "label": "Circle page",
-          "href": "circle/yung-vetta.html"
+          "href": "circle/index.html#c-yung-vetta"
         },
         {
           "label": "Session",
@@ -1143,7 +1143,7 @@
         },
         {
           "label": "Circle page",
-          "href": "circle/jo-e-dripp.html"
+          "href": "circle/index.html#c-jo-e-dripp"
         },
         {
           "label": "Session",
@@ -1190,7 +1190,7 @@
         },
         {
           "label": "Circle page",
-          "href": "circle/capoxxo.html"
+          "href": "circle/index.html#c-capoxxo"
         },
         {
           "label": "Session",
@@ -1238,7 +1238,7 @@
         },
         {
           "label": "Circle page",
-          "href": "circle/lil-wintr.html"
+          "href": "circle/index.html#c-lil-wintr"
         }
       ],
       "collaborators": [
@@ -1262,7 +1262,7 @@
         },
         {
           "label": "Circle page",
-          "href": "circle/marcelo.html"
+          "href": "circle/index.html#c-marcelo"
         }
       ],
       "collaborators": [
@@ -1286,7 +1286,7 @@
         },
         {
           "label": "Circle page",
-          "href": "circle/lil-wintr.html"
+          "href": "circle/index.html#c-lil-wintr"
         },
         {
           "label": "Session",
@@ -1314,7 +1314,7 @@
         },
         {
           "label": "Circle page",
-          "href": "circle/marcelo.html"
+          "href": "circle/index.html#c-marcelo"
         },
         {
           "label": "Session",
@@ -1364,7 +1364,7 @@
         },
         {
           "label": "Circle page",
-          "href": "circle/lil-yu.html"
+          "href": "circle/index.html#c-lil-yu"
         },
         {
           "label": "Session",
@@ -1392,7 +1392,7 @@
         },
         {
           "label": "Circle page",
-          "href": "circle/pvscale.html"
+          "href": "circle/index.html#c-pvscale"
         },
         {
           "label": "Session",
@@ -1420,7 +1420,7 @@
         },
         {
           "label": "Circle page",
-          "href": "circle/capoxxo.html"
+          "href": "circle/index.html#c-capoxxo"
         },
         {
           "label": "Session",
@@ -1448,7 +1448,7 @@
         },
         {
           "label": "Circle page",
-          "href": "circle/lilvicbxi.html"
+          "href": "circle/index.html#c-lilvicbxi"
         },
         {
           "label": "Session",
@@ -1476,7 +1476,7 @@
         },
         {
           "label": "Circle page",
-          "href": "circle/lilvicbxi.html"
+          "href": "circle/index.html#c-lilvicbxi"
         },
         {
           "label": "Session",
@@ -1525,7 +1525,7 @@
         },
         {
           "label": "Circle page",
-          "href": "circle/yung-cortex.html"
+          "href": "circle/index.html#c-yung-cortex"
         },
         {
           "label": "Session",
@@ -1553,7 +1553,7 @@
         },
         {
           "label": "Circle page",
-          "href": "circle/lil-soda-boi.html"
+          "href": "circle/index.html#c-lil-soda-boi"
         },
         {
           "label": "Session",
@@ -1581,7 +1581,7 @@
         },
         {
           "label": "Circle page",
-          "href": "circle/keyblayde808.html"
+          "href": "circle/index.html#c-keyblayde808"
         },
         {
           "label": "Session",
@@ -1680,7 +1680,7 @@
         },
         {
           "label": "Circle page",
-          "href": "circle/phil-is-lonely.html"
+          "href": "circle/index.html#c-phil-is-lonely"
         },
         {
           "label": "Session",
@@ -1708,7 +1708,7 @@
         },
         {
           "label": "Circle page",
-          "href": "circle/lil-yu.html"
+          "href": "circle/index.html#c-lil-yu"
         },
         {
           "label": "Session",
@@ -1826,7 +1826,7 @@
         },
         {
           "label": "Circle page",
-          "href": "circle/max-ferrari.html"
+          "href": "circle/index.html#c-max-ferrari"
         },
         {
           "label": "Session",
@@ -1854,7 +1854,7 @@
         },
         {
           "label": "Circle page",
-          "href": "circle/max-ferrari.html"
+          "href": "circle/index.html#c-max-ferrari"
         },
         {
           "label": "Session",
@@ -1882,7 +1882,7 @@
         },
         {
           "label": "Circle page",
-          "href": "circle/lilrareboy.html"
+          "href": "circle/index.html#c-lilrareboy"
         },
         {
           "label": "Session",
@@ -1910,7 +1910,7 @@
         },
         {
           "label": "Circle page",
-          "href": "circle/max-ferrari.html"
+          "href": "circle/index.html#c-max-ferrari"
         },
         {
           "label": "Session",
@@ -1992,7 +1992,7 @@
         },
         {
           "label": "Circle page",
-          "href": "circle/lil-yu.html"
+          "href": "circle/index.html#c-lil-yu"
         },
         {
           "label": "Session",
@@ -2125,7 +2125,7 @@
         },
         {
           "label": "Circle page",
-          "href": "circle/max-ferrari.html"
+          "href": "circle/index.html#c-max-ferrari"
         },
         {
           "label": "Session",
@@ -2277,7 +2277,7 @@
         },
         {
           "label": "Circle page",
-          "href": "circle/griimxo.html"
+          "href": "circle/index.html#c-griimxo"
         }
       ],
       "collaborators": [
@@ -2372,7 +2372,7 @@
         },
         {
           "label": "Circle page",
-          "href": "circle/max.html"
+          "href": "circle/index.html#c-max"
         },
         {
           "label": "Session",
@@ -2400,7 +2400,7 @@
         },
         {
           "label": "Circle page",
-          "href": "circle/vetty.html"
+          "href": "circle/index.html#c-vetty"
         },
         {
           "label": "Session",
@@ -2482,7 +2482,7 @@
         },
         {
           "label": "Circle page",
-          "href": "circle/max-ferrari.html"
+          "href": "circle/index.html#c-max-ferrari"
         },
         {
           "label": "Session",
@@ -2510,7 +2510,7 @@
         },
         {
           "label": "Circle page",
-          "href": "circle/griimxo.html"
+          "href": "circle/index.html#c-griimxo"
         },
         {
           "label": "Session",
@@ -2538,7 +2538,7 @@
         },
         {
           "label": "Circle page",
-          "href": "circle/max-ferrari.html"
+          "href": "circle/index.html#c-max-ferrari"
         },
         {
           "label": "Session",

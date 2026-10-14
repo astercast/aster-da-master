@@ -79,7 +79,6 @@ DIR_VARIANTS = {
     "producers": "producers",
     "eras": "eras",
     "sessions": "eras",
-    "years": "years",
     "scene": "scene",
 }
 # Scene pages carrying the full standard nav instead of the scene cut.

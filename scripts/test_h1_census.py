@@ -3,27 +3,29 @@
 
 Rotations 15-18 censused page <title>s, standalone version stamps and
 duplicate id attributes; the exactly-one-<h1> sweep (QA-007/QA-008) only
-ever COUNTED <h1>s per page. This battery pins the first census of the
-<h1> TEXTS themselves, site-wide:
+ever COUNTED <h1>s per page. This battery pins the census of the
+<h1> TEXTS themselves, site-wide.
 
-  430 pages carry 430 <h1>s with 420 distinct texts. Exactly 9 texts are
-  duplicated, on 19 pages, and every group is legitimate by construction:
+Rotation 22 re-pin (page consolidation): the census is now
 
-  - 8 groups (17 pages) are one person seen from different sections —
-    a circle/ collaborator page, a producers/ producer deep dive and/or
-    a scene/ 2026-activity page. The <h1> is the person's name verbatim;
-    renaming anyone to force uniqueness would falsify the name. The
-    pages are told apart by their distinct <title>s and sections.
+  285 pages carry 285 <h1>s with 284 distinct texts. Exactly 1 text is
+  duplicated, on 2 pages, legitimate by construction:
+
+  - The 8 person groups of the rotation-19 census (17 pages: one
+    person as the <h1> of a circle/ page, a producers/ page and/or a
+    scene/ page) no longer exist as pages at all. Rotation 22 folded
+    the producers/ and circle/ per-person pages into their index
+    pages, where a person's name is a fold summary, not an <h1>. The
+    duplication class died with the stubs.
   - "9 Trips" (2 pages) is two distinct catalog records sharing a real
     title (Rotation 16): their page titles are year-qualified —
     "9 Trips (2023)" / "9 Trips (2026)" — and the <h1> keeps the
-    release's real name, exactly as that rotation decided.
+    release's real name, exactly as that rotation decided. (Rotation
+    22's sweep changed the title separator to a middot.)
 
 Any NEW duplicate group, any change to a pinned group's page set, or two
 pages of one group sharing a <title> fails here, so an illegitimate
-duplicate <h1> cannot ship silently. The two generators that own most
-of these pages (build_circle.py, build_producer_deepdives.py) also
-assert <h1>-name uniqueness inside their own family at build time.
+duplicate <h1> cannot ship silently.
 
 Usage: python3 scripts/test_h1_census.py   (exit 0 = all pass)
 """
@@ -66,19 +68,9 @@ rel = {p: str(p.relative_to(ROOT)) for p in pages}
 facts = {rel[p]: page_facts(p) for p in pages}
 
 # The pinned legitimate duplicate groups: <h1> text -> exact page set.
+# Rotation 22: only the 9 Trips pair survives; the person groups were
+# folded out of existence (see the docstring).
 EXPECTED_GROUPS = {
-    "pvscale": ["circle/pvscale.html", "producers/pvscale.html",
-                "scene/pvscale.html"],
-    "capoxxo": ["circle/capoxxo.html", "scene/capoxxo-2026.html"],
-    "Fish Narc": ["circle/fish-narc.html", "producers/fish-narc.html"],
-    "Keyblayde808": ["circle/keyblayde808.html",
-                     "producers/keyblayde808.html"],
-    "lil soda boi": ["circle/lil-soda-boi.html",
-                     "producers/lil-soda-boi.html"],
-    "lil yu": ["circle/lil-yu.html", "scene/lil-yu.html"],
-    "LILVICBXI": ["circle/lilvicbxi.html", "producers/lilvicbxi.html"],
-    "Yung Cortex": ["circle/yung-cortex.html",
-                    "producers/yung-cortex.html"],
     "9 Trips": ["releases/9-trips-2.html", "releases/9-trips.html"],
 }
 PERSON_GROUPS = [name for name in EXPECTED_GROUPS if name != "9 Trips"]
@@ -90,13 +82,13 @@ for page, (h1s, _title) in facts.items():
 duplicates = {name: sorted(ps) for name, ps in groups.items() if len(ps) > 1}
 
 # --- aggregate counts -------------------------------------------------------
-check("page-count", len(pages) == 430, f"got {len(pages)}")
+check("page-count", len(pages) == 285, f"got {len(pages)}")
 check("exactly-one-h1-per-page",
       all(len(h1s) == 1 for h1s, _ in facts.values()),
       f"pages without exactly one h1: "
       f"{[p for p, (h, _) in facts.items() if len(h) != 1][:5]}")
-check("distinct-h1-texts", len(groups) == 420, f"got {len(groups)}")
-check("duplicate-group-count", len(duplicates) == 9,
+check("distinct-h1-texts", len(groups) == 284, f"got {len(groups)}")
+check("duplicate-group-count", len(duplicates) == 1,
       f"got {len(duplicates)}: {sorted(duplicates)}")
 
 # --- each legitimate group, pinned page-for-page ----------------------------
@@ -116,9 +108,9 @@ check("person-groups-cross-section",
 trips_titles = {p: facts[p][1] for p in EXPECTED_GROUPS["9 Trips"]}
 check("nine-trips-year-qualified-titles",
       trips_titles.get("releases/9-trips.html") ==
-      "9 Trips (2026) — Aster da Master" and
+      "9 Trips (2026) · Aster da Master" and
       trips_titles.get("releases/9-trips-2.html") ==
-      "9 Trips (2023) — Aster da Master",
+      "9 Trips (2023) · Aster da Master",
       f"got {trips_titles}")
 
 # No directory (section family) may repeat an <h1> text internally, with

@@ -124,42 +124,54 @@ check("doc-producer-count", DOC["producer_count"] == len(DOC["producers"]) == 11
       str(DOC["producer_count"]))
 check("doc-version", DOC["version"] == "0.19.0")
 
+def resolves(page):
+    """Rotation 22: a page value may carry a fold anchor
+    (producers/index.html#p-<slug>, circle/index.html#c-<slug>).
+    It resolves when the file exists AND the anchor id is in it."""
+    path, _, frag = page.partition("#")
+    f = ROOT / path
+    if not f.exists():
+        return False
+    if frag:
+        return f'id="{frag}"' in f.read_text(encoding="utf-8", errors="ignore")
+    return True
+
+
 missing_pages, missing_sessions = [], []
 for p in DOC["producers"]:
     for pr in p["productions"]:
-        if not (ROOT / pr["release_page"]).exists():
+        if not resolves(pr["release_page"]):
             missing_pages.append(pr["release_page"])
         if pr["session_id"] not in SESSIONS:
             missing_sessions.append(pr["session_id"])
-    if not (ROOT / p["page"]).exists():
+    if not resolves(p["page"]):
         missing_pages.append(p["page"])
     for f in p["codex_families"]:
         if f["family_slug"] not in FAMS:
             missing_pages.append("family:" + f["family_slug"])
-        if not (ROOT / f["family_page"]).exists():
+        if not resolves(f["family_page"]):
             missing_pages.append(f["family_page"])
-    if p["circle_page"] and not (ROOT / p["circle_page"]).exists():
+    if p["circle_page"] and not resolves(p["circle_page"]):
         missing_pages.append(p["circle_page"])
 check("every-credit-resolves-to-real-release-page", not missing_pages,
       str(missing_pages[:5]))
 check("every-credit-resolves-to-real-session-id", not missing_sessions,
       str(missing_sessions[:5]))
 
-# every network producer/both node -> a real deep-dive page
+# every network producer/both node -> a real producer record fold
 node_gaps = []
 for nid, n in NET_NODES.items():
     if n["kind"] in ("producer", "both"):
         js_slug = re.sub(r"^fig-", "", re.sub(r"^fig-p-", "", nid))
-        pg = ROOT / producer_page(js_slug)
-        if not pg.exists():
-            node_gaps.append((nid, str(pg)))
+        if not resolves(producer_page(js_slug)):
+            node_gaps.append((nid, producer_page(js_slug)))
 check("every-explorer-producer-node-resolves", not node_gaps,
       str(node_gaps[:5]))
 
-# the explorer JS slug construction lands on a real page for ALL producers
+# the explorer JS slug construction lands on a real fold for ALL producers
 circle = json.loads((ROOT / "data" / "v1" / "circle.json").read_text())
-cbn = {c["name"].lower(): {"slug": c["page"].split("/")[-1].replace(".html", "")}
-       for c in circle.values()}
+cbn = {c["name"].lower(): {"slug": k}
+       for k, c in circle.items()}
 js_gaps = []
 for p in DOC["producers"]:
     fid = network_fig_id(p["name"], cbn)

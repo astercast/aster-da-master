@@ -187,7 +187,8 @@ console.log("[workflow 6] Codex family trace (The Modes)");
     modes && modes.eras.map((r) => `${r.name} x${r.transmissions}`).join(", "));
   check("5 key sessions, 5 collaborators with circle pages",
     modes && modes.key_sessions.length === 5 && modes.collaborators.length === 5 &&
-    modes.collaborators.every((c) => /^circle\//.test(c.page) && c.page.endsWith(".html")),
+    // rotation 22: circle pages are folds on circle/index.html (#c-<slug>)
+    modes.collaborators.every((c) => /^circle\/index\.html#c-/.test(c.page)),
     modes && modes.collaborators.map((c) => c.name).join(", "));
   check("transmissions carry release pages",
     modes && modes.transmissions.length === 5 &&
@@ -276,7 +277,8 @@ console.log("[workflow 7] Milestone race");
     /never a prediction/.test(mr.race_of_the_week.caveat));
   check("play_races carry producer deep-dive links",
     mr.play_races.every((r) => r.producers.length > 0 &&
-      r.producers.every((p) => /^producers\//.test(p.page) && p.page.endsWith(".html"))));
+      // rotation 22: producer records are folds on producers/index.html (#p-<slug>)
+      r.producers.every((p) => /^producers\/index\.html#p-/.test(p.page))));
   check("vault_pace: 185 tracks, unique ids, alphabetical, pace > 0",
     mr.vault_pace.count === 185 && mr.vault_pace.tracks.length === 185 &&
     new Set(mr.vault_pace.tracks.map((v) => v.id)).size === 185 &&

@@ -53,7 +53,7 @@
     d.className = "signoff";
     d.innerHTML =
       '<div><p class="signoff-title">TRANSMISSION ENDS</p>' +
-      '<p class="signoff-sub">THE STATION NEVER SLEEPS \u2014 ARCHIVE OPEN 24/7</p></div>' +
+      '<p class="signoff-sub">THE STATION NEVER SLEEPS \u00b7 ARCHIVE OPEN 24/7</p></div>' +
       '<div class="signoff-clock"><span id="station-clock">--:--:--</span>' +
       '<span class="signoff-label">STATION TIME \u00b7 UTC</span></div>';
     foot.appendChild(d);
