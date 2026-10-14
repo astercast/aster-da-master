@@ -82,7 +82,9 @@ def main() -> int:
         key=lambda c: -c["shared_transmissions"],
     )[:5]
     collab_html = "".join(
-        f'<li><a href="circle/{escape(c["slug"])}.html">{escape(c["name"])}</a>'
+        # rotation 22: circle records are folds; the record's own page
+        # value carries the folded URL (circle/index.html#c-<slug>).
+        f'<li><a href="{escape(c["page"])}">{escape(c["name"])}</a>'
         f' <span class="dim">&times;{c["shared_transmissions"]} shared'
         f' &middot; {fmt(c["shared_plays"])} plays</span></li>'
         for c in collabs
