@@ -1,8 +1,20 @@
 {
   "generated": "2026-10-11",
   "method": "Parsed from `git log main`: every commit becomes an entry. The site documenting its own becoming.",
-  "entry_count": 165,
+  "entry_count": 167,
   "entries": [
+    {
+      "hash": "7854be7",
+      "date": "2026-10-14",
+      "message": "Rotation 23 fittings (ASTER §5.7): wire becomes a legible stacked index at phone widths, phone reading order stream before log, dead band takes the ghost-numeral job (ADM 0001 · ADM 0219, Anton at ghost weight), CACHED chip unboxed to plain log type; era deep-dive presented prose swept of em dashes at the generator (build_eras story lines, chart subs, keep-digging index; body 11+2-3 per page to 0, head/footer apparatus left standing)",
+      "files_changed": 10
+    },
+    {
+      "hash": "7c65e86",
+      "date": "2026-10-14",
+      "message": "changelog sync (post-validation)",
+      "files_changed": 3
+    },
     {
       "hash": "94bb8f6",
       "date": "2026-10-14",

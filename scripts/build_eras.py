@@ -302,10 +302,10 @@ def era_page(e, idx, n_eras, entries, collabs, families, summary):
 
     # the signal, decoded
     sig_items = [
-        f"Rank <strong>#{summary['rank_by_plays']}</strong> of {summary['eras_total']} eras by plays — "
+        f"Rank <strong>#{summary['rank_by_plays']}</strong> of {summary['eras_total']} eras by plays: "
         f"<strong>{summary['archive_plays_share']:.1%}</strong> of every play in the archive.",
         f"Rank <strong>#{summary['rank_by_transmissions']}</strong> of {summary['eras_total']} by transmissions.",
-        f"Busiest year: <strong>{summary['busiest_year']['year']}</strong> — "
+        f"Busiest year: <strong>{summary['busiest_year']['year']}</strong>, "
         f"{fmt(summary['busiest_year']['transmissions'])} transmissions, {fmt(summary['busiest_year']['plays'])} plays.",
         f"Loudest transmission: &ldquo;<a href=\"../{summary['loudest_transmission']['page']}\">{escape(summary['loudest_transmission']['title'])}</a>&rdquo; "
         f"at {fmt(summary['loudest_transmission']['plays'])} plays.",
@@ -319,7 +319,7 @@ def era_page(e, idx, n_eras, entries, collabs, families, summary):
     if summary["top_family"]:
         tf = summary["top_family"]
         sig_items.append(
-            f"Most-played codex family: <a href=\"../{tf['page']}\">{escape(tf['name'])}</a> — "
+            f"Most-played codex family: <a href=\"../{tf['page']}\">{escape(tf['name'])}</a>, "
             f"{tf['transmissions']} transmissions, {fmt(tf['plays'])} plays.")
     sig_items.append(
         f"{summary['milestones_count']} milestones filed in this era.")
@@ -362,7 +362,7 @@ def era_page(e, idx, n_eras, entries, collabs, families, summary):
         <span class="kicker"><span class="numeral">&#10022;</span>The record</span>
         <h2 id="all-h">Every transmission in this era ({len(rows)})</h2>
         <ol class="year-list">{''.join(rows)}</ol>
-        <p class="chart-sub">Distributor releases carry no vault play count — only SoundCloud uploads do.</p>
+        <p class="chart-sub">Distributor releases carry no vault play count; only SoundCloud uploads do.</p>
       </section>
 """)
 
@@ -391,14 +391,14 @@ def era_page(e, idx, n_eras, entries, collabs, families, summary):
             for c in collabs)
         collab_html = f"<ol class=\"top-list\">{co}</ol>"
     else:
-        collab_html = ("<p class=\"tx-empty\">No title-credited collaborators this era "
-                       "&mdash; every transmission stands alone.</p>")
+        collab_html = ("<p class=\"tx-empty\">No title-credited collaborators this era: "
+                       "every transmission stands alone.</p>")
     parts.append(f"""
       <section class="section" aria-labelledby="co-h">
         <span class="kicker"><span class="numeral">&#10022;</span>The summoned</span>
         <h2 id="co-h">Every voice in this era ({len(collabs)})</h2>
         {collab_html}
-        <p class="chart-sub">Credits parsed from <em>w/</em> and <em>ft.</em> fragments in titles &mdash; as credited, verbatim; producers excluded.</p>
+        <p class="chart-sub">Credits parsed from <em>w/</em> and <em>ft.</em> fragments in titles, as credited, verbatim; producers excluded.</p>
       </section>
 """)
 
@@ -456,13 +456,13 @@ def era_page(e, idx, n_eras, entries, collabs, families, summary):
           {' '.join(pager)}
         </nav>
         <ul class="story-list">
-          <li><a href="../glance.html">The vault at a glance</a> — all 219 entries in one frame.</li>
-          <li><a href="../timeline.html">Timeline</a> — the career as a single scroll.</li>
-          <li><a href="../network.html">Network</a> — the collaboration universe as a graph.</li>
-          <li><a href="../codex/">Codex</a> — the 16 vocabulary families.</li>
-          <li><a href="../sessions.html">Sessions</a> — all 61 upload sessions.</li>
-          <li><a href="../sessions-explorer.html#era-{eid}">Sessions explorer</a> — this era's sessions on the explorable timeline.</li>
-          <li><a href="../milestone-race.html">Milestone race</a> — approaching play-count milestones as races, plus the summit chase.</li>
+          <li><a href="../glance.html">The vault at a glance</a>: all 219 entries in one frame.</li>
+          <li><a href="../timeline.html">Timeline</a>: the career as a single scroll.</li>
+          <li><a href="../network.html">Network</a>: the collaboration universe as a graph.</li>
+          <li><a href="../codex/">Codex</a>: the 16 vocabulary families.</li>
+          <li><a href="../sessions.html">Sessions</a>: all 61 upload sessions.</li>
+          <li><a href="../sessions-explorer.html#era-{eid}">Sessions explorer</a>: this era's sessions on the explorable timeline.</li>
+          <li><a href="../milestone-race.html">Milestone race</a>: approaching play-count milestones as races, plus the summit chase.</li>
         </ul>
       </section>
 """)

@@ -172,6 +172,19 @@
 .wire-track .w-item { overflow: hidden; text-overflow: ellipsis; }
 .wire-track b { color: var(--ink-dim); font-weight: 500; }
 .wire-track .w-sep { color: var(--muted); }
+/* Rotation 23 fittings (§5.7 repair 1): at phone widths the one-line
+   flex row shrank every item to 0px and the strip rendered as bare
+   separator dots (measured at 320px: 8 items at 0px, 7 dots standing
+   alone). Below 640px the track stops being a flex line and flows as
+   a stacked index instead: items and separators run as plain text,
+   wrapping whole — every title and date legible, nothing clipped. */
+@media (max-width: 640px) {
+  .wire-track { display: block; white-space: normal; line-height: 1.9; }
+  .wire-track .w-item { overflow: visible; text-overflow: clip; }
+  /* in flow the flex gap no longer spaces the separators; the dot
+     takes its air from margins instead of gluing to the dates */
+  .wire-track .w-sep { margin: 0 0.35em; }
+}
 
 /* ---------- Release feature ---------- */
 .feature {
@@ -1611,7 +1624,7 @@
 
 /* ============================================================
    THE SIGNAL — api-badge (Vercel Wave B, ARCHITECTURE.md §3.2)
-   Honesty pill for every live-wired widget. Four states:
+   Honesty line for every live-wired widget. Four states:
    live (phosphor green) · waking (dim pulse) · cached (amber) ·
    none (muted — the live server and the static file both failed; the
    pre-rendered static content stands alone and the badge says so).
@@ -1621,6 +1634,10 @@
    so state changes are announced to screen readers.
    ============================================================ */
 .signal-row { margin-top: var(--space-3); }
+/* Rotation 23 fittings (§5.7 repair 4): the badge loses its border
+   box — no background, no border, no padding. It prints as plain
+   log type in the margin's own register; the state survives in the
+   dot alone, which keeps its per-state colour and the waking pulse. */
 .api-badge {
   display: inline-flex;
   align-items: center;
@@ -1630,22 +1647,15 @@
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--ink-dim);
-  background: var(--panel);
-  border: 1px solid var(--line);
-  border-radius: var(--radius-s);
-  padding: 0.3em 0.65em;
   white-space: nowrap;
   vertical-align: middle;
 }
 .api-badge:empty { display: none; } /* no JS → no badge; static page stands */
 .api-badge::before { content: "\25CF"; font-size: 0.72em; line-height: 1; }
-.api-badge[data-api-state="live"] { color: var(--neon); border-color: var(--neon-dim); }
 .api-badge[data-api-state="live"]::before { color: var(--neon); }
-.api-badge[data-api-state="waking"] { color: var(--ink-dim); border-color: var(--line); }
 .api-badge[data-api-state="waking"]::before { color: var(--neon-dim); animation: api-badge-pulse 1.4s ease-in-out infinite; }
-.api-badge[data-api-state="cached"] { color: var(--gold-bright); border-color: rgba(20, 20, 20, 0.45); }
 .api-badge[data-api-state="cached"]::before { color: var(--gold); }
-.api-badge[data-api-state="none"] { color: var(--muted); border-color: var(--line-soft); }
+.api-badge[data-api-state="none"] { color: var(--muted); }
 .api-badge[data-api-state="none"]::before { color: var(--muted); }
 @keyframes api-badge-pulse {
   0%, 100% { opacity: 0.35; }

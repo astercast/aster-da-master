@@ -122,7 +122,11 @@
    line live in the transmission log margin now (§8.4). The sign-on
    is the only element that may move on arrival: one settle, once. */
 .hero-signon {
-  padding-bottom: var(--space-8);
+  /* Rotation 23 fittings (§5.7 repair 3): the sign-on's own bottom
+     padding steps down — the stacked hero paddings left a dead
+     white band under the catalogue line, and that air now belongs
+     to the ghost band below instead. */
+  padding-bottom: var(--space-2);
 }
 .hero-signon .hero-title {
   font-family: "Anton", "Arial Narrow", sans-serif;
@@ -145,6 +149,32 @@
   letter-spacing: var(--track-label);
   text-transform: uppercase;
 }
+/* ---- the ghost band (rotation 23 fittings, §5.7 repair 3) ----
+   The white between the sign-on and the stream gets the ghost-
+   numeral job: the catalogue's own span, first mark to last, set
+   oversized in Anton at watermark weight (the estate's existing
+   --neon-faint), the middot between them in the mono. The numbers
+   are real — ADM 0001 to ADM 0219, the gap-free bounds verified in
+   rotation 22 — and the band is aria-hidden furniture: the same
+   bounds print as plain lines in the log and the Archive. */
+.ghost-band { overflow: hidden; }
+.ghost-track {
+  width: min(1180px, 100% - var(--space-5) * 2);
+  margin: 0 auto;
+  padding-top: var(--space-4);
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-3);
+  font-family: "Anton", "Arial Narrow", sans-serif;
+  font-size: clamp(1.8rem, 9.5vw, 8.5rem);
+  line-height: .85;
+  letter-spacing: .01em;
+  white-space: nowrap;
+  color: var(--neon-faint);
+  user-select: none;
+}
+.ghost-track .ghost-sep { font-family: var(--font-mono); font-size: .32em; }
 .btn-hero {
   font-size: 1.05rem;
   padding: 14px 28px;
@@ -157,8 +187,11 @@
 
 /* ---- the stream + the transmission log margin (rotation 22, §8.1/§8.4) ----
    The stream is the body; the log rides in the margin beside it. On
-   narrow screens the margin stacks directly under the sign-on, its
-   latest line first, so the page still reads sign-on, log, stream. */
+   narrow screens the two stack in DOM order — stream first, log
+   after it (rotation 23 fittings, §5.7 repair 2: at phone widths the
+   log previously jumped ahead of the stream via order:-1, so the
+   margin outranked the body; the reading order is now the page's
+   own order at every width). */
 .home-grid {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 330px;
@@ -168,7 +201,6 @@
 .home-grid .section { padding-top: 0; }
 @media (max-width: 1020px) {
   .home-grid { display: flex; flex-direction: column; }
-  .home-grid .txlog { order: -1; }
 }
 .txlog {
   border-top: 2px solid var(--ink);
