@@ -1,8 +1,26 @@
 {
   "generated": "2026-10-11",
   "method": "Parsed from `git log main`: every commit becomes an entry. The site documenting its own becoming.",
-  "entry_count": 169,
+  "entry_count": 172,
   "entries": [
+    {
+      "hash": "87399e2",
+      "date": "2026-10-14",
+      "message": "Rotation 24 fittings tail: 44px touch floor in header + disco filters; nav panel sentence wraps inside the viewport",
+      "files_changed": 2
+    },
+    {
+      "hash": "c2fde75",
+      "date": "2026-10-14",
+      "message": "Drawers fix (QA r70-73 residue): cap drawer grid track minimums at the drawer measure on phone widths",
+      "files_changed": 1
+    },
+    {
+      "hash": "6916adc",
+      "date": "2026-10-14",
+      "message": "changelog sync (post-validation)",
+      "files_changed": 3
+    },
     {
       "hash": "eb14d56",
       "date": "2026-10-14",

@@ -313,6 +313,9 @@
 
 /* Discography filters + vault note */
 .disco-filters { display: flex; flex-wrap: wrap; gap: var(--space-2); margin: var(--space-5) 0 var(--space-4); }
+/* Rotation 24 fittings: 44px touch floor for the filter row
+   (the .btn-sm form measured 36.5px tall at 390 and 320). */
+.disco-filters .btn-sm { min-height: 44px; }
 .vault-note {
   border: 1px dashed var(--neon-deep);
   border-radius: var(--radius-s);
@@ -962,7 +965,10 @@
 
 /* ---------- Global search ---------- */
 .search-btn {
-  display: inline-flex; align-items: center; gap: 0.45rem;
+  display: inline-flex; align-items: center; justify-content: center; gap: 0.45rem;
+  /* Rotation 24 fittings: 44px touch floor in both dimensions
+     (measured 31 x 30px at phone widths). */
+  min-height: 44px; min-width: 44px;
   background: transparent; border: 1px solid var(--line); color: var(--ink-dim);
   border-radius: var(--radius-s); padding: 0.45rem 0.65rem; cursor: pointer;
   font-size: 0.85rem; line-height: 1;
