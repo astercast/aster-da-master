@@ -172,7 +172,7 @@ def main() -> int:
       <div class="section-head reveal">
         <span class="kicker"><span class="numeral">&#10022;</span>At a glance</span>
         <h1>Aster da Master in 60 seconds</h1>
-        <p>Nine years of transmissions, every headline number from the verified archive. Sixty seconds here, or a lifetime in the <a href="releases/">full archive</a>.</p>
+        <p>Nine years of transmissions, every headline number from the verified archive. Sixty seconds here, or a lifetime in <a href="releases/">Releases</a>.</p>
         <p class="chart-sub">Play counts are a {SNAPSHOT} snapshot and drift over time.</p>
         <p class="signal-row"><span class="api-badge" id="glance-signal-badge" data-api-state="waking" role="status" aria-live="polite"></span></p>
         <p class="chart-sub" data-signal-fresh="stats"></p>

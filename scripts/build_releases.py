@@ -347,8 +347,8 @@ def build():
 
     index_body = f"""
       <section class="section" aria-labelledby="idx-h">
-        <p class="kicker"><span class="numeral">&#10022;</span>The full archive</p>
-        <h1 id="idx-h">Every release</h1>
+        <p class="kicker"><span class="numeral">&#10022;</span>The complete catalogue</p>
+        <h1 id="idx-h">Releases</h1>
         <p>{len(releases)} transmissions on record: {n_dist} distributor releases and {n_vault} from the SoundCloud vault.</p>
         <div class="filter-row" role="group" aria-label="Filter releases">
           <label>Year <select id="f-year"><option value="">All years</option>{opts(years)}</select></label>
@@ -386,7 +386,7 @@ def build():
       </script>
 """
     (OUT / "index.html").write_text(
-        HEAD.format(title="Every release", desc="The complete Aster da Master release archive", canonical="/releases/index.html", ldjson=index_ld(releases, slug_list), navchunk=nav_data.nav_chunk("../", "compact")) + index_body + FOOT,
+        HEAD.format(title="Releases", desc="The complete Aster da Master release archive", canonical="/releases/index.html", ldjson=index_ld(releases, slug_list), navchunk=nav_data.nav_chunk("../", "compact")) + index_body + FOOT,
         encoding="utf-8",
     )
     print(f"Built {len(releases)} release pages + index in {OUT}/")

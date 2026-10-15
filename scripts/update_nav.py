@@ -16,7 +16,11 @@ The contract:
     opening tag (the renderer owns the layout); the whitespace before
     the closing tag is the page's own framing and is kept verbatim.
   - Which variant a page carries is site configuration — the tables
-    below, adjusted ONCE here, never per wave.
+    below, adjusted ONCE here, never per wave. (Rotation 30, VP-0039:
+    the variant names survive as routing tags only — nav_data renders
+    the SAME primary five and the SAME footer map for every variant,
+    so the tables now govern nothing but prefix/current bookkeeping
+    and FOOTER_DROP_EXTRA is inert.)
   - index.html and press-kit.html are bespoke (registered in nav_data
     as HOME_* / PRESSKIT_*): their link sequences are verified, their
     markup is never rewritten. 404.html carries no nav and is skipped.

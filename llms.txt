@@ -10,7 +10,7 @@ Repo: private GitHub-only (astercast/aster-da-master), no Vercel. Deploy: any st
 
 ## The archive
 
-- [Every release](releases/): the complete release archive — **219** transmissions (185 SoundCloud-only tracks + 34 distributor releases).
+- [Releases](releases/): the complete release archive — **219** transmissions (185 SoundCloud-only tracks + 34 distributor releases).
 - [Years](years/): the catalog year by year, 2017–2026.
 - [The Circle](circle/): the **21** title-credited collaborators, each with a page. Producers are excluded by the circle's title-credit rule; documented producer/scene figures live under "Beyond the circle" (e.g. [Fish Narc](circle/fish-narc.html)). Verified public records ("Verified beyond the titles", sourced, single-source flagged) stand on 7 collaborator pages: capoxxo, pvscale, lil wintr, marcelo, yung cortex, griimxo, keyblayde808 — deepened 2026-10-12: capoxxo streaming-metrics layer, first verifiable live dates (Oct 28–29 PNW, Korpsebunny support), the Fish Narc *Uncle* watch (still announced); the circle index carries an honest-gaps register for the thin records (flagged, never filled).
 - [The Codex](codex/): **16** vocabulary families counted across titles, each with a full deep-dive page (decoded reading, era-by-era evolution, key sessions, collaborators).

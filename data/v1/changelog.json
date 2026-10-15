@@ -1,8 +1,20 @@
 {
   "generated": "2026-10-11",
   "method": "Parsed from `git log main`: every commit becomes an entry. The site documenting its own becoming.",
-  "entry_count": 176,
+  "entry_count": 178,
   "entries": [
+    {
+      "hash": "a03de27",
+      "date": "2026-10-14",
+      "message": "Rotation 30 (S0, VP-0039): one chrome generation - one primary nav and one footer map site-wide from nav_data (per-section footer variants retired); the catalogue carries one name (Releases) in nav, footers, home drawer, station index, catalogue page and llms.txt; exactly one latest (turn up w me, 2026-10-02, 'the latest transmission'); plain-language glosses on the insider doors (Transmission, Tuner, Atlas, Scene); a Home-labelled route opens every footer",
+      "files_changed": 293
+    },
+    {
+      "hash": "21915b5",
+      "date": "2026-10-14",
+      "message": "changelog sync (post-validation)",
+      "files_changed": 3
+    },
     {
       "hash": "c628217",
       "date": "2026-10-14",

@@ -8,10 +8,9 @@ THE single source of truth for every nav surface on the site. Imported by:
                                build_years, build_session_deepdives,
                                build_glance, build_releases,
                                build_changelog, build_sessions and
-                               build_scene_atlas — Rotation 14 completed
-                               the set — and, through build_codex's
-                               HEAD/FOOT, the producer deep dives render
-                               their nav from here)
+                               build_scene_atlas — and, through
+                               build_codex's HEAD/FOOT, the producer
+                               deep dives render their nav from here)
 
 Never redefine these lists anywhere else. Adding a page to the nav is a
 one-line data edit here — never a new script. This module retires the nine
@@ -19,32 +18,35 @@ one-off fork scripts (update_nav_wave10/11/13/14/22/30/33/34/35.py, 645
 lines) that each inserted one link after one anchor and hand-patched the
 generators' NAV constants so rebuilds kept it.
 
-Canonical pattern: fleet-commons `patterns/nav-injection` v1.0.0,
-generalized from marvel-legends-chronicle. Aster's nav is not one list:
-a decade of sections accreted per-section variants (the releases pages
-carry a compact nav, three root pages lead with homepage anchors, the
-homepage and press kit are bespoke). Those variants are DATA below —
-named, explicit, and asserted — not per-wave code.
+Rotation 30 (VP-0039): ONE chrome generation. A decade of sections had
+accreted per-section footer variants (ten distinct 19–26-item footer
+label sets, and an anchored variant whose home-section anchors repeated
+the home destination seven times on one page). The variants are retired
+as label sets: every page now carries the SAME primary nav (the five
+front-desk doors) and the SAME footer map (Home + the full registry
+below, in this order). The old variant names survive only as accepted
+routing tags in the render functions' signatures, so generator call
+sites did not need to change; they no longer select anything. The
+homepage's #discography anchor is not a registry entry: it is a section
+of the home page itself and duplicates the Home destination, so the
+catalogue's one name — Releases — is carried by the releases/ door and
+by the home page's own drawer heading, not by a second footer label.
 
 Href tokens (resolved by `_resolve` against the page's depth prefix):
   "#frag"   a homepage anchor: "./#frag" at the root, "../#frag" below it
   "@self"   the section's own index: "./"
   "@home"   the site root: "./" at the root, "../" below it
   anything else is site-root-relative and takes the depth prefix.
-
-Canonical order note: the `agents` and `ledger` variants preserve the
-link orders those page families have actually shipped with (Years after
-Agents on the agent-facing pages; Sessions/Changelog ahead of Method on
-the ledger pages). They are recorded as data so the next nav change is
-one edit, made on purpose — not a tenth fork.
 """
 from html import escape
 
-# The full archive registry, in the canonical (standard-variant) order.
+# The full archive registry, in canonical order. This order is the
+# footer map's order (after Home) on every page of the site.
 NAV = [
-    ("#discography", "Discography"),
     ("releases/", "Releases"),
     ("circle/", "Circle"),
+    ("codex/", "Codex"),
+    ("producers/", "Producers"),
     ("scene/", "Scene"),
     ("timeline.html", "Timeline"),
     ("chronicle.html", "Chronicle"),
@@ -52,6 +54,7 @@ NAV = [
     ("tuner.html", "Tuner"),
     ("scene-atlas.html", "Atlas"),
     ("network.html", "Network"),
+    ("codex-network.html", "Codex network"),
     ("milestone-race.html", "Race"),
     ("decoder.html", "Decoder"),
     ("api-playground.html", "API"),
@@ -65,13 +68,12 @@ NAV = [
 ]
 
 # The front-desk doors: the few links a first-time visitor reads at a
-# glance. Rotation 21: these five are now THE primary nav on every
-# page — primary_nav_html renders this list, never the full variant
-# registry. The full registry survives intact as the FOOTER nav on
-# every page (footer_entries derives from VARIANTS below), so no
-# destination is delisted: every door removed from the header
-# remains reachable by a labelled path in the footer, and the
-# homepage's station-index dialog keeps its own full grouping.
+# glance. Rotation 21: these five are THE primary nav on every page —
+# primary_nav_html renders this list. The full registry survives intact
+# as the FOOTER map on every page (FOOTER below), so no destination is
+# delisted: every door removed from the header remains reachable by a
+# labelled path in the footer, and the homepage's station-index dialog
+# keeps its own full grouping.
 # Must be a subset of NAV (asserted below).
 PRIMARY_NAV = [
     ("transmission.html", "Transmission"),
@@ -81,272 +83,58 @@ PRIMARY_NAV = [
     ("scene/", "Scene"),
 ]
 
-# No grouped directory surface on this site; the canonical pattern's
-# directory template is not used.
-GROUPS = []
+# Rotation 30 (VP-0039): plain-language glosses for the primary labels
+# that are insider words. Each renders as the link's title attribute —
+# the gloss a first-time visitor meets at first encounter with the
+# label, in the desktop nav and the mobile panel alike — at zero
+# geometry cost: the label text and the link boxes do not change.
+# "Releases" is already plain language and carries no gloss.
+GLOSSES = {
+    "transmission.html": "A guided tour of his career, era by era",
+    "tuner.html": "Browse every song on one dial",
+    "scene-atlas.html": "Every person around the music, plotted on one chart",
+    "scene/": "News and notes from the people around the music",
+}
 
+# The ONE footer map: a Home-labelled route first, then the full
+# registry in canonical order. Identical on every page; only the depth
+# prefix and the aria-current marker vary.
+FOOTER = [("@home", "Home")] + NAV
 
-def _by_label(entries):
-    return {label: href for href, label in entries}
-
-
-_STD = _by_label(NAV)
-
-
-def _seq(*labels, **kw):
-    """Build an entry list from NAV labels, with optional substitutions
-    given as label=(href, label) pairs."""
-    out = []
-    for lab in labels:
-        if lab in kw:
-            out.append(kw[lab])
-        else:
-            out.append((_STD[lab], lab))
-    return out
-
-
-# --- Primary-nav variants (exact shipped orders, as data) -----------------
-
-# Root standard pages (method, trilogy, tuner, scene-atlas) and the two
-# scene pages that carry the full boat (scene/index, uncle-release-week).
-# The root form files no Circle door; the scene form adds it back (the
-# scene variant table in update_nav.py assigns the subdir pages).
-STANDARD = _seq(
-    "Discography", "Releases", "Scene", "Timeline", "Chronicle",
-    "Transmission", "Tuner", "Atlas", "Network", "Race", "Decoder",
-    "API", "Agents", "Method", "Trilogy", "Sessions", "Changelog",
-    "Glance", "Press kit",
+# Legacy variant names (rotation 30): accepted by the render functions
+# and by update_nav's page tables for call compatibility, but they no
+# longer select a label set — every variant resolves to the one FOOTER.
+_VARIANT_NAMES = (
+    "standard", "standard-scene", "agents", "ledger", "circle", "codex",
+    "producers", "eras", "scene", "anchored", "compact",
 )
-STANDARD_SCENE = _seq(
-    "Discography", "Releases", "Circle", "Scene", "Timeline",
-    "Chronicle", "Transmission", "Tuner", "Atlas", "Network", "Race",
-    "Decoder", "API", "Agents", "Method", "Trilogy", "Sessions",
-    "Changelog", "Glance", "Press kit",
-)
-
-# Agent-facing root pages (agents, api-playground, decoder, transmission):
-# Years filed after Agents, no Circle entry.
-AGENTS = _seq(
-    "Discography", "Releases", "Scene", "Timeline", "Chronicle",
-    "Transmission", "Tuner", "Atlas", "Network", "Race", "Decoder",
-    "API", "Agents", "Method", "Trilogy", "Sessions",
-    "Changelog", "Glance", "Press kit",
-)
-
-# Ledger root pages (changelog, chronicle, glance, milestone-race,
-# sessions, sessions-explorer): Sessions/Changelog ahead of Method.
-LEDGER = _seq(
-    "Discography", "Releases", "Scene", "Timeline", "Chronicle",
-    "Transmission", "Tuner", "Atlas", "Network", "Race", "Decoder",
-    "API", "Agents", "Sessions", "Changelog", "Method", "Trilogy",
-    "Glance", "Press kit",
-)
-
-# Section variants: the section's own door replaces its registry slot.
-CIRCLE = _seq(
-    "Discography", "Releases", "Circle", "Scene", "Timeline",
-    "Chronicle", "Transmission", "Tuner", "Atlas", "Network", "Race",
-    "Decoder", "API", "Agents", "Method", "Trilogy", "Sessions",
-    "Changelog", "Glance", "Press kit",
-    Circle=("@self", "Circle"),
-)
-CODEX = _seq(
-    "Discography", "Releases", "Circle", "Scene", "Timeline",
-    "Chronicle", "Transmission", "Tuner", "Atlas", "Network", "Race",
-    "Decoder", "API", "Agents", "Method", "Trilogy", "Sessions",
-    "Changelog", "Glance", "Press kit",
-    Circle=("@self", "Codex"),
-)
-# Producer deep dives used to inherit the codex variant whole — their
-# "Codex" door pointed at "./", the producers index. The canonical data
-# gives the door its real target. (Rotation 13 fix; see WAVELOG.)
-PRODUCERS = _seq(
-    "Discography", "Releases", "Circle", "Scene", "Timeline",
-    "Chronicle", "Transmission", "Tuner", "Atlas", "Network", "Race",
-    "Decoder", "API", "Agents", "Method", "Trilogy", "Sessions",
-    "Changelog", "Glance", "Press kit",
-    Circle=("codex/", "Codex"),
-)
-# Rotation 22: the YEARS variant is retired with the years/ family
-# itself (page consolidation). The year listings live in the Archive
-# now; no page resolves to a years variant.
-
-# Era deep dives and session deep dives share one curation: Sessions
-# filed with the archive doors, Glance ahead of Changelog, no Circle.
-ERAS = _seq(
-    "Discography", "Releases", "Sessions", "Scene", "Timeline",
-    "Chronicle", "Transmission", "Tuner", "Atlas", "Network", "Race",
-    "Decoder", "API", "Agents", "Method", "Trilogy", "Glance",
-    "Changelog", "Press kit",
-)
-
-# Scene subpages and the Signal board: the full boat minus the Scene
-# door itself (the reader is already inside the section's pages).
-SCENE = _seq(
-    "Discography", "Releases", "Circle", "Timeline",
-    "Chronicle", "Transmission", "Tuner", "Atlas", "Network", "Race",
-    "Decoder", "API", "Agents", "Method", "Trilogy", "Sessions",
-    "Changelog", "Glance", "Press kit",
-)
-
-# Anchored root pages (codex-network, network, timeline): a prelude of
-# homepage section anchors, then the archive tail.
-ANCHORED_PRELUDE = [
-    ("#latest", "Latest"),
-    ("#discography", "Discography"),
-    ("releases/", "Releases"),
-    ("#listen", "Listen"),
-    ("#circle", "Circle"),
-    ("#about", "About"),
-    ("#connect", "Connect"),
-    ("#eras", "Eras"),
-    ("#numbers", "Numbers"),
-    ("#codex", "Codex"),
-]
-ANCHORED_TAIL = _seq(
-    "Scene", "Timeline", "Chronicle", "Transmission", "Tuner", "Atlas",
-    "Network", "Race", "Decoder", "API", "Agents", "Method",
-    "Trilogy", "Sessions", "Changelog", "Glance", "Press kit",
-)
-ANCHORED = ANCHORED_PRELUDE + ANCHORED_TAIL
-
-# Release pages: the compact nav (220 pages).
-COMPACT = [
-    ("#discography", "Discography"),
-    ("@self", "All releases"),
-    ("decoder.html", "Decoder"),
-    ("api-playground.html", "API"),
-    ("scene/", "Scene"),
-    ("chronicle.html", "Chronicle"),
-    ("transmission.html", "Transmission"),
-    ("tuner.html", "Tuner"),
-    ("scene-atlas.html", "Atlas"),
-    ("milestone-race.html", "Race"),
-    ("agents.html", "Agents"),
-    ("method.html", "Method"),
-    ("trilogy.html", "Trilogy"),
-    ("sessions.html", "Sessions"),
-    ("changelog.html", "Changelog"),
-    ("glance.html", "Glance"),
-    ("press-kit.html", "Press kit"),
-]
-COMPACT_FOOTER = [
-    ("@home", "Home"),
-    ("@self", "All releases"),
-    ("method.html", "Method"),
-    ("trilogy.html", "Trilogy"),
-    ("sessions.html", "Sessions"),
-    ("changelog.html", "Changelog"),
-    ("glance.html", "Glance"),
-    ("press-kit.html", "Press kit"),
-]
+VARIANTS = {name: FOOTER for name in _VARIANT_NAMES}
 
 # Bespoke pages: registered and sequence-verified by update_nav.py,
 # never rewritten by it (their markup carries page furniture the
-# renderers do not own).
-HOME_NAV = [
-    ("transmission.html", "Transmission"),
-    ("tuner.html", "Tuner"),
-    ("scene-atlas.html", "Atlas"),
-    ("releases/", "Releases"),
-    ("scene/", "Scene"),
-]
+# renderers do not own). Their sequences are the same canonical lists:
+# the home page and the press kit carry the same primary five and the
+# same footer map as every other page.
+HOME_NAV = list(PRIMARY_NAV)
 # Rotation 21: the mobile panel mirrors the primary five exactly —
-# no extra doors in the small viewport. The Rooms and Station log
-# sections themselves stay on the homepage, one scroll away, and
-# every header door they carried remains in the footer below.
+# no extra doors in the small viewport.
 HOME_MOBILE_EXTRA = []
-HOME_FOOTER = [
-    ("#top", "Top"),
-    ("transmission.html", "Transmission"),
-    ("tuner.html", "Tuner"),
-    ("scene-atlas.html", "Atlas"),
-    ("releases/", "Releases"),
-    ("glance.html", "Glance"),
-    ("chronicle.html", "Chronicle"),
-    ("timeline.html", "Timeline"),
-    ("circle/", "Circle"),
-    ("scene/", "Scene"),
-    ("producers/", "Producers"),
-    ("codex/", "Codex"),
-    ("codex-network.html", "Codex network"),
-    ("network.html", "Network"),
-    ("milestone-race.html", "Race"),
-    ("decoder.html", "Decoder"),
-    ("api-playground.html", "API"),
-    ("agents.html", "Agents"),
-    ("press-kit.html", "Press kit"),
-    ("trilogy.html", "Trilogy"),
-    ("method.html", "Method"),
-    ("changelog.html", "Changelog"),
-]
-# Rotation 21: the press kit's header carries the same five
-# front-desk doors as every other page; its footer (below) keeps
-# the kit's own short list, and the full registry stays in the
-# footer of every other page.
+HOME_FOOTER = None  # resolved below, after _resolve is defined
 PRESSKIT_NAV = list(PRIMARY_NAV)
-PRESSKIT_FOOTER = [
-    ("@home", "Home"),
-    ("method.html", "Method"),
-    ("trilogy.html", "Trilogy"),
-    ("decoder.html", "Decoder"),
-    ("api-playground.html", "API"),
-    ("sessions.html", "Sessions"),
-    ("changelog.html", "Changelog"),
-    ("glance.html", "Glance"),
-]
-
-VARIANTS = {
-    "standard": STANDARD,
-    "standard-scene": STANDARD_SCENE,
-    "agents": AGENTS,
-    "ledger": LEDGER,
-    "circle": CIRCLE,
-    "codex": CODEX,
-    "producers": PRODUCERS,
-    "eras": ERAS,
-    "scene": SCENE,
-    "anchored": ANCHORED,
-    "compact": COMPACT,
-}
-
-# Footer derivation: the footer is the primary list with a Home door in
-# front, minus the doors named per variant (subdirectory footers drop
-# the homepage's Discography anchor; the scene footer also drops the
-# Scene door). Named exceptions live here, as data.
-_FOOTER_DROP = {
-    "standard": (),
-    "standard-scene": (),  # per-page drops tabled in update_nav.py
-    "agents": (),
-    "ledger": (),
-    "anchored": ("#latest", "#about"),
-    "circle": ("#discography",),
-    "codex": ("#discography",),
-    "producers": ("#discography",),
-    "eras": ("#discography",),
-    "scene": ("#discography", "scene/"),
-}
-_FOOTER_OVERRIDE = {
-    "compact": COMPACT_FOOTER,
-}
+PRESSKIT_FOOTER = None  # resolved below, after _resolve is defined
 
 # --- Assertions: coverage is proven at import, not hoped for. ---
 _NAV_HREFS = [href for href, _ in NAV]
 assert len(_NAV_HREFS) == len(set(_NAV_HREFS)), "duplicate href in NAV"
 assert {h for h, _ in PRIMARY_NAV} <= set(_NAV_HREFS), \
     "PRIMARY_NAV not a subset of NAV"
-_MASTER = set(_NAV_HREFS) | {"codex/", "producers/", "codex-network.html",
-                             "@self", "@home",
-                             "#latest", "#listen", "#circle", "#about",
-                             "#connect", "#eras", "#numbers", "#codex",
-                             "#rooms", "#log", "#top"}
-for _name, _entries in list(VARIANTS.items()) + [
-        ("home", HOME_NAV), ("home_footer", HOME_FOOTER),
-        ("presskit", PRESSKIT_NAV), ("presskit_footer", PRESSKIT_FOOTER),
-        ("compact_footer", COMPACT_FOOTER)]:
-    _hrefs = [h for h, _ in _entries]
-    assert len(_hrefs) == len(set(_hrefs)), f"duplicate href in {_name}"
-    assert set(_hrefs) <= _MASTER, f"{_name} has hrefs outside the registry"
+assert set(GLOSSES) <= {h for h, _ in PRIMARY_NAV}, \
+    "GLOSSES keys must be primary-nav hrefs"
+_FOOTER_HREFS = [h for h, _ in FOOTER]
+assert len(_FOOTER_HREFS) == len(set(_FOOTER_HREFS)), \
+    "duplicate href in FOOTER"
+assert FOOTER[0] == ("@home", "Home"), "footer must open with the Home route"
+assert FOOTER[1:] == NAV, "footer must be Home + the registry, in order"
 
 
 def _resolve(href, prefix):
@@ -360,6 +148,12 @@ def _resolve(href, prefix):
     return prefix + href
 
 
+# The bespoke pages' footer sequences, in resolved root form (the form
+# update_nav.py's bespoke check compares against the written markup).
+HOME_FOOTER = [(_resolve(h, ""), label) for h, label in FOOTER]
+PRESSKIT_FOOTER = [(_resolve(h, ""), label) for h, label in FOOTER]
+
+
 def _render(entries, prefix, current, indent):
     lines = []
     for href, label in entries:
@@ -371,16 +165,15 @@ def _render(entries, prefix, current, indent):
     return "\n".join(lines)
 
 
-def primary_entries(variant):
-    return VARIANTS[variant]
+def primary_entries(variant=None):
+    return list(PRIMARY_NAV)
 
 
-def footer_entries(variant, drop_extra=()):
-    if variant in _FOOTER_OVERRIDE:
-        return list(_FOOTER_OVERRIDE[variant])
-    drop = set(_FOOTER_DROP[variant]) | set(drop_extra)
-    return [("@home", "Home")] + [
-        e for e in VARIANTS[variant] if e[0] not in drop]
+def footer_entries(variant=None, drop_extra=()):
+    """The one footer map. `variant` and `drop_extra` are legacy
+    routing tags (rotation 30): accepted, and deliberately without
+    effect — the map is the same on every page."""
+    return list(FOOTER)
 
 
 def _render_primary(entries, prefix, current):
@@ -388,36 +181,37 @@ def _render_primary(entries, prefix, current):
     single words, punctuated as a sentence — the doors joined by
     semicolons and closed by a full stop. Same five destinations, same
     link count as the list form it replaces; the punctuation is text,
-    not chrome, and no destination is added or removed."""
+    not chrome, and no destination is added or removed. Rotation 30:
+    the insider labels carry their plain-language gloss as the link's
+    title (see GLOSSES); label text and geometry are unchanged."""
     parts = []
     for href, label in entries:
         resolved = _resolve(href, prefix)
         cur = ' aria-current="page"' if current and href == current else ""
+        gloss = GLOSSES.get(href)
+        ttl = f' title="{escape(gloss, quote=True)}"' if gloss else ""
         parts.append(
-            f'<a href="{escape(resolved, quote=True)}"{cur}>'
+            f'<a href="{escape(resolved, quote=True)}"{cur}{ttl}>'
             f"{escape(label)}</a>")
     return ('<span class="nav-sep" aria-hidden="true">; </span>'.join(parts)
             + '<span class="nav-sep" aria-hidden="true">.</span>')
 
 
-def primary_nav_html(current, prefix="", variant="standard"):
+def primary_nav_html(current, prefix="", variant=None):
     """The primary nav's inner HTML: the five front-desk doors
-    (PRIMARY_NAV) on every page, whatever the variant. `current` is
-    the page's own logical href (e.g. "tuner.html") or None;
-    `prefix` is "../" per directory depth. The variant registry
-    still drives the FOOTER (footer_nav_html), where the full set
-    of doors remains — header economy, never delisting."""
+    (PRIMARY_NAV) on every page. `current` is the page's own logical
+    href (e.g. "tuner.html") or None; `prefix` is "../" per directory
+    depth. `variant` is a legacy routing tag and selects nothing."""
     return _render_primary(PRIMARY_NAV, prefix, current)
 
 
-def footer_nav_html(current="", prefix="", variant="standard",
+def footer_nav_html(current="", prefix="", variant=None,
                     drop_extra=()):
-    """The footer nav's inner HTML for the variant."""
-    return _render(footer_entries(variant, drop_extra), prefix,
-                   current, "        ")
+    """The footer nav's inner HTML: the one footer map (FOOTER)."""
+    return _render(FOOTER, prefix, current, "        ")
 
 
-def nav_chunk(prefix="", variant="standard", current=None):
+def nav_chunk(prefix="", variant=None, current=None):
     """The full header chunk the generators embed: primary nav plus the
     mobile details panel, in the site's canonical framing (no stray
     blank line before the mobile close — the framing the fork-era
@@ -437,7 +231,7 @@ def nav_chunk(prefix="", variant="standard", current=None):
     )
 
 
-def footer_block(prefix="", variant="standard", current=None,
+def footer_block(prefix="", variant=None, current=None,
                  drop_extra=()):
     """The footer <nav> block, for generator FOOT templates."""
     return (
