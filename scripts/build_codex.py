@@ -268,9 +268,9 @@ def main():
             "words_s": " · ".join(fam["words"]),
         })
 
-    CODEX_PAGES.mkdir(exist_ok=True)
-    (CODEX_PAGES / "index.html").write_text(index_page(fams), encoding="utf-8")
-    print(f"codex pages: index (family pages owned by build_codex_pages.py)")
+    # Sleek-minimal rework (2026-10-15): this generator no longer
+    # emits a page. The presented site is the catalogue plus three
+    # plain doors; this builder's data outputs are unchanged.
 
     # Bump version + mirror artist.json
     data["version"] = NEW_VERSION

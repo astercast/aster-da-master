@@ -18,10 +18,10 @@
 #                         reproduced, never quote lyrics, source domain
 #                         lirik.web.id, and validator self-references).
 #                         Lyric-section markers ([Chorus], Verse 1:, etc.) always fail.
-#   6. Generator chain .. run the 22 generators in the documented dependency
+#   6. Generator chain .. run the 20 generators in the documented dependency
 #                         order (releases -> years -> circle -> codex ->
-#                         sessions -> session_deepdives -> milestones ->
-#                         milestone_watch -> firstlast -> glance -> search_index
+#                         sessions -> milestones ->
+#                         milestone_watch -> firstlast -> search_index
 #                         -> changelog -> transmission -> network -> eras ->
 #                         session_clusters -> codex_pages).
 #                         A clean re-run must
@@ -149,10 +149,10 @@ def resolve(base, link):
     if re.match(r"^(?:https?:)?//", link, re.I):
         return None  # external: out of scope for this check
     if "{" in link or "}" in link or "$" in link:
-        return None  # JS template #   6. Generator chain .. run the 22 generators in the documented dependency
+        return None  # JS template #   6. Generator chain .. run the 20 generators in the documented dependency
 #                         order (releases -> years -> circle -> codex ->
-#                         sessions -> session_deepdives -> milestones ->
-#                         milestone_watch -> firstlast -> glance -> search_index
+#                         sessions -> milestones ->
+#                         milestone_watch -> firstlast -> search_index
 #                         -> changelog -> transmission -> network -> eras ->
 #                         session_clusters -> codex_pages -> milestone_races
 #                         -> session_tools -> codex_network ->
@@ -196,13 +196,8 @@ for js in sorted((ROOT / "assets" / "js").glob("*.js")):
     for m in FETCH.finditer(text):
         check_link(ROOT, m.group(1), js.relative_to(ROOT))
 
-# api-playground endpoint table: paths are site-root-relative
-pg = open("assets/js/playground.js").read()
-for m in re.finditer(r'''path:\s*["']([^"']+)["']''', pg):
-    total += 1
-    t = ROOT / m.group(1)
-    if not t.exists():
-        broken.append(f"api-playground endpoint -> {m.group(1)}")
+# (the api-playground endpoint-table check retired with the playground
+# itself, sleek-minimal rework 2026-10-15)
 
 print(f"  checked {total} links")
 if broken:
@@ -273,13 +268,13 @@ EOF
 # ---------------------------------------------------------------- stage 6 ---
 stage 6 "generator-chain order check (clean re-run -> zero unexpected diffs)"
 # Canonical dependency order: releases -> years -> circle -> codex -> sessions
-# -> session_deepdives -> milestones -> milestone_watch -> firstlast -> glance
+# -> milestones -> milestone_watch -> firstlast
 # -> search_index -> changelog -> transmission -> network -> eras
 # -> session_clusters -> codex_pages -> milestone_races -> session_tools
 # -> codex_network -> producer_deepdives -> chronicle
 CHAIN="build_releases build_years build_circle build_codex build_sessions \
-build_session_deepdives build_milestones build_milestone_watch \
-build_firstlast build_glance build_search_index build_changelog \
+build_milestones build_milestone_watch \
+build_firstlast build_search_index build_changelog \
 build_transmission build_network build_eras build_session_clusters \
 build_codex_pages build_milestone_races build_session_tools \
 build_codex_network build_producer_deepdives build_chronicle"
@@ -314,8 +309,9 @@ fi
 # its own sync commit, so two commits are the steady state):
 #   (a) right after a rebuild: entry_count == commit count (HEAD not yet committed
 #       the rebuild), or
-#   (b) at rest: HEAD is the sync commit - it touches changelog.html +
-#       data/v1/changelog.json, and (since wave 17) data/v1/index.json too,
+#   (b) at rest: HEAD is the sync commit - it touches
+#       data/v1/changelog.json, and (since wave 17) data/v1/index.json too
+#       (changelog.html itself retired in the 2026-10-15 sleek rework),
 #       because the manifest's changelog `records` count moves with every
 #       commit. entry_count == commit count of HEAD~1, the top entry's hash
 #       matches HEAD~1, and the manifest's changelog records == entry_count.
@@ -333,15 +329,15 @@ if cl["entry_count"] == n:
     sys.exit(0)
 touched = [f for f in git("diff-tree", "--no-commit-id", "--name-only", "-r", "HEAD").splitlines() if f.strip()]
 idx = json.loads(Path("data/v1/index.json").read_text())
-if ({"changelog.html", "data/v1/changelog.json"} <= set(touched)
-        <= {"changelog.html", "data/v1/changelog.json", "data/v1/index.json"}
+if ({"data/v1/changelog.json"} <= set(touched)
+        <= {"data/v1/changelog.json", "data/v1/index.json"}
         and cl["entry_count"] == n - 1
         and cl["entries"][0]["hash"] == git("rev-parse", "--short", "HEAD~1")
         and idx["endpoints"]["changelog"]["records"] == cl["entry_count"]):
     print(f"  ok: changelog sync commit at HEAD; entries ({cl['entry_count']}) cover all content commits")
     sys.exit(0)
 print(f"  FAIL: changelog entry_count {cl['entry_count']} vs {n} commits "
-      f"(rebuild via the chain and commit changelog.html + data/v1/changelog.json)")
+      f"(rebuild via the chain and commit data/v1/changelog.json + data/v1/index.json)")
 sys.exit(1)
 EOF
 [ $? -eq 0 ] && true || { CHAIN_OK=0; FAIL=$((FAIL+1)); }
@@ -417,8 +413,8 @@ if missing:
     errors.append(f"llms.txt omits endpoint keys: {missing}")
 
 CHAIN_ORDER = ("releases", "years", "circle", "codex", "sessions",
-               "session_deepdives", "milestones", "milestone_watch",
-               "firstlast", "glance", "search_index", "changelog", "transmission",
+               "milestones", "milestone_watch",
+               "firstlast", "search_index", "changelog", "transmission",
                "network", "eras", "session_clusters", "codex_pages",
                "milestone_races", "session_tools", "codex_network",
                "producer_deepdives", "chronicle")

@@ -52,7 +52,9 @@ SNAPSHOT = "2026-10-11"
 sys.path.insert(0, str(ROOT / "scripts"))
 from build_transmission import ERA_YEARS, LONGEST_GAP  # noqa: E402
 from build_years import parse_collabs  # noqa: E402
-from build_session_deepdives import session_slug  # noqa: E402 (shared rule)
+from build_sessions import session_slug  # noqa: E402 (shared rule;
+# build_session_deepdives retired in the sleek-minimal rework 2026-10-15,
+# the rule itself lives in build_sessions)
 
 SESS = json.loads((ROOT / "data" / "sessions.json").read_text())["sessions"]
 API_SESS = json.loads((API / "sessions.json").read_text())
@@ -154,8 +156,8 @@ def main() -> int:
     assert season_count == 9, f"season count drift: {season_count}"
 
     # --- per-session enrichment ---
-    deep_slugs = {p.stem for p in (ROOT / "sessions").glob("*.html")}
-    assert len(deep_slugs) == 10, f"deep-dive page drift: {len(deep_slugs)}"
+    # (the deep-dive set is recomputed from data below; the on-disk glob
+    # guard retired with the pages, sleek-minimal rework 2026-10-15)
 
     enriched = []
     for s in sessions:
@@ -208,8 +210,7 @@ def main() -> int:
         assert sl not in seen_slugs, f"deep-dive slug collision: {sl}"
         seen_slugs.add(sl)
         slug_of[s["id"]] = sl
-        assert (ROOT / "sessions" / (sl + ".html")).exists(), \
-            f"missing deep-dive page for {s['id']}"
+  # (guard retired with the pages, sleek-minimal rework 2026-10-15)
     for e in enriched:
         e["deep_dive"] = ("sessions/" + slug_of[e["id"]] + ".html"
                           if e["id"] in deep_ids else None)
@@ -219,11 +220,6 @@ def main() -> int:
         for sid in c["session_ids"]:
             next(e for e in enriched if e["id"] == sid)["season"] = c["id"]
     assert all(e["season"] for e in enriched), "unseasoned session"
-
-    # every session's era deep-dive page + journey link must exist on disk
-    for e in enriched:
-        assert (ROOT / ("eras/" + e["era_id"] + ".html")).exists(), \
-            f"missing era deep-dive page for {e['id']}"
 
     # --- insights (all asserted) ---
     most_prolific = max(enriched, key=lambda s: (s["track_count"], s["total_plays"]))

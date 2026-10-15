@@ -57,45 +57,24 @@ LINK_RE = re.compile(r'<a href="([^"]+)"[^>]*>([^<]+)</a>')
 
 # Root pages by variant. Directories are tabled in DIR_VARIANTS.
 ROOT_VARIANTS = {
-    "agents.html": "agents",
-    "api-playground.html": "agents",
-    "decoder.html": "agents",
-    "transmission.html": "agents",
-    "changelog.html": "ledger",
-    "chronicle.html": "ledger",
-    "glance.html": "ledger",
-    "milestone-race.html": "ledger",
-    "sessions.html": "ledger",
-    "sessions-explorer.html": "ledger",
-    "codex-network.html": "anchored",
-    "network.html": "anchored",
-    "timeline.html": "anchored",
-    "method.html": "standard",
-    "scene-atlas.html": "standard",
-    "trilogy.html": "standard",
-    "tuner.html": "standard",
-    "signal.html": "scene",
+    # Sleek-minimal rework (2026-10-15): the presented site is the home
+    # page, the catalogue, and three plain doors. Every other root page
+    # of the archive era is retired; story/about are hand pages whose
+    # nav blocks this injector owns.
+    "story.html": "standard",
+    "about.html": "standard",
 }
 DIR_VARIANTS = {
     "releases": "compact",
-    "circle": "circle",
-    "codex": "codex",
-    "producers": "producers",
-    "eras": "eras",
-    "sessions": "eras",
-    "scene": "scene",
 }
 # Scene pages carrying the full standard nav instead of the scene cut.
-SCENE_STANDARD = {"index.html", "uncle-release-week.html"}
+SCENE_STANDARD = set()
 # Bespoke pages: sequence-verified, never rewritten.
 CHECK_ONLY = {"index.html", "press-kit.html"}
 # Root pages whose aria-current marker names another page's href.
-CURRENT_OVERRIDE = {"sessions-explorer.html": "sessions.html"}
+CURRENT_OVERRIDE = {}
 # Footer doors dropped beyond the variant's own rule, per page.
-FOOTER_DROP_EXTRA = {
-    "scene/index.html": ("#discography",),
-    "scene/uncle-release-week.html": ("#discography", "scene/"),
-}
+FOOTER_DROP_EXTRA = {}
 
 
 def page_config(path):

@@ -38,16 +38,10 @@ HEAD = """<!DOCTYPE html>
   <meta name="twitter:image" content="../assets/og-card.png">
   <link rel="preload" href="../assets/fonts/anton-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="../assets/css/fonts.css">
-
-  <link rel="stylesheet" href="../assets/css/tokens.css">
-  <link rel="stylesheet" href="../assets/css/base.css">
-  <link rel="stylesheet" href="../assets/css/layout.css">
-  <link rel="stylesheet" href="../assets/css/components.css">
-  <link rel="stylesheet" href="../assets/css/motifs.css">
-  <link rel="stylesheet" href="../assets/css/layer2.css">
+  <link rel="stylesheet" href="../assets/css/aster.css">
   {ldjson}
 </head>
-<body class="layer2">
+<body>
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
     <div class="container header-bar">
@@ -66,7 +60,7 @@ FOOT = """    </div>
   </main>
   <footer class="site-footer">
     <div class="container footer-grid">
-      <p>&copy; 2026 ASTER DA MASTER &middot; ALL SIGNALS RESERVED</p>
+      <p>&copy; 2026 ASTER DA MASTER</p>
       """ + nav_data.footer_block("../", "compact") + """
     </div>
   </footer>
@@ -99,23 +93,6 @@ RELEASE_TYPE_MAP = {"Album": "AlbumRelease", "EP": "EPRelease", "Single": "Singl
 # added structure only; no slug, URL or title changes.
 def catalog_mark(i):
     return f"ADM {i + 1:04d}"
-
-
-_NEWEST_DATE = max((r.get("date") or "") for r in DATA["discography"])
-
-
-def state_word(r):
-    """The release's state word, from the catalog as it stands (§8.3):
-    Current = the newest entry on record; Live capture = the SoundCloud
-    vault (the Signal's live captures of the living catalog); Archive =
-    the distributor entries (fixed records). Nothing invented."""
-    if r.get("type") == "SoundCloud-only":
-        return "Current" if (r.get("date") or "") == _NEWEST_DATE else "Live capture"
-    return "Archive"
-
-
-def state_cls(r):
-    return state_word(r).lower().replace(" ", "-")
 
 
 def ld_script(obj):
@@ -245,15 +222,15 @@ def build():
             n = releases[i + 1]
             next_link = f'<a class="btn" href="{slug_list[i + 1]}.html">{escape(n["title"])} &rarr;</a>'
 
-        # Rotation 22 poster form (§8.3): title at poster size, one plain
-        # metadata line (state word first, catalog mark closing), the
-        # tracklist, the exits, then provenance as the record. The old
-        # hero meta table's fields all survive: type/date/label/tracks in
-        # the metadata line, plays in the metadata line, the title credits
-        # in the provenance record.
+        # Poster form: title at poster size, one plain metadata line
+        # (type, date, label, track count, catalog mark closing), the
+        # tracklist, the exits, then provenance as the record.
+        # Sleek-minimal rework (2026-10-15): the state word and the play
+        # count leave the metadata line. Play numbers are off the
+        # presented site entirely by the user's direct order; the counts
+        # stay in the data layer, unshown.
         is_vault = r["type"] == "SoundCloud-only"
         meta_bits = [
-            f'<span class="state state-{state_cls(r)}">{escape(state_word(r))}</span>',
             escape(r["type"]),
             f'{"Uploaded" if is_vault else "Released"} {escape(r["date"]) if r.get("date") else "date unknown"}',
         ]
@@ -261,8 +238,6 @@ def build():
             meta_bits.append(escape(r["label"]))
         if r.get("tracks"):
             meta_bits.append(f'{r["tracks"]} tracks')
-        if r.get("plays") is not None:
-            meta_bits.append(f'{r["plays"]:,} plays <span class="chart-sub">(snapshot 2026-10-11)</span>')
         meta_line = " &middot; ".join(meta_bits) + f' &middot; <span class="cat-mark">{catalog_mark(i)}</span>'
 
         # The tracklist prints what the record carries. Single-track
@@ -319,69 +294,74 @@ def build():
             encoding="utf-8",
         )
 
-    # Index page with filters (year / type / label)
-    index_items = []
+    # Index page: the whole catalogue as one quiet list (sleek-minimal
+    # rework, 2026-10-15). Rows are static HTML, so the full list reads
+    # with no script at all; the small inline script only filters what
+    # is already on the page (title search + year + type). No play
+    # counts anywhere: numbers are off the presented site.
     n_vault = sum(1 for r in releases if r["type"] == "SoundCloud-only")
     n_dist = len(releases) - n_vault
-    for i, r in enumerate(releases):
-        index_items.append(
-            {
-                "title": r["title"],
-                "slug": slug_list[i],
-                "date": r.get("date"),
-                "year": (r["date"] or "")[:4] if r.get("date") else "Unknown",
-                "type": r["type"],
-                "label": r.get("label") or "",
-                "plays": r.get("plays"),
-                "state": state_word(r),
-                "stateCls": state_cls(r),
-                "mark": catalog_mark(i),
-            }
-        )
-    years = sorted({i["year"] for i in index_items}, reverse=True)
-    types = sorted({i["type"] for i in index_items})
-    labels = sorted({i["label"] for i in index_items if i["label"]})
+    years = sorted({(r["date"] or "")[:4] for r in releases if r.get("date")},
+                   reverse=True)
+    types = sorted({r["type"] for r in releases})
 
     def opts(vals):
         return "".join(f'<option value="{escape(v)}">{escape(v)}</option>' for v in vals)
 
+    rows = []
+    for i, r in enumerate(releases):
+        year = (r["date"] or "")[:4] if r.get("date") else "Unknown"
+        search_text = (r["title"] + " " + " ".join(credits_from_title(r["title"]))).lower()
+        meta = escape(r["type"]) + " &middot; " + escape(r["date"] or "date unknown")
+        if r.get("label"):
+            meta += " &middot; " + escape(r["label"])
+        rows.append(
+            f'<li class="row" data-search="{escape(search_text, quote=True)}" '
+            f'data-year="{escape(year, quote=True)}" data-type="{escape(r["type"], quote=True)}">'
+            f'<span class="mark">{catalog_mark(i)}</span>'
+            f'<span class="t"><a href="{slug_list[i]}.html">{escape(r["title"])}</a>'
+            f'<span class="meta">{meta}</span></span></li>'
+        )
+    rows_html = "\n          ".join(rows)
+
     index_body = f"""
-      <section class="section" aria-labelledby="idx-h">
+      <div class="page-head">
         <p class="kicker"><span class="numeral">&#10022;</span>The complete catalogue</p>
-        <h1 id="idx-h">Releases</h1>
-        <p>{len(releases)} transmissions on record: {n_dist} distributor releases and {n_vault} from the SoundCloud vault.</p>
-        <div class="filter-row" role="group" aria-label="Filter releases">
+        <h1 class="page-title" id="idx-h">Releases</h1>
+        <p class="lede">Every release on record: {n_dist} through distributors and {n_vault} from the SoundCloud vault, in the archive's order.</p>
+      </div>
+      <section aria-label="Catalogue">
+        <div class="filters" role="group" aria-label="Filter releases">
+          <label>Search titles <input type="search" id="f-text" placeholder="Type a title or a name" autocomplete="off"></label>
           <label>Year <select id="f-year"><option value="">All years</option>{opts(years)}</select></label>
           <label>Type <select id="f-type"><option value="">All types</option>{opts(types)}</select></label>
-          <label>Label <select id="f-label"><option value="">All labels</option>{opts(labels)}</select></label>
         </div>
-        <ul class="release-list" id="release-list"></ul>
+        <p class="count-note" id="rl-count">{len(releases)} releases</p>
+        <ul class="rows" id="release-list">
+          {rows_html}
+        </ul>
+        <p class="count-note" id="rl-none" hidden>No releases match. Clear the search to see the whole catalogue.</p>
       </section>
       <script>
       (function () {{
-        var items = {json.dumps(index_items, ensure_ascii=False)};
-        var list = document.getElementById("release-list");
-        var fy = document.getElementById("f-year"), ft = document.getElementById("f-type"), fl = document.getElementById("f-label");
-        function esc(s) {{ return String(s).replace(/[&<>"']/g, function (c) {{
-          return {{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}}[c]; }}); }}
-        function render() {{
-          var y = fy.value, t = ft.value, l = fl.value;
-          var rows = items.filter(function (i) {{
-            return (!y || i.year === y) && (!t || i.type === t) && (!l || i.label === l);
+        var rows = Array.prototype.slice.call(document.querySelectorAll("#release-list .row"));
+        var ft = document.getElementById("f-text"), fy = document.getElementById("f-year"), fv = document.getElementById("f-type");
+        var count = document.getElementById("rl-count"), none = document.getElementById("rl-none");
+        function apply() {{
+          var q = ft.value.trim().toLowerCase(), y = fy.value, t = fv.value, shown = 0;
+          rows.forEach(function (row) {{
+            var ok = (!q || row.getAttribute("data-search").indexOf(q) !== -1)
+              && (!y || row.getAttribute("data-year") === y)
+              && (!t || row.getAttribute("data-type") === t);
+            row.hidden = !ok;
+            if (ok) shown++;
           }});
-          list.innerHTML = rows.map(function (i) {{
-            var plays = (i.plays != null)
-              ? ' <span class="rl-plays">' + Number(i.plays).toLocaleString("en-US") + " plays</span>"
-              : "";
-            return '<li><span class="rl-state state-' + i.stateCls + '">' + esc(i.state) + "</span>" +
-              '<span><a href="' + esc(i.slug) + '.html">' + esc(i.title) + "</a>" +
-              '<span class="rl-type">' + esc(i.type) + "</span>" + plays + "</span>" +
-              '<span class="rl-when">' + esc(i.date || "date unknown") + "</span>" +
-              '<span class="rl-mark">' + esc(i.mark) + "</span></li>";
-          }}).join("") || "<li>No releases match those filters.</li>";
+          count.textContent = shown + (shown === 1 ? " release" : " releases");
+          none.hidden = shown !== 0;
         }}
-        [fy, ft, fl].forEach(function (s) {{ s.addEventListener("change", render); }});
-        render();
+        ft.addEventListener("input", apply);
+        fy.addEventListener("change", apply);
+        fv.addEventListener("change", apply);
       }})();
       </script>
 """

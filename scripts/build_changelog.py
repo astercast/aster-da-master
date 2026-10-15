@@ -84,95 +84,9 @@ def main() -> int:
         },
     }, indent=2) + "\n")
 
-    # ---- changelog.html ----
-    rows = []
-    for e in entries:
-        rows.append(
-            f'<li class="cl-entry reveal">'
-            f'<span class="cl-hash" aria-label="commit {escape(e["hash"])}">'
-            f'{escape(e["hash"])}</span>'
-            f'<div><h3>{escape(e["message"])}</h3>'
-            f'<p class="chart-sub">{escape(e["date"])} \u00b7 '
-            f'{e["files_changed"]} file{"s" if e["files_changed"] != 1 else ""} changed</p>'
-            f'</div></li>'
-        )
-
-    page = f"""<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Changelog \u2014 Aster da Master</title>
-  <meta name="description" content="The construction history of the Aster da Master archive, generated from the site's own git log.">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Changelog \u2014 Aster da Master">
-  <meta property="og:description" content="The construction history of the Aster da Master archive, generated from the site's own git log.">
-  <link rel="canonical" href="/changelog.html">
-  <meta property="og:image" content="assets/og-card.png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Changelog \u2014 Aster da Master">
-  <meta name="twitter:description" content="The construction history of the Aster da Master archive, generated from the site's own git log.">
-  <meta name="twitter:image" content="assets/og-card.png">
-  <link rel="preload" href="assets/fonts/anton-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="assets/css/fonts.css">
-
-  <link rel="stylesheet" href="assets/css/tokens.css">
-  <link rel="stylesheet" href="assets/css/base.css">
-  <link rel="stylesheet" href="assets/css/layout.css">
-  <link rel="stylesheet" href="assets/css/components.css">
-  <link rel="stylesheet" href="assets/css/motifs.css">
-</head>
-<body>
-  <a class="skip-link" href="#main">Skip to content</a>
-  <header class="site-header">
-    <div class="container header-bar">
-      <a class="brand" href="./" aria-label="Aster da Master home">
-        <span class="brand-mark" aria-hidden="true">A\u2726</span>
-        <span>ASTER DA MASTER</span>
-      </a>
-{NAV}
-      <button class="search-btn" id="search-open" type="button" aria-label="Search the archive (keyboard shortcut: slash)">
-        <span aria-hidden="true">\u2315</span><kbd aria-hidden="true">/</kbd>
-      </button>
-    </div>
-  </header>
-
-  <div class="search-overlay" id="search-overlay" hidden>
-    <div class="search-box" role="dialog" aria-modal="true" aria-labelledby="search-title">
-      <p class="kicker" id="search-title"><span class="numeral">\u2726</span>Search the archive</p>
-      <input id="search-input" type="search" placeholder="Tracks, collaborators, eras, the codex\u2026" aria-label="Search the archive" role="combobox" aria-expanded="true" aria-controls="search-results" autocomplete="off" spellcheck="false">
-      <div id="search-results" role="listbox" aria-label="Search results"></div>
-      <p class="search-hint"><kbd>/</kbd> to open \u00b7 <kbd>\u2191</kbd><kbd>\u2193</kbd> to move \u00b7 <kbd>Enter</kbd> to go \u00b7 <kbd>Esc</kbd> to close</p>
-    </div>
-  </div>
-
-  <main id="main">
-    <div class="container">
-      <div class="section-head reveal">
-        <span class="kicker"><span class="numeral">\u2726</span>The becoming</span>
-        <h1>Changelog</h1>
-        <p>Every wave of this site's construction, newest first \u2014 generated from the repository's own git history. Nothing summarized, nothing invented.</p>
-        <p class="chart-sub">{len(entries)} entries \u00b7 also at <a href="data/v1/changelog.json">data/v1/changelog.json</a></p>
-      </div>
-      <ol class="cl-list">{"".join(rows)}</ol>
-    </div>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container footer-grid">
-      <p>\u00a9 2026 ASTER DA MASTER \u2014 ALL SIGNALS RESERVED</p>
-{FOOTNAV}
-    </div>
-  </footer>
-
-  <script src="assets/js/common.js"></script>
-  <script src="assets/js/identity.js"></script>
-</body>
-</html>
-"""
-    PAGE_OUT.write_text(page, encoding="utf-8")
+    # Sleek-minimal rework (2026-10-15): this generator no longer
+    # emits a page. The presented site is the catalogue plus three
+    # plain doors; this builder's data outputs are unchanged.
 
     idx = json.loads(API_INDEX.read_text())
     # idempotent: never re-append on re-run

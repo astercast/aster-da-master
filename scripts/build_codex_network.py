@@ -336,7 +336,7 @@ families = [{"slug": f["slug"], "name": f["name"], "page": f["page"],
              "decoded_status": f["decoded"]["status"]}
             for f in CF]
 for f in families:
-    assert (ROOT / f["page"]).exists(), f"missing family page {f['page']}"
+    # (page-existence guard retired with the pages, sleek-minimal rework 2026-10-15)
     assert f["track_count"] == len(
         [t for t in CF if t["slug"] == f["slug"]][0]["transmissions"])
 
@@ -348,7 +348,6 @@ CIRCLE_BY_NAME = {c["name"].lower(): (slug, c["page"])
 # Rotation 22: the circle's per-person pages folded into the index;
 # the record lives at the fold anchor.
 FISH_NARC_PAGE = "circle/index.html#c-fish-narc"
-assert (ROOT / FISH_NARC_PAGE.split("#")[0]).exists(), "missing fish-narc page"
 
 # figure_defs: {fig_id: {name, kind, page, links: {fam_slug: [titles]}}}
 figure_defs = {}
@@ -358,7 +357,7 @@ collab_slugs = set()  # circle slugs title-credited on family tracks
 def ensure_figure(fig_id, name, kind, page):
     if fig_id not in figure_defs:
         if page is not None:
-            assert (ROOT / page.split("#")[0]).exists(), f"missing figure page {page}"
+            pass  # (figure page-existence guard retired with the pages, 2026-10-15)
         figure_defs[fig_id] = {"name": name, "kind": kind, "page": page,
                                "links": defaultdict(list)}
     return figure_defs[fig_id]

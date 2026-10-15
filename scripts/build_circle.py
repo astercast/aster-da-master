@@ -840,9 +840,9 @@ def main():
         scene_figure_fold(s, info) for s, info in SCENE_FIGURES.items()
     )
     has_watch = any(info.get("watch") for info in SCENE_FIGURES.values())
-    (OUT / "index.html").write_text(
-        index_page(entries, folds, sf_folds, has_watch=has_watch),
-        encoding="utf-8")
+    # Sleek-minimal rework (2026-10-15): this generator no longer
+    # emits a page. The presented site is the catalogue plus three
+    # plain doors; this builder's data outputs are unchanged.
 
     api_circle = {
         e["slug"]: {

@@ -1,8 +1,8 @@
-/* assets/css/fonts.css — SELF-HOSTED identity faces (wave 34).
+/* assets/css/fonts.css: SELF-HOSTED identity faces (wave 34).
    Anton (SIL OFL) + IBM Plex Mono (SIL OFL), latin + latin-ext subsets,
    fetched from the Google Fonts CSS API; unicode-ranges verbatim from
    the API response. ZERO remote font requests: no fonts.googleapis.com,
-   no fonts.gstatic.com. font-display: swap — no invisible text.
+   no fonts.gstatic.com. font-display: swap: no invisible text.
    Load order: this file is the first stylesheet in <head>; Anton latin
    is preloaded (see <head>). */
 

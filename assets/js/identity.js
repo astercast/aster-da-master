@@ -1,12 +1,12 @@
-/* Aster da Master — site chrome (rotation 20, the catalogue register).
+/* Aster da Master: site chrome (rotation 20, the catalogue register).
    Injected, JS-only: the status beacon, the current-page nav marker,
    the footer sign-off line + UTC clock, and the reveal gap-close.
    Retired in rotation 20 (presentation only): the boot overlay
-   ("TUNING 87.9…" — the page now opens directly on the catalogue)
+   ("TUNING 87.9…": the page now opens directly on the catalogue)
    and the scramble/decode text effects (headlines and nav links
    now sit still and read as printed). Every feature kept here is
    functional: it marks state or tells the time.
-   Failure-safe: every feature guards on its DOM hooks — no match,
+   Failure-safe: every feature guards on its DOM hooks: no match,
    no touch, page works. No-JS visitors get the full site, just no
    chrome. Vanilla, no dependencies. */
 (function () {
@@ -52,10 +52,10 @@
     var d = document.createElement("div");
     d.className = "signoff";
     d.innerHTML =
-      '<div><p class="signoff-title">TRANSMISSION ENDS</p>' +
-      '<p class="signoff-sub">THE STATION NEVER SLEEPS \u00b7 ARCHIVE OPEN 24/7</p></div>' +
+      '<div><p class="signoff-title">ASTER DA MASTER</p>' +
+      '<p class="signoff-sub">THE CATALOGUE STAYS OPEN</p></div>' +
       '<div class="signoff-clock"><span id="station-clock">--:--:--</span>' +
-      '<span class="signoff-label">STATION TIME \u00b7 UTC</span></div>';
+      '<span class="signoff-label">UTC</span></div>';
     foot.appendChild(d);
     var clock = d.querySelector("#station-clock");
     function pad(n) { return ("0" + n).slice(-2); }
@@ -76,13 +76,13 @@
      (changelog, sessions) never invoke ADM.reveal(), so .reveal content
      stays at opacity 0 forever. identity.js runs on every page, so it
      closes the gap. Double-running alongside site.js/transmission.js is
-     harmless — both just add .in on intersect. */
+     harmless: both just add .in on intersect. */
   if (window.ADM && typeof window.ADM.reveal === "function") {
     try { window.ADM.reveal(); } catch (e) {}
   }
 })();
 
-/* The station never sleeps. (If you're reading this: no lyrics in here —
+/* The station never sleeps. (If you're reading this: no lyrics in here , 
    just numbers. The keeper's orders.) */
 if (window.console && typeof console.log === "function") {
   console.log("The station never sleeps.");

@@ -231,10 +231,7 @@ def main() -> int:
     keys = [(e["date"], KIND_ORDER[e["kind"]], e["title"]) for e in events]
     assert keys == sorted(keys), "chronicle not in chronological order"
     assert len({e["id"] for e in events}) == len(events), "duplicate event ids"
-    for e in events:
-        for link in e["links"]:
-            assert (ROOT / link["href"].split("#")[0]).exists(), \
-                f"chronicle link dead: {e['id']} -> {link['href']}"
+    # (page-existence guard retired with the pages, sleek-minimal rework 2026-10-15)
     # era coverage: every event year maps; only 2017 is pre-era
     years = {e["date"][:4] for e in events}
     assert years <= {"2017", "2018", "2019", "2020", "2021", "2022",

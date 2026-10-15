@@ -1,8 +1,56 @@
 {
   "generated": "2026-10-11",
   "method": "Parsed from `git log main`: every commit becomes an entry. The site documenting its own becoming.",
-  "entry_count": 180,
+  "entry_count": 188,
   "entries": [
+    {
+      "hash": "1b3f3f7",
+      "date": "2026-10-15",
+      "message": "Changelog sync",
+      "files_changed": 2
+    },
+    {
+      "hash": "9014c47",
+      "date": "2026-10-15",
+      "message": "Byte-scan clean: zero em dashes in presented files (platform names cleaned at render; code comments scrubbed)",
+      "files_changed": 7
+    },
+    {
+      "hash": "bc65a1a",
+      "date": "2026-10-15",
+      "message": "Changelog sync for e945600 (sleek-minimal rework)",
+      "files_changed": 2
+    },
+    {
+      "hash": "e945600",
+      "date": "2026-10-15",
+      "message": "Sleek-minimal rework: calm four-door site over the full catalogue; play numbers off the presented site (owner order 2026-10-15)",
+      "files_changed": 339
+    },
+    {
+      "hash": "236ccf8",
+      "date": "2026-10-15",
+      "message": "Aster R42: CRITIC-001 fix 1, header search button gains a visible Search word on all 19 pages (was glyph-only)",
+      "files_changed": 19
+    },
+    {
+      "hash": "79019c1",
+      "date": "2026-10-15",
+      "message": "Aster S3 R41: CRITIC-001 fix 4 second half, playable music on the front door (official SoundCloud player directly under the hero)",
+      "files_changed": 1
+    },
+    {
+      "hash": "e9830cb",
+      "date": "2026-10-15",
+      "message": "DATAOPS-003 fix (rotation 37): cron commit-back sent an empty PUT body (lib/fetchx forwards opts.body; lib/github put() sends its payload) and the deployed lane now writes the data/captures archive beside the stats-snapshots row",
+      "files_changed": 3
+    },
+    {
+      "hash": "0a6fd74",
+      "date": "2026-10-15",
+      "message": "changelog sync (post-validation)",
+      "files_changed": 3
+    },
     {
       "hash": "5696584",
       "date": "2026-10-15",

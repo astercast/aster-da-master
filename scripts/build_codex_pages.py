@@ -142,8 +142,7 @@ def family_eras(fam, pages):
               t["date"][:4] in e["years"]]
         if not et:
             continue
-        assert e["deep_dive"] and (ROOT / e["deep_dive"]).exists(), \
-            f"missing era deep dive {e['deep_dive']}"
+    # (page-existence guard retired with the pages, sleek-minimal rework 2026-10-15)
         loud = max(et, key=lambda t: t.get("plays") or 0)
         key = (loud["title"], loud.get("date"))
         rows.append({
@@ -155,8 +154,7 @@ def family_eras(fam, pages):
             "deep_dive": e["deep_dive"],
             "journey": e["journey"],
         })
-        assert (ROOT / e["journey"].split("#")[0]).exists(), \
-            f"missing journey page for {e['id']}"
+  # (guard retired with the pages, sleek-minimal rework 2026-10-15)
     assert sum(r["transmissions"] for r in rows) == fam["track_count"], \
         f"{fam['name']}: era rows don't cover all tracks"
     return rows
@@ -178,7 +176,6 @@ def family_sessions(fam, pages):
         cl = CLUSTERS.get(sid, {})
         dd = cl.get("deep_dive")
         if dd:
-            assert (ROOT / dd).exists(), f"missing session deep dive {dd}"
             page = dd
         else:
             page = "sessions.html"
@@ -200,7 +197,7 @@ def family_collaborators(fam):
     for slug, c in CIRCLE.items():
         tr = [t for t in c["tracks"] if (t["title"], t["date"]) in keys]
         if tr:
-            assert (ROOT / c["page"].split("#")[0]).exists(), f"missing circle page {c['page']}"
+  # (guard retired with the pages, sleek-minimal rework 2026-10-15)
             rows.append({"slug": slug, "name": c["name"], "page": c["page"],
                          "transmissions": len(tr),
                          "plays": sum(t.get("plays") or 0 for t in tr)})
@@ -634,13 +631,9 @@ def main():
     print(f"codex-families: {len(families)} families, "
           f"{sum(f['track_count'] for f in families)} family-track links")
 
-    CODEX_PAGES.mkdir(exist_ok=True)
-    for i, d in enumerate(families):
-        prev_s = families[i - 1]["slug"] if i > 0 else None
-        next_s = families[i + 1]["slug"] if i < len(families) - 1 else None
-        (CODEX_PAGES / f'{d["slug"]}.html').write_text(
-            family_page(d, prev_s, next_s), encoding="utf-8")
-    print(f"codex pages: {len(families)} family deep-dives")
+    # Sleek-minimal rework (2026-10-15): this generator no longer
+    # emits a page. The presented site is the catalogue plus three
+    # plain doors; this builder's data outputs are unchanged.
 
     idx = json.loads((API / "index.json").read_text())
     idx["version"] = VERSION

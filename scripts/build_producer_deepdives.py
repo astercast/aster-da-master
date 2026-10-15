@@ -83,6 +83,18 @@ from api_manifest import render_manifest  # noqa: E402
 API = ROOT / "data" / "v1"
 SESSIONS = ROOT / "data" / "sessions.json"
 
+# The deep-dive session set is a data fact: the top-10 sessions by track
+# count (the build_session_deepdives rule), computed from
+# data/sessions.json. It used to be read off the filesystem (the session
+# page files); the pages retired in the sleek-minimal rework (2026-10-15)
+# and the set is now derived from the same data, byte-identical.
+DEEP_DIVE_SLUGS = {
+    slugify(s["name"])
+    for s in sorted(
+        json.loads(SESSIONS.read_text())["sessions"],
+        key=lambda s: (-s["track_count"], -s["total_plays"]))[:10]
+}
+
 VERSION = "0.19.0"  # wave 35: data version 0.18.0 (verified-data expansion)
 SNAPSHOT = "2026-10-11"
 GENERATED = "2026-10-11T00:00:00Z"
@@ -584,8 +596,8 @@ def main():
             rel_page = t.get("page")
             assert rel_page, f"track missing page: {title}"
             assert (ROOT / rel_page).exists(), f"missing release page {rel_page}"
-            dd = ROOT / "sessions" / (slugify(sname) + ".html")
-            sess_page = ("sessions/" + dd.name) if dd.exists() \
+            sess_page = ("sessions/" + slugify(sname) + ".html") \
+                if slugify(sname) in DEEP_DIVE_SLUGS \
                 else f"sessions.html#{sid}"
             prods.append({
                 "title": title, "date": t.get("date"),
@@ -610,13 +622,13 @@ def main():
         top = max(prods, key=lambda pr: pr["plays"])
         fams = sorted(fam_ties[p["slug"]], key=lambda f: f["family_name"])
         for f in fams:
-            assert (ROOT / f["family_page"]).exists(), \
-                f"missing family page {f['family_page']}"
+            pass  # (family page-existence guard retired with the pages,
+            # sleek-minimal rework 2026-10-15)
         cpage = circle_by_name.get(p["name"].lower(), {}).get("page")
         if cpage is None and p["slug"] in scene_by_slug:
             cpage = scene_by_slug[p["slug"]]["page"]
-        if cpage:
-            assert (ROOT / cpage.split("#")[0]).exists(), f"missing circle page {cpage}"
+        # (the circle page-existence guard on cpage retired with the
+        # pages, sleek-minimal rework 2026-10-15; it guarded nothing else)
         explorer_link = None
         fid = network_fig_id(p["name"], circle_by_name)
         if fid in net_figs:
@@ -704,14 +716,9 @@ def main():
     slug_set = {p["slug"] for p in out_producers}
     assert racing <= slug_set, \
         f"racing slug has no producer page: {racing - slug_set}"
-    for f in PROD_DIR.glob("*.html"):
-        f.unlink()
-    # Rotation 22 consolidation: ONE page. The unlink above clears the
-    # directory (this generator owns it), so no stub page survives.
-    (PROD_DIR / "index.html").write_text(
-        index_page_html(out_producers, insights, racing=racing),
-        encoding="utf-8")
-    assert (PROD_DIR / "index.html").exists()
+    # Sleek-minimal rework (2026-10-15): this generator no longer
+    # emits a page. The presented site is the catalogue plus three
+    # plain doors; this builder's data outputs are unchanged.
 
     idx = json.loads((API / "index.json").read_text())
     idx["version"] = VERSION

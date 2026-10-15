@@ -18,6 +18,13 @@ one-off fork scripts (update_nav_wave10/11/13/14/22/30/33/34/35.py, 645
 lines) that each inserted one link after one anchor and hand-patched the
 generators' NAV constants so rebuilds kept it.
 
+Sleek-minimal rework (2026-10-15, the user's direct order): the presented
+site is four doors — Releases, Story, About, Press kit — over a Home
+route. The 23-door archive registry and the five front-desk doors are
+retired as lists; the archive's depth now lives in the data layer
+(data/v1/), which this rework does not touch. The footer map is Home +
+the same four doors on every page.
+
 Rotation 30 (VP-0039): ONE chrome generation. A decade of sections had
 accreted per-section footer variants (ten distinct 19–26-item footer
 label sets, and an anchored variant whose home-section anchors repeated
@@ -44,26 +51,8 @@ from html import escape
 # footer map's order (after Home) on every page of the site.
 NAV = [
     ("releases/", "Releases"),
-    ("circle/", "Circle"),
-    ("codex/", "Codex"),
-    ("producers/", "Producers"),
-    ("scene/", "Scene"),
-    ("timeline.html", "Timeline"),
-    ("chronicle.html", "Chronicle"),
-    ("transmission.html", "Transmission"),
-    ("tuner.html", "Tuner"),
-    ("scene-atlas.html", "Atlas"),
-    ("network.html", "Network"),
-    ("codex-network.html", "Codex network"),
-    ("milestone-race.html", "Race"),
-    ("decoder.html", "Decoder"),
-    ("api-playground.html", "API"),
-    ("agents.html", "Agents"),
-    ("method.html", "Method"),
-    ("trilogy.html", "Trilogy"),
-    ("sessions.html", "Sessions"),
-    ("changelog.html", "Changelog"),
-    ("glance.html", "Glance"),
+    ("story.html", "Story"),
+    ("about.html", "About"),
     ("press-kit.html", "Press kit"),
 ]
 
@@ -76,11 +65,10 @@ NAV = [
 # keeps its own full grouping.
 # Must be a subset of NAV (asserted below).
 PRIMARY_NAV = [
-    ("transmission.html", "Transmission"),
-    ("tuner.html", "Tuner"),
-    ("scene-atlas.html", "Atlas"),
     ("releases/", "Releases"),
-    ("scene/", "Scene"),
+    ("story.html", "Story"),
+    ("about.html", "About"),
+    ("press-kit.html", "Press kit"),
 ]
 
 # Rotation 30 (VP-0039): plain-language glosses for the primary labels
@@ -90,10 +78,8 @@ PRIMARY_NAV = [
 # geometry cost: the label text and the link boxes do not change.
 # "Releases" is already plain language and carries no gloss.
 GLOSSES = {
-    "transmission.html": "A guided tour of his career, era by era",
-    "tuner.html": "Browse every song on one dial",
-    "scene-atlas.html": "Every person around the music, plotted on one chart",
-    "scene/": "News and notes from the people around the music",
+    "story.html": "His career in six eras, 2017 to today",
+    "about.html": "Who he is, and where to listen",
 }
 
 # The ONE footer map: a Home-labelled route first, then the full

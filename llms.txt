@@ -1,43 +1,25 @@
 # ASTER DA MASTER
 
-> Private research archive for the underground artist **Aster da Master** (digicore/hyperpop orbit, scene tag "somelowlifes"). Static site + JSON API. Catalog: **219** transmissions total — **34** distributor releases (9 albums, 25 singles, verified via Apple Music/iTunes Search API) + **185** SoundCloud-only tracks (read-only capture 2026-10-11, play counts are a snapshot).
+> The official catalogue of the underground artist **Aster da Master** (digicore/hyperpop orbit, scene tag "somelowlifes"). A calm, minimal site over a deep data archive. Catalog: **219** transmissions total  —  **34** distributor releases (9 albums, 25 singles, verified via Apple Music/iTunes Search API) + **185** SoundCloud-only tracks (read-only capture 2026-10-11, play counts are a snapshot).
 
-Method: titles and metadata only — no lyrics ever, no invented biography. Unknowns are listed as unknowns (see the Method page's unknowns register). Play counts are a 2026-10-11 snapshot (always state the date); upload dates are not recording dates. Data version: 0.19.0.
+Method: titles and metadata only  —  no lyrics ever, no invented biography. Unknowns are listed as unknowns (see the press kit's verified-facts register). Play counts are a 2026-10-11 snapshot held in the data layer; since the 2026-10-15 sleek-minimal rework they are not shown anywhere on the presented site. Upload dates are not recording dates. Data version: 0.19.0.
 
-Generators: `scripts/build_*.py` rebuild all derived pages from `data/artist.json`; dependency order: releases → years → circle → codex → sessions → session_deepdives → milestones → milestone_watch → firstlast → glance → search_index → changelog → transmission → network → eras → session_clusters → codex_pages → milestone_races → session_tools → codex_network → producer_deepdives → chronicle. Re-running sets data version in all JSON.
+Generators: `scripts/build_*.py` rebuild the catalogue and the data layer from `data/artist.json`; dependency order: releases → years → circle → codex → sessions → milestones → milestone_watch → firstlast → search_index → changelog → transmission → network → eras → session_clusters → codex_pages → milestone_races → session_tools → codex_network → producer_deepdives → chronicle. Re-running sets data version in all JSON.
 
-Repo: private GitHub-only (astercast/aster-da-master), no Vercel. Deploy: any static host serving the repo root; weekly SoundCloud play-count refresh pipeline documented in GO_LIVE.md.
+Repo: private GitHub-only (astercast/aster-da-master), no Vercel. Deploy: any static host serving the repo root.
 
-## The archive
+## The site (sleek-minimal rework, 2026-10-15)
 
-- [Releases](releases/): the complete release archive — **219** transmissions (185 SoundCloud-only tracks + 34 distributor releases).
-- [Years](years/): the catalog year by year, 2017–2026.
-- [The Circle](circle/): the **21** title-credited collaborators, each with a page. Producers are excluded by the circle's title-credit rule; documented producer/scene figures live under "Beyond the circle" (e.g. [Fish Narc](circle/fish-narc.html)). Verified public records ("Verified beyond the titles", sourced, single-source flagged) stand on 7 collaborator pages: capoxxo, pvscale, lil wintr, marcelo, yung cortex, griimxo, keyblayde808 — deepened 2026-10-12: capoxxo streaming-metrics layer, first verifiable live dates (Oct 28–29 PNW, Korpsebunny support), the Fish Narc *Uncle* watch (still announced); the circle index carries an honest-gaps register for the thin records (flagged, never filled).
-- [The Codex](codex/): **16** vocabulary families counted across titles, each with a full deep-dive page (decoded reading, era-by-era evolution, key sessions, collaborators).
-- [Eras](eras/): six era deep-dive pages — full track lists with plays, every in-era collaborator, active codex families, computed signal summaries; each links back to its Transmission journey node.
-- [Producers](producers/): **113** as-credited producers with their own deep-dive pages — every production as credited in the titles, codex family ties, a computed production fingerprint (never a biography), and sourced research for 5 producers (ginseng, Em Klebold, Fish Narc, pvscale, asa41 — evidence-flagged).
-- [Sessions](sessions/): the **61** upload sessions clustered from vault upload dates.
-- [Scene](scene/): verified scene material around the archive — the Fish Narc *Uncle* LP watch, 2026 collaborator activity, the October 2026 digicore radar, and the unconfirmed board.
+Four doors over a home page. Everything else the archive knows lives in the data layer below, unchanged.
 
-## Pages
+- [Home](index.html): the artist's name, the official SoundCloud player, the latest release and the newest six, and the six eras.
+- [Releases](releases/): the complete catalogue  —  **219** transmissions (185 SoundCloud-only tracks + 34 distributor releases), one quiet list with title search and year/type filters; every release keeps its own page (cover, credits as titled, platform links, provenance).
+- [Story](story.html): the career in six eras, 2017 to today, told from the record.
+- [About](about.html): who he is, the facts on record, and where to listen (the **21** title-credited collaborators and the **16** codex vocabulary families live in the data layer now).
+- [Press kit](press-kit.html): the press kit  —  facts as recorded, unknowns stated as unknowns.
+- [Not in the catalogue (404)](404.html): the 404 page.
 
-- [Home](index.html): the station sign-on (2026-10-12 makeover) — broadcast hero with one action ("Begin the transmission"), live station-status band, fresh-from-the-source + a keeper's note, four room doors (Broadcast / Archive / Circle / Instruments), cast-lots strip, the station log (11 closed drawers holding every deep shelf; deep links auto-open their drawer), the six eras, and a `▤ Index` manifest dialog grouping every page.
-- [Transmission](transmission.html): the flagship full broadcast (Transmission 4.0) — 13 scroll-driven broadcast segments (six eras 2018→2026 plus seven live data chapters), station tuner, signal-static transitions, live count-ups (plays via The Signal `/api/stats` with static fallback), the 30,088-play "Take Me" summit set piece, per-era collaborator cameos, and Signal freshness readouts.
-- [The Tuner](tuner.html): the full 219-entry catalog as a broadcast dial — sweep the eras and formats; every stop is a transmission with its real catalog data.
-- [Scene Atlas](scene-atlas.html): every figure around the archive charted as a point on one pirate cartographer's chart — the 21 title-credited collaborators plus the producer-credit scene figure, plotted only from data the archive already carries.
-- [The Signal](signal.html): the Signal 2.0 watch board — capture-vs-capture diff of the vault (new uploads, play-count movers, milestone crossings) plus the live-date verification board.
-- [Milestone race](milestone-race.html): the milestone race 2.0 — approaching play-count milestones ranked by gap-closing proximity, a head-to-head tool for any two of the 185 vault tracks, The Climb (182 summit-eligible tracks), race history, and the 30,088-play summit chase. Pace arithmetic, never predictions.
-- [Sessions explorer](sessions-explorer.html): the 61 upload sessions as an explorable timeline — 9 activity seasons, 60 inter-session gaps (553-day longest silence), per-session deepest cuts, era/year filters, head-to-head compare for any two sessions, the deepest-sessions editorial ranking, and a keyboard-operable timeline scrubber.
-- [Collaboration network](network.html): the collaboration universe as an interactive SVG graph — 21 collaborators + producer scene figures, track-weighted edges, era slider, name search, click-a-node side panel; the same data as an accessible table, plus computed insights.
-- [Codex network](codex-network.html): the codex as an interactive network — the 16 families as nodes, shared collaborators and producers as edges, BFS degrees of separation from Aster, and a connect-the-dots shortest-path finder (shareable `#path=a,b` deep links, honest no-path state).
-- [Chronicle](chronicle.html): one merged chronological stream — 114 events (61 sessions, 9 dated milestones, 44 collaboration appearances, 2017–2026) with era/kind/voice filters, full-text search, and shareable filter-state deep links.
-- [Timeline](timeline.html): the archive on one timeline.
-- [Decoder](decoder.html): speak a word; the archive answers from the codex families.
-- [Trilogy watch](trilogy.html): the Litemode Trilogy watch — the two-line SoundCloud bio tease, tracked as unconfirmed until a release confirms it.
-- [Method](method.html): methodology + the unknowns register.
-- [At a glance](glance.html): every headline number from the verified archive in 60 seconds.
-- [Press kit](press-kit.html): the press kit — facts as recorded, unknowns stated as unknowns.
-- [Signal lost (404)](404.html): the 404 page.
+The data layer keeps the full archive: **61** upload sessions, **113** as-credited producers, **15** agent skills, and every endpoint below, exactly as before the rework.
 
 ## Data endpoints
 
