@@ -1816,3 +1816,68 @@
     min-height: 44px; min-width: 44px; padding-block: var(--space-2);
   }
 }
+
+/* ---------- Rotation 30 (S5): the fixable residue of rotation 29 ----------
+   Phone widths only (max-width: 900px); no base rule is edited and
+   no desktop geometry changes. Rotation 29 floored the controls,
+   navigation and structured list rows and named the rest. This pass
+   takes the residue classes that are standalone lines or controls —
+   never inline prose links, never table cells, never the disco
+   ledger lines (still named, not forced). Measured basis: the
+   residue census on the rotation-30 stage-1 tree (1,595 sub-44 at
+   320 / 1,778 at 390 on the audit's 64-page set). */
+@media (max-width: 900px) {
+  /* sessions-explorer card link rows: the deep-dive / era / journey
+     links are plain inline anchors in the regular cards, so they
+     sat at line height (27px) — 13 counted at 320, 104 at 390.
+     They stand as centred inline-flex boxes at the floor, the
+     rotation-29 chronicle link-row pattern; the row wraps between
+     links, never inside one. */
+  .se-links a { display: inline-flex; align-items: center; min-height: 44px; }
+  /* range sliders (network era dial, explorer scrub): the native
+     input measured 16px tall inside control rows that are already
+     44px+ tall, so the input itself takes the row's height and no
+     layout moves. Native checkboxes stay excluded, as in rotation
+     29: their labels are the operative surface in compact inline
+     filter rows. */
+  input[type="range"] { height: 44px; }
+  /* own-line title links — the rotation-29 unit-title pattern
+     extended to the remaining head lines: codex card titles,
+     first/last bookend titles, explorer deep-dive headings and
+     the series head lines. Each stands on its own line inside a
+     card or list head; none is mid-sentence. */
+  .codex-card h3 a { display: inline-flex; align-items: center; min-height: 44px; min-width: 44px; }
+  .fl-title a { display: inline-flex; align-items: center; min-height: 44px; }
+  .se-deep-body h4 a { display: inline-flex; align-items: center; min-height: 44px; }
+  .series-head a { display: inline-flex; align-items: center; min-height: 44px; }
+  /* home route lines: standalone labelled link lines that close a
+     section or sit under a feature ("Every transmission, in order:
+     Releases", "The watch in full: The Signal", the feature's
+     Listen line) — the rotation-29 chronicle link-row family. */
+  .stream-more a, .txlog-more a, .unit-links a {
+    display: inline-flex; align-items: center; min-height: 44px;
+  }
+  /* top-collaborators name links: rotation 29 floored the direct
+     children of the structured lists; these names sit one span
+     deeper in the same ranked rows and stayed at 25px tall (one
+     name, "JAX", also under 44 wide). The link is not a flex item
+     (the span is), so centring it cannot shrink it under its text. */
+  #top-collabs li span a {
+    display: inline-flex; align-items: center; justify-content: center;
+    min-width: 44px; min-height: 44px;
+  }
+  /* structured-list links whose word itself is under 44px wide:
+     the glance codex list's short entry names (JAX, Keys, Dark,
+     Time, Soul — 49px tall since rotation 29, 27–36px wide). The
+     floor is scoped to that one list, whose rows are a short name
+     plus a short date with room to spare. A blanket width floor on
+     every year list was tried twice and failed twice in the full
+     instrument: with flex-shrink: 0 the links took their unwrapped
+     text width and pushed the rows' date spans off 25 pages; with
+     shrink left on, the floor replaced the links' content minimum
+     in the tightest rows and their ink spilled over the date spans
+     (47 painted overlaps, 36 spills at 320). Both attempts are
+     recorded in the landing record; the remaining short-word list
+     links elsewhere stay named there, not forced. */
+  section[aria-labelledby="g-codex"] .year-list li > a { min-width: 44px; }
+}

@@ -1,8 +1,20 @@
 {
   "generated": "2026-10-11",
   "method": "Parsed from `git log main`: every commit becomes an entry. The site documenting its own becoming.",
-  "entry_count": 178,
+  "entry_count": 180,
   "entries": [
+    {
+      "hash": "5696584",
+      "date": "2026-10-15",
+      "message": "rotation 30 stage 2 (S5 residue): floor the fixable sub-44 residue at phone widths",
+      "files_changed": 1
+    },
+    {
+      "hash": "6aebcf8",
+      "date": "2026-10-14",
+      "message": "changelog sync (post-validation)",
+      "files_changed": 3
+    },
     {
       "hash": "a03de27",
       "date": "2026-10-14",
