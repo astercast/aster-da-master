@@ -425,14 +425,26 @@ module.exports = async (req, res) => {
       // knownCurrent skips the pre-write re-read: step 1 already read state.
       const msg = "Signal: play-count refresh " + now.slice(0, 10) +
         " (" + tracksCaptured + " tracks" + (newUploads.length ? ", " + newUploads.length + " new upload(s)" : "") + ")";
+      /* Capture archive (DATAOPS-003 fix, 2026-10-15): the store's capture
+       * convention pairs every stats-snapshots ledger row with an immutable
+       * full capture at data/captures/<snapshot_at, colons stripped>.json —
+       * the same snapshotDoc written to data/playcounts.snapshot.json
+       * (captures #1/#2, commits 74ed6ee/0e8bc3d, landed by hand runs; see
+       * scripts/build_signal_watch.py, which reads the archive as its
+       * previous-capture source). The deployed lane never wrote the
+       * archive, so a deployed capture could never take the store's own
+       * two-part shape. The stamp is this run's own timestamp, so the file
+       * is created once and never collides with an existing capture. */
+      const capturePath = "data/captures/" + now.replace(/:/g, "") + ".json";
       const writes = await Promise.all([
         writeJsonIfChanged("data/v1/uploads.json", uploadsDoc, msg, UA, uploadsR.ok ? uploadsR.obj : undefined),
         writeJsonIfChanged("data/v1/stats-snapshots.json", snapsDoc, msg, UA, snapsR.ok ? snapsR.obj : undefined),
         writeJsonIfChanged("data/v1/refresh-status.json", statusDoc, msg, UA, statusR.ok ? statusR.obj : undefined),
         writeJsonIfChanged("data/playcounts.snapshot.json", snapshotDoc, msg, UA, snapFileR.ok ? snapFileR.obj : undefined),
         writeJsonIfChanged("data/v1/signal-watch.json", watchDoc, msg, UA, watchR.ok ? watchR.obj : undefined),
+        writeJsonIfChanged(capturePath, snapshotDoc, msg, UA),
       ]);
-      const files = ["uploads.json", "stats-snapshots.json", "refresh-status.json", "playcounts.snapshot.json", "signal-watch.json"];
+      const files = ["uploads.json", "stats-snapshots.json", "refresh-status.json", "playcounts.snapshot.json", "signal-watch.json", capturePath];
       writes.forEach((w, i) => {
         if (w.changed) changed = true;
         if (w.committed) commitShas[files[i]] = w.sha;
