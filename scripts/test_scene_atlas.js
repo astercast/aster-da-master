@@ -42,7 +42,7 @@ function normalize() {
 }
 const figs = normalize();
 
-ok(Object.keys(circle).length === 21, "circle.json carries exactly 21 collaborators");
+ok(Object.keys(circle).length === 22, "circle.json carries exactly 22 collaborators");
 ok(Object.keys(scene).length === 1 && scene["fish-narc"], "scene-figures.json carries exactly 1 figure (fish-narc)");
 ok(figs.length === 22, "atlas charts exactly 22 figures");
 ok(figs[0].id === "yung-vetta" && figs[0].plays === 17893, "deepest sounding is Yung Vetta at 17,893 shared plays");

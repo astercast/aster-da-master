@@ -24,7 +24,7 @@
       },
       "first_appearance": {
         "title": "NIGHT MODE ft. MAX FERRARI x YUNG VETTA x JAX",
-        "date": "2019-07-09",
+        "date": "2019-06-13",
         "plays": 10083,
         "page": "releases/night-mode-ft-max-ferrari-x-yung-vetta-x-jax.html"
       },
@@ -43,7 +43,7 @@
           "plays": 10083,
           "loudest": {
             "title": "NIGHT MODE ft. MAX FERRARI x YUNG VETTA x JAX",
-            "date": "2019-07-09",
+            "date": "2019-06-13",
             "plays": 10083,
             "page": "releases/night-mode-ft-max-ferrari-x-yung-vetta-x-jax.html"
           },
@@ -84,7 +84,7 @@
       "transmissions": [
         {
           "title": "NIGHT MODE ft. MAX FERRARI x YUNG VETTA x JAX",
-          "date": "2019-07-09",
+          "date": "2019-06-13",
           "plays": 10083,
           "type": "SoundCloud-only",
           "page": "releases/night-mode-ft-max-ferrari-x-yung-vetta-x-jax.html"
@@ -120,17 +120,17 @@
       ],
       "key_sessions": [
         {
-          "id": "session-24",
-          "name": "The July 9th Session",
-          "start": "2019-07-09",
-          "end": "2019-07-09",
+          "id": "session-23",
+          "name": "The June 13th Session",
+          "start": "2019-06-13",
+          "end": "2019-06-13",
           "family_transmissions": 1,
           "family_plays": 10083,
-          "deep_dive": "sessions/the-july-9th-session.html",
-          "page": "sessions/the-july-9th-session.html"
+          "deep_dive": null,
+          "page": "sessions.html"
         },
         {
-          "id": "session-56",
+          "id": "session-59",
           "name": "The November 23rd Session",
           "start": "2025-11-23",
           "end": "2025-11-23",
@@ -140,7 +140,7 @@
           "page": "sessions.html"
         },
         {
-          "id": "session-45",
+          "id": "session-46",
           "name": "The May 22nd–31st Session",
           "start": "2024-05-22",
           "end": "2024-05-31",
@@ -150,7 +150,7 @@
           "page": "sessions.html"
         },
         {
-          "id": "session-43",
+          "id": "session-44",
           "name": "The April 16th–18th Session",
           "start": "2024-04-16",
           "end": "2024-04-18",
@@ -160,14 +160,14 @@
           "page": "sessions.html"
         },
         {
-          "id": "session-52",
-          "name": "The November 5th Session",
-          "start": "2024-11-05",
-          "end": "2024-11-05",
+          "id": "session-53",
+          "name": "The Oct 30th – Nov 8th Session",
+          "start": "2024-10-30",
+          "end": "2024-11-08",
           "family_transmissions": 1,
           "family_plays": 17,
-          "deep_dive": null,
-          "page": "sessions.html"
+          "deep_dive": "sessions/the-oct-30th-nov-8th-session.html",
+          "page": "sessions/the-oct-30th-nov-8th-session.html"
         }
       ],
       "collaborators": [
@@ -344,7 +344,7 @@
       ],
       "key_sessions": [
         {
-          "id": "session-40",
+          "id": "session-41",
           "name": "The November 3rd–12th Session",
           "start": "2023-11-03",
           "end": "2023-11-12",
@@ -354,7 +354,7 @@
           "page": "sessions/the-november-3rd-12th-session.html"
         },
         {
-          "id": "session-35",
+          "id": "session-36",
           "name": "The July 14th Session",
           "start": "2021-07-14",
           "end": "2021-07-14",
@@ -443,7 +443,7 @@
       ],
       "key_sessions": [
         {
-          "id": "session-26",
+          "id": "session-27",
           "name": "The December 6th Session",
           "start": "2019-12-06",
           "end": "2019-12-06",
@@ -556,7 +556,7 @@
       ],
       "key_sessions": [
         {
-          "id": "session-35",
+          "id": "session-36",
           "name": "The July 14th Session",
           "start": "2021-07-14",
           "end": "2021-07-14",
@@ -566,7 +566,7 @@
           "page": "sessions/the-july-14th-session.html"
         },
         {
-          "id": "session-60",
+          "id": "session-63",
           "name": "The July 15th Session",
           "start": "2026-07-15",
           "end": "2026-07-15",
@@ -670,7 +670,7 @@
       ],
       "key_sessions": [
         {
-          "id": "session-44",
+          "id": "session-45",
           "name": "The May 2nd–3rd Session",
           "start": "2024-05-02",
           "end": "2024-05-03",
@@ -680,7 +680,7 @@
           "page": "sessions.html"
         },
         {
-          "id": "session-60",
+          "id": "session-63",
           "name": "The July 15th Session",
           "start": "2026-07-15",
           "end": "2026-07-15",
@@ -735,7 +735,7 @@
       },
       "latest": {
         "title": "Sti11 waiting/tunnel freestyle w/ Max Ferrari prod. suli",
-        "date": "2025-11-11",
+        "date": "2024-11-07",
         "plays": 300,
         "page": "releases/sti11-waiting-tunnel-freestyle-w-max-ferrari-prod-suli.html"
       },
@@ -748,7 +748,7 @@
           "plays": 8099,
           "loudest": {
             "title": "outro ~ I RLLY DID THT(prod. itami リネン)",
-            "date": "2019-07-09",
+            "date": "2019-07-06",
             "plays": 3940,
             "page": "releases/outro-i-rlly-did-tht-prod-itami.html"
           },
@@ -789,8 +789,8 @@
           "id": "the-somelowlifes-era",
           "name": "The SomeLowLifes Era",
           "span": "2023 – 2024",
-          "transmissions": 7,
-          "plays": 2243,
+          "transmissions": 8,
+          "plays": 2543,
           "loudest": {
             "title": "Long Day (End Task) outro [@Staaaas.ily]",
             "date": "2023-11-10",
@@ -799,21 +799,6 @@
           },
           "deep_dive": "eras/the-somelowlifes-era.html",
           "journey": "transmission.html#era-the-somelowlifes-era"
-        },
-        {
-          "id": "the-silence",
-          "name": "The Silence",
-          "span": "2025",
-          "transmissions": 1,
-          "plays": 300,
-          "loudest": {
-            "title": "Sti11 waiting/tunnel freestyle w/ Max Ferrari prod. suli",
-            "date": "2025-11-11",
-            "plays": 300,
-            "page": "releases/sti11-waiting-tunnel-freestyle-w-max-ferrari-prod-suli.html"
-          },
-          "deep_dive": "eras/the-silence.html",
-          "journey": "transmission.html#era-the-silence"
         }
       ],
       "transmissions": [
@@ -854,7 +839,7 @@
         },
         {
           "title": "outro ~ I RLLY DID THT(prod. itami リネン)",
-          "date": "2019-07-09",
+          "date": "2019-07-06",
           "plays": 3940,
           "type": "SoundCloud-only",
           "page": "releases/outro-i-rlly-did-tht-prod-itami.html"
@@ -931,7 +916,7 @@
         },
         {
           "title": "Sti11 waiting/tunnel freestyle w/ Max Ferrari prod. suli",
-          "date": "2025-11-11",
+          "date": "2024-11-07",
           "plays": 300,
           "type": "SoundCloud-only",
           "page": "releases/sti11-waiting-tunnel-freestyle-w-max-ferrari-prod-suli.html"
@@ -939,7 +924,7 @@
       ],
       "key_sessions": [
         {
-          "id": "session-40",
+          "id": "session-41",
           "name": "The November 3rd–12th Session",
           "start": "2023-11-03",
           "end": "2023-11-12",
@@ -959,14 +944,14 @@
           "page": "sessions.html"
         },
         {
-          "id": "session-24",
-          "name": "The July 9th Session",
-          "start": "2019-07-09",
-          "end": "2019-07-09",
+          "id": "session-25",
+          "name": "The July 6th Session",
+          "start": "2019-07-06",
+          "end": "2019-07-06",
           "family_transmissions": 1,
           "family_plays": 3940,
-          "deep_dive": "sessions/the-july-9th-session.html",
-          "page": "sessions/the-july-9th-session.html"
+          "deep_dive": null,
+          "page": "sessions.html"
         },
         {
           "id": "session-18",
@@ -999,17 +984,17 @@
           "page": "sessions.html"
         },
         {
-          "id": "session-55",
-          "name": "The November 4th–11th Session",
-          "start": "2025-11-04",
-          "end": "2025-11-11",
+          "id": "session-53",
+          "name": "The Oct 30th – Nov 8th Session",
+          "start": "2024-10-30",
+          "end": "2024-11-08",
           "family_transmissions": 1,
           "family_plays": 300,
-          "deep_dive": "sessions/the-november-4th-11th-session.html",
-          "page": "sessions/the-november-4th-11th-session.html"
+          "deep_dive": "sessions/the-oct-30th-nov-8th-session.html",
+          "page": "sessions/the-oct-30th-nov-8th-session.html"
         },
         {
-          "id": "session-34",
+          "id": "session-35",
           "name": "The December 21st Session",
           "start": "2020-12-21",
           "end": "2020-12-21",
@@ -1019,7 +1004,7 @@
           "page": "sessions/the-december-21st-session.html"
         },
         {
-          "id": "session-35",
+          "id": "session-36",
           "name": "The July 14th Session",
           "start": "2021-07-14",
           "end": "2021-07-14",
@@ -1235,7 +1220,7 @@
         },
         {
           "title": "SUN SET FOR U ft. JO$E DRIPP (prod. y axis)",
-          "date": "2019-07-09",
+          "date": "2019-07-06",
           "plays": 1771,
           "type": "SoundCloud-only",
           "page": "releases/sun-set-for-u-ft-jo-e-dripp-prod-y-axis.html"
@@ -1298,7 +1283,7 @@
           "page": "sessions/the-august-13th-27th-session.html"
         },
         {
-          "id": "session-28",
+          "id": "session-29",
           "name": "The December 30th Session",
           "start": "2019-12-30",
           "end": "2019-12-30",
@@ -1308,14 +1293,14 @@
           "page": "sessions/the-december-30th-session.html"
         },
         {
-          "id": "session-24",
-          "name": "The July 9th Session",
-          "start": "2019-07-09",
-          "end": "2019-07-09",
+          "id": "session-25",
+          "name": "The July 6th Session",
+          "start": "2019-07-06",
+          "end": "2019-07-06",
           "family_transmissions": 1,
           "family_plays": 1771,
-          "deep_dive": "sessions/the-july-9th-session.html",
-          "page": "sessions/the-july-9th-session.html"
+          "deep_dive": null,
+          "page": "sessions.html"
         },
         {
           "id": "session-17",
@@ -1328,7 +1313,7 @@
           "page": "sessions.html"
         },
         {
-          "id": "session-32",
+          "id": "session-33",
           "name": "The October 7th Session",
           "start": "2020-10-07",
           "end": "2020-10-07",
@@ -1338,7 +1323,7 @@
           "page": "sessions.html"
         },
         {
-          "id": "session-48",
+          "id": "session-49",
           "name": "The July 9th Session",
           "start": "2024-07-09",
           "end": "2024-07-09",
@@ -1348,7 +1333,7 @@
           "page": "sessions.html"
         },
         {
-          "id": "session-35",
+          "id": "session-36",
           "name": "The July 14th Session",
           "start": "2021-07-14",
           "end": "2021-07-14",
@@ -1358,10 +1343,10 @@
           "page": "sessions/the-july-14th-session.html"
         },
         {
-          "id": "session-54",
-          "name": "The September 13th–14th Session",
+          "id": "session-57",
+          "name": "The September 13th Session",
           "start": "2025-09-13",
-          "end": "2025-09-14",
+          "end": "2025-09-13",
           "family_transmissions": 1,
           "family_plays": 178,
           "deep_dive": null,
@@ -1470,10 +1455,10 @@
         "page": "releases/stay-out-of-the-dark-prod-rizi.html"
       },
       "latest": {
-        "title": "the night ends yeaaa prod wellfed",
+        "title": "The Night Ends Yeaaa",
         "date": "2026-03-25",
-        "plays": 208,
-        "page": "releases/the-night-ends-yeaaa-prod-wellfed.html"
+        "plays": null,
+        "page": "releases/the-night-ends-yeaaa.html"
       },
       "eras": [
         {
@@ -1484,7 +1469,7 @@
           "plays": 11376,
           "loudest": {
             "title": "NIGHT MODE ft. MAX FERRARI x YUNG VETTA x JAX",
-            "date": "2019-07-09",
+            "date": "2019-06-13",
             "plays": 10083,
             "page": "releases/night-mode-ft-max-ferrari-x-yung-vetta-x-jax.html"
           },
@@ -1514,7 +1499,7 @@
           "plays": 208,
           "loudest": {
             "title": "the night ends yeaaa prod wellfed",
-            "date": "2026-03-25",
+            "date": "2026-03-17",
             "plays": 208,
             "page": "releases/the-night-ends-yeaaa-prod-wellfed.html"
           },
@@ -1532,7 +1517,7 @@
         },
         {
           "title": "NIGHT MODE ft. MAX FERRARI x YUNG VETTA x JAX",
-          "date": "2019-07-09",
+          "date": "2019-06-13",
           "plays": 10083,
           "type": "SoundCloud-only",
           "page": "releases/night-mode-ft-max-ferrari-x-yung-vetta-x-jax.html"
@@ -1545,30 +1530,30 @@
           "page": "releases/dark-city-destiny-dxcember13-rudey0on10.html"
         },
         {
+          "title": "the night ends yeaaa prod wellfed",
+          "date": "2026-03-17",
+          "plays": 208,
+          "type": "SoundCloud-only",
+          "page": "releases/the-night-ends-yeaaa-prod-wellfed.html"
+        },
+        {
           "title": "The Night Ends Yeaaa",
           "date": "2026-03-25",
           "plays": null,
           "type": "Single",
           "page": "releases/the-night-ends-yeaaa.html"
-        },
-        {
-          "title": "the night ends yeaaa prod wellfed",
-          "date": "2026-03-25",
-          "plays": 208,
-          "type": "SoundCloud-only",
-          "page": "releases/the-night-ends-yeaaa-prod-wellfed.html"
         }
       ],
       "key_sessions": [
         {
-          "id": "session-24",
-          "name": "The July 9th Session",
-          "start": "2019-07-09",
-          "end": "2019-07-09",
+          "id": "session-23",
+          "name": "The June 13th Session",
+          "start": "2019-06-13",
+          "end": "2019-06-13",
           "family_transmissions": 1,
           "family_plays": 10083,
-          "deep_dive": "sessions/the-july-9th-session.html",
-          "page": "sessions/the-july-9th-session.html"
+          "deep_dive": null,
+          "page": "sessions.html"
         },
         {
           "id": "session-09",
@@ -1581,7 +1566,7 @@
           "page": "sessions/the-august-13th-27th-session.html"
         },
         {
-          "id": "session-41",
+          "id": "session-42",
           "name": "The March 27th Session",
           "start": "2024-03-27",
           "end": "2024-03-27",
@@ -1591,10 +1576,10 @@
           "page": "sessions.html"
         },
         {
-          "id": "session-59",
-          "name": "The March 17th–25th Session",
+          "id": "session-62",
+          "name": "The March 17th Session",
           "start": "2026-03-17",
-          "end": "2026-03-25",
+          "end": "2026-03-17",
           "family_transmissions": 1,
           "family_plays": 208,
           "deep_dive": null,
@@ -1752,8 +1737,8 @@
           "end": "2018-12-15",
           "family_transmissions": 1,
           "family_plays": 5805,
-          "deep_dive": null,
-          "page": "sessions.html"
+          "deep_dive": "sessions/the-december-13th-15th-session.html",
+          "page": "sessions/the-december-13th-15th-session.html"
         },
         {
           "id": "session-09",
@@ -1766,7 +1751,7 @@
           "page": "sessions/the-august-13th-27th-session.html"
         },
         {
-          "id": "session-37",
+          "id": "session-38",
           "name": "The August 29th Session",
           "start": "2023-08-29",
           "end": "2023-08-29",
@@ -1901,7 +1886,7 @@
           "page": "sessions.html"
         },
         {
-          "id": "session-27",
+          "id": "session-28",
           "name": "The December 22nd Session",
           "start": "2019-12-22",
           "end": "2019-12-22",
@@ -1921,7 +1906,7 @@
           "page": "sessions/the-nov-27th-dec-4th-session.html"
         },
         {
-          "id": "session-35",
+          "id": "session-36",
           "name": "The July 14th Session",
           "start": "2021-07-14",
           "end": "2021-07-14",
@@ -1995,10 +1980,10 @@
         "page": "releases/power-brb-prod-apostle.html"
       },
       "latest": {
-        "title": "no power prod wellfed",
+        "title": "No Power",
         "date": "2026-03-23",
-        "plays": 242,
-        "page": "releases/no-power-prod-wellfed.html"
+        "plays": null,
+        "page": "releases/no-power.html"
       },
       "eras": [
         {
@@ -2024,7 +2009,7 @@
           "plays": 242,
           "loudest": {
             "title": "no power prod wellfed",
-            "date": "2026-03-23",
+            "date": "2026-03-17",
             "plays": 242,
             "page": "releases/no-power-prod-wellfed.html"
           },
@@ -2041,18 +2026,18 @@
           "page": "releases/power-brb-prod-apostle.html"
         },
         {
+          "title": "no power prod wellfed",
+          "date": "2026-03-17",
+          "plays": 242,
+          "type": "SoundCloud-only",
+          "page": "releases/no-power-prod-wellfed.html"
+        },
+        {
           "title": "No Power",
           "date": "2026-03-23",
           "plays": null,
           "type": "Single",
           "page": "releases/no-power.html"
-        },
-        {
-          "title": "no power prod wellfed",
-          "date": "2026-03-23",
-          "plays": 242,
-          "type": "SoundCloud-only",
-          "page": "releases/no-power-prod-wellfed.html"
         }
       ],
       "key_sessions": [
@@ -2067,10 +2052,10 @@
           "page": "sessions.html"
         },
         {
-          "id": "session-59",
-          "name": "The March 17th–25th Session",
+          "id": "session-62",
+          "name": "The March 17th Session",
           "start": "2026-03-17",
-          "end": "2026-03-25",
+          "end": "2026-03-17",
           "family_transmissions": 1,
           "family_plays": 242,
           "deep_dive": null,
@@ -2109,16 +2094,16 @@
         "source": "codex.json epithet - the archive's own reading of this word family (site framing of title vocabulary, not an artist statement)"
       },
       "first_appearance": {
+        "title": "like my dogs!!! (prod waynn)",
+        "date": "2024-09-14",
+        "plays": 175,
+        "page": "releases/like-my-dogs-prod-waynn.html"
+      },
+      "latest": {
         "title": "like my dogs!!!",
         "date": "2024-09-18",
         "plays": null,
         "page": "releases/like-my-dogs.html"
-      },
-      "latest": {
-        "title": "like my dogs!!! (prod waynn)",
-        "date": "2024-09-18",
-        "plays": 175,
-        "page": "releases/like-my-dogs-prod-waynn.html"
       },
       "eras": [
         {
@@ -2129,7 +2114,7 @@
           "plays": 175,
           "loudest": {
             "title": "like my dogs!!! (prod waynn)",
-            "date": "2024-09-18",
+            "date": "2024-09-14",
             "plays": 175,
             "page": "releases/like-my-dogs-prod-waynn.html"
           },
@@ -2139,26 +2124,26 @@
       ],
       "transmissions": [
         {
+          "title": "like my dogs!!! (prod waynn)",
+          "date": "2024-09-14",
+          "plays": 175,
+          "type": "SoundCloud-only",
+          "page": "releases/like-my-dogs-prod-waynn.html"
+        },
+        {
           "title": "like my dogs!!!",
           "date": "2024-09-18",
           "plays": null,
           "type": "Single",
           "page": "releases/like-my-dogs.html"
-        },
-        {
-          "title": "like my dogs!!! (prod waynn)",
-          "date": "2024-09-18",
-          "plays": 175,
-          "type": "SoundCloud-only",
-          "page": "releases/like-my-dogs-prod-waynn.html"
         }
       ],
       "key_sessions": [
         {
-          "id": "session-50",
-          "name": "The September 18th Session",
-          "start": "2024-09-18",
-          "end": "2024-09-18",
+          "id": "session-51",
+          "name": "The September 14th Session",
+          "start": "2024-09-14",
+          "end": "2024-09-14",
           "family_transmissions": 1,
           "family_plays": 175,
           "deep_dive": null,
@@ -2199,7 +2184,7 @@
       },
       "latest": {
         "title": "Dreamed of U (Hubb1e) prod. Yukio",
-        "date": "2025-11-10",
+        "date": "2024-11-08",
         "plays": 175,
         "page": "releases/dreamed-of-u-hubb1e-prod-yukio.html"
       },
@@ -2220,19 +2205,19 @@
           "journey": "transmission.html#era-the-first-rite"
         },
         {
-          "id": "the-silence",
-          "name": "The Silence",
-          "span": "2025",
+          "id": "the-somelowlifes-era",
+          "name": "The SomeLowLifes Era",
+          "span": "2023 – 2024",
           "transmissions": 1,
           "plays": 175,
           "loudest": {
             "title": "Dreamed of U (Hubb1e) prod. Yukio",
-            "date": "2025-11-10",
+            "date": "2024-11-08",
             "plays": 175,
             "page": "releases/dreamed-of-u-hubb1e-prod-yukio.html"
           },
-          "deep_dive": "eras/the-silence.html",
-          "journey": "transmission.html#era-the-silence"
+          "deep_dive": "eras/the-somelowlifes-era.html",
+          "journey": "transmission.html#era-the-somelowlifes-era"
         }
       ],
       "transmissions": [
@@ -2245,7 +2230,7 @@
         },
         {
           "title": "Dreamed of U (Hubb1e) prod. Yukio",
-          "date": "2025-11-10",
+          "date": "2024-11-08",
           "plays": 175,
           "type": "SoundCloud-only",
           "page": "releases/dreamed-of-u-hubb1e-prod-yukio.html"
@@ -2263,14 +2248,14 @@
           "page": "sessions.html"
         },
         {
-          "id": "session-55",
-          "name": "The November 4th–11th Session",
-          "start": "2025-11-04",
-          "end": "2025-11-11",
+          "id": "session-53",
+          "name": "The Oct 30th – Nov 8th Session",
+          "start": "2024-10-30",
+          "end": "2024-11-08",
           "family_transmissions": 1,
           "family_plays": 175,
-          "deep_dive": "sessions/the-november-4th-11th-session.html",
-          "page": "sessions/the-november-4th-11th-session.html"
+          "deep_dive": "sessions/the-oct-30th-nov-8th-session.html",
+          "page": "sessions/the-oct-30th-nov-8th-session.html"
         }
       ],
       "collaborators": [],
@@ -2357,8 +2342,8 @@
           "end": "2018-12-15",
           "family_transmissions": 1,
           "family_plays": 801,
-          "deep_dive": null,
-          "page": "sessions.html"
+          "deep_dive": "sessions/the-december-13th-15th-session.html",
+          "page": "sessions/the-december-13th-15th-session.html"
         },
         {
           "id": "session-14",
@@ -2563,7 +2548,7 @@
       ],
       "key_sessions": [
         {
-          "id": "session-32",
+          "id": "session-33",
           "name": "The October 7th Session",
           "start": "2020-10-07",
           "end": "2020-10-07",
@@ -2573,10 +2558,10 @@
           "page": "sessions.html"
         },
         {
-          "id": "session-54",
-          "name": "The September 13th–14th Session",
+          "id": "session-57",
+          "name": "The September 13th Session",
           "start": "2025-09-13",
-          "end": "2025-09-14",
+          "end": "2025-09-13",
           "family_transmissions": 1,
           "family_plays": 178,
           "deep_dive": null,

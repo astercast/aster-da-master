@@ -42,4 +42,4 @@ The First Rite opens the archive: the earliest trace is a 2017 feature credit on
 - **Never invent biography.** The eras' `scene` and `note` fields are the entire sanctioned story; "The Silence" explicitly records that 2025's reason is unknown and not speculated.
 - Era spans are ranges, not upload clusters — a track dated inside a span belongs to the era even if it was uploaded between sessions.
 - Don't present year stats as era stats without adding the years up (or saying you didn't).
-- If a "key release" you expect isn't in `discography`, check whether it's SoundCloud-only — the distributor list is 34 entries, not 219.
+- If a "key release" you expect isn't in `discography`, check whether it's SoundCloud-only — the distributor list is 36 entries, not 219.

@@ -1,6 +1,6 @@
 # ASTER DA MASTER
 
-> The official catalogue of the underground artist **Aster da Master** (digicore/hyperpop orbit, scene tag "somelowlifes"). A calm, minimal site over a deep data archive. Catalog: **219** transmissions total  —  **34** distributor releases (9 albums, 25 singles, verified via Apple Music/iTunes Search API) + **185** SoundCloud-only tracks (read-only capture 2026-10-11, play counts are a snapshot).
+> The official catalogue of the underground artist **Aster da Master** (digicore/hyperpop orbit, scene tag "somelowlifes"). A calm, minimal site over a deep data archive. Catalog: **221** transmissions total  —  **36** distributor releases (9 albums, 27 singles, verified via Apple Music/iTunes Search API, both distributor profiles) + **185** SoundCloud-only tracks (read-only capture 2026-10-11, play counts are a snapshot).
 
 Method: titles and metadata only  —  no lyrics ever, no invented biography. Unknowns are listed as unknowns (see the press kit's verified-facts register). Play counts are a 2026-10-11 snapshot held in the data layer; since the 2026-10-15 sleek-minimal rework they are not shown anywhere on the presented site. Upload dates are not recording dates. Data version: 0.19.0.
 
@@ -13,20 +13,20 @@ Repo: private GitHub-only (astercast/aster-da-master), no Vercel. Deploy: any st
 Four doors over a home page. Everything else the archive knows lives in the data layer below, unchanged.
 
 - [Home](index.html): the artist's name, the official SoundCloud player, the latest release and the newest six, and the six eras.
-- [Releases](releases/): the complete catalogue  —  **219** transmissions (185 SoundCloud-only tracks + 34 distributor releases), one quiet list with title search and year/type filters; every release keeps its own page (cover, credits as titled, platform links, provenance).
+- [Releases](releases/): the complete catalogue  —  **221** transmissions (185 SoundCloud-only tracks + 36 distributor releases), one quiet list with title search and year/type filters; every release keeps its own page (cover, credits as titled, platform links, provenance).
 - [Story](story.html): the career in six eras, 2017 to today, told from the record.
-- [About](about.html): who he is, the facts on record, and where to listen (the **21** title-credited collaborators and the **16** codex vocabulary families live in the data layer now).
+- [About](about.html): who he is, the facts on record, and where to listen (the **22** title-credited collaborators and the **16** codex vocabulary families live in the data layer now).
 - [Press kit](press-kit.html): the press kit  —  facts as recorded, unknowns stated as unknowns.
 - [Not in the catalogue (404)](404.html): the 404 page.
 
-The data layer keeps the full archive: **61** upload sessions, **113** as-credited producers, **15** agent skills, and every endpoint below, exactly as before the rework.
+The data layer keeps the full archive: **64** upload sessions, **113** as-credited producers, **15** agent skills, and every endpoint below, exactly as before the rework.
 
 ## Data endpoints
 
 All data lives as static JSON at `data/v1/*.json` — no auth. The self-describing registry is [the API index](data/v1/index.json): every endpoint with description, schema URL (`data/v1/schema/*.json`, all 23 validating), `updated` timestamp, record counts, and deprecation notes.
 
 - [artist](data/v1/artist.json): the canonical artist record — bio, facts, discography, platforms, socials.
-- [circle](data/v1/circle.json): the 21 title-credited collaborators and their shared records.
+- [circle](data/v1/circle.json): the 22 title-credited collaborators and their shared records.
 - [scene-figures](data/v1/scene-figures.json): documented producer/scene figures beyond the circle's title-credit rule.
 - [codex](data/v1/codex.json): the 16 codex vocabulary families.
 - [codex-families](data/v1/codex-families.json): codex family deep-dives — decoded readings, era evolution, key sessions, collaborators; drives the codex pages.
@@ -36,16 +36,16 @@ All data lives as static JSON at `data/v1/*.json` — no auth. The self-describi
 - [transmission](data/v1/transmission.json): six era aggregates for the guided journey; the 2026 era carries an `extras` block (the four verified 2026 singles, the Q4 2026 Uncle-LP/trilogy watch, the play-count snapshot).
 - [network](data/v1/network.json): the collaboration graph — nodes, edges, insights.
 - [producer-deepdives](data/v1/producer-deepdives.json): the 113 as-credited producers and their deep-dive data.
-- [sessions](data/v1/sessions.json): the 61 upload sessions clustered by date.
-- [session-clusters](data/v1/session-clusters.json): session archaeology — 61 enriched sessions, 60 gaps, 9 activity seasons, asserted insights; drives the sessions explorer.
-- [session-tools](data/v1/session-tools.json): session explorer 2.0 — 61 compare profiles, deepest-sessions editorial ranking, the track-level deepest-transmissions ranking (quietest 25 of 185, median 450), snapshot-history state.
+- [sessions](data/v1/sessions.json): the 64 upload sessions clustered by date.
+- [session-clusters](data/v1/session-clusters.json): session archaeology — 64 enriched sessions, 63 gaps, 9 activity seasons, asserted insights; drives the sessions explorer.
+- [session-tools](data/v1/session-tools.json): session explorer 2.0 — 64 compare profiles, deepest-sessions editorial ranking, the track-level deepest-transmissions ranking (quietest 25 of 185, median 450), snapshot-history state.
 - [milestones](data/v1/milestones.json): the dated milestones on record.
 - [milestone-watch](data/v1/milestone-watch.json): the milestone watch board.
 - [milestone-races](data/v1/milestone-races.json): the milestone race 2.0 — approaching races ranked by gap-closing proximity, the vault pace database, The Climb, race history (dated crossings, 1k/10k/20k/30k threshold winners, the 115-day photo finish), the computed race of the week, the summit chase. The 2026-10-11 snapshot was independently re-captured (185/185, zero differences).
 - [chronicle](data/v1/chronicle.json): The Chronicle — 114 merged chronological events with era assignment and cross-links; drives the Chronicle page.
 - [signal-watch](data/v1/signal-watch.json): The Signal 2.0 watch file — capture-vs-capture diff of the vault (new uploads, play-count movers, milestone crossings, next-up board); written by the daily Signal cron; drives the Signal page.
 - [live-dates](data/v1/live-dates.json): the live-date verification board — scene events hand-checked against the web (Fish Narc *Uncle* release week, capoxxo's Oct 28–29 support dates), each verified / single-source / unconfirmed, with sources and discrepancies on record.
-- [release-slugs](data/v1/release-slugs.json): the release-page slug registry for all 219 transmissions.
+- [release-slugs](data/v1/release-slugs.json): the release-page slug registry for all 221 transmissions.
 - [on-this-day](data/v1/on-this-day.json): archive events on this day of the year.
 - [first-last](data/v1/first-last.json): the archive's firsts and lasts.
 - [changelog](data/v1/changelog.json): the construction history, generated from the site's own git log.

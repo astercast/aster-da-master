@@ -138,11 +138,11 @@
       {
         "title": "NIGHT MODE ft. MAX FERRARI x YUNG VETTA x JAX",
         "page": null,
-        "date": "2019-07-09",
+        "date": "2019-06-13",
         "plays": 10083,
         "gap": 20005,
-        "pace_per_day": 3.8,
-        "catch_days_at_pace": 5264.5,
+        "pace_per_day": 3.77,
+        "catch_days_at_pace": 5306.4,
         "catch_note": "At the lifetime pace from the 2026-10-11 snapshot - simple division, not a prediction."
       },
       {
@@ -161,7 +161,7 @@
     {
       "record": "Most prolific session",
       "holder": "The November 3rd–12th Session",
-      "session_id": "session-40",
+      "session_id": "session-41",
       "value": "19 tracks",
       "value_number": 19,
       "detail": "2023-11-03 → 2023-11-12",
@@ -169,7 +169,7 @@
     },
     {
       "record": "Longest silence",
-      "holder": "session-36 → session-37",
+      "holder": "session-37 → session-38",
       "session_id": null,
       "value": "553 days",
       "value_number": 553,
@@ -187,10 +187,10 @@
     },
     {
       "record": "Quietest session",
-      "holder": "The November 5th Session",
-      "session_id": "session-52",
-      "value": "17 plays",
-      "value_number": 17,
+      "holder": "The April 16th–18th Session",
+      "session_id": "session-44",
+      "value": "167 plays",
+      "value_number": 167,
       "detail": "Snapshot total across the session's transmissions",
       "page": null
     }
@@ -202,15 +202,15 @@
       "era_id": "the-first-rite",
       "value": "220,688 plays",
       "value_number": 220688,
-      "detail": "79 transmissions, 2017 – 2019",
+      "detail": "80 transmissions, 2017 – 2019",
       "page": "eras/the-first-rite.html"
     },
     {
       "record": "Most transmissions in an era",
       "holder": "The First Rite",
       "era_id": "the-first-rite",
-      "value": "79 transmissions",
-      "value_number": 79,
+      "value": "80 transmissions",
+      "value_number": 80,
       "detail": "220,688 plays, 2017 – 2019",
       "page": "eras/the-first-rite.html"
     }
@@ -554,9 +554,9 @@
         "id": "vp-1otso-prod-branwen",
         "title": "1otso prod. branwen",
         "plays": 190,
-        "date": "2025-11-11",
+        "date": "2025-01-13",
         "page": "releases/1otso-prod-branwen.html",
-        "pace_per_day": 0.57,
+        "pace_per_day": 0.3,
         "producers": [
           {
             "name": "branwen",
@@ -769,9 +769,9 @@
         "id": "vp-arcsnowww-w-max-ferrari-prod-sustain",
         "title": "ARCSNOWWW w/ Max Ferrari prod. sustain",
         "plays": 184,
-        "date": "2025-11-11",
+        "date": "2024-11-07",
         "page": "releases/arcsnowww-w-max-ferrari-prod-sustain.html",
-        "pace_per_day": 0.55,
+        "pace_per_day": 0.26,
         "producers": [
           {
             "name": "sustain",
@@ -1009,9 +1009,9 @@
         "id": "vp-cut-tha-1ights-prod-ohmygon",
         "title": "Cut tha 1ights prod. ohmygon!",
         "plays": 180,
-        "date": "2025-11-11",
+        "date": "2024-11-08",
         "page": "releases/cut-tha-1ights-prod-ohmygon.html",
-        "pace_per_day": 0.54,
+        "pace_per_day": 0.26,
         "producers": [
           {
             "name": "ohmygon",
@@ -1096,9 +1096,9 @@
         "id": "vp-dreamed-of-u-hubb1e-prod-yukio",
         "title": "Dreamed of U (Hubb1e) prod. Yukio",
         "plays": 175,
-        "date": "2025-11-10",
+        "date": "2024-11-08",
         "page": "releases/dreamed-of-u-hubb1e-prod-yukio.html",
-        "pace_per_day": 0.52,
+        "pace_per_day": 0.25,
         "producers": [
           {
             "name": "Yukio",
@@ -1165,9 +1165,9 @@
         "id": "vp-fa11-leaves-prod-gehx",
         "title": "Fa11 LeaVes prod. Gehx",
         "plays": 222,
-        "date": "2025-11-10",
+        "date": "2024-11-01",
         "page": "releases/fa11-leaves-prod-gehx.html",
-        "pace_per_day": 0.66,
+        "pace_per_day": 0.31,
         "producers": [
           {
             "name": "Gehx",
@@ -1309,9 +1309,9 @@
         "id": "vp-games-stop-prod-branwen",
         "title": "games stop prod branwen",
         "plays": 180,
-        "date": "2026-03-17",
+        "date": "2025-07-22",
         "page": "releases/games-stop-prod-branwen.html",
-        "pace_per_day": 0.87,
+        "pace_per_day": 0.4,
         "producers": [
           {
             "name": "branwen",
@@ -1324,7 +1324,7 @@
         "id": "vp-garden-ft-offline-hp-prod-qb",
         "title": "GARDEN ft. Offline_hp (prod. QB)",
         "plays": 1311,
-        "date": "2019-07-09",
+        "date": "2019-06-26",
         "page": "releases/garden-ft-offline-hp-prod-qb.html",
         "pace_per_day": 0.49,
         "producers": [
@@ -1339,9 +1339,9 @@
         "id": "vp-get-away-prod-gehx",
         "title": "Get Away prod. Gehx",
         "plays": 217,
-        "date": "2025-11-10",
+        "date": "2024-11-05",
         "page": "releases/get-away-prod-gehx.html",
-        "pace_per_day": 0.65,
+        "pace_per_day": 0.31,
         "producers": [
           {
             "name": "Gehx",
@@ -1433,9 +1433,9 @@
         "id": "vp-green-wa11s-prod-ocurie",
         "title": "Green Wa11s prod. Ocurie",
         "plays": 186,
-        "date": "2025-11-10",
+        "date": "2024-10-30",
         "page": "releases/green-wa11s-prod-ocurie.html",
-        "pace_per_day": 0.56,
+        "pace_per_day": 0.26,
         "producers": [
           {
             "name": "Ocurie",
@@ -1678,7 +1678,7 @@
         "id": "vp-i-m-weakening-ft-ammi-age",
         "title": "I'M WEAKENING ft. AMMI $AGE",
         "plays": 2490,
-        "date": "2019-07-09",
+        "date": "2019-07-06",
         "page": "releases/i-m-weakening-ft-ammi-age.html",
         "pace_per_day": 0.94,
         "producers": []
@@ -1827,9 +1827,9 @@
         "id": "vp-life-s-made-prod-wellfed",
         "title": "life's made prod wellfed",
         "plays": 151,
-        "date": "2026-03-20",
+        "date": "2026-03-17",
         "page": "releases/life-s-made-prod-wellfed.html",
-        "pace_per_day": 0.74,
+        "pace_per_day": 0.73,
         "producers": [
           {
             "name": "wellfed",
@@ -1842,7 +1842,7 @@
         "id": "vp-like-my-dogs-prod-waynn",
         "title": "like my dogs!!! (prod waynn)",
         "plays": 175,
-        "date": "2024-09-18",
+        "date": "2024-09-14",
         "page": "releases/like-my-dogs-prod-waynn.html",
         "pace_per_day": 0.23,
         "producers": [
@@ -2034,9 +2034,9 @@
         "id": "vp-neck-deep-prod-awfl",
         "title": "NECK DEEP (prod. AWFL)",
         "plays": 5276,
-        "date": "2019-07-09",
+        "date": "2019-06-26",
         "page": "releases/neck-deep-prod-awfl.html",
-        "pace_per_day": 1.99,
+        "pace_per_day": 1.98,
         "producers": [
           {
             "name": "AWFL",
@@ -2064,9 +2064,9 @@
         "id": "vp-night-mode-ft-max-ferrari-x-yung-vetta-x-jax",
         "title": "NIGHT MODE ft. MAX FERRARI x YUNG VETTA x JAX",
         "plays": 10083,
-        "date": "2019-07-09",
+        "date": "2019-06-13",
         "page": "releases/night-mode-ft-max-ferrari-x-yung-vetta-x-jax.html",
-        "pace_per_day": 3.8,
+        "pace_per_day": 3.77,
         "producers": []
       },
       {
@@ -2097,9 +2097,9 @@
         "id": "vp-no-power-prod-wellfed",
         "title": "no power prod wellfed",
         "plays": 242,
-        "date": "2026-03-23",
+        "date": "2026-03-17",
         "page": "releases/no-power-prod-wellfed.html",
-        "pace_per_day": 1.2,
+        "pace_per_day": 1.16,
         "producers": [
           {
             "name": "wellfed",
@@ -2112,9 +2112,9 @@
         "id": "vp-no-puppets-a11owed-prod-xtasane",
         "title": "No Puppets A11owed prod. xtasane",
         "plays": 24,
-        "date": "2025-11-10",
+        "date": "2024-11-08",
         "page": "releases/no-puppets-a11owed-prod-xtasane.html",
-        "pace_per_day": 0.07,
+        "pace_per_day": 0.03,
         "producers": [
           {
             "name": "xtasane",
@@ -2204,9 +2204,9 @@
         "id": "vp-outro-i-rlly-did-tht-prod-itami",
         "title": "outro ~ I RLLY DID THT(prod. itami リネン)",
         "plays": 3940,
-        "date": "2019-07-09",
+        "date": "2019-07-06",
         "page": "releases/outro-i-rlly-did-tht-prod-itami.html",
-        "pace_per_day": 1.49,
+        "pace_per_day": 1.48,
         "producers": [
           {
             "name": "itami リネン",
@@ -2264,9 +2264,9 @@
         "id": "vp-phantom-moshpit-w-griimxo-remastered-prod-scared716",
         "title": "Phantom Moshpit w/ Griimxo (remastered) prod. scared716",
         "plays": 178,
-        "date": "2025-11-11",
+        "date": "2024-11-08",
         "page": "releases/phantom-moshpit-w-griimxo-remastered-prod-scared716.html",
-        "pace_per_day": 0.53,
+        "pace_per_day": 0.25,
         "producers": [
           {
             "name": "scared716",
@@ -2387,9 +2387,9 @@
         "id": "vp-signs-point-up-prod-jayy-praax",
         "title": "SIGNS POINT UP! (prod Jayy Praax)",
         "plays": 3389,
-        "date": "2019-07-09",
+        "date": "2019-06-26",
         "page": "releases/signs-point-up-prod-jayy-praax.html",
-        "pace_per_day": 1.28,
+        "pace_per_day": 1.27,
         "producers": [
           {
             "name": "Jayy Praax",
@@ -2521,9 +2521,9 @@
         "id": "vp-sti11-waiting-tunnel-freestyle-w-max-ferrari-prod-suli",
         "title": "Sti11 waiting/tunnel freestyle w/ Max Ferrari prod. suli",
         "plays": 300,
-        "date": "2025-11-11",
+        "date": "2024-11-07",
         "page": "releases/sti11-waiting-tunnel-freestyle-w-max-ferrari-prod-suli.html",
-        "pace_per_day": 0.9,
+        "pace_per_day": 0.43,
         "producers": [
           {
             "name": "suli",
@@ -2551,7 +2551,7 @@
         "id": "vp-sun-set-for-u-ft-jo-e-dripp-prod-y-axis",
         "title": "SUN SET FOR U ft. JO$E DRIPP (prod. y axis)",
         "plays": 1771,
-        "date": "2019-07-09",
+        "date": "2019-07-06",
         "page": "releases/sun-set-for-u-ft-jo-e-dripp-prod-y-axis.html",
         "pace_per_day": 0.67,
         "producers": [
@@ -2581,9 +2581,9 @@
         "id": "vp-switch-prod-fiftyzeros",
         "title": "switch (prod fiftyzeros)",
         "plays": 206,
-        "date": "2025-09-14",
+        "date": "2025-03-31",
         "page": "releases/switch-prod-fiftyzeros.html",
-        "pace_per_day": 0.53,
+        "pace_per_day": 0.37,
         "producers": [
           {
             "name": "fiftyzeros",
@@ -2676,9 +2676,9 @@
         "id": "vp-the-night-ends-yeaaa-prod-wellfed",
         "title": "the night ends yeaaa prod wellfed",
         "plays": 208,
-        "date": "2026-03-25",
+        "date": "2026-03-17",
         "page": "releases/the-night-ends-yeaaa-prod-wellfed.html",
-        "pace_per_day": 1.04,
+        "pace_per_day": 1.0,
         "producers": [
           {
             "name": "wellfed",
@@ -3087,11 +3087,11 @@
         "rank": 4,
         "title": "NIGHT MODE ft. MAX FERRARI x YUNG VETTA x JAX",
         "page": "releases/night-mode-ft-max-ferrari-x-yung-vetta-x-jax.html",
-        "date": "2019-07-09",
+        "date": "2019-06-13",
         "plays": 10083,
         "gap": 20005,
-        "pace_per_day": 3.8,
-        "catch_days_at_pace": 5264.5,
+        "pace_per_day": 3.77,
+        "catch_days_at_pace": 5306.4,
         "catch_note": "At the lifetime pace from the 2026-10-11 snapshot - simple division, not a prediction."
       },
       {
@@ -3164,11 +3164,11 @@
         "rank": 11,
         "title": "NECK DEEP (prod. AWFL)",
         "page": "releases/neck-deep-prod-awfl.html",
-        "date": "2019-07-09",
+        "date": "2019-06-26",
         "plays": 5276,
         "gap": 24812,
-        "pace_per_day": 1.99,
-        "catch_days_at_pace": 12468.3,
+        "pace_per_day": 1.98,
+        "catch_days_at_pace": 12531.3,
         "catch_note": "At the lifetime pace from the 2026-10-11 snapshot - simple division, not a prediction."
       },
       {
@@ -3219,26 +3219,15 @@
         "rank": 16,
         "title": "outro ~ I RLLY DID THT(prod. itami リネン)",
         "page": "releases/outro-i-rlly-did-tht-prod-itami.html",
-        "date": "2019-07-09",
+        "date": "2019-07-06",
         "plays": 3940,
         "gap": 26148,
-        "pace_per_day": 1.49,
-        "catch_days_at_pace": 17549.0,
+        "pace_per_day": 1.48,
+        "catch_days_at_pace": 17667.6,
         "catch_note": "At the lifetime pace from the 2026-10-11 snapshot - simple division, not a prediction."
       },
       {
         "rank": 17,
-        "title": "SIGNS POINT UP! (prod Jayy Praax)",
-        "page": "releases/signs-point-up-prod-jayy-praax.html",
-        "date": "2019-07-09",
-        "plays": 3389,
-        "gap": 26699,
-        "pace_per_day": 1.28,
-        "catch_days_at_pace": 20858.6,
-        "catch_note": "At the lifetime pace from the 2026-10-11 snapshot - simple division, not a prediction."
-      },
-      {
-        "rank": 18,
         "title": "big litemode (prod runawway, ilyagargod & k3nik)",
         "page": "releases/big-litemode-prod-runawway-ilyagargod-and-k3nik.html",
         "date": "2025-11-23",
@@ -3246,6 +3235,17 @@
         "gap": 29633,
         "pace_per_day": 1.41,
         "catch_days_at_pace": 21016.3,
+        "catch_note": "At the lifetime pace from the 2026-10-11 snapshot - simple division, not a prediction."
+      },
+      {
+        "rank": 18,
+        "title": "SIGNS POINT UP! (prod Jayy Praax)",
+        "page": "releases/signs-point-up-prod-jayy-praax.html",
+        "date": "2019-06-26",
+        "plays": 3389,
+        "gap": 26699,
+        "pace_per_day": 1.27,
+        "catch_days_at_pace": 21022.8,
         "catch_note": "At the lifetime pace from the 2026-10-11 snapshot - simple division, not a prediction."
       },
       {
@@ -3272,17 +3272,6 @@
       },
       {
         "rank": 21,
-        "title": "no power prod wellfed",
-        "page": "releases/no-power-prod-wellfed.html",
-        "date": "2026-03-23",
-        "plays": 242,
-        "gap": 29846,
-        "pace_per_day": 1.2,
-        "catch_days_at_pace": 24871.7,
-        "catch_note": "At the lifetime pace from the 2026-10-11 snapshot - simple division, not a prediction."
-      },
-      {
-        "rank": 22,
         "title": "Costs Of Life (prod. aster)",
         "page": "releases/costs-of-life-prod-aster.html",
         "date": "2019-12-30",
@@ -3293,7 +3282,7 @@
         "catch_note": "At the lifetime pace from the 2026-10-11 snapshot - simple division, not a prediction."
       },
       {
-        "rank": 23,
+        "rank": 22,
         "title": "White Noise ft. Keyblayde808 (prod. Keyblayde808)",
         "page": "releases/white-noise-ft-keyblayde808-prod-keyblayde808.html",
         "date": "2019-12-30",
@@ -3301,6 +3290,17 @@
         "gap": 27438,
         "pace_per_day": 1.07,
         "catch_days_at_pace": 25643.0,
+        "catch_note": "At the lifetime pace from the 2026-10-11 snapshot - simple division, not a prediction."
+      },
+      {
+        "rank": 23,
+        "title": "no power prod wellfed",
+        "page": "releases/no-power-prod-wellfed.html",
+        "date": "2026-03-17",
+        "plays": 242,
+        "gap": 29846,
+        "pace_per_day": 1.16,
+        "catch_days_at_pace": 25729.3,
         "catch_note": "At the lifetime pace from the 2026-10-11 snapshot - simple division, not a prediction."
       },
       {
@@ -3316,17 +3316,6 @@
       },
       {
         "rank": 25,
-        "title": "the night ends yeaaa prod wellfed",
-        "page": "releases/the-night-ends-yeaaa-prod-wellfed.html",
-        "date": "2026-03-25",
-        "plays": 208,
-        "gap": 29880,
-        "pace_per_day": 1.04,
-        "catch_days_at_pace": 28730.8,
-        "catch_note": "At the lifetime pace from the 2026-10-11 snapshot - simple division, not a prediction."
-      },
-      {
-        "rank": 26,
         "title": "Pills By My Lonely(prod. Discent)",
         "page": "releases/pills-by-my-lonely-prod-discent.html",
         "date": "2018-10-17",
@@ -3337,10 +3326,10 @@
         "catch_note": "At the lifetime pace from the 2026-10-11 snapshot - simple division, not a prediction."
       },
       {
-        "rank": 27,
+        "rank": 26,
         "title": "I'M WEAKENING ft. AMMI $AGE",
         "page": "releases/i-m-weakening-ft-ammi-age.html",
-        "date": "2019-07-09",
+        "date": "2019-07-06",
         "plays": 2490,
         "gap": 27598,
         "pace_per_day": 0.94,
@@ -3348,7 +3337,7 @@
         "catch_note": "At the lifetime pace from the 2026-10-11 snapshot - simple division, not a prediction."
       },
       {
-        "rank": 28,
+        "rank": 27,
         "title": "all i really need is a text from u 2 (prod astral hp)",
         "page": "releases/all-i-really-need-is-a-text-from-u-2-prod-astral-hp.html",
         "date": "2026-01-16",
@@ -3356,6 +3345,17 @@
         "gap": 29819,
         "pace_per_day": 1.0,
         "catch_days_at_pace": 29819.0,
+        "catch_note": "At the lifetime pace from the 2026-10-11 snapshot - simple division, not a prediction."
+      },
+      {
+        "rank": 28,
+        "title": "the night ends yeaaa prod wellfed",
+        "page": "releases/the-night-ends-yeaaa-prod-wellfed.html",
+        "date": "2026-03-17",
+        "plays": 208,
+        "gap": 29880,
+        "pace_per_day": 1.0,
+        "catch_days_at_pace": 29880.0,
         "catch_note": "At the lifetime pace from the 2026-10-11 snapshot - simple division, not a prediction."
       },
       {
@@ -3371,28 +3371,6 @@
       },
       {
         "rank": 30,
-        "title": "Sti11 waiting/tunnel freestyle w/ Max Ferrari prod. suli",
-        "page": "releases/sti11-waiting-tunnel-freestyle-w-max-ferrari-prod-suli.html",
-        "date": "2025-11-11",
-        "plays": 300,
-        "gap": 29788,
-        "pace_per_day": 0.9,
-        "catch_days_at_pace": 33097.8,
-        "catch_note": "At the lifetime pace from the 2026-10-11 snapshot - simple division, not a prediction."
-      },
-      {
-        "rank": 31,
-        "title": "games stop prod branwen",
-        "page": "releases/games-stop-prod-branwen.html",
-        "date": "2026-03-17",
-        "plays": 180,
-        "gap": 29908,
-        "pace_per_day": 0.87,
-        "catch_days_at_pace": 34377.0,
-        "catch_note": "At the lifetime pace from the 2026-10-11 snapshot - simple division, not a prediction."
-      },
-      {
-        "rank": 32,
         "title": "attempt to be (prod. uniquate)",
         "page": "releases/attempt-to-be-prod-uniquate.html",
         "date": "2019-12-22",
@@ -3403,7 +3381,7 @@
         "catch_note": "At the lifetime pace from the 2026-10-11 snapshot - simple division, not a prediction."
       },
       {
-        "rank": 33,
+        "rank": 31,
         "title": "Inside My Dome (prod. Karattt)",
         "page": "releases/inside-my-dome-prod-karattt.html",
         "date": "2018-10-06",
@@ -3414,18 +3392,7 @@
         "catch_note": "At the lifetime pace from the 2026-10-11 snapshot - simple division, not a prediction."
       },
       {
-        "rank": 34,
-        "title": "life's made prod wellfed",
-        "page": "releases/life-s-made-prod-wellfed.html",
-        "date": "2026-03-20",
-        "plays": 151,
-        "gap": 29937,
-        "pace_per_day": 0.74,
-        "catch_days_at_pace": 40455.4,
-        "catch_note": "At the lifetime pace from the 2026-10-11 snapshot - simple division, not a prediction."
-      },
-      {
-        "rank": 35,
+        "rank": 32,
         "title": "I HATE IT prod. Taurs",
         "page": "releases/i-hate-it-prod-taurs.html",
         "date": "2020-04-09",
@@ -3436,7 +3403,18 @@
         "catch_note": "At the lifetime pace from the 2026-10-11 snapshot - simple division, not a prediction."
       },
       {
-        "rank": 36,
+        "rank": 33,
+        "title": "life's made prod wellfed",
+        "page": "releases/life-s-made-prod-wellfed.html",
+        "date": "2026-03-17",
+        "plays": 151,
+        "gap": 29937,
+        "pace_per_day": 0.73,
+        "catch_days_at_pace": 41009.6,
+        "catch_note": "At the lifetime pace from the 2026-10-11 snapshot - simple division, not a prediction."
+      },
+      {
+        "rank": 34,
         "title": "Ima Be There ft. Yung Vetta(prod. Why Loner)",
         "page": "releases/ima-be-there-ft-yung-vetta-prod-why-loner.html",
         "date": "2019-01-21",
@@ -3447,7 +3425,7 @@
         "catch_note": "At the lifetime pace from the 2026-10-11 snapshot - simple division, not a prediction."
       },
       {
-        "rank": 37,
+        "rank": 35,
         "title": "DESTINY (ft. JAX & Max Ferrari) ~ [prod. louky]",
         "page": "releases/destiny-ft-jax-and-max-ferrari-prod-louky.html",
         "date": "2018-08-20",
@@ -3458,10 +3436,10 @@
         "catch_note": "At the lifetime pace from the 2026-10-11 snapshot - simple division, not a prediction."
       },
       {
-        "rank": 38,
+        "rank": 36,
         "title": "SUN SET FOR U ft. JO$E DRIPP (prod. y axis)",
         "page": "releases/sun-set-for-u-ft-jo-e-dripp-prod-y-axis.html",
-        "date": "2019-07-09",
+        "date": "2019-07-06",
         "plays": 1771,
         "gap": 28317,
         "pace_per_day": 0.67,
@@ -3469,7 +3447,7 @@
         "catch_note": "At the lifetime pace from the 2026-10-11 snapshot - simple division, not a prediction."
       },
       {
-        "rank": 39,
+        "rank": 37,
         "title": "POWER~! (brb)(prod. Apostle)",
         "page": "releases/power-brb-prod-apostle.html",
         "date": "2019-03-20",
@@ -3480,7 +3458,7 @@
         "catch_note": "At the lifetime pace from the 2026-10-11 snapshot - simple division, not a prediction."
       },
       {
-        "rank": 40,
+        "rank": 38,
         "title": "I See U 2 (prod. Zed Miller)",
         "page": "releases/i-see-u-2-prod-zed-miller.html",
         "date": "2018-11-08",
@@ -3491,7 +3469,7 @@
         "catch_note": "At the lifetime pace from the 2026-10-11 snapshot - simple division, not a prediction."
       },
       {
-        "rank": 41,
+        "rank": 39,
         "title": "my friends (prod. deephartt)",
         "page": "releases/my-friends-prod-deephartt.html",
         "date": "2019-12-22",
@@ -3502,7 +3480,7 @@
         "catch_note": "At the lifetime pace from the 2026-10-11 snapshot - simple division, not a prediction."
       },
       {
-        "rank": 42,
+        "rank": 40,
         "title": "snow caps w/ LILVICBXI (prod. LILVICBXI x spliff08_)",
         "page": "releases/snow-caps-w-lilvicbxi-prod-lilvicbxi-x-spliff08.html",
         "date": "2019-12-22",
@@ -3513,7 +3491,7 @@
         "catch_note": "At the lifetime pace from the 2026-10-11 snapshot - simple division, not a prediction."
       },
       {
-        "rank": 43,
+        "rank": 41,
         "title": "On Our Way (Baseline)",
         "page": "releases/on-our-way-baseline.html",
         "date": "2023-11-12",
@@ -3524,18 +3502,7 @@
         "catch_note": "At the lifetime pace from the 2026-10-11 snapshot - simple division, not a prediction."
       },
       {
-        "rank": 44,
-        "title": "Fa11 LeaVes prod. Gehx",
-        "page": "releases/fa11-leaves-prod-gehx.html",
-        "date": "2025-11-10",
-        "plays": 222,
-        "gap": 29866,
-        "pace_per_day": 0.66,
-        "catch_days_at_pace": 45251.5,
-        "catch_note": "At the lifetime pace from the 2026-10-11 snapshot - simple division, not a prediction."
-      },
-      {
-        "rank": 45,
+        "rank": 42,
         "title": "Clock In The Benz w/ Lil Yu prod shinju",
         "page": "releases/clock-in-the-benz-w-lil-yu-prod-shinju.html",
         "date": "2023-08-29",
@@ -3546,7 +3513,7 @@
         "catch_note": "At the lifetime pace from the 2026-10-11 snapshot - simple division, not a prediction."
       },
       {
-        "rank": 46,
+        "rank": 43,
         "title": "Fleeting n' Geekinggg",
         "page": "releases/fleeting-n-geekinggg.html",
         "date": "2023-11-12",
@@ -3557,18 +3524,7 @@
         "catch_note": "At the lifetime pace from the 2026-10-11 snapshot - simple division, not a prediction."
       },
       {
-        "rank": 47,
-        "title": "Get Away prod. Gehx",
-        "page": "releases/get-away-prod-gehx.html",
-        "date": "2025-11-10",
-        "plays": 217,
-        "gap": 29871,
-        "pace_per_day": 0.65,
-        "catch_days_at_pace": 45955.4,
-        "catch_note": "At the lifetime pace from the 2026-10-11 snapshot - simple division, not a prediction."
-      },
-      {
-        "rank": 48,
+        "rank": 44,
         "title": "go and did (prod runawway + hidy)",
         "page": "releases/go-and-did-prod-runawway-hidy.html",
         "date": "2025-11-23",
@@ -3579,7 +3535,7 @@
         "catch_note": "At the lifetime pace from the 2026-10-11 snapshot - simple division, not a prediction."
       },
       {
-        "rank": 49,
+        "rank": 45,
         "title": "Share Ur Thoughts (prod. Mont Beats)",
         "page": "releases/share-ur-thoughts-prod-mont-beats.html",
         "date": "2018-08-22",
@@ -3590,7 +3546,7 @@
         "catch_note": "At the lifetime pace from the 2026-10-11 snapshot - simple division, not a prediction."
       },
       {
-        "rank": 50,
+        "rank": 46,
         "title": "Warrior Returning Alive [@Melokajj]",
         "page": "releases/warrior-returning-alive-melokajj.html",
         "date": "2023-10-21",
@@ -3601,7 +3557,7 @@
         "catch_note": "At the lifetime pace from the 2026-10-11 snapshot - simple division, not a prediction."
       },
       {
-        "rank": 51,
+        "rank": 47,
         "title": "Gadgets(prod.Trap)",
         "page": "releases/gadgets-prod-trap.html",
         "date": "2019-03-20",
@@ -3612,18 +3568,7 @@
         "catch_note": "At the lifetime pace from the 2026-10-11 snapshot - simple division, not a prediction."
       },
       {
-        "rank": 52,
-        "title": "1otso prod. branwen",
-        "page": "releases/1otso-prod-branwen.html",
-        "date": "2025-11-11",
-        "plays": 190,
-        "gap": 29898,
-        "pace_per_day": 0.57,
-        "catch_days_at_pace": 52452.6,
-        "catch_note": "At the lifetime pace from the 2026-10-11 snapshot - simple division, not a prediction."
-      },
-      {
-        "rank": 53,
+        "rank": 48,
         "title": "all i really need is a text from u (prod. benizjaminn)",
         "page": "releases/all-i-really-need-is-a-text-from-u-prod-benizjaminn.html",
         "date": "2018-08-04",
@@ -3634,7 +3579,7 @@
         "catch_note": "At the lifetime pace from the 2026-10-11 snapshot - simple division, not a prediction."
       },
       {
-        "rank": 54,
+        "rank": 49,
         "title": "MRari inna Beanstalk w/ Max Ferrari (@mvvi468)",
         "page": "releases/mrari-inna-beanstalk-w-max-ferrari-mvvi468.html",
         "date": "2024-04-05",
@@ -3645,7 +3590,7 @@
         "catch_note": "At the lifetime pace from the 2026-10-11 snapshot - simple division, not a prediction."
       },
       {
-        "rank": 55,
+        "rank": 50,
         "title": "I'd rather be w/ lil yu (prod. razorwrist)",
         "page": "releases/i-d-rather-be-w-lil-yu-prod-razorwrist.html",
         "date": "2019-12-22",
@@ -3656,40 +3601,7 @@
         "catch_note": "At the lifetime pace from the 2026-10-11 snapshot - simple division, not a prediction."
       },
       {
-        "rank": 56,
-        "title": "Green Wa11s prod. Ocurie",
-        "page": "releases/green-wa11s-prod-ocurie.html",
-        "date": "2025-11-10",
-        "plays": 186,
-        "gap": 29902,
-        "pace_per_day": 0.56,
-        "catch_days_at_pace": 53396.4,
-        "catch_note": "At the lifetime pace from the 2026-10-11 snapshot - simple division, not a prediction."
-      },
-      {
-        "rank": 57,
-        "title": "ARCSNOWWW w/ Max Ferrari prod. sustain",
-        "page": "releases/arcsnowww-w-max-ferrari-prod-sustain.html",
-        "date": "2025-11-11",
-        "plays": 184,
-        "gap": 29904,
-        "pace_per_day": 0.55,
-        "catch_days_at_pace": 54370.9,
-        "catch_note": "At the lifetime pace from the 2026-10-11 snapshot - simple division, not a prediction."
-      },
-      {
-        "rank": 58,
-        "title": "Cut tha 1ights prod. ohmygon!",
-        "page": "releases/cut-tha-1ights-prod-ohmygon.html",
-        "date": "2025-11-11",
-        "plays": 180,
-        "gap": 29908,
-        "pace_per_day": 0.54,
-        "catch_days_at_pace": 55385.2,
-        "catch_note": "At the lifetime pace from the 2026-10-11 snapshot - simple division, not a prediction."
-      },
-      {
-        "rank": 59,
+        "rank": 51,
         "title": "Playing Pretend :)",
         "page": "releases/playing-pretend.html",
         "date": "2023-11-12",
@@ -3700,29 +3612,7 @@
         "catch_note": "At the lifetime pace from the 2026-10-11 snapshot - simple division, not a prediction."
       },
       {
-        "rank": 60,
-        "title": "switch (prod fiftyzeros)",
-        "page": "releases/switch-prod-fiftyzeros.html",
-        "date": "2025-09-14",
-        "plays": 206,
-        "gap": 29882,
-        "pace_per_day": 0.53,
-        "catch_days_at_pace": 56381.1,
-        "catch_note": "At the lifetime pace from the 2026-10-11 snapshot - simple division, not a prediction."
-      },
-      {
-        "rank": 61,
-        "title": "Phantom Moshpit w/ Griimxo (remastered) prod. scared716",
-        "page": "releases/phantom-moshpit-w-griimxo-remastered-prod-scared716.html",
-        "date": "2025-11-11",
-        "plays": 178,
-        "gap": 29910,
-        "pace_per_day": 0.53,
-        "catch_days_at_pace": 56434.0,
-        "catch_note": "At the lifetime pace from the 2026-10-11 snapshot - simple division, not a prediction."
-      },
-      {
-        "rank": 62,
+        "rank": 52,
         "title": "That's a Lie (prod. Xtravulous x WhyLoner)",
         "page": "releases/that-s-a-lie-prod-xtravulous-x-whyloner.html",
         "date": "2018-06-08",
@@ -3733,7 +3623,7 @@
         "catch_note": "At the lifetime pace from the 2026-10-11 snapshot - simple division, not a prediction."
       },
       {
-        "rank": 63,
+        "rank": 53,
         "title": "Place For Me(prod. Born Hero)",
         "page": "releases/place-for-me-prod-born-hero.html",
         "date": "2018-06-14",
@@ -3744,7 +3634,7 @@
         "catch_note": "At the lifetime pace from the 2026-10-11 snapshot - simple division, not a prediction."
       },
       {
-        "rank": 64,
+        "rank": 54,
         "title": "Autumn (prod. Tundra Beats)",
         "page": "releases/autumn-prod-tundra-beats.html",
         "date": "2018-09-06",
@@ -3755,7 +3645,7 @@
         "catch_note": "At the lifetime pace from the 2026-10-11 snapshot - simple division, not a prediction."
       },
       {
-        "rank": 65,
+        "rank": 55,
         "title": "Far From Me (ft. Shola) ~ [prod. HideousPittius]",
         "page": "releases/far-from-me-ft-shola-prod-hideouspittius.html",
         "date": "2018-11-08",
@@ -3766,18 +3656,7 @@
         "catch_note": "At the lifetime pace from the 2026-10-11 snapshot - simple division, not a prediction."
       },
       {
-        "rank": 66,
-        "title": "Dreamed of U (Hubb1e) prod. Yukio",
-        "page": "releases/dreamed-of-u-hubb1e-prod-yukio.html",
-        "date": "2025-11-10",
-        "plays": 175,
-        "gap": 29913,
-        "pace_per_day": 0.52,
-        "catch_days_at_pace": 57525.0,
-        "catch_note": "At the lifetime pace from the 2026-10-11 snapshot - simple division, not a prediction."
-      },
-      {
-        "rank": 67,
+        "rank": 56,
         "title": "my kin (prod xannnn)",
         "page": "releases/my-kin-prod-xannnn.html",
         "date": "2025-11-04",
@@ -3788,10 +3667,10 @@
         "catch_note": "At the lifetime pace from the 2026-10-11 snapshot - simple division, not a prediction."
       },
       {
-        "rank": 68,
+        "rank": 57,
         "title": "GARDEN ft. Offline_hp (prod. QB)",
         "page": "releases/garden-ft-offline-hp-prod-qb.html",
-        "date": "2019-07-09",
+        "date": "2019-06-26",
         "plays": 1311,
         "gap": 28777,
         "pace_per_day": 0.49,
@@ -3799,7 +3678,7 @@
         "catch_note": "At the lifetime pace from the 2026-10-11 snapshot - simple division, not a prediction."
       },
       {
-        "rank": 69,
+        "rank": 58,
         "title": "Hip On My Blade (ft. Yung Vetta) ~ [prod. Skel]",
         "page": "releases/hip-on-my-blade-ft-yung-vetta-prod-skel.html",
         "date": "2018-12-02",
@@ -3810,7 +3689,7 @@
         "catch_note": "At the lifetime pace from the 2026-10-11 snapshot - simple division, not a prediction."
       },
       {
-        "rank": 70,
+        "rank": 59,
         "title": "Long Day (End Task) outro [@Staaaas.ily]",
         "page": "releases/long-day-end-task-outro-staaaas-ily.html",
         "date": "2023-11-10",
@@ -3821,7 +3700,7 @@
         "catch_note": "At the lifetime pace from the 2026-10-11 snapshot - simple division, not a prediction."
       },
       {
-        "rank": 71,
+        "rank": 60,
         "title": "Attack!!! intro",
         "page": "releases/attack-intro.html",
         "date": "2023-11-12",
@@ -3832,7 +3711,7 @@
         "catch_note": "At the lifetime pace from the 2026-10-11 snapshot - simple division, not a prediction."
       },
       {
-        "rank": 72,
+        "rank": 61,
         "title": "Mistakes Ft. JO$E DRIPP (prod. Tec)",
         "page": "releases/mistakes-ft-jo-e-dripp-prod-tec.html",
         "date": "2018-04-28",
@@ -3843,7 +3722,7 @@
         "catch_note": "At the lifetime pace from the 2026-10-11 snapshot - simple division, not a prediction."
       },
       {
-        "rank": 73,
+        "rank": 62,
         "title": "Face Down Freestyle ~(prod. WeDreaming)",
         "page": "releases/face-down-freestyle-prod-wedreaming.html",
         "date": "2019-03-27",
@@ -3854,7 +3733,7 @@
         "catch_note": "At the lifetime pace from the 2026-10-11 snapshot - simple division, not a prediction."
       },
       {
-        "rank": 74,
+        "rank": 63,
         "title": "6 AM In Da Bay Interlude",
         "page": "releases/6-am-in-da-bay-interlude.html",
         "date": "2023-11-12",
@@ -3865,7 +3744,7 @@
         "catch_note": "At the lifetime pace from the 2026-10-11 snapshot - simple division, not a prediction."
       },
       {
-        "rank": 75,
+        "rank": 64,
         "title": "All Alone ft. Yung Cortex (prod. Yung Cortex)",
         "page": "releases/all-alone-ft-yung-cortex-prod-yung-cortex.html",
         "date": "2019-12-30",
@@ -3876,7 +3755,7 @@
         "catch_note": "At the lifetime pace from the 2026-10-11 snapshot - simple division, not a prediction."
       },
       {
-        "rank": 76,
+        "rank": 65,
         "title": "Good Turns Bad Freestyle",
         "page": "releases/good-turns-bad-freestyle.html",
         "date": "2023-11-12",
@@ -3887,7 +3766,7 @@
         "catch_note": "At the lifetime pace from the 2026-10-11 snapshot - simple division, not a prediction."
       },
       {
-        "rank": 77,
+        "rank": 66,
         "title": "Cast OUT!!!",
         "page": "releases/cast-out.html",
         "date": "2023-11-12",
@@ -3898,7 +3777,7 @@
         "catch_note": "At the lifetime pace from the 2026-10-11 snapshot - simple division, not a prediction."
       },
       {
-        "rank": 78,
+        "rank": 67,
         "title": "No Lullaby :/",
         "page": "releases/no-lullaby.html",
         "date": "2023-11-12",
@@ -3909,7 +3788,7 @@
         "catch_note": "At the lifetime pace from the 2026-10-11 snapshot - simple division, not a prediction."
       },
       {
-        "rank": 79,
+        "rank": 68,
         "title": "water + sun (prod paris pas rigolo)",
         "page": "releases/water-sun-prod-paris-pas-rigolo.html",
         "date": "2025-09-13",
@@ -3920,7 +3799,7 @@
         "catch_note": "At the lifetime pace from the 2026-10-11 snapshot - simple division, not a prediction."
       },
       {
-        "rank": 80,
+        "rank": 69,
         "title": "stay out of the dark (prod. Rizi)",
         "page": "releases/stay-out-of-the-dark-prod-rizi.html",
         "date": "2018-08-13",
@@ -3931,7 +3810,7 @@
         "catch_note": "At the lifetime pace from the 2026-10-11 snapshot - simple division, not a prediction."
       },
       {
-        "rank": 81,
+        "rank": 70,
         "title": "Input (prod. Luca Malaspina)",
         "page": "releases/input-prod-luca-malaspina.html",
         "date": "2018-11-27",
@@ -3942,7 +3821,7 @@
         "catch_note": "At the lifetime pace from the 2026-10-11 snapshot - simple division, not a prediction."
       },
       {
-        "rank": 82,
+        "rank": 71,
         "title": "Dark City Destiny @dxcember13 @rudey0on10",
         "page": "releases/dark-city-destiny-dxcember13-rudey0on10.html",
         "date": "2024-03-27",
@@ -3953,7 +3832,7 @@
         "catch_note": "At the lifetime pace from the 2026-10-11 snapshot - simple division, not a prediction."
       },
       {
-        "rank": 83,
+        "rank": 72,
         "title": "Take Me Back to the City (prod. RainyBaby)",
         "page": "releases/take-me-back-to-the-city-prod-rainybaby.html",
         "date": "2018-07-01",
@@ -3964,7 +3843,18 @@
         "catch_note": "At the lifetime pace from the 2026-10-11 snapshot - simple division, not a prediction."
       },
       {
-        "rank": 84,
+        "rank": 73,
+        "title": "Sti11 waiting/tunnel freestyle w/ Max Ferrari prod. suli",
+        "page": "releases/sti11-waiting-tunnel-freestyle-w-max-ferrari-prod-suli.html",
+        "date": "2024-11-07",
+        "plays": 300,
+        "gap": 29788,
+        "pace_per_day": 0.43,
+        "catch_days_at_pace": 69274.4,
+        "catch_note": "At the lifetime pace from the 2026-10-11 snapshot - simple division, not a prediction."
+      },
+      {
+        "rank": 74,
         "title": "Understand (prod 5AMTruly)",
         "page": "releases/understand-prod-5amtruly.html",
         "date": "2018-12-15",
@@ -3975,7 +3865,7 @@
         "catch_note": "At the lifetime pace from the 2026-10-11 snapshot - simple division, not a prediction."
       },
       {
-        "rank": 85,
+        "rank": 75,
         "title": "Soul Shines ~ [prod Josh the Samurai]",
         "page": "releases/soul-shines-prod-josh-the-samurai.html",
         "date": "2019-01-08",
@@ -3986,7 +3876,7 @@
         "catch_note": "At the lifetime pace from the 2026-10-11 snapshot - simple division, not a prediction."
       },
       {
-        "rank": 86,
+        "rank": 76,
         "title": "One Piece X Sketchers",
         "page": "releases/one-piece-x-sketchers.html",
         "date": "2023-11-12",
@@ -3997,7 +3887,7 @@
         "catch_note": "At the lifetime pace from the 2026-10-11 snapshot - simple division, not a prediction."
       },
       {
-        "rank": 87,
+        "rank": 77,
         "title": "i been in tha AIR",
         "page": "releases/i-been-in-tha-air.html",
         "date": "2023-11-12",
@@ -4008,7 +3898,7 @@
         "catch_note": "At the lifetime pace from the 2026-10-11 snapshot - simple division, not a prediction."
       },
       {
-        "rank": 88,
+        "rank": 78,
         "title": "FittedUP/fadedUP prod. xtasane",
         "page": "releases/fittedup-fadedup-prod-xtasane.html",
         "date": "2024-05-29",
@@ -4019,7 +3909,7 @@
         "catch_note": "At the lifetime pace from the 2026-10-11 snapshot - simple division, not a prediction."
       },
       {
-        "rank": 89,
+        "rank": 79,
         "title": "Hit This (prod. Tyzen)",
         "page": "releases/hit-this-prod-tyzen.html",
         "date": "2018-08-27",
@@ -4030,7 +3920,7 @@
         "catch_note": "At the lifetime pace from the 2026-10-11 snapshot - simple division, not a prediction."
       },
       {
-        "rank": 90,
+        "rank": 80,
         "title": "Just so U know prod. Buggy",
         "page": "releases/just-so-u-know-prod-buggy.html",
         "date": "2024-05-24",
@@ -4041,7 +3931,18 @@
         "catch_note": "At the lifetime pace from the 2026-10-11 snapshot - simple division, not a prediction."
       },
       {
-        "rank": 91,
+        "rank": 81,
+        "title": "games stop prod branwen",
+        "page": "releases/games-stop-prod-branwen.html",
+        "date": "2025-07-22",
+        "plays": 180,
+        "gap": 29908,
+        "pace_per_day": 0.4,
+        "catch_days_at_pace": 74770.0,
+        "catch_note": "At the lifetime pace from the 2026-10-11 snapshot - simple division, not a prediction."
+      },
+      {
+        "rank": 82,
         "title": "playin' by the book w/ lil yu (prod. dxsh)",
         "page": "releases/playin-by-the-book-w-lil-yu-prod-dxsh.html",
         "date": "2020-10-07",
@@ -4052,7 +3953,7 @@
         "catch_note": "At the lifetime pace from the 2026-10-11 snapshot - simple division, not a prediction."
       },
       {
-        "rank": 92,
+        "rank": 83,
         "title": "Talk 2 U (prod. Whiz)",
         "page": "releases/talk-2-u-prod-whiz.html",
         "date": "2018-07-20",
@@ -4063,7 +3964,18 @@
         "catch_note": "At the lifetime pace from the 2026-10-11 snapshot - simple division, not a prediction."
       },
       {
-        "rank": 93,
+        "rank": 84,
+        "title": "switch (prod fiftyzeros)",
+        "page": "releases/switch-prod-fiftyzeros.html",
+        "date": "2025-03-31",
+        "plays": 206,
+        "gap": 29882,
+        "pace_per_day": 0.37,
+        "catch_days_at_pace": 80762.2,
+        "catch_note": "At the lifetime pace from the 2026-10-11 snapshot - simple division, not a prediction."
+      },
+      {
+        "rank": 85,
         "title": "Hidden Lakes Backpack [@Yurkswag]",
         "page": "releases/hidden-lakes-backpack-yurkswag.html",
         "date": "2023-11-03",
@@ -4074,7 +3986,7 @@
         "catch_note": "At the lifetime pace from the 2026-10-11 snapshot - simple division, not a prediction."
       },
       {
-        "rank": 94,
+        "rank": 86,
         "title": "Early Morning (Yukiidaruma X Fumiko)",
         "page": "releases/early-morning-yukiidaruma-x-fumiko.html",
         "date": "2024-04-04",
@@ -4085,7 +3997,7 @@
         "catch_note": "At the lifetime pace from the 2026-10-11 snapshot - simple division, not a prediction."
       },
       {
-        "rank": 95,
+        "rank": 87,
         "title": "End Times Gate Code (prod @1ohmygon)",
         "page": "releases/end-times-gate-code-prod-1ohmygon.html",
         "date": "2024-05-31",
@@ -4096,7 +4008,7 @@
         "catch_note": "At the lifetime pace from the 2026-10-11 snapshot - simple division, not a prediction."
       },
       {
-        "rank": 96,
+        "rank": 88,
         "title": "oh We11 (prod Vuksai)",
         "page": "releases/oh-we11-prod-vuksai.html",
         "date": "2025-01-09",
@@ -4107,7 +4019,7 @@
         "catch_note": "At the lifetime pace from the 2026-10-11 snapshot - simple division, not a prediction."
       },
       {
-        "rank": 97,
+        "rank": 89,
         "title": "Taught Me(prod. ℝ꒐꒯꒐꒝Ʉ꒒o̲ʊꍛ)",
         "page": "releases/taught-me-prod-o.html",
         "date": "2018-10-25",
@@ -4118,7 +4030,7 @@
         "catch_note": "At the lifetime pace from the 2026-10-11 snapshot - simple division, not a prediction."
       },
       {
-        "rank": 98,
+        "rank": 90,
         "title": "SSSolid (prod Kuva) *MUSIC VIDEO IN DESC*",
         "page": "releases/sssolid-prod-kuva-music-video-in-desc.html",
         "date": "2024-06-27",
@@ -4129,7 +4041,7 @@
         "catch_note": "At the lifetime pace from the 2026-10-11 snapshot - simple division, not a prediction."
       },
       {
-        "rank": 99,
+        "rank": 91,
         "title": "[outro] Off Beat ft. Yung Vetta (prod. Addy)",
         "page": "releases/outro-off-beat-ft-yung-vetta-prod-addy.html",
         "date": "2019-01-28",
@@ -4140,7 +4052,7 @@
         "catch_note": "At the lifetime pace from the 2026-10-11 snapshot - simple division, not a prediction."
       },
       {
-        "rank": 100,
+        "rank": 92,
         "title": "Sipping 1ightning prod. lunarlad",
         "page": "releases/sipping-1ightning-prod-lunarlad.html",
         "date": "2024-07-09",
@@ -4151,7 +4063,7 @@
         "catch_note": "At the lifetime pace from the 2026-10-11 snapshot - simple division, not a prediction."
       },
       {
-        "rank": 101,
+        "rank": 93,
         "title": "I See U (prod. Haruhi)",
         "page": "releases/i-see-u-prod-haruhi.html",
         "date": "2018-03-16",
@@ -4162,7 +4074,7 @@
         "catch_note": "At the lifetime pace from the 2026-10-11 snapshot - simple division, not a prediction."
       },
       {
-        "rank": 102,
+        "rank": 94,
         "title": "Lunch Break (prod wetgropes)",
         "page": "releases/lunch-break-prod-wetgropes.html",
         "date": "2020-12-21",
@@ -4173,7 +4085,7 @@
         "catch_note": "At the lifetime pace from the 2026-10-11 snapshot - simple division, not a prediction."
       },
       {
-        "rank": 103,
+        "rank": 95,
         "title": "12 ÷ 4 (Eckhart's Plea)",
         "page": "releases/12-4-eckhart-s-plea.html",
         "date": "2023-11-12",
@@ -4184,7 +4096,7 @@
         "catch_note": "At the lifetime pace from the 2026-10-11 snapshot - simple division, not a prediction."
       },
       {
-        "rank": 104,
+        "rank": 96,
         "title": "fleeting [prod. AURA]",
         "page": "releases/fleeting-prod-aura.html",
         "date": "2020-06-18",
@@ -4195,7 +4107,7 @@
         "catch_note": "At the lifetime pace from the 2026-10-11 snapshot - simple division, not a prediction."
       },
       {
-        "rank": 105,
+        "rank": 97,
         "title": "P1aced a Ward (prodbygus)",
         "page": "releases/p1aced-a-ward-prodbygus.html",
         "date": "2024-05-02",
@@ -4206,7 +4118,29 @@
         "catch_note": "At the lifetime pace from the 2026-10-11 snapshot - simple division, not a prediction."
       },
       {
-        "rank": 106,
+        "rank": 98,
+        "title": "Fa11 LeaVes prod. Gehx",
+        "page": "releases/fa11-leaves-prod-gehx.html",
+        "date": "2024-11-01",
+        "plays": 222,
+        "gap": 29866,
+        "pace_per_day": 0.31,
+        "catch_days_at_pace": 96341.9,
+        "catch_note": "At the lifetime pace from the 2026-10-11 snapshot - simple division, not a prediction."
+      },
+      {
+        "rank": 99,
+        "title": "Get Away prod. Gehx",
+        "page": "releases/get-away-prod-gehx.html",
+        "date": "2024-11-05",
+        "plays": 217,
+        "gap": 29871,
+        "pace_per_day": 0.31,
+        "catch_days_at_pace": 96358.1,
+        "catch_note": "At the lifetime pace from the 2026-10-11 snapshot - simple division, not a prediction."
+      },
+      {
+        "rank": 100,
         "title": "When the World Gets Colder 2 (prod. Yung Skah)",
         "page": "releases/when-the-world-gets-colder-2-prod-yung-skah.html",
         "date": "2018-12-04",
@@ -4217,7 +4151,7 @@
         "catch_note": "At the lifetime pace from the 2026-10-11 snapshot - simple division, not a prediction."
       },
       {
-        "rank": 107,
+        "rank": 101,
         "title": "Pavement (prod. Fish Narc)",
         "page": "releases/pavement-prod-fish-narc.html",
         "date": "2019-12-30",
@@ -4228,7 +4162,18 @@
         "catch_note": "At the lifetime pace from the 2026-10-11 snapshot - simple division, not a prediction."
       },
       {
-        "rank": 108,
+        "rank": 102,
+        "title": "1otso prod. branwen",
+        "page": "releases/1otso-prod-branwen.html",
+        "date": "2025-01-13",
+        "plays": 190,
+        "gap": 29898,
+        "pace_per_day": 0.3,
+        "catch_days_at_pace": 99660.0,
+        "catch_note": "At the lifetime pace from the 2026-10-11 snapshot - simple division, not a prediction."
+      },
+      {
+        "rank": 103,
         "title": "Lucid Boi (prod. $ T.N.C $)",
         "page": "releases/lucid-boi-prod-t-n-c.html",
         "date": "2018-01-08",
@@ -4239,7 +4184,7 @@
         "catch_note": "At the lifetime pace from the 2026-10-11 snapshot - simple division, not a prediction."
       },
       {
-        "rank": 109,
+        "rank": 104,
         "title": "Time to Grow (prod. Ridicholas)",
         "page": "releases/time-to-grow-prod-ridicholas.html",
         "date": "2018-12-13",
@@ -4250,7 +4195,7 @@
         "catch_note": "At the lifetime pace from the 2026-10-11 snapshot - simple division, not a prediction."
       },
       {
-        "rank": 110,
+        "rank": 105,
         "title": "In Trance prod. deadtalks!",
         "page": "releases/in-trance-prod-deadtalks.html",
         "date": "2024-05-22",
@@ -4261,7 +4206,7 @@
         "catch_note": "At the lifetime pace from the 2026-10-11 snapshot - simple division, not a prediction."
       },
       {
-        "rank": 111,
+        "rank": 106,
         "title": "every nite, blessings (prod meutry)",
         "page": "releases/every-nite-blessings-prod-meutry.html",
         "date": "2024-08-30",
@@ -4272,7 +4217,7 @@
         "catch_note": "At the lifetime pace from the 2026-10-11 snapshot - simple division, not a prediction."
       },
       {
-        "rank": 112,
+        "rank": 107,
         "title": "Hurts Sometimes (prod. 8ROKEBOY)",
         "page": "releases/hurts-sometimes-prod-8rokeboy.html",
         "date": "2018-07-20",
@@ -4283,7 +4228,7 @@
         "catch_note": "At the lifetime pace from the 2026-10-11 snapshot - simple division, not a prediction."
       },
       {
-        "rank": 113,
+        "rank": 108,
         "title": "Nothing ft. Yung Vetta(prod Xtravulous)",
         "page": "releases/nothing-ft-yung-vetta-prod-xtravulous.html",
         "date": "2019-01-28",
@@ -4294,7 +4239,7 @@
         "catch_note": "At the lifetime pace from the 2026-10-11 snapshot - simple division, not a prediction."
       },
       {
-        "rank": 114,
+        "rank": 109,
         "title": "Stay Away Freestyle ~",
         "page": "releases/stay-away-freestyle.html",
         "date": "2019-03-03",
@@ -4305,7 +4250,7 @@
         "catch_note": "At the lifetime pace from the 2026-10-11 snapshot - simple division, not a prediction."
       },
       {
-        "rank": 115,
+        "rank": 110,
         "title": "my fault (prod shinju)",
         "page": "releases/my-fault-prod-shinju.html",
         "date": "2020-11-11",
@@ -4316,7 +4261,7 @@
         "catch_note": "At the lifetime pace from the 2026-10-11 snapshot - simple division, not a prediction."
       },
       {
-        "rank": 116,
+        "rank": 111,
         "title": "Writing Books But I Cant Read Em",
         "page": "releases/writing-books-but-i-cant-read-em.html",
         "date": "2023-08-29",
@@ -4327,7 +4272,40 @@
         "catch_note": "At the lifetime pace from the 2026-10-11 snapshot - simple division, not a prediction."
       },
       {
-        "rank": 117,
+        "rank": 112,
+        "title": "Green Wa11s prod. Ocurie",
+        "page": "releases/green-wa11s-prod-ocurie.html",
+        "date": "2024-10-30",
+        "plays": 186,
+        "gap": 29902,
+        "pace_per_day": 0.26,
+        "catch_days_at_pace": 115007.7,
+        "catch_note": "At the lifetime pace from the 2026-10-11 snapshot - simple division, not a prediction."
+      },
+      {
+        "rank": 113,
+        "title": "ARCSNOWWW w/ Max Ferrari prod. sustain",
+        "page": "releases/arcsnowww-w-max-ferrari-prod-sustain.html",
+        "date": "2024-11-07",
+        "plays": 184,
+        "gap": 29904,
+        "pace_per_day": 0.26,
+        "catch_days_at_pace": 115015.4,
+        "catch_note": "At the lifetime pace from the 2026-10-11 snapshot - simple division, not a prediction."
+      },
+      {
+        "rank": 114,
+        "title": "Cut tha 1ights prod. ohmygon!",
+        "page": "releases/cut-tha-1ights-prod-ohmygon.html",
+        "date": "2024-11-08",
+        "plays": 180,
+        "gap": 29908,
+        "pace_per_day": 0.26,
+        "catch_days_at_pace": 115030.8,
+        "catch_note": "At the lifetime pace from the 2026-10-11 snapshot - simple division, not a prediction."
+      },
+      {
+        "rank": 115,
         "title": "As Above [So Below] (prod. Xtravulous x Young Taylor)",
         "page": "releases/as-above-so-below-prod-xtravulous-x-young-taylor.html",
         "date": "2018-07-20",
@@ -4338,7 +4316,7 @@
         "catch_note": "At the lifetime pace from the 2026-10-11 snapshot - simple division, not a prediction."
       },
       {
-        "rank": 118,
+        "rank": 116,
         "title": "Do It Againnn",
         "page": "releases/do-it-againnn.html",
         "date": "2023-11-12",
@@ -4346,6 +4324,28 @@
         "gap": 29819,
         "pace_per_day": 0.25,
         "catch_days_at_pace": 119276.0,
+        "catch_note": "At the lifetime pace from the 2026-10-11 snapshot - simple division, not a prediction."
+      },
+      {
+        "rank": 117,
+        "title": "Phantom Moshpit w/ Griimxo (remastered) prod. scared716",
+        "page": "releases/phantom-moshpit-w-griimxo-remastered-prod-scared716.html",
+        "date": "2024-11-08",
+        "plays": 178,
+        "gap": 29910,
+        "pace_per_day": 0.25,
+        "catch_days_at_pace": 119640.0,
+        "catch_note": "At the lifetime pace from the 2026-10-11 snapshot - simple division, not a prediction."
+      },
+      {
+        "rank": 118,
+        "title": "Dreamed of U (Hubb1e) prod. Yukio",
+        "page": "releases/dreamed-of-u-hubb1e-prod-yukio.html",
+        "date": "2024-11-08",
+        "plays": 175,
+        "gap": 29913,
+        "pace_per_day": 0.25,
+        "catch_days_at_pace": 119652.0,
         "catch_note": "At the lifetime pace from the 2026-10-11 snapshot - simple division, not a prediction."
       },
       {
@@ -4418,7 +4418,7 @@
         "rank": 125,
         "title": "like my dogs!!! (prod waynn)",
         "page": "releases/like-my-dogs-prod-waynn.html",
-        "date": "2024-09-18",
+        "date": "2024-09-14",
         "plays": 175,
         "gap": 29913,
         "pace_per_day": 0.23,
@@ -4922,17 +4922,6 @@
       },
       {
         "rank": 171,
-        "title": "No Puppets A11owed prod. xtasane",
-        "page": "releases/no-puppets-a11owed-prod-xtasane.html",
-        "date": "2025-11-10",
-        "plays": 24,
-        "gap": 30064,
-        "pace_per_day": 0.07,
-        "catch_days_at_pace": 429485.7,
-        "catch_note": "At the lifetime pace from the 2026-10-11 snapshot - simple division, not a prediction."
-      },
-      {
-        "rank": 172,
         "title": "4 wrong to be",
         "page": "releases/4-wrong-to-be.html",
         "date": "2022-02-22",
@@ -4943,7 +4932,7 @@
         "catch_note": "At the lifetime pace from the 2026-10-11 snapshot - simple division, not a prediction."
       },
       {
-        "rank": 173,
+        "rank": 172,
         "title": "3 sharpie",
         "page": "releases/3-sharpie.html",
         "date": "2022-02-22",
@@ -4954,7 +4943,7 @@
         "catch_note": "At the lifetime pace from the 2026-10-11 snapshot - simple division, not a prediction."
       },
       {
-        "rank": 174,
+        "rank": 173,
         "title": "8 i would do mine",
         "page": "releases/8-i-would-do-mine.html",
         "date": "2022-02-22",
@@ -4965,7 +4954,7 @@
         "catch_note": "At the lifetime pace from the 2026-10-11 snapshot - simple division, not a prediction."
       },
       {
-        "rank": 175,
+        "rank": 174,
         "title": "11 dismissed",
         "page": "releases/11-dismissed.html",
         "date": "2022-02-22",
@@ -4976,7 +4965,7 @@
         "catch_note": "At the lifetime pace from the 2026-10-11 snapshot - simple division, not a prediction."
       },
       {
-        "rank": 176,
+        "rank": 175,
         "title": "2 menace",
         "page": "releases/2-menace.html",
         "date": "2022-02-22",
@@ -4987,7 +4976,7 @@
         "catch_note": "At the lifetime pace from the 2026-10-11 snapshot - simple division, not a prediction."
       },
       {
-        "rank": 177,
+        "rank": 176,
         "title": "7 don't say u love me",
         "page": "releases/7-don-t-say-u-love-me.html",
         "date": "2022-02-22",
@@ -4998,7 +4987,7 @@
         "catch_note": "At the lifetime pace from the 2026-10-11 snapshot - simple division, not a prediction."
       },
       {
-        "rank": 178,
+        "rank": 177,
         "title": "For Brian (Neck Deep) outro [produced by AWFL]",
         "page": "releases/for-brian-neck-deep-outro-produced-by-awfl.html",
         "date": "2023-11-12",
@@ -5009,7 +4998,7 @@
         "catch_note": "At the lifetime pace from the 2026-10-11 snapshot - simple division, not a prediction."
       },
       {
-        "rank": 179,
+        "rank": 178,
         "title": "10 stuck in the mix v2",
         "page": "releases/10-stuck-in-the-mix-v2.html",
         "date": "2022-02-22",
@@ -5020,7 +5009,7 @@
         "catch_note": "At the lifetime pace from the 2026-10-11 snapshot - simple division, not a prediction."
       },
       {
-        "rank": 180,
+        "rank": 179,
         "title": "6 stop telling myself i'm not",
         "page": "releases/6-stop-telling-myself-i-m-not.html",
         "date": "2022-02-22",
@@ -5031,7 +5020,7 @@
         "catch_note": "At the lifetime pace from the 2026-10-11 snapshot - simple division, not a prediction."
       },
       {
-        "rank": 181,
+        "rank": 180,
         "title": "Im tha Bouncerrr prod. sustain",
         "page": "releases/im-tha-bouncerrr-prod-sustain.html",
         "date": "2024-04-16",
@@ -5039,6 +5028,17 @@
         "gap": 30060,
         "pace_per_day": 0.03,
         "catch_days_at_pace": 1002000.0,
+        "catch_note": "At the lifetime pace from the 2026-10-11 snapshot - simple division, not a prediction."
+      },
+      {
+        "rank": 181,
+        "title": "No Puppets A11owed prod. xtasane",
+        "page": "releases/no-puppets-a11owed-prod-xtasane.html",
+        "date": "2024-11-08",
+        "plays": 24,
+        "gap": 30064,
+        "pace_per_day": 0.03,
+        "catch_days_at_pace": 1002133.3,
         "catch_note": "At the lifetime pace from the 2026-10-11 snapshot - simple division, not a prediction."
       },
       {
@@ -5087,7 +5087,7 @@
       {
         "name": "100th transmission on record",
         "date": "2020-12-21",
-        "title": "I'm Not Looking For Love Anyway",
+        "title": "Decent (prod. venus)",
         "fact": "The catalog's 100th entry in chronological order, reached before the end of 2020."
       },
       {

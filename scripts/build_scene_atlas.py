@@ -3,7 +3,7 @@
 
 Renders the static first charting (figure #1 by shared plays) and the
 full 22-row chart log from the ONLY two data sources the Atlas is
-allowed to use: data/v1/circle.json (the 21 title-credited
+allowed to use: data/v1/circle.json (the 22 title-credited
 collaborators) and data/v1/scene-figures.json (the producer-credit
 scene figure). The live page re-derives everything in
 assets/js/scene-atlas.js from the same two files; this script exists
@@ -82,17 +82,17 @@ TEMPLATE = r"""<!DOCTYPE html>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Scene Atlas — Aster da Master</title>
-  <meta name="description" content="The Scene Atlas: every figure around the Aster da Master archive charted as a point on one pirate cartographer's chart — the 21 title-credited collaborators plus the producer-credit scene figure, plotted only from data the archive already carries.">
+  <meta name="description" content="The Scene Atlas: every figure around the Aster da Master archive charted as a point on one pirate cartographer's chart — the 22 title-credited collaborators plus the producer-credit scene figure, plotted only from data the archive already carries.">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Scene Atlas — Aster da Master">
-  <meta property="og:description" content="The Scene Atlas: every figure around the Aster da Master archive charted as a point on one pirate cartographer's chart — the 21 title-credited collaborators plus the producer-credit scene figure, plotted only from data the archive already carries.">
+  <meta property="og:description" content="The Scene Atlas: every figure around the Aster da Master archive charted as a point on one pirate cartographer's chart — the 22 title-credited collaborators plus the producer-credit scene figure, plotted only from data the archive already carries.">
   <link rel="canonical" href="/scene-atlas.html">
   <meta property="og:image" content="assets/og-card.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Scene Atlas — Aster da Master">
-  <meta name="twitter:description" content="The Scene Atlas: every figure around the Aster da Master archive charted as a point on one pirate cartographer's chart — the 21 title-credited collaborators plus the producer-credit scene figure, plotted only from data the archive already carries.">
+  <meta name="twitter:description" content="The Scene Atlas: every figure around the Aster da Master archive charted as a point on one pirate cartographer's chart — the 22 title-credited collaborators plus the producer-credit scene figure, plotted only from data the archive already carries.">
   <meta name="twitter:image" content="assets/og-card.png">
   <link rel="preload" href="assets/fonts/anton-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/css/fonts.css">
@@ -221,7 +221,7 @@ TEMPLATE = r"""<!DOCTYPE html>
 %%LOG_ROWS%%            </tbody>
           </table>
         </details>
-        <p class="chart-sub">Provenance: plotted only from <code>data/v1/circle.json</code> (the 21 title-credited collaborators and their shared records) and <code>data/v1/scene-figures.json</code> (the producer-credit scene figure, with its recorded standing, facts, sources, and release watch). No other source feeds this chart; no connection, date, or biographical claim appears here that those files do not carry. Titles and metadata only.</p>
+        <p class="chart-sub">Provenance: plotted only from <code>data/v1/circle.json</code> (the 22 title-credited collaborators and their shared records) and <code>data/v1/scene-figures.json</code> (the producer-credit scene figure, with its recorded standing, facts, sources, and release watch). No other source feeds this chart; no connection, date, or biographical claim appears here that those files do not carry. Titles and metadata only.</p>
       </div>
     </section>
   </main>

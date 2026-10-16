@@ -29,14 +29,14 @@ Static files — **no auth, no keys, no rate limits**. Works on any static host.
 | Endpoint | Contents | Records |
 |---|---|---|
 | `data/v1/index.json` | Manifest — start here | 25 endpoints |
-| `data/v1/artist.json` | The source of truth: bio, facts, discography (219 entries), platforms, eras, vault, upcoming | 219 |
+| `data/v1/artist.json` | The source of truth: bio, facts, discography (221 entries), platforms, eras, vault, upcoming | 221 |
 | `data/v1/codex.json` | The vocabulary codex: 16 word families with per-family track lists | 16 |
-| `data/v1/release-slugs.json` | Slug index: ordinal string → release-page slug (the search overlay's corpus) | 219 |
-| `data/v1/on-this-day.json` | Calendar index: transmissions keyed by MM-DD upload date | 96 days |
+| `data/v1/release-slugs.json` | Slug index: ordinal string → release-page slug (the search overlay's corpus) | 221 |
+| `data/v1/on-this-day.json` | Calendar index: transmissions keyed by MM-DD upload date | 106 days |
 | `data/v1/years.json` | Year-in-review archive: per-year stats and highlights, 2018–2026 | 9 |
 | `data/v1/circle.json` | The 21 title-credited collaborators and their per-track footprint | 21 |
 | `data/v1/milestones.json` | Career firsts computed from the verified discography: firsts, records, silences | 9 |
-| `data/v1/sessions.json` | 61 upload sessions clustered from vault upload dates (7-day gap rule) | 61 |
+| `data/v1/sessions.json` | 64 upload sessions clustered from vault upload dates (7-day gap rule) | 64 |
 | `data/v1/changelog.json` | Site construction history, generated from the git log | 29 entries |
 | `data/v1/first-last.json` | Per year 2018–2026: the opening and closing transmissions | 9 |
 | `data/v1/milestone-watch.json` | Vault tracks near round-number play counts | bands |
@@ -44,15 +44,15 @@ Static files — **no auth, no keys, no rate limits**. Works on any static host.
 | `data/v1/transmission.json` | The guided journey: 13 stops — six eras with stats, top tracks, key sessions, collaborators, milestones, computed "signal" lines, plus seven live data chapters (The Race, The Record Book, The Codex, The Architects, The Seasons, The Deep Cuts, The Horizon) | 6 eras + 7 chapters |
 | `data/v1/network.json` | Collaboration network: 23 nodes, 27 track-weighted edges, co-credit links, computed insights | 23 nodes |
 | `data/v1/eras.json` | Era deep-dives: six eras with full transmission lists (every track + plays), ALL in-era collaborators, active codex families, milestones, computed signal lines and summaries | 6 |
-| `data/v1/session-clusters.json` | Session archaeology, interactive: the 61 sessions as an explorable timeline — per-session enrichment (era, loudest + deepest-cut tracks, cross-links), the 60 inter-session gaps, 9 activity seasons, asserted insights. Drives `sessions-explorer.html` | 9 seasons |
+| `data/v1/session-clusters.json` | Session archaeology, interactive: the 64 sessions as an explorable timeline — per-session enrichment (era, loudest + deepest-cut tracks, cross-links), the 63 inter-session gaps, 9 activity seasons, asserted insights. Drives `sessions-explorer.html` | 9 seasons |
 | `data/v1/codex-families.json` | Codex family deep-dives: 16 vocabulary families with decoded readings, era-by-era evolution, key sessions, title-credited collaborators. Drives the `codex/<slug>.html` pages | 16 |
 | `data/v1/milestone-races.json` | The milestone race 2.0: approaching play-count milestones ranked by gap-closing proximity (current value, target, gap, pace arithmetic — estimates, never predictions), race any two of the 185 vault tracks head-to-head at any milestone target (the vault pace database, client-side mirror of the asserted pair math), The Climb (all 182 summit-eligible tracks ranked by catch time), race history (decided races: dated crossings, 1k/10k/20k/30k threshold winners, the 115-day photo finish), the computed race of the week (share card), the 30,088-play summit chase, session + era records. The 2026-10-11 snapshot was independently re-captured (185/185 tracks, zero play-count differences). Drives `milestone-race.html` | 4 races, 185-track pace db, 182-track climb |
-| `data/v1/session-tools.json` | Session explorer 2.0 tooling: 61 per-session compare profiles (stats, loudest + deepest-cut tracks, collaborators, play profiles, family/session/era/journey cross-links), the deepest-sessions editorial ranking (lowest average plays per transmission, min 2 transmissions, formula stated in the payload — editorial, not an artist fact), the track-level deepest-transmissions ranking (quietest 25 of 185, median 450), and the honest snapshot-history state (one 2026-10-11 snapshot: no play trajectories exist). Drives the compare / deepest-cuts / timeline-scrubber sections of `sessions-explorer.html` | 61 profiles |
+| `data/v1/session-tools.json` | Session explorer 2.0 tooling: 64 per-session compare profiles (stats, loudest + deepest-cut tracks, collaborators, play profiles, family/session/era/journey cross-links), the deepest-sessions editorial ranking (lowest average plays per transmission, min 2 transmissions, formula stated in the payload — editorial, not an artist fact), the track-level deepest-transmissions ranking (quietest 25 of 185, median 450), and the honest snapshot-history state (one 2026-10-11 snapshot: no play trajectories exist). Drives the compare / deepest-cuts / timeline-scrubber sections of `sessions-explorer.html` | 64 profiles |
 | `data/v1/codex-network.json` | The codex relationship graph: 16 word families as nodes, shared title-credited collaborators and title-parsed producers as edges, BFS degrees of separation from Aster, the family-overlap graph, and connect-the-dots shortest-path data. Drives `codex-network.html` | 70 nodes |
 | `data/v1/producer-deepdives.json` | Producer deep-dives: every as-credited producer (title prod./produced-by fragments, verbatim) with credited productions (release/session links, co-producers, title-credited voices), codex family ties, a computed production fingerprint, and sourced research where a research pass exists. Drives `producers/<slug>.html` | 113 producers |
 | `data/v1/signal-watch.json` | The Signal 2.0 watch file: the latest vault capture diffed against the previous one — new uploads, play-count movers, milestone crossings, next-up board, capture history | 185 watched |
 | `data/v1/live-dates.json` | The live-date verification board: scene events hand-checked against the web (statuses: verified / single-source / unconfirmed; discrepancies kept) — Fish Narc 'Uncle' week, capoxxo Oct 28–29 | 7 events + 2 unconfirmed |
-| `data/v1/chronicle.json` | The Chronicle: one merged chronological stream — 61 upload sessions, 9 dated milestones (the 553-day longest silence as a span), 44 title-credited collaboration appearances — with era assignment, release/circle/session cross-links, and collaborator tags. Same-date order is milestone → session → collaboration (stated rule); the 2017 feature credit is honestly pre-era. Drives `chronicle.html` | 114 events |
+| `data/v1/chronicle.json` | The Chronicle: one merged chronological stream — 64 upload sessions, 9 dated milestones (the 553-day longest silence as a span), 44 title-credited collaboration appearances — with era assignment, release/circle/session cross-links, and collaborator tags. Same-date order is milestone → session → collaboration (stated rule); the 2017 feature credit is honestly pre-era. Drives `chronicle.html` | 118 events |
 
 Example requests (Node; swap `fs` for `fetch` in a browser):
 
@@ -177,7 +177,7 @@ through the upload sessions: the seasons, the silences, the standout
 sessions."*
 
 1. **`GET data/v1/session-clusters.json`** — the whole timeline in one file.
-   Read `method` first: the 61 sessions come from the 7-day upload-gap rule;
+   Read `method` first: the 64 sessions come from the 7-day upload-gap rule;
    the 9 `clusters[]` ("activity seasons") are a *computed browsing
    convention* — consecutive sessions while the separating silence is ≤ 90
    days — not artist-named eras.

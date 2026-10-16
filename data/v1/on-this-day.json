@@ -384,41 +384,6 @@
    "type": "Album",
    "plays": null,
    "page": "releases/cast-out.html"
-  },
-  {
-   "title": "Cut tha 1ights prod. ohmygon!",
-   "date": "2025-11-11",
-   "type": "SoundCloud-only",
-   "plays": 180,
-   "page": "releases/cut-tha-1ights-prod-ohmygon.html"
-  },
-  {
-   "title": "1otso prod. branwen",
-   "date": "2025-11-11",
-   "type": "SoundCloud-only",
-   "plays": 190,
-   "page": "releases/1otso-prod-branwen.html"
-  },
-  {
-   "title": "Sti11 waiting/tunnel freestyle w/ Max Ferrari prod. suli",
-   "date": "2025-11-11",
-   "type": "SoundCloud-only",
-   "plays": 300,
-   "page": "releases/sti11-waiting-tunnel-freestyle-w-max-ferrari-prod-suli.html"
-  },
-  {
-   "title": "ARCSNOWWW w/ Max Ferrari prod. sustain",
-   "date": "2025-11-11",
-   "type": "SoundCloud-only",
-   "plays": 184,
-   "page": "releases/arcsnowww-w-max-ferrari-prod-sustain.html"
-  },
-  {
-   "title": "Phantom Moshpit w/ Griimxo (remastered) prod. scared716",
-   "date": "2025-11-11",
-   "type": "SoundCloud-only",
-   "plays": 178,
-   "page": "releases/phantom-moshpit-w-griimxo-remastered-prod-scared716.html"
   }
  ],
  "04-20": [
@@ -428,6 +393,15 @@
    "type": "Single",
    "plays": null,
    "page": "releases/lost-memories-feat-aster-da-master.html"
+  }
+ ],
+ "04-27": [
+  {
+   "title": "Gravestone",
+   "date": "2018-04-27",
+   "type": "Single",
+   "plays": null,
+   "page": "releases/gravestone.html"
   }
  ],
  "09-21": [
@@ -485,6 +459,15 @@
    "type": "SoundCloud-only",
    "plays": 28,
    "page": "releases/im-tha-bouncerrr-prod-sustain.html"
+  }
+ ],
+ "05-08": [
+  {
+   "title": "Yea Thats Kool (feat. ASTERDAMASTER & SPURSY)",
+   "date": "2020-05-08",
+   "type": "Single",
+   "plays": null,
+   "page": "releases/yea-thats-kool-feat-asterdamaster-and-spursy.html"
   }
  ],
  "07-21": [
@@ -614,13 +597,6 @@
    "type": "Single",
    "plays": null,
    "page": "releases/like-my-dogs.html"
-  },
-  {
-   "title": "like my dogs!!! (prod waynn)",
-   "date": "2024-09-18",
-   "type": "SoundCloud-only",
-   "plays": 175,
-   "page": "releases/like-my-dogs-prod-waynn.html"
   }
  ],
  "10-04": [
@@ -662,13 +638,6 @@
    "type": "Single",
    "plays": null,
    "page": "releases/no-power.html"
-  },
-  {
-   "title": "no power prod wellfed",
-   "date": "2026-03-23",
-   "type": "SoundCloud-only",
-   "plays": 242,
-   "page": "releases/no-power-prod-wellfed.html"
   }
  ],
  "03-25": [
@@ -678,13 +647,6 @@
    "type": "Single",
    "plays": null,
    "page": "releases/the-night-ends-yeaaa.html"
-  },
-  {
-   "title": "the night ends yeaaa prod wellfed",
-   "date": "2026-03-25",
-   "type": "SoundCloud-only",
-   "plays": 208,
-   "page": "releases/the-night-ends-yeaaa-prod-wellfed.html"
   }
  ],
  "05-02": [
@@ -753,33 +715,33 @@
    "page": "releases/the-peace-of-the-spirit-urn-prod-fiftyzeros.html"
   }
  ],
- "03-20": [
+ "03-17": [
   {
-   "title": "Gadgets(prod.Trap)",
-   "date": "2019-03-20",
+   "title": "the night ends yeaaa prod wellfed",
+   "date": "2026-03-17",
    "type": "SoundCloud-only",
-   "plays": 1509,
-   "page": "releases/gadgets-prod-trap.html"
+   "plays": 208,
+   "page": "releases/the-night-ends-yeaaa-prod-wellfed.html"
   },
   {
-   "title": "POWER~! (brb)(prod. Apostle)",
-   "date": "2019-03-20",
+   "title": "no power prod wellfed",
+   "date": "2026-03-17",
    "type": "SoundCloud-only",
-   "plays": 1815,
-   "page": "releases/power-brb-prod-apostle.html"
+   "plays": 242,
+   "page": "releases/no-power-prod-wellfed.html"
   },
   {
    "title": "life's made prod wellfed",
-   "date": "2026-03-20",
+   "date": "2026-03-17",
    "type": "SoundCloud-only",
    "plays": 151,
    "page": "releases/life-s-made-prod-wellfed.html"
   }
  ],
- "03-17": [
+ "07-22": [
   {
    "title": "games stop prod branwen",
-   "date": "2026-03-17",
+   "date": "2025-07-22",
    "type": "SoundCloud-only",
    "plays": 180,
    "page": "releases/games-stop-prod-branwen.html"
@@ -819,45 +781,118 @@
    "page": "releases/go-and-did-prod-runawway-hidy.html"
   }
  ],
- "11-10": [
+ "11-08": [
   {
-   "title": "Long Day (End Task) outro [@Staaaas.ily]",
-   "date": "2023-11-10",
+   "title": "Fuck Time 3 (outro) [Prod. DIX2]",
+   "date": "2018-11-08",
    "type": "SoundCloud-only",
-   "plays": 519,
-   "page": "releases/long-day-end-task-outro-staaaas-ily.html"
+   "plays": 697,
+   "page": "releases/fuck-time-3-outro-prod-dix2.html"
+  },
+  {
+   "title": "I See U 2 (prod. Zed Miller)",
+   "date": "2018-11-08",
+   "type": "SoundCloud-only",
+   "plays": 1838,
+   "page": "releases/i-see-u-2-prod-zed-miller.html"
+  },
+  {
+   "title": "Far From Me (ft. Shola) ~ [prod. HideousPittius]",
+   "date": "2018-11-08",
+   "type": "SoundCloud-only",
+   "plays": 1443,
+   "page": "releases/far-from-me-ft-shola-prod-hideouspittius.html"
+  },
+  {
+   "title": "Cut tha 1ights prod. ohmygon!",
+   "date": "2024-11-08",
+   "type": "SoundCloud-only",
+   "plays": 180,
+   "page": "releases/cut-tha-1ights-prod-ohmygon.html"
+  },
+  {
+   "title": "Phantom Moshpit w/ Griimxo (remastered) prod. scared716",
+   "date": "2024-11-08",
+   "type": "SoundCloud-only",
+   "plays": 178,
+   "page": "releases/phantom-moshpit-w-griimxo-remastered-prod-scared716.html"
   },
   {
    "title": "No Puppets A11owed prod. xtasane",
-   "date": "2025-11-10",
+   "date": "2024-11-08",
    "type": "SoundCloud-only",
    "plays": 24,
    "page": "releases/no-puppets-a11owed-prod-xtasane.html"
   },
   {
-   "title": "Fa11 LeaVes prod. Gehx",
-   "date": "2025-11-10",
-   "type": "SoundCloud-only",
-   "plays": 222,
-   "page": "releases/fa11-leaves-prod-gehx.html"
-  },
-  {
    "title": "Dreamed of U (Hubb1e) prod. Yukio",
-   "date": "2025-11-10",
+   "date": "2024-11-08",
    "type": "SoundCloud-only",
    "plays": 175,
    "page": "releases/dreamed-of-u-hubb1e-prod-yukio.html"
+  }
+ ],
+ "01-13": [
+  {
+   "title": "1otso prod. branwen",
+   "date": "2025-01-13",
+   "type": "SoundCloud-only",
+   "plays": 190,
+   "page": "releases/1otso-prod-branwen.html"
+  }
+ ],
+ "11-07": [
+  {
+   "title": "Past Life (prod. Charlie Shuffler)",
+   "date": "2018-11-07",
+   "type": "SoundCloud-only",
+   "plays": 4494,
+   "page": "releases/past-life-prod-charlie-shuffler.html"
   },
   {
+   "title": "Sti11 waiting/tunnel freestyle w/ Max Ferrari prod. suli",
+   "date": "2024-11-07",
+   "type": "SoundCloud-only",
+   "plays": 300,
+   "page": "releases/sti11-waiting-tunnel-freestyle-w-max-ferrari-prod-suli.html"
+  },
+  {
+   "title": "ARCSNOWWW w/ Max Ferrari prod. sustain",
+   "date": "2024-11-07",
+   "type": "SoundCloud-only",
+   "plays": 184,
+   "page": "releases/arcsnowww-w-max-ferrari-prod-sustain.html"
+  }
+ ],
+ "11-01": [
+  {
+   "title": "Fa11 LeaVes prod. Gehx",
+   "date": "2024-11-01",
+   "type": "SoundCloud-only",
+   "plays": 222,
+   "page": "releases/fa11-leaves-prod-gehx.html"
+  }
+ ],
+ "11-05": [
+  {
    "title": "Get Away prod. Gehx",
-   "date": "2025-11-10",
+   "date": "2024-11-05",
    "type": "SoundCloud-only",
    "plays": 217,
    "page": "releases/get-away-prod-gehx.html"
   },
   {
+   "title": "nitemode2019 w/ Max+Vetty prod. NaXi.wav",
+   "date": "2024-11-05",
+   "type": "SoundCloud-only",
+   "plays": 17,
+   "page": "releases/nitemode2019-w-max-vetty-prod-naxi-wav.html"
+  }
+ ],
+ "10-30": [
+  {
    "title": "Green Wa11s prod. Ocurie",
-   "date": "2025-11-10",
+   "date": "2024-10-30",
    "type": "SoundCloud-only",
    "plays": 186,
    "page": "releases/green-wa11s-prod-ocurie.html"
@@ -872,10 +907,10 @@
    "page": "releases/my-kin-prod-xannnn.html"
   }
  ],
- "09-14": [
+ "03-31": [
   {
    "title": "switch (prod fiftyzeros)",
-   "date": "2025-09-14",
+   "date": "2025-03-31",
    "type": "SoundCloud-only",
    "plays": 206,
    "page": "releases/switch-prod-fiftyzeros.html"
@@ -899,13 +934,13 @@
    "page": "releases/oh-we11-prod-vuksai.html"
   }
  ],
- "11-05": [
+ "09-14": [
   {
-   "title": "nitemode2019 w/ Max+Vetty prod. NaXi.wav",
-   "date": "2024-11-05",
+   "title": "like my dogs!!! (prod waynn)",
+   "date": "2024-09-14",
    "type": "SoundCloud-only",
-   "plays": 17,
-   "page": "releases/nitemode2019-w-max-vetty-prod-naxi-wav.html"
+   "plays": 175,
+   "page": "releases/like-my-dogs-prod-waynn.html"
   }
  ],
  "08-30": [
@@ -918,55 +953,6 @@
   }
  ],
  "07-09": [
-  {
-   "title": "outro ~ I RLLY DID THT(prod. itami リネン)",
-   "date": "2019-07-09",
-   "type": "SoundCloud-only",
-   "plays": 3940,
-   "page": "releases/outro-i-rlly-did-tht-prod-itami.html"
-  },
-  {
-   "title": "I'M WEAKENING ft. AMMI $AGE",
-   "date": "2019-07-09",
-   "type": "SoundCloud-only",
-   "plays": 2490,
-   "page": "releases/i-m-weakening-ft-ammi-age.html"
-  },
-  {
-   "title": "SUN SET FOR U ft. JO$E DRIPP (prod. y axis)",
-   "date": "2019-07-09",
-   "type": "SoundCloud-only",
-   "plays": 1771,
-   "page": "releases/sun-set-for-u-ft-jo-e-dripp-prod-y-axis.html"
-  },
-  {
-   "title": "NECK DEEP (prod. AWFL)",
-   "date": "2019-07-09",
-   "type": "SoundCloud-only",
-   "plays": 5276,
-   "page": "releases/neck-deep-prod-awfl.html"
-  },
-  {
-   "title": "GARDEN ft. Offline_hp (prod. QB)",
-   "date": "2019-07-09",
-   "type": "SoundCloud-only",
-   "plays": 1311,
-   "page": "releases/garden-ft-offline-hp-prod-qb.html"
-  },
-  {
-   "title": "NIGHT MODE ft. MAX FERRARI x YUNG VETTA x JAX",
-   "date": "2019-07-09",
-   "type": "SoundCloud-only",
-   "plays": 10083,
-   "page": "releases/night-mode-ft-max-ferrari-x-yung-vetta-x-jax.html"
-  },
-  {
-   "title": "SIGNS POINT UP! (prod Jayy Praax)",
-   "date": "2019-07-09",
-   "type": "SoundCloud-only",
-   "plays": 3389,
-   "page": "releases/signs-point-up-prod-jayy-praax.html"
-  },
   {
    "title": "Sipping 1ightning prod. lunarlad",
    "date": "2024-07-09",
@@ -1200,6 +1186,15 @@
    "page": "releases/for-brian-neck-deep-outro-produced-by-awfl.html"
   }
  ],
+ "11-10": [
+  {
+   "title": "Long Day (End Task) outro [@Staaaas.ily]",
+   "date": "2023-11-10",
+   "type": "SoundCloud-only",
+   "plays": 519,
+   "page": "releases/long-day-end-task-outro-staaaas-ily.html"
+  }
+ ],
  "10-21": [
   {
    "title": "Warrior Returning Alive [@Melokajj]",
@@ -1317,6 +1312,61 @@
    "page": "releases/attempt-to-be-prod-uniquate.html"
   }
  ],
+ "07-06": [
+  {
+   "title": "outro ~ I RLLY DID THT(prod. itami リネン)",
+   "date": "2019-07-06",
+   "type": "SoundCloud-only",
+   "plays": 3940,
+   "page": "releases/outro-i-rlly-did-tht-prod-itami.html"
+  },
+  {
+   "title": "I'M WEAKENING ft. AMMI $AGE",
+   "date": "2019-07-06",
+   "type": "SoundCloud-only",
+   "plays": 2490,
+   "page": "releases/i-m-weakening-ft-ammi-age.html"
+  },
+  {
+   "title": "SUN SET FOR U ft. JO$E DRIPP (prod. y axis)",
+   "date": "2019-07-06",
+   "type": "SoundCloud-only",
+   "plays": 1771,
+   "page": "releases/sun-set-for-u-ft-jo-e-dripp-prod-y-axis.html"
+  }
+ ],
+ "06-26": [
+  {
+   "title": "NECK DEEP (prod. AWFL)",
+   "date": "2019-06-26",
+   "type": "SoundCloud-only",
+   "plays": 5276,
+   "page": "releases/neck-deep-prod-awfl.html"
+  },
+  {
+   "title": "GARDEN ft. Offline_hp (prod. QB)",
+   "date": "2019-06-26",
+   "type": "SoundCloud-only",
+   "plays": 1311,
+   "page": "releases/garden-ft-offline-hp-prod-qb.html"
+  },
+  {
+   "title": "SIGNS POINT UP! (prod Jayy Praax)",
+   "date": "2019-06-26",
+   "type": "SoundCloud-only",
+   "plays": 3389,
+   "page": "releases/signs-point-up-prod-jayy-praax.html"
+  }
+ ],
+ "06-13": [
+  {
+   "title": "NIGHT MODE ft. MAX FERRARI x YUNG VETTA x JAX",
+   "date": "2019-06-13",
+   "type": "SoundCloud-only",
+   "plays": 10083,
+   "page": "releases/night-mode-ft-max-ferrari-x-yung-vetta-x-jax.html"
+  }
+ ],
  "06-25": [
   {
    "title": "You Don't Wanna Miss Tonight(prod. Luca Malaspina)",
@@ -1340,6 +1390,22 @@
    "type": "SoundCloud-only",
    "plays": 4362,
    "page": "releases/gold-prod-antropolita.html"
+  }
+ ],
+ "03-20": [
+  {
+   "title": "Gadgets(prod.Trap)",
+   "date": "2019-03-20",
+   "type": "SoundCloud-only",
+   "plays": 1509,
+   "page": "releases/gadgets-prod-trap.html"
+  },
+  {
+   "title": "POWER~! (brb)(prod. Apostle)",
+   "date": "2019-03-20",
+   "type": "SoundCloud-only",
+   "plays": 1815,
+   "page": "releases/power-brb-prod-apostle.html"
   }
  ],
  "03-15": [
@@ -1500,38 +1566,6 @@
    "type": "SoundCloud-only",
    "plays": 241,
    "page": "releases/throwing-signs-prod-hideouspittius.html"
-  }
- ],
- "11-08": [
-  {
-   "title": "Fuck Time 3 (outro) [Prod. DIX2]",
-   "date": "2018-11-08",
-   "type": "SoundCloud-only",
-   "plays": 697,
-   "page": "releases/fuck-time-3-outro-prod-dix2.html"
-  },
-  {
-   "title": "I See U 2 (prod. Zed Miller)",
-   "date": "2018-11-08",
-   "type": "SoundCloud-only",
-   "plays": 1838,
-   "page": "releases/i-see-u-2-prod-zed-miller.html"
-  },
-  {
-   "title": "Far From Me (ft. Shola) ~ [prod. HideousPittius]",
-   "date": "2018-11-08",
-   "type": "SoundCloud-only",
-   "plays": 1443,
-   "page": "releases/far-from-me-ft-shola-prod-hideouspittius.html"
-  }
- ],
- "11-07": [
-  {
-   "title": "Past Life (prod. Charlie Shuffler)",
-   "date": "2018-11-07",
-   "type": "SoundCloud-only",
-   "plays": 4494,
-   "page": "releases/past-life-prod-charlie-shuffler.html"
   }
  ],
  "10-25": [

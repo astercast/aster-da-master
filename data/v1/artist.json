@@ -1,7 +1,7 @@
 {
   "version": "0.19.0",
-  "observed": "2026-10-11",
-  "research_status": "VERIFIED-2026-10-11 — identity resolved per research report; Spotify artist-linked via official SoundCloud profile links; SoundCloud full catalog (185 tracks) verified via read-only live-browser pass 2026-10-11",
+  "observed": "2026-10-15",
+  "research_status": "VERIFIED-2026-10-11 — identity resolved per research report; Spotify artist-linked via official SoundCloud profile links; SoundCloud full catalog (185 tracks) verified via read-only live-browser pass 2026-10-11 · COMPLETENESS AUDIT 2026-10-15: alt-spelling profile’s 2 releases restored (catalogue 219 → 221); SoundCloud re-check blocked by fetch policy, vault stands on the 2026-10-11 capture · SPOTIFY RESOLVED 2026-10-15: the linked page belongs to a different artist named Aster (zero catalogue overlap, checked against the page itself); the link is withdrawn from presentation and no Aster Da Master Spotify page is verified · SOUNDCLOUD RE-VERIFIED 2026-10-15 from the official profile API: 185 of 185 vault titles exact, and 23 vault upload dates corrected to the artist-side release and upload dates from the same pull",
   "artist": {
     "name": "Aster da Master",
     "tagline": "He transcends music.",
@@ -317,6 +317,19 @@
       "source": "Apple Music profile 1466301103 (“Aster Da Master”) · iTunes Search API primary metadata · verified 2026-10-11"
     },
     {
+      "title": "Gravestone",
+      "date": "2018-04-27",
+      "type": "Single",
+      "links": [
+        {
+          "label": "Apple Music",
+          "url": "https://music.apple.com/us/album/gravestone-single/1369059394"
+        }
+      ],
+      "note": "Single on the alt-spelling distributor profile (AsterDaMaster, Alternative tag), credited to Yung Dimitri & AsterDaMaster. Missed by the main-profile build; restored by the 2026-10-15 completeness audit. No verified cover on record, so none is shown.",
+      "source": "Apple Music profile 1369059395 (“AsterDaMaster”) · iTunes Search API primary metadata · verified 2026-10-11 · profile re-checked live 2026-10-15"
+    },
+    {
       "title": "Contact!",
       "date": "2019-09-21",
       "type": "Single",
@@ -367,6 +380,19 @@
       ],
       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music113/v4/b0/58/0b/b0580bf0-178f-d472-86b4-0622c15c4eda/artwork.jpg/600x600bb.jpg",
       "source": "Apple Music profile 1466301103 (“Aster Da Master”) · iTunes Search API primary metadata · verified 2026-10-11"
+    },
+    {
+      "title": "Yea Thats Kool (feat. ASTERDAMASTER & SPURSY)",
+      "date": "2020-05-08",
+      "type": "Single",
+      "links": [
+        {
+          "label": "Anghami",
+          "url": "https://play.anghami.com/song/75697025"
+        }
+      ],
+      "note": "Feature credit on a DIRTYDOVESHXT single (prod. Willie G, per the Internet Phantoms Network Ep. 5 track listing). Held on the alt-spelling distributor profile; restored by the 2026-10-15 completeness audit. No verified cover on record, so none is shown.",
+      "source": "Apple Music profile 1369059395 (“AsterDaMaster”) · iTunes Search API primary metadata · verified 2026-10-11 · cross-checked against the Anghami song listing and the Audioboom podcast track listing 2026-10-15"
     },
     {
       "title": "Born from Stars",
@@ -662,7 +688,7 @@
     },
     {
       "title": "the night ends yeaaa prod wellfed",
-      "date": "2026-03-25",
+      "date": "2026-03-17",
       "type": "SoundCloud-only",
       "plays": 208,
       "links": [
@@ -677,7 +703,7 @@
     },
     {
       "title": "no power prod wellfed",
-      "date": "2026-03-23",
+      "date": "2026-03-17",
       "type": "SoundCloud-only",
       "plays": 242,
       "links": [
@@ -692,7 +718,7 @@
     },
     {
       "title": "life's made prod wellfed",
-      "date": "2026-03-20",
+      "date": "2026-03-17",
       "type": "SoundCloud-only",
       "plays": 151,
       "links": [
@@ -707,7 +733,7 @@
     },
     {
       "title": "games stop prod branwen",
-      "date": "2026-03-17",
+      "date": "2025-07-22",
       "type": "SoundCloud-only",
       "plays": 180,
       "links": [
@@ -782,7 +808,7 @@
     },
     {
       "title": "Cut tha 1ights prod. ohmygon!",
-      "date": "2025-11-11",
+      "date": "2024-11-08",
       "type": "SoundCloud-only",
       "plays": 180,
       "links": [
@@ -797,7 +823,7 @@
     },
     {
       "title": "1otso prod. branwen",
-      "date": "2025-11-11",
+      "date": "2025-01-13",
       "type": "SoundCloud-only",
       "plays": 190,
       "links": [
@@ -812,7 +838,7 @@
     },
     {
       "title": "Sti11 waiting/tunnel freestyle w/ Max Ferrari prod. suli",
-      "date": "2025-11-11",
+      "date": "2024-11-07",
       "type": "SoundCloud-only",
       "plays": 300,
       "links": [
@@ -827,7 +853,7 @@
     },
     {
       "title": "ARCSNOWWW w/ Max Ferrari prod. sustain",
-      "date": "2025-11-11",
+      "date": "2024-11-07",
       "type": "SoundCloud-only",
       "plays": 184,
       "links": [
@@ -842,7 +868,7 @@
     },
     {
       "title": "Phantom Moshpit w/ Griimxo (remastered) prod. scared716",
-      "date": "2025-11-11",
+      "date": "2024-11-08",
       "type": "SoundCloud-only",
       "plays": 178,
       "links": [
@@ -857,7 +883,7 @@
     },
     {
       "title": "No Puppets A11owed prod. xtasane",
-      "date": "2025-11-10",
+      "date": "2024-11-08",
       "type": "SoundCloud-only",
       "plays": 24,
       "links": [
@@ -872,7 +898,7 @@
     },
     {
       "title": "Fa11 LeaVes prod. Gehx",
-      "date": "2025-11-10",
+      "date": "2024-11-01",
       "type": "SoundCloud-only",
       "plays": 222,
       "links": [
@@ -887,7 +913,7 @@
     },
     {
       "title": "Dreamed of U (Hubb1e) prod. Yukio",
-      "date": "2025-11-10",
+      "date": "2024-11-08",
       "type": "SoundCloud-only",
       "plays": 175,
       "links": [
@@ -902,7 +928,7 @@
     },
     {
       "title": "Get Away prod. Gehx",
-      "date": "2025-11-10",
+      "date": "2024-11-05",
       "type": "SoundCloud-only",
       "plays": 217,
       "links": [
@@ -917,7 +943,7 @@
     },
     {
       "title": "Green Wa11s prod. Ocurie",
-      "date": "2025-11-10",
+      "date": "2024-10-30",
       "type": "SoundCloud-only",
       "plays": 186,
       "links": [
@@ -947,7 +973,7 @@
     },
     {
       "title": "switch (prod fiftyzeros)",
-      "date": "2025-09-14",
+      "date": "2025-03-31",
       "type": "SoundCloud-only",
       "plays": 206,
       "links": [
@@ -1022,7 +1048,7 @@
     },
     {
       "title": "like my dogs!!! (prod waynn)",
-      "date": "2024-09-18",
+      "date": "2024-09-14",
       "type": "SoundCloud-only",
       "plays": 175,
       "links": [
@@ -2507,7 +2533,7 @@
     },
     {
       "title": "outro ~ I RLLY DID THT(prod. itami リネン)",
-      "date": "2019-07-09",
+      "date": "2019-07-06",
       "type": "SoundCloud-only",
       "plays": 3940,
       "links": [
@@ -2522,7 +2548,7 @@
     },
     {
       "title": "I'M WEAKENING ft. AMMI $AGE",
-      "date": "2019-07-09",
+      "date": "2019-07-06",
       "type": "SoundCloud-only",
       "plays": 2490,
       "links": [
@@ -2537,7 +2563,7 @@
     },
     {
       "title": "SUN SET FOR U ft. JO$E DRIPP (prod. y axis)",
-      "date": "2019-07-09",
+      "date": "2019-07-06",
       "type": "SoundCloud-only",
       "plays": 1771,
       "links": [
@@ -2552,7 +2578,7 @@
     },
     {
       "title": "NECK DEEP (prod. AWFL)",
-      "date": "2019-07-09",
+      "date": "2019-06-26",
       "type": "SoundCloud-only",
       "plays": 5276,
       "links": [
@@ -2567,7 +2593,7 @@
     },
     {
       "title": "GARDEN ft. Offline_hp (prod. QB)",
-      "date": "2019-07-09",
+      "date": "2019-06-26",
       "type": "SoundCloud-only",
       "plays": 1311,
       "links": [
@@ -2582,7 +2608,7 @@
     },
     {
       "title": "NIGHT MODE ft. MAX FERRARI x YUNG VETTA x JAX",
-      "date": "2019-07-09",
+      "date": "2019-06-13",
       "type": "SoundCloud-only",
       "plays": 10083,
       "links": [
@@ -2597,7 +2623,7 @@
     },
     {
       "title": "SIGNS POINT UP! (prod Jayy Praax)",
-      "date": "2019-07-09",
+      "date": "2019-06-26",
       "type": "SoundCloud-only",
       "plays": 3389,
       "links": [
@@ -3417,7 +3443,7 @@
       "name": "Apple Music — alt spelling",
       "url": "https://music.apple.com/us/artist/asterdamaster/1369059395",
       "verified": true,
-      "note": "Distributor-split duplicate profile (Alternative tag)"
+      "note": "Distributor-split duplicate profile (Alternative tag). Its 2 releases (Gravestone, 2018; the Yea Thats Kool feature, 2020) joined the catalogue in the 2026-10-15 completeness audit."
     },
     {
       "name": "iHeart",
@@ -3453,10 +3479,9 @@
       "verified": true
     },
     {
-      "name": "Spotify — Aster",
-      "url": "https://open.spotify.com/artist/7y7xi5nDLdQX2zWpUItMoz",
-      "verified": true,
-      "note": "Linked from the artist's own official SoundCloud profile links (2026-10-11) — identity artist-linked; track-level catalog match still pending"
+      "name": "Spotify",
+      "verified": false,
+      "note": "The artist page linked here until 2026-10-15 (open.spotify.com/artist/7y7xi5nDLdQX2zWpUItMoz) was checked against that page itself and belongs to a different artist named Aster: its catalogue shares no titles with this discography. No Spotify page for Aster Da Master is verified, so none is presented."
     },
     {
       "name": "SoundCloud",

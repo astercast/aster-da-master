@@ -126,7 +126,7 @@
           "date": "2019-12-30",
           "plays": 5878,
           "release_page": "releases/soulless-soldiers-prod-born-hero.html",
-          "session_id": "session-28",
+          "session_id": "session-29",
           "session_name": "The December 30th Session",
           "session_page": "sessions/the-december-30th-session.html",
           "co_producers": [],
@@ -190,7 +190,7 @@
           "date": "2019-12-30",
           "plays": 733,
           "release_page": "releases/pavement-prod-fish-narc.html",
-          "session_id": "session-28",
+          "session_id": "session-29",
           "session_name": "The December 30th Session",
           "session_page": "sessions/the-december-30th-session.html",
           "co_producers": [],
@@ -285,9 +285,9 @@
           "date": "2019-10-04",
           "plays": 11587,
           "release_page": "releases/candy-w-capoxxo-prod-razorwrist.html",
-          "session_id": "session-25",
+          "session_id": "session-26",
           "session_name": "The October 4th Session",
-          "session_page": "sessions.html#session-25",
+          "session_page": "sessions.html#session-26",
           "co_producers": [],
           "voices": [
             {
@@ -301,7 +301,7 @@
           "date": "2019-12-22",
           "plays": 1343,
           "release_page": "releases/i-d-rather-be-w-lil-yu-prod-razorwrist.html",
-          "session_id": "session-27",
+          "session_id": "session-28",
           "session_name": "The December 22nd Session",
           "session_page": "sessions/the-december-22nd-session.html",
           "co_producers": [],
@@ -359,7 +359,7 @@
           "date": "2019-12-22",
           "plays": 7786,
           "release_page": "releases/fly-like-me-w-pvscale-prod-pvscale.html",
-          "session_id": "session-27",
+          "session_id": "session-28",
           "session_name": "The December 22nd Session",
           "session_page": "sessions/the-december-22nd-session.html",
           "co_producers": [],
@@ -375,7 +375,7 @@
           "date": "2019-12-22",
           "plays": 4587,
           "release_page": "releases/getting-colder-w-capoxxo-prod-pvscale-x-asa41.html",
-          "session_id": "session-27",
+          "session_id": "session-28",
           "session_name": "The December 22nd Session",
           "session_page": "sessions/the-december-22nd-session.html",
           "co_producers": [
@@ -473,9 +473,9 @@
           "date": "2019-12-06",
           "plays": 9615,
           "release_page": "releases/master-key-ft-lil-wintr-x-marcelo-prod-ginseng.html",
-          "session_id": "session-26",
+          "session_id": "session-27",
           "session_name": "The December 6th Session",
-          "session_page": "sessions.html#session-26",
+          "session_page": "sessions.html#session-27",
           "co_producers": [],
           "voices": [
             {
@@ -634,7 +634,7 @@
           "date": "2019-12-22",
           "plays": 1582,
           "release_page": "releases/my-friends-prod-deephartt.html",
-          "session_id": "session-27",
+          "session_id": "session-28",
           "session_name": "The December 22nd Session",
           "session_page": "sessions/the-december-22nd-session.html",
           "co_producers": [],
@@ -645,9 +645,9 @@
           "date": "2020-05-03",
           "plays": 5008,
           "release_page": "releases/used-to-be-messy-prod-deephartt.html",
-          "session_id": "session-30",
+          "session_id": "session-31",
           "session_name": "The May 3rd Session",
-          "session_page": "sessions.html#session-30",
+          "session_page": "sessions.html#session-31",
           "co_producers": [],
           "voices": []
         }
@@ -848,7 +848,7 @@
           "release_page": "releases/all-kinds-of-trips-prod-yungskah-on-all-platforms-now.html",
           "session_id": "session-16",
           "session_name": "The December 13th–15th Session",
-          "session_page": "sessions.html#session-16",
+          "session_page": "sessions/the-december-13th-15th-session.html",
           "co_producers": [],
           "voices": []
         }
@@ -897,7 +897,7 @@
       "years_active": "2019–2023",
       "first": {
         "title": "NECK DEEP (prod. AWFL)",
-        "date": "2019-07-09"
+        "date": "2019-06-26"
       },
       "last": {
         "title": "For Brian (Neck Deep) outro [produced by AWFL]",
@@ -906,12 +906,12 @@
       "productions": [
         {
           "title": "NECK DEEP (prod. AWFL)",
-          "date": "2019-07-09",
+          "date": "2019-06-26",
           "plays": 5276,
           "release_page": "releases/neck-deep-prod-awfl.html",
           "session_id": "session-24",
-          "session_name": "The July 9th Session",
-          "session_page": "sessions/the-july-9th-session.html",
+          "session_name": "The June 25th–26th Session",
+          "session_page": "sessions.html#session-24",
           "co_producers": [],
           "voices": []
         },
@@ -920,7 +920,7 @@
           "date": "2023-11-12",
           "plays": 43,
           "release_page": "releases/for-brian-neck-deep-outro-produced-by-awfl.html",
-          "session_id": "session-40",
+          "session_id": "session-41",
           "session_name": "The November 3rd–12th Session",
           "session_page": "sessions/the-november-3rd-12th-session.html",
           "co_producers": [],
@@ -949,7 +949,7 @@
         "top_voice": null,
         "first": {
           "title": "NECK DEEP (prod. AWFL)",
-          "date": "2019-07-09"
+          "date": "2019-06-26"
         },
         "last": {
           "title": "For Brian (Neck Deep) outro [produced by AWFL]",
@@ -983,7 +983,7 @@
           "date": "2019-12-22",
           "plays": 4587,
           "release_page": "releases/getting-colder-w-capoxxo-prod-pvscale-x-asa41.html",
-          "session_id": "session-27",
+          "session_id": "session-28",
           "session_name": "The December 22nd Session",
           "session_page": "sessions/the-december-22nd-session.html",
           "co_producers": [
@@ -1171,7 +1171,7 @@
           "date": "2019-12-22",
           "plays": 2991,
           "release_page": "releases/same-amount-w-lilvicbxi-prod-lilvicbxi.html",
-          "session_id": "session-27",
+          "session_id": "session-28",
           "session_name": "The December 22nd Session",
           "session_page": "sessions/the-december-22nd-session.html",
           "co_producers": [],
@@ -1187,7 +1187,7 @@
           "date": "2019-12-22",
           "plays": 1579,
           "release_page": "releases/snow-caps-w-lilvicbxi-prod-lilvicbxi-x-spliff08.html",
-          "session_id": "session-27",
+          "session_id": "session-28",
           "session_name": "The December 22nd Session",
           "session_page": "sessions/the-december-22nd-session.html",
           "co_producers": [
@@ -1366,21 +1366,21 @@
       "years_active": "2019",
       "first": {
         "title": "outro ~ I RLLY DID THT(prod. itami リネン)",
-        "date": "2019-07-09"
+        "date": "2019-07-06"
       },
       "last": {
         "title": "outro ~ I RLLY DID THT(prod. itami リネン)",
-        "date": "2019-07-09"
+        "date": "2019-07-06"
       },
       "productions": [
         {
           "title": "outro ~ I RLLY DID THT(prod. itami リネン)",
-          "date": "2019-07-09",
+          "date": "2019-07-06",
           "plays": 3940,
           "release_page": "releases/outro-i-rlly-did-tht-prod-itami.html",
-          "session_id": "session-24",
-          "session_name": "The July 9th Session",
-          "session_page": "sessions/the-july-9th-session.html",
+          "session_id": "session-25",
+          "session_name": "The July 6th Session",
+          "session_page": "sessions.html#session-25",
           "co_producers": [],
           "voices": []
         }
@@ -1407,11 +1407,11 @@
         "top_voice": null,
         "first": {
           "title": "outro ~ I RLLY DID THT(prod. itami リネン)",
-          "date": "2019-07-09"
+          "date": "2019-07-06"
         },
         "last": {
           "title": "outro ~ I RLLY DID THT(prod. itami リネン)",
-          "date": "2019-07-09"
+          "date": "2019-07-06"
         }
       },
       "circle_page": null,
@@ -1429,21 +1429,21 @@
       "years_active": "2019",
       "first": {
         "title": "SIGNS POINT UP! (prod Jayy Praax)",
-        "date": "2019-07-09"
+        "date": "2019-06-26"
       },
       "last": {
         "title": "SIGNS POINT UP! (prod Jayy Praax)",
-        "date": "2019-07-09"
+        "date": "2019-06-26"
       },
       "productions": [
         {
           "title": "SIGNS POINT UP! (prod Jayy Praax)",
-          "date": "2019-07-09",
+          "date": "2019-06-26",
           "plays": 3389,
           "release_page": "releases/signs-point-up-prod-jayy-praax.html",
           "session_id": "session-24",
-          "session_name": "The July 9th Session",
-          "session_page": "sessions/the-july-9th-session.html",
+          "session_name": "The June 25th–26th Session",
+          "session_page": "sessions.html#session-24",
           "co_producers": [],
           "voices": []
         }
@@ -1460,11 +1460,11 @@
         "top_voice": null,
         "first": {
           "title": "SIGNS POINT UP! (prod Jayy Praax)",
-          "date": "2019-07-09"
+          "date": "2019-06-26"
         },
         "last": {
           "title": "SIGNS POINT UP! (prod Jayy Praax)",
-          "date": "2019-07-09"
+          "date": "2019-06-26"
         }
       },
       "circle_page": null,
@@ -1568,7 +1568,7 @@
           "date": "2019-12-30",
           "plays": 3075,
           "release_page": "releases/best-friend-ft-lil-soda-boi-prod-lil-soda-boi.html",
-          "session_id": "session-28",
+          "session_id": "session-29",
           "session_name": "The December 30th Session",
           "session_page": "sessions/the-december-30th-session.html",
           "co_producers": [],
@@ -1626,7 +1626,7 @@
           "date": "2019-12-30",
           "plays": 2721,
           "release_page": "releases/costs-of-life-prod-aster.html",
-          "session_id": "session-28",
+          "session_id": "session-29",
           "session_name": "The December 30th Session",
           "session_page": "sessions/the-december-30th-session.html",
           "co_producers": [],
@@ -1679,7 +1679,7 @@
           "date": "2019-12-30",
           "plays": 2650,
           "release_page": "releases/white-noise-ft-keyblayde808-prod-keyblayde808.html",
-          "session_id": "session-28",
+          "session_id": "session-29",
           "session_name": "The December 30th Session",
           "session_page": "sessions/the-december-30th-session.html",
           "co_producers": [],
@@ -1897,7 +1897,7 @@
           "date": "2019-12-22",
           "plays": 1909,
           "release_page": "releases/attempt-to-be-prod-uniquate.html",
-          "session_id": "session-27",
+          "session_id": "session-28",
           "session_name": "The December 22nd Session",
           "session_page": "sessions/the-december-22nd-session.html",
           "co_producers": [],
@@ -1908,9 +1908,9 @@
           "date": "2020-10-07",
           "plays": 244,
           "release_page": "releases/keep-w-phil-is-lonely-prod-uniquate.html",
-          "session_id": "session-32",
+          "session_id": "session-33",
           "session_name": "The October 7th Session",
-          "session_page": "sessions.html#session-32",
+          "session_page": "sessions.html#session-33",
           "co_producers": [],
           "voices": [
             {
@@ -2243,21 +2243,21 @@
       "years_active": "2019",
       "first": {
         "title": "SUN SET FOR U ft. JO$E DRIPP (prod. y axis)",
-        "date": "2019-07-09"
+        "date": "2019-07-06"
       },
       "last": {
         "title": "SUN SET FOR U ft. JO$E DRIPP (prod. y axis)",
-        "date": "2019-07-09"
+        "date": "2019-07-06"
       },
       "productions": [
         {
           "title": "SUN SET FOR U ft. JO$E DRIPP (prod. y axis)",
-          "date": "2019-07-09",
+          "date": "2019-07-06",
           "plays": 1771,
           "release_page": "releases/sun-set-for-u-ft-jo-e-dripp-prod-y-axis.html",
-          "session_id": "session-24",
-          "session_name": "The July 9th Session",
-          "session_page": "sessions/the-july-9th-session.html",
+          "session_id": "session-25",
+          "session_name": "The July 6th Session",
+          "session_page": "sessions.html#session-25",
           "co_producers": [],
           "voices": [
             {
@@ -2289,11 +2289,11 @@
         "top_voice": "JO$E DRIPP",
         "first": {
           "title": "SUN SET FOR U ft. JO$E DRIPP (prod. y axis)",
-          "date": "2019-07-09"
+          "date": "2019-07-06"
         },
         "last": {
           "title": "SUN SET FOR U ft. JO$E DRIPP (prod. y axis)",
-          "date": "2019-07-09"
+          "date": "2019-07-06"
         }
       },
       "circle_page": null,
@@ -2445,9 +2445,9 @@
           "date": "2020-04-09",
           "plays": 1668,
           "release_page": "releases/i-hate-it-prod-taurs.html",
-          "session_id": "session-29",
+          "session_id": "session-30",
           "session_name": "The April 9th Session",
-          "session_page": "sessions.html#session-29",
+          "session_page": "sessions.html#session-30",
           "co_producers": [],
           "voices": []
         }
@@ -2551,7 +2551,7 @@
           "date": "2019-12-22",
           "plays": 1579,
           "release_page": "releases/snow-caps-w-lilvicbxi-prod-lilvicbxi-x-spliff08.html",
-          "session_id": "session-27",
+          "session_id": "session-28",
           "session_name": "The December 22nd Session",
           "session_page": "sessions/the-december-22nd-session.html",
           "co_producers": [
@@ -2637,9 +2637,9 @@
           "date": "2019-06-25",
           "plays": 347,
           "release_page": "releases/you-don-t-wanna-miss-tonight-prod-luca-malaspina.html",
-          "session_id": "session-23",
-          "session_name": "The June 25th Session",
-          "session_page": "sessions.html#session-23",
+          "session_id": "session-24",
+          "session_name": "The June 25th–26th Session",
+          "session_page": "sessions.html#session-24",
           "co_producers": [],
           "voices": []
         }
@@ -2703,7 +2703,7 @@
           "release_page": "releases/hurts-sometimes-2-prod-feld.html",
           "session_id": "session-16",
           "session_name": "The December 13th–15th Session",
-          "session_page": "sessions.html#session-16",
+          "session_page": "sessions/the-december-13th-15th-session.html",
           "co_producers": [],
           "voices": []
         },
@@ -2714,7 +2714,7 @@
           "release_page": "releases/mid-prod-feld.html",
           "session_id": "session-16",
           "session_name": "The December 13th–15th Session",
-          "session_page": "sessions.html#session-16",
+          "session_page": "sessions/the-december-13th-15th-session.html",
           "co_producers": [],
           "voices": []
         }
@@ -2888,9 +2888,9 @@
           "date": "2020-11-11",
           "plays": 551,
           "release_page": "releases/my-fault-prod-shinju.html",
-          "session_id": "session-33",
+          "session_id": "session-34",
           "session_name": "The November 11th Session",
-          "session_page": "sessions.html#session-33",
+          "session_page": "sessions.html#session-34",
           "co_producers": [],
           "voices": []
         },
@@ -2899,7 +2899,7 @@
           "date": "2021-07-14",
           "plays": 184,
           "release_page": "releases/only-human-pilot-prod-shinju-x-forty.html",
-          "session_id": "session-35",
+          "session_id": "session-36",
           "session_name": "The July 14th Session",
           "session_page": "sessions/the-july-14th-session.html",
           "co_producers": [
@@ -2915,9 +2915,9 @@
           "date": "2023-08-29",
           "plays": 725,
           "release_page": "releases/clock-in-the-benz-w-lil-yu-prod-shinju.html",
-          "session_id": "session-37",
+          "session_id": "session-38",
           "session_name": "The August 29th Session",
-          "session_page": "sessions.html#session-37",
+          "session_page": "sessions.html#session-38",
           "co_producers": [],
           "voices": [
             {
@@ -3089,21 +3089,21 @@
       "years_active": "2019",
       "first": {
         "title": "GARDEN ft. Offline_hp (prod. QB)",
-        "date": "2019-07-09"
+        "date": "2019-06-26"
       },
       "last": {
         "title": "GARDEN ft. Offline_hp (prod. QB)",
-        "date": "2019-07-09"
+        "date": "2019-06-26"
       },
       "productions": [
         {
           "title": "GARDEN ft. Offline_hp (prod. QB)",
-          "date": "2019-07-09",
+          "date": "2019-06-26",
           "plays": 1311,
           "release_page": "releases/garden-ft-offline-hp-prod-qb.html",
           "session_id": "session-24",
-          "session_name": "The July 9th Session",
-          "session_page": "sessions/the-july-9th-session.html",
+          "session_name": "The June 25th–26th Session",
+          "session_page": "sessions.html#session-24",
           "co_producers": [],
           "voices": [
             {
@@ -3125,11 +3125,11 @@
         "top_voice": "Offline_hp",
         "first": {
           "title": "GARDEN ft. Offline_hp (prod. QB)",
-          "date": "2019-07-09"
+          "date": "2019-06-26"
         },
         "last": {
           "title": "GARDEN ft. Offline_hp (prod. QB)",
-          "date": "2019-07-09"
+          "date": "2019-06-26"
         }
       },
       "circle_page": null,
@@ -3338,7 +3338,7 @@
           "date": "2020-12-21",
           "plays": 345,
           "release_page": "releases/til-ur-sad-again-prod-wetgropes.html",
-          "session_id": "session-34",
+          "session_id": "session-35",
           "session_name": "The December 21st Session",
           "session_page": "sessions/the-december-21st-session.html",
           "co_producers": [],
@@ -3349,7 +3349,7 @@
           "date": "2020-12-21",
           "plays": 677,
           "release_page": "releases/lunch-break-prod-wetgropes.html",
-          "session_id": "session-34",
+          "session_id": "session-35",
           "session_name": "The December 21st Session",
           "session_page": "sessions/the-december-21st-session.html",
           "co_producers": [],
@@ -3360,7 +3360,7 @@
           "date": "2020-12-21",
           "plays": 176,
           "release_page": "releases/they-talk-prod-wetgropes.html",
-          "session_id": "session-34",
+          "session_id": "session-35",
           "session_name": "The December 21st Session",
           "session_page": "sessions/the-december-21st-session.html",
           "co_producers": [],
@@ -3415,7 +3415,7 @@
           "release_page": "releases/understand-prod-5amtruly.html",
           "session_id": "session-16",
           "session_name": "The December 13th–15th Session",
-          "session_page": "sessions.html#session-16",
+          "session_page": "sessions/the-december-13th-15th-session.html",
           "co_producers": [],
           "voices": []
         }
@@ -3591,7 +3591,7 @@
           "date": "2019-12-30",
           "plays": 1115,
           "release_page": "releases/all-alone-ft-yung-cortex-prod-yung-cortex.html",
-          "session_id": "session-28",
+          "session_id": "session-29",
           "session_name": "The December 30th Session",
           "session_page": "sessions/the-december-30th-session.html",
           "co_producers": [],
@@ -3939,9 +3939,9 @@
           "date": "2020-10-07",
           "plays": 450,
           "release_page": "releases/white-fire-prod-odece.html",
-          "session_id": "session-32",
+          "session_id": "session-33",
           "session_name": "The October 7th Session",
-          "session_page": "sessions.html#session-32",
+          "session_page": "sessions.html#session-33",
           "co_producers": [],
           "voices": []
         },
@@ -3950,7 +3950,7 @@
           "date": "2021-07-14",
           "plays": 224,
           "release_page": "releases/memory-complete-prod-odece.html",
-          "session_id": "session-35",
+          "session_id": "session-36",
           "session_name": "The July 14th Session",
           "session_page": "sessions/the-july-14th-session.html",
           "co_producers": [],
@@ -3961,7 +3961,7 @@
           "date": "2021-07-14",
           "plays": 211,
           "release_page": "releases/this-feeling-s-newer-ft-max-ferrari-prod-odece.html",
-          "session_id": "session-35",
+          "session_id": "session-36",
           "session_name": "The July 14th Session",
           "session_page": "sessions/the-july-14th-session.html",
           "co_producers": [],
@@ -4038,9 +4038,9 @@
           "date": "2020-10-07",
           "plays": 861,
           "release_page": "releases/playin-by-the-book-w-lil-yu-prod-dxsh.html",
-          "session_id": "session-32",
+          "session_id": "session-33",
           "session_name": "The October 7th Session",
-          "session_page": "sessions.html#session-32",
+          "session_page": "sessions.html#session-33",
           "co_producers": [],
           "voices": [
             {
@@ -4161,7 +4161,7 @@
           "release_page": "releases/time-to-grow-prod-ridicholas.html",
           "session_id": "session-16",
           "session_name": "The December 13th–15th Session",
-          "session_page": "sessions.html#session-16",
+          "session_page": "sessions/the-december-13th-15th-session.html",
           "co_producers": [],
           "voices": []
         }
@@ -4345,9 +4345,9 @@
           "date": "2020-06-18",
           "plays": 706,
           "release_page": "releases/fleeting-prod-aura.html",
-          "session_id": "session-31",
+          "session_id": "session-32",
           "session_name": "The June 18th Session",
-          "session_page": "sessions.html#session-31",
+          "session_page": "sessions.html#session-32",
           "co_producers": [],
           "voices": []
         }
@@ -4591,9 +4591,9 @@
           "date": "2025-11-23",
           "plays": 455,
           "release_page": "releases/big-litemode-prod-runawway-ilyagargod-and-k3nik.html",
-          "session_id": "session-56",
+          "session_id": "session-59",
           "session_name": "The November 23rd Session",
-          "session_page": "sessions.html#session-56",
+          "session_page": "sessions.html#session-59",
           "co_producers": [
             {
               "name": "ilyagargod",
@@ -4611,9 +4611,9 @@
           "date": "2025-11-23",
           "plays": 205,
           "release_page": "releases/go-and-did-prod-runawway-hidy.html",
-          "session_id": "session-56",
+          "session_id": "session-59",
           "session_name": "The November 23rd Session",
-          "session_page": "sessions.html#session-56",
+          "session_page": "sessions.html#session-59",
           "co_producers": [
             {
               "name": "hidy",
@@ -4699,43 +4699,43 @@
       "years_active": "2026",
       "first": {
         "title": "life's made prod wellfed",
-        "date": "2026-03-20"
+        "date": "2026-03-17"
       },
       "last": {
         "title": "the night ends yeaaa prod wellfed",
-        "date": "2026-03-25"
+        "date": "2026-03-17"
       },
       "productions": [
         {
           "title": "life's made prod wellfed",
-          "date": "2026-03-20",
+          "date": "2026-03-17",
           "plays": 151,
           "release_page": "releases/life-s-made-prod-wellfed.html",
-          "session_id": "session-59",
-          "session_name": "The March 17th–25th Session",
-          "session_page": "sessions.html#session-59",
+          "session_id": "session-62",
+          "session_name": "The March 17th Session",
+          "session_page": "sessions.html#session-62",
           "co_producers": [],
           "voices": []
         },
         {
           "title": "no power prod wellfed",
-          "date": "2026-03-23",
+          "date": "2026-03-17",
           "plays": 242,
           "release_page": "releases/no-power-prod-wellfed.html",
-          "session_id": "session-59",
-          "session_name": "The March 17th–25th Session",
-          "session_page": "sessions.html#session-59",
+          "session_id": "session-62",
+          "session_name": "The March 17th Session",
+          "session_page": "sessions.html#session-62",
           "co_producers": [],
           "voices": []
         },
         {
           "title": "the night ends yeaaa prod wellfed",
-          "date": "2026-03-25",
+          "date": "2026-03-17",
           "plays": 208,
           "release_page": "releases/the-night-ends-yeaaa-prod-wellfed.html",
-          "session_id": "session-59",
-          "session_name": "The March 17th–25th Session",
-          "session_page": "sessions.html#session-59",
+          "session_id": "session-62",
+          "session_name": "The March 17th Session",
+          "session_page": "sessions.html#session-62",
           "co_producers": [],
           "voices": []
         }
@@ -4771,11 +4771,11 @@
         "top_voice": null,
         "first": {
           "title": "life's made prod wellfed",
-          "date": "2026-03-20"
+          "date": "2026-03-17"
         },
         "last": {
           "title": "the night ends yeaaa prod wellfed",
-          "date": "2026-03-25"
+          "date": "2026-03-17"
         }
       },
       "circle_page": null,
@@ -4805,7 +4805,7 @@
           "date": "2021-07-14",
           "plays": 210,
           "release_page": "releases/asterisms-shine-prod-lil-biscuit.html",
-          "session_id": "session-35",
+          "session_id": "session-36",
           "session_name": "The July 14th Session",
           "session_page": "sessions/the-july-14th-session.html",
           "co_producers": [],
@@ -4816,7 +4816,7 @@
           "date": "2021-07-14",
           "plays": 174,
           "release_page": "releases/got-knots-ft-max-ferrari-prod-lil-biscuit.html",
-          "session_id": "session-35",
+          "session_id": "session-36",
           "session_name": "The July 14th Session",
           "session_page": "sessions/the-july-14th-session.html",
           "co_producers": [],
@@ -4832,7 +4832,7 @@
           "date": "2021-07-14",
           "plays": 212,
           "release_page": "releases/i-can-t-get-myself-to-cast-prod-lil-biscuit.html",
-          "session_id": "session-35",
+          "session_id": "session-36",
           "session_name": "The July 14th Session",
           "session_page": "sessions/the-july-14th-session.html",
           "co_producers": [],
@@ -4904,7 +4904,7 @@
           "date": "2021-07-14",
           "plays": 319,
           "release_page": "releases/sunvalley-rally-ft-lilrareboy-prod-phantasie.html",
-          "session_id": "session-35",
+          "session_id": "session-36",
           "session_name": "The July 14th Session",
           "session_page": "sessions/the-july-14th-session.html",
           "co_producers": [],
@@ -4920,7 +4920,7 @@
           "date": "2021-07-14",
           "plays": 222,
           "release_page": "releases/when-the-world-gets-colder-3-prod-phantasie.html",
-          "session_id": "session-35",
+          "session_id": "session-36",
           "session_name": "The July 14th Session",
           "session_page": "sessions/the-july-14th-session.html",
           "co_producers": [],
@@ -5036,9 +5036,9 @@
           "date": "2025-11-23",
           "plays": 455,
           "release_page": "releases/big-litemode-prod-runawway-ilyagargod-and-k3nik.html",
-          "session_id": "session-56",
+          "session_id": "session-59",
           "session_name": "The November 23rd Session",
-          "session_page": "sessions.html#session-56",
+          "session_page": "sessions.html#session-59",
           "co_producers": [
             {
               "name": "runawway",
@@ -5130,9 +5130,9 @@
           "date": "2025-11-23",
           "plays": 455,
           "release_page": "releases/big-litemode-prod-runawway-ilyagargod-and-k3nik.html",
-          "session_id": "session-56",
+          "session_id": "session-59",
           "session_name": "The November 23rd Session",
-          "session_page": "sessions.html#session-56",
+          "session_page": "sessions.html#session-59",
           "co_producers": [
             {
               "name": "runawway",
@@ -5284,7 +5284,7 @@
           "date": "2021-07-14",
           "plays": 178,
           "release_page": "releases/intro-prod-astral-hp.html",
-          "session_id": "session-35",
+          "session_id": "session-36",
           "session_name": "The July 14th Session",
           "session_page": "sessions/the-july-14th-session.html",
           "co_producers": [],
@@ -5295,9 +5295,9 @@
           "date": "2026-01-16",
           "plays": 269,
           "release_page": "releases/all-i-really-need-is-a-text-from-u-2-prod-astral-hp.html",
-          "session_id": "session-58",
+          "session_id": "session-61",
           "session_name": "The January 16th Session",
-          "session_page": "sessions.html#session-58",
+          "session_page": "sessions.html#session-61",
           "co_producers": [],
           "voices": []
         }
@@ -5343,35 +5343,35 @@
       "aliases": [],
       "production_count": 2,
       "total_plays": 439,
-      "years_active": "2025",
+      "years_active": "2024",
       "first": {
         "title": "Fa11 LeaVes prod. Gehx",
-        "date": "2025-11-10"
+        "date": "2024-11-01"
       },
       "last": {
         "title": "Get Away prod. Gehx",
-        "date": "2025-11-10"
+        "date": "2024-11-05"
       },
       "productions": [
         {
           "title": "Fa11 LeaVes prod. Gehx",
-          "date": "2025-11-10",
+          "date": "2024-11-01",
           "plays": 222,
           "release_page": "releases/fa11-leaves-prod-gehx.html",
-          "session_id": "session-55",
-          "session_name": "The November 4th–11th Session",
-          "session_page": "sessions/the-november-4th-11th-session.html",
+          "session_id": "session-53",
+          "session_name": "The Oct 30th – Nov 8th Session",
+          "session_page": "sessions/the-oct-30th-nov-8th-session.html",
           "co_producers": [],
           "voices": []
         },
         {
           "title": "Get Away prod. Gehx",
-          "date": "2025-11-10",
+          "date": "2024-11-05",
           "plays": 217,
           "release_page": "releases/get-away-prod-gehx.html",
-          "session_id": "session-55",
-          "session_name": "The November 4th–11th Session",
-          "session_page": "sessions/the-november-4th-11th-session.html",
+          "session_id": "session-53",
+          "session_name": "The Oct 30th – Nov 8th Session",
+          "session_page": "sessions/the-oct-30th-nov-8th-session.html",
           "co_producers": [],
           "voices": []
         }
@@ -5388,11 +5388,11 @@
         "top_voice": null,
         "first": {
           "title": "Fa11 LeaVes prod. Gehx",
-          "date": "2025-11-10"
+          "date": "2024-11-01"
         },
         "last": {
           "title": "Get Away prod. Gehx",
-          "date": "2025-11-10"
+          "date": "2024-11-05"
         }
       },
       "circle_page": null,
@@ -5410,7 +5410,7 @@
       "years_active": "2025–2026",
       "first": {
         "title": "switch (prod fiftyzeros)",
-        "date": "2025-09-14"
+        "date": "2025-03-31"
       },
       "last": {
         "title": "the peace of the spirit urn (prod +fiftyzeros)",
@@ -5419,12 +5419,12 @@
       "productions": [
         {
           "title": "switch (prod fiftyzeros)",
-          "date": "2025-09-14",
+          "date": "2025-03-31",
           "plays": 206,
           "release_page": "releases/switch-prod-fiftyzeros.html",
-          "session_id": "session-54",
-          "session_name": "The September 13th–14th Session",
-          "session_page": "sessions.html#session-54",
+          "session_id": "session-55",
+          "session_name": "The March 31st Session",
+          "session_page": "sessions.html#session-55",
           "co_producers": [],
           "voices": []
         },
@@ -5433,9 +5433,9 @@
           "date": "2026-07-15",
           "plays": 178,
           "release_page": "releases/the-peace-of-the-spirit-urn-prod-fiftyzeros.html",
-          "session_id": "session-60",
+          "session_id": "session-63",
           "session_name": "The July 15th Session",
-          "session_page": "sessions.html#session-60",
+          "session_page": "sessions.html#session-63",
           "co_producers": [],
           "voices": []
         }
@@ -5471,7 +5471,7 @@
         "top_voice": null,
         "first": {
           "title": "switch (prod fiftyzeros)",
-          "date": "2025-09-14"
+          "date": "2025-03-31"
         },
         "last": {
           "title": "the peace of the spirit urn (prod +fiftyzeros)",
@@ -5490,14 +5490,14 @@
       "aliases": [],
       "production_count": 2,
       "total_plays": 382,
-      "years_active": "2024–2025",
+      "years_active": "2024",
       "first": {
         "title": "FittedUP/fadedUP prod. xtasane",
         "date": "2024-05-29"
       },
       "last": {
         "title": "No Puppets A11owed prod. xtasane",
-        "date": "2025-11-10"
+        "date": "2024-11-08"
       },
       "productions": [
         {
@@ -5505,20 +5505,20 @@
           "date": "2024-05-29",
           "plays": 358,
           "release_page": "releases/fittedup-fadedup-prod-xtasane.html",
-          "session_id": "session-45",
+          "session_id": "session-46",
           "session_name": "The May 22nd–31st Session",
-          "session_page": "sessions.html#session-45",
+          "session_page": "sessions.html#session-46",
           "co_producers": [],
           "voices": []
         },
         {
           "title": "No Puppets A11owed prod. xtasane",
-          "date": "2025-11-10",
+          "date": "2024-11-08",
           "plays": 24,
           "release_page": "releases/no-puppets-a11owed-prod-xtasane.html",
-          "session_id": "session-55",
-          "session_name": "The November 4th–11th Session",
-          "session_page": "sessions/the-november-4th-11th-session.html",
+          "session_id": "session-53",
+          "session_name": "The Oct 30th – Nov 8th Session",
+          "session_page": "sessions/the-oct-30th-nov-8th-session.html",
           "co_producers": [],
           "voices": []
         }
@@ -5539,7 +5539,7 @@
         },
         "last": {
           "title": "No Puppets A11owed prod. xtasane",
-          "date": "2025-11-10"
+          "date": "2024-11-08"
         }
       },
       "circle_page": null,
@@ -5554,35 +5554,35 @@
       "aliases": [],
       "production_count": 2,
       "total_plays": 370,
-      "years_active": "2025–2026",
+      "years_active": "2025",
       "first": {
         "title": "1otso prod. branwen",
-        "date": "2025-11-11"
+        "date": "2025-01-13"
       },
       "last": {
         "title": "games stop prod branwen",
-        "date": "2026-03-17"
+        "date": "2025-07-22"
       },
       "productions": [
         {
           "title": "1otso prod. branwen",
-          "date": "2025-11-11",
+          "date": "2025-01-13",
           "plays": 190,
           "release_page": "releases/1otso-prod-branwen.html",
-          "session_id": "session-55",
-          "session_name": "The November 4th–11th Session",
-          "session_page": "sessions/the-november-4th-11th-session.html",
+          "session_id": "session-54",
+          "session_name": "The January 9th–13th Session",
+          "session_page": "sessions.html#session-54",
           "co_producers": [],
           "voices": []
         },
         {
           "title": "games stop prod branwen",
-          "date": "2026-03-17",
+          "date": "2025-07-22",
           "plays": 180,
           "release_page": "releases/games-stop-prod-branwen.html",
-          "session_id": "session-59",
-          "session_name": "The March 17th–25th Session",
-          "session_page": "sessions.html#session-59",
+          "session_id": "session-56",
+          "session_name": "The July 22nd Session",
+          "session_page": "sessions.html#session-56",
           "co_producers": [],
           "voices": []
         }
@@ -5599,11 +5599,11 @@
         "top_voice": null,
         "first": {
           "title": "1otso prod. branwen",
-          "date": "2025-11-11"
+          "date": "2025-01-13"
         },
         "last": {
           "title": "games stop prod branwen",
-          "date": "2026-03-17"
+          "date": "2025-07-22"
         }
       },
       "circle_page": null,
@@ -5633,7 +5633,7 @@
           "date": "2020-12-21",
           "plays": 355,
           "release_page": "releases/decent-prod-venus.html",
-          "session_id": "session-34",
+          "session_id": "session-35",
           "session_name": "The December 21st Session",
           "session_page": "sessions/the-december-21st-session.html",
           "co_producers": [],
@@ -5686,9 +5686,9 @@
           "date": "2024-05-24",
           "plays": 347,
           "release_page": "releases/just-so-u-know-prod-buggy.html",
-          "session_id": "session-45",
+          "session_id": "session-46",
           "session_name": "The May 22nd–31st Session",
-          "session_page": "sessions.html#session-45",
+          "session_page": "sessions.html#session-46",
           "co_producers": [],
           "voices": []
         }
@@ -5739,9 +5739,9 @@
           "date": "2020-10-07",
           "plays": 336,
           "release_page": "releases/never-pick-it-up-prod-fearbanquo.html",
-          "session_id": "session-32",
+          "session_id": "session-33",
           "session_name": "The October 7th Session",
-          "session_page": "sessions.html#session-32",
+          "session_page": "sessions.html#session-33",
           "co_producers": [],
           "voices": []
         }
@@ -5792,9 +5792,9 @@
           "date": "2024-05-31",
           "plays": 308,
           "release_page": "releases/end-times-gate-code-prod-1ohmygon.html",
-          "session_id": "session-45",
+          "session_id": "session-46",
           "session_name": "The May 22nd–31st Session",
-          "session_page": "sessions.html#session-45",
+          "session_page": "sessions.html#session-46",
           "co_producers": [],
           "voices": []
         }
@@ -5830,24 +5830,24 @@
       "aliases": [],
       "production_count": 1,
       "total_plays": 300,
-      "years_active": "2025",
+      "years_active": "2024",
       "first": {
         "title": "Sti11 waiting/tunnel freestyle w/ Max Ferrari prod. suli",
-        "date": "2025-11-11"
+        "date": "2024-11-07"
       },
       "last": {
         "title": "Sti11 waiting/tunnel freestyle w/ Max Ferrari prod. suli",
-        "date": "2025-11-11"
+        "date": "2024-11-07"
       },
       "productions": [
         {
           "title": "Sti11 waiting/tunnel freestyle w/ Max Ferrari prod. suli",
-          "date": "2025-11-11",
+          "date": "2024-11-07",
           "plays": 300,
           "release_page": "releases/sti11-waiting-tunnel-freestyle-w-max-ferrari-prod-suli.html",
-          "session_id": "session-55",
-          "session_name": "The November 4th–11th Session",
-          "session_page": "sessions/the-november-4th-11th-session.html",
+          "session_id": "session-53",
+          "session_name": "The Oct 30th – Nov 8th Session",
+          "session_page": "sessions/the-oct-30th-nov-8th-session.html",
           "co_producers": [],
           "voices": [
             {
@@ -5879,11 +5879,11 @@
         "top_voice": "Max Ferrari",
         "first": {
           "title": "Sti11 waiting/tunnel freestyle w/ Max Ferrari prod. suli",
-          "date": "2025-11-11"
+          "date": "2024-11-07"
         },
         "last": {
           "title": "Sti11 waiting/tunnel freestyle w/ Max Ferrari prod. suli",
-          "date": "2025-11-11"
+          "date": "2024-11-07"
         }
       },
       "circle_page": null,
@@ -5913,7 +5913,7 @@
           "date": "2020-12-21",
           "plays": 292,
           "release_page": "releases/added-up-prod-pink.html",
-          "session_id": "session-34",
+          "session_id": "session-35",
           "session_name": "The December 21st Session",
           "session_page": "sessions/the-december-21st-session.html",
           "co_producers": [],
@@ -5966,9 +5966,9 @@
           "date": "2024-06-27",
           "plays": 286,
           "release_page": "releases/sssolid-prod-kuva-music-video-in-desc.html",
-          "session_id": "session-47",
+          "session_id": "session-48",
           "session_name": "The June 27th Session",
-          "session_page": "sessions.html#session-47",
+          "session_page": "sessions.html#session-48",
           "co_producers": [],
           "voices": []
         }
@@ -6019,9 +6019,9 @@
           "date": "2024-05-02",
           "plays": 275,
           "release_page": "releases/p1aced-a-ward-prodbygus.html",
-          "session_id": "session-44",
+          "session_id": "session-45",
           "session_name": "The May 2nd–3rd Session",
-          "session_page": "sessions.html#session-44",
+          "session_page": "sessions.html#session-45",
           "co_producers": [],
           "voices": []
         }
@@ -6082,9 +6082,9 @@
           "date": "2024-07-09",
           "plays": 275,
           "release_page": "releases/sipping-1ightning-prod-lunarlad.html",
-          "session_id": "session-48",
+          "session_id": "session-49",
           "session_name": "The July 9th Session",
-          "session_page": "sessions/the-july-9th-session.html",
+          "session_page": "sessions.html#session-49",
           "co_producers": [],
           "voices": []
         }
@@ -6145,7 +6145,7 @@
           "date": "2021-07-14",
           "plays": 253,
           "release_page": "releases/beacon-prod-johnnyfriend.html",
-          "session_id": "session-35",
+          "session_id": "session-36",
           "session_name": "The July 14th Session",
           "session_page": "sessions/the-july-14th-session.html",
           "co_producers": [],
@@ -6198,9 +6198,9 @@
           "date": "2024-05-22",
           "plays": 237,
           "release_page": "releases/in-trance-prod-deadtalks.html",
-          "session_id": "session-45",
+          "session_id": "session-46",
           "session_name": "The May 22nd–31st Session",
-          "session_page": "sessions.html#session-45",
+          "session_page": "sessions.html#session-46",
           "co_producers": [],
           "voices": []
         }
@@ -6251,7 +6251,7 @@
           "date": "2020-12-21",
           "plays": 232,
           "release_page": "releases/elf-anthem-interlude-prod-capsctrl.html",
-          "session_id": "session-34",
+          "session_id": "session-35",
           "session_name": "The December 21st Session",
           "session_page": "sessions/the-december-21st-session.html",
           "co_producers": [],
@@ -6314,9 +6314,9 @@
           "date": "2025-01-09",
           "plays": 222,
           "release_page": "releases/oh-we11-prod-vuksai.html",
-          "session_id": "session-53",
-          "session_name": "The January 9th Session",
-          "session_page": "sessions.html#session-53",
+          "session_id": "session-54",
+          "session_name": "The January 9th–13th Session",
+          "session_page": "sessions.html#session-54",
           "co_producers": [],
           "voices": []
         }
@@ -6352,14 +6352,14 @@
       "aliases": [],
       "production_count": 2,
       "total_plays": 212,
-      "years_active": "2024–2025",
+      "years_active": "2024",
       "first": {
         "title": "Im tha Bouncerrr prod. sustain",
         "date": "2024-04-16"
       },
       "last": {
         "title": "ARCSNOWWW w/ Max Ferrari prod. sustain",
-        "date": "2025-11-11"
+        "date": "2024-11-07"
       },
       "productions": [
         {
@@ -6367,20 +6367,20 @@
           "date": "2024-04-16",
           "plays": 28,
           "release_page": "releases/im-tha-bouncerrr-prod-sustain.html",
-          "session_id": "session-43",
+          "session_id": "session-44",
           "session_name": "The April 16th–18th Session",
-          "session_page": "sessions.html#session-43",
+          "session_page": "sessions.html#session-44",
           "co_producers": [],
           "voices": []
         },
         {
           "title": "ARCSNOWWW w/ Max Ferrari prod. sustain",
-          "date": "2025-11-11",
+          "date": "2024-11-07",
           "plays": 184,
           "release_page": "releases/arcsnowww-w-max-ferrari-prod-sustain.html",
-          "session_id": "session-55",
-          "session_name": "The November 4th–11th Session",
-          "session_page": "sessions/the-november-4th-11th-session.html",
+          "session_id": "session-53",
+          "session_name": "The Oct 30th – Nov 8th Session",
+          "session_page": "sessions/the-oct-30th-nov-8th-session.html",
           "co_producers": [],
           "voices": [
             {
@@ -6406,7 +6406,7 @@
         },
         "last": {
           "title": "ARCSNOWWW w/ Max Ferrari prod. sustain",
-          "date": "2025-11-11"
+          "date": "2024-11-07"
         }
       },
       "circle_page": null,
@@ -6436,9 +6436,9 @@
           "date": "2024-08-30",
           "plays": 206,
           "release_page": "releases/every-nite-blessings-prod-meutry.html",
-          "session_id": "session-49",
+          "session_id": "session-50",
           "session_name": "The August 30th Session",
-          "session_page": "sessions.html#session-49",
+          "session_page": "sessions.html#session-50",
           "co_producers": [],
           "voices": []
         }
@@ -6489,9 +6489,9 @@
           "date": "2025-11-23",
           "plays": 205,
           "release_page": "releases/go-and-did-prod-runawway-hidy.html",
-          "session_id": "session-56",
+          "session_id": "session-59",
           "session_name": "The November 23rd Session",
-          "session_page": "sessions.html#session-56",
+          "session_page": "sessions.html#session-59",
           "co_producers": [
             {
               "name": "runawway",
@@ -6559,7 +6559,7 @@
           "date": "2021-07-14",
           "plays": 189,
           "release_page": "releases/like-the-cup-prod-ice-trouble.html",
-          "session_id": "session-35",
+          "session_id": "session-36",
           "session_name": "The July 14th Session",
           "session_page": "sessions/the-july-14th-session.html",
           "co_producers": [],
@@ -6607,24 +6607,24 @@
       "aliases": [],
       "production_count": 1,
       "total_plays": 186,
-      "years_active": "2025",
+      "years_active": "2024",
       "first": {
         "title": "Green Wa11s prod. Ocurie",
-        "date": "2025-11-10"
+        "date": "2024-10-30"
       },
       "last": {
         "title": "Green Wa11s prod. Ocurie",
-        "date": "2025-11-10"
+        "date": "2024-10-30"
       },
       "productions": [
         {
           "title": "Green Wa11s prod. Ocurie",
-          "date": "2025-11-10",
+          "date": "2024-10-30",
           "plays": 186,
           "release_page": "releases/green-wa11s-prod-ocurie.html",
-          "session_id": "session-55",
-          "session_name": "The November 4th–11th Session",
-          "session_page": "sessions/the-november-4th-11th-session.html",
+          "session_id": "session-53",
+          "session_name": "The Oct 30th – Nov 8th Session",
+          "session_page": "sessions/the-oct-30th-nov-8th-session.html",
           "co_producers": [],
           "voices": []
         }
@@ -6641,11 +6641,11 @@
         "top_voice": null,
         "first": {
           "title": "Green Wa11s prod. Ocurie",
-          "date": "2025-11-10"
+          "date": "2024-10-30"
         },
         "last": {
           "title": "Green Wa11s prod. Ocurie",
-          "date": "2025-11-10"
+          "date": "2024-10-30"
         }
       },
       "circle_page": null,
@@ -6675,9 +6675,9 @@
           "date": "2024-06-16",
           "plays": 185,
           "release_page": "releases/tri-ed-prod-ysosexy.html",
-          "session_id": "session-46",
+          "session_id": "session-47",
           "session_name": "The June 16th Session",
-          "session_page": "sessions.html#session-46",
+          "session_page": "sessions.html#session-47",
           "co_producers": [],
           "voices": []
         }
@@ -6728,7 +6728,7 @@
           "date": "2021-07-14",
           "plays": 184,
           "release_page": "releases/only-human-pilot-prod-shinju-x-forty.html",
-          "session_id": "session-35",
+          "session_id": "session-36",
           "session_name": "The July 14th Session",
           "session_page": "sessions/the-july-14th-session.html",
           "co_producers": [
@@ -6783,24 +6783,24 @@
       "aliases": [],
       "production_count": 1,
       "total_plays": 180,
-      "years_active": "2025",
+      "years_active": "2024",
       "first": {
         "title": "Cut tha 1ights prod. ohmygon!",
-        "date": "2025-11-11"
+        "date": "2024-11-08"
       },
       "last": {
         "title": "Cut tha 1ights prod. ohmygon!",
-        "date": "2025-11-11"
+        "date": "2024-11-08"
       },
       "productions": [
         {
           "title": "Cut tha 1ights prod. ohmygon!",
-          "date": "2025-11-11",
+          "date": "2024-11-08",
           "plays": 180,
           "release_page": "releases/cut-tha-1ights-prod-ohmygon.html",
-          "session_id": "session-55",
-          "session_name": "The November 4th–11th Session",
-          "session_page": "sessions/the-november-4th-11th-session.html",
+          "session_id": "session-53",
+          "session_name": "The Oct 30th – Nov 8th Session",
+          "session_page": "sessions/the-oct-30th-nov-8th-session.html",
           "co_producers": [],
           "voices": []
         }
@@ -6817,11 +6817,11 @@
         "top_voice": null,
         "first": {
           "title": "Cut tha 1ights prod. ohmygon!",
-          "date": "2025-11-11"
+          "date": "2024-11-08"
         },
         "last": {
           "title": "Cut tha 1ights prod. ohmygon!",
-          "date": "2025-11-11"
+          "date": "2024-11-08"
         }
       },
       "circle_page": null,
@@ -6851,9 +6851,9 @@
           "date": "2025-09-13",
           "plays": 178,
           "release_page": "releases/water-sun-prod-paris-pas-rigolo.html",
-          "session_id": "session-54",
-          "session_name": "The September 13th–14th Session",
-          "session_page": "sessions.html#session-54",
+          "session_id": "session-57",
+          "session_name": "The September 13th Session",
+          "session_page": "sessions.html#session-57",
           "co_producers": [],
           "voices": []
         }
@@ -6908,24 +6908,24 @@
       "aliases": [],
       "production_count": 1,
       "total_plays": 178,
-      "years_active": "2025",
+      "years_active": "2024",
       "first": {
         "title": "Phantom Moshpit w/ Griimxo (remastered) prod. scared716",
-        "date": "2025-11-11"
+        "date": "2024-11-08"
       },
       "last": {
         "title": "Phantom Moshpit w/ Griimxo (remastered) prod. scared716",
-        "date": "2025-11-11"
+        "date": "2024-11-08"
       },
       "productions": [
         {
           "title": "Phantom Moshpit w/ Griimxo (remastered) prod. scared716",
-          "date": "2025-11-11",
+          "date": "2024-11-08",
           "plays": 178,
           "release_page": "releases/phantom-moshpit-w-griimxo-remastered-prod-scared716.html",
-          "session_id": "session-55",
-          "session_name": "The November 4th–11th Session",
-          "session_page": "sessions/the-november-4th-11th-session.html",
+          "session_id": "session-53",
+          "session_name": "The Oct 30th – Nov 8th Session",
+          "session_page": "sessions/the-oct-30th-nov-8th-session.html",
           "co_producers": [],
           "voices": [
             {
@@ -6947,11 +6947,11 @@
         "top_voice": "Griimxo",
         "first": {
           "title": "Phantom Moshpit w/ Griimxo (remastered) prod. scared716",
-          "date": "2025-11-11"
+          "date": "2024-11-08"
         },
         "last": {
           "title": "Phantom Moshpit w/ Griimxo (remastered) prod. scared716",
-          "date": "2025-11-11"
+          "date": "2024-11-08"
         }
       },
       "circle_page": null,
@@ -6981,9 +6981,9 @@
           "date": "2024-05-03",
           "plays": 177,
           "release_page": "releases/i-was-in-attics-prod-ochoo.html",
-          "session_id": "session-44",
+          "session_id": "session-45",
           "session_name": "The May 2nd–3rd Session",
-          "session_page": "sessions.html#session-44",
+          "session_page": "sessions.html#session-45",
           "co_producers": [],
           "voices": []
         }
@@ -7034,9 +7034,9 @@
           "date": "2026-10-02",
           "plays": 177,
           "release_page": "releases/turn-up-w-me-prod-timmy.html",
-          "session_id": "session-61",
+          "session_id": "session-64",
           "session_name": "The October 2nd Session",
-          "session_page": "sessions.html#session-61",
+          "session_page": "sessions.html#session-64",
           "co_producers": [],
           "voices": []
         }
@@ -7087,7 +7087,7 @@
           "date": "2021-07-14",
           "plays": 177,
           "release_page": "releases/wandavision-prod-cadence.html",
-          "session_id": "session-35",
+          "session_id": "session-36",
           "session_name": "The July 14th Session",
           "session_page": "sessions/the-july-14th-session.html",
           "co_producers": [],
@@ -7140,9 +7140,9 @@
           "date": "2024-10-04",
           "plays": 177,
           "release_page": "releases/viixx-prod-skrrtur.html",
-          "session_id": "session-51",
+          "session_id": "session-52",
           "session_name": "The October 4th Session",
-          "session_page": "sessions.html#session-51",
+          "session_page": "sessions.html#session-52",
           "co_producers": [],
           "voices": []
         }
@@ -7178,24 +7178,24 @@
       "aliases": [],
       "production_count": 1,
       "total_plays": 175,
-      "years_active": "2025",
+      "years_active": "2024",
       "first": {
         "title": "Dreamed of U (Hubb1e) prod. Yukio",
-        "date": "2025-11-10"
+        "date": "2024-11-08"
       },
       "last": {
         "title": "Dreamed of U (Hubb1e) prod. Yukio",
-        "date": "2025-11-10"
+        "date": "2024-11-08"
       },
       "productions": [
         {
           "title": "Dreamed of U (Hubb1e) prod. Yukio",
-          "date": "2025-11-10",
+          "date": "2024-11-08",
           "plays": 175,
           "release_page": "releases/dreamed-of-u-hubb1e-prod-yukio.html",
-          "session_id": "session-55",
-          "session_name": "The November 4th–11th Session",
-          "session_page": "sessions/the-november-4th-11th-session.html",
+          "session_id": "session-53",
+          "session_name": "The Oct 30th – Nov 8th Session",
+          "session_page": "sessions/the-oct-30th-nov-8th-session.html",
           "co_producers": [],
           "voices": []
         }
@@ -7222,11 +7222,11 @@
         "top_voice": null,
         "first": {
           "title": "Dreamed of U (Hubb1e) prod. Yukio",
-          "date": "2025-11-10"
+          "date": "2024-11-08"
         },
         "last": {
           "title": "Dreamed of U (Hubb1e) prod. Yukio",
-          "date": "2025-11-10"
+          "date": "2024-11-08"
         }
       },
       "circle_page": null,
@@ -7244,21 +7244,21 @@
       "years_active": "2024",
       "first": {
         "title": "like my dogs!!! (prod waynn)",
-        "date": "2024-09-18"
+        "date": "2024-09-14"
       },
       "last": {
         "title": "like my dogs!!! (prod waynn)",
-        "date": "2024-09-18"
+        "date": "2024-09-14"
       },
       "productions": [
         {
           "title": "like my dogs!!! (prod waynn)",
-          "date": "2024-09-18",
+          "date": "2024-09-14",
           "plays": 175,
           "release_page": "releases/like-my-dogs-prod-waynn.html",
-          "session_id": "session-50",
-          "session_name": "The September 18th Session",
-          "session_page": "sessions.html#session-50",
+          "session_id": "session-51",
+          "session_name": "The September 14th Session",
+          "session_page": "sessions.html#session-51",
           "co_producers": [],
           "voices": []
         }
@@ -7285,11 +7285,11 @@
         "top_voice": null,
         "first": {
           "title": "like my dogs!!! (prod waynn)",
-          "date": "2024-09-18"
+          "date": "2024-09-14"
         },
         "last": {
           "title": "like my dogs!!! (prod waynn)",
-          "date": "2024-09-18"
+          "date": "2024-09-14"
         }
       },
       "circle_page": null,
@@ -7319,9 +7319,9 @@
           "date": "2025-11-04",
           "plays": 173,
           "release_page": "releases/my-kin-prod-xannnn.html",
-          "session_id": "session-55",
-          "session_name": "The November 4th–11th Session",
-          "session_page": "sessions/the-november-4th-11th-session.html",
+          "session_id": "session-58",
+          "session_name": "The November 4th Session",
+          "session_page": "sessions.html#session-58",
           "co_producers": [],
           "voices": []
         }
@@ -7372,9 +7372,9 @@
           "date": "2024-05-28",
           "plays": 170,
           "release_page": "releases/3-points-pre-game-prod-doublemulti-x-pinkcat-nitemode.html",
-          "session_id": "session-45",
+          "session_id": "session-46",
           "session_name": "The May 22nd–31st Session",
-          "session_page": "sessions.html#session-45",
+          "session_page": "sessions.html#session-46",
           "co_producers": [
             {
               "name": "pinkcat",
@@ -7452,9 +7452,9 @@
           "date": "2024-05-28",
           "plays": 170,
           "release_page": "releases/3-points-pre-game-prod-doublemulti-x-pinkcat-nitemode.html",
-          "session_id": "session-45",
+          "session_id": "session-46",
           "session_name": "The May 22nd–31st Session",
-          "session_page": "sessions.html#session-45",
+          "session_page": "sessions.html#session-46",
           "co_producers": [
             {
               "name": "doublemulti",
@@ -7532,9 +7532,9 @@
           "date": "2024-11-05",
           "plays": 17,
           "release_page": "releases/nitemode2019-w-max-vetty-prod-naxi-wav.html",
-          "session_id": "session-52",
-          "session_name": "The November 5th Session",
-          "session_page": "sessions.html#session-52",
+          "session_id": "session-53",
+          "session_name": "The Oct 30th – Nov 8th Session",
+          "session_page": "sessions/the-oct-30th-nov-8th-session.html",
           "co_producers": [],
           "voices": [
             {

@@ -2,7 +2,7 @@
 """build_network.py — collaboration network graph, wave 16.
 
 Computes the whole collab universe from REAL data into data/v1/network.json:
-  - nodes: the artist (center) -> 21 title-credited collaborators from
+  - nodes: the artist (center) -> 22 title-credited collaborators from
     data/v1/circle.json -> producer scene figures from data/v1/scene-figures.json
   - edges: artist <-> every node (weight = shared tracks);
     collaborator <-> collaborator edges from title co-occurrence (two circle

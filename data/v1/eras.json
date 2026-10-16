@@ -4,9 +4,9 @@
  "plays_snapshot": "2026-10-11",
  "method": "Era deep-dives expanded from data/v1/transmission.json against data/artist.json (discography), data/v1/years.json, data/sessions.json, data/v1/circle.json, and data/v1/codex.json. collaborators[] holds EVERY in-era collaborator (transmission.json keeps only the top 3). summary figures are recomputed and asserted in scripts/build_eras.py. Titles and metadata only - never lyrics, never invented bio facts.",
  "archive_totals": {
-  "transmissions": 218,
+  "transmissions": 220,
   "plays": 257394,
-  "sessions": 61,
+  "sessions": 64,
   "years": [
    "2018",
    "2019",
@@ -37,10 +37,10 @@
     "Master Key",
     "Soulless Soldiers"
    ],
-   "transmissions": 79,
+   "transmissions": 80,
    "plays": 220688,
-   "sessions": 28,
-   "distributor": 4,
+   "sessions": 29,
+   "distributor": 5,
    "top_tracks": [
     {
      "title": "Take Me (prod. Em Klebold)",
@@ -72,15 +72,6 @@
      "deep_dive": null
     },
     {
-     "name": "The July 9th Session",
-     "track_count": 7,
-     "total_plays": 28260,
-     "days": 1,
-     "start": "2019-07-09",
-     "end": "2019-07-09",
-     "deep_dive": "sessions/the-july-9th-session.html"
-    },
-    {
      "name": "The December 22nd Session",
      "track_count": 7,
      "total_plays": 21777,
@@ -88,6 +79,15 @@
      "start": "2019-12-22",
      "end": "2019-12-22",
      "deep_dive": "sessions/the-december-22nd-session.html"
+    },
+    {
+     "name": "The December 30th Session",
+     "track_count": 6,
+     "total_plays": 16172,
+     "days": 1,
+     "start": "2019-12-30",
+     "end": "2019-12-30",
+     "deep_dive": "sessions/the-december-30th-session.html"
     }
    ],
    "collaborators": [
@@ -211,7 +211,7 @@
      "fact": "The first transmission to summon another voice. The circle starts here and grows to twenty-one collaborators."
     }
    ],
-   "signal": "79 transmissions, 220,688 plays: 85.7% of every play in the archive. Two years carried the whole catalog.",
+   "signal": "80 transmissions, 220,688 plays: 85.7% of every play in the archive. Two years carried the whole catalog.",
    "tracks": [
     {
      "ordinal": 0,
@@ -231,6 +231,14 @@
     },
     {
      "ordinal": 10,
+     "title": "Gravestone",
+     "date": "2018-04-27",
+     "type": "Single",
+     "plays": null,
+     "page": "releases/gravestone.html"
+    },
+    {
+     "ordinal": 11,
      "title": "Contact!",
      "date": "2019-09-21",
      "type": "Single",
@@ -238,7 +246,7 @@
      "page": "releases/contact.html"
     },
     {
-     "ordinal": 11,
+     "ordinal": 12,
      "title": "Master Key (feat. Lil Wintr & Marcelo)",
      "date": "2019-12-06",
      "type": "Single",
@@ -246,7 +254,7 @@
      "page": "releases/master-key-feat-lil-wintr-and-marcelo.html"
     },
     {
-     "ordinal": 144,
+     "ordinal": 146,
      "title": "Best Friend ft. lil soda boi (prod. lil soda boi)",
      "date": "2019-12-30",
      "type": "SoundCloud-only",
@@ -254,7 +262,7 @@
      "page": "releases/best-friend-ft-lil-soda-boi-prod-lil-soda-boi.html"
     },
     {
-     "ordinal": 145,
+     "ordinal": 147,
      "title": "Costs Of Life (prod. aster)",
      "date": "2019-12-30",
      "type": "SoundCloud-only",
@@ -262,7 +270,7 @@
      "page": "releases/costs-of-life-prod-aster.html"
     },
     {
-     "ordinal": 146,
+     "ordinal": 148,
      "title": "Soulless Soldiers (prod. Born Hero)",
      "date": "2019-12-30",
      "type": "SoundCloud-only",
@@ -270,7 +278,7 @@
      "page": "releases/soulless-soldiers-prod-born-hero.html"
     },
     {
-     "ordinal": 147,
+     "ordinal": 149,
      "title": "All Alone ft. Yung Cortex (prod. Yung Cortex)",
      "date": "2019-12-30",
      "type": "SoundCloud-only",
@@ -278,7 +286,7 @@
      "page": "releases/all-alone-ft-yung-cortex-prod-yung-cortex.html"
     },
     {
-     "ordinal": 148,
+     "ordinal": 150,
      "title": "Pavement (prod. Fish Narc)",
      "date": "2019-12-30",
      "type": "SoundCloud-only",
@@ -286,7 +294,7 @@
      "page": "releases/pavement-prod-fish-narc.html"
     },
     {
-     "ordinal": 149,
+     "ordinal": 151,
      "title": "White Noise ft. Keyblayde808 (prod. Keyblayde808)",
      "date": "2019-12-30",
      "type": "SoundCloud-only",
@@ -294,7 +302,7 @@
      "page": "releases/white-noise-ft-keyblayde808-prod-keyblayde808.html"
     },
     {
-     "ordinal": 150,
+     "ordinal": 152,
      "title": "getting colder w/ capoxxo (prod. pvscale x asa41)",
      "date": "2019-12-22",
      "type": "SoundCloud-only",
@@ -302,7 +310,7 @@
      "page": "releases/getting-colder-w-capoxxo-prod-pvscale-x-asa41.html"
     },
     {
-     "ordinal": 151,
+     "ordinal": 153,
      "title": "I'd rather be w/ lil yu (prod. razorwrist)",
      "date": "2019-12-22",
      "type": "SoundCloud-only",
@@ -310,7 +318,7 @@
      "page": "releases/i-d-rather-be-w-lil-yu-prod-razorwrist.html"
     },
     {
-     "ordinal": 152,
+     "ordinal": 154,
      "title": "snow caps w/ LILVICBXI (prod. LILVICBXI x spliff08_)",
      "date": "2019-12-22",
      "type": "SoundCloud-only",
@@ -318,7 +326,7 @@
      "page": "releases/snow-caps-w-lilvicbxi-prod-lilvicbxi-x-spliff08.html"
     },
     {
-     "ordinal": 153,
+     "ordinal": 155,
      "title": "my friends (prod. deephartt)",
      "date": "2019-12-22",
      "type": "SoundCloud-only",
@@ -326,7 +334,7 @@
      "page": "releases/my-friends-prod-deephartt.html"
     },
     {
-     "ordinal": 154,
+     "ordinal": 156,
      "title": "fly like me w/ pvscale(prod. pvscale)",
      "date": "2019-12-22",
      "type": "SoundCloud-only",
@@ -334,7 +342,7 @@
      "page": "releases/fly-like-me-w-pvscale-prod-pvscale.html"
     },
     {
-     "ordinal": 155,
+     "ordinal": 157,
      "title": "same amount w/ LILVICBXI (prod. LILVICBXI)",
      "date": "2019-12-22",
      "type": "SoundCloud-only",
@@ -342,7 +350,7 @@
      "page": "releases/same-amount-w-lilvicbxi-prod-lilvicbxi.html"
     },
     {
-     "ordinal": 156,
+     "ordinal": 158,
      "title": "attempt to be (prod. uniquate)",
      "date": "2019-12-22",
      "type": "SoundCloud-only",
@@ -350,7 +358,7 @@
      "page": "releases/attempt-to-be-prod-uniquate.html"
     },
     {
-     "ordinal": 157,
+     "ordinal": 159,
      "title": "master key ft. Lil Wintr x Marcelo (prod. ginseng)",
      "date": "2019-12-06",
      "type": "SoundCloud-only",
@@ -358,7 +366,7 @@
      "page": "releases/master-key-ft-lil-wintr-x-marcelo-prod-ginseng.html"
     },
     {
-     "ordinal": 158,
+     "ordinal": 160,
      "title": "candy w/ capoxxo(prod. razorwrist)",
      "date": "2019-10-04",
      "type": "SoundCloud-only",
@@ -366,63 +374,63 @@
      "page": "releases/candy-w-capoxxo-prod-razorwrist.html"
     },
     {
-     "ordinal": 159,
+     "ordinal": 161,
      "title": "outro ~ I RLLY DID THT(prod. itami リネン)",
-     "date": "2019-07-09",
+     "date": "2019-07-06",
      "type": "SoundCloud-only",
      "plays": 3940,
      "page": "releases/outro-i-rlly-did-tht-prod-itami.html"
     },
     {
-     "ordinal": 160,
+     "ordinal": 162,
      "title": "I'M WEAKENING ft. AMMI $AGE",
-     "date": "2019-07-09",
+     "date": "2019-07-06",
      "type": "SoundCloud-only",
      "plays": 2490,
      "page": "releases/i-m-weakening-ft-ammi-age.html"
     },
     {
-     "ordinal": 161,
+     "ordinal": 163,
      "title": "SUN SET FOR U ft. JO$E DRIPP (prod. y axis)",
-     "date": "2019-07-09",
+     "date": "2019-07-06",
      "type": "SoundCloud-only",
      "plays": 1771,
      "page": "releases/sun-set-for-u-ft-jo-e-dripp-prod-y-axis.html"
     },
     {
-     "ordinal": 162,
+     "ordinal": 164,
      "title": "NECK DEEP (prod. AWFL)",
-     "date": "2019-07-09",
+     "date": "2019-06-26",
      "type": "SoundCloud-only",
      "plays": 5276,
      "page": "releases/neck-deep-prod-awfl.html"
     },
     {
-     "ordinal": 163,
+     "ordinal": 165,
      "title": "GARDEN ft. Offline_hp (prod. QB)",
-     "date": "2019-07-09",
+     "date": "2019-06-26",
      "type": "SoundCloud-only",
      "plays": 1311,
      "page": "releases/garden-ft-offline-hp-prod-qb.html"
     },
     {
-     "ordinal": 164,
+     "ordinal": 166,
      "title": "NIGHT MODE ft. MAX FERRARI x YUNG VETTA x JAX",
-     "date": "2019-07-09",
+     "date": "2019-06-13",
      "type": "SoundCloud-only",
      "plays": 10083,
      "page": "releases/night-mode-ft-max-ferrari-x-yung-vetta-x-jax.html"
     },
     {
-     "ordinal": 165,
+     "ordinal": 167,
      "title": "SIGNS POINT UP! (prod Jayy Praax)",
-     "date": "2019-07-09",
+     "date": "2019-06-26",
      "type": "SoundCloud-only",
      "plays": 3389,
      "page": "releases/signs-point-up-prod-jayy-praax.html"
     },
     {
-     "ordinal": 166,
+     "ordinal": 168,
      "title": "You Don't Wanna Miss Tonight(prod. Luca Malaspina)",
      "date": "2019-06-25",
      "type": "SoundCloud-only",
@@ -430,7 +438,7 @@
      "page": "releases/you-don-t-wanna-miss-tonight-prod-luca-malaspina.html"
     },
     {
-     "ordinal": 167,
+     "ordinal": 169,
      "title": "GOLD 💛💔💛 ~ (prod. Antropolita)",
      "date": "2019-04-28",
      "type": "SoundCloud-only",
@@ -438,7 +446,7 @@
      "page": "releases/gold-prod-antropolita.html"
     },
     {
-     "ordinal": 168,
+     "ordinal": 170,
      "title": "CONTACT! ~(prod Born Hero) [NOW ON ALL PLATFORMS!]",
      "date": "2019-04-07",
      "type": "SoundCloud-only",
@@ -446,7 +454,7 @@
      "page": "releases/contact-prod-born-hero-now-on-all-platforms.html"
     },
     {
-     "ordinal": 169,
+     "ordinal": 171,
      "title": "Face Down Freestyle ~(prod. WeDreaming)",
      "date": "2019-03-27",
      "type": "SoundCloud-only",
@@ -454,7 +462,7 @@
      "page": "releases/face-down-freestyle-prod-wedreaming.html"
     },
     {
-     "ordinal": 170,
+     "ordinal": 172,
      "title": "Gadgets(prod.Trap)",
      "date": "2019-03-20",
      "type": "SoundCloud-only",
@@ -462,7 +470,7 @@
      "page": "releases/gadgets-prod-trap.html"
     },
     {
-     "ordinal": 171,
+     "ordinal": 173,
      "title": "POWER~! (brb)(prod. Apostle)",
      "date": "2019-03-20",
      "type": "SoundCloud-only",
@@ -470,7 +478,7 @@
      "page": "releases/power-brb-prod-apostle.html"
     },
     {
-     "ordinal": 172,
+     "ordinal": 174,
      "title": "Day Comes Freestyle ~(prod. Discent)",
      "date": "2019-03-15",
      "type": "SoundCloud-only",
@@ -478,7 +486,7 @@
      "page": "releases/day-comes-freestyle-prod-discent.html"
     },
     {
-     "ordinal": 173,
+     "ordinal": 175,
      "title": "Stay Away Freestyle ~",
      "date": "2019-03-03",
      "type": "SoundCloud-only",
@@ -486,7 +494,7 @@
      "page": "releases/stay-away-freestyle.html"
     },
     {
-     "ordinal": 174,
+     "ordinal": 176,
      "title": "[outro] Off Beat ft. Yung Vetta (prod. Addy)",
      "date": "2019-01-28",
      "type": "SoundCloud-only",
@@ -494,7 +502,7 @@
      "page": "releases/outro-off-beat-ft-yung-vetta-prod-addy.html"
     },
     {
-     "ordinal": 175,
+     "ordinal": 177,
      "title": "STOP IT! ft. Yung Vetta (prod. okthxbb)",
      "date": "2019-01-28",
      "type": "SoundCloud-only",
@@ -502,7 +510,7 @@
      "page": "releases/stop-it-ft-yung-vetta-prod-okthxbb.html"
     },
     {
-     "ordinal": 176,
+     "ordinal": 178,
      "title": "Hard To Keep ft. Yung Vetta (prod. Dead Spyro X Scarlet)",
      "date": "2019-01-28",
      "type": "SoundCloud-only",
@@ -510,7 +518,7 @@
      "page": "releases/hard-to-keep-ft-yung-vetta-prod-dead-spyro-x-scarlet.html"
     },
     {
-     "ordinal": 177,
+     "ordinal": 179,
      "title": "Nothing ft. Yung Vetta(prod Xtravulous)",
      "date": "2019-01-28",
      "type": "SoundCloud-only",
@@ -518,7 +526,7 @@
      "page": "releases/nothing-ft-yung-vetta-prod-xtravulous.html"
     },
     {
-     "ordinal": 178,
+     "ordinal": 180,
      "title": "Ima Be There ft. Yung Vetta(prod. Why Loner)",
      "date": "2019-01-21",
      "type": "SoundCloud-only",
@@ -526,7 +534,7 @@
      "page": "releases/ima-be-there-ft-yung-vetta-prod-why-loner.html"
     },
     {
-     "ordinal": 179,
+     "ordinal": 181,
      "title": "Soul Shines ~ [prod Josh the Samurai]",
      "date": "2019-01-08",
      "type": "SoundCloud-only",
@@ -534,7 +542,7 @@
      "page": "releases/soul-shines-prod-josh-the-samurai.html"
     },
     {
-     "ordinal": 180,
+     "ordinal": 182,
      "title": "Understand (prod 5AMTruly)",
      "date": "2018-12-15",
      "type": "SoundCloud-only",
@@ -542,7 +550,7 @@
      "page": "releases/understand-prod-5amtruly.html"
     },
     {
-     "ordinal": 181,
+     "ordinal": 183,
      "title": "Hurts Sometimes 2 (prod. FELD)",
      "date": "2018-12-15",
      "type": "SoundCloud-only",
@@ -550,7 +558,7 @@
      "page": "releases/hurts-sometimes-2-prod-feld.html"
     },
     {
-     "ordinal": 182,
+     "ordinal": 184,
      "title": "Mid (prod. FELD)",
      "date": "2018-12-15",
      "type": "SoundCloud-only",
@@ -558,7 +566,7 @@
      "page": "releases/mid-prod-feld.html"
     },
     {
-     "ordinal": 183,
+     "ordinal": 185,
      "title": "All Kinds Of Trips (prod. YungSkah) <ON ALL PLATFORMS NOW!>",
      "date": "2018-12-15",
      "type": "SoundCloud-only",
@@ -566,7 +574,7 @@
      "page": "releases/all-kinds-of-trips-prod-yungskah-on-all-platforms-now.html"
     },
     {
-     "ordinal": 184,
+     "ordinal": 186,
      "title": "Time to Grow (prod. Ridicholas)",
      "date": "2018-12-13",
      "type": "SoundCloud-only",
@@ -574,7 +582,7 @@
      "page": "releases/time-to-grow-prod-ridicholas.html"
     },
     {
-     "ordinal": 185,
+     "ordinal": 187,
      "title": "When the World Gets Colder 2 (prod. Yung Skah)",
      "date": "2018-12-04",
      "type": "SoundCloud-only",
@@ -582,7 +590,7 @@
      "page": "releases/when-the-world-gets-colder-2-prod-yung-skah.html"
     },
     {
-     "ordinal": 186,
+     "ordinal": 188,
      "title": "Hip On My Blade (ft. Yung Vetta) ~ [prod. Skel]",
      "date": "2018-12-02",
      "type": "SoundCloud-only",
@@ -590,7 +598,7 @@
      "page": "releases/hip-on-my-blade-ft-yung-vetta-prod-skel.html"
     },
     {
-     "ordinal": 187,
+     "ordinal": 189,
      "title": "XLR8 (prod. lil sora)",
      "date": "2018-11-27",
      "type": "SoundCloud-only",
@@ -598,7 +606,7 @@
      "page": "releases/xlr8-prod-lil-sora.html"
     },
     {
-     "ordinal": 188,
+     "ordinal": 190,
      "title": "Input (prod. Luca Malaspina)",
      "date": "2018-11-27",
      "type": "SoundCloud-only",
@@ -606,7 +614,7 @@
      "page": "releases/input-prod-luca-malaspina.html"
     },
     {
-     "ordinal": 189,
+     "ordinal": 191,
      "title": "Y u Gotta (prod. Yoos)",
      "date": "2018-11-27",
      "type": "SoundCloud-only",
@@ -614,7 +622,7 @@
      "page": "releases/y-u-gotta-prod-yoos.html"
     },
     {
-     "ordinal": 190,
+     "ordinal": 192,
      "title": "Throwing Signs (prod. HideousPittius)",
      "date": "2018-11-27",
      "type": "SoundCloud-only",
@@ -622,7 +630,7 @@
      "page": "releases/throwing-signs-prod-hideouspittius.html"
     },
     {
-     "ordinal": 191,
+     "ordinal": 193,
      "title": "Fuck Time 3 (outro) [Prod. DIX2]",
      "date": "2018-11-08",
      "type": "SoundCloud-only",
@@ -630,7 +638,7 @@
      "page": "releases/fuck-time-3-outro-prod-dix2.html"
     },
     {
-     "ordinal": 192,
+     "ordinal": 194,
      "title": "I See U 2 (prod. Zed Miller)",
      "date": "2018-11-08",
      "type": "SoundCloud-only",
@@ -638,7 +646,7 @@
      "page": "releases/i-see-u-2-prod-zed-miller.html"
     },
     {
-     "ordinal": 193,
+     "ordinal": 195,
      "title": "Far From Me (ft. Shola) ~ [prod. HideousPittius]",
      "date": "2018-11-08",
      "type": "SoundCloud-only",
@@ -646,7 +654,7 @@
      "page": "releases/far-from-me-ft-shola-prod-hideouspittius.html"
     },
     {
-     "ordinal": 194,
+     "ordinal": 196,
      "title": "Past Life (prod. Charlie Shuffler)",
      "date": "2018-11-07",
      "type": "SoundCloud-only",
@@ -654,7 +662,7 @@
      "page": "releases/past-life-prod-charlie-shuffler.html"
     },
     {
-     "ordinal": 195,
+     "ordinal": 197,
      "title": "Taught Me(prod. ℝ꒐꒯꒐꒝Ʉ꒒o̲ʊꍛ)",
      "date": "2018-10-25",
      "type": "SoundCloud-only",
@@ -662,7 +670,7 @@
      "page": "releases/taught-me-prod-o.html"
     },
     {
-     "ordinal": 196,
+     "ordinal": 198,
      "title": "Pills By My Lonely(prod. Discent)",
      "date": "2018-10-17",
      "type": "SoundCloud-only",
@@ -670,7 +678,7 @@
      "page": "releases/pills-by-my-lonely-prod-discent.html"
     },
     {
-     "ordinal": 197,
+     "ordinal": 199,
      "title": "Inside My Dome (prod. Karattt)",
      "date": "2018-10-06",
      "type": "SoundCloud-only",
@@ -678,7 +686,7 @@
      "page": "releases/inside-my-dome-prod-karattt.html"
     },
     {
-     "ordinal": 198,
+     "ordinal": 200,
      "title": "Autumn (prod. Tundra Beats)",
      "date": "2018-09-06",
      "type": "SoundCloud-only",
@@ -686,7 +694,7 @@
      "page": "releases/autumn-prod-tundra-beats.html"
     },
     {
-     "ordinal": 199,
+     "ordinal": 201,
      "title": "I Don't Rlly (prod. FELD)",
      "date": "2018-08-27",
      "type": "SoundCloud-only",
@@ -694,7 +702,7 @@
      "page": "releases/i-don-t-rlly-prod-feld.html"
     },
     {
-     "ordinal": 200,
+     "ordinal": 202,
      "title": "Hit This (prod. Tyzen)",
      "date": "2018-08-27",
      "type": "SoundCloud-only",
@@ -702,7 +710,7 @@
      "page": "releases/hit-this-prod-tyzen.html"
     },
     {
-     "ordinal": 201,
+     "ordinal": 203,
      "title": "Walk With Me w/ JAX (Prod. Rawman)",
      "date": "2018-08-27",
      "type": "SoundCloud-only",
@@ -710,7 +718,7 @@
      "page": "releases/walk-with-me-w-jax-prod-rawman.html"
     },
     {
-     "ordinal": 202,
+     "ordinal": 204,
      "title": "Just Wanted U to Shine (prod. Xtravulous x Tundra Beats)",
      "date": "2018-08-26",
      "type": "SoundCloud-only",
@@ -718,7 +726,7 @@
      "page": "releases/just-wanted-u-to-shine-prod-xtravulous-x-tundra-beats.html"
     },
     {
-     "ordinal": 203,
+     "ordinal": 205,
      "title": "Share Ur Thoughts (prod. Mont Beats)",
      "date": "2018-08-22",
      "type": "SoundCloud-only",
@@ -726,7 +734,7 @@
      "page": "releases/share-ur-thoughts-prod-mont-beats.html"
     },
     {
-     "ordinal": 204,
+     "ordinal": 206,
      "title": "DESTINY (ft. JAX & Max Ferrari) ~ [prod. louky]",
      "date": "2018-08-20",
      "type": "SoundCloud-only",
@@ -734,7 +742,7 @@
      "page": "releases/destiny-ft-jax-and-max-ferrari-prod-louky.html"
     },
     {
-     "ordinal": 205,
+     "ordinal": 207,
      "title": "stay out of the dark (prod. Rizi)",
      "date": "2018-08-13",
      "type": "SoundCloud-only",
@@ -742,7 +750,7 @@
      "page": "releases/stay-out-of-the-dark-prod-rizi.html"
     },
     {
-     "ordinal": 206,
+     "ordinal": 208,
      "title": "all i really need is a text from u (prod. benizjaminn)",
      "date": "2018-08-04",
      "type": "SoundCloud-only",
@@ -750,7 +758,7 @@
      "page": "releases/all-i-really-need-is-a-text-from-u-prod-benizjaminn.html"
     },
     {
-     "ordinal": 207,
+     "ordinal": 209,
      "title": "As Above [So Below] (prod. Xtravulous x Young Taylor)",
      "date": "2018-07-20",
      "type": "SoundCloud-only",
@@ -758,7 +766,7 @@
      "page": "releases/as-above-so-below-prod-xtravulous-x-young-taylor.html"
     },
     {
-     "ordinal": 208,
+     "ordinal": 210,
      "title": "Talk 2 U (prod. Whiz)",
      "date": "2018-07-20",
      "type": "SoundCloud-only",
@@ -766,7 +774,7 @@
      "page": "releases/talk-2-u-prod-whiz.html"
     },
     {
-     "ordinal": 209,
+     "ordinal": 211,
      "title": "Hurts Sometimes (prod. 8ROKEBOY)",
      "date": "2018-07-20",
      "type": "SoundCloud-only",
@@ -774,7 +782,7 @@
      "page": "releases/hurts-sometimes-prod-8rokeboy.html"
     },
     {
-     "ordinal": 210,
+     "ordinal": 212,
      "title": "When the World Gets Colder (prod. Brokn)",
      "date": "2018-07-18",
      "type": "SoundCloud-only",
@@ -782,7 +790,7 @@
      "page": "releases/when-the-world-gets-colder-prod-brokn.html"
     },
     {
-     "ordinal": 211,
+     "ordinal": 213,
      "title": "Take Me Back to the City (prod. RainyBaby)",
      "date": "2018-07-01",
      "type": "SoundCloud-only",
@@ -790,7 +798,7 @@
      "page": "releases/take-me-back-to-the-city-prod-rainybaby.html"
     },
     {
-     "ordinal": 212,
+     "ordinal": 214,
      "title": "Place For Me(prod. Born Hero)",
      "date": "2018-06-14",
      "type": "SoundCloud-only",
@@ -798,7 +806,7 @@
      "page": "releases/place-for-me-prod-born-hero.html"
     },
     {
-     "ordinal": 213,
+     "ordinal": 215,
      "title": "That's a Lie (prod. Xtravulous x WhyLoner)",
      "date": "2018-06-08",
      "type": "SoundCloud-only",
@@ -806,7 +814,7 @@
      "page": "releases/that-s-a-lie-prod-xtravulous-x-whyloner.html"
     },
     {
-     "ordinal": 214,
+     "ordinal": 216,
      "title": "Mistakes Ft. JO$E DRIPP (prod. Tec)",
      "date": "2018-04-28",
      "type": "SoundCloud-only",
@@ -814,7 +822,7 @@
      "page": "releases/mistakes-ft-jo-e-dripp-prod-tec.html"
     },
     {
-     "ordinal": 215,
+     "ordinal": 217,
      "title": "I See U (prod. Haruhi)",
      "date": "2018-03-16",
      "type": "SoundCloud-only",
@@ -822,7 +830,7 @@
      "page": "releases/i-see-u-prod-haruhi.html"
     },
     {
-     "ordinal": 216,
+     "ordinal": 218,
      "title": "Take Me (prod. Em Klebold)",
      "date": "2018-02-04",
      "type": "SoundCloud-only",
@@ -830,7 +838,7 @@
      "page": "releases/take-me-prod-em-klebold.html"
     },
     {
-     "ordinal": 217,
+     "ordinal": 219,
      "title": "Lucid Boi (prod. $ T.N.C $)",
      "date": "2018-01-08",
      "type": "SoundCloud-only",
@@ -838,7 +846,7 @@
      "page": "releases/lucid-boi-prod-t-n-c.html"
     },
     {
-     "ordinal": 218,
+     "ordinal": 220,
      "title": "Soul Shaking (prod. Fish Narc)",
      "date": "2018-01-03",
      "type": "SoundCloud-only",
@@ -937,7 +945,7 @@
      "top_tracks": [
       {
        "title": "NIGHT MODE ft. MAX FERRARI x YUNG VETTA x JAX",
-       "date": "2019-07-09",
+       "date": "2019-06-13",
        "plays": 10083
       },
       {
@@ -960,7 +968,7 @@
      "top_tracks": [
       {
        "title": "NIGHT MODE ft. MAX FERRARI x YUNG VETTA x JAX",
-       "date": "2019-07-09",
+       "date": "2019-06-13",
        "plays": 10083
       }
      ]
@@ -1008,7 +1016,7 @@
      "top_tracks": [
       {
        "title": "outro ~ I RLLY DID THT(prod. itami リネン)",
-       "date": "2019-07-09",
+       "date": "2019-07-06",
        "plays": 3940
       },
       {
@@ -1106,9 +1114,9 @@
     "eras_total": 6,
     "archive_plays_share": 0.8574,
     "busiest_year": {
-     "year": "2019",
+     "year": "2018",
      "transmissions": 40,
-     "plays": 116209
+     "plays": 104479
     },
     "loudest_transmission": {
      "title": "Take Me (prod. Em Klebold)",
@@ -1153,10 +1161,10 @@
     "My Fault",
     "Solstice"
    ],
-   "transmissions": 23,
+   "transmissions": 24,
    "plays": 12250,
    "sessions": 6,
-   "distributor": 8,
+   "distributor": 9,
    "top_tracks": [
     {
      "title": "used to be messy prod. DeepHartt",
@@ -1218,6 +1226,12 @@
      "transmissions": 1,
      "plays": 244,
      "page": "circle/index.html#c-phil-is-lonely"
+    },
+    {
+     "name": "SPURSY",
+     "transmissions": 1,
+     "plays": 0,
+     "page": "circle/index.html#c-spursy"
     }
    ],
    "milestones": [
@@ -1225,11 +1239,11 @@
      "id": "hundredth-entry",
      "name": "100th transmission on record",
      "date": "2020-12-21",
-     "title": "I'm Not Looking For Love Anyway",
+     "title": "Decent (prod. venus)",
      "fact": "The catalog's 100th entry in chronological order, reached before the end of 2020."
     }
    ],
-   "signal": "8 distributor releases, the most of any single year, against 23 vault transmissions. (2018 ran 39 vault transmissions with 0 distributor releases.) The catalog's center had moved.",
+   "signal": "9 distributor releases, the most of any single year, against 24 vault transmissions. (2018 ran 40 vault transmissions with 1 distributor releases.) The catalog's center had moved.",
    "tracks": [
     {
      "ordinal": 2,
@@ -1256,7 +1270,7 @@
      "page": "releases/solstice.html"
     },
     {
-     "ordinal": 12,
+     "ordinal": 13,
      "title": "I Hate It",
      "date": "2020-04-09",
      "type": "Single",
@@ -1264,7 +1278,7 @@
      "page": "releases/i-hate-it.html"
     },
     {
-     "ordinal": 13,
+     "ordinal": 14,
      "title": "Crystals by My Bed",
      "date": "2020-04-16",
      "type": "Single",
@@ -1272,7 +1286,15 @@
      "page": "releases/crystals-by-my-bed.html"
     },
     {
-     "ordinal": 14,
+     "ordinal": 15,
+     "title": "Yea Thats Kool (feat. ASTERDAMASTER & SPURSY)",
+     "date": "2020-05-08",
+     "type": "Single",
+     "plays": null,
+     "page": "releases/yea-thats-kool-feat-asterdamaster-and-spursy.html"
+    },
+    {
+     "ordinal": 16,
      "title": "Born from Stars",
      "date": "2020-07-21",
      "type": "Single",
@@ -1280,7 +1302,7 @@
      "page": "releases/born-from-stars.html"
     },
     {
-     "ordinal": 15,
+     "ordinal": 17,
      "title": "More Than Letters",
      "date": "2020-08-12",
      "type": "Single",
@@ -1288,7 +1310,7 @@
      "page": "releases/more-than-letters.html"
     },
     {
-     "ordinal": 16,
+     "ordinal": 18,
      "title": "My Fault",
      "date": "2020-11-11",
      "type": "Single",
@@ -1296,7 +1318,7 @@
      "page": "releases/my-fault.html"
     },
     {
-     "ordinal": 129,
+     "ordinal": 131,
      "title": "Lunch Break (prod wetgropes)",
      "date": "2020-12-21",
      "type": "SoundCloud-only",
@@ -1304,7 +1326,7 @@
      "page": "releases/lunch-break-prod-wetgropes.html"
     },
     {
-     "ordinal": 130,
+     "ordinal": 132,
      "title": "Decent (prod. venus)",
      "date": "2020-12-21",
      "type": "SoundCloud-only",
@@ -1312,7 +1334,7 @@
      "page": "releases/decent-prod-venus.html"
     },
     {
-     "ordinal": 131,
+     "ordinal": 133,
      "title": "'Til Ur Sad Again (prod. wetgropes)",
      "date": "2020-12-21",
      "type": "SoundCloud-only",
@@ -1320,7 +1342,7 @@
      "page": "releases/til-ur-sad-again-prod-wetgropes.html"
     },
     {
-     "ordinal": 132,
+     "ordinal": 134,
      "title": "They Talk (prod. wetgropes)",
      "date": "2020-12-21",
      "type": "SoundCloud-only",
@@ -1328,7 +1350,7 @@
      "page": "releases/they-talk-prod-wetgropes.html"
     },
     {
-     "ordinal": 133,
+     "ordinal": 135,
      "title": "Elf Anthem Interlude (prod. capsctrl)",
      "date": "2020-12-21",
      "type": "SoundCloud-only",
@@ -1336,7 +1358,7 @@
      "page": "releases/elf-anthem-interlude-prod-capsctrl.html"
     },
     {
-     "ordinal": 134,
+     "ordinal": 136,
      "title": "Added Up (prod. pink)",
      "date": "2020-12-21",
      "type": "SoundCloud-only",
@@ -1344,7 +1366,7 @@
      "page": "releases/added-up-prod-pink.html"
     },
     {
-     "ordinal": 135,
+     "ordinal": 137,
      "title": "I'm Not Looking For Love Anyway",
      "date": "2020-12-21",
      "type": "SoundCloud-only",
@@ -1352,7 +1374,7 @@
      "page": "releases/i-m-not-looking-for-love-anyway.html"
     },
     {
-     "ordinal": 136,
+     "ordinal": 138,
      "title": "my fault (prod shinju)",
      "date": "2020-11-11",
      "type": "SoundCloud-only",
@@ -1360,7 +1382,7 @@
      "page": "releases/my-fault-prod-shinju.html"
     },
     {
-     "ordinal": 137,
+     "ordinal": 139,
      "title": "white fire (prod. odece)",
      "date": "2020-10-07",
      "type": "SoundCloud-only",
@@ -1368,7 +1390,7 @@
      "page": "releases/white-fire-prod-odece.html"
     },
     {
-     "ordinal": 138,
+     "ordinal": 140,
      "title": "playin' by the book w/ lil yu (prod. dxsh)",
      "date": "2020-10-07",
      "type": "SoundCloud-only",
@@ -1376,7 +1398,7 @@
      "page": "releases/playin-by-the-book-w-lil-yu-prod-dxsh.html"
     },
     {
-     "ordinal": 139,
+     "ordinal": 141,
      "title": "keep w/ phil is lonely (prod. uniquate)",
      "date": "2020-10-07",
      "type": "SoundCloud-only",
@@ -1384,7 +1406,7 @@
      "page": "releases/keep-w-phil-is-lonely-prod-uniquate.html"
     },
     {
-     "ordinal": 140,
+     "ordinal": 142,
      "title": "never pick it up (prod. fearbanquo)",
      "date": "2020-10-07",
      "type": "SoundCloud-only",
@@ -1392,7 +1414,7 @@
      "page": "releases/never-pick-it-up-prod-fearbanquo.html"
     },
     {
-     "ordinal": 141,
+     "ordinal": 143,
      "title": "fleeting [prod. AURA]",
      "date": "2020-06-18",
      "type": "SoundCloud-only",
@@ -1400,7 +1422,7 @@
      "page": "releases/fleeting-prod-aura.html"
     },
     {
-     "ordinal": 142,
+     "ordinal": 144,
      "title": "used to be messy prod. DeepHartt",
      "date": "2020-05-03",
      "type": "SoundCloud-only",
@@ -1408,7 +1430,7 @@
      "page": "releases/used-to-be-messy-prod-deephartt.html"
     },
     {
-     "ordinal": 143,
+     "ordinal": 145,
      "title": "I HATE IT prod. Taurs",
      "date": "2020-04-09",
      "type": "SoundCloud-only",
@@ -1490,7 +1512,7 @@
     "archive_plays_share": 0.0476,
     "busiest_year": {
      "year": "2020",
-     "transmissions": 23,
+     "transmissions": 24,
      "plays": 12250
     },
     "loudest_transmission": {
@@ -1503,7 +1525,7 @@
      "plays": 176,
      "page": "releases/they-talk-prod-wetgropes.html"
     },
-    "collaborators_count": 2,
+    "collaborators_count": 3,
     "collab_plays": 1105,
     "collab_plays_share": 0.0902,
     "top_family": {
@@ -1618,7 +1640,7 @@
      "page": "releases/cast-it-pt-2.html"
     },
     {
-     "ordinal": 17,
+     "ordinal": 19,
      "title": "My Fault 2",
      "date": "2021-04-13",
      "type": "Single",
@@ -1626,7 +1648,7 @@
      "page": "releases/my-fault-2.html"
     },
     {
-     "ordinal": 104,
+     "ordinal": 106,
      "title": "1 my fault",
      "date": "2022-02-22",
      "type": "SoundCloud-only",
@@ -1634,7 +1656,7 @@
      "page": "releases/1-my-fault.html"
     },
     {
-     "ordinal": 105,
+     "ordinal": 107,
      "title": "2 menace",
      "date": "2022-02-22",
      "type": "SoundCloud-only",
@@ -1642,7 +1664,7 @@
      "page": "releases/2-menace.html"
     },
     {
-     "ordinal": 106,
+     "ordinal": 108,
      "title": "3 sharpie",
      "date": "2022-02-22",
      "type": "SoundCloud-only",
@@ -1650,7 +1672,7 @@
      "page": "releases/3-sharpie.html"
     },
     {
-     "ordinal": 107,
+     "ordinal": 109,
      "title": "4 wrong to be",
      "date": "2022-02-22",
      "type": "SoundCloud-only",
@@ -1658,7 +1680,7 @@
      "page": "releases/4-wrong-to-be.html"
     },
     {
-     "ordinal": 108,
+     "ordinal": 110,
      "title": "5 bad cards",
      "date": "2022-02-22",
      "type": "SoundCloud-only",
@@ -1666,7 +1688,7 @@
      "page": "releases/5-bad-cards.html"
     },
     {
-     "ordinal": 109,
+     "ordinal": 111,
      "title": "6 stop telling myself i'm not",
      "date": "2022-02-22",
      "type": "SoundCloud-only",
@@ -1674,7 +1696,7 @@
      "page": "releases/6-stop-telling-myself-i-m-not.html"
     },
     {
-     "ordinal": 110,
+     "ordinal": 112,
      "title": "7 don't say u love me",
      "date": "2022-02-22",
      "type": "SoundCloud-only",
@@ -1682,7 +1704,7 @@
      "page": "releases/7-don-t-say-u-love-me.html"
     },
     {
-     "ordinal": 111,
+     "ordinal": 113,
      "title": "8 i would do mine",
      "date": "2022-02-22",
      "type": "SoundCloud-only",
@@ -1690,7 +1712,7 @@
      "page": "releases/8-i-would-do-mine.html"
     },
     {
-     "ordinal": 112,
+     "ordinal": 114,
      "title": "9 we grew up",
      "date": "2022-02-22",
      "type": "SoundCloud-only",
@@ -1698,7 +1720,7 @@
      "page": "releases/9-we-grew-up.html"
     },
     {
-     "ordinal": 113,
+     "ordinal": 115,
      "title": "10 stuck in the mix v2",
      "date": "2022-02-22",
      "type": "SoundCloud-only",
@@ -1706,7 +1728,7 @@
      "page": "releases/10-stuck-in-the-mix-v2.html"
     },
     {
-     "ordinal": 114,
+     "ordinal": 116,
      "title": "11 dismissed",
      "date": "2022-02-22",
      "type": "SoundCloud-only",
@@ -1714,7 +1736,7 @@
      "page": "releases/11-dismissed.html"
     },
     {
-     "ordinal": 115,
+     "ordinal": 117,
      "title": "12 is it working?",
      "date": "2022-02-22",
      "type": "SoundCloud-only",
@@ -1722,7 +1744,7 @@
      "page": "releases/12-is-it-working.html"
     },
     {
-     "ordinal": 116,
+     "ordinal": 118,
      "title": "Intro (prod. astral_hp)",
      "date": "2021-07-14",
      "type": "SoundCloud-only",
@@ -1730,7 +1752,7 @@
      "page": "releases/intro-prod-astral-hp.html"
     },
     {
-     "ordinal": 117,
+     "ordinal": 119,
      "title": "When the World Gets Colder 3 (prod. phantasie)",
      "date": "2021-07-14",
      "type": "SoundCloud-only",
@@ -1738,7 +1760,7 @@
      "page": "releases/when-the-world-gets-colder-3-prod-phantasie.html"
     },
     {
-     "ordinal": 118,
+     "ordinal": 120,
      "title": "Wandavision (prod. cadence)",
      "date": "2021-07-14",
      "type": "SoundCloud-only",
@@ -1746,7 +1768,7 @@
      "page": "releases/wandavision-prod-cadence.html"
     },
     {
-     "ordinal": 119,
+     "ordinal": 121,
      "title": "This Feeling's Newer ft. Max Ferrari (prod. odece)",
      "date": "2021-07-14",
      "type": "SoundCloud-only",
@@ -1754,7 +1776,7 @@
      "page": "releases/this-feeling-s-newer-ft-max-ferrari-prod-odece.html"
     },
     {
-     "ordinal": 120,
+     "ordinal": 122,
      "title": "Got Knots ft. Max Ferrari (prod. lil biscuit)",
      "date": "2021-07-14",
      "type": "SoundCloud-only",
@@ -1762,7 +1784,7 @@
      "page": "releases/got-knots-ft-max-ferrari-prod-lil-biscuit.html"
     },
     {
-     "ordinal": 121,
+     "ordinal": 123,
      "title": "Only Human Pilot (prod. shinju x forty)",
      "date": "2021-07-14",
      "type": "SoundCloud-only",
@@ -1770,7 +1792,7 @@
      "page": "releases/only-human-pilot-prod-shinju-x-forty.html"
     },
     {
-     "ordinal": 122,
+     "ordinal": 124,
      "title": "Like the Cup (prod. ice trouble)",
      "date": "2021-07-14",
      "type": "SoundCloud-only",
@@ -1778,7 +1800,7 @@
      "page": "releases/like-the-cup-prod-ice-trouble.html"
     },
     {
-     "ordinal": 123,
+     "ordinal": 125,
      "title": "Mix Up Substances ft. Max Ferrari",
      "date": "2021-07-14",
      "type": "SoundCloud-only",
@@ -1786,7 +1808,7 @@
      "page": "releases/mix-up-substances-ft-max-ferrari.html"
     },
     {
-     "ordinal": 124,
+     "ordinal": 126,
      "title": "Sunvalley Rally ft. Lilrareboy (prod. phantasie)",
      "date": "2021-07-14",
      "type": "SoundCloud-only",
@@ -1794,7 +1816,7 @@
      "page": "releases/sunvalley-rally-ft-lilrareboy-prod-phantasie.html"
     },
     {
-     "ordinal": 125,
+     "ordinal": 127,
      "title": "I Can't Get Myself to Cast (prod. lil biscuit)",
      "date": "2021-07-14",
      "type": "SoundCloud-only",
@@ -1802,7 +1824,7 @@
      "page": "releases/i-can-t-get-myself-to-cast-prod-lil-biscuit.html"
     },
     {
-     "ordinal": 126,
+     "ordinal": 128,
      "title": "Beacon (prod. johnnyfriend)",
      "date": "2021-07-14",
      "type": "SoundCloud-only",
@@ -1810,7 +1832,7 @@
      "page": "releases/beacon-prod-johnnyfriend.html"
     },
     {
-     "ordinal": 127,
+     "ordinal": 129,
      "title": "Memory Complete (prod. odece)",
      "date": "2021-07-14",
      "type": "SoundCloud-only",
@@ -1818,7 +1840,7 @@
      "page": "releases/memory-complete-prod-odece.html"
     },
     {
-     "ordinal": 128,
+     "ordinal": 130,
      "title": "Asterisms Shine (prod. lil biscuit)",
      "date": "2021-07-14",
      "type": "SoundCloud-only",
@@ -1988,8 +2010,8 @@
     "like my dogs!!!",
     "ViiXX"
    ],
-   "transmissions": 58,
-   "plays": 14982,
+   "transmissions": 67,
+   "plays": 16648,
    "sessions": 16,
    "distributor": 12,
    "top_tracks": [
@@ -2023,6 +2045,15 @@
      "deep_dive": "sessions/the-november-3rd-12th-session.html"
     },
     {
+     "name": "The Oct 30th – Nov 8th Session",
+     "track_count": 10,
+     "total_plays": 1683,
+     "days": 10,
+     "start": "2024-10-30",
+     "end": "2024-11-08",
+     "deep_dive": "sessions/the-oct-30th-nov-8th-session.html"
+    },
+    {
      "name": "The May 22nd–31st Session",
      "track_count": 5,
      "total_plays": 1420,
@@ -2030,18 +2061,15 @@
      "start": "2024-05-22",
      "end": "2024-05-31",
      "deep_dive": null
-    },
-    {
-     "name": "The August 29th Session",
-     "track_count": 3,
-     "total_plays": 1280,
-     "days": 1,
-     "start": "2023-08-29",
-     "end": "2023-08-29",
-     "deep_dive": null
     }
    ],
    "collaborators": [
+    {
+     "name": "Max Ferrari",
+     "transmissions": 3,
+     "plays": 999,
+     "page": "circle/index.html#c-max-ferrari"
+    },
     {
      "name": "lil yu",
      "transmissions": 1,
@@ -2049,10 +2077,10 @@
      "page": "circle/index.html#c-lil-yu"
     },
     {
-     "name": "Max Ferrari",
-     "transmissions": 1,
-     "plays": 515,
-     "page": "circle/index.html#c-max-ferrari"
+     "name": "Griimxo",
+     "transmissions": 2,
+     "plays": 178,
+     "page": "circle/index.html#c-griimxo"
     },
     {
      "name": "Max",
@@ -2065,12 +2093,6 @@
      "transmissions": 1,
      "plays": 17,
      "page": "circle/index.html#c-vetty"
-    },
-    {
-     "name": "Griimxo",
-     "transmissions": 1,
-     "plays": 0,
-     "page": "circle/index.html#c-griimxo"
     }
    ],
    "milestones": [
@@ -2096,7 +2118,7 @@
      "fact": "Cumulative vault plays crossed a quarter-million with this upload, counted in upload order from the play-count snapshot."
     }
    ],
-   "signal": "After a 553-day silence, the longest gap on record, the vault returned with 58 transmissions, the second-biggest output of any era: 19 transmissions across 10 days, the most prolific session on record.",
+   "signal": "After a 553-day silence, the longest gap on record, the vault returned with 67 transmissions, the second-biggest output of any era: 19 transmissions across 10 days, the most prolific session on record.",
    "tracks": [
     {
      "ordinal": 7,
@@ -2115,7 +2137,7 @@
      "page": "releases/cast-out.html"
     },
     {
-     "ordinal": 18,
+     "ordinal": 20,
      "title": "Warrior Returning Alive",
      "date": "2023-10-29",
      "type": "Single",
@@ -2123,7 +2145,7 @@
      "page": "releases/warrior-returning-alive.html"
     },
     {
-     "ordinal": 19,
+     "ordinal": 21,
      "title": "Hidden Lakes Backpack",
      "date": "2023-11-03",
      "type": "Single",
@@ -2131,7 +2153,7 @@
      "page": "releases/hidden-lakes-backpack.html"
     },
     {
-     "ordinal": 20,
+     "ordinal": 22,
      "title": "Long Day (End Task)",
      "date": "2023-11-09",
      "type": "Single",
@@ -2139,7 +2161,7 @@
      "page": "releases/long-day-end-task.html"
     },
     {
-     "ordinal": 21,
+     "ordinal": 23,
      "title": "Reachhh",
      "date": "2024-04-08",
      "type": "Single",
@@ -2147,7 +2169,7 @@
      "page": "releases/reachhh.html"
     },
     {
-     "ordinal": 22,
+     "ordinal": 24,
      "title": "u Not at the Table",
      "date": "2024-04-19",
      "type": "Single",
@@ -2155,7 +2177,7 @@
      "page": "releases/u-not-at-the-table.html"
     },
     {
-     "ordinal": 23,
+     "ordinal": 25,
      "title": "Tri:Ed",
      "date": "2024-06-16",
      "type": "Single",
@@ -2163,7 +2185,7 @@
      "page": "releases/tri-ed.html"
     },
     {
-     "ordinal": 24,
+     "ordinal": 26,
      "title": "SSSolid",
      "date": "2024-06-27",
      "type": "Single",
@@ -2171,7 +2193,7 @@
      "page": "releases/sssolid.html"
     },
     {
-     "ordinal": 25,
+     "ordinal": 27,
      "title": "Phantom Moshpit (feat. GRiiMXO)",
      "date": "2024-08-24",
      "type": "Single",
@@ -2179,7 +2201,7 @@
      "page": "releases/phantom-moshpit-feat-griimxo.html"
     },
     {
-     "ordinal": 26,
+     "ordinal": 28,
      "title": "like my dogs!!!",
      "date": "2024-09-18",
      "type": "Single",
@@ -2187,7 +2209,7 @@
      "page": "releases/like-my-dogs.html"
     },
     {
-     "ordinal": 27,
+     "ordinal": 29,
      "title": "ViiXX",
      "date": "2024-10-04",
      "type": "Single",
@@ -2195,7 +2217,79 @@
      "page": "releases/viixx.html"
     },
     {
-     "ordinal": 58,
+     "ordinal": 46,
+     "title": "Cut tha 1ights prod. ohmygon!",
+     "date": "2024-11-08",
+     "type": "SoundCloud-only",
+     "plays": 180,
+     "page": "releases/cut-tha-1ights-prod-ohmygon.html"
+    },
+    {
+     "ordinal": 48,
+     "title": "Sti11 waiting/tunnel freestyle w/ Max Ferrari prod. suli",
+     "date": "2024-11-07",
+     "type": "SoundCloud-only",
+     "plays": 300,
+     "page": "releases/sti11-waiting-tunnel-freestyle-w-max-ferrari-prod-suli.html"
+    },
+    {
+     "ordinal": 49,
+     "title": "ARCSNOWWW w/ Max Ferrari prod. sustain",
+     "date": "2024-11-07",
+     "type": "SoundCloud-only",
+     "plays": 184,
+     "page": "releases/arcsnowww-w-max-ferrari-prod-sustain.html"
+    },
+    {
+     "ordinal": 50,
+     "title": "Phantom Moshpit w/ Griimxo (remastered) prod. scared716",
+     "date": "2024-11-08",
+     "type": "SoundCloud-only",
+     "plays": 178,
+     "page": "releases/phantom-moshpit-w-griimxo-remastered-prod-scared716.html"
+    },
+    {
+     "ordinal": 51,
+     "title": "No Puppets A11owed prod. xtasane",
+     "date": "2024-11-08",
+     "type": "SoundCloud-only",
+     "plays": 24,
+     "page": "releases/no-puppets-a11owed-prod-xtasane.html"
+    },
+    {
+     "ordinal": 52,
+     "title": "Fa11 LeaVes prod. Gehx",
+     "date": "2024-11-01",
+     "type": "SoundCloud-only",
+     "plays": 222,
+     "page": "releases/fa11-leaves-prod-gehx.html"
+    },
+    {
+     "ordinal": 53,
+     "title": "Dreamed of U (Hubb1e) prod. Yukio",
+     "date": "2024-11-08",
+     "type": "SoundCloud-only",
+     "plays": 175,
+     "page": "releases/dreamed-of-u-hubb1e-prod-yukio.html"
+    },
+    {
+     "ordinal": 54,
+     "title": "Get Away prod. Gehx",
+     "date": "2024-11-05",
+     "type": "SoundCloud-only",
+     "plays": 217,
+     "page": "releases/get-away-prod-gehx.html"
+    },
+    {
+     "ordinal": 55,
+     "title": "Green Wa11s prod. Ocurie",
+     "date": "2024-10-30",
+     "type": "SoundCloud-only",
+     "plays": 186,
+     "page": "releases/green-wa11s-prod-ocurie.html"
+    },
+    {
+     "ordinal": 60,
      "title": "nitemode2019 w/ Max+Vetty prod. NaXi.wav",
      "date": "2024-11-05",
      "type": "SoundCloud-only",
@@ -2203,7 +2297,7 @@
      "page": "releases/nitemode2019-w-max-vetty-prod-naxi-wav.html"
     },
     {
-     "ordinal": 59,
+     "ordinal": 61,
      "title": "ViiXX (prod skrrtur)",
      "date": "2024-10-04",
      "type": "SoundCloud-only",
@@ -2211,15 +2305,15 @@
      "page": "releases/viixx-prod-skrrtur.html"
     },
     {
-     "ordinal": 60,
+     "ordinal": 62,
      "title": "like my dogs!!! (prod waynn)",
-     "date": "2024-09-18",
+     "date": "2024-09-14",
      "type": "SoundCloud-only",
      "plays": 175,
      "page": "releases/like-my-dogs-prod-waynn.html"
     },
     {
-     "ordinal": 61,
+     "ordinal": 63,
      "title": "every nite, blessings (prod meutry)",
      "date": "2024-08-30",
      "type": "SoundCloud-only",
@@ -2227,7 +2321,7 @@
      "page": "releases/every-nite-blessings-prod-meutry.html"
     },
     {
-     "ordinal": 62,
+     "ordinal": 64,
      "title": "Sipping 1ightning prod. lunarlad",
      "date": "2024-07-09",
      "type": "SoundCloud-only",
@@ -2235,7 +2329,7 @@
      "page": "releases/sipping-1ightning-prod-lunarlad.html"
     },
     {
-     "ordinal": 63,
+     "ordinal": 65,
      "title": "SSSolid (prod Kuva) *MUSIC VIDEO IN DESC*",
      "date": "2024-06-27",
      "type": "SoundCloud-only",
@@ -2243,7 +2337,7 @@
      "page": "releases/sssolid-prod-kuva-music-video-in-desc.html"
     },
     {
-     "ordinal": 64,
+     "ordinal": 66,
      "title": "Tri:ed (prod ysosexy)",
      "date": "2024-06-16",
      "type": "SoundCloud-only",
@@ -2251,7 +2345,7 @@
      "page": "releases/tri-ed-prod-ysosexy.html"
     },
     {
-     "ordinal": 65,
+     "ordinal": 67,
      "title": "End Times Gate Code (prod @1ohmygon)",
      "date": "2024-05-31",
      "type": "SoundCloud-only",
@@ -2259,7 +2353,7 @@
      "page": "releases/end-times-gate-code-prod-1ohmygon.html"
     },
     {
-     "ordinal": 66,
+     "ordinal": 68,
      "title": "FittedUP/fadedUP prod. xtasane",
      "date": "2024-05-29",
      "type": "SoundCloud-only",
@@ -2267,7 +2361,7 @@
      "page": "releases/fittedup-fadedup-prod-xtasane.html"
     },
     {
-     "ordinal": 67,
+     "ordinal": 69,
      "title": "3 Points Pre Game prod. doublemulti x pinkcat #NITEMODE",
      "date": "2024-05-28",
      "type": "SoundCloud-only",
@@ -2275,7 +2369,7 @@
      "page": "releases/3-points-pre-game-prod-doublemulti-x-pinkcat-nitemode.html"
     },
     {
-     "ordinal": 68,
+     "ordinal": 70,
      "title": "Just so U know prod. Buggy",
      "date": "2024-05-24",
      "type": "SoundCloud-only",
@@ -2283,7 +2377,7 @@
      "page": "releases/just-so-u-know-prod-buggy.html"
     },
     {
-     "ordinal": 69,
+     "ordinal": 71,
      "title": "In Trance prod. deadtalks!",
      "date": "2024-05-22",
      "type": "SoundCloud-only",
@@ -2291,7 +2385,7 @@
      "page": "releases/in-trance-prod-deadtalks.html"
     },
     {
-     "ordinal": 70,
+     "ordinal": 72,
      "title": "i Was in Attics prod. Ochoo",
      "date": "2024-05-03",
      "type": "SoundCloud-only",
@@ -2299,7 +2393,7 @@
      "page": "releases/i-was-in-attics-prod-ochoo.html"
     },
     {
-     "ordinal": 71,
+     "ordinal": 73,
      "title": "P1aced a Ward (prodbygus)",
      "date": "2024-05-02",
      "type": "SoundCloud-only",
@@ -2307,7 +2401,7 @@
      "page": "releases/p1aced-a-ward-prodbygus.html"
     },
     {
-     "ordinal": 72,
+     "ordinal": 74,
      "title": "u Not at the Table (Sunsetzer0) #litemode",
      "date": "2024-04-18",
      "type": "SoundCloud-only",
@@ -2315,7 +2409,7 @@
      "page": "releases/u-not-at-the-table-sunsetzer0-litemode.html"
     },
     {
-     "ordinal": 73,
+     "ordinal": 75,
      "title": "Im tha Bouncerrr prod. sustain",
      "date": "2024-04-16",
      "type": "SoundCloud-only",
@@ -2323,7 +2417,7 @@
      "page": "releases/im-tha-bouncerrr-prod-sustain.html"
     },
     {
-     "ordinal": 74,
+     "ordinal": 76,
      "title": "Reachhh (Prawjex x Jordaan)",
      "date": "2024-04-07",
      "type": "SoundCloud-only",
@@ -2331,7 +2425,7 @@
      "page": "releases/reachhh-prawjex-x-jordaan.html"
     },
     {
-     "ordinal": 75,
+     "ordinal": 77,
      "title": "MRari inna Beanstalk w/ Max Ferrari (@mvvi468)",
      "date": "2024-04-05",
      "type": "SoundCloud-only",
@@ -2339,7 +2433,7 @@
      "page": "releases/mrari-inna-beanstalk-w-max-ferrari-mvvi468.html"
     },
     {
-     "ordinal": 76,
+     "ordinal": 78,
      "title": "Early Morning (Yukiidaruma X Fumiko)",
      "date": "2024-04-04",
      "type": "SoundCloud-only",
@@ -2347,7 +2441,7 @@
      "page": "releases/early-morning-yukiidaruma-x-fumiko.html"
     },
     {
-     "ordinal": 77,
+     "ordinal": 79,
      "title": "Dark City Destiny @dxcember13 @rudey0on10",
      "date": "2024-03-27",
      "type": "SoundCloud-only",
@@ -2355,7 +2449,7 @@
      "page": "releases/dark-city-destiny-dxcember13-rudey0on10.html"
     },
     {
-     "ordinal": 78,
+     "ordinal": 80,
      "title": "On Our Way (Baseline)",
      "date": "2023-11-12",
      "type": "SoundCloud-only",
@@ -2363,7 +2457,7 @@
      "page": "releases/on-our-way-baseline.html"
     },
     {
-     "ordinal": 79,
+     "ordinal": 81,
      "title": "Cast OUT!!!",
      "date": "2023-11-12",
      "type": "SoundCloud-only",
@@ -2371,7 +2465,7 @@
      "page": "releases/cast-out-2.html"
     },
     {
-     "ordinal": 80,
+     "ordinal": 82,
      "title": "One Piece X Sketchers",
      "date": "2023-11-12",
      "type": "SoundCloud-only",
@@ -2379,7 +2473,7 @@
      "page": "releases/one-piece-x-sketchers.html"
     },
     {
-     "ordinal": 81,
+     "ordinal": 83,
      "title": "Good Turns Bad Freestyle",
      "date": "2023-11-12",
      "type": "SoundCloud-only",
@@ -2387,7 +2481,7 @@
      "page": "releases/good-turns-bad-freestyle.html"
     },
     {
-     "ordinal": 82,
+     "ordinal": 84,
      "title": "Playing Pretend :)",
      "date": "2023-11-12",
      "type": "SoundCloud-only",
@@ -2395,7 +2489,7 @@
      "page": "releases/playing-pretend.html"
     },
     {
-     "ordinal": 83,
+     "ordinal": 85,
      "title": "Attack!!! intro",
      "date": "2023-11-12",
      "type": "SoundCloud-only",
@@ -2403,7 +2497,7 @@
      "page": "releases/attack-intro.html"
     },
     {
-     "ordinal": 84,
+     "ordinal": 86,
      "title": "Attack!!! 2",
      "date": "2023-11-12",
      "type": "SoundCloud-only",
@@ -2411,7 +2505,7 @@
      "page": "releases/attack-2.html"
     },
     {
-     "ordinal": 85,
+     "ordinal": 87,
      "title": "12 ÷ 4 (Eckhart's Plea)",
      "date": "2023-11-12",
      "type": "SoundCloud-only",
@@ -2419,7 +2513,7 @@
      "page": "releases/12-4-eckhart-s-plea.html"
     },
     {
-     "ordinal": 86,
+     "ordinal": 88,
      "title": "Fleeting n' Geekinggg",
      "date": "2023-11-12",
      "type": "SoundCloud-only",
@@ -2427,7 +2521,7 @@
      "page": "releases/fleeting-n-geekinggg.html"
     },
     {
-     "ordinal": 87,
+     "ordinal": 89,
      "title": "i been in tha AIR",
      "date": "2023-11-12",
      "type": "SoundCloud-only",
@@ -2435,7 +2529,7 @@
      "page": "releases/i-been-in-tha-air.html"
     },
     {
-     "ordinal": 88,
+     "ordinal": 90,
      "title": "Day Comes Freestyle",
      "date": "2023-11-12",
      "type": "SoundCloud-only",
@@ -2443,7 +2537,7 @@
      "page": "releases/day-comes-freestyle.html"
     },
     {
-     "ordinal": 89,
+     "ordinal": 91,
      "title": "I Just Got Lost In The City xD",
      "date": "2023-11-12",
      "type": "SoundCloud-only",
@@ -2451,7 +2545,7 @@
      "page": "releases/i-just-got-lost-in-the-city-xd.html"
     },
     {
-     "ordinal": 90,
+     "ordinal": 92,
      "title": "This Is Why I Hate Mirrors",
      "date": "2023-11-12",
      "type": "SoundCloud-only",
@@ -2459,7 +2553,7 @@
      "page": "releases/this-is-why-i-hate-mirrors.html"
     },
     {
-     "ordinal": 91,
+     "ordinal": 93,
      "title": "6 AM In Da Bay Interlude",
      "date": "2023-11-12",
      "type": "SoundCloud-only",
@@ -2467,7 +2561,7 @@
      "page": "releases/6-am-in-da-bay-interlude.html"
     },
     {
-     "ordinal": 92,
+     "ordinal": 94,
      "title": "Do It Againnn",
      "date": "2023-11-12",
      "type": "SoundCloud-only",
@@ -2475,7 +2569,7 @@
      "page": "releases/do-it-againnn.html"
     },
     {
-     "ordinal": 93,
+     "ordinal": 95,
      "title": "No Lullaby :/",
      "date": "2023-11-12",
      "type": "SoundCloud-only",
@@ -2483,7 +2577,7 @@
      "page": "releases/no-lullaby.html"
     },
     {
-     "ordinal": 94,
+     "ordinal": 96,
      "title": "For Brian (Neck Deep) outro [produced by AWFL]",
      "date": "2023-11-12",
      "type": "SoundCloud-only",
@@ -2491,7 +2585,7 @@
      "page": "releases/for-brian-neck-deep-outro-produced-by-awfl.html"
     },
     {
-     "ordinal": 95,
+     "ordinal": 97,
      "title": "Long Day (End Task) outro [@Staaaas.ily]",
      "date": "2023-11-10",
      "type": "SoundCloud-only",
@@ -2499,7 +2593,7 @@
      "page": "releases/long-day-end-task-outro-staaaas-ily.html"
     },
     {
-     "ordinal": 96,
+     "ordinal": 98,
      "title": "Hidden Lakes Backpack [@Yurkswag]",
      "date": "2023-11-03",
      "type": "SoundCloud-only",
@@ -2507,7 +2601,7 @@
      "page": "releases/hidden-lakes-backpack-yurkswag.html"
     },
     {
-     "ordinal": 97,
+     "ordinal": 99,
      "title": "Warrior Returning Alive [@Melokajj]",
      "date": "2023-10-21",
      "type": "SoundCloud-only",
@@ -2515,7 +2609,7 @@
      "page": "releases/warrior-returning-alive-melokajj.html"
     },
     {
-     "ordinal": 98,
+     "ordinal": 100,
      "title": "no WAY!!??",
      "date": "2023-10-20",
      "type": "SoundCloud-only",
@@ -2523,7 +2617,7 @@
      "page": "releases/no-way.html"
     },
     {
-     "ordinal": 99,
+     "ordinal": 101,
      "title": "Crazy Around The World",
      "date": "2023-10-08",
      "type": "SoundCloud-only",
@@ -2531,7 +2625,7 @@
      "page": "releases/crazy-around-the-world.html"
     },
     {
-     "ordinal": 100,
+     "ordinal": 102,
      "title": "I Cannot Be Ignored Much Longer U Hurt Me Real Bad",
      "date": "2023-10-08",
      "type": "SoundCloud-only",
@@ -2539,7 +2633,7 @@
      "page": "releases/i-cannot-be-ignored-much-longer-u-hurt-me-real-bad.html"
     },
     {
-     "ordinal": 101,
+     "ordinal": 103,
      "title": "Clock In The Benz w/ Lil Yu prod shinju",
      "date": "2023-08-29",
      "type": "SoundCloud-only",
@@ -2547,7 +2641,7 @@
      "page": "releases/clock-in-the-benz-w-lil-yu-prod-shinju.html"
     },
     {
-     "ordinal": 102,
+     "ordinal": 104,
      "title": "9 Trips",
      "date": "2023-08-29",
      "type": "SoundCloud-only",
@@ -2555,7 +2649,7 @@
      "page": "releases/9-trips-2.html"
     },
     {
-     "ordinal": 103,
+     "ordinal": 105,
      "title": "Writing Books But I Cant Read Em",
      "date": "2023-08-29",
      "type": "SoundCloud-only",
@@ -2575,8 +2669,8 @@
       "outro",
       "interlude"
      ],
-     "transmissions": 7,
-     "plays": 2243,
+     "transmissions": 8,
+     "plays": 2543,
      "page": "codex/the-rites.html",
      "top_tracks": [
       {
@@ -2718,6 +2812,23 @@
      ]
     },
     {
+     "name": "Lucid States",
+     "words": [
+      "lucid",
+      "dreamed"
+     ],
+     "transmissions": 1,
+     "plays": 175,
+     "page": "codex/lucid-states.html",
+     "top_tracks": [
+      {
+       "title": "Dreamed of U (Hubb1e) prod. Yukio",
+       "date": "2024-11-08",
+       "plays": 175
+      }
+     ]
+    },
+    {
      "name": "The Pack",
      "words": [
       "dogs"
@@ -2728,7 +2839,7 @@
      "top_tracks": [
       {
        "title": "like my dogs!!! (prod waynn)",
-       "date": "2024-09-18",
+       "date": "2024-09-14",
        "plays": 175
       },
       {
@@ -2743,11 +2854,11 @@
     "rank_by_plays": 2,
     "rank_by_transmissions": 2,
     "eras_total": 6,
-    "archive_plays_share": 0.0582,
+    "archive_plays_share": 0.0647,
     "busiest_year": {
-     "year": "2023",
-     "transmissions": 31,
-     "plays": 10179
+     "year": "2024",
+     "transmissions": 36,
+     "plays": 6469
     },
     "loudest_transmission": {
      "title": "Clock In The Benz w/ Lil Yu prod shinju",
@@ -2760,12 +2871,12 @@
      "page": "releases/nitemode2019-w-max-vetty-prod-naxi-wav.html"
     },
     "collaborators_count": 5,
-    "collab_plays": 1274,
-    "collab_plays_share": 0.085,
+    "collab_plays": 1936,
+    "collab_plays_share": 0.1163,
     "top_family": {
      "name": "The Rites",
-     "transmissions": 7,
-     "plays": 2243,
+     "transmissions": 8,
+     "plays": 2543,
      "page": "codex/the-rites.html"
     },
     "milestones_count": 3
@@ -2783,9 +2894,9 @@
    "scene": "No transmissions. The archive records the silence; it does not explain it.",
    "note": "No releases found in 2025. The reason is unknown and not speculated here.",
    "era_releases": [],
-   "transmissions": 17,
-   "plays": 3933,
-   "sessions": 5,
+   "transmissions": 9,
+   "plays": 2447,
+   "sessions": 7,
    "distributor": 0,
    "top_tracks": [
     {
@@ -2801,22 +2912,13 @@
      "page": "releases/big-litemode-prod-runawway-ilyagargod-and-k3nik.html"
     },
     {
-     "title": "Sti11 waiting/tunnel freestyle w/ Max Ferrari prod. suli",
-     "plays": 300,
-     "date": "2025-11-11",
-     "page": "releases/sti11-waiting-tunnel-freestyle-w-max-ferrari-prod-suli.html"
+     "title": "oh We11 (prod Vuksai)",
+     "plays": 222,
+     "date": "2025-01-09",
+     "page": "releases/oh-we11-prod-vuksai.html"
     }
    ],
    "key_sessions": [
-    {
-     "name": "The November 4th–11th Session",
-     "track_count": 11,
-     "total_plays": 2029,
-     "days": 8,
-     "start": "2025-11-04",
-     "end": "2025-11-11",
-     "deep_dive": "sessions/the-november-4th-11th-session.html"
-    },
     {
      "name": "The November 23rd Session",
      "track_count": 2,
@@ -2834,27 +2936,31 @@
      "start": "2025-12-19",
      "end": "2025-12-19",
      "deep_dive": null
-    }
-   ],
-   "collaborators": [
-    {
-     "name": "Max Ferrari",
-     "transmissions": 2,
-     "plays": 484,
-     "page": "circle/index.html#c-max-ferrari"
     },
     {
-     "name": "Griimxo",
-     "transmissions": 1,
-     "plays": 178,
-     "page": "circle/index.html#c-griimxo"
+     "name": "The January 9th–13th Session",
+     "track_count": 2,
+     "total_plays": 412,
+     "days": 5,
+     "start": "2025-01-09",
+     "end": "2025-01-13",
+     "deep_dive": null
     }
    ],
+   "collaborators": [],
    "milestones": [],
-   "signal": "17 transmissions, 0 distributor releases; the first fully dark distributor year since 2018. The reason is unknown and not speculated here.",
+   "signal": "9 transmissions, 0 distributor releases; the only fully dark distributor year on record. The reason is unknown and not speculated here.",
    "tracks": [
     {
      "ordinal": 41,
+     "title": "games stop prod branwen",
+     "date": "2025-07-22",
+     "type": "SoundCloud-only",
+     "plays": 180,
+     "page": "releases/games-stop-prod-branwen.html"
+    },
+    {
+     "ordinal": 43,
      "title": "bound 2 my ways.wav",
      "date": "2025-12-19",
      "type": "SoundCloud-only",
@@ -2862,7 +2968,7 @@
      "page": "releases/bound-2-my-ways-wav.html"
     },
     {
-     "ordinal": 42,
+     "ordinal": 44,
      "title": "big litemode (prod runawway, ilyagargod & k3nik)",
      "date": "2025-11-23",
      "type": "SoundCloud-only",
@@ -2870,7 +2976,7 @@
      "page": "releases/big-litemode-prod-runawway-ilyagargod-and-k3nik.html"
     },
     {
-     "ordinal": 43,
+     "ordinal": 45,
      "title": "go and did (prod runawway + hidy)",
      "date": "2025-11-23",
      "type": "SoundCloud-only",
@@ -2878,87 +2984,15 @@
      "page": "releases/go-and-did-prod-runawway-hidy.html"
     },
     {
-     "ordinal": 44,
-     "title": "Cut tha 1ights prod. ohmygon!",
-     "date": "2025-11-11",
-     "type": "SoundCloud-only",
-     "plays": 180,
-     "page": "releases/cut-tha-1ights-prod-ohmygon.html"
-    },
-    {
-     "ordinal": 45,
+     "ordinal": 47,
      "title": "1otso prod. branwen",
-     "date": "2025-11-11",
+     "date": "2025-01-13",
      "type": "SoundCloud-only",
      "plays": 190,
      "page": "releases/1otso-prod-branwen.html"
     },
     {
-     "ordinal": 46,
-     "title": "Sti11 waiting/tunnel freestyle w/ Max Ferrari prod. suli",
-     "date": "2025-11-11",
-     "type": "SoundCloud-only",
-     "plays": 300,
-     "page": "releases/sti11-waiting-tunnel-freestyle-w-max-ferrari-prod-suli.html"
-    },
-    {
-     "ordinal": 47,
-     "title": "ARCSNOWWW w/ Max Ferrari prod. sustain",
-     "date": "2025-11-11",
-     "type": "SoundCloud-only",
-     "plays": 184,
-     "page": "releases/arcsnowww-w-max-ferrari-prod-sustain.html"
-    },
-    {
-     "ordinal": 48,
-     "title": "Phantom Moshpit w/ Griimxo (remastered) prod. scared716",
-     "date": "2025-11-11",
-     "type": "SoundCloud-only",
-     "plays": 178,
-     "page": "releases/phantom-moshpit-w-griimxo-remastered-prod-scared716.html"
-    },
-    {
-     "ordinal": 49,
-     "title": "No Puppets A11owed prod. xtasane",
-     "date": "2025-11-10",
-     "type": "SoundCloud-only",
-     "plays": 24,
-     "page": "releases/no-puppets-a11owed-prod-xtasane.html"
-    },
-    {
-     "ordinal": 50,
-     "title": "Fa11 LeaVes prod. Gehx",
-     "date": "2025-11-10",
-     "type": "SoundCloud-only",
-     "plays": 222,
-     "page": "releases/fa11-leaves-prod-gehx.html"
-    },
-    {
-     "ordinal": 51,
-     "title": "Dreamed of U (Hubb1e) prod. Yukio",
-     "date": "2025-11-10",
-     "type": "SoundCloud-only",
-     "plays": 175,
-     "page": "releases/dreamed-of-u-hubb1e-prod-yukio.html"
-    },
-    {
-     "ordinal": 52,
-     "title": "Get Away prod. Gehx",
-     "date": "2025-11-10",
-     "type": "SoundCloud-only",
-     "plays": 217,
-     "page": "releases/get-away-prod-gehx.html"
-    },
-    {
-     "ordinal": 53,
-     "title": "Green Wa11s prod. Ocurie",
-     "date": "2025-11-10",
-     "type": "SoundCloud-only",
-     "plays": 186,
-     "page": "releases/green-wa11s-prod-ocurie.html"
-    },
-    {
-     "ordinal": 54,
+     "ordinal": 56,
      "title": "my kin (prod xannnn)",
      "date": "2025-11-04",
      "type": "SoundCloud-only",
@@ -2966,15 +3000,15 @@
      "page": "releases/my-kin-prod-xannnn.html"
     },
     {
-     "ordinal": 55,
+     "ordinal": 57,
      "title": "switch (prod fiftyzeros)",
-     "date": "2025-09-14",
+     "date": "2025-03-31",
      "type": "SoundCloud-only",
      "plays": 206,
      "page": "releases/switch-prod-fiftyzeros.html"
     },
     {
-     "ordinal": 56,
+     "ordinal": 58,
      "title": "water + sun (prod paris pas rigolo)",
      "date": "2025-09-13",
      "type": "SoundCloud-only",
@@ -2982,7 +3016,7 @@
      "page": "releases/water-sun-prod-paris-pas-rigolo.html"
     },
     {
-     "ordinal": 57,
+     "ordinal": 59,
      "title": "oh We11 (prod Vuksai)",
      "date": "2025-01-09",
      "type": "SoundCloud-only",
@@ -3006,28 +3040,6 @@
        "title": "big litemode (prod runawway, ilyagargod & k3nik)",
        "date": "2025-11-23",
        "plays": 455
-      }
-     ]
-    },
-    {
-     "name": "The Rites",
-     "words": [
-      "ritual",
-      "solstice",
-      "freestyle",
-      "anthem",
-      "intro",
-      "outro",
-      "interlude"
-     ],
-     "transmissions": 1,
-     "plays": 300,
-     "page": "codex/the-rites.html",
-     "top_tracks": [
-      {
-       "title": "Sti11 waiting/tunnel freestyle w/ Max Ferrari prod. suli",
-       "date": "2025-11-11",
-       "plays": 300
       }
      ]
     },
@@ -3068,34 +3080,17 @@
        "plays": 178
       }
      ]
-    },
-    {
-     "name": "Lucid States",
-     "words": [
-      "lucid",
-      "dreamed"
-     ],
-     "transmissions": 1,
-     "plays": 175,
-     "page": "codex/lucid-states.html",
-     "top_tracks": [
-      {
-       "title": "Dreamed of U (Hubb1e) prod. Yukio",
-       "date": "2025-11-10",
-       "plays": 175
-      }
-     ]
     }
    ],
    "summary": {
     "rank_by_plays": 5,
-    "rank_by_transmissions": 5,
+    "rank_by_transmissions": 6,
     "eras_total": 6,
-    "archive_plays_share": 0.0153,
+    "archive_plays_share": 0.0095,
     "busiest_year": {
      "year": "2025",
-     "transmissions": 17,
-     "plays": 3933
+     "transmissions": 9,
+     "plays": 2447
     },
     "loudest_transmission": {
      "title": "bound 2 my ways.wav",
@@ -3103,13 +3098,13 @@
      "page": "releases/bound-2-my-ways-wav.html"
     },
     "deepest_cut": {
-     "title": "No Puppets A11owed prod. xtasane",
-     "plays": 24,
-     "page": "releases/no-puppets-a11owed-prod-xtasane.html"
+     "title": "my kin (prod xannnn)",
+     "plays": 173,
+     "page": "releases/my-kin-prod-xannnn.html"
     },
-    "collaborators_count": 2,
-    "collab_plays": 662,
-    "collab_plays_share": 0.1683,
+    "collaborators_count": 0,
+    "collab_plays": 0,
+    "collab_plays_share": 0.0,
     "top_family": {
      "name": "The Modes",
      "transmissions": 1,
@@ -3138,8 +3133,8 @@
     "9 Trips",
     "Living With The Big Shots"
    ],
-   "transmissions": 13,
-   "plays": 1405,
+   "transmissions": 12,
+   "plays": 1225,
    "sessions": 4,
    "distributor": 6,
    "top_tracks": [
@@ -3152,24 +3147,24 @@
     {
      "title": "no power prod wellfed",
      "plays": 242,
-     "date": "2026-03-23",
+     "date": "2026-03-17",
      "page": "releases/no-power-prod-wellfed.html"
     },
     {
      "title": "the night ends yeaaa prod wellfed",
      "plays": 208,
-     "date": "2026-03-25",
+     "date": "2026-03-17",
      "page": "releases/the-night-ends-yeaaa-prod-wellfed.html"
     }
    ],
    "key_sessions": [
     {
-     "name": "The March 17th–25th Session",
-     "track_count": 4,
-     "total_plays": 781,
-     "days": 9,
+     "name": "The March 17th Session",
+     "track_count": 3,
+     "total_plays": 601,
+     "days": 1,
      "start": "2026-03-17",
-     "end": "2026-03-25",
+     "end": "2026-03-17",
      "deep_dive": null
     },
     {
@@ -3204,7 +3199,7 @@
    "signal": "Six singles, March–May 2026, all marked explicit on iHeart: the ritual resumes. Latest transmission on record: “turn up w me (prod_timmy)”, 2026-10-02.",
    "tracks": [
     {
-     "ordinal": 28,
+     "ordinal": 30,
      "title": "Life's Made",
      "date": "2026-03-21",
      "type": "Single",
@@ -3212,7 +3207,7 @@
      "page": "releases/life-s-made.html"
     },
     {
-     "ordinal": 29,
+     "ordinal": 31,
      "title": "No Power",
      "date": "2026-03-23",
      "type": "Single",
@@ -3220,7 +3215,7 @@
      "page": "releases/no-power.html"
     },
     {
-     "ordinal": 30,
+     "ordinal": 32,
      "title": "The Night Ends Yeaaa",
      "date": "2026-03-25",
      "type": "Single",
@@ -3228,7 +3223,7 @@
      "page": "releases/the-night-ends-yeaaa.html"
     },
     {
-     "ordinal": 31,
+     "ordinal": 33,
      "title": "Writing Books",
      "date": "2026-05-02",
      "type": "Single",
@@ -3236,7 +3231,7 @@
      "page": "releases/writing-books.html"
     },
     {
-     "ordinal": 32,
+     "ordinal": 34,
      "title": "9 Trips",
      "date": "2026-05-03",
      "type": "Single",
@@ -3244,7 +3239,7 @@
      "page": "releases/9-trips.html"
     },
     {
-     "ordinal": 33,
+     "ordinal": 35,
      "title": "Living With The Big Shots",
      "date": "2026-05-05",
      "type": "Single",
@@ -3252,7 +3247,7 @@
      "page": "releases/living-with-the-big-shots.html"
     },
     {
-     "ordinal": 34,
+     "ordinal": 36,
      "title": "turn up w me (prod_timmy)",
      "date": "2026-10-02",
      "type": "SoundCloud-only",
@@ -3260,7 +3255,7 @@
      "page": "releases/turn-up-w-me-prod-timmy.html"
     },
     {
-     "ordinal": 35,
+     "ordinal": 37,
      "title": "the peace of the spirit urn (prod +fiftyzeros)",
      "date": "2026-07-15",
      "type": "SoundCloud-only",
@@ -3268,39 +3263,31 @@
      "page": "releases/the-peace-of-the-spirit-urn-prod-fiftyzeros.html"
     },
     {
-     "ordinal": 36,
+     "ordinal": 38,
      "title": "the night ends yeaaa prod wellfed",
-     "date": "2026-03-25",
+     "date": "2026-03-17",
      "type": "SoundCloud-only",
      "plays": 208,
      "page": "releases/the-night-ends-yeaaa-prod-wellfed.html"
     },
     {
-     "ordinal": 37,
+     "ordinal": 39,
      "title": "no power prod wellfed",
-     "date": "2026-03-23",
+     "date": "2026-03-17",
      "type": "SoundCloud-only",
      "plays": 242,
      "page": "releases/no-power-prod-wellfed.html"
     },
     {
-     "ordinal": 38,
+     "ordinal": 40,
      "title": "life's made prod wellfed",
-     "date": "2026-03-20",
+     "date": "2026-03-17",
      "type": "SoundCloud-only",
      "plays": 151,
      "page": "releases/life-s-made-prod-wellfed.html"
     },
     {
-     "ordinal": 39,
-     "title": "games stop prod branwen",
-     "date": "2026-03-17",
-     "type": "SoundCloud-only",
-     "plays": 180,
-     "page": "releases/games-stop-prod-branwen.html"
-    },
-    {
-     "ordinal": 40,
+     "ordinal": 42,
      "title": "all i really need is a text from u 2 (prod astral hp)",
      "date": "2026-01-16",
      "type": "SoundCloud-only",
@@ -3320,7 +3307,7 @@
      "top_tracks": [
       {
        "title": "no power prod wellfed",
-       "date": "2026-03-23",
+       "date": "2026-03-17",
        "plays": 242
       },
       {
@@ -3342,7 +3329,7 @@
      "top_tracks": [
       {
        "title": "the night ends yeaaa prod wellfed",
-       "date": "2026-03-25",
+       "date": "2026-03-17",
        "plays": 208
       },
       {
@@ -3406,13 +3393,13 @@
    ],
    "summary": {
     "rank_by_plays": 6,
-    "rank_by_transmissions": 6,
+    "rank_by_transmissions": 5,
     "eras_total": 6,
-    "archive_plays_share": 0.0055,
+    "archive_plays_share": 0.0048,
     "busiest_year": {
      "year": "2026",
-     "transmissions": 13,
-     "plays": 1405
+     "transmissions": 12,
+     "plays": 1225
     },
     "loudest_transmission": {
      "title": "all i really need is a text from u 2 (prod astral hp)",

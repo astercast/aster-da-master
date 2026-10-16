@@ -4,9 +4,9 @@
  "plays_snapshot": "2026-10-11",
  "method": "Six eras aggregated from data/v1/years.json, data/sessions.json, data/v1/circle.json, data/v1/milestones.json. Signal lines are computed from the same numbers and asserted in scripts/build_transmission.py. The 2026 era carries an extras block: the four verified 2026 singles (data/artist.json discography) and the Q4 2026 watch (the Uncle-LP status passed through from data/v1/scene-figures.json, the trilogy tease from data/artist.json upcoming). Titles and metadata only — never lyrics.",
  "archive_totals": {
-  "transmissions": 218,
+  "transmissions": 220,
   "plays": 257394,
-  "sessions": 61,
+  "sessions": 64,
   "years": [
    "2018",
    "2019",
@@ -34,10 +34,10 @@
     "2019"
    ],
    "scene": "The first casting: a guest verse in 2017, then the WoT seal pressed onto Master Key.",
-   "transmissions": 79,
+   "transmissions": 80,
    "plays": 220688,
-   "sessions": 28,
-   "distributor": 4,
+   "sessions": 29,
+   "distributor": 5,
    "top_tracks": [
     {
      "title": "Take Me (prod. Em Klebold)",
@@ -69,15 +69,6 @@
      "deep_dive": null
     },
     {
-     "name": "The July 9th Session",
-     "track_count": 7,
-     "total_plays": 28260,
-     "days": 1,
-     "start": "2019-07-09",
-     "end": "2019-07-09",
-     "deep_dive": "sessions/the-july-9th-session.html"
-    },
-    {
      "name": "The December 22nd Session",
      "track_count": 7,
      "total_plays": 21777,
@@ -85,6 +76,15 @@
      "start": "2019-12-22",
      "end": "2019-12-22",
      "deep_dive": "sessions/the-december-22nd-session.html"
+    },
+    {
+     "name": "The December 30th Session",
+     "track_count": 6,
+     "total_plays": 16172,
+     "days": 1,
+     "start": "2019-12-30",
+     "end": "2019-12-30",
+     "deep_dive": "sessions/the-december-30th-session.html"
     }
    ],
    "collaborators": [
@@ -130,7 +130,7 @@
      "fact": "The first transmission to summon another voice. The circle starts here and grows to twenty-one collaborators."
     }
    ],
-   "signal": "79 transmissions, 220,688 plays: 85.7% of every play in the archive. Two years carried the whole catalog."
+   "signal": "80 transmissions, 220,688 plays: 85.7% of every play in the archive. Two years carried the whole catalog."
   },
   {
    "id": "the-prolific-year",
@@ -140,10 +140,10 @@
     "2020"
    ],
    "scene": "Three albums in six months: the forge at full heat, eight transmissions in twelve.",
-   "transmissions": 23,
+   "transmissions": 24,
    "plays": 12250,
    "sessions": 6,
-   "distributor": 8,
+   "distributor": 9,
    "top_tracks": [
     {
      "title": "used to be messy prod. DeepHartt",
@@ -205,6 +205,12 @@
      "transmissions": 1,
      "plays": 244,
      "page": "circle/index.html#c-phil-is-lonely"
+    },
+    {
+     "name": "SPURSY",
+     "transmissions": 1,
+     "plays": 0,
+     "page": "circle/index.html#c-spursy"
     }
    ],
    "milestones": [
@@ -212,11 +218,11 @@
      "id": "hundredth-entry",
      "name": "100th transmission on record",
      "date": "2020-12-21",
-     "title": "I'm Not Looking For Love Anyway",
+     "title": "Decent (prod. venus)",
      "fact": "The catalog's 100th entry in chronological order, reached before the end of 2020."
     }
    ],
-   "signal": "8 distributor releases, the most of any single year, against 23 vault transmissions. (2018 ran 39 vault transmissions with 0 distributor releases.) The catalog's center had moved."
+   "signal": "9 distributor releases, the most of any single year, against 24 vault transmissions. (2018 ran 40 vault transmissions with 1 distributor releases.) The catalog's center had moved."
   },
   {
    "id": "the-cast-it-years",
@@ -305,8 +311,8 @@
     "2024"
    ],
    "scene": "The collective's mark: old rituals re-released, new singles through the year.",
-   "transmissions": 58,
-   "plays": 14982,
+   "transmissions": 67,
+   "plays": 16648,
    "sessions": 16,
    "distributor": 12,
    "top_tracks": [
@@ -340,6 +346,15 @@
      "deep_dive": "sessions/the-november-3rd-12th-session.html"
     },
     {
+     "name": "The Oct 30th – Nov 8th Session",
+     "track_count": 10,
+     "total_plays": 1683,
+     "days": 10,
+     "start": "2024-10-30",
+     "end": "2024-11-08",
+     "deep_dive": "sessions/the-oct-30th-nov-8th-session.html"
+    },
+    {
      "name": "The May 22nd–31st Session",
      "track_count": 5,
      "total_plays": 1420,
@@ -347,18 +362,15 @@
      "start": "2024-05-22",
      "end": "2024-05-31",
      "deep_dive": null
-    },
-    {
-     "name": "The August 29th Session",
-     "track_count": 3,
-     "total_plays": 1280,
-     "days": 1,
-     "start": "2023-08-29",
-     "end": "2023-08-29",
-     "deep_dive": null
     }
    ],
    "collaborators": [
+    {
+     "name": "Max Ferrari",
+     "transmissions": 3,
+     "plays": 999,
+     "page": "circle/index.html#c-max-ferrari"
+    },
     {
      "name": "lil yu",
      "transmissions": 1,
@@ -366,16 +378,10 @@
      "page": "circle/index.html#c-lil-yu"
     },
     {
-     "name": "Max Ferrari",
-     "transmissions": 1,
-     "plays": 515,
-     "page": "circle/index.html#c-max-ferrari"
-    },
-    {
-     "name": "Max",
-     "transmissions": 1,
-     "plays": 17,
-     "page": "circle/index.html#c-max"
+     "name": "Griimxo",
+     "transmissions": 2,
+     "plays": 178,
+     "page": "circle/index.html#c-griimxo"
     }
    ],
    "milestones": [
@@ -401,7 +407,7 @@
      "fact": "Cumulative vault plays crossed a quarter-million with this upload, counted in upload order from the play-count snapshot."
     }
    ],
-   "signal": "After a 553-day silence, the longest gap on record, the vault returned with 58 transmissions, the second-biggest output of any era: 19 transmissions across 10 days, the most prolific session on record."
+   "signal": "After a 553-day silence, the longest gap on record, the vault returned with 67 transmissions, the second-biggest output of any era: 19 transmissions across 10 days, the most prolific session on record."
   },
   {
    "id": "the-silence",
@@ -411,9 +417,9 @@
     "2025"
    ],
    "scene": "No transmissions. The archive records the silence; it does not explain it.",
-   "transmissions": 17,
-   "plays": 3933,
-   "sessions": 5,
+   "transmissions": 9,
+   "plays": 2447,
+   "sessions": 7,
    "distributor": 0,
    "top_tracks": [
     {
@@ -429,22 +435,13 @@
      "page": "releases/big-litemode-prod-runawway-ilyagargod-and-k3nik.html"
     },
     {
-     "title": "Sti11 waiting/tunnel freestyle w/ Max Ferrari prod. suli",
-     "plays": 300,
-     "date": "2025-11-11",
-     "page": "releases/sti11-waiting-tunnel-freestyle-w-max-ferrari-prod-suli.html"
+     "title": "oh We11 (prod Vuksai)",
+     "plays": 222,
+     "date": "2025-01-09",
+     "page": "releases/oh-we11-prod-vuksai.html"
     }
    ],
    "key_sessions": [
-    {
-     "name": "The November 4th–11th Session",
-     "track_count": 11,
-     "total_plays": 2029,
-     "days": 8,
-     "start": "2025-11-04",
-     "end": "2025-11-11",
-     "deep_dive": "sessions/the-november-4th-11th-session.html"
-    },
     {
      "name": "The November 23rd Session",
      "track_count": 2,
@@ -462,24 +459,20 @@
      "start": "2025-12-19",
      "end": "2025-12-19",
      "deep_dive": null
-    }
-   ],
-   "collaborators": [
-    {
-     "name": "Max Ferrari",
-     "transmissions": 2,
-     "plays": 484,
-     "page": "circle/index.html#c-max-ferrari"
     },
     {
-     "name": "Griimxo",
-     "transmissions": 1,
-     "plays": 178,
-     "page": "circle/index.html#c-griimxo"
+     "name": "The January 9th–13th Session",
+     "track_count": 2,
+     "total_plays": 412,
+     "days": 5,
+     "start": "2025-01-09",
+     "end": "2025-01-13",
+     "deep_dive": null
     }
    ],
+   "collaborators": [],
    "milestones": [],
-   "signal": "17 transmissions, 0 distributor releases; the first fully dark distributor year since 2018. The reason is unknown and not speculated here."
+   "signal": "9 transmissions, 0 distributor releases; the only fully dark distributor year on record. The reason is unknown and not speculated here."
   },
   {
    "id": "the-return",
@@ -489,8 +482,8 @@
     "2026"
    ],
    "scene": "Six signals in ten weeks: the ritual resumes, every one marked explicit.",
-   "transmissions": 13,
-   "plays": 1405,
+   "transmissions": 12,
+   "plays": 1225,
    "sessions": 4,
    "distributor": 6,
    "top_tracks": [
@@ -503,24 +496,24 @@
     {
      "title": "no power prod wellfed",
      "plays": 242,
-     "date": "2026-03-23",
+     "date": "2026-03-17",
      "page": "releases/no-power-prod-wellfed.html"
     },
     {
      "title": "the night ends yeaaa prod wellfed",
      "plays": 208,
-     "date": "2026-03-25",
+     "date": "2026-03-17",
      "page": "releases/the-night-ends-yeaaa-prod-wellfed.html"
     }
    ],
    "key_sessions": [
     {
-     "name": "The March 17th–25th Session",
-     "track_count": 4,
-     "total_plays": 781,
-     "days": 9,
+     "name": "The March 17th Session",
+     "track_count": 3,
+     "total_plays": 601,
+     "days": 1,
      "start": "2026-03-17",
-     "end": "2026-03-25",
+     "end": "2026-03-17",
      "deep_dive": null
     },
     {

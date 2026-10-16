@@ -2,7 +2,7 @@
 """Wave 19: session archaeology interactive.
 
 Turns the `session-archaeology` skill's logic into browsable data:
-data/v1/session-clusters.json (endpoint #17) - the 61 upload sessions as an
+data/v1/session-clusters.json (endpoint #17) - the 64 upload sessions as an
 explorable timeline:
 
   - sessions[]      - per-session enrichment: era, loudest + deepest-cut
@@ -25,7 +25,7 @@ explorable timeline:
 
 Every figure is recomputed here and the script exits non-zero on any
 disagreement. Sources (all real archive data):
-  - data/sessions.json            (61 sessions, 7-day gap rule)
+  - data/sessions.json            (64 sessions, 7-day gap rule)
   - data/v1/sessions.json          (track counts for the records assertion)
   - data/v1/milestones.json        (longest-silence canonical record)
   - data/v1/eras.json              (era ids/names/spans/deep_dive/journey)
@@ -90,9 +90,9 @@ def era_for_session(s):
 
 def main() -> int:
     sessions = SESS
-    assert len(sessions) == 61, f"session count drift: {len(sessions)}"
+    assert len(sessions) == 64, f"session count drift: {len(sessions)}"  # 61 -> 64 on 2026-10-15: 23 vault upload dates corrected to artist-side dates (completeness audit); sessions re-clustered from the corrected dates
     assert [s["id"] for s in sessions] == \
-        [f"session-{i:02d}" for i in range(1, 62)], "session id drift"
+        [f"session-{i:02d}" for i in range(1, 65)], "session id drift"
 
     # total vault tracks must equal what sessions.json claims
     total_tracks = sum(s["track_count"] for s in sessions)
@@ -110,7 +110,7 @@ def main() -> int:
             "from_session": a["id"], "to_session": b["id"],
             "from_end": a["end"], "to_start": b["start"], "days": days,
         })
-    assert len(gaps) == 60, "gap count drift"
+    assert len(gaps) == 63, "gap count drift"
 
     # the longest silence must match the canonical milestone record
     rec = next(m for m in MS if m["id"] == "longest-silence")
@@ -135,8 +135,8 @@ def main() -> int:
             cur = []
         cur.append(s)
     clusters.append(cur)
-    # seasons partition the 61 sessions exactly once, in order
-    assert sum(len(c) for c in clusters) == 61, "season partition drift"
+    # seasons partition the 64 sessions exactly once, in order
+    assert sum(len(c) for c in clusters) == 64, "season partition drift"
     assert [s["id"] for c in clusters for s in c] == [s["id"] for s in sessions], \
         "season order drift"
 
@@ -225,23 +225,23 @@ def main() -> int:
     most_prolific = max(enriched, key=lambda s: (s["track_count"], s["total_plays"]))
     assert (most_prolific["id"], most_prolific["track_count"],
             most_prolific["start"], most_prolific["end"]) == \
-        ("session-40", 19, "2023-11-03", "2023-11-12"), "most-prolific drift"
+        ("session-41", 19, "2023-11-03", "2023-11-12"), "most-prolific drift"  # same session, renumbered +1 by the 2026-10-15 date corrections
     loudest = max(enriched, key=lambda s: (s["total_plays"], s["track_count"]))
     quietest = min(enriched, key=lambda s: (s["total_plays"], s["track_count"]))
     assert (loudest["id"], loudest["total_plays"]) == ("session-02", 30088), \
         "loudest-session drift"
-    assert (quietest["id"], quietest["total_plays"]) == ("session-52", 17), \
-        "quietest-session drift"
+    assert (quietest["id"], quietest["total_plays"]) == ("session-44", 167), \
+        "quietest-session drift"  # was session-52/17 until 2026-10-15: that "session" was an artifact of the nine misdated Nov-2025 vault dates; corrected, its tracks join the real Nov-2024 session
     first, last = enriched[0], enriched[-1]
     assert (first["id"], first["start"]) == ("session-01", "2018-01-03")
-    assert (last["id"], last["end"]) == ("session-61", "2026-10-02")
+    assert (last["id"], last["end"]) == ("session-64", "2026-10-02")
 
     doc = {
         "version": NEW_VERSION,
         "generated": SNAPSHOT,
         "plays_snapshot": SNAPSHOT,
         "method": (
-            "Session archaeology, interactive: the 61 upload sessions from "
+            "Session archaeology, interactive: the 64 upload sessions from "
             "data/sessions.json (7-day upload-gap rule; upload dates are NOT "
             "recording dates) as an explorable timeline. gaps[] are the 60 "
             "inter-session silences in days; clusters[] are 'activity seasons' "
@@ -255,7 +255,7 @@ def main() -> int:
         "gap_rule_days": GAP_RULE_DAYS,
         "season_gap_days": SEASON_GAP_DAYS,
         "archive_totals": {
-            "sessions": 61, "tracks": total_tracks,
+            "sessions": 64, "tracks": total_tracks,
             "total_plays": sum(s["total_plays"] for s in enriched),
         },
         "eras": [{"id": e["id"], "name": e["name"], "span": e["span"],
@@ -266,7 +266,7 @@ def main() -> int:
         "silences": silences,
         "clusters": cluster_out,
         "insights": {
-            "session_count": 61,
+            "session_count": 64,
             "track_count": total_tracks,
             "season_count": season_count,
             "most_prolific": {
@@ -314,7 +314,7 @@ def main() -> int:
 SCHEMA = {
     "$schema": "http://json-schema.org/draft-07/schema#",
     "title": "Session clusters",
-    "description": ("The 61 upload sessions as an explorable timeline: per-session "
+    "description": ("The 64 upload sessions as an explorable timeline: per-session "
                     "enrichment, inter-session gaps, activity seasons, insights."),
     "type": "object",
     "required": ["sessions", "gaps", "silences", "clusters", "eras", "insights",

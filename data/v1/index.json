@@ -27,10 +27,10 @@
   },
   "artist": {
    "path": "data/v1/artist.json",
-   "description": "The source of truth: artist record - bio, facts, discography (219 entries), platforms, eras, vault, upcoming. data/artist.json feeds the site renderer and mirrors it.",
+   "description": "The source of truth: artist record - bio, facts, discography (221 entries), platforms, eras, vault, upcoming. data/artist.json feeds the site renderer and mirrors it.",
    "schema": "data/v1/schema/artist.json",
    "updated": "2026-10-11T00:00:00Z",
-   "records": 219,
+   "records": 221,
    "notes": ""
   },
   "codex": {
@@ -46,7 +46,7 @@
    "description": "Slug index for the generated release pages: ordinal string -> slug.",
    "schema": "data/v1/schema/release-slugs.json",
    "updated": "2026-10-11T00:00:00Z",
-   "records": 219,
+   "records": 221,
    "notes": ""
   },
   "on-this-day": {
@@ -54,7 +54,7 @@
    "description": "Calendar index: transmissions keyed by MM-DD upload date.",
    "schema": "data/v1/schema/on-this-day.json",
    "updated": "2026-10-11T00:00:00Z",
-   "records": 96,
+   "records": 106,
    "notes": ""
   },
   "years": {
@@ -70,7 +70,7 @@
    "description": "The collaborators: 21 voices parsed from title credits.",
    "schema": "data/v1/schema/circle.json",
    "updated": "2026-10-11T00:00:00Z",
-   "records": 21,
+   "records": 22,
    "notes": "Title-credit only; producers live in scene-figures.json."
   },
   "milestones": {
@@ -83,10 +83,10 @@
   },
   "sessions": {
    "path": "data/v1/sessions.json",
-   "description": "Upload sessions: 61 studio sessions clustered from vault upload dates (7-day gap rule).",
+   "description": "Upload sessions: 64 studio sessions clustered from vault upload dates (7-day gap rule).",
    "schema": "data/v1/schema/sessions.json",
    "updated": "2026-10-11T00:00:00Z",
-   "records": 61,
+   "records": 64,
    "notes": "Computed clusters, not artist-named studio sessions."
   },
   "changelog": {
@@ -94,7 +94,7 @@
    "description": "Site construction history, generated from the git log.",
    "schema": "data/v1/schema/changelog.json",
    "updated": "2026-10-11T00:00:00Z",
-   "records": 188,
+   "records": 193,
    "notes": "A changelog built from git log cannot record its own sync commit (wave-15 convention, WAVELOG.md)."
   },
   "first-last": {
@@ -147,10 +147,10 @@
   },
   "network": {
    "path": "data/v1/network.json",
-   "description": "Collaboration network: artist-centered nodes (21 title-credited collaborators + producer scene figures), track-weighted edges, co-credit links, computed insights.",
+   "description": "Collaboration network: artist-centered nodes (22 title-credited collaborators + producer scene figures), track-weighted edges, co-credit links, computed insights.",
    "schema": "data/v1/schema/network.json",
    "updated": "2026-10-11T00:00:00Z",
-   "records": 23,
+   "records": 24,
    "notes": "23 nodes / 27 edges; no producer-collaborator edges exist on record."
   },
   "eras": {
@@ -163,7 +163,7 @@
   },
   "session-clusters": {
    "path": "data/v1/session-clusters.json",
-   "description": "Session archaeology, interactive: the 61 upload sessions as an explorable timeline - per-session enrichment (era, loudest + deepest-cut tracks, title-credited collaborators, deep-dive/era/journey cross-links), the 60 inter-session gaps, activity seasons, and asserted insights. Data source for sessions-explorer.html.",
+   "description": "Session archaeology, interactive: the 64 upload sessions as an explorable timeline - per-session enrichment (era, loudest + deepest-cut tracks, title-credited collaborators, deep-dive/era/journey cross-links), the 63 inter-session gaps, activity seasons, and asserted insights. Data source for sessions-explorer.html.",
    "schema": "data/v1/schema/session-clusters.json",
    "updated": "2026-10-11T00:00:00Z",
    "records": 9,
@@ -190,7 +190,7 @@
    "description": "Session explorer 2.0 tooling: per-session compare profiles (stats, loudest + deepest-cut tracks, collaborators, play profiles, family/session/era/journey cross-links), the honest snapshot-history state (one 2026-10-11 snapshot - no play trajectories exist), and the deepest-sessions editorial ranking (lowest average plays per transmission, min 2 transmissions, formula stated). Data source for sessions-explorer.html's compare / deepest-cuts / timeline-scrubber sections.",
    "schema": "data/v1/schema/session-tools.json",
    "updated": "2026-10-11T00:00:00Z",
-   "records": 61,
+   "records": 64,
    "notes": "The deepest-cuts ranking is editorial (formula stated in the payload), not an artist fact."
   },
   "codex-network": {
@@ -211,10 +211,10 @@
   },
   "chronicle": {
    "path": "data/v1/chronicle.json",
-   "description": "The Chronicle: one merged chronological stream - all 61 upload sessions, all 9 dated milestones (the 553-day longest silence as a span), and all 44 title-credited collaboration appearances, each with era assignment, cross-links (release / circle / session pages), and collaborator tags. Data source for chronicle.html.",
+   "description": "The Chronicle: one merged chronological stream - all 64 upload sessions, all 9 dated milestones (the 553-day longest silence as a span), and all 45 title-credited collaboration appearances, each with era assignment, cross-links (release / circle / session pages), and collaborator tags. Data source for chronicle.html.",
    "schema": "data/v1/schema/chronicle.json",
    "updated": "2026-10-11T00:00:00Z",
-   "records": 114,
+   "records": 118,
    "notes": "Same-date order is milestone -> session -> collaboration (a stated presentation rule); the 2017 feature credit predates the eras."
   }
  },

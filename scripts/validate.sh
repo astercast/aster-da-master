@@ -422,8 +422,8 @@ chain_str = " \u2192 ".join(CHAIN_ORDER)
 if chain_str not in llms:
     errors.append("llms.txt generator dependency order doesn't match the canonical chain")
 
-# catalog counts: 219 transmissions, 34 distributor releases, 185 SoundCloud tracks,
-# 16 codex families, 21 collaborators, 61 sessions, 15 skills, 113 producers
+# catalog counts: 221 transmissions, 36 distributor releases, 185 SoundCloud tracks,
+# 16 codex families, 22 collaborators, 64 sessions, 15 skills, 113 producers
 artist = json.loads((ROOT / "data" / "artist.json").read_text())
 circle_keys = json.loads((ROOT / "data" / "v1" / "circle.json").read_text())
 prods = json.loads((ROOT / "data" / "v1" / "producer-deepdives.json").read_text())
@@ -433,9 +433,9 @@ vault = [e for e in disc if e["type"] == "SoundCloud-only"]
 codex = json.loads((ROOT / "data" / "codex.json").read_text())
 sessions = json.loads((ROOT / "data" / "sessions.json").read_text())
 skills = [f for f in (ROOT / "skills").glob("*.md") if f.name != "index.json"]
-checks = [(str(len(disc)), "219"), (str(len(dist)), "34"), (str(len(vault)), "185"),
-          (str(len(codex["families"])), "16"), (str(len(sessions["sessions"])), "61"),
-          (str(len(circle_keys)), "21"), (str(len(skills)), "15"),
+checks = [(str(len(disc)), "221"), (str(len(dist)), "36"), (str(len(vault)), "185"),
+          (str(len(codex["families"])), "16"), (str(len(sessions["sessions"])), "64"),
+          (str(len(circle_keys)), "22"), (str(len(skills)), "15"),
           (str(len(prods["producers"])), "113")]
 for actual, want in checks:
     if actual != want:
@@ -448,7 +448,7 @@ if errors:
     for e in errors:
         print("   -", e)
     sys.exit(1)
-print(f"  ok: llms.txt matches index.json v{ver}, all {len(endpoints)} endpoints, chain order, catalog counts (219/34/185/16/21/61/15/113)")
+print(f"  ok: llms.txt matches index.json v{ver}, all {len(endpoints)} endpoints, chain order, catalog counts (221/36/185/16/22/64/15/113)")
 EOF
 [ $? -eq 0 ] && pass "llms.txt freshness" || FAIL=$((FAIL+1))
 

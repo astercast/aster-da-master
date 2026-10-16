@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Build the Vocabulary Codex from the verified discography.
 
-Reads data/artist.json (219 titles), counts recurring ritual vocabulary
+Reads data/artist.json (221 titles), counts recurring ritual vocabulary
 across titles, and emits data/codex.json + data/v1/codex.json.
 
 Also generates:

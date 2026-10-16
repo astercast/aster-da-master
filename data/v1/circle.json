@@ -4,7 +4,7 @@
   "page": "circle/index.html#c-max-ferrari",
   "shared_transmissions": 8,
   "shared_plays": 13618,
-  "years_active": "2018–2025",
+  "years_active": "2018–2024",
   "tracks": [
    {
     "title": "DESTINY (ft. JAX & Max Ferrari) ~ [prod. louky]",
@@ -14,7 +14,7 @@
    },
    {
     "title": "NIGHT MODE ft. MAX FERRARI x YUNG VETTA x JAX",
-    "date": "2019-07-09",
+    "date": "2019-06-13",
     "plays": 10083,
     "type": "SoundCloud-only"
    },
@@ -44,13 +44,13 @@
    },
    {
     "title": "Sti11 waiting/tunnel freestyle w/ Max Ferrari prod. suli",
-    "date": "2025-11-11",
+    "date": "2024-11-07",
     "plays": 300,
     "type": "SoundCloud-only"
    },
    {
     "title": "ARCSNOWWW w/ Max Ferrari prod. sustain",
-    "date": "2025-11-11",
+    "date": "2024-11-07",
     "plays": 184,
     "type": "SoundCloud-only"
    }
@@ -101,7 +101,7 @@
    },
    {
     "title": "NIGHT MODE ft. MAX FERRARI x YUNG VETTA x JAX",
-    "date": "2019-07-09",
+    "date": "2019-06-13",
     "plays": 10083,
     "type": "SoundCloud-only"
    }
@@ -128,7 +128,7 @@
    },
    {
     "title": "NIGHT MODE ft. MAX FERRARI x YUNG VETTA x JAX",
-    "date": "2019-07-09",
+    "date": "2019-06-13",
     "plays": 10083,
     "type": "SoundCloud-only"
    }
@@ -230,7 +230,7 @@
   "page": "circle/index.html#c-griimxo",
   "shared_transmissions": 2,
   "shared_plays": 178,
-  "years_active": "2024–2025",
+  "years_active": "2024",
   "tracks": [
    {
     "title": "Phantom Moshpit (feat. GRiiMXO)",
@@ -240,7 +240,7 @@
    },
    {
     "title": "Phantom Moshpit w/ Griimxo (remastered) prod. scared716",
-    "date": "2025-11-11",
+    "date": "2024-11-08",
     "plays": 178,
     "type": "SoundCloud-only"
    }
@@ -279,7 +279,7 @@
    },
    {
     "title": "SUN SET FOR U ft. JO$E DRIPP (prod. y axis)",
-    "date": "2019-07-09",
+    "date": "2019-07-06",
     "plays": 1771,
     "type": "SoundCloud-only"
    }
@@ -397,7 +397,7 @@
   "tracks": [
    {
     "title": "I'M WEAKENING ft. AMMI $AGE",
-    "date": "2019-07-09",
+    "date": "2019-07-06",
     "plays": 2490,
     "type": "SoundCloud-only"
    }
@@ -492,7 +492,7 @@
   "tracks": [
    {
     "title": "GARDEN ft. Offline_hp (prod. QB)",
-    "date": "2019-07-09",
+    "date": "2019-06-26",
     "plays": 1311,
     "type": "SoundCloud-only"
    }
@@ -558,6 +558,21 @@
     "date": "2018-11-08",
     "plays": 1443,
     "type": "SoundCloud-only"
+   }
+  ]
+ },
+ "spursy": {
+  "name": "SPURSY",
+  "page": "circle/index.html#c-spursy",
+  "shared_transmissions": 1,
+  "shared_plays": 0,
+  "years_active": "2020",
+  "tracks": [
+   {
+    "title": "Yea Thats Kool (feat. ASTERDAMASTER & SPURSY)",
+    "date": "2020-05-08",
+    "plays": null,
+    "type": "Single"
    }
   ]
  },

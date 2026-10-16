@@ -13,7 +13,7 @@ Transmission journey stops).
 
 Every figure is recomputed here and the script exits non-zero on any
 disagreement. Sources (all real archive data):
-  - data/sessions.json            (61 sessions, per-track plays + dates)
+  - data/sessions.json            (64 sessions, per-track plays + dates)
   - data/v1/session-clusters.json  (enriched sessions: era, loudest +
                                     deepest-cut tracks, title-credited
                                     collaborators, deep-dive + journey links)
@@ -258,9 +258,9 @@ TRACK_FORMULA = (
 
 
 def main() -> int:
-    assert len(SESS) == 61, f"session count drift: {len(SESS)}"
+    assert len(SESS) == 64, f"session count drift: {len(SESS)}"
     cl_by_id = {s["id"]: s for s in CL["sessions"]}
-    assert len(cl_by_id) == 61, "session-clusters session drift"
+    assert len(cl_by_id) == 64, "session-clusters session drift"
 
     # family cross-links: session id -> families where it is a key session
     fam_by_session = {}
@@ -344,7 +344,7 @@ def main() -> int:
             "journey": p["journey"],
         })
     # asserted: the deepest multi-track session on record
-    assert ranked_rows[0]["session_id"] == "session-43", \
+    assert ranked_rows[0]["session_id"] == "session-44", \
         f"deepest drift: {ranked_rows[0]['session_id']}"
     assert ranked_rows[0]["avg_plays_per_track"] == 83.5, "deepest avg drift"
 
@@ -414,9 +414,9 @@ def main() -> int:
         "loudest_session": ins["loudest_session"],
         "quietest_session": ins["quietest_session"],
     }
-    assert ins["most_prolific"]["id"] == "session-40", "most-prolific drift"
+    assert ins["most_prolific"]["id"] == "session-41", "most-prolific drift"
     assert ins["loudest_session"]["total_plays"] == 30088, "loudest drift"
-    assert ins["quietest_session"]["total_plays"] == 17, "quietest drift"
+    assert ins["quietest_session"]["total_plays"] == 167, "quietest drift"
 
     doc = {
         "version": NEW_VERSION,

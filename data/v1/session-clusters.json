@@ -2,11 +2,11 @@
  "version": "0.19.0",
  "generated": "2026-10-11",
  "plays_snapshot": "2026-10-11",
- "method": "Session archaeology, interactive: the 61 upload sessions from data/sessions.json (7-day upload-gap rule; upload dates are NOT recording dates) as an explorable timeline. gaps[] are the 60 inter-session silences in days; clusters[] are 'activity seasons' - consecutive sessions grouped while the separating silence is <= 90 days, a computed browsing convention, not an artist fact. loudest/deepest_cut are the session's max/min play counts (2026-10-11 snapshot); collaborators are w//ft. title credits parsed by the shared rule (producers excluded). Titles and metadata only - never lyrics, never invented bio facts.",
+ "method": "Session archaeology, interactive: the 64 upload sessions from data/sessions.json (7-day upload-gap rule; upload dates are NOT recording dates) as an explorable timeline. gaps[] are the 60 inter-session silences in days; clusters[] are 'activity seasons' - consecutive sessions grouped while the separating silence is <= 90 days, a computed browsing convention, not an artist fact. loudest/deepest_cut are the session's max/min play counts (2026-10-11 snapshot); collaborators are w//ft. title credits parsed by the shared rule (producers excluded). Titles and metadata only - never lyrics, never invented bio facts.",
  "gap_rule_days": 7,
  "season_gap_days": 90,
  "archive_totals": {
-  "sessions": 61,
+  "sessions": 64,
   "tracks": 185,
   "total_plays": 257394
  },
@@ -492,7 +492,7 @@
     "page": "releases/mid-prod-feld.html"
    },
    "collaborators": [],
-   "deep_dive": null,
+   "deep_dive": "sessions/the-december-13th-15th-session.html",
    "journey": "transmission.html#era-the-first-rite",
    "season": "season-01"
   },
@@ -662,67 +662,96 @@
   },
   {
    "id": "session-23",
-   "name": "The June 25th Session",
-   "start": "2019-06-25",
-   "end": "2019-06-25",
+   "name": "The June 13th Session",
+   "start": "2019-06-13",
+   "end": "2019-06-13",
    "days": 1,
    "track_count": 1,
-   "total_plays": 347,
+   "total_plays": 10083,
    "era_id": "the-first-rite",
    "era_name": "The First Rite",
    "loudest": {
-    "title": "You Don't Wanna Miss Tonight(prod. Luca Malaspina)",
-    "plays": 347,
-    "date": "2019-06-25",
-    "page": "releases/you-don-t-wanna-miss-tonight-prod-luca-malaspina.html"
+    "title": "NIGHT MODE ft. MAX FERRARI x YUNG VETTA x JAX",
+    "plays": 10083,
+    "date": "2019-06-13",
+    "page": "releases/night-mode-ft-max-ferrari-x-yung-vetta-x-jax.html"
    },
    "deepest_cut": {
-    "title": "You Don't Wanna Miss Tonight(prod. Luca Malaspina)",
-    "plays": 347,
-    "date": "2019-06-25",
-    "page": "releases/you-don-t-wanna-miss-tonight-prod-luca-malaspina.html"
+    "title": "NIGHT MODE ft. MAX FERRARI x YUNG VETTA x JAX",
+    "plays": 10083,
+    "date": "2019-06-13",
+    "page": "releases/night-mode-ft-max-ferrari-x-yung-vetta-x-jax.html"
    },
-   "collaborators": [],
+   "collaborators": [
+    "MAX FERRARI",
+    "YUNG VETTA",
+    "JAX"
+   ],
    "deep_dive": null,
    "journey": "transmission.html#era-the-first-rite",
    "season": "season-01"
   },
   {
    "id": "session-24",
-   "name": "The July 9th Session",
-   "start": "2019-07-09",
-   "end": "2019-07-09",
-   "days": 1,
-   "track_count": 7,
-   "total_plays": 28260,
+   "name": "The June 25th–26th Session",
+   "start": "2019-06-25",
+   "end": "2019-06-26",
+   "days": 2,
+   "track_count": 4,
+   "total_plays": 10323,
    "era_id": "the-first-rite",
    "era_name": "The First Rite",
    "loudest": {
-    "title": "NIGHT MODE ft. MAX FERRARI x YUNG VETTA x JAX",
-    "plays": 10083,
-    "date": "2019-07-09",
-    "page": "releases/night-mode-ft-max-ferrari-x-yung-vetta-x-jax.html"
+    "title": "NECK DEEP (prod. AWFL)",
+    "plays": 5276,
+    "date": "2019-06-26",
+    "page": "releases/neck-deep-prod-awfl.html"
    },
    "deepest_cut": {
-    "title": "GARDEN ft. Offline_hp (prod. QB)",
-    "plays": 1311,
-    "date": "2019-07-09",
-    "page": "releases/garden-ft-offline-hp-prod-qb.html"
+    "title": "You Don't Wanna Miss Tonight(prod. Luca Malaspina)",
+    "plays": 347,
+    "date": "2019-06-25",
+    "page": "releases/you-don-t-wanna-miss-tonight-prod-luca-malaspina.html"
    },
    "collaborators": [
-    "AMMI $AGE",
-    "JO$E DRIPP",
-    "Offline_hp",
-    "MAX FERRARI",
-    "YUNG VETTA",
-    "JAX"
+    "Offline_hp"
    ],
-   "deep_dive": "sessions/the-july-9th-session.html",
+   "deep_dive": null,
    "journey": "transmission.html#era-the-first-rite",
    "season": "season-01"
   },
   {
    "id": "session-25",
+   "name": "The July 6th Session",
+   "start": "2019-07-06",
+   "end": "2019-07-06",
+   "days": 1,
+   "track_count": 3,
+   "total_plays": 8201,
+   "era_id": "the-first-rite",
+   "era_name": "The First Rite",
+   "loudest": {
+    "title": "outro ~ I RLLY DID THT(prod. itami リネン)",
+    "plays": 3940,
+    "date": "2019-07-06",
+    "page": "releases/outro-i-rlly-did-tht-prod-itami.html"
+   },
+   "deepest_cut": {
+    "title": "SUN SET FOR U ft. JO$E DRIPP (prod. y axis)",
+    "plays": 1771,
+    "date": "2019-07-06",
+    "page": "releases/sun-set-for-u-ft-jo-e-dripp-prod-y-axis.html"
+   },
+   "collaborators": [
+    "AMMI $AGE",
+    "JO$E DRIPP"
+   ],
+   "deep_dive": null,
+   "journey": "transmission.html#era-the-first-rite",
+   "season": "season-01"
+  },
+  {
+   "id": "session-26",
    "name": "The October 4th Session",
    "start": "2019-10-04",
    "end": "2019-10-04",
@@ -751,7 +780,7 @@
    "season": "season-01"
   },
   {
-   "id": "session-26",
+   "id": "session-27",
    "name": "The December 6th Session",
    "start": "2019-12-06",
    "end": "2019-12-06",
@@ -781,7 +810,7 @@
    "season": "season-01"
   },
   {
-   "id": "session-27",
+   "id": "session-28",
    "name": "The December 22nd Session",
    "start": "2019-12-22",
    "end": "2019-12-22",
@@ -813,7 +842,7 @@
    "season": "season-01"
   },
   {
-   "id": "session-28",
+   "id": "session-29",
    "name": "The December 30th Session",
    "start": "2019-12-30",
    "end": "2019-12-30",
@@ -844,7 +873,7 @@
    "season": "season-01"
   },
   {
-   "id": "session-29",
+   "id": "session-30",
    "name": "The April 9th Session",
    "start": "2020-04-09",
    "end": "2020-04-09",
@@ -871,7 +900,7 @@
    "season": "season-02"
   },
   {
-   "id": "session-30",
+   "id": "session-31",
    "name": "The May 3rd Session",
    "start": "2020-05-03",
    "end": "2020-05-03",
@@ -898,7 +927,7 @@
    "season": "season-02"
   },
   {
-   "id": "session-31",
+   "id": "session-32",
    "name": "The June 18th Session",
    "start": "2020-06-18",
    "end": "2020-06-18",
@@ -925,7 +954,7 @@
    "season": "season-02"
   },
   {
-   "id": "session-32",
+   "id": "session-33",
    "name": "The October 7th Session",
    "start": "2020-10-07",
    "end": "2020-10-07",
@@ -955,7 +984,7 @@
    "season": "season-03"
   },
   {
-   "id": "session-33",
+   "id": "session-34",
    "name": "The November 11th Session",
    "start": "2020-11-11",
    "end": "2020-11-11",
@@ -982,7 +1011,7 @@
    "season": "season-03"
   },
   {
-   "id": "session-34",
+   "id": "session-35",
    "name": "The December 21st Session",
    "start": "2020-12-21",
    "end": "2020-12-21",
@@ -1009,7 +1038,7 @@
    "season": "season-03"
   },
   {
-   "id": "session-35",
+   "id": "session-36",
    "name": "The July 14th Session",
    "start": "2021-07-14",
    "end": "2021-07-14",
@@ -1039,7 +1068,7 @@
    "season": "season-04"
   },
   {
-   "id": "session-36",
+   "id": "session-37",
    "name": "The February 22nd Session",
    "start": "2022-02-22",
    "end": "2022-02-22",
@@ -1066,7 +1095,7 @@
    "season": "season-05"
   },
   {
-   "id": "session-37",
+   "id": "session-38",
    "name": "The August 29th Session",
    "start": "2023-08-29",
    "end": "2023-08-29",
@@ -1095,7 +1124,7 @@
    "season": "season-06"
   },
   {
-   "id": "session-38",
+   "id": "session-39",
    "name": "The October 8th Session",
    "start": "2023-10-08",
    "end": "2023-10-08",
@@ -1122,7 +1151,7 @@
    "season": "season-06"
   },
   {
-   "id": "session-39",
+   "id": "session-40",
    "name": "The October 20th–21st Session",
    "start": "2023-10-20",
    "end": "2023-10-21",
@@ -1149,7 +1178,7 @@
    "season": "season-06"
   },
   {
-   "id": "session-40",
+   "id": "session-41",
    "name": "The November 3rd–12th Session",
    "start": "2023-11-03",
    "end": "2023-11-12",
@@ -1176,7 +1205,7 @@
    "season": "season-06"
   },
   {
-   "id": "session-41",
+   "id": "session-42",
    "name": "The March 27th Session",
    "start": "2024-03-27",
    "end": "2024-03-27",
@@ -1203,7 +1232,7 @@
    "season": "season-07"
   },
   {
-   "id": "session-42",
+   "id": "session-43",
    "name": "The April 4th–7th Session",
    "start": "2024-04-04",
    "end": "2024-04-07",
@@ -1232,7 +1261,7 @@
    "season": "season-07"
   },
   {
-   "id": "session-43",
+   "id": "session-44",
    "name": "The April 16th–18th Session",
    "start": "2024-04-16",
    "end": "2024-04-18",
@@ -1259,7 +1288,7 @@
    "season": "season-07"
   },
   {
-   "id": "session-44",
+   "id": "session-45",
    "name": "The May 2nd–3rd Session",
    "start": "2024-05-02",
    "end": "2024-05-03",
@@ -1286,7 +1315,7 @@
    "season": "season-07"
   },
   {
-   "id": "session-45",
+   "id": "session-46",
    "name": "The May 22nd–31st Session",
    "start": "2024-05-22",
    "end": "2024-05-31",
@@ -1313,7 +1342,7 @@
    "season": "season-07"
   },
   {
-   "id": "session-46",
+   "id": "session-47",
    "name": "The June 16th Session",
    "start": "2024-06-16",
    "end": "2024-06-16",
@@ -1340,7 +1369,7 @@
    "season": "season-07"
   },
   {
-   "id": "session-47",
+   "id": "session-48",
    "name": "The June 27th Session",
    "start": "2024-06-27",
    "end": "2024-06-27",
@@ -1367,7 +1396,7 @@
    "season": "season-07"
   },
   {
-   "id": "session-48",
+   "id": "session-49",
    "name": "The July 9th Session",
    "start": "2024-07-09",
    "end": "2024-07-09",
@@ -1394,7 +1423,7 @@
    "season": "season-07"
   },
   {
-   "id": "session-49",
+   "id": "session-50",
    "name": "The August 30th Session",
    "start": "2024-08-30",
    "end": "2024-08-30",
@@ -1421,10 +1450,10 @@
    "season": "season-07"
   },
   {
-   "id": "session-50",
-   "name": "The September 18th Session",
-   "start": "2024-09-18",
-   "end": "2024-09-18",
+   "id": "session-51",
+   "name": "The September 14th Session",
+   "start": "2024-09-14",
+   "end": "2024-09-14",
    "days": 1,
    "track_count": 1,
    "total_plays": 175,
@@ -1433,13 +1462,13 @@
    "loudest": {
     "title": "like my dogs!!! (prod waynn)",
     "plays": 175,
-    "date": "2024-09-18",
+    "date": "2024-09-14",
     "page": "releases/like-my-dogs-prod-waynn.html"
    },
    "deepest_cut": {
     "title": "like my dogs!!! (prod waynn)",
     "plays": 175,
-    "date": "2024-09-18",
+    "date": "2024-09-14",
     "page": "releases/like-my-dogs-prod-waynn.html"
    },
    "collaborators": [],
@@ -1448,7 +1477,7 @@
    "season": "season-07"
   },
   {
-   "id": "session-51",
+   "id": "session-52",
    "name": "The October 4th Session",
    "start": "2024-10-04",
    "end": "2024-10-04",
@@ -1475,20 +1504,20 @@
    "season": "season-07"
   },
   {
-   "id": "session-52",
-   "name": "The November 5th Session",
-   "start": "2024-11-05",
-   "end": "2024-11-05",
-   "days": 1,
-   "track_count": 1,
-   "total_plays": 17,
+   "id": "session-53",
+   "name": "The Oct 30th – Nov 8th Session",
+   "start": "2024-10-30",
+   "end": "2024-11-08",
+   "days": 10,
+   "track_count": 10,
+   "total_plays": 1683,
    "era_id": "the-somelowlifes-era",
    "era_name": "The SomeLowLifes Era",
    "loudest": {
-    "title": "nitemode2019 w/ Max+Vetty prod. NaXi.wav",
-    "plays": 17,
-    "date": "2024-11-05",
-    "page": "releases/nitemode2019-w-max-vetty-prod-naxi-wav.html"
+    "title": "Sti11 waiting/tunnel freestyle w/ Max Ferrari prod. suli",
+    "plays": 300,
+    "date": "2024-11-07",
+    "page": "releases/sti11-waiting-tunnel-freestyle-w-max-ferrari-prod-suli.html"
    },
    "deepest_cut": {
     "title": "nitemode2019 w/ Max+Vetty prod. NaXi.wav",
@@ -1498,20 +1527,22 @@
    },
    "collaborators": [
     "Max",
-    "Vetty"
+    "Vetty",
+    "Max Ferrari",
+    "Griimxo"
    ],
-   "deep_dive": null,
+   "deep_dive": "sessions/the-oct-30th-nov-8th-session.html",
    "journey": "transmission.html#era-the-somelowlifes-era",
    "season": "season-07"
   },
   {
-   "id": "session-53",
-   "name": "The January 9th Session",
+   "id": "session-54",
+   "name": "The January 9th–13th Session",
    "start": "2025-01-09",
-   "end": "2025-01-09",
-   "days": 1,
-   "track_count": 1,
-   "total_plays": 222,
+   "end": "2025-01-13",
+   "days": 5,
+   "track_count": 2,
+   "total_plays": 412,
    "era_id": "the-silence",
    "era_name": "The Silence",
    "loudest": {
@@ -1521,10 +1552,10 @@
     "page": "releases/oh-we11-prod-vuksai.html"
    },
    "deepest_cut": {
-    "title": "oh We11 (prod Vuksai)",
-    "plays": 222,
-    "date": "2025-01-09",
-    "page": "releases/oh-we11-prod-vuksai.html"
+    "title": "1otso prod. branwen",
+    "plays": 190,
+    "date": "2025-01-13",
+    "page": "releases/1otso-prod-branwen.html"
    },
    "collaborators": [],
    "deep_dive": null,
@@ -1532,20 +1563,74 @@
    "season": "season-07"
   },
   {
-   "id": "session-54",
-   "name": "The September 13th–14th Session",
-   "start": "2025-09-13",
-   "end": "2025-09-14",
-   "days": 2,
-   "track_count": 2,
-   "total_plays": 384,
+   "id": "session-55",
+   "name": "The March 31st Session",
+   "start": "2025-03-31",
+   "end": "2025-03-31",
+   "days": 1,
+   "track_count": 1,
+   "total_plays": 206,
    "era_id": "the-silence",
    "era_name": "The Silence",
    "loudest": {
     "title": "switch (prod fiftyzeros)",
     "plays": 206,
-    "date": "2025-09-14",
+    "date": "2025-03-31",
     "page": "releases/switch-prod-fiftyzeros.html"
+   },
+   "deepest_cut": {
+    "title": "switch (prod fiftyzeros)",
+    "plays": 206,
+    "date": "2025-03-31",
+    "page": "releases/switch-prod-fiftyzeros.html"
+   },
+   "collaborators": [],
+   "deep_dive": null,
+   "journey": "transmission.html#era-the-silence",
+   "season": "season-07"
+  },
+  {
+   "id": "session-56",
+   "name": "The July 22nd Session",
+   "start": "2025-07-22",
+   "end": "2025-07-22",
+   "days": 1,
+   "track_count": 1,
+   "total_plays": 180,
+   "era_id": "the-silence",
+   "era_name": "The Silence",
+   "loudest": {
+    "title": "games stop prod branwen",
+    "plays": 180,
+    "date": "2025-07-22",
+    "page": "releases/games-stop-prod-branwen.html"
+   },
+   "deepest_cut": {
+    "title": "games stop prod branwen",
+    "plays": 180,
+    "date": "2025-07-22",
+    "page": "releases/games-stop-prod-branwen.html"
+   },
+   "collaborators": [],
+   "deep_dive": null,
+   "journey": "transmission.html#era-the-silence",
+   "season": "season-08"
+  },
+  {
+   "id": "session-57",
+   "name": "The September 13th Session",
+   "start": "2025-09-13",
+   "end": "2025-09-13",
+   "days": 1,
+   "track_count": 1,
+   "total_plays": 178,
+   "era_id": "the-silence",
+   "era_name": "The Silence",
+   "loudest": {
+    "title": "water + sun (prod paris pas rigolo)",
+    "plays": 178,
+    "date": "2025-09-13",
+    "page": "releases/water-sun-prod-paris-pas-rigolo.html"
    },
    "deepest_cut": {
     "title": "water + sun (prod paris pas rigolo)",
@@ -1559,37 +1644,34 @@
    "season": "season-08"
   },
   {
-   "id": "session-55",
-   "name": "The November 4th–11th Session",
+   "id": "session-58",
+   "name": "The November 4th Session",
    "start": "2025-11-04",
-   "end": "2025-11-11",
-   "days": 8,
-   "track_count": 11,
-   "total_plays": 2029,
+   "end": "2025-11-04",
+   "days": 1,
+   "track_count": 1,
+   "total_plays": 173,
    "era_id": "the-silence",
    "era_name": "The Silence",
    "loudest": {
-    "title": "Sti11 waiting/tunnel freestyle w/ Max Ferrari prod. suli",
-    "plays": 300,
-    "date": "2025-11-11",
-    "page": "releases/sti11-waiting-tunnel-freestyle-w-max-ferrari-prod-suli.html"
+    "title": "my kin (prod xannnn)",
+    "plays": 173,
+    "date": "2025-11-04",
+    "page": "releases/my-kin-prod-xannnn.html"
    },
    "deepest_cut": {
-    "title": "No Puppets A11owed prod. xtasane",
-    "plays": 24,
-    "date": "2025-11-10",
-    "page": "releases/no-puppets-a11owed-prod-xtasane.html"
+    "title": "my kin (prod xannnn)",
+    "plays": 173,
+    "date": "2025-11-04",
+    "page": "releases/my-kin-prod-xannnn.html"
    },
-   "collaborators": [
-    "Max Ferrari",
-    "Griimxo"
-   ],
-   "deep_dive": "sessions/the-november-4th-11th-session.html",
+   "collaborators": [],
+   "deep_dive": null,
    "journey": "transmission.html#era-the-silence",
    "season": "season-08"
   },
   {
-   "id": "session-56",
+   "id": "session-59",
    "name": "The November 23rd Session",
    "start": "2025-11-23",
    "end": "2025-11-23",
@@ -1616,7 +1698,7 @@
    "season": "season-08"
   },
   {
-   "id": "session-57",
+   "id": "session-60",
    "name": "The December 19th Session",
    "start": "2025-12-19",
    "end": "2025-12-19",
@@ -1643,7 +1725,7 @@
    "season": "season-08"
   },
   {
-   "id": "session-58",
+   "id": "session-61",
    "name": "The January 16th Session",
    "start": "2026-01-16",
    "end": "2026-01-16",
@@ -1670,25 +1752,25 @@
    "season": "season-08"
   },
   {
-   "id": "session-59",
-   "name": "The March 17th–25th Session",
+   "id": "session-62",
+   "name": "The March 17th Session",
    "start": "2026-03-17",
-   "end": "2026-03-25",
-   "days": 9,
-   "track_count": 4,
-   "total_plays": 781,
+   "end": "2026-03-17",
+   "days": 1,
+   "track_count": 3,
+   "total_plays": 601,
    "era_id": "the-return",
    "era_name": "The Return",
    "loudest": {
     "title": "no power prod wellfed",
     "plays": 242,
-    "date": "2026-03-23",
+    "date": "2026-03-17",
     "page": "releases/no-power-prod-wellfed.html"
    },
    "deepest_cut": {
     "title": "life's made prod wellfed",
     "plays": 151,
-    "date": "2026-03-20",
+    "date": "2026-03-17",
     "page": "releases/life-s-made-prod-wellfed.html"
    },
    "collaborators": [],
@@ -1697,7 +1779,7 @@
    "season": "season-08"
   },
   {
-   "id": "session-60",
+   "id": "session-63",
    "name": "The July 15th Session",
    "start": "2026-07-15",
    "end": "2026-07-15",
@@ -1724,7 +1806,7 @@
    "season": "season-09"
   },
   {
-   "id": "session-61",
+   "id": "session-64",
    "name": "The October 2nd Session",
    "start": "2026-10-02",
    "end": "2026-10-02",
@@ -1903,271 +1985,292 @@
    "from_session": "session-22",
    "to_session": "session-23",
    "from_end": "2019-04-28",
-   "to_start": "2019-06-25",
-   "days": 58
+   "to_start": "2019-06-13",
+   "days": 46
   },
   {
    "from_session": "session-23",
    "to_session": "session-24",
-   "from_end": "2019-06-25",
-   "to_start": "2019-07-09",
-   "days": 14
+   "from_end": "2019-06-13",
+   "to_start": "2019-06-25",
+   "days": 12
   },
   {
    "from_session": "session-24",
    "to_session": "session-25",
-   "from_end": "2019-07-09",
-   "to_start": "2019-10-04",
-   "days": 87
+   "from_end": "2019-06-26",
+   "to_start": "2019-07-06",
+   "days": 10
   },
   {
    "from_session": "session-25",
    "to_session": "session-26",
+   "from_end": "2019-07-06",
+   "to_start": "2019-10-04",
+   "days": 90
+  },
+  {
+   "from_session": "session-26",
+   "to_session": "session-27",
    "from_end": "2019-10-04",
    "to_start": "2019-12-06",
    "days": 63
   },
   {
-   "from_session": "session-26",
-   "to_session": "session-27",
+   "from_session": "session-27",
+   "to_session": "session-28",
    "from_end": "2019-12-06",
    "to_start": "2019-12-22",
    "days": 16
   },
   {
-   "from_session": "session-27",
-   "to_session": "session-28",
+   "from_session": "session-28",
+   "to_session": "session-29",
    "from_end": "2019-12-22",
    "to_start": "2019-12-30",
    "days": 8
   },
   {
-   "from_session": "session-28",
-   "to_session": "session-29",
+   "from_session": "session-29",
+   "to_session": "session-30",
    "from_end": "2019-12-30",
    "to_start": "2020-04-09",
    "days": 101
   },
   {
-   "from_session": "session-29",
-   "to_session": "session-30",
+   "from_session": "session-30",
+   "to_session": "session-31",
    "from_end": "2020-04-09",
    "to_start": "2020-05-03",
    "days": 24
   },
   {
-   "from_session": "session-30",
-   "to_session": "session-31",
+   "from_session": "session-31",
+   "to_session": "session-32",
    "from_end": "2020-05-03",
    "to_start": "2020-06-18",
    "days": 46
   },
   {
-   "from_session": "session-31",
-   "to_session": "session-32",
+   "from_session": "session-32",
+   "to_session": "session-33",
    "from_end": "2020-06-18",
    "to_start": "2020-10-07",
    "days": 111
   },
   {
-   "from_session": "session-32",
-   "to_session": "session-33",
+   "from_session": "session-33",
+   "to_session": "session-34",
    "from_end": "2020-10-07",
    "to_start": "2020-11-11",
    "days": 35
   },
   {
-   "from_session": "session-33",
-   "to_session": "session-34",
+   "from_session": "session-34",
+   "to_session": "session-35",
    "from_end": "2020-11-11",
    "to_start": "2020-12-21",
    "days": 40
   },
   {
-   "from_session": "session-34",
-   "to_session": "session-35",
+   "from_session": "session-35",
+   "to_session": "session-36",
    "from_end": "2020-12-21",
    "to_start": "2021-07-14",
    "days": 205
   },
   {
-   "from_session": "session-35",
-   "to_session": "session-36",
+   "from_session": "session-36",
+   "to_session": "session-37",
    "from_end": "2021-07-14",
    "to_start": "2022-02-22",
    "days": 223
   },
   {
-   "from_session": "session-36",
-   "to_session": "session-37",
+   "from_session": "session-37",
+   "to_session": "session-38",
    "from_end": "2022-02-22",
    "to_start": "2023-08-29",
    "days": 553
   },
   {
-   "from_session": "session-37",
-   "to_session": "session-38",
+   "from_session": "session-38",
+   "to_session": "session-39",
    "from_end": "2023-08-29",
    "to_start": "2023-10-08",
    "days": 40
   },
   {
-   "from_session": "session-38",
-   "to_session": "session-39",
+   "from_session": "session-39",
+   "to_session": "session-40",
    "from_end": "2023-10-08",
    "to_start": "2023-10-20",
    "days": 12
   },
   {
-   "from_session": "session-39",
-   "to_session": "session-40",
+   "from_session": "session-40",
+   "to_session": "session-41",
    "from_end": "2023-10-21",
    "to_start": "2023-11-03",
    "days": 13
   },
   {
-   "from_session": "session-40",
-   "to_session": "session-41",
+   "from_session": "session-41",
+   "to_session": "session-42",
    "from_end": "2023-11-12",
    "to_start": "2024-03-27",
    "days": 136
   },
   {
-   "from_session": "session-41",
-   "to_session": "session-42",
+   "from_session": "session-42",
+   "to_session": "session-43",
    "from_end": "2024-03-27",
    "to_start": "2024-04-04",
    "days": 8
   },
   {
-   "from_session": "session-42",
-   "to_session": "session-43",
+   "from_session": "session-43",
+   "to_session": "session-44",
    "from_end": "2024-04-07",
    "to_start": "2024-04-16",
    "days": 9
   },
   {
-   "from_session": "session-43",
-   "to_session": "session-44",
+   "from_session": "session-44",
+   "to_session": "session-45",
    "from_end": "2024-04-18",
    "to_start": "2024-05-02",
    "days": 14
   },
   {
-   "from_session": "session-44",
-   "to_session": "session-45",
+   "from_session": "session-45",
+   "to_session": "session-46",
    "from_end": "2024-05-03",
    "to_start": "2024-05-22",
    "days": 19
   },
   {
-   "from_session": "session-45",
-   "to_session": "session-46",
+   "from_session": "session-46",
+   "to_session": "session-47",
    "from_end": "2024-05-31",
    "to_start": "2024-06-16",
    "days": 16
   },
   {
-   "from_session": "session-46",
-   "to_session": "session-47",
+   "from_session": "session-47",
+   "to_session": "session-48",
    "from_end": "2024-06-16",
    "to_start": "2024-06-27",
    "days": 11
   },
   {
-   "from_session": "session-47",
-   "to_session": "session-48",
+   "from_session": "session-48",
+   "to_session": "session-49",
    "from_end": "2024-06-27",
    "to_start": "2024-07-09",
    "days": 12
   },
   {
-   "from_session": "session-48",
-   "to_session": "session-49",
+   "from_session": "session-49",
+   "to_session": "session-50",
    "from_end": "2024-07-09",
    "to_start": "2024-08-30",
    "days": 52
   },
   {
-   "from_session": "session-49",
-   "to_session": "session-50",
-   "from_end": "2024-08-30",
-   "to_start": "2024-09-18",
-   "days": 19
-  },
-  {
    "from_session": "session-50",
    "to_session": "session-51",
-   "from_end": "2024-09-18",
-   "to_start": "2024-10-04",
-   "days": 16
+   "from_end": "2024-08-30",
+   "to_start": "2024-09-14",
+   "days": 15
   },
   {
    "from_session": "session-51",
    "to_session": "session-52",
-   "from_end": "2024-10-04",
-   "to_start": "2024-11-05",
-   "days": 32
+   "from_end": "2024-09-14",
+   "to_start": "2024-10-04",
+   "days": 20
   },
   {
    "from_session": "session-52",
    "to_session": "session-53",
-   "from_end": "2024-11-05",
-   "to_start": "2025-01-09",
-   "days": 65
+   "from_end": "2024-10-04",
+   "to_start": "2024-10-30",
+   "days": 26
   },
   {
    "from_session": "session-53",
    "to_session": "session-54",
-   "from_end": "2025-01-09",
-   "to_start": "2025-09-13",
-   "days": 247
+   "from_end": "2024-11-08",
+   "to_start": "2025-01-09",
+   "days": 62
   },
   {
    "from_session": "session-54",
    "to_session": "session-55",
-   "from_end": "2025-09-14",
-   "to_start": "2025-11-04",
-   "days": 51
+   "from_end": "2025-01-13",
+   "to_start": "2025-03-31",
+   "days": 77
   },
   {
    "from_session": "session-55",
    "to_session": "session-56",
-   "from_end": "2025-11-11",
-   "to_start": "2025-11-23",
-   "days": 12
+   "from_end": "2025-03-31",
+   "to_start": "2025-07-22",
+   "days": 113
   },
   {
    "from_session": "session-56",
    "to_session": "session-57",
+   "from_end": "2025-07-22",
+   "to_start": "2025-09-13",
+   "days": 53
+  },
+  {
+   "from_session": "session-57",
+   "to_session": "session-58",
+   "from_end": "2025-09-13",
+   "to_start": "2025-11-04",
+   "days": 52
+  },
+  {
+   "from_session": "session-58",
+   "to_session": "session-59",
+   "from_end": "2025-11-04",
+   "to_start": "2025-11-23",
+   "days": 19
+  },
+  {
+   "from_session": "session-59",
+   "to_session": "session-60",
    "from_end": "2025-11-23",
    "to_start": "2025-12-19",
    "days": 26
   },
   {
-   "from_session": "session-57",
-   "to_session": "session-58",
+   "from_session": "session-60",
+   "to_session": "session-61",
    "from_end": "2025-12-19",
    "to_start": "2026-01-16",
    "days": 28
   },
   {
-   "from_session": "session-58",
-   "to_session": "session-59",
+   "from_session": "session-61",
+   "to_session": "session-62",
    "from_end": "2026-01-16",
    "to_start": "2026-03-17",
    "days": 60
   },
   {
-   "from_session": "session-59",
-   "to_session": "session-60",
-   "from_end": "2026-03-25",
+   "from_session": "session-62",
+   "to_session": "session-63",
+   "from_end": "2026-03-17",
    "to_start": "2026-07-15",
-   "days": 112
+   "days": 120
   },
   {
-   "from_session": "session-60",
-   "to_session": "session-61",
+   "from_session": "session-63",
+   "to_session": "session-64",
    "from_end": "2026-07-15",
    "to_start": "2026-10-02",
    "days": 79
@@ -2175,39 +2278,39 @@
  ],
  "silences": [
   {
-   "from_session": "session-36",
-   "to_session": "session-37",
+   "from_session": "session-37",
+   "to_session": "session-38",
    "from_end": "2022-02-22",
    "to_start": "2023-08-29",
    "days": 553
   },
   {
-   "from_session": "session-53",
-   "to_session": "session-54",
-   "from_end": "2025-01-09",
-   "to_start": "2025-09-13",
-   "days": 247
-  },
-  {
-   "from_session": "session-35",
-   "to_session": "session-36",
+   "from_session": "session-36",
+   "to_session": "session-37",
    "from_end": "2021-07-14",
    "to_start": "2022-02-22",
    "days": 223
   },
   {
-   "from_session": "session-34",
-   "to_session": "session-35",
+   "from_session": "session-35",
+   "to_session": "session-36",
    "from_end": "2020-12-21",
    "to_start": "2021-07-14",
    "days": 205
   },
   {
-   "from_session": "session-40",
-   "to_session": "session-41",
+   "from_session": "session-41",
+   "to_session": "session-42",
    "from_end": "2023-11-12",
    "to_start": "2024-03-27",
    "days": 136
+  },
+  {
+   "from_session": "session-62",
+   "to_session": "session-63",
+   "from_end": "2026-03-17",
+   "to_start": "2026-07-15",
+   "days": 120
   }
  ],
  "clusters": [
@@ -2216,7 +2319,7 @@
    "label": "Season 1",
    "start": "2018-01-03",
    "end": "2019-12-30",
-   "session_count": 28,
+   "session_count": 29,
    "track_count": 75,
    "total_plays": 220688,
    "session_ids": [
@@ -2247,7 +2350,8 @@
     "session-25",
     "session-26",
     "session-27",
-    "session-28"
+    "session-28",
+    "session-29"
    ]
   },
   {
@@ -2259,9 +2363,9 @@
    "track_count": 3,
    "total_plays": 7382,
    "session_ids": [
-    "session-29",
     "session-30",
-    "session-31"
+    "session-31",
+    "session-32"
    ]
   },
   {
@@ -2273,9 +2377,9 @@
    "track_count": 12,
    "total_plays": 4868,
    "session_ids": [
-    "session-32",
     "session-33",
-    "session-34"
+    "session-34",
+    "session-35"
    ]
   },
   {
@@ -2287,7 +2391,7 @@
    "track_count": 13,
    "total_plays": 2704,
    "session_ids": [
-    "session-35"
+    "session-36"
    ]
   },
   {
@@ -2299,7 +2403,7 @@
    "track_count": 12,
    "total_plays": 1432,
    "session_ids": [
-    "session-36"
+    "session-37"
    ]
   },
   {
@@ -2311,22 +2415,21 @@
    "track_count": 26,
    "total_plays": 10179,
    "session_ids": [
-    "session-37",
     "session-38",
     "session-39",
-    "session-40"
+    "session-40",
+    "session-41"
    ]
   },
   {
    "id": "season-07",
    "label": "Season 7",
    "start": "2024-03-27",
-   "end": "2025-01-09",
-   "session_count": 13,
-   "track_count": 21,
-   "total_plays": 5025,
+   "end": "2025-03-31",
+   "session_count": 14,
+   "track_count": 32,
+   "total_plays": 7087,
    "session_ids": [
-    "session-41",
     "session-42",
     "session-43",
     "session-44",
@@ -2338,24 +2441,27 @@
     "session-50",
     "session-51",
     "session-52",
-    "session-53"
+    "session-53",
+    "session-54",
+    "session-55"
    ]
   },
   {
    "id": "season-08",
    "label": "Season 8",
-   "start": "2025-09-13",
-   "end": "2026-03-25",
-   "session_count": 6,
-   "track_count": 21,
-   "total_plays": 4761,
+   "start": "2025-07-22",
+   "end": "2026-03-17",
+   "session_count": 7,
+   "track_count": 10,
+   "total_plays": 2699,
    "session_ids": [
-    "session-54",
-    "session-55",
     "session-56",
     "session-57",
     "session-58",
-    "session-59"
+    "session-59",
+    "session-60",
+    "session-61",
+    "session-62"
    ]
   },
   {
@@ -2367,17 +2473,17 @@
    "track_count": 2,
    "total_plays": 355,
    "session_ids": [
-    "session-60",
-    "session-61"
+    "session-63",
+    "session-64"
    ]
   }
  ],
  "insights": {
-  "session_count": 61,
+  "session_count": 64,
   "track_count": 185,
   "season_count": 9,
   "most_prolific": {
-   "id": "session-40",
+   "id": "session-41",
    "name": "The November 3rd–12th Session",
    "start": "2023-11-03",
    "end": "2023-11-12",
@@ -2388,8 +2494,8 @@
   },
   "longest_silence": {
    "days": 553,
-   "from_session": "session-36",
-   "to_session": "session-37",
+   "from_session": "session-37",
+   "to_session": "session-38",
    "from_end": "2022-02-22",
    "to_start": "2023-08-29"
   },
@@ -2399,16 +2505,16 @@
    "total_plays": 30088
   },
   "quietest_session": {
-   "id": "session-52",
-   "name": "The November 5th Session",
-   "total_plays": 17
+   "id": "session-44",
+   "name": "The April 16th–18th Session",
+   "total_plays": 167
   },
   "first_session": {
    "id": "session-01",
    "start": "2018-01-03"
   },
   "last_session": {
-   "id": "session-61",
+   "id": "session-64",
    "end": "2026-10-02"
   }
  }

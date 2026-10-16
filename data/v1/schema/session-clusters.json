@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "Session clusters",
-  "description": "The 61 upload sessions as an explorable timeline: per-session enrichment, inter-session gaps, activity seasons, insights.",
+  "description": "The 64 upload sessions as an explorable timeline: per-session enrichment, inter-session gaps, activity seasons, insights.",
   "type": "object",
   "required": [
     "sessions",

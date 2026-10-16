@@ -178,7 +178,7 @@ def signal_somelowlifes(st, big_session):
 
 def signal_silence(st):
     return (f"{st['tx']} transmissions, {st['dist']} distributor releases; "
-            f"the first fully dark distributor year since 2018. "
+            f"the only fully dark distributor year on record. "
             f"The reason is unknown and not speculated here.")
 
 
@@ -246,7 +246,7 @@ def main() -> int:
     big = max(SESS, key=lambda s: s["track_count"])
     assert big["track_count"] == 19 and big["start"][:4] == "2023"
     dark_years = [y for y in YEARS if YEARS[y].get("distributor", 0) == 0]
-    assert dark_years == ["2018", "2025"], f"unexpected dark years {dark_years}"
+    assert dark_years == ["2025"], f"unexpected dark years {dark_years}"
 
     latest = max((m for m in MILES if m["id"] == "latest"),
                  key=lambda m: m["date"] or "")

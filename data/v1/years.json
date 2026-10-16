@@ -1,9 +1,9 @@
 {
  "2018": {
   "page": "releases/",
-  "transmissions": 39,
+  "transmissions": 40,
   "plays": 104479,
-  "distributor": 0,
+  "distributor": 1,
   "vault": 39,
   "era": "The First Rite",
   "top_tracks": [
@@ -80,7 +80,7 @@
    {
     "title": "NIGHT MODE ft. MAX FERRARI x YUNG VETTA x JAX",
     "plays": 10083,
-    "date": "2019-07-09"
+    "date": "2019-06-13"
    },
    {
     "title": "master key ft. Lil Wintr x Marcelo (prod. ginseng)",
@@ -100,7 +100,7 @@
    {
     "title": "NECK DEEP (prod. AWFL)",
     "plays": 5276,
-    "date": "2019-07-09"
+    "date": "2019-06-26"
    },
    {
     "title": "getting colder w/ capoxxo (prod. pvscale x asa41)",
@@ -115,15 +115,15 @@
    {
     "title": "outro ~ I RLLY DID THT(prod. itami リネン)",
     "plays": 3940,
-    "date": "2019-07-09"
+    "date": "2019-07-06"
    }
   ]
  },
  "2020": {
   "page": "releases/",
-  "transmissions": 23,
+  "transmissions": 24,
   "plays": 12250,
-  "distributor": 8,
+  "distributor": 9,
   "vault": 15,
   "era": "The Prolific Year",
   "top_tracks": [
@@ -361,10 +361,10 @@
  },
  "2024": {
   "page": "releases/",
-  "transmissions": 27,
-  "plays": 4803,
+  "transmissions": 36,
+  "plays": 6469,
   "distributor": 7,
-  "vault": 20,
+  "vault": 29,
   "era": "The SomeLowLifes Era",
   "top_tracks": [
    {
@@ -398,6 +398,11 @@
     "date": "2024-05-31"
    },
    {
+    "title": "Sti11 waiting/tunnel freestyle w/ Max Ferrari prod. suli",
+    "plays": 300,
+    "date": "2024-11-07"
+   },
+   {
     "title": "SSSolid (prod Kuva) *MUSIC VIDEO IN DESC*",
     "plays": 286,
     "date": "2024-06-27"
@@ -411,20 +416,15 @@
     "title": "P1aced a Ward (prodbygus)",
     "plays": 275,
     "date": "2024-05-02"
-   },
-   {
-    "title": "In Trance prod. deadtalks!",
-    "plays": 237,
-    "date": "2024-05-22"
    }
   ]
  },
  "2025": {
   "page": "releases/",
-  "transmissions": 17,
-  "plays": 3933,
+  "transmissions": 9,
+  "plays": 2447,
   "distributor": 0,
-  "vault": 17,
+  "vault": 9,
   "era": "The Silence",
   "top_tracks": [
    {
@@ -438,29 +438,14 @@
     "date": "2025-11-23"
    },
    {
-    "title": "Sti11 waiting/tunnel freestyle w/ Max Ferrari prod. suli",
-    "plays": 300,
-    "date": "2025-11-11"
-   },
-   {
-    "title": "Fa11 LeaVes prod. Gehx",
-    "plays": 222,
-    "date": "2025-11-10"
-   },
-   {
     "title": "oh We11 (prod Vuksai)",
     "plays": 222,
     "date": "2025-01-09"
    },
    {
-    "title": "Get Away prod. Gehx",
-    "plays": 217,
-    "date": "2025-11-10"
-   },
-   {
     "title": "switch (prod fiftyzeros)",
     "plays": 206,
-    "date": "2025-09-14"
+    "date": "2025-03-31"
    },
    {
     "title": "go and did (prod runawway + hidy)",
@@ -470,21 +455,31 @@
    {
     "title": "1otso prod. branwen",
     "plays": 190,
-    "date": "2025-11-11"
+    "date": "2025-01-13"
    },
    {
-    "title": "Green Wa11s prod. Ocurie",
-    "plays": 186,
-    "date": "2025-11-10"
+    "title": "games stop prod branwen",
+    "plays": 180,
+    "date": "2025-07-22"
+   },
+   {
+    "title": "water + sun (prod paris pas rigolo)",
+    "plays": 178,
+    "date": "2025-09-13"
+   },
+   {
+    "title": "my kin (prod xannnn)",
+    "plays": 173,
+    "date": "2025-11-04"
    }
   ]
  },
  "2026": {
   "page": "releases/",
-  "transmissions": 13,
-  "plays": 1405,
+  "transmissions": 12,
+  "plays": 1225,
   "distributor": 6,
-  "vault": 7,
+  "vault": 6,
   "era": "The Return",
   "top_tracks": [
    {
@@ -495,16 +490,11 @@
    {
     "title": "no power prod wellfed",
     "plays": 242,
-    "date": "2026-03-23"
+    "date": "2026-03-17"
    },
    {
     "title": "the night ends yeaaa prod wellfed",
     "plays": 208,
-    "date": "2026-03-25"
-   },
-   {
-    "title": "games stop prod branwen",
-    "plays": 180,
     "date": "2026-03-17"
    },
    {
@@ -520,7 +510,7 @@
    {
     "title": "life's made prod wellfed",
     "plays": 151,
-    "date": "2026-03-20"
+    "date": "2026-03-17"
    },
    {
     "title": "Life's Made",
@@ -536,6 +526,11 @@
     "title": "The Night Ends Yeaaa",
     "plays": 0,
     "date": "2026-03-25"
+   },
+   {
+    "title": "Writing Books",
+    "plays": 0,
+    "date": "2026-05-02"
    }
   ]
  }

@@ -1,8 +1,38 @@
 {
   "generated": "2026-10-11",
   "method": "Parsed from `git log main`: every commit becomes an entry. The site documenting its own becoming.",
-  "entry_count": 188,
+  "entry_count": 193,
   "entries": [
+    {
+      "hash": "ded98e3",
+      "date": "2026-10-15",
+      "message": "Changelog sync",
+      "files_changed": 2
+    },
+    {
+      "hash": "4de3bd4",
+      "date": "2026-10-15",
+      "message": "Manifest description sync: 64 sessions, 63 gaps, 45 collaboration appearances; changelog sync",
+      "files_changed": 4
+    },
+    {
+      "hash": "a60c690",
+      "date": "2026-10-15",
+      "message": "Completeness audit stabilization: vault dates corrected to artist-side dates (23, via the official profile pull), sessions re-clustered 61 -> 64, Spotify link resolved as a different artist and withdrawn, pins and counts synced",
+      "files_changed": 56
+    },
+    {
+      "hash": "2ed446f",
+      "date": "2026-10-15",
+      "message": "Completeness audit build: restore the alt-profile's 2 releases (Gravestone 2018, Yea Thats Kool feature 2020); catalogue 219 -> 221, circle 21 -> 22",
+      "files_changed": 249
+    },
+    {
+      "hash": "3d74f64",
+      "date": "2026-10-15",
+      "message": "Changelog sync",
+      "files_changed": 2
+    },
     {
       "hash": "1b3f3f7",
       "date": "2026-10-15",

@@ -6,10 +6,10 @@ three real archive sources into a single filterable timeline:
 data/v1/chronicle.json (endpoint #23, registered in index.json via
 render_manifest(), draft-07 schema #23):
 
-  - 61 upload sessions      <- data/sessions.json + data/v1/session-clusters.json
+  - 64 upload sessions      <- data/sessions.json + data/v1/session-clusters.json
   - 9 dated milestones      <- data/v1/milestones.json (the longest silence is
                                a span: dated at its start, end_date carried)
-  - 44 collaboration appearances <- data/v1/circle.json (one event per
+  - 45 collaboration appearances <- data/v1/circle.json (one event per
                                title-credited appearance, release page
                                resolved by exact title+date join)
 
@@ -76,10 +76,10 @@ def check_date(d, what):
 
 
 def main() -> int:
-    assert len(SESS) == 61, f"session count drift: {len(SESS)}"
-    assert len(CIRCLE) == 21, f"circle drift: {len(CIRCLE)}"
+    assert len(SESS) == 64, f"session count drift: {len(SESS)}"
+    assert len(CIRCLE) == 22, f"circle drift: {len(CIRCLE)}"
     cl_by_id = {s["id"]: s for s in CL}
-    assert len(cl_by_id) == 61, "session-clusters drift"
+    assert len(cl_by_id) == 64, "session-clusters drift"
 
     # (title, date) -> release page, for exact joins. Vault tracks first
     # (asserted pages from data/sessions.json); distributor singles fall
@@ -226,7 +226,7 @@ def main() -> int:
     by_kind = {"milestone": 0, "session": 0, "collaboration": 0}
     for e in events:
         by_kind[e["kind"]] += 1
-    assert by_kind == {"milestone": 9, "session": 61, "collaboration": 44}, \
+    assert by_kind == {"milestone": 9, "session": 64, "collaboration": 45}, \
         f"event counts drift: {by_kind}"
     keys = [(e["date"], KIND_ORDER[e["kind"]], e["title"]) for e in events]
     assert keys == sorted(keys), "chronicle not in chronological order"

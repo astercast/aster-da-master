@@ -392,16 +392,16 @@ session_records = [
         "value": f"{INS['quietest_session']['total_plays']} plays",
         "value_number": INS["quietest_session"]["total_plays"],
         "detail": "Snapshot total across the session's transmissions",
-        "page": None,  # session-52 has no deep-dive page on record
+        "page": None,  # session-44 has no deep-dive page on record
     },
 ]
-assert INS["most_prolific"]["id"] == "session-40" and \
+assert INS["most_prolific"]["id"] == "session-41" and \
     INS["most_prolific"]["track_count"] == 19, "prolific record drift"
 assert INS["longest_silence"]["days"] == 553, "silence record drift"
 assert INS["loudest_session"]["id"] == "session-02" and \
     INS["loudest_session"]["total_plays"] == 30088, "loudest record drift"
-assert INS["quietest_session"]["id"] == "session-52" and \
-    INS["quietest_session"]["total_plays"] == 17, "quietest record drift"
+assert INS["quietest_session"]["id"] == "session-44" and \
+    INS["quietest_session"]["total_plays"] == 167, "quietest record drift"
 for rec in session_records:
     pass  # (session page-existence guard retired with the pages, 2026-10-15)
 

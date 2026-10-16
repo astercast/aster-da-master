@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Build the Milestones record from the verified discography.
 
-Reads data/artist.json (219 entries), computes the career's defining
+Reads data/artist.json (221 entries), computes the career's defining
 firsts — first transmission, first 10k-play track, first collaboration,
 the 100th transmission, most prolific day, longest silence, the 250k-play
 crossing — and emits data/milestones.json + data/v1/milestones.json.

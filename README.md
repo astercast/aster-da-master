@@ -18,7 +18,7 @@ A single-page, insanely designed, professionally composed artist site: **UNDERGR
 - `press-kit.html` — one-page press kit rendered from the API data, with `@media print` styling
 - `timeline.html` — interactive career timeline (2018–2026), rendered client-side by `assets/js/timeline.js`
 - `network.html` — collaboration network graph, rendered client-side by `assets/js/network.js`
-- `decoder.html` — codex-powered word search across all 219 titles (`assets/js/decoder.js`)
+- `decoder.html` — codex-powered word search across all 221 titles (`assets/js/decoder.js`)
 - `api-playground.html` — interactive explorer for the 12 `data/v1/` endpoints (`assets/js/playground.js`)
 - `assets/css/` — `tokens.css`, `base.css`, `layout.css`, `components.css` (modular, no frameworks)
 - `assets/js/site.js` — renders discography/platforms/socials/bio from `data/artist.json`; reveal-on-scroll

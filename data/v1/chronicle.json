@@ -152,6 +152,12 @@
       "appearances": 1
     },
     {
+      "slug": "spursy",
+      "name": "SPURSY",
+      "page": "circle/index.html#c-spursy",
+      "appearances": 1
+    },
+    {
       "slug": "shola",
       "name": "Shola",
       "page": "circle/index.html#c-shola",
@@ -696,8 +702,8 @@
       "plays": 8714,
       "links": [
         {
-          "label": "Session card",
-          "href": "sessions-explorer.html#card-session-16"
+          "label": "Deep dive",
+          "href": "sessions/the-december-13th-15th-session.html"
         }
       ],
       "collaborators": []
@@ -948,48 +954,131 @@
     },
     {
       "id": "session-23",
-      "date": "2019-06-25",
+      "date": "2019-06-13",
       "kind": "session",
       "era_id": "the-first-rite",
       "era_name": "The First Rite",
-      "title": "The June 25th Session",
-      "detail": "1 transmissions, 347 plays",
-      "plays": 347,
+      "title": "The June 13th Session",
+      "detail": "1 transmissions, 10,083 plays",
+      "plays": 10083,
       "links": [
         {
           "label": "Session card",
           "href": "sessions-explorer.html#card-session-23"
         }
       ],
-      "collaborators": []
-    },
-    {
-      "id": "session-24",
-      "date": "2019-07-09",
-      "kind": "session",
-      "era_id": "the-first-rite",
-      "era_name": "The First Rite",
-      "title": "The July 9th Session",
-      "detail": "7 transmissions, 28,260 plays",
-      "plays": 28260,
-      "links": [
-        {
-          "label": "Deep dive",
-          "href": "sessions/the-july-9th-session.html"
-        }
-      ],
       "collaborators": [
-        "AMMI $AGE",
-        "JO$E DRIPP",
-        "Offline_hp",
         "MAX FERRARI",
         "YUNG VETTA",
         "JAX"
       ]
     },
     {
+      "id": "collab-jax-3",
+      "date": "2019-06-13",
+      "kind": "collaboration",
+      "era_id": "the-first-rite",
+      "era_name": "The First Rite",
+      "title": "NIGHT MODE ft. MAX FERRARI x YUNG VETTA x JAX",
+      "detail": "JAX on the record — 10,083 plays",
+      "plays": 10083,
+      "links": [
+        {
+          "label": "Release page",
+          "href": "releases/night-mode-ft-max-ferrari-x-yung-vetta-x-jax.html"
+        },
+        {
+          "label": "Circle page",
+          "href": "circle/index.html#c-jax"
+        },
+        {
+          "label": "Session",
+          "href": "sessions-explorer.html#card-session-23"
+        }
+      ],
+      "collaborators": [
+        "JAX"
+      ],
+      "collab_slug": "jax"
+    },
+    {
+      "id": "collab-max-ferrari-2",
+      "date": "2019-06-13",
+      "kind": "collaboration",
+      "era_id": "the-first-rite",
+      "era_name": "The First Rite",
+      "title": "NIGHT MODE ft. MAX FERRARI x YUNG VETTA x JAX",
+      "detail": "Max Ferrari on the record — 10,083 plays",
+      "plays": 10083,
+      "links": [
+        {
+          "label": "Release page",
+          "href": "releases/night-mode-ft-max-ferrari-x-yung-vetta-x-jax.html"
+        },
+        {
+          "label": "Circle page",
+          "href": "circle/index.html#c-max-ferrari"
+        },
+        {
+          "label": "Session",
+          "href": "sessions-explorer.html#card-session-23"
+        }
+      ],
+      "collaborators": [
+        "Max Ferrari"
+      ],
+      "collab_slug": "max-ferrari"
+    },
+    {
+      "id": "collab-yung-vetta-7",
+      "date": "2019-06-13",
+      "kind": "collaboration",
+      "era_id": "the-first-rite",
+      "era_name": "The First Rite",
+      "title": "NIGHT MODE ft. MAX FERRARI x YUNG VETTA x JAX",
+      "detail": "Yung Vetta on the record — 10,083 plays",
+      "plays": 10083,
+      "links": [
+        {
+          "label": "Release page",
+          "href": "releases/night-mode-ft-max-ferrari-x-yung-vetta-x-jax.html"
+        },
+        {
+          "label": "Circle page",
+          "href": "circle/index.html#c-yung-vetta"
+        },
+        {
+          "label": "Session",
+          "href": "sessions-explorer.html#card-session-23"
+        }
+      ],
+      "collaborators": [
+        "Yung Vetta"
+      ],
+      "collab_slug": "yung-vetta"
+    },
+    {
+      "id": "session-24",
+      "date": "2019-06-25",
+      "kind": "session",
+      "era_id": "the-first-rite",
+      "era_name": "The First Rite",
+      "title": "The June 25th–26th Session",
+      "detail": "4 transmissions, 10,323 plays",
+      "plays": 10323,
+      "links": [
+        {
+          "label": "Session card",
+          "href": "sessions-explorer.html#card-session-24"
+        }
+      ],
+      "collaborators": [
+        "Offline_hp"
+      ]
+    },
+    {
       "id": "collab-offline-hp-1",
-      "date": "2019-07-09",
+      "date": "2019-06-26",
       "kind": "collaboration",
       "era_id": "the-first-rite",
       "era_name": "The First Rite",
@@ -1016,8 +1105,28 @@
       "collab_slug": "offline-hp"
     },
     {
+      "id": "session-25",
+      "date": "2019-07-06",
+      "kind": "session",
+      "era_id": "the-first-rite",
+      "era_name": "The First Rite",
+      "title": "The July 6th Session",
+      "detail": "3 transmissions, 8,201 plays",
+      "plays": 8201,
+      "links": [
+        {
+          "label": "Session card",
+          "href": "sessions-explorer.html#card-session-25"
+        }
+      ],
+      "collaborators": [
+        "AMMI $AGE",
+        "JO$E DRIPP"
+      ]
+    },
+    {
       "id": "collab-ammi-age-1",
-      "date": "2019-07-09",
+      "date": "2019-07-06",
       "kind": "collaboration",
       "era_id": "the-first-rite",
       "era_name": "The First Rite",
@@ -1035,7 +1144,7 @@
         },
         {
           "label": "Session",
-          "href": "sessions-explorer.html#card-session-24"
+          "href": "sessions-explorer.html#card-session-25"
         }
       ],
       "collaborators": [
@@ -1044,92 +1153,8 @@
       "collab_slug": "ammi-age"
     },
     {
-      "id": "collab-jax-3",
-      "date": "2019-07-09",
-      "kind": "collaboration",
-      "era_id": "the-first-rite",
-      "era_name": "The First Rite",
-      "title": "NIGHT MODE ft. MAX FERRARI x YUNG VETTA x JAX",
-      "detail": "JAX on the record — 10,083 plays",
-      "plays": 10083,
-      "links": [
-        {
-          "label": "Release page",
-          "href": "releases/night-mode-ft-max-ferrari-x-yung-vetta-x-jax.html"
-        },
-        {
-          "label": "Circle page",
-          "href": "circle/index.html#c-jax"
-        },
-        {
-          "label": "Session",
-          "href": "sessions-explorer.html#card-session-24"
-        }
-      ],
-      "collaborators": [
-        "JAX"
-      ],
-      "collab_slug": "jax"
-    },
-    {
-      "id": "collab-max-ferrari-2",
-      "date": "2019-07-09",
-      "kind": "collaboration",
-      "era_id": "the-first-rite",
-      "era_name": "The First Rite",
-      "title": "NIGHT MODE ft. MAX FERRARI x YUNG VETTA x JAX",
-      "detail": "Max Ferrari on the record — 10,083 plays",
-      "plays": 10083,
-      "links": [
-        {
-          "label": "Release page",
-          "href": "releases/night-mode-ft-max-ferrari-x-yung-vetta-x-jax.html"
-        },
-        {
-          "label": "Circle page",
-          "href": "circle/index.html#c-max-ferrari"
-        },
-        {
-          "label": "Session",
-          "href": "sessions-explorer.html#card-session-24"
-        }
-      ],
-      "collaborators": [
-        "Max Ferrari"
-      ],
-      "collab_slug": "max-ferrari"
-    },
-    {
-      "id": "collab-yung-vetta-7",
-      "date": "2019-07-09",
-      "kind": "collaboration",
-      "era_id": "the-first-rite",
-      "era_name": "The First Rite",
-      "title": "NIGHT MODE ft. MAX FERRARI x YUNG VETTA x JAX",
-      "detail": "Yung Vetta on the record — 10,083 plays",
-      "plays": 10083,
-      "links": [
-        {
-          "label": "Release page",
-          "href": "releases/night-mode-ft-max-ferrari-x-yung-vetta-x-jax.html"
-        },
-        {
-          "label": "Circle page",
-          "href": "circle/index.html#c-yung-vetta"
-        },
-        {
-          "label": "Session",
-          "href": "sessions-explorer.html#card-session-24"
-        }
-      ],
-      "collaborators": [
-        "Yung Vetta"
-      ],
-      "collab_slug": "yung-vetta"
-    },
-    {
       "id": "collab-jo-e-dripp-2",
-      "date": "2019-07-09",
+      "date": "2019-07-06",
       "kind": "collaboration",
       "era_id": "the-first-rite",
       "era_name": "The First Rite",
@@ -1147,7 +1172,7 @@
         },
         {
           "label": "Session",
-          "href": "sessions-explorer.html#card-session-24"
+          "href": "sessions-explorer.html#card-session-25"
         }
       ],
       "collaborators": [
@@ -1156,7 +1181,7 @@
       "collab_slug": "jo-e-dripp"
     },
     {
-      "id": "session-25",
+      "id": "session-26",
       "date": "2019-10-04",
       "kind": "session",
       "era_id": "the-first-rite",
@@ -1167,7 +1192,7 @@
       "links": [
         {
           "label": "Session card",
-          "href": "sessions-explorer.html#card-session-25"
+          "href": "sessions-explorer.html#card-session-26"
         }
       ],
       "collaborators": [
@@ -1194,7 +1219,7 @@
         },
         {
           "label": "Session",
-          "href": "sessions-explorer.html#card-session-25"
+          "href": "sessions-explorer.html#card-session-26"
         }
       ],
       "collaborators": [
@@ -1203,7 +1228,7 @@
       "collab_slug": "capoxxo"
     },
     {
-      "id": "session-26",
+      "id": "session-27",
       "date": "2019-12-06",
       "kind": "session",
       "era_id": "the-first-rite",
@@ -1214,7 +1239,7 @@
       "links": [
         {
           "label": "Session card",
-          "href": "sessions-explorer.html#card-session-26"
+          "href": "sessions-explorer.html#card-session-27"
         }
       ],
       "collaborators": [
@@ -1290,7 +1315,7 @@
         },
         {
           "label": "Session",
-          "href": "sessions-explorer.html#card-session-26"
+          "href": "sessions-explorer.html#card-session-27"
         }
       ],
       "collaborators": [
@@ -1318,7 +1343,7 @@
         },
         {
           "label": "Session",
-          "href": "sessions-explorer.html#card-session-26"
+          "href": "sessions-explorer.html#card-session-27"
         }
       ],
       "collaborators": [
@@ -1327,7 +1352,7 @@
       "collab_slug": "marcelo"
     },
     {
-      "id": "session-27",
+      "id": "session-28",
       "date": "2019-12-22",
       "kind": "session",
       "era_id": "the-first-rite",
@@ -1368,7 +1393,7 @@
         },
         {
           "label": "Session",
-          "href": "sessions-explorer.html#card-session-27"
+          "href": "sessions-explorer.html#card-session-28"
         }
       ],
       "collaborators": [
@@ -1396,7 +1421,7 @@
         },
         {
           "label": "Session",
-          "href": "sessions-explorer.html#card-session-27"
+          "href": "sessions-explorer.html#card-session-28"
         }
       ],
       "collaborators": [
@@ -1424,7 +1449,7 @@
         },
         {
           "label": "Session",
-          "href": "sessions-explorer.html#card-session-27"
+          "href": "sessions-explorer.html#card-session-28"
         }
       ],
       "collaborators": [
@@ -1452,7 +1477,7 @@
         },
         {
           "label": "Session",
-          "href": "sessions-explorer.html#card-session-27"
+          "href": "sessions-explorer.html#card-session-28"
         }
       ],
       "collaborators": [
@@ -1480,7 +1505,7 @@
         },
         {
           "label": "Session",
-          "href": "sessions-explorer.html#card-session-27"
+          "href": "sessions-explorer.html#card-session-28"
         }
       ],
       "collaborators": [
@@ -1489,7 +1514,7 @@
       "collab_slug": "lilvicbxi"
     },
     {
-      "id": "session-28",
+      "id": "session-29",
       "date": "2019-12-30",
       "kind": "session",
       "era_id": "the-first-rite",
@@ -1529,7 +1554,7 @@
         },
         {
           "label": "Session",
-          "href": "sessions-explorer.html#card-session-28"
+          "href": "sessions-explorer.html#card-session-29"
         }
       ],
       "collaborators": [
@@ -1557,7 +1582,7 @@
         },
         {
           "label": "Session",
-          "href": "sessions-explorer.html#card-session-28"
+          "href": "sessions-explorer.html#card-session-29"
         }
       ],
       "collaborators": [
@@ -1585,7 +1610,7 @@
         },
         {
           "label": "Session",
-          "href": "sessions-explorer.html#card-session-28"
+          "href": "sessions-explorer.html#card-session-29"
         }
       ],
       "collaborators": [
@@ -1594,7 +1619,7 @@
       "collab_slug": "keyblayde808"
     },
     {
-      "id": "session-29",
+      "id": "session-30",
       "date": "2020-04-09",
       "kind": "session",
       "era_id": "the-prolific-year",
@@ -1605,13 +1630,13 @@
       "links": [
         {
           "label": "Session card",
-          "href": "sessions-explorer.html#card-session-29"
+          "href": "sessions-explorer.html#card-session-30"
         }
       ],
       "collaborators": []
     },
     {
-      "id": "session-30",
+      "id": "session-31",
       "date": "2020-05-03",
       "kind": "session",
       "era_id": "the-prolific-year",
@@ -1622,13 +1647,37 @@
       "links": [
         {
           "label": "Session card",
-          "href": "sessions-explorer.html#card-session-30"
+          "href": "sessions-explorer.html#card-session-31"
         }
       ],
       "collaborators": []
     },
     {
-      "id": "session-31",
+      "id": "collab-spursy-1",
+      "date": "2020-05-08",
+      "kind": "collaboration",
+      "era_id": "the-prolific-year",
+      "era_name": "The Prolific Year",
+      "title": "Yea Thats Kool (feat. ASTERDAMASTER & SPURSY)",
+      "detail": "SPURSY on the record — distributor single — no vault plays on record",
+      "plays": null,
+      "links": [
+        {
+          "label": "Release page",
+          "href": "releases/yea-thats-kool-feat-asterdamaster-and-spursy.html"
+        },
+        {
+          "label": "Circle page",
+          "href": "circle/index.html#c-spursy"
+        }
+      ],
+      "collaborators": [
+        "SPURSY"
+      ],
+      "collab_slug": "spursy"
+    },
+    {
+      "id": "session-32",
       "date": "2020-06-18",
       "kind": "session",
       "era_id": "the-prolific-year",
@@ -1639,13 +1688,13 @@
       "links": [
         {
           "label": "Session card",
-          "href": "sessions-explorer.html#card-session-31"
+          "href": "sessions-explorer.html#card-session-32"
         }
       ],
       "collaborators": []
     },
     {
-      "id": "session-32",
+      "id": "session-33",
       "date": "2020-10-07",
       "kind": "session",
       "era_id": "the-prolific-year",
@@ -1656,7 +1705,7 @@
       "links": [
         {
           "label": "Session card",
-          "href": "sessions-explorer.html#card-session-32"
+          "href": "sessions-explorer.html#card-session-33"
         }
       ],
       "collaborators": [
@@ -1684,7 +1733,7 @@
         },
         {
           "label": "Session",
-          "href": "sessions-explorer.html#card-session-32"
+          "href": "sessions-explorer.html#card-session-33"
         }
       ],
       "collaborators": [
@@ -1712,7 +1761,7 @@
         },
         {
           "label": "Session",
-          "href": "sessions-explorer.html#card-session-32"
+          "href": "sessions-explorer.html#card-session-33"
         }
       ],
       "collaborators": [
@@ -1721,7 +1770,7 @@
       "collab_slug": "lil-yu"
     },
     {
-      "id": "session-33",
+      "id": "session-34",
       "date": "2020-11-11",
       "kind": "session",
       "era_id": "the-prolific-year",
@@ -1732,7 +1781,7 @@
       "links": [
         {
           "label": "Session card",
-          "href": "sessions-explorer.html#card-session-33"
+          "href": "sessions-explorer.html#card-session-34"
         }
       ],
       "collaborators": []
@@ -1744,19 +1793,19 @@
       "era_id": "the-prolific-year",
       "era_name": "The Prolific Year",
       "title": "100th transmission on record",
-      "detail": "The catalog's 100th entry in chronological order, reached before the end of 2020. — “I'm Not Looking For Love Anyway”",
-      "plays": 349,
+      "detail": "The catalog's 100th entry in chronological order, reached before the end of 2020. — “Decent (prod. venus)”",
+      "plays": 355,
       "links": [
         {
           "label": "Release page",
-          "href": "releases/i-m-not-looking-for-love-anyway.html"
+          "href": "releases/decent-prod-venus.html"
         }
       ],
       "collaborators": [],
       "collab_slug": null
     },
     {
-      "id": "session-34",
+      "id": "session-35",
       "date": "2020-12-21",
       "kind": "session",
       "era_id": "the-prolific-year",
@@ -1791,7 +1840,7 @@
       "collab_slug": null
     },
     {
-      "id": "session-35",
+      "id": "session-36",
       "date": "2021-07-14",
       "kind": "session",
       "era_id": "the-cast-it-years",
@@ -1830,7 +1879,7 @@
         },
         {
           "label": "Session",
-          "href": "sessions-explorer.html#card-session-35"
+          "href": "sessions-explorer.html#card-session-36"
         }
       ],
       "collaborators": [
@@ -1858,7 +1907,7 @@
         },
         {
           "label": "Session",
-          "href": "sessions-explorer.html#card-session-35"
+          "href": "sessions-explorer.html#card-session-36"
         }
       ],
       "collaborators": [
@@ -1886,7 +1935,7 @@
         },
         {
           "label": "Session",
-          "href": "sessions-explorer.html#card-session-35"
+          "href": "sessions-explorer.html#card-session-36"
         }
       ],
       "collaborators": [
@@ -1914,7 +1963,7 @@
         },
         {
           "label": "Session",
-          "href": "sessions-explorer.html#card-session-35"
+          "href": "sessions-explorer.html#card-session-36"
         }
       ],
       "collaborators": [
@@ -1941,7 +1990,7 @@
       "collaborators": []
     },
     {
-      "id": "session-36",
+      "id": "session-37",
       "date": "2022-02-22",
       "kind": "session",
       "era_id": "the-cast-it-years",
@@ -1958,7 +2007,7 @@
       "collaborators": []
     },
     {
-      "id": "session-37",
+      "id": "session-38",
       "date": "2023-08-29",
       "kind": "session",
       "era_id": "the-somelowlifes-era",
@@ -1969,7 +2018,7 @@
       "links": [
         {
           "label": "Session card",
-          "href": "sessions-explorer.html#card-session-37"
+          "href": "sessions-explorer.html#card-session-38"
         }
       ],
       "collaborators": [
@@ -1996,7 +2045,7 @@
         },
         {
           "label": "Session",
-          "href": "sessions-explorer.html#card-session-37"
+          "href": "sessions-explorer.html#card-session-38"
         }
       ],
       "collaborators": [
@@ -2005,7 +2054,7 @@
       "collab_slug": "lil-yu"
     },
     {
-      "id": "session-38",
+      "id": "session-39",
       "date": "2023-10-08",
       "kind": "session",
       "era_id": "the-somelowlifes-era",
@@ -2016,13 +2065,13 @@
       "links": [
         {
           "label": "Session card",
-          "href": "sessions-explorer.html#card-session-38"
+          "href": "sessions-explorer.html#card-session-39"
         }
       ],
       "collaborators": []
     },
     {
-      "id": "session-39",
+      "id": "session-40",
       "date": "2023-10-20",
       "kind": "session",
       "era_id": "the-somelowlifes-era",
@@ -2033,13 +2082,13 @@
       "links": [
         {
           "label": "Session card",
-          "href": "sessions-explorer.html#card-session-39"
+          "href": "sessions-explorer.html#card-session-40"
         }
       ],
       "collaborators": []
     },
     {
-      "id": "session-40",
+      "id": "session-41",
       "date": "2023-11-03",
       "kind": "session",
       "era_id": "the-somelowlifes-era",
@@ -2074,7 +2123,7 @@
       "collab_slug": null
     },
     {
-      "id": "session-41",
+      "id": "session-42",
       "date": "2024-03-27",
       "kind": "session",
       "era_id": "the-somelowlifes-era",
@@ -2085,13 +2134,13 @@
       "links": [
         {
           "label": "Session card",
-          "href": "sessions-explorer.html#card-session-41"
+          "href": "sessions-explorer.html#card-session-42"
         }
       ],
       "collaborators": []
     },
     {
-      "id": "session-42",
+      "id": "session-43",
       "date": "2024-04-04",
       "kind": "session",
       "era_id": "the-somelowlifes-era",
@@ -2102,7 +2151,7 @@
       "links": [
         {
           "label": "Session card",
-          "href": "sessions-explorer.html#card-session-42"
+          "href": "sessions-explorer.html#card-session-43"
         }
       ],
       "collaborators": [
@@ -2129,7 +2178,7 @@
         },
         {
           "label": "Session",
-          "href": "sessions-explorer.html#card-session-42"
+          "href": "sessions-explorer.html#card-session-43"
         }
       ],
       "collaborators": [
@@ -2138,7 +2187,7 @@
       "collab_slug": "max-ferrari"
     },
     {
-      "id": "session-43",
+      "id": "session-44",
       "date": "2024-04-16",
       "kind": "session",
       "era_id": "the-somelowlifes-era",
@@ -2149,13 +2198,13 @@
       "links": [
         {
           "label": "Session card",
-          "href": "sessions-explorer.html#card-session-43"
+          "href": "sessions-explorer.html#card-session-44"
         }
       ],
       "collaborators": []
     },
     {
-      "id": "session-44",
+      "id": "session-45",
       "date": "2024-05-02",
       "kind": "session",
       "era_id": "the-somelowlifes-era",
@@ -2166,13 +2215,13 @@
       "links": [
         {
           "label": "Session card",
-          "href": "sessions-explorer.html#card-session-44"
+          "href": "sessions-explorer.html#card-session-45"
         }
       ],
       "collaborators": []
     },
     {
-      "id": "session-45",
+      "id": "session-46",
       "date": "2024-05-22",
       "kind": "session",
       "era_id": "the-somelowlifes-era",
@@ -2183,7 +2232,7 @@
       "links": [
         {
           "label": "Session card",
-          "href": "sessions-explorer.html#card-session-45"
+          "href": "sessions-explorer.html#card-session-46"
         }
       ],
       "collaborators": []
@@ -2211,7 +2260,7 @@
       "collab_slug": null
     },
     {
-      "id": "session-46",
+      "id": "session-47",
       "date": "2024-06-16",
       "kind": "session",
       "era_id": "the-somelowlifes-era",
@@ -2222,13 +2271,13 @@
       "links": [
         {
           "label": "Session card",
-          "href": "sessions-explorer.html#card-session-46"
+          "href": "sessions-explorer.html#card-session-47"
         }
       ],
       "collaborators": []
     },
     {
-      "id": "session-47",
+      "id": "session-48",
       "date": "2024-06-27",
       "kind": "session",
       "era_id": "the-somelowlifes-era",
@@ -2239,13 +2288,13 @@
       "links": [
         {
           "label": "Session card",
-          "href": "sessions-explorer.html#card-session-47"
+          "href": "sessions-explorer.html#card-session-48"
         }
       ],
       "collaborators": []
     },
     {
-      "id": "session-48",
+      "id": "session-49",
       "date": "2024-07-09",
       "kind": "session",
       "era_id": "the-somelowlifes-era",
@@ -2256,7 +2305,7 @@
       "links": [
         {
           "label": "Session card",
-          "href": "sessions-explorer.html#card-session-48"
+          "href": "sessions-explorer.html#card-session-49"
         }
       ],
       "collaborators": []
@@ -2286,7 +2335,7 @@
       "collab_slug": "griimxo"
     },
     {
-      "id": "session-49",
+      "id": "session-50",
       "date": "2024-08-30",
       "kind": "session",
       "era_id": "the-somelowlifes-era",
@@ -2297,23 +2346,6 @@
       "links": [
         {
           "label": "Session card",
-          "href": "sessions-explorer.html#card-session-49"
-        }
-      ],
-      "collaborators": []
-    },
-    {
-      "id": "session-50",
-      "date": "2024-09-18",
-      "kind": "session",
-      "era_id": "the-somelowlifes-era",
-      "era_name": "The SomeLowLifes Era",
-      "title": "The September 18th Session",
-      "detail": "1 transmissions, 175 plays",
-      "plays": 175,
-      "links": [
-        {
-          "label": "Session card",
           "href": "sessions-explorer.html#card-session-50"
         }
       ],
@@ -2321,13 +2353,13 @@
     },
     {
       "id": "session-51",
-      "date": "2024-10-04",
+      "date": "2024-09-14",
       "kind": "session",
       "era_id": "the-somelowlifes-era",
       "era_name": "The SomeLowLifes Era",
-      "title": "The October 4th Session",
-      "detail": "1 transmissions, 177 plays",
-      "plays": 177,
+      "title": "The September 14th Session",
+      "detail": "1 transmissions, 175 plays",
+      "plays": 175,
       "links": [
         {
           "label": "Session card",
@@ -2338,22 +2370,41 @@
     },
     {
       "id": "session-52",
-      "date": "2024-11-05",
+      "date": "2024-10-04",
       "kind": "session",
       "era_id": "the-somelowlifes-era",
       "era_name": "The SomeLowLifes Era",
-      "title": "The November 5th Session",
-      "detail": "1 transmissions, 17 plays",
-      "plays": 17,
+      "title": "The October 4th Session",
+      "detail": "1 transmissions, 177 plays",
+      "plays": 177,
       "links": [
         {
           "label": "Session card",
           "href": "sessions-explorer.html#card-session-52"
         }
       ],
+      "collaborators": []
+    },
+    {
+      "id": "session-53",
+      "date": "2024-10-30",
+      "kind": "session",
+      "era_id": "the-somelowlifes-era",
+      "era_name": "The SomeLowLifes Era",
+      "title": "The Oct 30th – Nov 8th Session",
+      "detail": "10 transmissions, 1,683 plays",
+      "plays": 1683,
+      "links": [
+        {
+          "label": "Deep dive",
+          "href": "sessions/the-oct-30th-nov-8th-session.html"
+        }
+      ],
       "collaborators": [
         "Max",
-        "Vetty"
+        "Vetty",
+        "Max Ferrari",
+        "Griimxo"
       ]
     },
     {
@@ -2376,7 +2427,7 @@
         },
         {
           "label": "Session",
-          "href": "sessions-explorer.html#card-session-52"
+          "href": "sessions-explorer.html#card-session-53"
         }
       ],
       "collaborators": [
@@ -2404,7 +2455,7 @@
         },
         {
           "label": "Session",
-          "href": "sessions-explorer.html#card-session-52"
+          "href": "sessions-explorer.html#card-session-53"
         }
       ],
       "collaborators": [
@@ -2413,65 +2464,11 @@
       "collab_slug": "vetty"
     },
     {
-      "id": "session-53",
-      "date": "2025-01-09",
-      "kind": "session",
-      "era_id": "the-silence",
-      "era_name": "The Silence",
-      "title": "The January 9th Session",
-      "detail": "1 transmissions, 222 plays",
-      "plays": 222,
-      "links": [
-        {
-          "label": "Session card",
-          "href": "sessions-explorer.html#card-session-53"
-        }
-      ],
-      "collaborators": []
-    },
-    {
-      "id": "session-54",
-      "date": "2025-09-13",
-      "kind": "session",
-      "era_id": "the-silence",
-      "era_name": "The Silence",
-      "title": "The September 13th–14th Session",
-      "detail": "2 transmissions, 384 plays",
-      "plays": 384,
-      "links": [
-        {
-          "label": "Session card",
-          "href": "sessions-explorer.html#card-session-54"
-        }
-      ],
-      "collaborators": []
-    },
-    {
-      "id": "session-55",
-      "date": "2025-11-04",
-      "kind": "session",
-      "era_id": "the-silence",
-      "era_name": "The Silence",
-      "title": "The November 4th–11th Session",
-      "detail": "11 transmissions, 2,029 plays",
-      "plays": 2029,
-      "links": [
-        {
-          "label": "Deep dive",
-          "href": "sessions/the-november-4th-11th-session.html"
-        }
-      ],
-      "collaborators": [
-        "Max Ferrari",
-        "Griimxo"
-      ]
-    },
-    {
       "id": "collab-max-ferrari-7",
-      "date": "2025-11-11",
+      "date": "2024-11-07",
       "kind": "collaboration",
-      "era_id": "the-silence",
-      "era_name": "The Silence",
+      "era_id": "the-somelowlifes-era",
+      "era_name": "The SomeLowLifes Era",
       "title": "ARCSNOWWW w/ Max Ferrari prod. sustain",
       "detail": "Max Ferrari on the record — 184 plays",
       "plays": 184,
@@ -2486,7 +2483,7 @@
         },
         {
           "label": "Session",
-          "href": "sessions-explorer.html#card-session-55"
+          "href": "sessions-explorer.html#card-session-53"
         }
       ],
       "collaborators": [
@@ -2495,39 +2492,11 @@
       "collab_slug": "max-ferrari"
     },
     {
-      "id": "collab-griimxo-2",
-      "date": "2025-11-11",
-      "kind": "collaboration",
-      "era_id": "the-silence",
-      "era_name": "The Silence",
-      "title": "Phantom Moshpit w/ Griimxo (remastered) prod. scared716",
-      "detail": "Griimxo on the record — 178 plays",
-      "plays": 178,
-      "links": [
-        {
-          "label": "Release page",
-          "href": "releases/phantom-moshpit-w-griimxo-remastered-prod-scared716.html"
-        },
-        {
-          "label": "Circle page",
-          "href": "circle/index.html#c-griimxo"
-        },
-        {
-          "label": "Session",
-          "href": "sessions-explorer.html#card-session-55"
-        }
-      ],
-      "collaborators": [
-        "Griimxo"
-      ],
-      "collab_slug": "griimxo"
-    },
-    {
       "id": "collab-max-ferrari-8",
-      "date": "2025-11-11",
+      "date": "2024-11-07",
       "kind": "collaboration",
-      "era_id": "the-silence",
-      "era_name": "The Silence",
+      "era_id": "the-somelowlifes-era",
+      "era_name": "The SomeLowLifes Era",
       "title": "Sti11 waiting/tunnel freestyle w/ Max Ferrari prod. suli",
       "detail": "Max Ferrari on the record — 300 plays",
       "plays": 300,
@@ -2542,7 +2511,7 @@
         },
         {
           "label": "Session",
-          "href": "sessions-explorer.html#card-session-55"
+          "href": "sessions-explorer.html#card-session-53"
         }
       ],
       "collaborators": [
@@ -2551,14 +2520,76 @@
       "collab_slug": "max-ferrari"
     },
     {
-      "id": "session-56",
-      "date": "2025-11-23",
+      "id": "collab-griimxo-2",
+      "date": "2024-11-08",
+      "kind": "collaboration",
+      "era_id": "the-somelowlifes-era",
+      "era_name": "The SomeLowLifes Era",
+      "title": "Phantom Moshpit w/ Griimxo (remastered) prod. scared716",
+      "detail": "Griimxo on the record — 178 plays",
+      "plays": 178,
+      "links": [
+        {
+          "label": "Release page",
+          "href": "releases/phantom-moshpit-w-griimxo-remastered-prod-scared716.html"
+        },
+        {
+          "label": "Circle page",
+          "href": "circle/index.html#c-griimxo"
+        },
+        {
+          "label": "Session",
+          "href": "sessions-explorer.html#card-session-53"
+        }
+      ],
+      "collaborators": [
+        "Griimxo"
+      ],
+      "collab_slug": "griimxo"
+    },
+    {
+      "id": "session-54",
+      "date": "2025-01-09",
       "kind": "session",
       "era_id": "the-silence",
       "era_name": "The Silence",
-      "title": "The November 23rd Session",
-      "detail": "2 transmissions, 660 plays",
-      "plays": 660,
+      "title": "The January 9th–13th Session",
+      "detail": "2 transmissions, 412 plays",
+      "plays": 412,
+      "links": [
+        {
+          "label": "Session card",
+          "href": "sessions-explorer.html#card-session-54"
+        }
+      ],
+      "collaborators": []
+    },
+    {
+      "id": "session-55",
+      "date": "2025-03-31",
+      "kind": "session",
+      "era_id": "the-silence",
+      "era_name": "The Silence",
+      "title": "The March 31st Session",
+      "detail": "1 transmissions, 206 plays",
+      "plays": 206,
+      "links": [
+        {
+          "label": "Session card",
+          "href": "sessions-explorer.html#card-session-55"
+        }
+      ],
+      "collaborators": []
+    },
+    {
+      "id": "session-56",
+      "date": "2025-07-22",
+      "kind": "session",
+      "era_id": "the-silence",
+      "era_name": "The Silence",
+      "title": "The July 22nd Session",
+      "detail": "1 transmissions, 180 plays",
+      "plays": 180,
       "links": [
         {
           "label": "Session card",
@@ -2569,13 +2600,13 @@
     },
     {
       "id": "session-57",
-      "date": "2025-12-19",
+      "date": "2025-09-13",
       "kind": "session",
       "era_id": "the-silence",
       "era_name": "The Silence",
-      "title": "The December 19th Session",
-      "detail": "1 transmissions, 638 plays",
-      "plays": 638,
+      "title": "The September 13th Session",
+      "detail": "1 transmissions, 178 plays",
+      "plays": 178,
       "links": [
         {
           "label": "Session card",
@@ -2586,13 +2617,13 @@
     },
     {
       "id": "session-58",
-      "date": "2026-01-16",
+      "date": "2025-11-04",
       "kind": "session",
-      "era_id": "the-return",
-      "era_name": "The Return",
-      "title": "The January 16th Session",
-      "detail": "1 transmissions, 269 plays",
-      "plays": 269,
+      "era_id": "the-silence",
+      "era_name": "The Silence",
+      "title": "The November 4th Session",
+      "detail": "1 transmissions, 173 plays",
+      "plays": 173,
       "links": [
         {
           "label": "Session card",
@@ -2603,13 +2634,13 @@
     },
     {
       "id": "session-59",
-      "date": "2026-03-17",
+      "date": "2025-11-23",
       "kind": "session",
-      "era_id": "the-return",
-      "era_name": "The Return",
-      "title": "The March 17th–25th Session",
-      "detail": "4 transmissions, 781 plays",
-      "plays": 781,
+      "era_id": "the-silence",
+      "era_name": "The Silence",
+      "title": "The November 23rd Session",
+      "detail": "2 transmissions, 660 plays",
+      "plays": 660,
       "links": [
         {
           "label": "Session card",
@@ -2620,6 +2651,57 @@
     },
     {
       "id": "session-60",
+      "date": "2025-12-19",
+      "kind": "session",
+      "era_id": "the-silence",
+      "era_name": "The Silence",
+      "title": "The December 19th Session",
+      "detail": "1 transmissions, 638 plays",
+      "plays": 638,
+      "links": [
+        {
+          "label": "Session card",
+          "href": "sessions-explorer.html#card-session-60"
+        }
+      ],
+      "collaborators": []
+    },
+    {
+      "id": "session-61",
+      "date": "2026-01-16",
+      "kind": "session",
+      "era_id": "the-return",
+      "era_name": "The Return",
+      "title": "The January 16th Session",
+      "detail": "1 transmissions, 269 plays",
+      "plays": 269,
+      "links": [
+        {
+          "label": "Session card",
+          "href": "sessions-explorer.html#card-session-61"
+        }
+      ],
+      "collaborators": []
+    },
+    {
+      "id": "session-62",
+      "date": "2026-03-17",
+      "kind": "session",
+      "era_id": "the-return",
+      "era_name": "The Return",
+      "title": "The March 17th Session",
+      "detail": "3 transmissions, 601 plays",
+      "plays": 601,
+      "links": [
+        {
+          "label": "Session card",
+          "href": "sessions-explorer.html#card-session-62"
+        }
+      ],
+      "collaborators": []
+    },
+    {
+      "id": "session-63",
       "date": "2026-07-15",
       "kind": "session",
       "era_id": "the-return",
@@ -2630,7 +2712,7 @@
       "links": [
         {
           "label": "Session card",
-          "href": "sessions-explorer.html#card-session-60"
+          "href": "sessions-explorer.html#card-session-63"
         }
       ],
       "collaborators": []
@@ -2654,7 +2736,7 @@
       "collab_slug": null
     },
     {
-      "id": "session-61",
+      "id": "session-64",
       "date": "2026-10-02",
       "kind": "session",
       "era_id": "the-return",
@@ -2665,24 +2747,24 @@
       "links": [
         {
           "label": "Session card",
-          "href": "sessions-explorer.html#card-session-61"
+          "href": "sessions-explorer.html#card-session-64"
         }
       ],
       "collaborators": []
     }
   ],
   "insights": {
-    "event_count": 114,
+    "event_count": 118,
     "by_kind": {
       "milestone": 9,
-      "session": 61,
-      "collaboration": 44
+      "session": 64,
+      "collaboration": 45
     },
     "first_date": "2017-04-20",
     "last_date": "2026-10-02",
     "busiest_year": {
       "year": "2019",
-      "events": 36
+      "events": 37
     },
     "first_event": {
       "id": "first-distributor",
@@ -2690,7 +2772,7 @@
       "date": "2017-04-20"
     },
     "last_event": {
-      "id": "session-61",
+      "id": "session-64",
       "title": "The October 2nd Session",
       "date": "2026-10-02"
     },

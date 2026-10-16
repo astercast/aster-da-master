@@ -24,7 +24,7 @@ Sources (all real archive data):
   - data/v1/transmission.json  (era aggregates, built by build_transmission.py)
   - data/v1/years.json         (per-year transmissions/plays, for re-verifying)
   - data/sessions.json        (61 sessions, for re-verifying session counts)
-  - data/artist.json          (the 219-entry discography -> full era track
+  - data/artist.json          (the 221-entry discography -> full era track
                               lists; era scene/note/releases text)
   - data/v1/release-slugs.json (ordinal -> slug, for release-page links)
   - data/v1/circle.json        (full in-era collaborator footprints)
@@ -451,7 +451,7 @@ def era_page(e, idx, n_eras, entries, collabs, families, summary):
           {' '.join(pager)}
         </nav>
         <ul class="story-list">
-          <li><a href="../glance.html">The vault at a glance</a>: all 219 entries in one frame.</li>
+          <li><a href="../glance.html">The vault at a glance</a>: all 221 entries in one frame.</li>
           <li><a href="../timeline.html">Timeline</a>: the career as a single scroll.</li>
           <li><a href="../network.html">Network</a>: the collaboration universe as a graph.</li>
           <li><a href="../codex/">Codex</a>: the 16 vocabulary families.</li>

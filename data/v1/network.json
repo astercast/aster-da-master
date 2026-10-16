@@ -10,7 +10,7 @@
    "id": "aster",
    "name": "Aster da Master",
    "kind": "artist",
-   "track_count": 40,
+   "track_count": 41,
    "first_date": null,
    "last_date": null,
    "page": "index.html",
@@ -21,8 +21,7 @@
     2020,
     2021,
     2023,
-    2024,
-    2025
+    2024
    ],
    "x": 460,
    "y": 320,
@@ -34,7 +33,7 @@
    "kind": "collaborator",
    "track_count": 8,
    "first_date": "2018-08-20",
-   "last_date": "2025-11-11",
+   "last_date": "2024-11-07",
    "page": "circle/index.html#c-max-ferrari",
    "tracks": [
     {
@@ -44,7 +43,7 @@
     },
     {
      "title": "NIGHT MODE ft. MAX FERRARI x YUNG VETTA x JAX",
-     "date": "2019-07-09",
+     "date": "2019-06-13",
      "plays": 10083
     },
     {
@@ -69,12 +68,12 @@
     },
     {
      "title": "Sti11 waiting/tunnel freestyle w/ Max Ferrari prod. suli",
-     "date": "2025-11-11",
+     "date": "2024-11-07",
      "plays": 300
     },
     {
      "title": "ARCSNOWWW w/ Max Ferrari prod. sustain",
-     "date": "2025-11-11",
+     "date": "2024-11-07",
      "plays": 184
     }
    ],
@@ -82,8 +81,7 @@
     2018,
     2019,
     2021,
-    2024,
-    2025
+    2024
    ],
    "x": 460.0,
    "y": 170.0,
@@ -95,7 +93,7 @@
    "kind": "collaborator",
    "track_count": 7,
    "first_date": "2018-12-02",
-   "last_date": "2019-07-09",
+   "last_date": "2019-06-13",
    "page": "circle/index.html#c-yung-vetta",
    "tracks": [
     {
@@ -130,7 +128,7 @@
     },
     {
      "title": "NIGHT MODE ft. MAX FERRARI x YUNG VETTA x JAX",
-     "date": "2019-07-09",
+     "date": "2019-06-13",
      "plays": 10083
     }
    ],
@@ -148,7 +146,7 @@
    "kind": "collaborator",
    "track_count": 3,
    "first_date": "2018-08-20",
-   "last_date": "2019-07-09",
+   "last_date": "2019-06-13",
    "page": "circle/index.html#c-jax",
    "tracks": [
     {
@@ -163,7 +161,7 @@
     },
     {
      "title": "NIGHT MODE ft. MAX FERRARI x YUNG VETTA x JAX",
-     "date": "2019-07-09",
+     "date": "2019-06-13",
      "plays": 10083
     }
    ],
@@ -215,7 +213,7 @@
    "kind": "collaborator",
    "track_count": 2,
    "first_date": "2024-08-24",
-   "last_date": "2025-11-11",
+   "last_date": "2024-11-08",
    "page": "circle/index.html#c-griimxo",
    "tracks": [
     {
@@ -225,13 +223,12 @@
     },
     {
      "title": "Phantom Moshpit w/ Griimxo (remastered) prod. scared716",
-     "date": "2025-11-11",
+     "date": "2024-11-08",
      "plays": 178
     }
    ],
    "years": [
-    2024,
-    2025
+    2024
    ],
    "x": 460.0,
    "y": 470.0,
@@ -243,7 +240,7 @@
    "kind": "collaborator",
    "track_count": 2,
    "first_date": "2018-04-28",
-   "last_date": "2019-07-09",
+   "last_date": "2019-07-06",
    "page": "circle/index.html#c-jo-e-dripp",
    "tracks": [
     {
@@ -253,7 +250,7 @@
     },
     {
      "title": "SUN SET FOR U ft. JO$E DRIPP (prod. y axis)",
-     "date": "2019-07-09",
+     "date": "2019-07-06",
      "plays": 1771
     }
    ],
@@ -369,8 +366,8 @@
    "years": [
     2019
    ],
-   "x": 571.5,
-   "y": 124.5,
+   "x": 564.1,
+   "y": 121.1,
    "r": 17.5
   },
   {
@@ -378,21 +375,21 @@
    "name": "AMMI $AGE",
    "kind": "collaborator",
    "track_count": 1,
-   "first_date": "2019-07-09",
-   "last_date": "2019-07-09",
+   "first_date": "2019-07-06",
+   "last_date": "2019-07-06",
    "page": "circle/index.html#c-ammi-age",
    "tracks": [
     {
      "title": "I'M WEAKENING ft. AMMI $AGE",
-     "date": "2019-07-09",
+     "date": "2019-07-06",
      "plays": 2490
     }
    ],
    "years": [
     2019
    ],
-   "x": 657.5,
-   "y": 194.6,
+   "x": 647.6,
+   "y": 182.3,
    "r": 14.8
   },
   {
@@ -413,8 +410,8 @@
    "years": [
     2019
    ],
-   "x": 698.3,
-   "y": 293.4,
+   "x": 694.0,
+   "y": 270.9,
    "r": 14.8
   },
   {
@@ -435,8 +432,8 @@
    "years": [
     2021
    ],
-   "x": 684.4,
-   "y": 398.3,
+   "x": 694.0,
+   "y": 369.1,
    "r": 14.8
   },
   {
@@ -457,8 +454,8 @@
    "years": [
     2024
    ],
-   "x": 619.1,
-   "y": 485.3,
+   "x": 647.6,
+   "y": 457.7,
    "r": 14.8
   },
   {
@@ -466,21 +463,43 @@
    "name": "Offline_hp",
    "kind": "collaborator",
    "track_count": 1,
-   "first_date": "2019-07-09",
-   "last_date": "2019-07-09",
+   "first_date": "2019-06-26",
+   "last_date": "2019-06-26",
    "page": "circle/index.html#c-offline-hp",
    "tracks": [
     {
      "title": "GARDEN ft. Offline_hp (prod. QB)",
-     "date": "2019-07-09",
+     "date": "2019-06-26",
      "plays": 1311
     }
    ],
    "years": [
     2019
    ],
-   "x": 517.4,
-   "y": 534.4,
+   "x": 564.1,
+   "y": 518.9,
+   "r": 14.8
+  },
+  {
+   "id": "spursy",
+   "name": "SPURSY",
+   "kind": "collaborator",
+   "track_count": 1,
+   "first_date": "2020-05-08",
+   "last_date": "2020-05-08",
+   "page": "circle/index.html#c-spursy",
+   "tracks": [
+    {
+     "title": "Yea Thats Kool (feat. ASTERDAMASTER & SPURSY)",
+     "date": "2020-05-08",
+     "plays": null
+    }
+   ],
+   "years": [
+    2020
+   ],
+   "x": 460.0,
+   "y": 540.8,
    "r": 14.8
   },
   {
@@ -501,8 +520,8 @@
    "years": [
     2018
    ],
-   "x": 402.6,
-   "y": 534.4,
+   "x": 355.9,
+   "y": 518.9,
    "r": 14.8
   },
   {
@@ -523,8 +542,8 @@
    "years": [
     2024
    ],
-   "x": 300.9,
-   "y": 485.3,
+   "x": 272.4,
+   "y": 457.7,
    "r": 14.8
   },
   {
@@ -545,8 +564,8 @@
    "years": [
     2019
    ],
-   "x": 235.6,
-   "y": 398.3,
+   "x": 226.0,
+   "y": 369.1,
    "r": 14.8
   },
   {
@@ -567,8 +586,8 @@
    "years": [
     2019
    ],
-   "x": 221.7,
-   "y": 293.4,
+   "x": 226.0,
+   "y": 270.9,
    "r": 14.8
   },
   {
@@ -589,8 +608,8 @@
    "years": [
     2020
    ],
-   "x": 262.5,
-   "y": 194.6,
+   "x": 272.4,
+   "y": 182.3,
    "r": 14.8
   },
   {
@@ -611,8 +630,8 @@
    "years": [
     2019
    ],
-   "x": 348.5,
-   "y": 124.5,
+   "x": 355.9,
+   "y": 121.1,
    "r": 14.8
   },
   {
@@ -750,6 +769,12 @@
   {
    "a": "aster",
    "b": "shola",
+   "weight": 1,
+   "kind": "artist"
+  },
+  {
+   "a": "aster",
+   "b": "spursy",
    "weight": 1,
    "kind": "artist"
   },

@@ -338,7 +338,7 @@ SCENE_FIGURES = {
         "standing": (
             "Fish Narc enters this archive through producer credits on two "
             "SoundCloud tracks, not through title features. He is not one of "
-            "the 21 title-credited collaborators and stands outside the "
+            "the 22 title-credited collaborators and stands outside the "
             "circle count. The circle's title-credit rule is unchanged."
         ),
         "tracks": [
@@ -685,7 +685,7 @@ def index_page(entries, folds, sf_folds, has_watch=False):
       <section class="section" aria-labelledby="ci-h">
         <span class="kicker"><span class="numeral">&#10022;</span>The circle</span>
         <h1 id="ci-h">The circle</h1>
-        <p>Every collaborator credited in a title across 219 transmissions, each full record on this page. Counts and plays are data, not editorial. Producers are excluded by rule: the documented scene figures below are kept separately.</p>
+        <p>Every collaborator credited in a title across 221 transmissions, each full record on this page. Counts and plays are data, not editorial. Producers are excluded by rule: the documented scene figures below are kept separately.</p>
         <ul class="log-lines">{lines}</ul>
       </section>
 

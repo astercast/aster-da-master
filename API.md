@@ -230,7 +230,7 @@ and `tracks.json` (the captured catalog).
   fetch, syntax-highlighted pretty-print, byte size + key count, copy button.
   Graceful error if opened from `file://` (browsers block fetch there).
 - **Decoder** (`decoder.html` + `assets/js/decoder.js`): speak a word; the
-  archive answers. Leet-normalized, word-boundary title search across all 219
+  archive answers. Leet-normalized, word-boundary title search across all 221
   transmissions (same matcher as `scripts/build_codex.py`), results sorted by
   plays, plus the codex family claiming the word (linked). Supports `?w=word`
   deep links. Titles only — no lyrics live here.
@@ -335,7 +335,7 @@ and `tracks.json` (the captured catalog).
   last in the chain, with pinned-fixture tests in
   `scripts/test_producer_deepdives.py`). Schema:
   `data/v1/schema/producer-deepdives.json`.
-- **Glance** (`glance.html`): the one-page infographic — 219 transmissions,
+- **Glance** (`glance.html`): the one-page infographic — 221 transmissions,
   257,394 plays, 9 years, 61 sessions, 21 collaborators, 16 codex families,
   top-5 tracks, the eras strip, heaviest sessions, bookends
   (`scripts/build_glance.py`). Linked from the hero, primary + footer navs
