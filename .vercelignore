@@ -1,0 +1,15 @@
+# Play counts stay private. The user's order for Aster: numbers are OFF
+# the presented site entirely. These files hold play-count data (the
+# stats snapshots, the milestone races, the signal watch, the raw
+# captures, and the endpoint that serves them). They stay in the repo
+# for the private build pipeline; they are never deployed.
+data/v1/stats-snapshots.json
+data/v1/milestones.json
+data/v1/milestone-watch.json
+data/v1/milestone-races.json
+data/v1/signal-watch.json
+data/playcounts.snapshot.json
+data/milestones.json
+data/milestone-watch.json
+data/captures/
+api/stats.js

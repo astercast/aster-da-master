@@ -36,9 +36,9 @@ HEAD = """<!DOCTYPE html>
   <meta name="twitter:title" content="{title} · Aster da Master">
   <meta name="twitter:description" content="{desc}">
   <meta name="twitter:image" content="../assets/og-card.png">
-  <link rel="preload" href="../assets/fonts/anton-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="../assets/css/fonts.css">
   <link rel="stylesheet" href="../assets/css/aster.css">
+  <link rel="stylesheet" href="../assets/css/sleeve.css">
   {ldjson}
 </head>
 <body>
@@ -87,12 +87,26 @@ RELEASE_TYPE_MAP = {"Album": "AlbumRelease", "EP": "EPRelease", "Single": "Singl
 
 
 # --- Rotation 22 (Aster identity pass, ASTER-STUDY §8.3 + AZ-4) -------------
-# The catalog mark, minted from the archive's own record: ADM + the entry's
-# position in the archive order (this array's order, the same order the
-# index prints as ItemList positions), zero-padded to four. Numbering is
-# added structure only; no slug, URL or title changes.
-def catalog_mark(i):
-    return f"ADM {i + 1:04d}"
+# The catalog mark. Round 2 (2026-10-24, design consult): numbers are
+# minted from the release DATE, not the archive list position — the old
+# scheme numbered the 36 distributor releases first and the SoundCloud
+# vault after, so the "Newest" list read ADM 0037, 0038, 0036, 0035,
+# 0034, 0039. Now the oldest work is ADM 0001 and the newest carries the
+# highest number; ties on date break by title. Numbering is added
+# structure only; no slug, URL or title changes.
+CATALOG = {}
+
+
+def catalog_marks(releases, slug_list):
+    ordered = sorted(
+        zip(releases, slug_list),
+        key=lambda rs: ((rs[0].get("date") or ""), rs[0]["title"].lower()),
+    )
+    return {slug: f"ADM {n + 1:04d}" for n, (_, slug) in enumerate(ordered)}
+
+
+def catalog_mark(slug):
+    return CATALOG[slug]
 
 
 def ld_script(obj):
@@ -161,6 +175,7 @@ def build():
         used_slugs.add(s)
         slug_list.append(s)
     assert len(set(slug_list)) == len(releases), "slug collision"
+    CATALOG.update(catalog_marks(releases, slug_list))
 
     # Page titles must be unique site-wide: two different releases can share
     # a catalog title (e.g. "9 Trips", a 2023 SoundCloud-only track and a
@@ -238,7 +253,7 @@ def build():
             meta_bits.append(escape(r["label"]))
         if r.get("tracks"):
             meta_bits.append(f'{r["tracks"]} tracks')
-        meta_line = " &middot; ".join(meta_bits) + f' &middot; <span class="cat-mark">{catalog_mark(i)}</span>'
+        meta_line = " &middot; ".join(meta_bits) + f' &middot; <span class="cat-mark">{catalog_mark(slug)}</span>'
 
         # The tracklist prints what the record carries. Single-track
         # records: the one track, numbered, its timing slot honest (the
@@ -260,6 +275,15 @@ def build():
         # the poster folded, one tap from the surface. Nothing is removed:
         # the full record (source, confidence, research line, title credits,
         # cited indexes, note) stands inside the fold, in the same order.
+        # Play numbers are off the presented site entirely (the user's
+        # direct order): the vault notes in the data layer carry a
+        # play-count snapshot sentence, and it is stripped here, at the
+        # presentation layer, so the printed provenance matches the
+        # numbers-off sweep. The data record itself is untouched.
+        note = (r.get("note") or "").replace(
+            "Upload date and play count are a 2026-10-11 snapshot; "
+            "play counts drift over time. ", "")
+
         prov = f"""
         <details class="provenance-fold">
           <summary>Provenance</summary>
@@ -270,7 +294,7 @@ def build():
             {credit_html}
           </dl>
           {"<p>Cited indexes:</p><ul>" + citations + "</ul>" if citations else ""}
-          {f'<p>{escape(r["note"])}</p>' if r.get("note") else ""}
+          {f'<p>{escape(note)}</p>' if note else ""}
         </details>"""
 
         body = f"""
@@ -318,7 +342,7 @@ def build():
         rows.append(
             f'<li class="row" data-search="{escape(search_text, quote=True)}" '
             f'data-year="{escape(year, quote=True)}" data-type="{escape(r["type"], quote=True)}">'
-            f'<span class="mark">{catalog_mark(i)}</span>'
+            f'<span class="mark">{catalog_mark(slug_list[i])}</span>'
             f'<span class="t"><a href="{slug_list[i]}.html">{escape(r["title"])}</a>'
             f'<span class="meta">{meta}</span></span></li>'
         )
@@ -326,7 +350,7 @@ def build():
 
     index_body = f"""
       <div class="page-head">
-        <p class="kicker"><span class="numeral">&#10022;</span>The complete catalogue</p>
+        <p class="kicker">The complete catalogue</p>
         <h1 class="page-title" id="idx-h">Releases</h1>
         <p class="lede">Every release on record: {n_dist} through distributors and {n_vault} from the SoundCloud vault, in the archive's order.</p>
       </div>

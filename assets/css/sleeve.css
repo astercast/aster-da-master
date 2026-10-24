@@ -72,19 +72,40 @@ a:hover { text-decoration-color: var(--ink); }
 /* ============ 5. NEWEST: a plain tracklist ============ */
 .newest { padding: 0 var(--gutter) var(--s-7) calc(var(--gutter) + var(--axis)); }
 .newest h2 { margin: 0 0 var(--s-2); font: 400 var(--fs-small)/1 var(--font-words); color: var(--quiet); }
-.tracks { list-style: none; margin: 0; padding: 0; max-inline-size: 44rem; border-top: 1px solid var(--line); }
-.tracks li { display: grid; grid-template-columns: 6.5rem minmax(0, 1fr) auto; align-items: baseline; gap: var(--s-2); padding-block: .85rem; border-bottom: 1px solid var(--line); }
-.tracks .cat, .tracks .when { font: 400 var(--fs-cat)/1 var(--font-numbers); letter-spacing: .06em; color: var(--quiet); white-space: nowrap; }
-.tracks a { text-decoration: none; }
-.tracks a:hover { text-decoration: underline; text-decoration-color: var(--ink); }
-.tracks li:hover .cat { color: var(--ink); }
-.all { margin: var(--s-3) 0 0; font-size: var(--fs-small); }
+.newest .tracks { list-style: none; margin: 0; padding: 0; max-inline-size: 44rem; border-top: 1px solid var(--line); }
+.newest .tracks li { display: grid; grid-template-columns: 6.5rem minmax(0, 1fr) auto; align-items: baseline; gap: var(--s-2); padding-block: .85rem; border-bottom: 1px solid var(--line); }
+.newest .tracks .cat, .newest .tracks .when { font: 400 var(--fs-cat) / 1 var(--font-numbers); letter-spacing: .06em; color: var(--quiet); white-space: nowrap; }
+.newest .tracks a { text-decoration: none; }
+.newest .tracks a:hover { text-decoration: underline; text-decoration-color: var(--ink); }
+.newest .tracks li:hover .cat { color: var(--ink); }
+.newest .all { margin: var(--s-3) 0; font-size: var(--fs-small); }
 @media (width < 34rem) {
-  .tracks li { grid-template-columns: minmax(0, 1fr) auto; row-gap: .35rem; }
-  .tracks .cat { grid-column: 1 / -1; }
+  .newest .tracks li { grid-template-columns: minmax(0, 1fr) auto; row-gap: .35rem; }
+  .newest .tracks .cat { grid-column: 1 / -1; }
 }
+/* the tracklist on a release page: title left, time right */
+.tracklist .tracks li { display: flex; justify-content: space-between; gap: var(--s-2); padding-block: .85rem; border-bottom: 1px solid var(--line); }
+.tracklist .tracks .t-title { overflow-wrap: normal; }
 
-/* ============ 6. MOTION: one slow line, one soft fade ============ */
+/* ============ 6. INNER PAGES: quiet the old header, kill the ornaments ============ */
+.header-bar .brand { font: 400 .95rem / 1 var(--font-words); letter-spacing: .01em; text-transform: none; }
+.header-bar .brand-mark, .nav-sep { display: none; }
+.header-bar .site-nav { display: flex; gap: var(--s-3); }
+/* aster.css hides the desktop nav under 720px in favour of the mobile
+   panel; the rule above outranks that hide, so restate it at this
+   specificity or both navs render on phones */
+@media (max-width: 719px) { .header-bar .site-nav { display: none; } }
+h1 { text-transform: none; letter-spacing: -.01em; }
+/* the Anton-era title classes outrank the bare h1 rule above, so the
+   same quieting is stated at their specificity */
+.poster-title, .page-title, .hero-title { text-transform: none; letter-spacing: -.01em; }
+.kicker .numeral { display: none; }
+
+/* ============ 7. ONE LEFT EDGE, AND A BETTER PHONE NAV ============ */
+.site-footer .footer-grid { max-inline-size: none; margin-inline: 0; padding-inline: var(--gutter); padding-inline-start: calc(var(--gutter) + var(--axis)); }
+@media (width < 34rem) { .hd .site-nav { margin-inline-start: 0; } }
+
+/* ============ 8. MOTION: one slow line, one soft fade ============ */
 @media (prefers-reduced-motion: no-preference) {
   @view-transition { navigation: auto; }
   ::view-transition-old(root), ::view-transition-new(root) { animation-duration: 400ms; animation-timing-function: var(--ease-calm); }
