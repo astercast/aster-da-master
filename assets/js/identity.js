@@ -1,6 +1,8 @@
 /* Aster da Master: site chrome (rotation 20, the catalogue register).
-   Injected, JS-only: the status beacon, the current-page nav marker,
-   the footer sign-off line + UTC clock, and the reveal gap-close.
+   Injected, JS-only: the current-page nav marker and the reveal
+   gap-close. Rotation 134 (the Sleeve build): the status beacon and
+   the footer sign-off + UTC clock calls are retired, per the design:
+   no beacon, no ticking clock. The functions stay below, uncalled.
    Retired in rotation 20 (presentation only): the boot overlay
    ("TUNING 87.9…": the page now opens directly on the catalogue)
    and the scramble/decode text effects (headlines and nav links
@@ -68,9 +70,7 @@
   }
 
   /* ---- run ---- */
-  beacon();
   markCurrent();
-  signoff();
 
   /* Pre-existing gap (predates wave 31): pages that load only common.js
      (changelog, sessions) never invoke ADM.reveal(), so .reveal content

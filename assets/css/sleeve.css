@@ -1,0 +1,95 @@
+/* ============ 1. TOKENS: The Sleeve ============ */
+:root {
+  color-scheme: light;
+  --paper: #EFEEEA;
+  --sleeve: #DEDCD5;
+  --ink: #262624;
+  --quiet: #6A6863;
+  --line: #CFCDC6;
+  --font-words: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
+  --font-numbers: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+  --fs-name: clamp(2rem, 1.3rem + 3vw, 3.75rem);
+  --fs-tag: clamp(1.05rem, .98rem + .4vw, 1.3rem);
+  --fs-body: clamp(.98rem, .95rem + .15vw, 1.06rem);
+  --fs-small: .875rem;
+  --fs-cat: .72rem;
+  /* space: inside a group small, between groups at least 3x */
+  --s-1: .5rem;
+  --s-2: 1rem;
+  --s-3: 1.5rem;
+  --s-4: 3rem;
+  --s-5: 4.5rem;
+  --s-6: 6rem;
+  --s-7: 9rem;
+  --gutter: clamp(1.25rem, .5rem + 3.5vw, 3rem);
+  --axis: clamp(0rem, -6rem + 16vw, 12rem); /* the off-center left edge */
+  --measure: 34rem;
+  --sleeve-size: min(30rem, 100%);
+  --horizon: 62%;
+  --ease-calm: cubic-bezier(.25, .1, .25, 1);
+  --dur-calm: 1800ms;
+  /* the old names, so every page goes quiet */
+  --paper-2: var(--sleeve);
+  --ink-2: var(--ink);
+  --mute: var(--quiet);
+  --line-2: var(--line);
+  --red: var(--ink);
+  --font-display: var(--font-words);
+  --font-body: var(--font-words);
+}
+
+/* ============ 2. BASE ============ */
+html, body { background: var(--paper); color: var(--ink); }
+body { margin: 0; font-family: var(--font-words); font-size: var(--fs-body); font-weight: 400; line-height: 1.65; -webkit-font-smoothing: antialiased; }
+a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: .3em; text-decoration-color: var(--line); }
+a:hover { text-decoration-color: var(--ink); }
+:focus-visible { outline: 1.5px solid var(--ink); outline-offset: 4px; }
+::selection { background: var(--sleeve); color: var(--ink); }
+
+/* ============ 3. HEADER: small, no rule, no light ============ */
+.hd { display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--s-1) var(--s-4); padding: var(--s-3) var(--gutter); }
+.hd-name { font: 400 .95rem/1 var(--font-words); letter-spacing: .01em; text-decoration: none; }
+.hd .site-nav { display: flex; gap: var(--s-3); margin-inline-start: auto; font-size: var(--fs-small); }
+.hd .site-nav a { padding-block: .5rem; color: var(--quiet); text-decoration: none; }
+.hd .site-nav a:hover, .hd .site-nav a[aria-current="page"] { color: var(--ink); }
+
+/* ============ 4. THE ROOM: name, tag, sleeve on one axis ============ */
+.room { padding: var(--s-6) var(--gutter) var(--s-5) calc(var(--gutter) + var(--axis)); }
+.room h1 { margin: 0; font: 300 var(--fs-name)/1.05 var(--font-words); letter-spacing: -.015em; }
+.room-tag { margin: var(--s-2) 0 0; font: italic 300 var(--fs-tag)/1.4 var(--font-words); color: var(--quiet); }
+.room-line { margin: var(--s-3) 0 0; max-inline-size: var(--measure); }
+
+/* the sleeve: the only picture on the page */
+.sleeve { margin: var(--s-6) 0 0; inline-size: var(--sleeve-size); }
+.sleeve-face { position: relative; display: block; aspect-ratio: 1; background: var(--sleeve); container-type: inline-size; text-decoration: none; }
+.sleeve-cat { position: absolute; top: 7cqi; left: 7cqi; font: 400 var(--fs-cat)/1 var(--font-numbers); letter-spacing: .08em; }
+.sleeve-horizon { position: absolute; left: 0; right: 0; top: var(--horizon); block-size: 1px; background: var(--ink); opacity: .55; transform-origin: left center; }
+.sleeve-title { position: absolute; left: 7cqi; right: 7cqi; bottom: 7cqi; font: 400 clamp(1rem, 5.2cqi, 1.6rem)/1.2 var(--font-words); letter-spacing: -.005em; }
+.sleeve-meta { display: block; margin-top: .45rem; font: 400 var(--fs-cat)/1 var(--font-numbers); letter-spacing: .06em; }
+.sleeve-listen { margin-top: var(--s-2); font-size: var(--fs-small); color: var(--quiet); }
+.sleeve-listen a { color: var(--ink); }
+
+/* ============ 5. NEWEST: a plain tracklist ============ */
+.newest { padding: 0 var(--gutter) var(--s-7) calc(var(--gutter) + var(--axis)); }
+.newest h2 { margin: 0 0 var(--s-2); font: 400 var(--fs-small)/1 var(--font-words); color: var(--quiet); }
+.tracks { list-style: none; margin: 0; padding: 0; max-inline-size: 44rem; border-top: 1px solid var(--line); }
+.tracks li { display: grid; grid-template-columns: 6.5rem minmax(0, 1fr) auto; align-items: baseline; gap: var(--s-2); padding-block: .85rem; border-bottom: 1px solid var(--line); }
+.tracks .cat, .tracks .when { font: 400 var(--fs-cat)/1 var(--font-numbers); letter-spacing: .06em; color: var(--quiet); white-space: nowrap; }
+.tracks a { text-decoration: none; }
+.tracks a:hover { text-decoration: underline; text-decoration-color: var(--ink); }
+.tracks li:hover .cat { color: var(--ink); }
+.all { margin: var(--s-3) 0 0; font-size: var(--fs-small); }
+@media (width < 34rem) {
+  .tracks li { grid-template-columns: minmax(0, 1fr) auto; row-gap: .35rem; }
+  .tracks .cat { grid-column: 1 / -1; }
+}
+
+/* ============ 6. MOTION: one slow line, one soft fade ============ */
+@media (prefers-reduced-motion: no-preference) {
+  @view-transition { navigation: auto; }
+  ::view-transition-old(root), ::view-transition-new(root) { animation-duration: 400ms; animation-timing-function: var(--ease-calm); }
+  .sleeve-horizon { transition: scale var(--dur-calm) var(--ease-calm), top 1.2s var(--ease-calm); }
+  @starting-style { .sleeve-horizon { scale: 0 1; } }
+  .sleeve-face:hover .sleeve-horizon,
+  .sleeve-face:focus-visible .sleeve-horizon { top: calc(var(--horizon) - 4%); }
+}
