@@ -114,3 +114,29 @@ h1 { text-transform: none; letter-spacing: -.01em; }
   .sleeve-face:hover .sleeve-horizon,
   .sleeve-face:focus-visible .sleeve-horizon { top: calc(var(--horizon) - 4%); }
 }
+
+/* ============ 9. ROUND 3: release pages wear the sleeve ============ */
+/* inner pages share the home page's left edge and quiet header */
+.site-header { border-bottom: 0; }
+.header-bar { min-block-size: 0; padding-block: var(--s-3); }
+.header-bar .brand { font: 400 .95rem / 1 var(--font-words); letter-spacing: .01em; }
+.site-header .container, main > .container { max-inline-size: none; margin-inline: 0; padding-inline: var(--gutter); }
+main > .container { padding-inline-start: calc(var(--gutter) + var(--axis)); padding-block-end: var(--s-6); }
+.release { padding-block: var(--s-5) 0; }
+.release h1 { margin: 0; font: 300 var(--fs-name) / 1.05 var(--font-words); letter-spacing: -.015em; overflow-wrap: anywhere; max-inline-size: 18ch; }
+.rel-meta { margin: var(--s-2) 0; font-size: var(--fs-small); color: var(--quiet); }
+.release .sleeve { margin-top: var(--s-4); }
+.sleeve-cover { position: absolute; inset: 0; inline-size: 100%; block-size: 100%; object-fit: cover; }
+.sleeve-foot { position: absolute; left: 7cqi; right: 7cqi; bottom: 7cqi; font: 400 var(--fs-cat) / 1 var(--font-numbers); letter-spacing: .06em; }
+.sleeve-cap { margin-top: var(--s-1); font: 400 var(--fs-cat) / 1 var(--font-numbers); letter-spacing: .08em; color: var(--quiet); }
+/* a cover covers the plate; if it fails to load, the plate is still there */
+.has-cover .sleeve-cat, .has-cover .sleeve-horizon, .has-cover .sleeve-foot { visibility: hidden; }
+.has-cover.cover-failed .sleeve-cat, .has-cover.cover-failed .sleeve-horizon, .has-cover.cover-failed .sleeve-foot { visibility: visible; }
+.has-cover.cover-failed + .sleeve-cap { display: none; }
+.rel-listen { margin: var(--s-3) 0; font-size: var(--fs-small); color: var(--quiet); }
+.rel-listen a { color: var(--ink); }
+.release + .provenance-fold { margin-top: var(--s-5); max-inline-size: var(--measure); }
+.provenance-fold summary { font-size: var(--fs-small); color: var(--quiet); cursor: pointer; }
+.release-nav { display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--s-2) var(--s-4); margin-top: var(--s-5); max-inline-size: var(--sleeve-size); font-size: var(--fs-small); }
+.release-nav .btn { border: 0; padding: 0; background: none; color: var(--ink); font: inherit; letter-spacing: 0; text-transform: none; text-decoration: underline; text-decoration-color: var(--line); text-underline-offset: .3em; }
+.release-nav .btn:hover { text-decoration-color: var(--ink); }

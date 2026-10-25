@@ -268,3 +268,19 @@ h1, h2, h3 { font-weight: 400; }
 .plat-list li.plat-plain {
   display: flex; justify-content: space-between; gap: 16px; padding: 12px 4px;
 }
+/* ---- covers: the sleeve is the floor, a picture fades in over it ---- */
+.cover { position: relative; display: block; aspect-ratio: 1; background: var(--sleeve, #DEDCD5); border: 1px solid var(--line); overflow: hidden; }
+.cover .sleeve-face { position: absolute; inset: 0; aspect-ratio: auto; }
+.cover img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity .5s var(--ease); }
+.cover[data-state="ok"] img { opacity: 1; }
+.cover[data-state="dead"] img { display: none; }
+.cover-credit { margin: 8px 0 0; font-size: 0.74rem; color: var(--mute); }
+.cover-credit a { color: inherit; text-underline-offset: 3px; }
+.cover-thumb { width: 44px; height: 44px; aspect-ratio: auto; flex: none; border-color: var(--line); }
+.cover-thumb .sleeve-horizon { opacity: .4; }
+.row { align-items: center; }
+.row .cover-thumb { grid-column: 1; }
+@media (prefers-reduced-motion: reduce) { .cover img { transition: none; } }
+.cover[data-state="dead"] + .cover-credit { display: none; }
+.row:has(> .cover-thumb) { grid-template-columns: 44px 74px minmax(0, 1fr); align-items: center; }
+@media (max-width: 480px) { .row:has(> .cover-thumb) { grid-template-columns: 44px 54px minmax(0, 1fr); gap: 4px 12px; } }

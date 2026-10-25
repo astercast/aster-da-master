@@ -1,8 +1,44 @@
 {
   "generated": "2026-10-11",
   "method": "Parsed from `git log main`: every commit becomes an entry. The site documenting its own becoming.",
-  "entry_count": 193,
+  "entry_count": 199,
   "entries": [
+    {
+      "hash": "7f4f5ba",
+      "date": "2026-10-24",
+      "message": "Bundle 2026-10-24 (Aster): strip guard in build, dead Signal endpoints deleted, the Crate + feed + transmission strip, heartbeat kit (keyless), Apple cover ladder",
+      "files_changed": 257
+    },
+    {
+      "hash": "3a090a1",
+      "date": "2026-10-24",
+      "message": "Round 3 (design consult): close play-data publication leak, sleeve on all 221 release pages",
+      "files_changed": 229
+    },
+    {
+      "hash": "35ef3d4",
+      "date": "2026-10-24",
+      "message": "Round 2 (design consult): sleeve design on every page, date-minted catalogue, newest-release hero, play counts private",
+      "files_changed": 232
+    },
+    {
+      "hash": "bf2dbd5",
+      "date": "2026-10-23",
+      "message": "R134 close-owner verification fix: Plex Sans normal faces are the statics",
+      "files_changed": 6
+    },
+    {
+      "hash": "cc8b9b0",
+      "date": "2026-10-23",
+      "message": "The Sleeve: Aster design-consult build (rotation 134)",
+      "files_changed": 198
+    },
+    {
+      "hash": "96da8e2",
+      "date": "2026-10-16",
+      "message": "Changelog sync",
+      "files_changed": 2
+    },
     {
       "hash": "ded98e3",
       "date": "2026-10-15",

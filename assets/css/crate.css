@@ -1,0 +1,20 @@
+/* The Crate: every release is a spine. Calm, one ink, paper ground. */
+.crate { --paper: #efede8; --ink: #22211f; --soft: #8c8a84; padding: 0 clamp(16px, 4vw, 56px) 64px; background: var(--paper); color: var(--ink); }
+.crate-head { display: flex; justify-content: space-between; align-items: baseline; padding: 40px 0 18px; font: 400 13px/1 "IBM Plex Mono", ui-monospace, monospace; letter-spacing: .06em; text-transform: uppercase; color: var(--soft); }
+.crate-stage { position: relative; height: calc(clamp(150px, 20vw, 220px) + 96px + 150px); border-bottom: 1px solid var(--ink); }
+.crate-spines { position: absolute; inset: auto 0 0 0; display: flex; align-items: flex-end; gap: 2px; height: 150px; margin: 0; padding: 0; list-style: none; overflow-x: auto; scrollbar-width: none; }
+.crate-spines li { flex: 1 0 5px; min-width: 5px; height: 100%; display: flex; align-items: flex-end; }
+.crate-spines a { display: block; width: 100%; height: 55%; background: var(--ink); opacity: .45; transition: height .25s cubic-bezier(.2,.7,.2,1), opacity .2s; outline-offset: 2px; }
+.crate-spines a:hover, .crate-spines a:focus-visible { opacity: 1; height: 100%; }
+.crate-spines a[data-kind="Album"] { opacity: .95; height: 100%; } .crate-spines a[data-kind="Single"] { opacity: .7; height: 78%; }
+.crate-card { position: absolute; top: 0; left: 0; width: clamp(150px, 20vw, 220px); pointer-events: none; transition: translate .25s cubic-bezier(.2,.7,.2,1); }
+.crate-card svg, .crate-card img { display: block; width: 100%; aspect-ratio: 1; object-fit: cover; background: var(--paper); border: 1px solid var(--ink); }
+.crate-card p { margin: 8px 0 0; font: 400 14px/1.25 "IBM Plex Sans", system-ui, sans-serif; }
+.crate-card small { display: block; color: var(--soft); font: 400 12px/1.4 "IBM Plex Mono", ui-monospace, monospace; }
+.crate-years { display: flex; justify-content: space-between; padding-top: 8px; font: 400 12px/1 "IBM Plex Mono", ui-monospace, monospace; color: var(--soft); }
+@media (max-width: 640px) { .crate-card { position: absolute; top: 0; left: 0; width: clamp(150px, 20vw, 220px); pointer-events: none; transition: translate .25s cubic-bezier(.2,.7,.2,1); } .crate-spines li { flex: 1 0 5px; min-width: 5px; height: 100%; display: flex; align-items: flex-end; } }
+@media (prefers-reduced-motion: reduce) { .crate-spines a, .crate-card { position: absolute; top: 0; left: 0; width: clamp(150px, 20vw, 220px); pointer-events: none; transition: translate .25s cubic-bezier(.2,.7,.2,1); } }
+
+/* New transmission strip: one line, words and a date, never a number. */
+.transmission-strip { padding: 18px clamp(16px, 4vw, 56px) 0; background: var(--paper, #efede8); color: var(--ink, #22211f); font: 400 13px/1.4 "IBM Plex Mono", ui-monospace, monospace; letter-spacing: .04em; }
+.transmission-strip[hidden] { display: none; }

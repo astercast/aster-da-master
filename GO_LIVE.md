@@ -78,7 +78,7 @@ service `aster-signal`). Envelope schema: `data/v1/schema/envelope.json`.
 | name | required? | where set | notes |
 |---|---|---|---|
 | `CRON_SECRET` | **yes** | Vercel → Project → Settings → Environment Variables (Production) | 32+ random hex chars. Vercel auto-sends it as `Authorization: Bearer` on cron invocations. Generate: `node -e "console.log(require('crypto').randomBytes(32).toString('hex'))"`. Rotate by replacing the value + redeploying; cron 401s until both match. |
-| `GITHUB_REPO_TOKEN` | required for commit-back | same | Fine-grained PAT, **contents:write on this repo only**, no other scopes. **Pending the user's decision** — until it is set, the cron job runs read-only: it computes fresh data, returns it in its response envelope with `read_only:true`, and does not persist (documented in the Wave A report). |
+Retired 2026-10-24 (fleet-data migration): no GITHUB_REPO_TOKEN is used anywhere. Live data refreshes through the astercast/fleet-data repo; the fleet watchdog does the checking.
 | `GITHUB_REPO` | yes (with the token) | same | `owner/aster-da-master` — the repo the cron commits to. |
 | `REPO_STATIC_PREFIX` | yes (with the token) | same | Empty string for this repo (`data/v1/*.json` at the root). |
 | `SOUNDCLOUD_CLIENT_ID` | recommended | same | Public-webapp client_id. Set it and the cron skips the ~5.5s bundle-extraction path (10.6s → ~5s per run on this VM; Vercel datacenter peering is faster). Without it the job extracts + verifies the key from SoundCloud's public webapp itself — no login, no private API. It only reads public track data; it cannot spend anything. |

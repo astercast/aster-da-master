@@ -72,7 +72,7 @@ no lyrics, no bio facts.
   `refresh-status.json` + snapshot row on change only. Requires
   `Authorization: Bearer <CRON_SECRET>` (Vercel sends it automatically; 401
   otherwise); 60s duplicate cooldown; idempotent. Read-only until
-  `GITHUB_REPO_TOKEN` is set — then it returns fresh data in the envelope
+Retired 2026-10-24 (fleet-data migration): no GITHUB_REPO_TOKEN is used anywhere. Live data refreshes through the astercast/fleet-data repo; the fleet watchdog does the checking.
   without persisting (`read_only:true`).
 
 Full hookup, env vars, cost rules, cold-start behavior, and rollback live in

@@ -17,6 +17,9 @@
   <link rel="stylesheet" href="assets/css/fonts.css">
   <link rel="stylesheet" href="assets/css/aster.css">
   <link rel="stylesheet" href="assets/css/sleeve.css">
+  <link rel="stylesheet" href="assets/css/crate.css">
+  <link rel="stylesheet" href="assets/css/pulse.css">
+  <link rel="alternate" type="application/atom+xml" title="Aster da Master releases" href="/feed.xml">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -57,6 +60,12 @@
       </ol>
       <p class="all"><a href="releases/">All releases</a></p>
     </section>
+    <p class="transmission-strip" data-transmission hidden></p>
+    <section class="crate" data-crate aria-label="The crate: every release as a spine">
+      <div class="crate-head"><span>The crate</span><span>Every release, oldest to newest</span></div>
+      <div class="crate-stage"><div class="crate-card" aria-hidden="true"></div><ol class="crate-spines"></ol></div>
+      <div class="crate-years"></div>
+    </section>
   </main>
   <footer class="site-footer">
     <div class="container footer-grid">
@@ -71,5 +80,10 @@
     </div>
   </footer>
   <script src="assets/js/identity.js"></script>
+  <script src="assets/js/search-shortcut.js"></script>
+  <script type="module" src="assets/js/crate.js"></script>
+  <script type="module" src="assets/js/pulse.js"></script>
+  <script src="assets/js/fleet-live.js"></script>
+  <script src="assets/js/fleet-bar.js" data-site="aster-da-master"></script>
 </body>
 </html>

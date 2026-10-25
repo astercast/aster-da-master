@@ -43,7 +43,7 @@
 | name | required? | notes |
 |---|---|---|
 | `CRON_SECRET` | **yes** | 32+ random hex chars; Vercel auto-sends as `Authorization: Bearer` |
-| `GITHUB_REPO_TOKEN` | for commit-back | fine-grained PAT, contents:write on the `-live` repo only. **Without it the cron runs read-only** (fresh data returned in the envelope with `read_only:true`, nothing persisted) |
+Retired 2026-10-24 (fleet-data migration): no GITHUB_REPO_TOKEN is used anywhere. Live data refreshes through the astercast/fleet-data repo; the fleet watchdog does the checking.
 | `GITHUB_REPO` | with the token | `astercast/aster-da-master-live` (the repo the cron commits back to) |
 | `REPO_STATIC_PREFIX` | with the token | empty string (`data/v1/*.json` at the root) |
 | `SOUNDCLOUD_CLIENT_ID` | recommended | public-webapp client_id; skips the ~5.5s key-extraction path |

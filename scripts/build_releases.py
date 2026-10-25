@@ -16,6 +16,8 @@ from pathlib import Path
 import nav_data  # noqa: E402  (canonical nav data — scripts/nav_data.py)
 ROOT = Path(__file__).resolve().parent.parent
 DATA = json.loads((ROOT / "data" / "artist.json").read_text())
+ART = json.loads((ROOT / "data" / "art.json").read_text()) if (ROOT / "data" / "art.json").exists() else {}
+ART_DIR = ROOT / "assets" / "art"  # the artist's own covers: <slug>-480/-960/-1440.webp (scripts/art_import.py)
 OUT = ROOT / "releases"
 
 HEAD = """<!DOCTYPE html>
@@ -39,16 +41,15 @@ HEAD = """<!DOCTYPE html>
   <link rel="stylesheet" href="../assets/css/fonts.css">
   <link rel="stylesheet" href="../assets/css/aster.css">
   <link rel="stylesheet" href="../assets/css/sleeve.css">
+  <link rel="alternate" type="application/atom+xml" title="Aster da Master releases" href="/feed.xml">
+  <script src="../assets/js/cover.js" defer></script>
   {ldjson}
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
     <div class="container header-bar">
-      <a class="brand" href="../" aria-label="Aster da Master home">
-        <span class="brand-mark" aria-hidden="true">A&#10022;</span>
-        <span>ASTER DA MASTER</span>
-      </a>
+      <a class="brand" href="../" aria-label="Aster da Master home">Aster da Master</a>
       {navchunk}
     </div>
   </header>
@@ -65,9 +66,46 @@ FOOT = """    </div>
     </div>
   </footer>
   <script src="../assets/js/identity.js"></script>
+  <script src="../assets/js/search-shortcut.js"></script>
 </body>
 </html>
 """
+
+def cover_for(r, slug):
+    """Where this release's cover comes from, best first (bundle 2026-10-24):
+    1. the artist's own file in assets/art/ (self-hosted, his rights);
+    2. Apple Music, by address only (data/art.json, scripts/art_apple.py),
+       credited on the page as "Cover from Apple Music" linking the album;
+    3. a cover already on record in artist.json;
+    4. nothing: the sleeve stands alone, a finished design, not a gap."""
+    if (ART_DIR / f"{slug}-960.webp").exists():
+        sizes = [w for w in (480, 960, 1440) if (ART_DIR / f"{slug}-{w}.webp").exists()]
+        srcset = ", ".join(f"/assets/art/{slug}-{w}.webp {w}w" for w in sizes)
+        return {"kind": "own", "srcset": srcset, "src": f"/assets/art/{slug}-960.webp",
+                "credit": "", "ld": f"/assets/art/{slug}-960.webp"}
+    a = ART.get(f'{r["title"]}|{r.get("date")}')
+    if a and a.get("source") == "apple":
+        b = a["base"]
+        srcset = ", ".join(f"{b}/{w}x{w}bb.webp {w}w" for w in (300, 600, 1000))
+        return {"kind": "apple", "srcset": srcset, "src": f"{b}/600x600bb.jpg",
+                "credit": a["page"], "ld": f"{b}/1000x1000bb.jpg"}
+    if r.get("artwork"):
+        return {"kind": "record", "srcset": "", "src": r["artwork"], "credit": "", "ld": r["artwork"]}
+    return None
+
+
+def thumb_html(r, slug):
+    """Index-row thumbnail (bundle cover pattern): the sleeve face is the
+    floor, a real cover fades in over it via assets/js/cover.js, and a
+    dead or tiny image is removed rather than shown broken."""
+    c = cover_for(r, slug)
+    inner = '<span class="sleeve-face cover-floor" aria-hidden="true"><span class="sleeve-horizon"></span></span>'
+    if c:
+        src = c["src"].replace("600x600bb.jpg", "100x100bb.jpg") if c["kind"] == "apple" else c["src"]
+        inner += (f'<img src="{escape(src, quote=True)}" width="44" height="44" alt="" '
+                  f'loading="lazy" decoding="async" referrerpolicy="no-referrer">')
+    return f'<span class="cover cover-thumb" data-state="{"wait" if c else "none"}">{inner}</span>'
+
 
 def slugify(title: str) -> str:
     s = title.lower()
@@ -144,8 +182,9 @@ def release_ld(r, slug):
         ld["datePublished"] = r["date"]
     if r.get("tracks"):
         ld["numTracks"] = r["tracks"]
-    if r.get("artwork"):
-        ld["image"] = r["artwork"]
+    _c = cover_for(r, slug)
+    if _c:
+        ld["image"] = _c["ld"]
     return ld_script(ld)
 
 
@@ -204,13 +243,35 @@ def build():
 
     for i, r in enumerate(releases):
         slug = slug_list[i]
-        art = ""
-        if r.get("artwork"):
-            art = (
-                f'<img src="{escape(r["artwork"])}" alt="{escape(r["title"])} cover art" loading="lazy">'
+        cat = catalog_mark(slug)
+        is_vault = r["type"] == "SoundCloud-only"
+        months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+        d = r.get("date") or ""
+        when = f'{months[int(d[5:7]) - 1]} {d[:4]}' if len(d) >= 7 and d[5:7].isdigit() else (d[:4] or "Date unknown")
+        kind = "SoundCloud" if is_vault else r["type"]
+        plate = (
+            f'<span class="sleeve-cat">{cat}</span>'
+            f'<span class="sleeve-horizon" aria-hidden="true"></span>'
+            f'<span class="sleeve-foot">{kind} &middot; {when}</span>'
+        )
+        _cover = cover_for(r, slug)
+        if _cover:
+            _srcset = (f' srcset="{escape(_cover["srcset"], quote=True)}"'
+                       f' sizes="(min-width: 30rem) 430px, 100vw"') if _cover["srcset"] else ""
+            sleeve = (
+                f'<figure class="sleeve"><div class="sleeve-face has-cover">{plate}'
+                f'<img class="sleeve-cover" src="{escape(_cover["src"])}"{_srcset} alt="{escape(r["title"])} cover art" '
+                f'width="600" height="600" decoding="async" referrerpolicy="no-referrer" '
+                f'onerror="this.parentNode.classList.add(\'cover-failed\');this.remove()"></div>'
+                f'<figcaption class="sleeve-cap">{cat}</figcaption></figure>'
+                + (f'<p class="cover-credit">Cover from <a href="{escape(_cover["credit"], quote=True)}" rel="noopener">Apple Music</a></p>'
+                   if _cover["credit"] else "")
             )
         else:
-            art = f'<div class="disco-art disco-mono" aria-hidden="true">{escape((r["title"] or "?")[0])}</div>'
+            sleeve = (
+                f'<figure class="sleeve"><div class="sleeve-face" role="img" '
+                f'aria-label="No cover art yet for {escape(r["title"])}">{plate}</div></figure>'
+            )
 
         credits = credits_from_title(r["title"])
         credit_html = ""
@@ -221,10 +282,7 @@ def build():
                 + "</dd>"
             )
 
-        links = "".join(
-            f'<a class="btn btn-sm" href="{escape(l["url"])}" target="_blank" rel="noopener">{escape(l["label"])}</a>'
-            for l in (r.get("links") or [])
-        )
+        links = " &middot; ".join(f'<a href="{escape(l["url"])}" target="_blank" rel="noopener">{escape(l["label"])}</a>' for l in (r.get("links") or []))
         citations = "".join(
             f'<li><a href="{escape(c["url"])}" target="_blank" rel="noopener">{escape(c["label"])}</a></li>'
             for c in (r.get("citations") or [])
@@ -253,7 +311,7 @@ def build():
             meta_bits.append(escape(r["label"]))
         if r.get("tracks"):
             meta_bits.append(f'{r["tracks"]} tracks')
-        meta_line = " &middot; ".join(meta_bits) + f' &middot; <span class="cat-mark">{catalog_mark(slug)}</span>'
+        meta_line = " &middot; ".join(meta_bits)
 
         # The tracklist prints what the record carries. Single-track
         # records: the one track, numbered, its timing slot honest (the
@@ -286,11 +344,9 @@ def build():
 
         prov = f"""
         <details class="provenance-fold">
-          <summary>Provenance</summary>
+          <summary>Where this comes from</summary>
           <dl class="release-meta">
-            <dt>Source</dt><dd>{escape(r.get("source", "Not recorded"))}</dd>
-            <dt>Confidence</dt><dd>{escape(r.get("confidence", "verified"))}</dd>
-            <dt>Research</dt><dd>2026-10-11 artist research pass; titles and credits only; no lyrics reproduced.</dd>
+            <dt>Source</dt><dd>{escape((r.get("source", "Not recorded")).replace(" · full-catalog live-browser pass (read-only, no login)", ""))}</dd>
             {credit_html}
           </dl>
           {"<p>Cited indexes:</p><ul>" + citations + "</ul>" if citations else ""}
@@ -298,15 +354,11 @@ def build():
         </details>"""
 
         body = f"""
-      <article class="poster" aria-labelledby="rel-title">
-        <h1 class="poster-title" id="rel-title">{escape(r["title"])}</h1>
-        <p class="poster-meta">{meta_line}</p>
-        <div class="poster-art">{art}</div>
-        <section class="tracklist" aria-labelledby="tl-h">
-          <h2 id="tl-h">Tracklist</h2>
-          {tracklist}
-        </section>
-        <div class="btn-row">{links or '<p class="chart-sub">No distributor platform links on record for this entry.</p>'}</div>
+      <article class="release" aria-labelledby="rel-title">
+        <h1 id="rel-title">{escape(r["title"])}</h1>
+        <p class="rel-meta">{meta_line}</p>
+        {sleeve}
+        <p class="rel-listen">{("Listen on " + links) if links else "No listening link on record yet."}</p>
       </article>
       {prov}
       <nav class="release-nav" aria-label="More releases">{prev_link}{next_link}</nav>
@@ -342,17 +394,18 @@ def build():
         rows.append(
             f'<li class="row" data-search="{escape(search_text, quote=True)}" '
             f'data-year="{escape(year, quote=True)}" data-type="{escape(r["type"], quote=True)}">'
+            f'{thumb_html(r, slug_list[i])}'
             f'<span class="mark">{catalog_mark(slug_list[i])}</span>'
             f'<span class="t"><a href="{slug_list[i]}.html">{escape(r["title"])}</a>'
             f'<span class="meta">{meta}</span></span></li>'
         )
+    rows.sort(key=lambda h: h.split('<span class="mark">')[1][:8], reverse=True)  # newest first
     rows_html = "\n          ".join(rows)
 
     index_body = f"""
       <div class="page-head">
-        <p class="kicker">The complete catalogue</p>
         <h1 class="page-title" id="idx-h">Releases</h1>
-        <p class="lede">Every release on record: {n_dist} through distributors and {n_vault} from the SoundCloud vault, in the archive's order.</p>
+        <p class="lede">{n_dist + n_vault} releases, newest first.</p>
       </div>
       <section aria-label="Catalogue">
         <div class="filters" role="group" aria-label="Filter releases">

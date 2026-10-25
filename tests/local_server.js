@@ -1,10 +1,8 @@
 /* tests/local_server.js — minimal Vercel routing emulator for Wave-A tests.
  * NOT shipped to production. Maps:
  *   /api/health      -> api/health.js
- *   /api/stats       -> api/stats.js
- *   /api/uploads     -> api/uploads.js
- *   /api/watch       -> api/watch.js
  *   /api/cron/signal -> api/cron/signal.js
+ *   (stats/uploads/watch retired 2026-10-24, bundle RECORD S3)
  *   /data/v1/*.json   -> static file from data/v1/
  * Usage: node tests/local_server.js [port]   (default 3000)
  * Env: REPO_ROOT (default: parent of tests/)
@@ -21,9 +19,6 @@ const PORT = Number(process.argv[2] || process.env.PORT || 3000);
 
 const ROUTES = {
   "/api/health": "../api/health.js",
-  "/api/stats": "../api/stats.js",
-  "/api/uploads": "../api/uploads.js",
-  "/api/watch": "../api/watch.js",
   "/api/cron/signal": "../api/cron/signal.js",
 };
 
