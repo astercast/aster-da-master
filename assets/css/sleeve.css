@@ -1,41 +1,40 @@
-/* ============ 1. TOKENS: The Sleeve ============ */
+/* ============ 1. TOKENS: The Sleeve, round 3 ============
+   One idea: every record is a sleeve with one horizon, and the horizon sits at
+   the record's place in the catalogue. ADM 0001 rests low, ADM 0221 stands high.
+   Set like an ECM sleeve: paper, one thin line, very small type, a lot of air.
+   Nothing here counts or ranks anything; the line is only a position. */
 :root {
   color-scheme: light;
-  --paper: #EFEEEA;
-  --sleeve: #DEDCD5;
-  --ink: #262624;
-  --quiet: #6A6863;
-  --line: #CFCDC6;
-  --font-words: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
+  /* colour: three papers and one ink, each with a job */
+  --paper:  #EFEEEA;   /* the room: warm, never white */
+  --sleeve: #DEDCD5;   /* a sleeve and a glyph. Ink on it 11.1:1 */
+  --ink:    #262624;   /* names and the horizon line. 13.1:1 on paper */
+  --quiet:  #5A5853;   /* dates, numbers, labels. 6.1:1 on paper, 5.1:1 on a sleeve */
+  --line:   #CFCDC6;   /* hairlines only */
+  --font-words:   "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
   --font-numbers: "IBM Plex Mono", ui-monospace, Menlo, monospace;
-  --fs-name: clamp(2rem, 1.3rem + 3vw, 3.75rem);
-  --fs-tag: clamp(1.05rem, .98rem + .4vw, 1.3rem);
-  --fs-body: clamp(.98rem, .95rem + .15vw, 1.06rem);
+  /* type: light weight for names, regular for reading, mono for numbers */
+  --fs-name:  clamp(2.25rem, 1.3rem + 3.6vw, 4.25rem);   /* 36 to 68 */
+  --fs-tag:   clamp(1.05rem, .98rem + .4vw, 1.3rem);
+  --fs-body:  clamp(.98rem, .95rem + .15vw, 1.06rem);
+  --fs-year:  clamp(1.5rem, 1.25rem + 1vw, 2rem);
   --fs-small: .875rem;
-  --fs-cat: .72rem;
-  /* space: inside a group small, between groups at least 3x */
-  --s-1: .5rem;
-  --s-2: 1rem;
-  --s-3: 1.5rem;
-  --s-4: 3rem;
-  --s-5: 4.5rem;
-  --s-6: 6rem;
-  --s-7: 9rem;
+  --fs-cat:   .75rem;
+  /* space: 8 px unit. Inside a group small, between groups at least 3x */
+  --s-1: .5rem; --s-2: 1rem; --s-3: 1.5rem; --s-4: 3rem; --s-5: 4.5rem; --s-6: 6rem; --s-7: 9rem;
   --gutter: clamp(1.25rem, .5rem + 3.5vw, 3rem);
-  --axis: clamp(0rem, -6rem + 16vw, 12rem); /* the off-center left edge */
+  --axis: clamp(0rem, -6rem + 16vw, 12rem);   /* the one off-centre left edge */
   --measure: 34rem;
-  --sleeve-size: min(30rem, 100%);
-  --horizon: 62%;
+  --list: 46rem;
+  --sleeve-size: min(26rem, 100%);
+  /* the horizon: --h runs 0 to 1 (ADM number / newest number) */
+  --h-top: 72%; --h-span: 48%;
+  /* motion: slow, one curve */
   --ease-calm: cubic-bezier(.25, .1, .25, 1);
-  --dur-calm: 1800ms;
+  --dur-calm: 1800ms; --dur-quick: 220ms;
   /* the old names, so every page goes quiet */
-  --paper-2: var(--sleeve);
-  --ink-2: var(--ink);
-  --mute: var(--quiet);
-  --line-2: var(--line);
-  --red: var(--ink);
-  --font-display: var(--font-words);
-  --font-body: var(--font-words);
+  --paper-2: var(--sleeve); --ink-2: var(--ink); --mute: var(--quiet); --line-2: var(--line);
+  --red: var(--ink); --font-display: var(--font-words); --font-body: var(--font-words);
 }
 
 /* ============ 2. BASE ============ */
@@ -53,36 +52,80 @@ a:hover { text-decoration-color: var(--ink); }
 .hd .site-nav a { padding-block: .5rem; color: var(--quiet); text-decoration: none; }
 .hd .site-nav a:hover, .hd .site-nav a[aria-current="page"] { color: var(--ink); }
 
-/* ============ 4. THE ROOM: name, tag, sleeve on one axis ============ */
-.room { padding: var(--s-6) var(--gutter) var(--s-5) calc(var(--gutter) + var(--axis)); }
-.room h1 { margin: 0; font: 300 var(--fs-name)/1.05 var(--font-words); letter-spacing: -.015em; }
-.room-tag { margin: var(--s-2) 0 0; font: italic 300 var(--fs-tag)/1.4 var(--font-words); color: var(--quiet); }
-.room-line { margin: var(--s-3) 0 0; max-inline-size: var(--measure); }
+/* ============ 4. THE ROOM: name, tag, one sleeve, on one axis ============ */
+.room { padding: var(--s-5) var(--gutter) var(--s-5) calc(var(--gutter) + var(--axis)); }
+.room h1 { margin: 0; font: 300 var(--fs-name)/1.02 var(--font-words); letter-spacing: -.02em; }
+.room-tag { margin: var(--s-1) 0 0; font: italic 300 var(--fs-tag)/1.4 var(--font-words); color: var(--quiet); }
 
-/* the sleeve: the only picture on the page */
-.sleeve { margin: var(--s-6) 0 0; inline-size: var(--sleeve-size); }
+/* the sleeve: the only picture on the page. The line sits at the record's place. */
+.sleeve { margin: var(--s-4) 0 0; inline-size: var(--sleeve-size); }
 .sleeve-face { position: relative; display: block; aspect-ratio: 1; background: var(--sleeve); container-type: inline-size; text-decoration: none; }
 .sleeve-cat { position: absolute; top: 7cqi; left: 7cqi; font: 400 var(--fs-cat)/1 var(--font-numbers); letter-spacing: .08em; }
-.sleeve-horizon { position: absolute; left: 0; right: 0; top: var(--horizon); block-size: 1px; background: var(--ink); opacity: .55; transform-origin: left center; }
-.sleeve-title { position: absolute; left: 7cqi; right: 7cqi; bottom: 7cqi; font: 400 clamp(1rem, 5.2cqi, 1.6rem)/1.2 var(--font-words); letter-spacing: -.005em; }
-.sleeve-meta { display: block; margin-top: .45rem; font: 400 var(--fs-cat)/1 var(--font-numbers); letter-spacing: .06em; }
+.sleeve-horizon { position: absolute; left: 0; right: 0; top: calc(var(--h-top) - var(--h-span) * var(--h, .5)); block-size: 1px; background: var(--ink); transform-origin: left center; }
+.sleeve-title { position: absolute; left: 7cqi; right: 7cqi; bottom: 7cqi; font: 400 clamp(1rem, 5.2cqi, 1.5rem)/1.2 var(--font-words); letter-spacing: -.005em; text-wrap: balance; }
+.sleeve-meta { display: block; margin-top: .5rem; font: 400 var(--fs-cat)/1 var(--font-numbers); letter-spacing: .06em; color: var(--quiet); }
 .sleeve-listen { margin-top: var(--s-2); font-size: var(--fs-small); color: var(--quiet); }
 .sleeve-listen a { color: var(--ink); }
+/* a release page with no cover art wears the same sleeve, without a title */
+.sleeve-static { inline-size: var(--sleeve-size); }
 
-/* ============ 5. NEWEST: a plain tracklist ============ */
-.newest { padding: 0 var(--gutter) var(--s-7) calc(var(--gutter) + var(--axis)); }
-.newest h2 { margin: 0 0 var(--s-2); font: 400 var(--fs-small)/1 var(--font-words); color: var(--quiet); }
-.newest .tracks { list-style: none; margin: 0; padding: 0; max-inline-size: 44rem; border-top: 1px solid var(--line); }
-.newest .tracks li { display: grid; grid-template-columns: 6.5rem minmax(0, 1fr) auto; align-items: baseline; gap: var(--s-2); padding-block: .85rem; border-bottom: 1px solid var(--line); }
-.newest .tracks .cat, .newest .tracks .when { font: 400 var(--fs-cat) / 1 var(--font-numbers); letter-spacing: .06em; color: var(--quiet); white-space: nowrap; }
-.newest .tracks a { text-decoration: none; }
-.newest .tracks a:hover { text-decoration: underline; text-decoration-color: var(--ink); }
-.newest .tracks li:hover .cat { color: var(--ink); }
-.newest .all { margin: var(--s-3) 0; font-size: var(--fs-small); }
-@media (width < 34rem) {
-  .newest .tracks li { grid-template-columns: minmax(0, 1fr) auto; row-gap: .35rem; }
-  .newest .tracks .cat { grid-column: 1 / -1; }
+/* ============ 5. THE CATALOGUE: every release, by year, newest first ============ */
+.catalogue { padding: 0 var(--gutter) var(--s-7) calc(var(--gutter) + var(--axis)); }
+.catalogue > * { max-inline-size: var(--list); }
+.cat-head { display: flex; align-items: baseline; justify-content: space-between; gap: var(--s-2) var(--s-3); flex-wrap: wrap; }
+.cat-head h2 { margin: 0; font: 400 var(--fs-small)/1 var(--font-words); color: var(--quiet); }
+.find { display: none; }
+.js .find { display: block; flex: 0 1 16rem; }
+.find input {
+  inline-size: 100%; padding: .5rem 0; font: 400 var(--fs-small)/1.4 var(--font-words); color: var(--ink);
+  background: none; border: 0; border-bottom: 1px solid var(--line); border-radius: 0; outline: none; appearance: none;
+  transition: border-color var(--dur-quick);
 }
+.find input::placeholder { color: var(--quiet); }
+.find input:focus { border-bottom-color: var(--ink); }
+.cat-count { margin: var(--s-1) 0 var(--s-3); font: 400 var(--fs-cat)/1.4 var(--font-numbers); letter-spacing: .04em; color: var(--quiet); }
+.year { border-top: 1px solid var(--line); }
+.year:last-of-type { border-bottom: 1px solid var(--line); }
+.year > summary {
+  display: grid; grid-template-columns: 5.5rem minmax(0, 1fr) auto; align-items: baseline; gap: var(--s-2);
+  padding-block: var(--s-2); cursor: pointer; list-style: none; min-block-size: 3.25rem;
+}
+.year > summary::-webkit-details-marker { display: none; }
+.year .yr { font: 300 var(--fs-year)/1 var(--font-words); letter-spacing: -.01em; font-variant-numeric: tabular-nums; }
+.year .n { font: 400 var(--fs-cat)/1 var(--font-numbers); letter-spacing: .06em; color: var(--quiet); }
+.year > summary::after { content: "+"; font: 400 1rem/1 var(--font-numbers); color: var(--quiet); }
+.year[open] > summary::after { content: "\2212"; }
+.year > summary:hover .yr { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: .25em; text-decoration-color: var(--quiet); }
+.year ol { list-style: none; margin: 0; padding: 0 0 var(--s-2); }
+.year li a {
+  display: grid; grid-template-columns: 5.5rem minmax(0, 1fr) auto; align-items: center; gap: var(--s-2);
+  padding-block: .6rem; min-block-size: 2.75rem; text-decoration: none;
+}
+.year li a:hover .t { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: .25em; text-decoration-color: var(--quiet); }
+.year .t { min-inline-size: 0; overflow-wrap: anywhere; }
+.year .m { font: 400 var(--fs-cat)/1.3 var(--font-numbers); letter-spacing: .05em; color: var(--quiet); white-space: nowrap; text-align: end; }
+.year .m b { font-weight: 400; color: var(--ink); }
+/* the glyph: a small sleeve with the record's horizon */
+.hz { position: relative; inline-size: 1.5rem; block-size: 1.5rem; background: var(--sleeve); }
+.hz::after { content: ""; position: absolute; inset-inline: 0; top: calc(var(--h-top) - var(--h-span) * var(--h, .5)); block-size: 1px; background: var(--ink); transition: translate var(--dur-quick) var(--ease-calm); }
+.year li a:hover .hz::after { translate: 0 -2px; }
+.year li a:focus-visible { outline-offset: -2px; }
+[hidden] { display: none !important; }
+.vh { position: absolute; inline-size: 1px; block-size: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+@media (width < 34rem) {
+  .year > summary { grid-template-columns: auto minmax(0, 1fr) auto; gap: var(--s-2); }
+  .year li a { grid-template-columns: 1.25rem minmax(0, 1fr); row-gap: .15rem; }
+  .year li a .m { grid-column: 2; text-align: start; }
+}
+/* years open and close smoothly where the browser can; elsewhere they simply open */
+@media (prefers-reduced-motion: no-preference) {
+  @supports (interpolate-size: allow-keywords) {
+    .year { interpolate-size: allow-keywords; }
+    .year::details-content { block-size: 0; overflow: clip; transition: block-size 320ms var(--ease-calm), content-visibility 320ms allow-discrete; }
+    .year[open]::details-content { block-size: auto; }
+  }
+}
+
 /* the tracklist on a release page: title left, time right */
 .tracklist .tracks li { display: flex; justify-content: space-between; gap: var(--s-2); padding-block: .85rem; border-bottom: 1px solid var(--line); }
 .tracklist .tracks .t-title { overflow-wrap: normal; }
@@ -101,7 +144,17 @@ h1 { text-transform: none; letter-spacing: -.01em; }
 .poster-title, .page-title, .hero-title { text-transform: none; letter-spacing: -.01em; }
 .kicker .numeral { display: none; }
 
-/* ============ 7. ONE LEFT EDGE, AND A BETTER PHONE NAV ============ */
+/* ============ 7. ONE LEFT EDGE, ONE HEADER, A BETTER PHONE NAV ============
+   Every page now has the same quiet header (name left, links right, no rule)
+   and every page's content starts on the same axis as the home page. */
+.site-header { border-bottom: 0; }
+.site-header .container { max-inline-size: none; margin-inline: 0; padding-inline: var(--gutter); }
+.header-bar { min-block-size: 0; padding-block: var(--s-3); gap: var(--s-1) var(--s-4); align-items: baseline; }
+.header-bar .brand { gap: 0; }
+.header-bar .site-nav { margin-inline-start: auto; font-size: var(--fs-small); gap: var(--s-3); }
+.header-bar .site-nav a { color: var(--quiet); text-decoration: none; padding-block: .5rem; }
+.header-bar .site-nav a:hover, .header-bar .site-nav a[aria-current="page"] { color: var(--ink); }
+main > .container { max-inline-size: 66rem; margin-inline: 0; padding-inline: calc(var(--gutter) + var(--axis)) var(--gutter); }
 .site-footer .footer-grid { max-inline-size: none; margin-inline: 0; padding-inline: var(--gutter); padding-inline-start: calc(var(--gutter) + var(--axis)); }
 @media (width < 34rem) { .hd .site-nav { margin-inline-start: 0; } }
 
@@ -112,7 +165,7 @@ h1 { text-transform: none; letter-spacing: -.01em; }
   .sleeve-horizon { transition: scale var(--dur-calm) var(--ease-calm), top 1.2s var(--ease-calm); }
   @starting-style { .sleeve-horizon { scale: 0 1; } }
   .sleeve-face:hover .sleeve-horizon,
-  .sleeve-face:focus-visible .sleeve-horizon { top: calc(var(--horizon) - 4%); }
+  .sleeve-face:focus-visible .sleeve-horizon { top: calc(var(--h-top) - var(--h-span) * var(--h, .5) - 3%); }
 }
 
 /* ============ 9. ROUND 3: release pages wear the sleeve ============ */

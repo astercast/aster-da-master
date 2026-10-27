@@ -83,7 +83,7 @@ HEAD = """<!DOCTYPE html>
     <div class="container header-bar">
       <a class="brand" href="../" aria-label="Aster da Master home">
         <span class="brand-mark" aria-hidden="true">A&#10022;</span>
-        <span>ASTER DA MASTER</span>
+        <span>Aster da Master</span>
       </a>
       """ + NAV + """
     </div>
@@ -96,7 +96,7 @@ FOOT = """    </div>
   </main>
   <footer class="site-footer">
     <div class="container footer-grid">
-      <p>&copy; 2026 ASTER DA MASTER · ALL SIGNALS RESERVED</p>
+      <p>&copy; 2026 Aster da Master · ALL SIGNALS RESERVED</p>
       """ + nav_data.footer_block("../", "circle") + """
     </div>
   </footer>

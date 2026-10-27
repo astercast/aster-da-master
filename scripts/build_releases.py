@@ -61,7 +61,7 @@ FOOT = """    </div>
   </main>
   <footer class="site-footer">
     <div class="container footer-grid">
-      <p>&copy; 2026 ASTER DA MASTER</p>
+      <p>&copy; 2026 Aster da Master</p>
       """ + nav_data.footer_block("../", "compact") + """
     </div>
   </footer>
@@ -255,11 +255,12 @@ def build():
             f'<span class="sleeve-foot">{kind} &middot; {when}</span>'
         )
         _cover = cover_for(r, slug)
+        _h = int(cat[4:]) / len(releases)
         if _cover:
             _srcset = (f' srcset="{escape(_cover["srcset"], quote=True)}"'
                        f' sizes="(min-width: 30rem) 430px, 100vw"') if _cover["srcset"] else ""
             sleeve = (
-                f'<figure class="sleeve"><div class="sleeve-face has-cover">{plate}'
+                f'<figure class="sleeve"><div class="sleeve-face has-cover" style="--h:{_h:.3f}">{plate}'
                 f'<img class="sleeve-cover" src="{escape(_cover["src"])}"{_srcset} alt="{escape(r["title"])} cover art" '
                 f'width="600" height="600" decoding="async" referrerpolicy="no-referrer" '
                 f'onerror="this.parentNode.classList.add(\'cover-failed\');this.remove()"></div>'
@@ -269,7 +270,7 @@ def build():
             )
         else:
             sleeve = (
-                f'<figure class="sleeve"><div class="sleeve-face" role="img" '
+                f'<figure class="sleeve"><div class="sleeve-face" role="img" style="--h:{_h:.3f}" '
                 f'aria-label="No cover art yet for {escape(r["title"])}">{plate}</div></figure>'
             )
 
