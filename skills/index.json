@@ -77,7 +77,7 @@
     {
       "id": "milestone-race-reader",
       "title": "Milestone race reader",
-      "description": "Read the milestone race (milestone-races.json) — approaching play-count milestones ranked by gap-closing proximity, the 30,088-play summit chase, session and era records, and the most recently crossed milestones. Pace figures are arithmetic, never predictions.",
+      "description": "Read the milestone race (milestone-races.json) — approaching play-count milestones ranked by gap-closing proximity, the play summit chase, session and era records, and the most recently crossed milestones. Pace figures are arithmetic, never predictions.",
       "path": "skills/milestone-race-reader.md"
     },
     {

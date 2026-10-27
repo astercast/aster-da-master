@@ -26,7 +26,7 @@ An agent (or a visitor) types a word — "litemode", "cold", "soul" — and want
 Input: `nitemode`
 
 - Family: **The Modes** — "The mode-words. Five transmissions carry them - lite, nite, and night." Words: `litemode`, `nitemode`, `night mode`.
-- Transmissions (5): "NIGHT MODE ft. MAX FERRARI x YUNG VETTA x JAX" (2019-07-09, 10,083 plays); "u Not at the Table (Sunsetzer0) #litemode" (2024-04-18, 139); "3 Points Pre Game prod. doublemulti x pinkcat #NITEMODE" (2024-05-28, 170); "nitemode2019 w/ Max+Vetty prod. NaXi.wav" (2024-11-05, 17 plays — the vault's quietest track); "big litemode (prod runawway, ilyagargod & k3nik)" (2025-11-23, 455).
+- Transmissions (5): "NIGHT MODE ft. MAX FERRARI x YUNG VETTA x JAX" (2019-07-09, plays); "u Not at the Table (Sunsetzer0) #litemode" (2024-04-18); "3 Points Pre Game prod. doublemulti x pinkcat #NITEMODE" (2024-05-28); "nitemode2019 w/ Max+Vetty prod. NaXi.wav" (2024-11-05, plays — the vault's quietest track); "big litemode (prod runawway, ilyagargod & k3nik)" (2025-11-23).
 - Read: the mode-words bookend the archive — one cluster in 2019, one in 2024–2025, with the tag spelling shifting from `nitemode2019` to `#litemode`/`#NITEMODE`/`big litemode`. Five transmissions across six years: a recurring signal, not a phase.
 
 ## API references

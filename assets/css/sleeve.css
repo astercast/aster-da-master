@@ -193,3 +193,33 @@ main > .container { padding-inline-start: calc(var(--gutter) + var(--axis)); pad
 .release-nav { display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--s-2) var(--s-4); margin-top: var(--s-5); max-inline-size: var(--sleeve-size); font-size: var(--fs-small); }
 .release-nav .btn { border: 0; padding: 0; background: none; color: var(--ink); font: inherit; letter-spacing: 0; text-transform: none; text-decoration: underline; text-decoration-color: var(--line); text-underline-offset: .3em; }
 .release-nav .btn:hover { text-decoration-color: var(--ink); }
+
+/* ---------- 10. ROUND-3 REVIEW 1 FIX PASS (R303, 2026-10-27) ----------
+   Items 3, 4 and 5 of review-aster-1.md. This sheet loads last on every
+   page, so these rules govern where they conflict. */
+
+/* item 3: when the cover fails, the plate shows and the ADM caption
+   already hides (section 9); the credit line is a sibling after the
+   figure, so hide it off the same failed state. */
+.sleeve:has(.cover-failed) + .cover-credit { display: none; }
+
+/* item 4: tap targets. Header and footer links and the release
+   prev/next links stand at least 24px at desktop width and at least
+   44px on phones; the wordmark takes the same floors. */
+.hd .site-nav a, .header-bar .site-nav a, .site-footer nav a,
+.footer-grid nav a, .release-nav .btn, .brand, .hd-name {
+  display: inline-flex; align-items: center; min-block-size: 24px;
+}
+@media (max-width: 719px) {
+  .hd .site-nav a, .header-bar .site-nav a, .site-footer nav a,
+  .footer-grid nav a, .release-nav .btn, .brand, .hd-name { min-block-size: 44px; }
+}
+
+/* item 5: one phone nav pattern. The inline links show on every page
+   at phone widths, home and release pages alike; the Menu disclosure
+   retires. (Section 9 hid .header-bar .site-nav under 720px and
+   aster.css showed .mnav instead.) */
+@media (max-width: 719px) {
+  .header-bar .site-nav { display: flex; flex-wrap: wrap; }
+  .mnav { display: none; }
+}

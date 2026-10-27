@@ -13,25 +13,25 @@ An agent (or a human) wants the overlooked end of the catalog: deep-cut playlist
 
 - `data/v1/sessions.json` (per-track play counts, 2026-10-11 snapshot)
 - A cutoff: how many tracks to return (default 10)
-- Optional floor/ceiling: e.g. "between 100 and 500 plays" to skip one-listen accidents
+- Optional floor/ceiling: e.g. "between a floor and a ceiling" to skip one-listen accidents
 
 ## Procedure
 
 1. Fetch `data/v1/sessions.json`. Flatten `sessions[].tracks` into one list of `{title, date, plays, page}`. (The 185 SoundCloud-only tracks are the ones with play counts; the 34 distributor releases have platform links, not vault plays.)
-2. Sort ascending by `plays`. The median vault track sits around 450 plays — anything far below that is a genuine deep cut.
+2. Sort ascending by `plays`. Anything far below the median vault track is a genuine deep cut.
 3. Take the bottom N (or the tracks inside your floor/ceiling window). Keep the date and release page link with each.
 4. Optional: enrich each pick with `data/v1/codex.json` — the codex families explain what a title word signals, which gives a playlist theme to hang on.
-5. Present as a list: title, plays, date, why it qualifies (e.g. "17 plays — the quietest transmission in the vault").
+5. Present as a list: title, plays, date, why it qualifies (e.g. "plays — the quietest transmission in the vault").
 
 ## Worked example
 
 Bottom 5 of the 185-track vault (snapshot 2026-10-11):
 
-- "nitemode2019 w/ Max+Vetty prod. NaXi.wav" — 17 plays
-- "No Puppets A11owed prod. xtasane" — 24 plays
-- "Im tha Bouncerrr prod. sustain" — 28 plays
-- "For Brian (Neck Deep) outro [produced by AWFL]" — 43 plays
-- "6 stop telling myself i'm not" — 46 plays
+- "nitemode2019 w/ Max+Vetty prod. NaXi.wav" — plays
+- "No Puppets A11owed prod. xtasane" — plays
+- "Im tha Bouncerrr prod. sustain" — plays
+- "For Brian (Neck Deep) outro [produced by AWFL]" — plays
+- "6 stop telling myself i'm not" — plays
 
 Median vault plays: ~450, so each of these sits at roughly a tenth of the median or less. All titles verbatim as uploaded; `.wav` in the first title is part of the original upload name.
 

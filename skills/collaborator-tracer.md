@@ -27,8 +27,8 @@ An agent needs everything the archive knows about one person: who they worked wi
 
 `capoxxo` (circle entry, page `circle/capoxxo.html`):
 
-- Footprint: 2 shared transmissions, 16,174 shared plays, active 2019.
-- Tracks: "candy w/ capoxxo(prod. razorwrist)" — 2019-10-04, 11,587 plays; "getting colder w/ capoxxo (prod. pvscale x asa41)" — 2019-12-22, 4,587 plays.
+- Footprint: 2 shared transmissions, shared plays, active 2019.
+- Tracks: "candy w/ capoxxo(prod. razorwrist)" — 2019-10-04, plays; "getting colder w/ capoxxo (prod. pvscale x asa41)" — 2019-12-22, plays.
 - Research (pass 2026-10-11): named in Pitchfork's "A Deeply Incomplete Canon of Hyperpop-Digicore"; collab tape *Persona* w/ mayh3mp (Cult Love Sound Tapes, 2022; 5 tracks, cassette run of 100).
 - Era: both tracks land in "The First Rite" (2017–2019), near the close of that era — just before *Master Key* (2019-12-23).
 

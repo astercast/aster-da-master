@@ -58,16 +58,16 @@ deepest-cuts / timeline-scrubber sections.
 "Compare the loudest session with the deepest session."
 
 - `GET data/v1/session-tools.json` → session-02 ("The February 4th Session",
-  2018-02-04): 1 transmission, 30,088 plays, avg 30,088.0 — loudest =
-  deepest cut = "Take Me (prod. Em Klebold)" (30,088). Solo run
+  2018-02-04): 1 transmission, plays — loudest =
+  deepest cut = "Take Me (prod. Em Klebold)". Solo run
   (`collaborators: []`). Era: The First Rite.
 - session-43 ("The April 16th–18th Session", 2024-04-16 → 2024-04-18):
-  2 transmissions, 167 plays, avg 83.5 — the deepest multi-track session on
-  record (ranking #1). Loudest: "u Not at the Table (Sunsetzer0) #litemode"
-  (139); deepest cut: "Im tha Bouncerrr prod. sustain" (28). Solo run.
+  2 transmissions, plays — the deepest multi-track session on
+  record (ranking #1). Loudest: "u Not at the Table (Sunsetzer0) #litemode";
+  deepest cut: "Im tha Bouncerrr prod. sustain". Solo run.
   Era: The SomeLowLifes Era; codex family `the-modes`.
-- Deltas (session-43 vs session-02): +1 transmission, −29,921 plays,
-  −30,004.5 average plays per transmission. Collaborator overlap: none in
+- Deltas (session-43 vs session-02): +1 transmission, and a wide
+  gap in average plays per transmission. Collaborator overlap: none in
   either — both solo runs. Cross-links: session-43's `journey` →
   `transmission.html#era-the-somelowlifes-era`; session-02's era deep dive
   → `eras/the-first-rite.html`.

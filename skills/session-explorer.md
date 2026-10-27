@@ -30,11 +30,11 @@ sits in. Feeds the `sessions-explorer.html` page and any timeline feature.
 2. `insights` holds the headline numbers, all recomputed and asserted by
    `scripts/build_session_clusters.py`:
    - `most_prolific` — session-40, "The November 3rd–12th Session" (2023-11-03
-     → 2023-11-12, 19 tracks, 7,601 plays)
+     → 2023-11-12, 19 tracks, plays)
    - `longest_silence` — 553 days, session-36 → session-37 (2022-02-22 →
      2023-08-29); the full top-5 silences live in `silences`
-   - `loudest_session` — session-02 (30,088 plays);
-     `quietest_session` — session-52 (17 plays)
+   - `loudest_session` — session-02 (plays);
+     `quietest_session` — session-52 (plays)
    - `season_count` — 9; `session_count` — 61
 3. Walk `clusters[]` for the seasons (span, session/tracks/plays counts,
    `session_ids`) and `sessions[]` for the per-session story: `era_id` /
@@ -54,10 +54,10 @@ sits in. Feeds the `sessions-explorer.html` page and any timeline feature.
 
 - `GET data/v1/session-clusters.json` → `insights.most_prolific`:
   session-40, "The November 3rd–12th Session", 2023-11-03 → 2023-11-12,
-  19 tracks, 7,601 plays, season-06.
+  19 tracks, plays, season-06.
 - The session row's `deepest_cut`: "For Brian (Neck Deep) outro
-  [produced by AWFL]" — 43 plays (2023-11-12); its `loudest`:
-  "On Our Way (Baseline)" — 696 plays. No title-credited collaborators
+  [produced by AWFL]" — plays (2023-11-12); its `loudest`:
+  "On Our Way (Baseline)" — plays. No title-credited collaborators
   (`collaborators: []` — producer credits excluded by rule).
 - Cross-links: `deep_dive` → `sessions/the-november-3rd-12th-session.html`,
   `era_id` → `the-somelowlifes-era` (`eras/the-somelowlifes-era.html`,

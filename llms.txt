@@ -38,7 +38,7 @@ All data lives as static JSON at `data/v1/*.json` — no auth. The self-describi
 - [producer-deepdives](data/v1/producer-deepdives.json): the 113 as-credited producers and their deep-dive data.
 - [sessions](data/v1/sessions.json): the 64 upload sessions clustered by date.
 - [session-clusters](data/v1/session-clusters.json): session archaeology — 64 enriched sessions, 63 gaps, 9 activity seasons, asserted insights; drives the sessions explorer.
-- [session-tools](data/v1/session-tools.json): session explorer 2.0 — 64 compare profiles, deepest-sessions editorial ranking, the track-level deepest-transmissions ranking (quietest 25 of 185, median 450), snapshot-history state.
+- [session-tools](data/v1/session-tools.json): session explorer 2.0 — 64 compare profiles, deepest-sessions editorial ranking, the track-level deepest-transmissions ranking (quietest 25 of 185), snapshot-history state.
 - [milestones](data/v1/milestones.json): the dated milestones on record.
 - [milestone-watch](data/v1/milestone-watch.json): the milestone watch board.
 - [milestone-races](data/v1/milestone-races.json): the milestone race 2.0 — approaching races ranked by gap-closing proximity, the vault pace database, The Climb, race history (dated crossings, 1k/10k/20k/30k threshold winners, the 115-day photo finish), the computed race of the week, the summit chase. The 2026-10-11 snapshot was independently re-captured (185/185, zero differences).

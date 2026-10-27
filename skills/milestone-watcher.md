@@ -7,7 +7,7 @@ description: Track vault tracks approaching round-number play counts — who is 
 
 ## Use when
 
-An agent needs a "watch list": which tracks are closing in on 1,000 / 10,000 / 30,000 plays, and the archive's current highest-play transmission. Feeds milestone alerts, "almost there" posts, and countdown content.
+An agent needs a "watch list": which tracks are closing in on the play-count bands, and the archive's current highest-play transmission. Feeds milestone alerts, "almost there" posts, and countdown content.
 
 ## Inputs
 
@@ -26,9 +26,9 @@ An agent needs a "watch list": which tracks are closing in on 1,000 / 10,000 / 3
 
 Snapshot 2026-10-11:
 
-- Summit: "Take Me (prod. Em Klebold)" — 30,088 plays. The highest-play transmission in the vault; nothing else is within 3,000 plays of 30,000.
-- Near 1,000 (`near-1k`, target 1000): "[outro] Off Beat ft. Yung Vetta (prod. Addy)" — 935 plays, 65 needed; "Lucid Boi (prod. $ T.N.C $)" — 918 plays, 82 needed.
-- Near 10,000 (`near-10k`, target 10000): "master key ft. Lil Wintr x Marcelo (prod. ginseng)" — 9,615 plays, 385 needed.
+- Summit: "Take Me (prod. Em Klebold)" — plays. The highest-play transmission in the vault; nothing else is close to the summit.
+- Near 1,000 (`near-1k`, target 1000): "[outro] Off Beat ft. Yung Vetta (prod. Addy)" — plays; "Lucid Boi (prod. $ T.N.C $)" — plays.
+- Near 10,000 (`near-10k`, target 10000): "master key ft. Lil Wintr x Marcelo (prod. ginseng)" — plays.
 - Near 30,000 (`near-30k`): empty — no track is near the summit's band.
 
 ## API references

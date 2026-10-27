@@ -50,15 +50,15 @@ upload sessions carried it, and which collaborators named it. Feeds the
 Input: `the-rites`
 
 - `GET data/v1/codex-families.json` → family **The Rites** —
-  17 transmissions, 11,052 plays, words `ritual`, `solstice`, `freestyle`,
+  17 transmissions, plays, words `ritual`, `solstice`, `freestyle`,
   `anthem`, `intro`, `outro`, `interlude`.
 - `decoded.status` = `"stated"`: "The ceremonial forms: ritual, solstice,
   freestyle, anthem, intro, outro, interlude."
 - Evolution: first appearance "Fuck Time 3 (outro) [Prod. DIX2]"
   (2018-11-08) → latest "Sti11 waiting/tunnel freestyle w/ Max Ferrari
   prod. suli" (2025-11-11); active in 5 of 6 eras — The First Rite ×6
-  (8,099 plays), The Prolific Year ×2, The Cast It: Years ×1, The
-  SomeLowLifes Era ×7 (2,243 plays — the most-played codex family of that
+  (plays), The Prolific Year ×2, The Cast It: Years ×1, The
+  SomeLowLifes Era ×7 (plays — the most-played codex family of that
   era), The Silence ×1.
 - Key sessions: 9, led by The November 3rd–12th Session ×6 family
   transmissions; voices: Yung Vetta ×1, Max Ferrari ×1 (title credits only).

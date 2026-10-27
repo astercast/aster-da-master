@@ -135,7 +135,7 @@ and `tracks.json` (the captured catalog).
 ## Numbers & Codex
 
 - The homepage's **Numbers** section (VIII) is a live stats dashboard computed
-  client-side from `data/artist.json`: total SoundCloud plays (257,394 as of the
+  client-side from `data/artist.json`: total SoundCloud plays (as of the
   2026-10-11 snapshot), plays/tracks by year, top 10 tracks by plays, and
   collaborator frequency parsed from `w/`/`ft.` title credits.
 - The **Codex** section (IX) renders `data/codex.json`, built by
@@ -219,10 +219,10 @@ and `tracks.json` (the captured catalog).
   firsts, computed by `scripts/build_milestones.py` from `data/artist.json`
   (re-run after data changes; bumps version to 0.9.0): first distributor
   transmission (2017-04-20, as featured artist), first vault upload (2018-01-03,
-  "Soul Shaking", 12,944 plays — the first day already brought a 10k track),
+ "Soul Shaking" — the first day already brought a top track),
   first collaboration (2018-04-28), 100th catalog entry, 100th vault upload,
   most prolific day (2023-11-12, 17 uploads), longest silence (553 days,
-  2022-02-22 → 2023-08-29), 250k cumulative plays crossed (2024-05-28),
+  2022-02-22 → 2023-08-29), the cumulative-plays crossing (2024-05-28),
   latest transmission. Every milestone is a data fact; play counts are the
   2026-10-11 snapshot. Schema: `data/v1/schema/milestones.json`.
 - **API playground** (`api-playground.html` + `assets/js/playground.js`): touch
@@ -280,7 +280,7 @@ and `tracks.json` (the captured catalog).
   at lifetime pace), the race history (all dated crossings, 1k/10k/20k/30k
   threshold winners — crossing dates unrecoverable from one snapshot, and
   said so — plus the 115-day photo finish), the computed race of the week
-  with a share card, the 30,088-play summit chase with the five closest
+ with a share card, the play summit chase with the five closest
   contenders, and the session + era record book. The 2026-10-11 snapshot was
   independently re-captured via live browser (185/185 tracks, zero play-count
   differences — recorded in `snapshot_provenance`). Pace figures are
@@ -336,7 +336,7 @@ and `tracks.json` (the captured catalog).
   `scripts/test_producer_deepdives.py`). Schema:
   `data/v1/schema/producer-deepdives.json`.
 - **Glance** (`glance.html`): the one-page infographic — 221 transmissions,
-  257,394 plays, 9 years, 61 sessions, 21 collaborators, 16 codex families,
+ 9 years, 61 sessions, 21 collaborators, 16 codex families,
   top-5 tracks, the eras strip, heaviest sessions, bookends
   (`scripts/build_glance.py`). Linked from the hero, primary + footer navs
   on all pages (nav lives in `scripts/nav_data.py` since Rotation 13 —
@@ -357,7 +357,7 @@ Task procedures in `skills/` (registry: `skills/index.json`; playbook format: Us
 - `era-briefing` — summarize an era for a writeup
 - `transmission-decoder` — interpret a title word via the codex families
 - `codex-reader` — read a codex family's full deep-dive: decoded reading, era-by-era evolution, key sessions, voices
-- `milestone-race-reader` — read the milestone race: approaching milestones ranked, race any two vault tracks head-to-head, The Climb (182-track summit leaderboard), race history, the computed race of the week, the 30,088-play summit chase, records, what's just crossed (pace = arithmetic, never predictions)
+- `milestone-race-reader` — read the milestone race: approaching milestones ranked, race any two vault tracks head-to-head, The Climb (182-track summit leaderboard), race history, the computed race of the week, the play summit chase, records, what's just crossed (pace = arithmetic, never predictions)
 
 ## Agents surface (wave 13)
 

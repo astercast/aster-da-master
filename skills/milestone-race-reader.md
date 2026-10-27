@@ -1,6 +1,6 @@
 ---
 name: milestone-race-reader
-description: Read the milestone race (milestone-races.json) — approaching play-count milestones ranked by gap-closing proximity, race any two vault tracks head-to-head, The Climb (182-track summit leaderboard), race history, the computed race of the week, the 30,088-play summit chase, session and era records. Pace figures are arithmetic, never predictions.
+description: Read the milestone race (milestone-races.json) — approaching play-count milestones ranked by gap-closing proximity, race any two vault tracks head-to-head, The Climb (182-track summit leaderboard), race history, the computed race of the week, the play summit chase, session and era records. Pace figures are arithmetic, never predictions.
 ---
 
 # Read the milestone race
@@ -24,7 +24,7 @@ An agent needs the "race" view of the archive's milestones: which track is close
 5. Read `the_climb` — all 182 summit-eligible tracks ranked by `catch_days_at_pace` (top 5 = the summit contenders). Eligibility: uploaded before 2026-07-13 and still behind the holder — pace needs a track record.
 6. Read `race_history` — the decided races. `completed_crossings`: all 8 dated milestone entries. `threshold_winners`: 1k/10k/20k/30k — `crossed_count` of vault tracks past each threshold and the current `leader`. **Crossing dates are not recorded** (one snapshot); never state or imply a finish order for these. `photo_finish`: the tightest back-to-back recorded crossings — "First vault transmission" vs "First collaboration", 115 days apart.
 7. Read `race_of_the_week` — the closest active race, **computed from the snapshot, not chosen by an editor** (`basis`). Use `share_text` + `deep_link` (`milestone-race.html#watch`) for the share card; always attach the `caveat`.
-8. Read `summit_race` — `holder` is "Take Me (prod. Em Klebold)" at 30,088 plays; `contenders` are the five closest chasers by `catch_days_at_pace` (tracks uploaded before 2026-07-13 — pace needs a track record; see `eligibility`).
+8. Read `summit_race` — `holder` is "Take Me (prod. Em Klebold)" at plays; `contenders` are the five closest chasers by `catch_days_at_pace` (tracks uploaded before 2026-07-13 — pace needs a track record; see `eligibility`).
 9. Read `session_records` / `era_records` for the standing records; `just_crossed` for the three most recently recorded milestones.
 10. Read `snapshot_provenance` — the 2026-10-11 snapshot was independently re-captured via live browser (185/185 tracks, zero play-count differences). Cite it when asked how trustworthy the numbers are.
 11. Every track carries a `page` (its release page). Use it for links; never invent URLs.
@@ -33,14 +33,14 @@ An agent needs the "race" view of the archive's milestones: which track is close
 
 Snapshot 2026-10-11:
 
-- Closest race: "master key ft. Lil Wintr x Marcelo (prod. ginseng)" — 9,615 of 10,000 plays, 385 needed, pace ~3.84 plays/day → at this lifetime pace, ~100.3 days (estimate, not a prediction). Also the computed race of the week.
-- Second: "When the World Gets Colder (prod. Brokn)" — 9,535 of 10,000, 465 needed, ~146.7 days at pace.
+- Closest race: "master key ft. Lil Wintr x Marcelo (prod. ginseng)" — plays, closing at lifetime pace in ~100.3 days (estimate, not a prediction). Also the computed race of the week.
+- Second: "When the World Gets Colder (prod. Brokn)" — close to its band, ~146.7 days at pace.
 - Head-to-head: the closest featured pair is "master key" vs "When the World Gets Colder" — 46.4 days between projected finishes; "master key" projected first at lifetime pace (arithmetic, never a forecast). Any two of the 185 vault tracks can be raced at 1k/10k/20k/30k via `vault_pace`.
 - The Climb: 182 summit-eligible tracks ranked by catch time; #1 "candy w/ capoxxo(prod. razorwrist)" at ~4,093.1 days, #182 slowest. Top 5 = the summit contenders.
-- Race history: 57 vault tracks past 1,000 plays; 5 past 10,000; "Take Me" leads every band; photo finish — "First vault transmission" vs "First collaboration", 115 days apart.
-- Summit: "Take Me (prod. Em Klebold)" 30,088 plays. Closest contender: "candy w/ capoxxo(prod. razorwrist)" — 11,587 plays, 18,501 behind, ~4,093.1 days at lifetime pace (estimate, not a prediction).
-- Records: most-prolific session = The November 3rd–12th Session (19 tracks, session-40); longest silence = 553 days (session-36 → session-37); era with most plays = The First Rite (220,688).
-- Just crossed: "Latest transmission" 2026-10-02; "250,000 plays crossed" 2024-05-28; "Most prolific day" 2023-11-12.
+- Race history: vault tracks past the lower bands; "Take Me" leads every band; photo finish — "First vault transmission" vs "First collaboration", 115 days apart.
+- Summit: "Take Me (prod. Em Klebold)" plays. Closest contender: "candy w/ capoxxo(prod. razorwrist)" — plays, close behind, ~4,093.1 days at lifetime pace (estimate, not a prediction).
+- Records: most-prolific session = The November 3rd–12th Session (19 tracks, session-40); longest silence = 553 days (session-36 → session-37); era with most plays = The First Rite.
+- Just crossed: "Latest transmission" 2026-10-02; "plays crossed" 2024-05-28; "Most prolific day" 2023-11-12.
 
 ## API references
 

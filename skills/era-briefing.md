@@ -27,7 +27,7 @@ An agent must write about a period of the catalog: an era chapter, a "the 2020 r
 
 **The First Rite** (2017–2019) — ~120 words:
 
-The First Rite opens the archive: the earliest trace is a 2017 feature credit on another artist's single, and the WoT seal gets pressed onto *Master Key* (album, 2019-12-23, label "WoT", genre Hip-Hop/Rap). 2018 alone holds 39 vault transmissions and 104,479 plays, topped by "Take Me (prod. Em Klebold)" (30,088) and "Soul Shaking (prod. Fish Narc)" (12,944). Collaborators already circling: capoxxo on "candy" and "getting colder" (both 2019), Max Ferrari, Yung Vetta, and JAX on "NIGHT MODE" (2019-07-09). The era ends with the *Master Key* distributor run and the title track's own upload-cluster nearby.
+The First Rite opens the archive: the earliest trace is a 2017 feature credit on another artist's single, and the WoT seal gets pressed onto *Master Key* (album, 2019-12-23, label "WoT", genre Hip-Hop/Rap). 2018 alone holds 39 vault transmissions and plays, topped by "Take Me (prod. Em Klebold)" (30,088) and "Soul Shaking (prod. Fish Narc)" (12,944). Collaborators already circling: capoxxo on "candy" and "getting colder" (both 2019), Max Ferrari, Yung Vetta, and JAX on "NIGHT MODE" (2019-07-09). The era ends with the *Master Key* distributor run and the title track's own upload-cluster nearby.
 
 ## API references
 

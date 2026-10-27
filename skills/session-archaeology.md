@@ -27,8 +27,8 @@ An agent wants the narrative behind one of the 61 upload sessions: what was happ
 
 `session-01` — "The January 3rd–8th Session" (2018-01-03 → 2018-01-08, 6 days, 2 tracks, 13,862 total plays):
 
-- "Soul Shaking (prod. Fish Narc)" — 2018-01-03, 12,944 plays. Fish Narc is a *scene figure*, not a circle member: producer credit only, documented in `scene-figures.json` (b. 1992 Seattle/Olympia; GothBoiClique; produced Lil Peep's *Goth Angel Sinner*). "Soul" sits in the codex family "Soul".
-- "Lucid Boi (prod. $ T.N.C $)" — 2018-01-08, 918 plays. "Lucid" sits in the codex family "Lucid States".
+- "Soul Shaking (prod. Fish Narc)" — 2018-01-03, plays. Fish Narc is a *scene figure*, not a circle member: producer credit only, documented in `scene-figures.json` (b. 1992 Seattle/Olympia; GothBoiClique; produced Lil Peep's *Goth Angel Sinner*). "Soul" sits in the codex family "Soul".
+- "Lucid Boi (prod. $ T.N.C $)" — 2018-01-08, plays. "Lucid" sits in the codex family "Lucid States".
 - Era: "The First Rite" (2017–2019). This is the opening session of the archived vault — the first cluster of the whole catalog.
 
 ## API references
