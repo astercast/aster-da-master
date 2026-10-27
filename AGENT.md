@@ -81,20 +81,20 @@ console.log(mf.shared_transmissions, mf.shared_plays, mf.years_active); // 8 136
 *Skill: [`era-briefing`](skills/era-briefing.md). Question → "what happened in the SomeLowLifes era?"*
 
 1. **`GET data/v1/transmission.json`** — find the era named "The SomeLowLifes Era"
- (`span` "2023 – 2024"): 58 transmissions, plays, 2 distributor
+ (`span` "2023 – 2024"): 58 transmissions, 2 distributor
    releases. Read its `signal`: "After a 553-day silence — the longest gap on
    record — the vault returned with 58 transmissions…"
 2. **`GET data/v1/milestones.json`** — pull `longest-silence`: 553 days,
    2022-02-22 → 2023-08-29. This is the gap the era's signal refers to; the
    era is where the silence *broke*.
 3. Same era object: `key_sessions` → "The November 3rd–12th Session"
- (19 tracks, plays — the most prolific session on record) and
+ (19 tracks — the most prolific session on record) and
    `milestones` → `prolific-day` ("17 transmissions uploaded in a single day",
    2023-11-12). `collaborators` → lil yu, Max Ferrari, Max (1 track each).
 4. **`GET data/v1/years.json`** — 2023: 26 vault transmissions; 2024: 20.
    Cross-check the era totals (58 = 2023+2024 discography entries).
 5. Write the brief as: **the span** (2023–2024, after the 553-day silence),
- **the numbers** (58 transmissions / plays, every figure traced to a
+ **the numbers** (58 transmissions, every figure traced to a
    field), **the story** (the vault's return, the November 2023 outpouring).
    State what is unknown — e.g. *why* the silence happened is not in the
    archive; do not speculate.
@@ -124,12 +124,12 @@ console.log(mf.shared_transmissions, mf.shared_plays, mf.years_active); // 8 136
 [`network-graph-reader`](skills/network-graph-reader.md). Question → "trace every Max Ferrari collaboration."*
 
 1. **`GET data/v1/circle.json`** — look up slug `max-ferrari`: 8 shared
-   transmissions, shared plays, active 2018–2025. Read all 8 tracks
+   transmissions, active 2018–2025. Read all 8 tracks
    chronologically, from "DESTINY (ft. JAX & Max Ferrari) ~ [prod. louky]"
  (2018-08-20) through "Sti11 waiting/tunnel freestyle w/ Max
    Ferrari prod. suli" and "ARCSNOWWW w/ Max Ferrari prod. sustain"
    (2025-11-11). Note the 2019 peak: "NIGHT MODE ft. MAX FERRARI x YUNG VETTA
- x JAX" (plays — the loudest shared track).
+ x JAX" (the loudest shared track).
 2. **`GET data/v1/network.json`** — `insights.most_frequent_collaborator` is
    Max Ferrari ×8 (confirmation, not a new claim). Find his co-credit edges:
    `jax ↔ max-ferrari` (weight 2 — "DESTINY" and "NIGHT MODE") and
@@ -139,7 +139,7 @@ console.log(mf.shared_transmissions, mf.shared_plays, mf.years_active); // 8 136
    ("nitemode2019 w/ Max+Vetty") — near-duplicate slugs, different people.
    Match exactly; do not merge.
 4. Summarize as: **who** (Max Ferrari, most frequent collaborator ×8),
- **footprint** (8 tracks, plays, 2018–2025), **the tracks**
+ **footprint** (8 tracks, 2018–2025), **the tracks**
    (chronological, with plays), **the network** (co-credit links to JAX and
    Yung Vetta). Anything beyond the endpoints — how they met, who introduced
    whom — is unknown; say so.
@@ -155,10 +155,10 @@ SomeLowLifes era."*
 2. **Read `summary` first** — every figure there is recomputed and asserted
    by `scripts/build_eras.py`: The SomeLowLifes Era is rank #2 of 6 by
    transmissions (58) and by plays; busiest
- year 2023 (31 transmissions, plays); loudest transmission "Clock
- In The Benz w/ Lil Yu prod shinju" (plays); deepest cut "nitemode2019
- w/ Max+Vetty prod. NaXi.wav" (plays); most-played codex family "The
- Rites" (7 transmissions, plays); 5 collaborators;
+ year 2023 (31 transmissions); loudest transmission "Clock
+ In The Benz w/ Lil Yu prod shinju"; deepest cut "nitemode2019
+ w/ Max+Vetty prod. NaXi.wav"; most-played codex family "The
+ Rites" (7 transmissions); 5 collaborators;
    3 milestones filed.
 3. **Walk `tracks[]`** for the full transmission list (every entry with
    release-page link; distributor releases carry no vault play count),
@@ -182,13 +182,13 @@ sessions."*
    days — not artist-named eras.
 2. **`insights`** holds the headline numbers (all recomputed and asserted by
    `scripts/build_session_clusters.py`): `most_prolific` is session-40, "The
-   November 3rd–12th Session" (2023-11-03 → 2023-11-12, 19 tracks, plays); `longest_silence` is 553 days, session-36 → session-37
+   November 3rd–12th Session" (2023-11-03 → 2023-11-12, 19 tracks); `longest_silence` is 553 days, session-36 → session-37
    (2022-02-22 → 2023-08-29, matches `milestones.json`'s longest-silence
- record); `loudest_session` is session-02 (plays), `quietest_session`
- is session-52 (plays).
+ record); `loudest_session` is session-02, `quietest_session`
+ is session-52.
 3. **Drill into `sessions[]`**: session-40's `deepest_cut` is "For Brian
- (Neck Deep) outro [produced by AWFL]" (plays), its `loudest` is "On Our
- Way (Baseline)" (plays), `collaborators` is empty (solo run — producer
+ (Neck Deep) outro [produced by AWFL]", its `loudest` is "On Our
+ Way (Baseline)", `collaborators` is empty (solo run — producer
    credits excluded by rule), `deep_dive` points at
    `sessions/the-november-3rd-12th-session.html`, and `journey` lands on the
    SomeLowLifes node of the transmission journey. `silences` names the five
@@ -204,7 +204,7 @@ sessions."*
 family: what does it mean, and how did it evolve?"*
 
 1. **`GET data/v1/codex-families.json`** — find the family by `slug`
- (`the-modes`): 5 transmissions, plays, words `litemode`,
+ (`the-modes`): 5 transmissions, words `litemode`,
    `nitemode`, `night mode`, page `codex/the-modes.html`.
 2. **Read `decoded` FIRST** — `status` is `"unknown"`: the archive assigns no
    meaning to the mode-words. `litemode`/`nitemode` appear in titles but no
@@ -212,10 +212,10 @@ family: what does it mean, and how did it evolve?"*
    register on `method.html`, re-checked 2026-10-11). **Do not supply a
    meaning the archive doesn't claim.**
 3. **Walk `eras[]` for the evolution** — first appearance "NIGHT MODE ft.
- MAX FERRARI x YUNG VETTA x JAX" (2019-07plays, The First
+ MAX FERRARI x YUNG VETTA x JAX" (2019-07-09, The First
    Rite), latest "big litemode (prod runawway, ilyagargod & k3nik)"
- (2025-11plays, The Silence); 3 family
- transmissions sit in The SomeLowLifes Era (plays — the word's quiet
+ (2025-11-23, The Silence); 3 family
+ transmissions sit in The SomeLowLifes Era (the word's quiet
    middle years). `deep_dive` and `journey` links land on the era pages.
 4. **`key_sessions[]`** names the 5 upload sessions carrying the words
    (session deep-dive link where one exists, e.g. The July 9th Session);
@@ -234,7 +234,7 @@ family: what does it mean, and how did it evolve?"*
 1. **`GET data/v1/milestone-races.json`** — read `plays_snapshot` first
    (2026-10-11): this is a snapshot, not a live leaderboard.
 2. **`closest_races[0]`** — the closest race in the archive: "master key ft.
- Lil Wintr x Marcelo (prod. ginseng)", plays, closing at
+ Lil Wintr x Marcelo (prod. ginseng)", closing at
  lifetime pace in ~100.3 days (estimate, not a prediction). **`race_of_the_week`** names the same race — computed from
    the snapshot, not editorial — with a share card.
 3. **`head_to_head` + `vault_pace`** — race any two of the 185 vault tracks at any milestone target (1k/10k/20k/30k): `needed = target − plays`, `days_at_pace = needed ÷ pace_per_day` (the page mirrors the generator's `project_pair` exactly, banker's rounding included). A track already past the line has no race to run — the table says so. The 6 featured pairs (active races at their band targets) are precomputed and asserted; the closest is "master key" vs "When the World Gets Colder (prod. Brokn)", 46.4 days apart. **`the_climb`** — all 182 summit-eligible tracks ranked by catch time at lifetime pace (top 5 = the summit contenders).
@@ -252,9 +252,9 @@ family: what does it mean, and how did it evolve?"*
    back-to-back recorded crossings.
 6. **`session_records` / `era_records`** — the standing records: most-prolific
    session = The November 3rd–12th Session (19 tracks); longest silence =
-   553 days (session-36 → session-37); era with most plays = The First Rite
-   (220,688). **`just_crossed`** — most recent: "Latest transmission"
- (2026-10-02), then "plays crossed" (2024-05-28).
+   553 days (session-36 → session-37); era with most plays = The First Rite.
+   **`just_crossed`** — most recent: "Latest transmission"
+ (2026-10-02), then the archive plays milestone (2024-05-28).
 7. Pitfall check: `pace_per_day` is snapshot plays ÷ days from upload to
    snapshot — a lifetime average, not a current rate. `days_at_pace` and
    `catch_days_at_pace` are plain division. **Say "estimate, not a prediction"
